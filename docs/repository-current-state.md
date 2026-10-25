@@ -1,6 +1,6 @@
 # Repository Current State
 
-Last updated: 2026-08-31
+Last updated: 2026-10-25
 
 ## What this repository does
 
@@ -13,6 +13,8 @@ It renders investigation data from repository JSON files into five main product 
 - Walkthrough (`/walkthrough`)
 - Workflow (`/workflow`)
 
+The P02 Supplier Delivery Confirmation & Delay Escalation control center is available at `/delivery`. It is an isolated Next.js route with read-only ART ADK execution, deterministic delivery classification, explicitly labeled synthetic demo data, and protected live-run/configuration endpoints.
+
 ## Major architecture
 
 - `src/app/` defines the Next.js App Router routes (`layout.tsx`, `page.tsx`, `onboarding/page.tsx`, `contribute/page.tsx`, `walkthrough/page.tsx`, `workflow/page.tsx`, and API route handlers under `src/app/api/`).
@@ -23,6 +25,8 @@ It renders investigation data from repository JSON files into five main product 
 - `src/features/core/walkthrough/` contains the walkthrough experience, including Markdown rendering and presentation helpers.
 - `src/features/core/workflow/` contains the workflow canvas.
 - `src/features/aoi/` contains the AOI explorer surface.
+- `src/features/delivery/` contains the P02 Delivery Control Center interface.
+- `src/server/delivery/` contains P02 classification, administrator auth, local run/audit persistence, ADK execution, and evidence normalization.
 - `src/data/` contains the InvestigationBrief loader, validator, and repository data.
 - `src/server/` contains server-only persistence, validation, and API helpers.
 - `src/types/` contains the TypeScript types for the app data models.
@@ -46,6 +50,7 @@ It renders investigation data from repository JSON files into five main product 
 - Presentation code must not invent missing research meaning, provenance, or decision states.
 - Legacy static packaging files are no longer authoritative for production runtime decisions.
 - GitHub persistence is an MVP storage layer behind `InvestigationStore`, not a replacement for the locked research data model.
+- P02 live monitoring uses `@arealtimetech/adk-js` with a configured existing ART agent. ART/ERPNext credentials and agent configuration are not stored in the repository; without server configuration, only clearly labeled synthetic demonstration data is available.
 
 ## Important directories
 
@@ -71,4 +76,5 @@ It renders investigation data from repository JSON files into five main product 
 - The repository keeps product data and presentation code separate, but the UI still depends on the local JSON data being valid.
 - The app is intentionally data-driven, so missing or malformed InvestigationBrief JSON will fail validation rather than being silently repaired.
 - GitHub-backed persistence is an MVP durability layer and is not a substitute for relational storage or realtime collaboration.
+- P02 local JSON run history is intended for one server instance. Live execution, scheduler behavior, and the DELIVERY-001 benchmark have not been validated against ART or ERPNext.
 - Legacy static export artifacts may still exist in the repository, but they are not the authoritative production runtime for the server-capable deployment.
