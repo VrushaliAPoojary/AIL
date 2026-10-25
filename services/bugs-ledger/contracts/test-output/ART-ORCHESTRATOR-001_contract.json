@@ -1,0 +1,106 @@
+{
+  "Investigation": {
+    "id": "ART-ORCHESTRATOR-001",
+    "canonicalBugId": "ART-ORCHESTRATOR-001",
+    "slug": "condition-builder-key-dropdown-values-truncated",
+    "lifecyclePhase": "CONFIRMED",
+    "status": "OPEN",
+    "classification": "BUG",
+    "module": "ORCHESTRATOR",
+    "severity": "MEDIUM",
+    "priority": "Not provided",
+    "assignee": null,
+    "originalInputId": "INP-ART-ORCHESTRATOR-001",
+    "evidenceIds": [
+      "EVD-ART-ORCHESTRATOR-001-01"
+    ],
+    "aiAnalysisIds": [],
+    "researchIds": [],
+    "ticketRevisionIds": [
+      "TCK-ART-ORCHESTRATOR-001-01"
+    ],
+    "activeTicketRevisionId": "TCK-ART-ORCHESTRATOR-001-01",
+    "developerUpdateIds": [],
+    "retestIds": [],
+    "auditEventIds": [
+      "AUD-ART-ORCHESTRATOR-001-01"
+    ],
+    "createdAt": "2026-09-24T00:00:00Z",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "OriginalInput": {
+    "id": "INP-ART-ORCHESTRATOR-001",
+    "investigationId": "ART-ORCHESTRATOR-001",
+    "testerDescription": "The values displayed in the Condition Builder Key field dropdown are severely truncated due to restricted dropdown width and overflow clipping, showing only `agentOrchestrator_1.c...` for all options. This prevents users from identifying, distinguishing, and selecting the correct runtime variables and path attributes.",
+    "reporter": "HUMAN_LEGACY_IMPORT",
+    "capturedAt": "2026-09-24T00:00:00Z",
+    "initialEvidenceIds": [
+      "EVD-ART-ORCHESTRATOR-001-01"
+    ],
+    "provenance": "HUMAN_SUPPLIED"
+  },
+  "EvidenceList": [
+    {
+      "id": "EVD-ART-ORCHESTRATOR-001-01",
+      "investigationId": "ART-ORCHESTRATOR-001",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-ORCHESTRATOR-001__condition-builder-key-dropdown-truncated__2026-09-29__01.png",
+      "canonicalFilename": "ART-ORCHESTRATOR-001__condition-builder-key-dropdown-truncated__2026-09-29__01.png",
+      "storagePath": "ART-Product-Validation/bugs/Orchestrator/ART-ORCHESTRATOR-001__condition-builder-key-dropdown-values-truncated/ART-ORCHESTRATOR-001__condition-builder-key-dropdown-truncated__2026-09-29__01.png",
+      "sha256": "3401c70b67fe2b8cf444f58e9eaef9571a5972964f094c12744510cab9d5aa6d",
+      "mimeType": "image/png",
+      "byteSize": 156364,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    }
+  ],
+  "TicketArtifact": {
+    "ticketId": "TCK-ART-ORCHESTRATOR-001-01",
+    "investigationId": "ART-ORCHESTRATOR-001",
+    "revision": 1,
+    "title": "Condition Builder Key Dropdown Values Are Truncated and Unreadable",
+    "reproSteps": "Not provided",
+    "expectedResult": "Dropdown options in the Condition Builder Key field should display full variable and path names clearly, adjusting dropdown container width to fit content (or providing text wrapping / tooltips on hover) so users can distinguish and select the appropriate key.",
+    "actualResult": "Values in the Condition Builder Key dropdown are truncated to `agentOrchestrator_1.c...` due to narrow dropdown width. Multiple distinct attributes appear visually identical, making it difficult or impossible to identify and select the intended value.",
+    "businessImpact": "Not provided",
+    "recommendedSolution": "Update the Condition Builder Key dropdown UI styling and component behavior to ensure full readability:\n\n1. Set dropdown menu width to fit content (`min-width: max-content` or expanded fixed width) with a sensible maximum width and horizontal scrolling or auto-expansion.\n2. Implement text truncation with ellipsis only when exceeding maximum container bounds, and provide native `title` or tooltip attributes showing the full variable path on hover.\n3. Ensure selected token pills and dropdown items preserve clear font sizing, padding, and high-contrast styling.\n4. Optionally support variable path shortening with smart middle-truncation or hierarchy grouping (e.g. grouping by node `agentOrchestrator_1` -> sub-properties).",
+    "module": "ORCHESTRATOR",
+    "environment": "Not provided",
+    "severity": "MEDIUM",
+    "priority": "Not provided",
+    "tags": [
+      "orchestrator"
+    ],
+    "discussion": [],
+    "provenance": "HUMAN_APPROVED",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "AuditEvent": {
+    "id": "AUD-ART-ORCHESTRATOR-001-01",
+    "investigationId": "ART-ORCHESTRATOR-001",
+    "timestamp": "2026-09-24T00:00:00Z",
+    "actor": "LEGACY_IMPORT_ADAPTER",
+    "eventType": "INVESTIGATION_CAPTURED",
+    "summary": "Imported legacy bug record ART-ORCHESTRATOR-001 from ART-Product-Validation/bugs",
+    "details": {
+      "sourceMarkdownPath": "ART-Product-Validation/bugs/Orchestrator/ART-ORCHESTRATOR-001__condition-builder-key-dropdown-values-truncated/ART-ORCHESTRATOR-001.md",
+      "rawContentSha256": "68638ce377cc078dc232e4ab115a1d619ac1c4f89519905725b1776dcbc30f41"
+    }
+  },
+  "sourceMetadata": {
+    "sourceMarkdownPath": "ART-Product-Validation/bugs/Orchestrator/ART-ORCHESTRATOR-001__condition-builder-key-dropdown-values-truncated/ART-ORCHESTRATOR-001.md",
+    "rawMarkdownContent": "# ART-ORCHESTRATOR-001 \u2014 Condition Builder Key Dropdown Values Are Truncated and Unreadable\n\n- **Canonical Bug ID:** ART-ORCHESTRATOR-001\n- **Title:** Condition Builder Key Dropdown Values Are Truncated and Unreadable\n- **Module:** ORCHESTRATOR\n- **Status:** OPEN\n- **Severity:** MEDIUM\n- **Priority:** P2\n- **Assignee:** Unassigned\n- **Environment:** Not provided\n- **Tags:** Orchestrator, Workflow-Routing, UX-Clarity, UI-Defect\n\n## Problem\n\nThe values displayed in the Condition Builder Key field dropdown are severely truncated due to restricted dropdown width and overflow clipping, showing only `agentOrchestrator_1.c...` for all options. This prevents users from identifying, distinguishing, and selecting the correct runtime variables and path attributes.\n\n## Bug\n\nThe values displayed in the Condition Builder Key field dropdown are severely truncated due to restricted dropdown width and overflow clipping, showing only `agentOrchestrator_1.c...` for all options. This prevents users from identifying, distinguishing, and selecting the correct runtime variables and path attributes.\n\n## Expected\n\nDropdown options in the Condition Builder Key field should display full variable and path names clearly, adjusting dropdown container width to fit content (or providing text wrapping / tooltips on hover) so users can distinguish and select the appropriate key.\n\n## Expected Result\n\nDropdown options in the Condition Builder Key field should display full variable and path names clearly, adjusting dropdown container width to fit content (or providing text wrapping / tooltips on hover) so users can distinguish and select the appropriate key.\n\n## Actual\n\nValues in the Condition Builder Key dropdown are truncated to `agentOrchestrator_1.c...` due to narrow dropdown width. Multiple distinct attributes appear visually identical, making it difficult or impossible to identify and select the intended value.\n\n## Actual Result\n\nValues in the Condition Builder Key dropdown are truncated to `agentOrchestrator_1.c...` due to narrow dropdown width. Multiple distinct attributes appear visually identical, making it difficult or impossible to identify and select the intended value.\n\n## Business Impact\n\nUsers cannot reliably configure routing conditions in workflow orchestrations when multiple variables share a common prefix, leading to configuration errors, misrouted workflow execution paths, and decreased developer productivity.\n\n## User Experience\n\nWhen configuring routing conditions in the Condition Builder, users open the Key dropdown and see a column of identical truncated strings (`agentOrchestrator_1.c...`), forcing guesswork or trial-and-error to select the right field.\n\n## Recommended Solution\n\nUpdate the Condition Builder Key dropdown UI styling and component behavior to ensure full readability:\n\n1. Set dropdown menu width to fit content (`min-width: max-content` or expanded fixed width) with a sensible maximum width and horizontal scrolling or auto-expansion.\n2. Implement text truncation with ellipsis only when exceeding maximum container bounds, and provide native `title` or tooltip attributes showing the full variable path on hover.\n3. Ensure selected token pills and dropdown items preserve clear font sizing, padding, and high-contrast styling.\n4. Optionally support variable path shortening with smart middle-truncation or hierarchy grouping (e.g. grouping by node `agentOrchestrator_1` -> sub-properties).\n\n## Production-Grade Fix Proposal\n\nUpdate the Condition Builder Key dropdown UI styling and component behavior to ensure full readability:\n\n### Required implementation\n\n1. Set dropdown menu width to fit content (`min-width: max-content` or expanded fixed width) with a sensible maximum width and horizontal scrolling or auto-expansion.\n2. Implement text truncation with ellipsis only when exceeding maximum container bounds, and provide native `title` or tooltip attributes showing the full variable path on hover.\n3. Ensure selected token pills and dropdown items preserve clear font sizing, padding, and high-contrast styling.\n4. Optionally support variable path shortening with smart middle-truncation or hierarchy grouping (e.g. grouping by node `agentOrchestrator_1` -> sub-properties).\n\n### Acceptance criteria\n\n- Dropdown options display the complete variable path without premature truncation.\n- Dropdown container dynamically adjusts or provides sufficient width for long variable names.\n- Full variable names are accessible via tooltip on hover if text exceeds container bounds.\n- Users can clearly identify and select distinct variables originating from the same workflow node.\n\n## Minimum Working Fix\n\nExpand the Condition Builder Key dropdown menu width (e.g., `min-width: 320px` or `width: max-content`) and add tooltip/title attributes so variable paths are fully visible and readable.\n\n## Acceptance Criteria\n\n- Dropdown options display the complete variable path without premature truncation.\n- Dropdown container dynamically adjusts or provides sufficient width for long variable names.\n- Full variable names are accessible via tooltip on hover if text exceeds container bounds.\n- Users can clearly identify and select distinct variables originating from the same workflow node.\n\n## Evidence\n\n- [ART-ORCHESTRATOR-001__condition-builder-key-dropdown-truncated__2026-09-29__01.png](ART-ORCHESTRATOR-001__condition-builder-key-dropdown-truncated__2026-09-29__01.png)\n\n## Discussion\n\nNot provided\n\n## Developer Update\n\nPending.\n\n## Retest\n\nPending.\n\n## Azure DevOps\n\n- **Work Item ID:** 68839\n- **URL:** https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68839\n- **Parent Feature:** Orchestrator\n- **Parent Feature ID:** 68806\n- **Assigned To:** Unassigned\n- **Sync Status:** SYNCED\n",
+    "ledgerRow": {
+      "bug_id": "ART-ORCHESTRATOR-001",
+      "rel_path": "bugs/Orchestrator/ART-ORCHESTRATOR-001__condition-builder-key-dropdown-values-truncated/ART-ORCHESTRATOR-001.md",
+      "name": "Condition Builder Key Dropdown Values Are Truncated and Unreadable",
+      "severity": "MEDIUM",
+      "status": "OPEN",
+      "dev_update": "",
+      "retest": ""
+    }
+  }
+}

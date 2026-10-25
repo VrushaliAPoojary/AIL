@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://art.product.resolution/schemas/research_artifact.json",
+  "title": "ResearchArtifact",
+  "description": "External research artifact preserving question, sources, observations, and ART relevance",
+  "type": "object",
+  "required": [
+    "id",
+    "investigationId",
+    "researchQuestion",
+    "triggerReason",
+    "sources",
+    "observations",
+    "relevanceToArt",
+    "possibleArtApproach",
+    "generatedTimestamp",
+    "provenance"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "investigationId": {
+      "type": "string"
+    },
+    "researchQuestion": {
+      "type": "string"
+    },
+    "triggerReason": {
+      "type": "string"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["sourceId", "sourceName", "sourceUrl"],
+        "properties": {
+          "sourceId": { "type": "string" },
+          "sourceName": { "type": "string" },
+          "sourceUrl": { "type": "string" },
+          "sourceType": { "type": ["string", "null"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "observations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["observationId", "statement", "sourceIds"],
+        "properties": {
+          "observationId": { "type": "string" },
+          "statement": { "type": "string" },
+          "sourceIds": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "relevanceToArt": {
+      "type": "string"
+    },
+    "possibleArtApproach": {
+      "type": "string"
+    },
+    "generatedTimestamp": {
+      "$ref": "common.json#/definitions/IsoTimestamp"
+    },
+    "provenance": {
+      "$ref": "common.json#/definitions/ProvenanceType",
+      "const": "AI_RECOMMENDATION"
+    }
+  },
+  "additionalProperties": false
+}

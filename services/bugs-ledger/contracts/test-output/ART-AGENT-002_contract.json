@@ -1,0 +1,124 @@
+{
+  "Investigation": {
+    "id": "ART-AGENT-002",
+    "canonicalBugId": "ART-AGENT-002",
+    "slug": "media-processing-agent-run-error-no-diagnostics",
+    "lifecyclePhase": "CONFIRMED",
+    "status": "OPEN",
+    "classification": "BUG",
+    "module": "AGENT",
+    "severity": "HIGH",
+    "priority": "Not provided",
+    "assignee": null,
+    "originalInputId": "INP-ART-AGENT-002",
+    "evidenceIds": [
+      "EVD-ART-AGENT-002-01",
+      "EVD-ART-AGENT-002-02"
+    ],
+    "aiAnalysisIds": [],
+    "researchIds": [],
+    "ticketRevisionIds": [
+      "TCK-ART-AGENT-002-01"
+    ],
+    "activeTicketRevisionId": "TCK-ART-AGENT-002-01",
+    "developerUpdateIds": [],
+    "retestIds": [],
+    "auditEventIds": [
+      "AUD-ART-AGENT-002-01"
+    ],
+    "createdAt": "2026-09-24T00:00:00Z",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "OriginalInput": {
+    "id": "INP-ART-AGENT-002",
+    "investigationId": "ART-AGENT-002",
+    "testerDescription": "The Ticket Resolution Agent fails during media execution with `AGENT_RUN_ERROR` and displays only \"The agent could not complete this request.\" Observability logs show media storage operations executing successfully before the run fails at the Agent level with \"No diagnostic message was recorded.\" The system fails to process the media input into structured output and fails to provide diagnostic details regarding the point or reason of failure.",
+    "reporter": "HUMAN_LEGACY_IMPORT",
+    "capturedAt": "2026-09-24T00:00:00Z",
+    "initialEvidenceIds": [
+      "EVD-ART-AGENT-002-01",
+      "EVD-ART-AGENT-002-02"
+    ],
+    "provenance": "HUMAN_SUPPLIED"
+  },
+  "EvidenceList": [
+    {
+      "id": "EVD-ART-AGENT-002-01",
+      "investigationId": "ART-AGENT-002",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-AGENT-002__observability-no-diagnostic-message__2026-09-29__02.png",
+      "canonicalFilename": "ART-AGENT-002__observability-no-diagnostic-message__2026-09-29__02.png",
+      "storagePath": "ART-Product-Validation/bugs/Agent Lab/ART-AGENT-002__media-processing-agent-run-error-no-diagnostics/ART-AGENT-002__observability-no-diagnostic-message__2026-09-29__02.png",
+      "sha256": "8ff9e1ddfc74043d0e9bb7483efacf6e94d2ac8c8d34cbcb3908245f9fcfb77d",
+      "mimeType": "image/png",
+      "byteSize": 103088,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    },
+    {
+      "id": "EVD-ART-AGENT-002-02",
+      "investigationId": "ART-AGENT-002",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-AGENT-002__agent-test-run-error__2026-09-29__01.png",
+      "canonicalFilename": "ART-AGENT-002__agent-test-run-error__2026-09-29__01.png",
+      "storagePath": "ART-Product-Validation/bugs/Agent Lab/ART-AGENT-002__media-processing-agent-run-error-no-diagnostics/ART-AGENT-002__agent-test-run-error__2026-09-29__01.png",
+      "sha256": "6eb35c5781f84a3829972d1666da4355e49e44c062d6022f1db83e665d984af5",
+      "mimeType": "image/png",
+      "byteSize": 145591,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    }
+  ],
+  "TicketArtifact": {
+    "ticketId": "TCK-ART-AGENT-002-01",
+    "investigationId": "ART-AGENT-002",
+    "revision": 1,
+    "title": "Agent Run Fails with Generic Error and No Diagnostics During Media Processing",
+    "reproSteps": "Not provided",
+    "expectedResult": "The Agent should process the uploaded media (image or video), extract relevant information, create a summary, and return structured output based on the configured output schema. If processing fails at any stage, ART must capture and display a clear, descriptive diagnostic error message explaining the exact reason and failing step.",
+    "actualResult": "The Agent run terminates with an error modal showing `type: agent_error_response`, `status: error`, `code: AGENT_RUN_ERROR`, and `message: The agent could not complete this request.` In Observability Conversation Explorer, the trace marks `Run failed` and `Agent error` with the description: \"This activity could not be completed. No diagnostic message was recorded.\"",
+    "businessImpact": "Not provided",
+    "recommendedSolution": "Implement robust exception handling, diagnostic logging, and error propagation across the agent multimodal execution pipeline:\n\n1. Ensure media payloads fetched by storage tools are properly validated and formatted for the selected model's multimodal API contract.\n2. Capture upstream model errors, HTTP status codes, payload limit errors, and schema parsing exceptions at each lifecycle step.\n3. Record granular diagnostic logs and error details in Observability trace spans rather than suppressing error strings.\n4. Replace the generic `AGENT_RUN_ERROR` fallback with specific error codes (e.g., `MEDIA_PAYLOAD_UNSUPPORTED`, `MODEL_INVOCATION_TIMEOUT`, `SCHEMA_VALIDATION_FAILED`) and descriptive messages in the Agent Test interface.\n5. Provide actionable remediation hints in both the UI error modal and the Observability Activity pane.",
+    "module": "AGENT",
+    "environment": "Not provided",
+    "severity": "HIGH",
+    "priority": "Not provided",
+    "tags": [
+      "agent"
+    ],
+    "discussion": [],
+    "provenance": "HUMAN_APPROVED",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "AuditEvent": {
+    "id": "AUD-ART-AGENT-002-01",
+    "investigationId": "ART-AGENT-002",
+    "timestamp": "2026-09-24T00:00:00Z",
+    "actor": "LEGACY_IMPORT_ADAPTER",
+    "eventType": "INVESTIGATION_CAPTURED",
+    "summary": "Imported legacy bug record ART-AGENT-002 from ART-Product-Validation/bugs",
+    "details": {
+      "sourceMarkdownPath": "ART-Product-Validation/bugs/Agent Lab/ART-AGENT-002__media-processing-agent-run-error-no-diagnostics/ART-AGENT-002.md",
+      "rawContentSha256": "834a9e502101e162e16288e19129244e980f4bd422204b5b64a8f316f5de3280"
+    }
+  },
+  "sourceMetadata": {
+    "sourceMarkdownPath": "ART-Product-Validation/bugs/Agent Lab/ART-AGENT-002__media-processing-agent-run-error-no-diagnostics/ART-AGENT-002.md",
+    "rawMarkdownContent": "# ART-AGENT-002 \u2014 Agent Run Fails with Generic Error and No Diagnostics During Media Processing\n\n- **Canonical Bug ID:** ART-AGENT-002\n- **Title:** Agent Run Fails with Generic Error and No Diagnostics During Media Processing\n- **Module:** AGENT\n- **Status:** OPEN\n- **Severity:** HIGH\n- **Priority:** P1\n- **Assignee:** Unassigned\n- **Environment:** Testing / InvestigationLab\n- **Tags:** Agent-Lab, Media-Processing, Observability, Error-Handling, OpenAI\n\n## Problem\n\nWhen testing the Ticket Resolution Agent with uploaded media (image or video) using the configured OpenAI GPT-5.1 Mini model, the run fails with a generic `AGENT_RUN_ERROR` (\"The agent could not complete this request.\"). In Observability, storage tools (`storage list files`, `storage get file url`) execute successfully, but execution terminates at the Agent step with \"No diagnostic message was recorded.\" Neither the Agent Test UI nor Observability provides actionable diagnostics, making it impossible to determine whether the failure stems from media retrieval, multimodal model invocation, output schema parsing, or another lifecycle phase.\n\n## Bug\n\nThe Ticket Resolution Agent fails during media execution with `AGENT_RUN_ERROR` and displays only \"The agent could not complete this request.\" Observability logs show media storage operations executing successfully before the run fails at the Agent level with \"No diagnostic message was recorded.\" The system fails to process the media input into structured output and fails to provide diagnostic details regarding the point or reason of failure.\n\n## Expected\n\nThe Agent should process the uploaded media (image or video), extract relevant information, create a summary, and return structured output based on the configured output schema. If processing fails at any stage, ART must capture and display a clear, descriptive diagnostic error message explaining the exact reason and failing step.\n\n## Expected Result\n\nThe Agent should process the uploaded media (image or video), extract relevant information, create a summary, and return structured output based on the configured output schema. If processing fails at any stage, ART must capture and display a clear, descriptive diagnostic error message explaining the exact reason and failing step.\n\n## Actual\n\nThe Agent run terminates with an error modal showing `type: agent_error_response`, `status: error`, `code: AGENT_RUN_ERROR`, and `message: The agent could not complete this request.` In Observability Conversation Explorer, the trace marks `Run failed` and `Agent error` with the description: \"This activity could not be completed. No diagnostic message was recorded.\"\n\n## Actual Result\n\nThe Agent run terminates with an error modal showing `type: agent_error_response`, `status: error`, `code: AGENT_RUN_ERROR`, and `message: The agent could not complete this request.` In Observability Conversation Explorer, the trace marks `Run failed` and `Agent error` with the description: \"This activity could not be completed. No diagnostic message was recorded.\"\n\n## Business Impact\n\nAutomated support ticket resolution workflows relying on image or video evidence cannot execute, blocking core multi-modal agent capabilities. Furthermore, developers and support engineers cannot diagnose root causes or troubleshoot runtime failures due to suppressed diagnostic messages, increasing mean time to repair and delaying production deployments.\n\n## User Experience\n\nWhen a user submits an image or video in the Agent Test interface, the agent fails with an unhelpful error badge and generic modal dialog (\"The agent could not complete this request.\"). Navigating to Observability to inspect the failure provides no additional clarity, showing only \"No diagnostic message was recorded,\" leaving the user blocked with no actionable path to resolution.\n\n## Recommended Solution\n\nImplement robust exception handling, diagnostic logging, and error propagation across the agent multimodal execution pipeline:\n\n1. Ensure media payloads fetched by storage tools are properly validated and formatted for the selected model's multimodal API contract.\n2. Capture upstream model errors, HTTP status codes, payload limit errors, and schema parsing exceptions at each lifecycle step.\n3. Record granular diagnostic logs and error details in Observability trace spans rather than suppressing error strings.\n4. Replace the generic `AGENT_RUN_ERROR` fallback with specific error codes (e.g., `MEDIA_PAYLOAD_UNSUPPORTED`, `MODEL_INVOCATION_TIMEOUT`, `SCHEMA_VALIDATION_FAILED`) and descriptive messages in the Agent Test interface.\n5. Provide actionable remediation hints in both the UI error modal and the Observability Activity pane.\n\n## Production-Grade Fix Proposal\n\nImplement robust exception handling, diagnostic logging, and error propagation across the agent multimodal execution pipeline:\n\n### Required implementation\n\n1. Catch specific exceptions across media download/presign, multimodal payload serialization, LLM invocation, and output parsing.\n2. Populate the Observability trace span `error` and `diagnostic_message` attributes with full exception details and stack traces.\n3. Map internal failure states to standardized, human-readable error messages for the client interface.\n4. Verify that the configured model (OpenAI GPT-5.1 Mini) supports the ingested media type and payload encoding.\n5. In the UI error modal, display the failed execution phase and detailed reason alongside raw JSON details.\n\n### Acceptance criteria\n\n- Uploaded image or video media is successfully processed by the agent to generate structured output conforming to the configured schema.\n- If media processing fails, the Agent Test modal displays a descriptive error message indicating the exact failure reason.\n- Observability trace tree captures and displays meaningful diagnostic messages for failed agent activities instead of \"No diagnostic message was recorded.\"\n- Tool execution, LLM invocation, and output validation phases record distinct, traceable status spans.\n\n## Minimum Working Fix\n\nCatch unhandled exceptions in the agent runner during media processing and schema parsing, record the exception message into the Observability trace span's diagnostic field, and return the descriptive error string to the user interface instead of suppressing it with a generic fallback.\n\n## Acceptance Criteria\n\n- Uploaded image or video media is successfully processed by the agent to generate structured output conforming to the configured schema.\n- If media processing fails, the Agent Test modal displays a descriptive error message indicating the exact failure reason.\n- Observability trace tree captures and displays meaningful diagnostic messages for failed agent activities instead of \"No diagnostic message was recorded.\"\n- Tool execution, LLM invocation, and output validation phases record distinct, traceable status spans.\n\n## Evidence\n\n- [ART-AGENT-002__agent-test-run-error__2026-09-29__01.png](ART-AGENT-002__agent-test-run-error__2026-09-29__01.png)\n- [ART-AGENT-002__observability-no-diagnostic-message__2026-09-29__02.png](ART-AGENT-002__observability-no-diagnostic-message__2026-09-29__02.png)\n\n## Discussion\n\nNot provided\n\n## Developer Update\n\nPending.\n\n## Retest\n\nPending.\n\n## Azure DevOps\n\n- **Work Item ID:** 68842\n- **URL:** https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68842\n- **Parent Feature:** Agent Lab\n- **Parent Feature ID:** 68783\n- **Assigned To:** Unassigned\n- **Sync Status:** SYNCED\n",
+    "ledgerRow": {
+      "bug_id": "ART-AGENT-002",
+      "rel_path": "bugs/Agent Lab/ART-AGENT-002__media-processing-agent-run-error-no-diagnostics/ART-AGENT-002.md",
+      "name": "Agent Run Fails with Generic Error and No Diagnostics During Media Processing",
+      "severity": "HIGH",
+      "status": "OPEN",
+      "dev_update": "Pending.",
+      "retest": "Pending."
+    }
+  }
+}

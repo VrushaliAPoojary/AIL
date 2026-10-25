@@ -1,0 +1,142 @@
+{
+  "Investigation": {
+    "id": "ART-TOOL-002",
+    "canonicalBugId": "ART-TOOL-002",
+    "slug": "add-builtin-row-filtering-support-supabase-database-tools",
+    "lifecyclePhase": "CONFIRMED",
+    "status": "OPEN",
+    "classification": "BUG",
+    "module": "TOOL",
+    "severity": "HIGH",
+    "priority": "Not provided",
+    "assignee": null,
+    "originalInputId": "INP-ART-TOOL-002",
+    "evidenceIds": [
+      "EVD-ART-TOOL-002-01",
+      "EVD-ART-TOOL-002-02",
+      "EVD-ART-TOOL-002-03"
+    ],
+    "aiAnalysisIds": [],
+    "researchIds": [],
+    "ticketRevisionIds": [
+      "TCK-ART-TOOL-002-01"
+    ],
+    "activeTicketRevisionId": "TCK-ART-TOOL-002-01",
+    "developerUpdateIds": [],
+    "retestIds": [],
+    "auditEventIds": [
+      "AUD-ART-TOOL-002-01"
+    ],
+    "createdAt": "2026-09-24T00:00:00Z",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "OriginalInput": {
+    "id": "INP-ART-TOOL-002",
+    "investigationId": "ART-TOOL-002",
+    "testerDescription": "",
+    "reporter": "HUMAN_LEGACY_IMPORT",
+    "capturedAt": "2026-09-24T00:00:00Z",
+    "initialEvidenceIds": [
+      "EVD-ART-TOOL-002-01",
+      "EVD-ART-TOOL-002-02",
+      "EVD-ART-TOOL-002-03"
+    ],
+    "provenance": "HUMAN_SUPPLIED"
+  },
+  "EvidenceList": [
+    {
+      "id": "EVD-ART-TOOL-002-01",
+      "investigationId": "ART-TOOL-002",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-TOOL-002__select-rows-failed-status-400-filter-expressions__2026-10-05__02.png",
+      "canonicalFilename": "ART-TOOL-002__select-rows-failed-status-400-filter-expressions__2026-10-05__02.png",
+      "storagePath": "ART-Product-Validation/bugs/Tool Builder/ART-TOOL-002__add-builtin-row-filtering-support-supabase-database-tools/ART-TOOL-002__select-rows-failed-status-400-filter-expressions__2026-10-05__02.png",
+      "sha256": "b5d8cea57898cbbfec1c0cae8664261e0a7391c446379919b58e1856a47ef015",
+      "mimeType": "image/png",
+      "byteSize": 484058,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    },
+    {
+      "id": "EVD-ART-TOOL-002-02",
+      "investigationId": "ART-TOOL-002",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-TOOL-002__update-rows-failed-status-400-parse-filter-modal__2026-10-05__01.png",
+      "canonicalFilename": "ART-TOOL-002__update-rows-failed-status-400-parse-filter-modal__2026-10-05__01.png",
+      "storagePath": "ART-Product-Validation/bugs/Tool Builder/ART-TOOL-002__add-builtin-row-filtering-support-supabase-database-tools/ART-TOOL-002__update-rows-failed-status-400-parse-filter-modal__2026-10-05__01.png",
+      "sha256": "4b60de58ea7bfad1910ffd745e64c5d588d2c2830d72d98b1b29e25307018840",
+      "mimeType": "image/png",
+      "byteSize": 259081,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    },
+    {
+      "id": "EVD-ART-TOOL-002-03",
+      "investigationId": "ART-TOOL-002",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-TOOL-002__delete-rows-failed-status-400-parse-filter__2026-10-05__03.png",
+      "canonicalFilename": "ART-TOOL-002__delete-rows-failed-status-400-parse-filter__2026-10-05__03.png",
+      "storagePath": "ART-Product-Validation/bugs/Tool Builder/ART-TOOL-002__add-builtin-row-filtering-support-supabase-database-tools/ART-TOOL-002__delete-rows-failed-status-400-parse-filter__2026-10-05__03.png",
+      "sha256": "87a61dc8d52b083a5b45d16ba7e345251e4ff97e3183895d35ac33ace1b98191",
+      "mimeType": "image/png",
+      "byteSize": 454955,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    }
+  ],
+  "TicketArtifact": {
+    "ticketId": "TCK-ART-TOOL-002-01",
+    "investigationId": "ART-TOOL-002",
+    "revision": 1,
+    "title": "Add Built-in Row Filtering Support to Supabase Database Tools",
+    "reproSteps": "Not provided",
+    "expectedResult": "Not provided",
+    "actualResult": "Not provided",
+    "businessImpact": "Not provided",
+    "recommendedSolution": "Not provided",
+    "module": "TOOL",
+    "environment": "Not provided",
+    "severity": "HIGH",
+    "priority": "Not provided",
+    "tags": [
+      "tool"
+    ],
+    "discussion": [],
+    "provenance": "HUMAN_APPROVED",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "AuditEvent": {
+    "id": "AUD-ART-TOOL-002-01",
+    "investigationId": "ART-TOOL-002",
+    "timestamp": "2026-09-24T00:00:00Z",
+    "actor": "LEGACY_IMPORT_ADAPTER",
+    "eventType": "INVESTIGATION_CAPTURED",
+    "summary": "Imported legacy bug record ART-TOOL-002 from ART-Product-Validation/bugs",
+    "details": {
+      "sourceMarkdownPath": "ART-Product-Validation/bugs/Tool Builder/ART-TOOL-002__add-builtin-row-filtering-support-supabase-database-tools/ART-TOOL-002.md",
+      "rawContentSha256": "77e3dfb4f4092ea7a8be3a18bae6d3d9d60670cf851a9a2cd67f1efb67063e65"
+    }
+  },
+  "sourceMetadata": {
+    "sourceMarkdownPath": "ART-Product-Validation/bugs/Tool Builder/ART-TOOL-002__add-builtin-row-filtering-support-supabase-database-tools/ART-TOOL-002.md",
+    "rawMarkdownContent": "# ART-TOOL-002 \u2014 Add Built-in Row Filtering Support to Supabase Database Tools\n\n- **Canonical Bug ID:** ART-TOOL-002\n- **Module:** TOOL\n- **Severity:** HIGH\n- **Priority:** P1\n- **Environment:** Testing (Procurement Exception Agent / Tool Builder / Supabase Tools / Professional Plan / InvestigationLab)\n- **Assignee:** Unassigned\n- **Tags:** Tool-Builder, Supabase, Database-Tools, Select-Rows, Update-Rows, Delete-Rows, Row-Filtering, PostgREST, Safety-Validation, P1\n- **Status:** OPEN\n- **Evidence Count:** 3\n- **Azure DevOps:** SYNCED ([#68955](https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68955))\n\n---\n\n## 1. Problem\nThe Supabase database tools (`Select Rows`, `Update Rows`, and `Delete Rows`) fail with HTTP status 400 whenever a filter is supplied to narrow the scope of the operation.\n\nWhile unfiltered `Select Rows` and single `Insert Row` operations execute successfully, any attempt to filter records using standard PostgREST syntax (e.g. `test_key=eq.ART-SUPABASE-DB-001` or `id=eq.1`) causes the tool to fail with:\n\n```text\nStep <OPERATION> failed with status 400: \"failed to parse filter (...)\" (line 1, column 1)\n```\n\nThe tools lack built-in, native structured row filtering support. Instead of providing structured filter inputs in the tool schema that automatically translate to valid backend queries, the tools expect raw filter strings that the runtime fails to parse and transmit correctly to Supabase.\n\n---\n\n## 2. Observed Behavior\n- **Select Rows with Filter Fails:** Executing `Select Rows` on table `art_connector_test` with `test_key=eq.ART-SUPABASE-DB-001` returns `status 400: \"failed to parse filter (test_key=eq.ART-SUPABASE-DB-001)\"`.\n- **Select Rows with ID Filter Fails:** Executing `Select Rows` with `id=eq.1` returns `status 400: \"failed to parse filter (id=eq.1)\"`.\n- **Update Rows with Filter Fails:** Executing `Update Rows` (`supabase_art__update_rows`) with `id=eq.1` returns `status 400: \"failed to parse filter (id=eq.1)\"`.\n- **Delete Rows with Filter Fails:** Executing `Delete Rows` (`supabase_art__delete_rows`) with `id=eq.1` returns `status 400: \"failed to parse filter (id=eq.1)\"`.\n- **Baseline Operations Pass:** Unfiltered `Select Rows` and `Insert Row` operations succeed.\n\n---\n\n## 3. Reproduction\n1. Open an Agent in Agent Lab with Supabase database tools connected under `Tool Connector`.\n2. Ensure `Select Rows`, `Update Rows`, and `Delete Rows` tools are present.\n3. Open **Agent Test** in Draft mode.\n4. Prompt the agent: `\"Use the Supabase Select Rows tool on table art_connector_test. Filter the rows using: test_key=eq.ART-SUPABASE-DB-001\"`.\n5. Observe error: `Step SELECT ROWS failed with status 400: \"failed to parse filter (test_key=eq.ART-SUPABASE-DB-001)\"`.\n6. Prompt the agent: `\"Use the Supabase Update Rows tool on table art_connector_test. Update only the row where id equals 1...\"`.\n7. Observe error: `Step UPDATE ROWS failed with status 400: \"failed to parse filter (id=eq.1)\"`.\n8. Prompt the agent: `\"Use the Supabase Delete Rows tool on table art_connector_test. Delete only the row where id equals 1...\"`.\n9. Observe error: `Step DELETE ROWS failed with status 400: \"failed to parse filter (id=eq.1)\"`.\n\n---\n\n## 4. Expected Behavior\n- Supabase database tools (`Select Rows`, `Update Rows`, `Delete Rows`) should natively support row filtering via structured parameters.\n- Tool input schemas should accept a structured filter definition:\n  ```json\n  {\n    \"filters\": [\n      {\n        \"column\": \"id\",\n        \"operator\": \"eq\",\n        \"value\": 1\n      }\n    ]\n  }\n  ```\n- The tool implementation must convert structured filters into the correct PostgREST query parameters internally (e.g. `id=eq.1`).\n- Common comparison operators must be supported: `eq`, `neq`, `gt`, `gte`, `lt`, `lte`, `like`, `ilike`, `is`, `in`.\n- `Select Rows` must return only matching records.\n- `Update Rows` must modify only matching records.\n- `Delete Rows` must remove only matching records.\n- For `Update Rows` and `Delete Rows`, filters must be strictly validated before execution; if a filter is invalid or absent without explicit bulk override, the operation must abort safely without mutating data.\n\n---\n\n## 5. Business Impact\n- **Broken Data Read/Write Flows:** Agents cannot perform targeted reads, updates, or deletions against Supabase databases, breaking core data integration capabilities.\n- **Data Safety Risk:** Without built-in safe filtering, attempting updates or deletes risks catastrophic unfiltered operations if a flawed filter fallback is executed.\n- **Enterprise Adoption Barrier:** Supabase is a primary database connector; inability to filter rows makes it unusable for production agent workflows.\n\n---\n\n## 6. User Experience\n- The agent attempts to follow user instructions to query or update a specific record, but the tool immediately crashes with an unhelpful `status 400: \"failed to parse filter (...)\"` error.\n- Users and agents are left guessing how filter syntax should be formatted, with no built-in schema guidance.\n\n---\n\n## 7. Investigation Guidance\nTrace the tool invocation and query construction pipeline:\n- **Trace Path:** `Agent tool call \u2192 tool parameter validation \u2192 filter parser/translator \u2192 Supabase/PostgREST HTTP request builder \u2192 API execution \u2192 response parsing`.\n- **Query Parameter Construction:** Inspect how the filter parameter is serialized into the HTTP request URL. Check whether filter strings are being passed as raw body parameters, headers, or improperly URL-encoded query parameters.\n- **PostgREST Specification:** PostgREST expects filters as URL query parameters in the format `?column=operator.value` (e.g. `?id=eq.1`). Verify whether the tool currently sends filters in the request body or wraps them incorrectly.\n- **Tool Schema Definition:** Inspect the OpenAPI / JSON schema definition for `supabase_art__select_rows`, `supabase_art__update_rows`, and `supabase_art__delete_rows`. Verify how the filter parameter is typed and whether it exposes structured filter fields.\n\n---\n\n## 8. Fix Requirement\nImplement built-in structured row filtering in the Supabase `Select Rows`, `Update Rows`, and `Delete Rows` tools. The tools must accept structured filter objects, translate them internally into valid PostgREST query parameters, and enforce strict safety validation before executing mutating operations.\n\n---\n\n## 9. Recommended Solution\n1. **Structured Filter Input Schema:** Update tool schemas to accept a `filters` array of objects containing `column` (string), `operator` (enum of supported PostgREST operators), and `value` (primitive or list).\n2. **Internal PostgREST Query Builder:** Translate the structured filters into standard URL query strings (e.g. `filter[0] -> ?column=eq.value`).\n3. **Operator Coverage:** Support standard operators: `eq`, `neq`, `gt`, `gte`, `lt`, `lte`, `like`, `ilike`, `is`, `in`.\n4. **Safety Guardrail on Mutations:** In `Update Rows` and `Delete Rows`, require non-empty valid filters by default. If no valid filter is present, reject the request with `UNFILTERED_MUTATION_REJECTED` unless an explicit `allow_all_rows: true` flag is provided.\n5. **Accurate Error Messaging:** When an unparseable filter or invalid column is supplied, return a clear, structured validation error before making any network call.\n\n---\n\n## 10. Minimum Working Fix\nUpdate the tool execution handler for Supabase database tools to properly format PostgREST query parameters on the outgoing HTTP request (e.g. converting `id=eq.1` to the URL query string `?id=eq.1`), safely validating that mutating operations (`update`, `delete`) never run without a verified filter expression.\n\n---\n\n## 11. Acceptance Criteria\n- [ ] `Select Rows` returns only rows matching the specified filter criteria.\n- [ ] `Update Rows` modifies only rows matching the specified filter criteria.\n- [ ] `Delete Rows` removes only rows matching the specified filter criteria.\n- [ ] Common operators (`eq`, `neq`, `gt`, `gte`, `lt`, `lte`, `like`, `ilike`, `is`, `in`) execute correctly.\n- [ ] Invalid or unparseable filter inputs return a clear HTTP 400 validation error without executing mutations.\n- [ ] Unfiltered updates and deletions are blocked by default for data safety.\n- [ ] Unfiltered `Select Rows` and `Insert Row` continue to function without regressions.\n\n---\n\n## 12. Environment\n- **Platform:** ART Agent Builder / Tool Builder / Supabase Tools\n- **Module:** Tool Builder (TOOL)\n- **Agent Workflow:** Procurement Exception Agent (`6ac3213fdfaa4ac34990c7e4`)\n- **Tools Affected:** `supabase_art__select_rows`, `supabase_art__update_rows`, `supabase_art__delete_rows`\n- **Target Table:** `art_connector_test`\n- **Environment:** Testing (InvestigationLab, Professional Plan)\n\n---\n\n## 13. Severity\n**HIGH** \u2014 Blocks all filtered database operations (querying, updating, deleting specific records) and represents a data integrity hazard.\n\n---\n\n## 14. Priority\n**P1** \u2014 Core database connector functionality defect affecting all Supabase-integrated agents.\n\n---\n\n## 15. Tags\n- `Tool-Builder`\n- `Supabase`\n- `Database-Tools`\n- `Select-Rows`\n- `Update-Rows`\n- `Delete-Rows`\n- `Row-Filtering`\n- `PostgREST`\n- `Safety-Validation`\n- `P1`\n\n---\n\n## 16. Assignee\n**Unassigned**\n\n---\n\n## 17. Evidence\n\n| File | Type | Description | SHA256 Hash | Byte Size |\n| :--- | :--- | :--- | :--- | :--- |\n| [ART-TOOL-002__update-rows-failed-status-400-parse-filter-modal__2026-10-05__01.png](file:///home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-TOOL-002__add-builtin-row-filtering-support-supabase-database-tools/ART-TOOL-002__update-rows-failed-status-400-parse-filter-modal__2026-10-05__01.png) | Screenshot | Agent result preview modal showing tool_execution_error for supabase_art__update_rows with HTTP 400: 'failed to parse filter (id=eq.1)' when attempting a filtered update operation. | `4b60de58ea7bfad1910ffd745e64c5d588d2c2830d72d98b1b29e25307018840` | 259081 bytes |\n| [ART-TOOL-002__select-rows-failed-status-400-filter-expressions__2026-10-05__02.png](file:///home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-TOOL-002__add-builtin-row-filtering-support-supabase-database-tools/ART-TOOL-002__select-rows-failed-status-400-filter-expressions__2026-10-05__02.png) | Screenshot | Agent Test chat history showing Supabase Select Rows tool failing with HTTP 400 for both 'test_key=eq.ART-SUPABASE-DB-001' and 'id=eq.1' filter queries, while connected to Procurement Exception Agent. | `b5d8cea57898cbbfec1c0cae8664261e0a7391c446379919b58e1856a47ef015` | 484058 bytes |\n| [ART-TOOL-002__delete-rows-failed-status-400-parse-filter__2026-10-05__03.png](file:///home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-TOOL-002__add-builtin-row-filtering-support-supabase-database-tools/ART-TOOL-002__delete-rows-failed-status-400-parse-filter__2026-10-05__03.png) | Screenshot | Agent Test chat history showing Supabase Delete Rows tool failing with HTTP 400: 'failed to parse filter (id=eq.1)' when attempting a targeted row deletion on table art_connector_test. | `87a61dc8d52b083a5b45d16ba7e345251e4ff97e3183895d35ac33ace1b98191` | 454955 bytes |\n\n### Evidence Visual Gallery\n\n````carousel\n![ART-TOOL-002__update-rows-failed-status-400-parse-filter-modal__2026-10-05__01.png](/home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-TOOL-002__add-builtin-row-filtering-support-supabase-database-tools/ART-TOOL-002__update-rows-failed-status-400-parse-filter-modal__2026-10-05__01.png)\n*Agent result preview modal showing tool_execution_error for supabase_art__update_rows with HTTP 400: 'failed to parse filter (id=eq.1)' when attempting a filtered update operation.*\n<!-- slide -->\n![ART-TOOL-002__select-rows-failed-status-400-filter-expressions__2026-10-05__02.png](/home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-TOOL-002__add-builtin-row-filtering-support-supabase-database-tools/ART-TOOL-002__select-rows-failed-status-400-filter-expressions__2026-10-05__02.png)\n*Agent Test chat history showing Supabase Select Rows tool failing with HTTP 400 for both 'test_key=eq.ART-SUPABASE-DB-001' and 'id=eq.1' filter queries, while connected to Procurement Exception Agent.*\n<!-- slide -->\n![ART-TOOL-002__delete-rows-failed-status-400-parse-filter__2026-10-05__03.png](/home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-TOOL-002__add-builtin-row-filtering-support-supabase-database-tools/ART-TOOL-002__delete-rows-failed-status-400-parse-filter__2026-10-05__03.png)\n*Agent Test chat history showing Supabase Delete Rows tool failing with HTTP 400: 'failed to parse filter (id=eq.1)' when attempting a targeted row deletion on table art_connector_test.*\n````\n\n---\n\n## 18. Discussion\n- **Reporter Analysis:** Unfiltered select and insert work, but any filter format fails with `status 400: \"failed to parse filter (...)\"`. This indicates that the Supabase tool adapter fails to construct valid PostgREST query parameters or expects a format that neither the agent nor the user can construct without built-in schema support.\n- **Safety Precaution:** Special emphasis is required on `Update Rows` and `Delete Rows` to ensure that failed filter parsing never falls back to an unfiltered operation, which would wipe or overwrite an entire table.\n- **Intake Validation:** All 3 evidence screenshots preserved with cryptographic SHA256 checksums and verified byte sizes. Zero Azure DevOps mutations performed during intake.\n\n---\n\n## 19. Azure DevOps\n- **Work Item ID:** 68955\n- **URL:** [https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68955](https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68955)\n- **Parent Feature:** Tool Builder\n- **Parent Feature ID:** 68807\n- **Assigned To:** Unassigned\n- **Sync Status:** SYNCED\n- **Note:** Synchronized via Harness 02 V1 to Azure DevOps.\n",
+    "ledgerRow": {
+      "bug_id": "ART-TOOL-002",
+      "rel_path": "bugs/Tool Builder/ART-TOOL-002__add-builtin-row-filtering-support-supabase-database-tools/ART-TOOL-002.md",
+      "name": "Add Built-in Row Filtering Support to Supabase Database Tools",
+      "severity": "HIGH",
+      "status": "OPEN",
+      "dev_update": "Pending.",
+      "retest": "Pending."
+    }
+  }
+}

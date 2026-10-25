@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://art.product.resolution/schemas/ai_artifact.json",
+  "title": "AIArtifact",
+  "description": "Preserved AI generation run with strict separation of facts, inferences, and recommendations",
+  "type": "object",
+  "required": [
+    "generationId",
+    "investigationId",
+    "purpose",
+    "modelIdentifier",
+    "generatedTimestamp",
+    "inputEvidenceReferences",
+    "structuredOutput",
+    "provenance"
+  ],
+  "properties": {
+    "generationId": {
+      "type": "string"
+    },
+    "investigationId": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string",
+      "enum": [
+        "CAPTURE_ANALYSIS",
+        "TICKET_DRAFTING",
+        "SOLUTION_RECOMMENDATION",
+        "RETEST_COMPARISON",
+        "SIMILARITY_CHECK"
+      ]
+    },
+    "modelIdentifier": {
+      "type": "string"
+    },
+    "generatedTimestamp": {
+      "$ref": "common.json#/definitions/IsoTimestamp"
+    },
+    "inputEvidenceReferences": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "structuredOutput": {
+      "type": "object",
+      "required": [
+        "extractedFacts",
+        "inferences",
+        "draftTicket",
+        "competitorResearchRecommendation"
+      ],
+      "properties": {
+        "extractedFacts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["field", "value", "evidenceId", "provenance"],
+            "properties": {
+              "field": { "type": "string" },
+              "value": { "type": "string" },
+              "evidenceId": { "type": "string" },
+              "boundingRegion": { "type": ["string", "null"] },
+              "provenance": {
+                "$ref": "common.json#/definitions/ProvenanceType",
+                "const": "EVIDENCE_BACKED_FACT"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "inferences": {
+          "type": "object",
+          "required": [
+            "classification",
+            "module",
+            "severity",
+            "inferredRootCause",
+            "provenance"
+          ],
+          "properties": {
+            "classification": { "$ref": "common.json#/definitions/ClassificationType" },
+            "module": { "type": "string" },
+            "severity": { "$ref": "common.json#/definitions/Severity" },
+            "inferredRootCause": { "type": "string" },
+            "provenance": {
+              "$ref": "common.json#/definitions/ProvenanceType",
+              "const": "AI_INFERENCE"
+            }
+          },
+          "additionalProperties": false
+        },
+        "draftTicket": {
+          "type": "object",
+          "required": [
+            "title",
+            "reproSteps",
+            "expectedResult",
+            "actualResult",
+            "businessImpact",
+            "recommendedSolution",
+            "provenance"
+          ],
+          "properties": {
+            "title": { "type": "string" },
+            "reproSteps": { "type": "string" },
+            "expectedResult": { "type": "string" },
+            "actualResult": { "type": "string" },
+            "businessImpact": { "type": "string" },
+            "recommendedSolution": { "type": "string" },
+            "provenance": {
+              "$ref": "common.json#/definitions/ProvenanceType",
+              "const": "AI_RECOMMENDATION"
+            }
+          },
+          "additionalProperties": false
+        },
+        "competitorResearchRecommendation": {
+          "type": "object",
+          "required": ["recommended", "reasoning"],
+          "properties": {
+            "recommended": { "type": "boolean" },
+            "reasoning": { "type": ["string", "null"] }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "optionalUsageMetadata": {
+      "type": "object",
+      "properties": {
+        "promptTokens": { "type": "integer" },
+        "completionTokens": { "type": "integer" },
+        "totalTokens": { "type": "integer" }
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "$ref": "common.json#/definitions/ProvenanceType",
+      "const": "AI_INFERENCE"
+    }
+  },
+  "additionalProperties": false
+}

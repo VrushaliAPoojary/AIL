@@ -1,0 +1,19 @@
+{
+  "fingerprint": "4e1a2f129c46e4b5563821c7ae869e8e02d9a1d080ec56abaafb6d712f2000f9",
+  "resource_id": "res_01m1bpz1pb1rskegnjrm1pcpx0",
+  "resource": {
+    "id": "res_01m1bpz1pb1rskegnjrm1pcpx0",
+    "type": "LINK",
+    "fingerprint": "4e1a2f129c46e4b5563821c7ae869e8e02d9a1d080ec56abaafb6d712f2000f9",
+    "payload": {
+      "type": "LINK",
+      "resource": {
+        "url": "https://example.com/passkey-dedup-target"
+      }
+    },
+    "created_at": "2026-08-31T10:48:41.931Z",
+    "updated_at": "2026-08-31T10:48:41.931Z"
+  },
+  "created_at": "2026-08-31T10:48:41.931Z",
+  "updated_at": "2026-08-31T10:48:41.931Z"
+}

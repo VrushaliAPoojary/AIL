@@ -1,0 +1,124 @@
+{
+  "Investigation": {
+    "id": "ART-AGENT-004",
+    "canonicalBugId": "ART-AGENT-004",
+    "slug": "agent-description-does-not-sync-both-ways-between-dashboard-and-workflow",
+    "lifecyclePhase": "CONFIRMED",
+    "status": "OPEN",
+    "classification": "BUG",
+    "module": "AGENT",
+    "severity": "MEDIUM",
+    "priority": "Not provided",
+    "assignee": null,
+    "originalInputId": "INP-ART-AGENT-004",
+    "evidenceIds": [
+      "EVD-ART-AGENT-004-01",
+      "EVD-ART-AGENT-004-02"
+    ],
+    "aiAnalysisIds": [],
+    "researchIds": [],
+    "ticketRevisionIds": [
+      "TCK-ART-AGENT-004-01"
+    ],
+    "activeTicketRevisionId": "TCK-ART-AGENT-004-01",
+    "developerUpdateIds": [],
+    "retestIds": [],
+    "auditEventIds": [
+      "AUD-ART-AGENT-004-01"
+    ],
+    "createdAt": "2026-09-24T00:00:00Z",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "OriginalInput": {
+    "id": "INP-ART-AGENT-004",
+    "investigationId": "ART-AGENT-004",
+    "testerDescription": "The Agent description fails to synchronize from the Agent Dashboard to the Agent Workflow canvas. While description updates performed within the Workflow editor propagate back to the Dashboard card, descriptions added or modified on the Agent Dashboard/Homepage do not propagate into the Workflow view, causing the Agent node on the canvas to display \"No Description added.\"",
+    "reporter": "HUMAN_LEGACY_IMPORT",
+    "capturedAt": "2026-09-24T00:00:00Z",
+    "initialEvidenceIds": [
+      "EVD-ART-AGENT-004-01",
+      "EVD-ART-AGENT-004-02"
+    ],
+    "provenance": "HUMAN_SUPPLIED"
+  },
+  "EvidenceList": [
+    {
+      "id": "EVD-ART-AGENT-004-01",
+      "investigationId": "ART-AGENT-004",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-AGENT-004__agent-workflow-no-description-added__2026-09-30__02.png",
+      "canonicalFilename": "ART-AGENT-004__agent-workflow-no-description-added__2026-09-30__02.png",
+      "storagePath": "ART-Product-Validation/bugs/Agent Lab/ART-AGENT-004__agent-description-does-not-sync-both-ways-between-dashboard-and-workflow/ART-AGENT-004__agent-workflow-no-description-added__2026-09-30__02.png",
+      "sha256": "c9925a066c339d7bdb0017e269d6ec1e99936e2aab65354b5b123cc161246e53",
+      "mimeType": "image/png",
+      "byteSize": 358698,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    },
+    {
+      "id": "EVD-ART-AGENT-004-02",
+      "investigationId": "ART-AGENT-004",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-AGENT-004__agent-dashboard-description-present__2026-09-30__01.png",
+      "canonicalFilename": "ART-AGENT-004__agent-dashboard-description-present__2026-09-30__01.png",
+      "storagePath": "ART-Product-Validation/bugs/Agent Lab/ART-AGENT-004__agent-description-does-not-sync-both-ways-between-dashboard-and-workflow/ART-AGENT-004__agent-dashboard-description-present__2026-09-30__01.png",
+      "sha256": "c4d918423cfcbfac10fa145ce108e8f3f0ccc502f62c2bdc2a2ae0675160bfe8",
+      "mimeType": "image/png",
+      "byteSize": 279680,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    }
+  ],
+  "TicketArtifact": {
+    "ticketId": "TCK-ART-AGENT-004-01",
+    "investigationId": "ART-AGENT-004",
+    "revision": 1,
+    "title": "Agent Description Does Not Sync Both Ways Between Agent Dashboard and Workflow",
+    "reproSteps": "Not provided",
+    "expectedResult": "The Agent should maintain a single authoritative description across all views. Updating the description from either the Agent Dashboard or the Agent Workflow should automatically and immediately reflect the identical description in both interfaces.",
+    "actualResult": "- Dashboard \u2192 Workflow: Description does not update. The Agent Workflow canvas displays \"No Description added.\"\n- Workflow \u2192 Dashboard: Description does update correctly.",
+    "businessImpact": "Not provided",
+    "recommendedSolution": "1. Use the same persisted Agent description field/source for both the Agent Dashboard and Agent Workflow views.\n2. Ensure the Agent Workflow initialization query fetches and populates the description from the canonical Agent entity record.\n3. If the workflow canvas maintains a separate node description property, ensure it is bidirectionally synchronized with the root agent entity description during load and save operations.\n4. Invalidate or refresh cached agent metadata in the client store whenever navigation occurs between the dashboard and workflow canvas.",
+    "module": "AGENT",
+    "environment": "Not provided",
+    "severity": "MEDIUM",
+    "priority": "Not provided",
+    "tags": [
+      "agent"
+    ],
+    "discussion": [],
+    "provenance": "HUMAN_APPROVED",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "AuditEvent": {
+    "id": "AUD-ART-AGENT-004-01",
+    "investigationId": "ART-AGENT-004",
+    "timestamp": "2026-09-24T00:00:00Z",
+    "actor": "LEGACY_IMPORT_ADAPTER",
+    "eventType": "INVESTIGATION_CAPTURED",
+    "summary": "Imported legacy bug record ART-AGENT-004 from ART-Product-Validation/bugs",
+    "details": {
+      "sourceMarkdownPath": "ART-Product-Validation/bugs/Agent Lab/ART-AGENT-004__agent-description-does-not-sync-both-ways-between-dashboard-and-workflow/ART-AGENT-004.md",
+      "rawContentSha256": "7bfb716e746eb2d8eb16ba45212fdd87bc4dbf9ecf2f0805508760a9488b89ae"
+    }
+  },
+  "sourceMetadata": {
+    "sourceMarkdownPath": "ART-Product-Validation/bugs/Agent Lab/ART-AGENT-004__agent-description-does-not-sync-both-ways-between-dashboard-and-workflow/ART-AGENT-004.md",
+    "rawMarkdownContent": "# ART-AGENT-004 \u2014 Agent Description Does Not Sync Both Ways Between Agent Dashboard and Workflow\n\n- **Canonical Bug ID:** ART-AGENT-004\n- **Title:** Agent Description Does Not Sync Both Ways Between Agent Dashboard and Workflow\n- **Module:** AGENT\n- **Status:** OPEN\n- **Severity:** MEDIUM\n- **Priority:** P2\n- **Assignee:** Unassigned\n- **Environment:** Testing (Enterprise Plan)\n- **Tags:** Agent-Lab, Agent-Dashboard, Agent-Workflow, Description-Sync, Data-Consistency\n\n## Problem\n\nThe Agent description is not synchronized correctly between the Agent Dashboard and the Agent Workflow.\n\nWhen an agent description is added or updated from the Agent Dashboard/Homepage (Agent Studio), the updated description is visible on the dashboard card (e.g. for \"Daily Work Coordinator V2\" showing \"Daily Work Coordinator V2 is a personal ...\"), but inside the Agent Workflow canvas the central agent node still displays \"No Description added.\"\n\nHowever, when the description is updated from inside the Agent Workflow, the change is reflected correctly on the Agent Dashboard.\n\nThis creates inconsistent bidirectional synchronization behavior where the same Agent has two places to view and manage its description, but only Workflow-to-Dashboard synchronization functions properly.\n\n## Bug\n\nThe Agent description fails to synchronize from the Agent Dashboard to the Agent Workflow canvas. While description updates performed within the Workflow editor propagate back to the Dashboard card, descriptions added or modified on the Agent Dashboard/Homepage do not propagate into the Workflow view, causing the Agent node on the canvas to display \"No Description added.\"\n\n## Observed Behavior\n\n- **Direction 1 (Dashboard \u2192 Workflow) [FAILED]:**\n  When an Agent description is added or modified from the Agent Studio Dashboard (e.g., setting the description for \"Daily Work Coordinator V2\" to \"Daily Work Coordinator V2 is a personal ...\"), the dashboard card reflects the description. However, opening the Agent Workflow reveals that the central Agent node on the canvas displays \"No Description added.\"\n- **Direction 2 (Workflow \u2192 Dashboard) [PASSED]:**\n  When the description is updated directly within the Agent Workflow editor, saving and returning to the Agent Dashboard correctly displays the updated description on the Agent card.\n\n## Reproduction\n\n1. Navigate to the Agent Studio homepage / Agent Dashboard (`Your agents` section).\n2. Locate or create an agent (e.g., \"Daily Work Coordinator V2\").\n3. Add or update the description from the Dashboard view (e.g. \"Daily Work Coordinator V2 is a personal ...\").\n4. Verify that the updated description appears on the Agent card under `Your agents` on the Dashboard.\n5. Open the Agent Workflow editor by clicking on the agent card.\n6. Inspect the central Agent node on the workflow canvas.\n7. Observe that the node subtitle reads \"No Description added\" instead of the description configured on the dashboard.\n8. In the Workflow editor, edit the agent description and return to the Dashboard; observe that the description does update on the dashboard card.\n\n## Expected\n\nThe Agent should maintain a single authoritative description across all views. Updating the description from either the Agent Dashboard or the Agent Workflow should automatically and immediately reflect the identical description in both interfaces.\n\n## Expected Behavior\n\nThe Agent should have a single description value. Updating the description from either the Agent Dashboard or Agent Workflow should automatically update the same description everywhere. Opening the Agent Workflow after setting a description on the Dashboard must display that description on the Agent node instead of \"No Description added.\"\n\n## Actual\n\n- Dashboard \u2192 Workflow: Description does not update. The Agent Workflow canvas displays \"No Description added.\"\n- Workflow \u2192 Dashboard: Description does update correctly.\n\n## Actual Result\n\n- Dashboard \u2192 Workflow: Description does not update. The Agent Workflow canvas displays \"No Description added.\"\n- Workflow \u2192 Dashboard: Description does update correctly.\n\n## Business Impact\n\nUsers must enter the same Agent description multiple times and are exposed to conflicting agent metadata across different screens. This creates confusion, increases friction during agent authoring and maintenance, and risks deploying agents with missing or mismatched documentation.\n\n## User Experience\n\nWhen a user provides a clear description on the Agent Dashboard to document an agent's purpose, entering the workflow canvas displays \"No Description added.\" Users assume their previous input was lost or unsaved, prompting unnecessary rework or mistrust in the platform's state persistence.\n\n## Investigation Guidance\n\nInspect how the Agent entity description is retrieved and persisted across the Agent Dashboard and the Agent Workflow editor:\n- Examine the API endpoints and payload schemas used by the Agent Dashboard update action versus the Agent Workflow settings drawer:\n  - Check whether the Dashboard writes to an entity-level field (e.g., `agent.description`), while the Workflow canvas reads from a graph-level definition field (e.g., `workflow.nodes[agent].description` or `workflow.metadata.description`).\n- Trace the workflow editor initialization and fetch routines:\n  - Verify where the canvas node component resolves the description string displayed under the agent name header.\n  - Check why it falls back to the default string \"No Description added\" when a valid description exists on the parent Agent record.\n- Check client-side caching and state synchronization:\n  - Verify whether navigation from the dashboard to the workflow canvas utilizes a stale cache that lacks the recently saved dashboard description.\n- Do not invent speculative file paths or unverified root causes; trace data flow between the dashboard agent store, the backend persistence layer, and the canvas node renderer.\n\n## Fix Requirement\n\nEstablish a single source of truth for the Agent description across both views. Updates made in either the Agent Dashboard or the Agent Workflow must persist to the same canonical property, and opening the Workflow editor must populate the Agent node with the current description rather than falling back to \"No Description added.\"\n\n## Recommended Solution\n\n1. Use the same persisted Agent description field/source for both the Agent Dashboard and Agent Workflow views.\n2. Ensure the Agent Workflow initialization query fetches and populates the description from the canonical Agent entity record.\n3. If the workflow canvas maintains a separate node description property, ensure it is bidirectionally synchronized with the root agent entity description during load and save operations.\n4. Invalidate or refresh cached agent metadata in the client store whenever navigation occurs between the dashboard and workflow canvas.\n\n## Production-Grade Fix Proposal\n\n1. Unify the data contract for agent descriptions so that both the Agent Studio Dashboard and the Workflow Editor interact with the identical field on the Agent record.\n2. In the Workflow canvas loader, map the root `agent.description` to the central Agent node's display model upon initialization.\n3. In the Dashboard agent updater, ensure any mutation updates the shared backend record and dispatches a cache invalidation event for the workflow store.\n4. Provide fallback handling so that if a node-level description is missing, the canvas automatically displays the parent entity description before resorting to \"No Description added.\"\n\n## Minimum Working Fix\n\nUpdate the Agent Workflow editor's canvas loader to read and display the Agent record's top-level description property upon opening, rather than falling back to \"No Description added\" when workflow-specific node description metadata is empty.\n\n## Acceptance Criteria\n\n- Updating an Agent description from the Agent Dashboard immediately reflects in the Agent Workflow editor upon opening.\n- Updating an Agent description from the Agent Workflow immediately reflects on the Agent Dashboard card.\n- When an Agent has a description configured on the Dashboard (e.g. \"Daily Work Coordinator V2 is a personal ...\"), opening the Agent Workflow displays that text on the central node instead of \"No Description added.\"\n- Both interfaces display the identical description value after edits in either location.\n\n## Environment\n\nTesting (Enterprise Plan)\n\n## Severity\n\nMEDIUM\n\n## Priority\n\nP2\n\n## Tags\n\n- Agent-Lab\n- Agent-Dashboard\n- Agent-Workflow\n- Description-Sync\n- Data-Consistency\n\n## Assignee\n\nUnassigned\n\n## Evidence\n\n- [ART-AGENT-004__agent-dashboard-description-present__2026-09-30__01.png](ART-AGENT-004__agent-dashboard-description-present__2026-09-30__01.png)\n- [ART-AGENT-004__agent-workflow-no-description-added__2026-09-30__02.png](ART-AGENT-004__agent-workflow-no-description-added__2026-09-30__02.png)\n\n## Discussion\n\nNot provided\n\n## Developer Update\n\nPending.\n\n## Retest\n\nPending.\n\n## Azure DevOps\n\n- **Work Item ID:** 68863\n- **URL:** https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68863\n- **Parent Feature:** Agent Lab\n- **Parent Feature ID:** 68783\n- **Assigned To:** Unassigned\n- **Sync Status:** SYNCED\n",
+    "ledgerRow": {
+      "bug_id": "ART-AGENT-004",
+      "rel_path": "bugs/Agent Lab/ART-AGENT-004__agent-description-does-not-sync-both-ways-between-dashboard-and-workflow/ART-AGENT-004.md",
+      "name": "Agent Description Does Not Sync Both Ways Between Agent Dashboard and Workflow",
+      "severity": "MEDIUM",
+      "status": "OPEN",
+      "dev_update": "Pending.",
+      "retest": "Pending."
+    }
+  }
+}

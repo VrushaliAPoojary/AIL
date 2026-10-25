@@ -1,0 +1,2739 @@
+{
+  "investigation_id": "AOI-SNOW-OPP-012",
+  "company": "Fortis Healthcare — Bengaluru",
+  "industry": "Healthcare / Hospital Operations",
+  "opportunity": "Critical Laboratory Result Notification + Closed-Loop Acknowledgement",
+  "investigation_type": "Legacy VRL",
+  "research_status": "UNVERIFIED",
+  "presentation": {
+    "investigation_summary": "Investigation journey from source checkpoints:\n\nOPP-012-01.md: > **A Fortis multispeciality hospital in Bengaluru has published evidence of a high-volume critical-result notification workflow involving 2,199 critical values, SMS notification, telephone fallback, read-back and call logging. Indian and international evidence independently demonstrates that delayed notification, provider identification and acknowledgement failures can create patient-safety risk and human escalation work. The current Fortis capability gap and unresolved workload remain unknown.**\n\n**OPP-012-01 = PASS → CONTINUE**\n\n**Next: OPP-012-02 — Exception + Human Investigation Reconstruction**\n\nOPP-012-02.md: > **Fortis Bengaluru evidence establishes a high-volume critical-result notification workflow using telephone, SMS and read-back. Broader closed-loop evidence establishes that failed acknowledgement can create provider-identification, follow-up, escalation and closure work. The exact current Fortis residual workload and system boundary remain unverified.**\n\n**OPP-012-02 = PASS → HIGH-CONSEQUENCE EXCEPTION PATH SUPPORTED**\n\n**Next: OPP-012-03 — Human Effort / Pain Quantification**\n\nOPP-012-03.md: > **The Fortis Bengaluru evidence establishes meaningful critical-result workflow volume, while Indian and multi-hospital research quantifies notification effort and demonstrates that failed communication can create escalation work. Labour savings alone may not be sufficient to support a strong commercial opportunity. The decisive value question is whether unresolved acknowledgement/escalation failures are frequent and consequential enough to justify closed-loop automation.**\n\n**OPP-012-03 = PASS → HIGH-CONSEQUENCE / TIME-CRITICAL EFFORT SIGNAL**\n\n**Next: OPP-012-04 — Direct Operational Evidence / Pain Validation**\n\nOPP-012-04.md: > **The evidence establishes a real Fortis Bengaluru critical-result workflow and a strong industry-wide pattern of notification failure, acknowledgement requirements and escalation. It does not establish the current Fortis operational burden or capability gap. Therefore OPP-012 should move to primary validation rather than additional speculative desk research.**\n\n**OPP-012-04 = CONDITIONAL PASS → PRIMARY VALIDATION JUSTIFIED**\n\n**OPP-012 is now ready for primary operational validation.**",
+    "key_findings": [
+      {
+        "id": "KF-012-01",
+        "statement": "OPP-012-01 — Workflow Discovery: > **A Fortis multispeciality hospital in Bengaluru has published evidence of a high-volume critical-result notification workflow involving 2,199 critical values, SMS notification, telephone fallback, read-back and call logging. Indian and international evidence independently demonstrates that delayed notification, provider identification and acknowledgement failures can create patient-safety risk and human escalation work. The current Fortis capability gap and unresolved workload remain unknown.**\n\n**OPP-012-01 = PASS → CONTINUE**\n\n**Next: OPP-012-02 — Exception + Human Investigation Reconstruction**",
+        "classification": "EVIDENCE",
+        "source_refs": [
+          "EV-012-001",
+          "EV-012-002",
+          "EV-012-003",
+          "EV-012-004",
+          "EV-012-005",
+          "EV-012-006",
+          "EV-012-007",
+          "EV-012-008"
+        ]
+      },
+      {
+        "id": "KF-012-02",
+        "statement": "OPP-012-02 — Exception + Human Investigation Reconstruction: > **Fortis Bengaluru evidence establishes a high-volume critical-result notification workflow using telephone, SMS and read-back. Broader closed-loop evidence establishes that failed acknowledgement can create provider-identification, follow-up, escalation and closure work. The exact current Fortis residual workload and system boundary remain unverified.**\n\n**OPP-012-02 = PASS → HIGH-CONSEQUENCE EXCEPTION PATH SUPPORTED**\n\n**Next: OPP-012-03 — Human Effort / Pain Quantification**",
+        "classification": "CLAIM",
+        "source_refs": [
+          "EV-012-009",
+          "EV-012-010",
+          "EV-012-011",
+          "EV-012-012",
+          "EV-012-013",
+          "EV-012-014",
+          "EV-012-015"
+        ]
+      },
+      {
+        "id": "KF-012-03",
+        "statement": "OPP-012-03 — Human Effort / Pain Quantification: > **The Fortis Bengaluru evidence establishes meaningful critical-result workflow volume, while Indian and multi-hospital research quantifies notification effort and demonstrates that failed communication can create escalation work. Labour savings alone may not be sufficient to support a strong commercial opportunity. The decisive value question is whether unresolved acknowledgement/escalation failures are frequent and consequential enough to justify closed-loop automation.**\n\n**OPP-012-03 = PASS → HIGH-CONSEQUENCE / TIME-CRITICAL EFFORT SIGNAL**\n\n**Next: OPP-012-04 — Direct Operational Evidence / Pain Validation**",
+        "classification": "CLAIM",
+        "source_refs": [
+          "EV-012-016",
+          "EV-012-017",
+          "EV-012-018",
+          "EV-012-019",
+          "EV-012-020",
+          "EV-012-021",
+          "EV-012-022"
+        ]
+      },
+      {
+        "id": "KF-012-04",
+        "statement": "OPP-012-04 — Direct Operational Evidence / Pain Validation: > **The evidence establishes a real Fortis Bengaluru critical-result workflow and a strong industry-wide pattern of notification failure, acknowledgement requirements and escalation. It does not establish the current Fortis operational burden or capability gap. Therefore OPP-012 should move to primary validation rather than additional speculative desk research.**\n\n**OPP-012-04 = CONDITIONAL PASS → PRIMARY VALIDATION JUSTIFIED**\n\n**OPP-012 is now ready for primary operational validation.**",
+        "classification": "DECISION",
+        "source_refs": [
+          "EV-012-023",
+          "EV-012-024",
+          "EV-012-025",
+          "EV-012-026",
+          "EV-012-027",
+          "EV-012-028",
+          "EV-012-029"
+        ]
+      }
+    ]
+  },
+  "decision": {
+    "decision": "**CONDITIONAL PASS → Primary validation justified; company pain not yet proven**",
+    "reason": "> **The evidence establishes a real Fortis Bengaluru critical-result workflow and a strong industry-wide pattern of notification failure, acknowledgement requirements and escalation. It does not establish the current Fortis operational burden or capability gap. Therefore OPP-012 should move to primary validation rather than additional speculative desk research.**\n\n**OPP-012-04 = CONDITIONAL PASS → PRIMARY VALIDATION JUSTIFIED**\n\n**OPP-012 is now ready for primary operational validation.**",
+    "reusable_intelligence": [
+      {
+        "id": "RI-012-001",
+        "type": "WORKFLOW_PATTERN",
+        "title": "Workflow Discovery: Critical Laboratory Result Notification + Closed-Loop Acknowledgement",
+        "domain": "Healthcare / Hospital Operations",
+        "description": "> **A Fortis multispeciality hospital in Bengaluru has published evidence of a high-volume critical-result notification workflow involving 2,199 critical values, SMS notification, telephone fallback, read-back and call logging. Indian and international evidence independently demonstrates that delayed notification, provider identification and acknowledgement failures can create patient-safety risk and human escalation work. The current Fortis capability gap and unresolved workload remain unknown.**\n\n**OPP-012-01 = PASS → CONTINUE**\n\n**Next: OPP-012-02 — Exception + Human Investigation Reconstruction**",
+        "lesson": "Preserve the source boundary: current capability, human effort, and ROI remain unknown where the source says so.",
+        "evidence_status": "VERIFIED",
+        "status": "ACTIVE",
+        "confidence": "MEDIUM",
+        "reuse_potential": "HIGH",
+        "applications": [
+          "Healthcare hospital operations"
+        ],
+        "source_checkpoint": "CP-OPP-012-01",
+        "source_refs": [
+          "EV-012-001",
+          "EV-012-002",
+          "EV-012-003",
+          "EV-012-004",
+          "EV-012-005",
+          "EV-012-006",
+          "EV-012-007",
+          "EV-012-008"
+        ],
+        "tags": [
+          "source-supported",
+          "legacy-vrl"
+        ],
+        "provenance": {
+          "source_file": "OPP-012-01.md",
+          "section": "Integrity Statement",
+          "line_start": 610,
+          "line_end": 617
+        }
+      },
+      {
+        "id": "RI-012-002",
+        "type": "STRATEGY_PATTERN",
+        "title": "Exception + Human Investigation Reconstruction: Critical Laboratory Result Notification + Closed-Loop Acknowledgement",
+        "domain": "Healthcare / Hospital Operations",
+        "description": "> **Fortis Bengaluru evidence establishes a high-volume critical-result notification workflow using telephone, SMS and read-back. Broader closed-loop evidence establishes that failed acknowledgement can create provider-identification, follow-up, escalation and closure work. The exact current Fortis residual workload and system boundary remain unverified.**\n\n**OPP-012-02 = PASS → HIGH-CONSEQUENCE EXCEPTION PATH SUPPORTED**\n\n**Next: OPP-012-03 — Human Effort / Pain Quantification**",
+        "lesson": "Preserve the source boundary: current capability, human effort, and ROI remain unknown where the source says so.",
+        "evidence_status": "VERIFIED",
+        "status": "ACTIVE",
+        "confidence": "MEDIUM",
+        "reuse_potential": "HIGH",
+        "applications": [
+          "Healthcare hospital operations"
+        ],
+        "source_checkpoint": "CP-OPP-012-02",
+        "source_refs": [
+          "EV-012-009",
+          "EV-012-010",
+          "EV-012-011",
+          "EV-012-012",
+          "EV-012-013",
+          "EV-012-014",
+          "EV-012-015"
+        ],
+        "tags": [
+          "source-supported",
+          "legacy-vrl"
+        ],
+        "provenance": {
+          "source_file": "OPP-012-02.md",
+          "section": "Integrity Statement",
+          "line_start": 751,
+          "line_end": 758
+        }
+      },
+      {
+        "id": "RI-012-003",
+        "type": "METRIC_PATTERN",
+        "title": "Human Effort / Pain Quantification: Critical Laboratory Result Notification + Closed-Loop Acknowledgement",
+        "domain": "Healthcare / Hospital Operations",
+        "description": "> **The Fortis Bengaluru evidence establishes meaningful critical-result workflow volume, while Indian and multi-hospital research quantifies notification effort and demonstrates that failed communication can create escalation work. Labour savings alone may not be sufficient to support a strong commercial opportunity. The decisive value question is whether unresolved acknowledgement/escalation failures are frequent and consequential enough to justify closed-loop automation.**\n\n**OPP-012-03 = PASS → HIGH-CONSEQUENCE / TIME-CRITICAL EFFORT SIGNAL**\n\n**Next: OPP-012-04 — Direct Operational Evidence / Pain Validation**",
+        "lesson": "Preserve the source boundary: current capability, human effort, and ROI remain unknown where the source says so.",
+        "evidence_status": "VERIFIED",
+        "status": "ACTIVE",
+        "confidence": "MEDIUM",
+        "reuse_potential": "HIGH",
+        "applications": [
+          "Healthcare hospital operations"
+        ],
+        "source_checkpoint": "CP-OPP-012-03",
+        "source_refs": [
+          "EV-012-016",
+          "EV-012-017",
+          "EV-012-018",
+          "EV-012-019",
+          "EV-012-020",
+          "EV-012-021",
+          "EV-012-022"
+        ],
+        "tags": [
+          "source-supported",
+          "legacy-vrl"
+        ],
+        "provenance": {
+          "source_file": "OPP-012-03.md",
+          "section": "Integrity Statement",
+          "line_start": 646,
+          "line_end": 653
+        }
+      },
+      {
+        "id": "RI-012-004",
+        "type": "DECISION_PATTERN",
+        "title": "Direct Operational Evidence / Pain Validation: Critical Laboratory Result Notification + Closed-Loop Acknowledgement",
+        "domain": "Healthcare / Hospital Operations",
+        "description": "> **The evidence establishes a real Fortis Bengaluru critical-result workflow and a strong industry-wide pattern of notification failure, acknowledgement requirements and escalation. It does not establish the current Fortis operational burden or capability gap. Therefore OPP-012 should move to primary validation rather than additional speculative desk research.**\n\n**OPP-012-04 = CONDITIONAL PASS → PRIMARY VALIDATION JUSTIFIED**\n\n**OPP-012 is now ready for primary operational validation.**",
+        "lesson": "Preserve the source boundary: current capability, human effort, and ROI remain unknown where the source says so.",
+        "evidence_status": "PARTIAL",
+        "status": "ACTIVE",
+        "confidence": "MEDIUM",
+        "reuse_potential": "HIGH",
+        "applications": [
+          "Healthcare hospital operations"
+        ],
+        "source_checkpoint": "CP-OPP-012-04",
+        "source_refs": [
+          "EV-012-023",
+          "EV-012-024",
+          "EV-012-025",
+          "EV-012-026",
+          "EV-012-027",
+          "EV-012-028",
+          "EV-012-029"
+        ],
+        "tags": [
+          "source-supported",
+          "legacy-vrl"
+        ],
+        "provenance": {
+          "source_file": "OPP-012-04.md",
+          "section": "Integrity Statement",
+          "line_start": 589,
+          "line_end": 596
+        }
+      }
+    ],
+    "provenance": {
+      "source_file": "OPP-012-04.md",
+      "section": "Integrity Statement",
+      "line_start": 595,
+      "line_end": 595
+    }
+  },
+  "primary_question": "The ???? is the capability boundary that must be investigated.",
+  "sources": [
+    {
+      "id": "SRC-FILE-OPP-012-OPP-012-01",
+      "title": "OPP-012-01.md",
+      "url": "opportunities/Healthcare_and_Pharmaceuticals/fortis_healthcare_bengaluru/OPP-012-01.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": [
+        "CP-OPP-012-01"
+      ]
+    },
+    {
+      "id": "SRC-FILE-OPP-012-OPP-012-02",
+      "title": "OPP-012-02.md",
+      "url": "opportunities/Healthcare_and_Pharmaceuticals/fortis_healthcare_bengaluru/OPP-012-02.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": [
+        "CP-OPP-012-02"
+      ]
+    },
+    {
+      "id": "SRC-FILE-OPP-012-OPP-012-03",
+      "title": "OPP-012-03.md",
+      "url": "opportunities/Healthcare_and_Pharmaceuticals/fortis_healthcare_bengaluru/OPP-012-03.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": [
+        "CP-OPP-012-03"
+      ]
+    },
+    {
+      "id": "SRC-FILE-OPP-012-OPP-012-04",
+      "title": "OPP-012-04.md",
+      "url": "opportunities/Healthcare_and_Pharmaceuticals/fortis_healthcare_bengaluru/OPP-012-04.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": [
+        "CP-OPP-012-04"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-012-64EC6099",
+      "title": "Official Fortis Hospital CG Road",
+      "url": "https://www.fortishealthcare.com/location/fortis-hospital-cg-road-bangalore",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-012-01"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-012-C0F3C064",
+      "title": "Panacea Journal of Medical Sciences — Fortis Bengaluru Critical Value Study",
+      "url": "https://newp.pjms.in/index.php/pjms/article/view/817",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-012-01",
+        "CP-OPP-012-02",
+        "CP-OPP-012-03",
+        "CP-OPP-012-04"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-012-9EE779BD",
+      "title": "Study of Variables Affecting Critical Value Notification — PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25646047/",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-012-01",
+        "CP-OPP-012-04"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-012-20DB4D67",
+      "title": "Quality Tools and Strategy for Critical Alerts — PMC",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9763056/",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-012-01",
+        "CP-OPP-012-03"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-012-90B622EF",
+      "title": "Quality Improvement in Critical Value Delivery — Oxford Academic",
+      "url": "https://academic.oup.com/jalm/article/6/4/985/6255453",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-012-01",
+        "CP-OPP-012-02",
+        "CP-OPP-012-04"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-012-3AB21D57",
+      "title": "Closed-loop communication using provider-team smartphones — PMC",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8442100/",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-012-01",
+        "CP-OPP-012-02"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-012-84EB8DD4",
+      "title": "Evaluation of computerized notification system — PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19228648/",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-012-01"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-012-20791528",
+      "title": "Push notifications for critical lab results — PubMed",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37600076/",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-012-01"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-012-09D96A27",
+      "title": "Panacea Journal PDF",
+      "url": "https://distantreader.org/stacks/journals/panacea/panacea-1647.pdf",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-012-02"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-012-6F65123A",
+      "title": "PMC — Closed-Loop Critical Value Notification",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7031628/",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-012-02"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-012-C8997E8C",
+      "title": "American Journal of Clinical Pathology — Critical Value Escalation",
+      "url": "https://academic.oup.com/ajcp/article/163/1/97/7739679",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-012-02",
+        "CP-OPP-012-03",
+        "CP-OPP-012-04"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-012-9D957648",
+      "title": "ResearchGate — ALERTS Closed-Loop Reporting System",
+      "url": "https://www.researchgate.net/publication/40812384_Implementation_of_a_Closed-Loop_Reporting_System_for_Critical_Values_and_Clinical_Communication_in_Compliance_with_Goals_of_The_Joint_Commission",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-012-02"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-012-5E16A762",
+      "title": "PMC — Study of Variables Affecting Critical Value Notification",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4310845/",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-012-03",
+        "CP-OPP-012-04"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-012-940CFAD2",
+      "title": "Archives of Pathology & Laboratory Medicine — CAP Q-Probes",
+      "url": "https://meridian.allenpress.com/aplm/article/132/12/1862/460366/Notification-of-Critical-Results-A-College-of",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-012-03"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-012-14E05EA0",
+      "title": "PMC — Automated Notification and Call Centers Systematic Review",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4518392/",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-012-03"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-012-C0438A3F",
+      "title": "PLOS One — Critical Laboratory Value Reporting and Patient Management",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0324594",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-012-03"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-012-0ED05718",
+      "title": "Fortis Hospital Bengaluru — Official",
+      "url": "https://www.fortishealthcare.com/",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-012-04"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-012-6300B7C6",
+      "title": "ResearchGate — Fortis Bengaluru Critical Value Analysis",
+      "url": "https://www.researchgate.net/publication/362766215_A_study_of_critical_value_analysis_at_hematology_and_biochemistry_sections_of_laboratory_in_a_multispeciality_hospital",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-012-04"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-012-3998AFCB",
+      "title": "PMC — Consensus Statement for High-Risk Laboratory Results",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4745612/",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-012-04"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "CP-OPP-012-01",
+      "title": "OPP-012-01 — Workflow Discovery",
+      "status": "PASS",
+      "investigation_question": "The ???? is the capability boundary that must be investigated.",
+      "tested": "OPP-012-01 — Workflow Discovery",
+      "found": "> **A Fortis multispeciality hospital in Bengaluru has published evidence of a high-volume critical-result notification workflow involving 2,199 critical values, SMS notification, telephone fallback, read-back and call logging. Indian and international evidence independently demonstrates that delayed notification, provider identification and acknowledgement failures can create patient-safety risk and human escalation work. The current Fortis capability gap and unresolved workload remain unknown.**\n\n**OPP-012-01 = PASS → CONTINUE**\n\n**Next: OPP-012-02 — Exception + Human Investigation Reconstruction**",
+      "what_changed": "**PASS → High-consequence, repeatable workflow target**",
+      "resulting_state": "**PASS → High-consequence, repeatable workflow target**",
+      "evidence_refs": [
+        "EV-012-001",
+        "EV-012-002",
+        "EV-012-003",
+        "EV-012-004",
+        "EV-012-005",
+        "EV-012-006",
+        "EV-012-007",
+        "EV-012-008"
+      ],
+      "source_refs": [
+        "SRC-FILE-OPP-012-OPP-012-01",
+        "SRC-EXT-OPP-012-64EC6099",
+        "SRC-EXT-OPP-012-C0F3C064",
+        "SRC-EXT-OPP-012-9EE779BD",
+        "SRC-EXT-OPP-012-20DB4D67",
+        "SRC-EXT-OPP-012-90B622EF",
+        "SRC-EXT-OPP-012-3AB21D57",
+        "SRC-EXT-OPP-012-84EB8DD4",
+        "SRC-EXT-OPP-012-20791528"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "Checkpoint",
+        "line_start": 1,
+        "line_end": 616
+      }
+    },
+    {
+      "id": "CP-OPP-012-02",
+      "title": "OPP-012-02 — Exception + Human Investigation Reconstruction",
+      "status": "PASS",
+      "investigation_question": "When a critical laboratory result cannot be successfully communicated and acknowledged through the normal notification path, what human investigation, fallback communication and escalation work is required before the case can close?",
+      "tested": "OPP-012-02 — Exception + Human Investigation Reconstruction",
+      "found": "> **Fortis Bengaluru evidence establishes a high-volume critical-result notification workflow using telephone, SMS and read-back. Broader closed-loop evidence establishes that failed acknowledgement can create provider-identification, follow-up, escalation and closure work. The exact current Fortis residual workload and system boundary remain unverified.**\n\n**OPP-012-02 = PASS → HIGH-CONSEQUENCE EXCEPTION PATH SUPPORTED**\n\n**Next: OPP-012-03 — Human Effort / Pain Quantification**",
+      "what_changed": "**PASS → High-consequence exception path supported; continue**",
+      "resulting_state": "**PASS → High-consequence exception path supported; continue**",
+      "evidence_refs": [
+        "EV-012-009",
+        "EV-012-010",
+        "EV-012-011",
+        "EV-012-012",
+        "EV-012-013",
+        "EV-012-014",
+        "EV-012-015"
+      ],
+      "source_refs": [
+        "SRC-FILE-OPP-012-OPP-012-02",
+        "SRC-EXT-OPP-012-C0F3C064",
+        "SRC-EXT-OPP-012-09D96A27",
+        "SRC-EXT-OPP-012-6F65123A",
+        "SRC-EXT-OPP-012-3AB21D57",
+        "SRC-EXT-OPP-012-C8997E8C",
+        "SRC-EXT-OPP-012-90B622EF",
+        "SRC-EXT-OPP-012-9D957648"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "Checkpoint",
+        "line_start": 1,
+        "line_end": 757
+      }
+    },
+    {
+      "id": "CP-OPP-012-03",
+      "title": "OPP-012-03 — Human Effort / Pain Quantification",
+      "status": "PASS",
+      "investigation_question": "How much human effort can be defensibly associated with critical-result notification, failed contact and escalation, without inventing a current Fortis failure rate?",
+      "tested": "OPP-012-03 — Human Effort / Pain Quantification",
+      "found": "> **The Fortis Bengaluru evidence establishes meaningful critical-result workflow volume, while Indian and multi-hospital research quantifies notification effort and demonstrates that failed communication can create escalation work. Labour savings alone may not be sufficient to support a strong commercial opportunity. The decisive value question is whether unresolved acknowledgement/escalation failures are frequent and consequential enough to justify closed-loop automation.**\n\n**OPP-012-03 = PASS → HIGH-CONSEQUENCE / TIME-CRITICAL EFFORT SIGNAL**\n\n**Next: OPP-012-04 — Direct Operational Evidence / Pain Validation**",
+      "what_changed": "**PASS → High-consequence, time-critical effort signal**",
+      "resulting_state": "**PASS → High-consequence, time-critical effort signal**",
+      "evidence_refs": [
+        "EV-012-016",
+        "EV-012-017",
+        "EV-012-018",
+        "EV-012-019",
+        "EV-012-020",
+        "EV-012-021",
+        "EV-012-022"
+      ],
+      "source_refs": [
+        "SRC-FILE-OPP-012-OPP-012-03",
+        "SRC-EXT-OPP-012-5E16A762",
+        "SRC-EXT-OPP-012-940CFAD2",
+        "SRC-EXT-OPP-012-14E05EA0",
+        "SRC-EXT-OPP-012-C8997E8C",
+        "SRC-EXT-OPP-012-20DB4D67",
+        "SRC-EXT-OPP-012-C0438A3F",
+        "SRC-EXT-OPP-012-C0F3C064"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "Checkpoint",
+        "line_start": 1,
+        "line_end": 652
+      }
+    },
+    {
+      "id": "CP-OPP-012-04",
+      "title": "OPP-012-04 — Direct Operational Evidence / Pain Validation",
+      "status": "CONDITIONAL_PASS",
+      "investigation_question": "Is there enough direct operational evidence to establish that the Fortis Bengaluru workflow currently contains a material unresolved critical-result communication burden that should be automated?",
+      "tested": "OPP-012-04 — Direct Operational Evidence / Pain Validation",
+      "found": "> **The evidence establishes a real Fortis Bengaluru critical-result workflow and a strong industry-wide pattern of notification failure, acknowledgement requirements and escalation. It does not establish the current Fortis operational burden or capability gap. Therefore OPP-012 should move to primary validation rather than additional speculative desk research.**\n\n**OPP-012-04 = CONDITIONAL PASS → PRIMARY VALIDATION JUSTIFIED**\n\n**OPP-012 is now ready for primary operational validation.**",
+      "what_changed": "**CONDITIONAL PASS → Primary validation justified; company pain not yet proven**",
+      "resulting_state": "**CONDITIONAL PASS → Primary validation justified; company pain not yet proven**",
+      "evidence_refs": [
+        "EV-012-023",
+        "EV-012-024",
+        "EV-012-025",
+        "EV-012-026",
+        "EV-012-027",
+        "EV-012-028",
+        "EV-012-029"
+      ],
+      "source_refs": [
+        "SRC-FILE-OPP-012-OPP-012-04",
+        "SRC-EXT-OPP-012-0ED05718",
+        "SRC-EXT-OPP-012-C0F3C064",
+        "SRC-EXT-OPP-012-6300B7C6",
+        "SRC-EXT-OPP-012-5E16A762",
+        "SRC-EXT-OPP-012-C8997E8C",
+        "SRC-EXT-OPP-012-3998AFCB",
+        "SRC-EXT-OPP-012-9EE779BD",
+        "SRC-EXT-OPP-012-90B622EF"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "Checkpoint",
+        "line_start": 1,
+        "line_end": 595
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "EV-012-001",
+      "statement": "### E-001 — Fortis Bengaluru Company-Linked Study\n\n[Panacea Journal — Critical Value Analysis at Fortis Multispeciality Hospital, Bangalore](https://newp.pjms.in/index.php/pjms/article/view/817)\n\n**Evidence:** 75,156 tests; 2,199 critical values; emergency 55.7%; SMS + telephone; SMS failure fallback; read-back and call logging.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-012-C0F3C064",
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "E-001 — Fortis Bengaluru Company-Linked Study",
+        "line_start": 474,
+        "line_end": 478
+      }
+    },
+    {
+      "id": "EV-012-002",
+      "statement": "### E-002 — Indian Critical-Value Notification Study\n\n[PubMed — Variables Affecting Critical Value Notification](https://pubmed.ncbi.nlm.nih.gov/25646047/)\n\n**Evidence:** 1,187 critical values; 64.61% notified 30–120 minutes after sample receipt; caregiver identification/contact difficulties.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-012-9EE779BD",
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "E-002 — Indian Critical-Value Notification Study",
+        "line_start": 480,
+        "line_end": 484
+      }
+    },
+    {
+      "id": "EV-012-003",
+      "statement": "### E-003 — Indian Quality Improvement\n\n[PMC — Quality Tools and Strategy for Critical Alerts](https://pmc.ncbi.nlm.nih.gov/articles/PMC9763056/)\n\n**Evidence:** delayed/failed notification and process/root-cause analysis in Delhi tertiary hospital.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-012-20DB4D67",
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "E-003 — Indian Quality Improvement",
+        "line_start": 486,
+        "line_end": 490
+      }
+    },
+    {
+      "id": "EV-012-004",
+      "statement": "### E-004 — Delay Root Causes\n\n[Oxford Academic — Quality Improvement in Critical Value Delivery](https://academic.oup.com/jalm/article/6/4/985/6255453)\n\n**Evidence:** underused escalation protocols, delayed calls and difficulty identifying/contacting providers.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-012-90B622EF",
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "E-004 — Delay Root Causes",
+        "line_start": 492,
+        "line_end": 496
+      }
+    },
+    {
+      "id": "EV-012-005",
+      "statement": "### E-005 — Closed-Loop Communication\n\n[PMC — Provider-Team Smartphone Critical-Result Communication](https://pmc.ncbi.nlm.nih.gov/articles/PMC8442100/)\n\n**Evidence:** difficulty identifying appropriate providers and obtaining timely acknowledgement; smartphone workflow substantially improved successful notification.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-012-3AB21D57",
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "E-005 — Closed-Loop Communication",
+        "line_start": 498,
+        "line_end": 502
+      }
+    },
+    {
+      "id": "EV-012-006",
+      "statement": "### E-006 — Computerized Notification\n\n[PubMed — Computerized Critical-Value Notification](https://pubmed.ncbi.nlm.nih.gov/19228648/)\n\n**Evidence:** automated communication improved notification timeliness and likelihood of reaching physicians.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-012-84EB8DD4",
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "E-006 — Computerized Notification",
+        "line_start": 504,
+        "line_end": 508
+      }
+    },
+    {
+      "id": "EV-012-007",
+      "statement": "### E-007 — Push Notification Efficiency\n\n[PubMed — Push Notifications for Critical Lab Results](https://pubmed.ncbi.nlm.nih.gov/37600076/)\n\n**Evidence:** electronic acknowledgement saved laboratory technicians an average of 10 minutes per acknowledged result compared with existing workflow.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-012-20791528",
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "E-007 — Push Notification Efficiency",
+        "line_start": 510,
+        "line_end": 514
+      }
+    },
+    {
+      "id": "EV-012-008",
+      "statement": "### E-008 — Company Scale Candidate\n\n[Official Fortis Hospital CG Road Bengaluru](https://www.fortishealthcare.com/location/fortis-hospital-cg-road-bangalore)\n\n**Evidence:** 119 beds, 36 ICU beds, 8 HDU beds, NABH-accredited hospital.\n\n---",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-012-64EC6099",
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "E-008 — Company Scale Candidate",
+        "line_start": 516,
+        "line_end": 522
+      }
+    },
+    {
+      "id": "EV-012-009",
+      "statement": "### E-001 — Fortis Bengaluru Study\n\n[Panacea Journal — Critical Value Analysis](https://newp.pjms.in/index.php/pjms/article/view/817)\n\n**Evidence:** 2,199 critical values; 75,156 tests; telephone + SMS notification; read-back; critical-value notification workflow.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-012-C0F3C064",
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "E-001 — Fortis Bengaluru Study",
+        "line_start": 626,
+        "line_end": 630
+      }
+    },
+    {
+      "id": "EV-012-010",
+      "statement": "### E-002 — Fortis Study PDF\n\n[Panacea Journal PDF](https://distantreader.org/stacks/journals/panacea/panacea-1647.pdf)\n\n**Evidence:** Fortis multispeciality hospital Bangalore; emergency/IPD/OPD distribution; critical-value workflow details.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-012-09D96A27",
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "E-002 — Fortis Study PDF",
+        "line_start": 632,
+        "line_end": 636
+      }
+    },
+    {
+      "id": "EV-012-011",
+      "statement": "### E-003 — Closed-Loop Critical-Value Management\n\n[PMC — Closed-Loop Critical Value Notification](https://pmc.ncbi.nlm.nih.gov/articles/PMC7031628/)\n\n**Evidence:** acknowledgement, timely acknowledgement, clinician response, escalation and five quality indicators across the full lifecycle.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-012-6F65123A",
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "E-003 — Closed-Loop Critical-Value Management",
+        "line_start": 638,
+        "line_end": 642
+      }
+    },
+    {
+      "id": "EV-012-012",
+      "statement": "### E-004 — Closed-Loop Provider Communication\n\n[PMC — Provider-Team Smartphone Communication](https://pmc.ncbi.nlm.nih.gov/articles/PMC8442100/)\n\n**Evidence:** provider identification difficulty and acknowledgement failure; closed-loop intervention.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-012-3AB21D57",
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "E-004 — Closed-Loop Provider Communication",
+        "line_start": 644,
+        "line_end": 648
+      }
+    },
+    {
+      "id": "EV-012-013",
+      "statement": "### E-005 — Multi-Hospital Escalation\n\n[American Journal of Clinical Pathology — Critical Value Escalation](https://academic.oup.com/ajcp/article/163/1/97/7739679)\n\n**Evidence:** escalation after inability to contact provider; customer-service and pathology escalation.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-012-C8997E8C",
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "E-005 — Multi-Hospital Escalation",
+        "line_start": 650,
+        "line_end": 654
+      }
+    },
+    {
+      "id": "EV-012-014",
+      "statement": "### E-006 — Critical-Value Delivery\n\n[Journal of Applied Laboratory Medicine — Quality Improvement](https://academic.oup.com/jalm/article/6/4/985/6255453)\n\n**Evidence:** pending callback tracking and multi-tier escalation.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-012-90B622EF",
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "E-006 — Critical-Value Delivery",
+        "line_start": 656,
+        "line_end": 660
+      }
+    },
+    {
+      "id": "EV-012-015",
+      "statement": "### E-007 — Closed-Loop Alert System\n\n[ResearchGate — ALERTS Closed-Loop Reporting System](https://www.researchgate.net/publication/40812384_Implementation_of_a_Closed-Loop_Reporting_System_for_Critical_Values_and_Clinical_Communication_in_Compliance_with_Goals_of_The_Joint_Commission)\n\n**Evidence:** reminder/escalation reduced telephone-operator escalations; operator closure and acknowledgement metrics.\n\n---",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-012-9D957648",
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "E-007 — Closed-Loop Alert System",
+        "line_start": 662,
+        "line_end": 668
+      }
+    },
+    {
+      "id": "EV-012-016",
+      "statement": "### E-001 — Indian Human Notification Effort\n\n[PMC — Study of Variables Affecting Critical Value Notification](https://pmc.ncbi.nlm.nih.gov/articles/PMC4310845/)\n\n**Evidence:** 1,187 critical values; 3–5 minutes average notification effort after detection; 64.61% notified 30–120 minutes after sample receipt; caregiver-contact problems.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-012-5E16A762",
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "E-001 — Indian Human Notification Effort",
+        "line_start": 508,
+        "line_end": 512
+      }
+    },
+    {
+      "id": "EV-012-017",
+      "statement": "### E-002 — Multi-Hospital Notification Benchmark\n\n[Archives of Pathology & Laboratory Medicine — CAP Q-Probes](https://meridian.allenpress.com/aplm/article/132/12/1862/460366/Notification-of-Critical-Results-A-College-of)\n\n**Evidence:** 3,545 notifications across 121 laboratories; median 5 minutes for notification after testing; 96% read-back.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-012-940CFAD2",
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "E-002 — Multi-Hospital Notification Benchmark",
+        "line_start": 514,
+        "line_end": 518
+      }
+    },
+    {
+      "id": "EV-012-018",
+      "statement": "### E-003 — Manual Notification Burden\n\n[PMC — Automated Notification and Call Centers Systematic Review](https://pmc.ncbi.nlm.nih.gov/articles/PMC4518392/)\n\n**Evidence:** manual contact and escalation are time-consuming and divert laboratorian attention; automated notification/call-center alternatives evaluated.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-012-14E05EA0",
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "E-003 — Manual Notification Burden",
+        "line_start": 520,
+        "line_end": 524
+      }
+    },
+    {
+      "id": "EV-012-019",
+      "statement": "### E-004 — Escalation Workload\n\n[American Journal of Clinical Pathology — Escalation Process](https://academic.oup.com/ajcp/article/163/1/97/7739679)\n\n**Evidence:** 15-minute initial escalation threshold; customer service follow-up; pathology escalation; one 529-bed hospital approximately 250 escalations/month versus ~100 at others.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-012-C8997E8C",
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "E-004 — Escalation Workload",
+        "line_start": 526,
+        "line_end": 530
+      }
+    },
+    {
+      "id": "EV-012-020",
+      "statement": "### E-005 — Indian Quality Improvement\n\n[PMC — Quality Tools and Strategy for Critical Alerts](https://pmc.ncbi.nlm.nih.gov/articles/PMC9763056/)\n\n**Evidence:** critical notification delays and failed notifications; protocol/process improvement.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-012-20DB4D67",
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "E-005 — Indian Quality Improvement",
+        "line_start": 532,
+        "line_end": 536
+      }
+    },
+    {
+      "id": "EV-012-021",
+      "statement": "### E-006 — Critical-Result Clinical Response\n\n[PLOS One — Critical Laboratory Value Reporting and Patient Management](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0324594)\n\n**Evidence:** clinical actions following critical-result notification, including treatment or further investigation within 30 minutes.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-012-C0438A3F",
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "E-006 — Critical-Result Clinical Response",
+        "line_start": 538,
+        "line_end": 542
+      }
+    },
+    {
+      "id": "EV-012-022",
+      "statement": "### E-007 — Fortis Bengaluru Company-Linked Study\n\n[Panacea Journal — Critical Value Analysis at Fortis Multispeciality Hospital, Bangalore](https://newp.pjms.in/index.php/pjms/article/view/817)\n\n**Evidence:** 75,156 tests; 2,199 critical values; SMS/telephone/read-back workflow.\n\n---",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-012-C0F3C064",
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "E-007 — Fortis Bengaluru Company-Linked Study",
+        "line_start": 544,
+        "line_end": 550
+      }
+    },
+    {
+      "id": "EV-012-023",
+      "statement": "### E-001 — Fortis Bengaluru Workflow\n\n[Panacea Journal — Critical Value Analysis at Fortis Multispeciality Hospital, Bangalore](https://newp.pjms.in/index.php/pjms/article/view/817)\n\n**Evidence:** 75,156 tests; 2,199 critical values; Fortis Bengaluru laboratory; critical-value notification workflow.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-012-C0F3C064",
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "E-001 — Fortis Bengaluru Workflow",
+        "line_start": 472,
+        "line_end": 476
+      }
+    },
+    {
+      "id": "EV-012-024",
+      "statement": "### E-002 — Fortis Study Record\n\n[ResearchGate — Fortis Bengaluru Critical Value Analysis](https://www.researchgate.net/publication/362766215_A_study_of_critical_value_analysis_at_hematology_and_biochemistry_sections_of_laboratory_in_a_multispeciality_hospital)\n\n**Evidence:** Fortis multispeciality hospital Bangalore; 2,199 critical values; department distribution.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-012-6300B7C6",
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "E-002 — Fortis Study Record",
+        "line_start": 478,
+        "line_end": 482
+      }
+    },
+    {
+      "id": "EV-012-025",
+      "statement": "### E-003 — Indian Critical Notification Evidence\n\n[PMC — Study of Variables Affecting Critical Value Notification](https://pmc.ncbi.nlm.nih.gov/articles/PMC4310845/)\n\n**Evidence:** 1,187 critical values; caregiver-contact variables; notification documentation/read-back; need for reliable acknowledgement.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-012-5E16A762",
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "E-003 — Indian Critical Notification Evidence",
+        "line_start": 484,
+        "line_end": 488
+      }
+    },
+    {
+      "id": "EV-012-026",
+      "statement": "### E-004 — Escalation Evidence\n\n[American Journal of Clinical Pathology — Critical Value Escalation](https://academic.oup.com/ajcp/article/163/1/97/7739679)\n\n**Evidence:** 8-hospital system; escalation when initial call fails; 25% versus ~10% escalation; process improvement reduced escalation.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-012-C8997E8C",
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "E-004 — Escalation Evidence",
+        "line_start": 490,
+        "line_end": 494
+      }
+    },
+    {
+      "id": "EV-012-027",
+      "statement": "### E-005 — Consensus Safety Standard\n\n[PMC — Consensus Statement for High-Risk Laboratory Results](https://pmc.ncbi.nlm.nih.gov/articles/PMC4745612/)\n\n**Evidence:** acknowledgement, documentation and escalation are recommended components of high-risk result communication.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-012-3998AFCB",
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "E-005 — Consensus Safety Standard",
+        "line_start": 496,
+        "line_end": 500
+      }
+    },
+    {
+      "id": "EV-012-028",
+      "statement": "### E-006 — Indian Critical-Value Study\n\n[PubMed — Variables Affecting Critical Value Notification](https://pubmed.ncbi.nlm.nih.gov/25646047/)\n\n**Evidence:** Indian tertiary-care critical-value notification study.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-012-9EE779BD",
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "E-006 — Indian Critical-Value Study",
+        "line_start": 502,
+        "line_end": 506
+      }
+    },
+    {
+      "id": "EV-012-029",
+      "statement": "### E-007 — Critical-Value Delivery Improvement\n\n[Journal of Applied Laboratory Medicine — Quality Improvement](https://academic.oup.com/jalm/article/6/4/985/6255453)\n\n**Evidence:** pending-callback tracking and multi-tier escalation protocol.\n\n---",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-012-90B622EF",
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "E-007 — Critical-Value Delivery Improvement",
+        "line_start": 508,
+        "line_end": 514
+      }
+    }
+  ],
+  "claims": [],
+  "inferences": [],
+  "hypotheses": [
+    {
+      "id": "HYP-012-001",
+      "statement": "The strongest ART surface is:\n\n```text\nCRITICAL RESULT\n      ↓\nCREATE SAFETY EXCEPTION\n      ↓\nIDENTIFY RESPONSIBLE TEAM\n      ↓\nSEND ALERT\n      ↓\nTRACK DELIVERY\n      ↓\nTRACK ACKNOWLEDGEMENT\n      ↓\nNO ACKNOWLEDGEMENT?\n      ↓\nAGE\n      ↓\nESCALATE\n      ↓\nSECONDARY OWNER\n      ↓\nACKNOWLEDGEMENT\n      ↓\nAUDIT / CLOSE\n```\n\nART should not:\n\n- interpret the laboratory result;\n- determine treatment;\n- override clinical judgement;\n- prescribe;\n- decide whether the result is clinically critical.\n\nART's potential role is **closed-loop communication and escalation**.\n\n---",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "EV-012-001",
+        "EV-012-002",
+        "EV-012-003",
+        "EV-012-004",
+        "EV-012-005",
+        "EV-012-006",
+        "EV-012-007",
+        "EV-012-008"
+      ],
+      "falsification_basis": [],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "10. ART Opportunity Hypothesis",
+        "line_start": 236,
+        "line_end": 276
+      }
+    },
+    {
+      "id": "HYP-012-002",
+      "statement": "The addressable unit should be:\n\n> **unresolved critical-result exception**\n\nrather than:\n\n> **critical-result notification**\n\nPotential value components:\n\n```text\n1. FOLLOW-UP TIME\n2. ESCALATION TIME\n3. LABORATORIAN INTERRUPTION\n4. DELAY REDUCTION\n5. CLOSURE VISIBILITY\n6. AUDIT / QUALITY WORK\n7. POTENTIAL SAFETY-RISK REDUCTION\n```\n\nOnly **1–3** can currently be reasonably modelled with external time evidence.\n\n**4–7 require primary hospital evidence before quantification.**\n\n---",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "EV-012-016",
+        "EV-012-017",
+        "EV-012-018",
+        "EV-012-019",
+        "EV-012-020",
+        "EV-012-021",
+        "EV-012-022"
+      ],
+      "falsification_basis": [],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "12. Strongest ART Economics Hypothesis",
+        "line_start": 294,
+        "line_end": 320
+      }
+    }
+  ],
+  "results": [
+    {
+      "id": "RES-012-001",
+      "statement": "**PASS → High-consequence, repeatable workflow target**",
+      "status": "PASSED",
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "Decision",
+        "line_start": 426,
+        "line_end": 427
+      }
+    },
+    {
+      "id": "RES-012-002",
+      "statement": "**PASS → High-consequence exception path supported; continue**",
+      "status": "PASSED",
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "Decision",
+        "line_start": 578,
+        "line_end": 579
+      }
+    },
+    {
+      "id": "RES-012-003",
+      "statement": "**PASS → High-consequence, time-critical effort signal**",
+      "status": "PASSED",
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "Decision",
+        "line_start": 457,
+        "line_end": 458
+      }
+    },
+    {
+      "id": "RES-012-004",
+      "statement": "**CONDITIONAL PASS → Primary validation justified; company pain not yet proven**",
+      "status": "UNVERIFIED",
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "Decision",
+        "line_start": 422,
+        "line_end": 423
+      }
+    }
+  ],
+  "falsification": [
+    {
+      "statement": "Kill the **Fortis-specific opportunity** if validation establishes:\n\n```text\nAUTOMATIC CRITICAL-VALUE DETECTION\n+\nAUTOMATIC ROUTING\n+\nDELIVERY CONFIRMATION\n+\nACKNOWLEDGEMENT TRACKING\n+\nAUTOMATIC ESCALATION\n+\nALTERNATE-OWNER ROUTING\n+\nCLOSURE AUDIT\n+\nLOW UNRESOLVED VOLUME\n```\n\nThe broader industry opportunity may still survive for lower-maturity hospitals.\n\n---",
+      "outcome": "KILLED",
+      "basis": [
+        "EV-012-023",
+        "EV-012-024",
+        "EV-012-025",
+        "EV-012-026",
+        "EV-012-027",
+        "EV-012-028",
+        "EV-012-029"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "14. Kill Conditions",
+        "line_start": 345,
+        "line_end": 370
+      }
+    }
+  ],
+  "traceability": [
+    {
+      "statement": "---\nid: OPP-012-01\nopportunity_id: OPP-012\nindustry: Healthcare / Hospital Operations\ncompany: Fortis Healthcare — Bengaluru\ncompany_candidate_site: Fortis Hospital CG Road, Bengaluru\nworkflow: Critical Laboratory Result Notification + Closed-Loop Acknowledgement\npain_type: Patient Safety / Time-Critical Clinical Communication\nresearch_stage: Workflow Discovery\nmethodology: Legacy VRL\nstatus: PASS\ndecision: HIGH_CONSEQUENCE_REPEATABLE_WORKFLOW_TARGET\ncompany_pain_signal: direct_industry_evidence_company_current_gap_unproven\nindustry_generalizability: high\ncurrent_pain_magnitude: unknown\ncurrent_capability_gap: unknown\ncustomer_roi: unknown\ncommercial_status: discovery_continue\n---",
+      "research_location": "OPP-012-01.md#Front matter",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "Front matter",
+        "line_start": 1,
+        "line_end": 18
+      }
+    },
+    {
+      "statement": "**Industry:** Healthcare / Hospital Operations  \n**Company:** Fortis Healthcare — Bengaluru  \n**Candidate mid-scale site:** Fortis Hospital CG Road, Bengaluru  \n**Workflow:** Critical Laboratory Result Notification + Closed-Loop Acknowledgement  \n**Pain type:** Patient Safety / Time-Critical Clinical Communication  \n**VRL checkpoint:** OPP-012-01  \n**Decision:** **PASS → High-consequence, repeatable workflow target**\n\n---",
+      "research_location": "OPP-012-01.md#OPP-012-01 — Workflow Discovery",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "OPP-012-01 — Workflow Discovery",
+        "line_start": 21,
+        "line_end": 32
+      }
+    },
+    {
+      "statement": "This discovery deliberately targets a workflow where:\n\n> **a clinically dangerous laboratory result exists, someone must be reached quickly, acknowledgement must occur, and failure to close the communication loop creates patient-safety exposure.**\n\nThis is materially stronger than ordinary administrative automation.\n\nThe opportunity is not:\n\n> “automate laboratory reporting.”\n\nIt is:\n\n> **automate the unresolved exception between critical-result generation and verified clinical acknowledgement.**\n\n---",
+      "research_location": "OPP-012-01.md#Why This Discovery",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "1. Why This Discovery",
+        "line_start": 33,
+        "line_end": 50
+      }
+    },
+    {
+      "statement": "Fortis Healthcare operates multiple Bengaluru hospitals. Its official site lists **Fortis Hospital CG Road, Bengaluru** as a **119-bed NABH-accredited hospital with 36 ICU beds and 8 HDU beds**, making it a relevant mid-scale hospital candidate. [Official Fortis Hospital CG Road](https://www.fortishealthcare.com/location/fortis-hospital-cg-road-bangalore)\n\n**Important evidence boundary:** the published critical-value study used below identifies the study site only as a **Fortis multispeciality hospital, Bangalore**. It does not explicitly identify the branch as CG Road. Therefore, the 119-bed CG Road figure is used only to establish a **mid-scale Fortis Bengaluru candidate**, not to falsely attribute the study's laboratory numbers to that exact branch.\n\n---",
+      "research_location": "OPP-012-01.md#Company / Scale Entry Point",
+      "source_urls": [
+        "https://www.fortishealthcare.com/location/fortis-hospital-cg-road-bangalore"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "2. Company / Scale Entry Point",
+        "line_start": 51,
+        "line_end": 58
+      }
+    },
+    {
+      "statement": "A peer-reviewed 2022 study was conducted in the laboratory of a **Fortis multispeciality hospital, Bangalore**, over January 2020–June 2021.\n\nThe laboratory processed:\n\n- **75,156 tests**\n- **2,199 critical values**\n- **1,224 critical values (55.7%) from emergency**\n- **900 (40.9%) from inpatient departments**\n- **75 (3.4%) from outpatient departments**\n\nCreatinine accounted for **1,151 (52.3%)** of the critical values.\n\n[Panacea Journal of Medical Sciences — Fortis Bengaluru Critical Value Study](https://newp.pjms.in/index.php/pjms/article/view/817)\n\nThe study explicitly states that critical values require immediate communication and that both telephone and SMS notification were used.\n\n---",
+      "research_location": "OPP-012-01.md#Direct Fortis Bengaluru Workflow Evidence",
+      "source_urls": [
+        "https://newp.pjms.in/index.php/pjms/article/view/817"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "3. Direct Fortis Bengaluru Workflow Evidence",
+        "line_start": 59,
+        "line_end": 78
+      }
+    },
+    {
+      "statement": "The published Fortis Bengaluru study describes this process:\n\n```text\nTEST RESULT\n    ↓\nCRITICAL RANGE DETECTED\n    ↓\nRESULT VALIDATED\n    ↓\nRESPONSIBLE CAREGIVER IDENTIFIED\n    ↓\nTELEPHONE NOTIFICATION\n    +\nSMS NOTIFICATION\n    ↓\nREAD-BACK\n    ↓\nCRITICAL VALUE LOG\n```\n\nThe laboratory also checked whether the SMS was forwarded. If it failed, the technologist manually notified the caregiver by telephone and entered the details into the critical-call log.\n\n[Fortis Bengaluru Critical Value Study](https://newp.pjms.in/index.php/pjms/article/view/817)\n\nThis is extremely important for ART:\n\n> **A failure state already exists inside the published workflow.**\n\n---",
+      "research_location": "OPP-012-01.md#The Existing Workflow",
+      "source_urls": [
+        "https://newp.pjms.in/index.php/pjms/article/view/817"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "4. The Existing Workflow",
+        "line_start": 79,
+        "line_end": 110
+      }
+    },
+    {
+      "statement": "The normal workflow is:\n\n```text\nCRITICAL RESULT\n      ↓\nAUTOMATED / STANDARD NOTIFICATION\n      ↓\nCAREGIVER RECEIVES\n      ↓\nACKNOWLEDGES\n      ↓\nCLINICAL ACTION\n```\n\nThe exception is:\n\n```text\nCRITICAL RESULT\n      ↓\nNOTIFICATION ATTEMPT\n      ↓\nNO DELIVERY / NO RESPONSE / WRONG RECIPIENT\n      ↓\nHUMAN INTERVENTION\n      ↓\nPHONE / SECONDARY CONTACT\n      ↓\nREAD-BACK\n      ↓\nDOCUMENT\n      ↓\nCLOSE\n```\n\nThe Fortis study explicitly reports SMS failure followed by manual telephone notification.\n\n---",
+      "research_location": "OPP-012-01.md#Exception Surface",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "5. Exception Surface",
+        "line_start": 111,
+        "line_end": 150
+      }
+    },
+    {
+      "statement": "A critical laboratory value represents a result requiring immediate communication because it may indicate a life-threatening state requiring prompt action.\n\nIndian laboratory research identifies failure to notify the responsible caregiver in a timely manner as a patient-safety issue that may contribute to diagnostic error.\n\n[Study of Variables Affecting Critical Value Notification — PubMed](https://pubmed.ncbi.nlm.nih.gov/25646047/)\n\nThat study analysed **1,187 critical values** and found that **64.61% of critical values were notified between 30 and 120 minutes after sample receipt**. It identified difficulty contacting the responsible caregiver and incomplete information about the treating physician/location among important concerns.\n\n---",
+      "research_location": "OPP-012-01.md#Why This Is High Consequence",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/25646047/"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "6. Why This Is High Consequence",
+        "line_start": 151,
+        "line_end": 162
+      }
+    },
+    {
+      "statement": "This is not unique to one Fortis laboratory.\n\nA Delhi tertiary-care quality-improvement study examined critical-alert notification and found:\n\n- delays in notification;\n- failed notifications;\n- missing information;\n- process failures;\n- need for escalation and protocol redesign.\n\nThe study explicitly treated timely critical-result notification as a patient-safety objective.\n\n[Quality Tools and Strategy for Critical Alerts — PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC9763056/)\n\nAnother study found **64% of identified delays** were attributable to intrinsic laboratory factors, including underused escalation protocols and delayed initial calls; **26%** of delays were associated with inability to identify/contact an appropriate provider.\n\n[Quality Improvement in Critical Value Delivery — Oxford Academic](https://academic.oup.com/jalm/article/6/4/985/6255453)\n\n---",
+      "research_location": "OPP-012-01.md#The Industry Pattern Is Strong",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9763056/",
+        "https://academic.oup.com/jalm/article/6/4/985/6255453"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "7. The Industry Pattern Is Strong",
+        "line_start": 163,
+        "line_end": 184
+      }
+    },
+    {
+      "statement": "The key insight is that:\n\n> **Sending the alert is not the same as completing the communication.**\n\nA critical-result workflow needs:\n\n```text\nSEND\n ↓\nDELIVER\n ↓\nRECEIVE\n ↓\nACKNOWLEDGE\n ↓\nESCALATE IF NOT ACKNOWLEDGED\n ↓\nVERIFY\n ↓\nCLOSE\n```\n\nA 360-bed paediatric hospital study found that timely outgoing notification was >90%, but timely clinician acknowledgement for one high-risk service was **<5%** before intervention. The hospital identified difficulty identifying the correct provider and achieving closed-loop communication as key drivers.\n\n[Closed-loop communication using provider-team smartphones — PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC8442100/)\n\nThis is powerful evidence that:\n\n> **the residual problem can exist after the alert has already been sent.**\n\n---",
+      "research_location": "OPP-012-01.md#Closed-Loop Failure Is the More Valuable Problem",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8442100/"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "8. Closed-Loop Failure Is the More Valuable Problem",
+        "line_start": 185,
+        "line_end": 218
+      }
+    },
+    {
+      "statement": "A computerized critical-value notification study found automated communication improved notification timeliness and increased the likelihood of reaching the physician on call.\n\n[Evaluation of computerized notification system — PubMed](https://pubmed.ncbi.nlm.nih.gov/19228648/)\n\nA later ICU pilot using push notifications reported that each electronic acknowledgement saved laboratory technicians an average of **10 minutes** compared with the existing workflow.\n\n[Push notifications for critical lab results — PubMed](https://pubmed.ncbi.nlm.nih.gov/37600076/)\n\nThis does not prove ART is required.\n\nIt proves that **communication automation can materially improve this workflow**, making the problem commercially interesting.\n\n---",
+      "research_location": "OPP-012-01.md#Automation Evidence",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/19228648/",
+        "https://pubmed.ncbi.nlm.nih.gov/37600076/"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "9. Automation Evidence",
+        "line_start": 219,
+        "line_end": 234
+      }
+    },
+    {
+      "statement": "The strongest ART surface is:\n\n```text\nCRITICAL RESULT\n      ↓\nCREATE SAFETY EXCEPTION\n      ↓\nIDENTIFY RESPONSIBLE TEAM\n      ↓\nSEND ALERT\n      ↓\nTRACK DELIVERY\n      ↓\nTRACK ACKNOWLEDGEMENT\n      ↓\nNO ACKNOWLEDGEMENT?\n      ↓\nAGE\n      ↓\nESCALATE\n      ↓\nSECONDARY OWNER\n      ↓\nACKNOWLEDGEMENT\n      ↓\nAUDIT / CLOSE\n```\n\nART should not:\n\n- interpret the laboratory result;\n- determine treatment;\n- override clinical judgement;\n- prescribe;\n- decide whether the result is clinically critical.\n\nART's potential role is **closed-loop communication and escalation**.\n\n---",
+      "research_location": "OPP-012-01.md#ART Opportunity Hypothesis",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "10. ART Opportunity Hypothesis",
+        "line_start": 235,
+        "line_end": 276
+      }
+    },
+    {
+      "statement": "The same workflow appears wherever a healthcare organisation must communicate a time-critical exception:\n\n```text\nLAB\n→ CRITICAL RESULT\n\nRADIOLOGY\n→ CRITICAL / UNEXPECTED FINDING\n\nPHARMACY\n→ HIGH-RISK MEDICATION EXCEPTION\n\nICU\n→ DETERIORATION ALERT\n\nBLOOD BANK\n→ TRANSFUSION SAFETY EXCEPTION\n```\n\nThe underlying automation primitive is:\n\n> **event → responsible owner → acknowledgement → ageing → escalation → closure**\n\nTherefore the eventual ART product opportunity could be broader than laboratory alerts.\n\nHowever, **this investigation remains specifically about critical laboratory results** until the evidence supports expansion.\n\n---",
+      "research_location": "OPP-012-01.md#Why This Can Generalize Across Healthcare",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "11. Why This Can Generalize Across Healthcare",
+        "line_start": 277,
+        "line_end": 307
+      }
+    },
+    {
+      "statement": "The Fortis Bengaluru study already used:\n\n- an in-house LIS;\n- automatic critical-value flagging;\n- SMS;\n- telephone notification;\n- critical-call logging;\n- read-back.\n\n[Fortis Bengaluru Critical Value Study](https://newp.pjms.in/index.php/pjms/article/view/817)\n\nTherefore this is **not** an opportunity to replace the LIS.\n\nThe possible gap is:\n\n```text\nLIS DETECTS\n      ↓\nLIS NOTIFIES\n      ↓\n????\n      ↓\nACKNOWLEDGEMENT\n      ↓\nESCALATION\n      ↓\nCLOSURE\n```\n\nThe `????` is the capability boundary that must be investigated.\n\n---",
+      "research_location": "OPP-012-01.md#Existing-System Boundary",
+      "source_urls": [
+        "https://newp.pjms.in/index.php/pjms/article/view/817"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "12. Existing-System Boundary",
+        "line_start": 308,
+        "line_end": 342
+      }
+    },
+    {
+      "statement": "| Dimension | Status |\n|---|---|\n| Fortis Bengaluru laboratory workflow | **VERIFIED** |\n| 75,156 tests studied | **VERIFIED** |\n| 2,199 critical values | **VERIFIED** |\n| Emergency generated 55.7% | **VERIFIED** |\n| SMS notification | **VERIFIED** |\n| SMS failure → telephone fallback | **VERIFIED** |\n| Critical-call log | **VERIFIED** |\n| Read-back | **VERIFIED** |\n| Current 2026 workflow | **UNKNOWN** |\n| Current acknowledgement tracking | **UNKNOWN** |\n| Current escalation | **UNKNOWN** |\n| Current unresolved critical alerts | **UNKNOWN** |\n| Current automation gap | **UNKNOWN** |\n| Current economic impact | **UNKNOWN** |\n\n---",
+      "research_location": "OPP-012-01.md#Company-Specific Evidence Status",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "13. Company-Specific Evidence Status",
+        "line_start": 343,
+        "line_end": 363
+      }
+    },
+    {
+      "statement": "Potentially patient-safety critical.",
+      "research_location": "OPP-012-01.md#High consequence",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "High consequence",
+        "line_start": 366,
+        "line_end": 369
+      }
+    },
+    {
+      "statement": "Notification and acknowledgement are explicitly time-sensitive.",
+      "research_location": "OPP-012-01.md#Time-sensitive",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "Time-sensitive",
+        "line_start": 370,
+        "line_end": 373
+      }
+    },
+    {
+      "statement": "Failed delivery/contact creates manual intervention.",
+      "research_location": "OPP-012-01.md#Human exception work",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "Human exception work",
+        "line_start": 374,
+        "line_end": 377
+      }
+    },
+    {
+      "statement": "The published Fortis workflow already has LIS/SMS/telephone infrastructure.",
+      "research_location": "OPP-012-01.md#Existing system boundary",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "Existing system boundary",
+        "line_start": 378,
+        "line_end": 381
+      }
+    },
+    {
+      "statement": "Indian and international hospital studies document delayed notification, provider-identification problems and closed-loop acknowledgement failures.",
+      "research_location": "OPP-012-01.md#Industry recurrence",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "Industry recurrence",
+        "line_start": 382,
+        "line_end": 385
+      }
+    },
+    {
+      "statement": "The workflow is structurally suited to:\n\n```text\nTRIGGER\n→ ROUTE\n→ ACKNOWLEDGE\n→ ESCALATE\n→ CLOSE\n```\n\n---",
+      "research_location": "OPP-012-01.md#Fast automation potential",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "Fast automation potential",
+        "line_start": 386,
+        "line_end": 399
+      }
+    },
+    {
+      "statement": "Do not claim:\n\n> “Fortis Bengaluru currently has a critical-alert automation gap.”\n\nNot established.\n\nDo not claim:\n\n> “Critical-result delays at Fortis currently harm patients.”\n\nNot established.\n\nDo not claim:\n\n> “ART can save lives.”\n\nNot yet defensible.\n\nThe defensible opportunity hypothesis is:\n\n> **Critical laboratory communication is a high-consequence, time-sensitive workflow in which failed notification or acknowledgement can trigger manual investigation and escalation. A closed-loop automation layer may reduce unresolved communication failures without making clinical decisions.**\n\n---",
+      "research_location": "OPP-012-01.md#What We Must Not Claim",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "15. What We Must Not Claim",
+        "line_start": 400,
+        "line_end": 425
+      }
+    },
+    {
+      "statement": "This is a stronger discovery target because it satisfies the new healthcare opportunity filter:\n\n```text\nHIGH CONSEQUENCE\n        +\nTIME CRITICAL\n        +\nRECURRING INDUSTRY WORKFLOW\n        +\nHUMAN EXCEPTION PATH\n        +\nEXISTING SYSTEM BOUNDARY\n        +\nFAST AUTOMATION SURFACE\n```\n\nThe decisive unknown is now:\n\n> **How much unresolved notification and acknowledgement work remains after the existing Fortis laboratory system attempts notification?**\n\n---",
+      "research_location": "OPP-012-01.md#PASS → CONTINUE",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "PASS → CONTINUE",
+        "line_start": 428,
+        "line_end": 451
+      }
+    },
+    {
+      "statement": "Focus only on:\n\n- what happens when SMS fails;\n- what happens when the first clinician cannot be reached;\n- how the correct caregiver is identified;\n- how many contact attempts occur;\n- how escalation works;\n- how acknowledgement is verified;\n- what happens during shift handover;\n- how unresolved critical results are tracked;\n- how closure is documented.\n\nDo **not** quantify ROI yet.\n\n---",
+      "research_location": "OPP-012-01.md#OPP-012-02 — Exception + Human Investigation Reconstruction",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "OPP-012-02 — Exception + Human Investigation Reconstruction",
+        "line_start": 454,
+        "line_end": 471
+      }
+    },
+    {
+      "statement": "[Panacea Journal — Critical Value Analysis at Fortis Multispeciality Hospital, Bangalore](https://newp.pjms.in/index.php/pjms/article/view/817)\n\n**Evidence:** 75,156 tests; 2,199 critical values; emergency 55.7%; SMS + telephone; SMS failure fallback; read-back and call logging.",
+      "research_location": "OPP-012-01.md#E-001 — Fortis Bengaluru Company-Linked Study",
+      "source_urls": [
+        "https://newp.pjms.in/index.php/pjms/article/view/817"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "E-001 — Fortis Bengaluru Company-Linked Study",
+        "line_start": 474,
+        "line_end": 479
+      }
+    },
+    {
+      "statement": "[PubMed — Variables Affecting Critical Value Notification](https://pubmed.ncbi.nlm.nih.gov/25646047/)\n\n**Evidence:** 1,187 critical values; 64.61% notified 30–120 minutes after sample receipt; caregiver identification/contact difficulties.",
+      "research_location": "OPP-012-01.md#E-002 — Indian Critical-Value Notification Study",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/25646047/"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "E-002 — Indian Critical-Value Notification Study",
+        "line_start": 480,
+        "line_end": 485
+      }
+    },
+    {
+      "statement": "[PMC — Quality Tools and Strategy for Critical Alerts](https://pmc.ncbi.nlm.nih.gov/articles/PMC9763056/)\n\n**Evidence:** delayed/failed notification and process/root-cause analysis in Delhi tertiary hospital.",
+      "research_location": "OPP-012-01.md#E-003 — Indian Quality Improvement",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9763056/"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "E-003 — Indian Quality Improvement",
+        "line_start": 486,
+        "line_end": 491
+      }
+    },
+    {
+      "statement": "[Oxford Academic — Quality Improvement in Critical Value Delivery](https://academic.oup.com/jalm/article/6/4/985/6255453)\n\n**Evidence:** underused escalation protocols, delayed calls and difficulty identifying/contacting providers.",
+      "research_location": "OPP-012-01.md#E-004 — Delay Root Causes",
+      "source_urls": [
+        "https://academic.oup.com/jalm/article/6/4/985/6255453"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "E-004 — Delay Root Causes",
+        "line_start": 492,
+        "line_end": 497
+      }
+    },
+    {
+      "statement": "[PMC — Provider-Team Smartphone Critical-Result Communication](https://pmc.ncbi.nlm.nih.gov/articles/PMC8442100/)\n\n**Evidence:** difficulty identifying appropriate providers and obtaining timely acknowledgement; smartphone workflow substantially improved successful notification.",
+      "research_location": "OPP-012-01.md#E-005 — Closed-Loop Communication",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8442100/"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "E-005 — Closed-Loop Communication",
+        "line_start": 498,
+        "line_end": 503
+      }
+    },
+    {
+      "statement": "[PubMed — Computerized Critical-Value Notification](https://pubmed.ncbi.nlm.nih.gov/19228648/)\n\n**Evidence:** automated communication improved notification timeliness and likelihood of reaching physicians.",
+      "research_location": "OPP-012-01.md#E-006 — Computerized Notification",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/19228648/"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "E-006 — Computerized Notification",
+        "line_start": 504,
+        "line_end": 509
+      }
+    },
+    {
+      "statement": "[PubMed — Push Notifications for Critical Lab Results](https://pubmed.ncbi.nlm.nih.gov/37600076/)\n\n**Evidence:** electronic acknowledgement saved laboratory technicians an average of 10 minutes per acknowledged result compared with existing workflow.",
+      "research_location": "OPP-012-01.md#E-007 — Push Notification Efficiency",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/37600076/"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "E-007 — Push Notification Efficiency",
+        "line_start": 510,
+        "line_end": 515
+      }
+    },
+    {
+      "statement": "[Official Fortis Hospital CG Road Bengaluru](https://www.fortishealthcare.com/location/fortis-hospital-cg-road-bangalore)\n\n**Evidence:** 119 beds, 36 ICU beds, 8 HDU beds, NABH-accredited hospital.\n\n---",
+      "research_location": "OPP-012-01.md#E-008 — Company Scale Candidate",
+      "source_urls": [
+        "https://www.fortishealthcare.com/location/fortis-hospital-cg-road-bangalore"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "E-008 — Company Scale Candidate",
+        "line_start": 516,
+        "line_end": 523
+      }
+    },
+    {
+      "statement": "- Fortis multispeciality hospital, Bengaluru laboratory study.\n- 75,156 tests.\n- 2,199 critical values.\n- SMS/telephone/read-back workflow.\n- SMS failure fallback to telephone.",
+      "research_location": "OPP-012-01.md#Company-linked",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "Company-linked",
+        "line_start": 526,
+        "line_end": 533
+      }
+    },
+    {
+      "statement": "- delayed critical-result notification;\n- provider identification problems;\n- escalation failure;\n- closed-loop acknowledgement failure;\n- automation improving notification.",
+      "research_location": "OPP-012-01.md#Industry / Indian evidence",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "Industry / Indian evidence",
+        "line_start": 534,
+        "line_end": 541
+      }
+    },
+    {
+      "statement": "- current Fortis workflow;\n- current unresolved alerts;\n- acknowledgement rate;\n- escalation rate;\n- human effort;\n- current capability gap;\n- ROI.\n\n---",
+      "research_location": "OPP-012-01.md#Unknown",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "Unknown",
+        "line_start": 542,
+        "line_end": 553
+      }
+    },
+    {
+      "statement": "```yaml\nartifact_type: opportunity_intelligence\nopportunity_id: OPP-012\nindustry: healthcare_hospital_operations\ncompany: Fortis Healthcare\ncompany_candidate_site: Fortis Hospital CG Road Bengaluru\nworkflow: critical_laboratory_result_notification_closed_loop_acknowledgement\npain_type: patient_safety_time_critical_clinical_communication\nresearch_stage: workflow_discovery\ndecision: pass_high_consequence_repeatable_workflow_target\n\ncandidate_scale:\n  beds: 119\n  icu_beds: 36\n  hdu_beds: 8\n  nabh: true\n\ncompany_linked_study:\n  location: bengaluru\n  tests: 75156\n  critical_values: 2199\n  emergency_share: 55.7_percent\n  inpatient_share: 40.9_percent\n  outpatient_share: 3.4_percent\n  sms_notification: true\n  telephone_fallback: true\n  read_back: true\n  critical_call_log: true\n\nindustry_signal:\n  delayed_notification: verified\n  provider_identification_problem: verified\n  escalation_problem: verified\n  closed_loop_acknowledgement_problem: verified\n  automation_effectiveness: supported\n\ncurrent_company_workflow: unknown\ncurrent_acknowledgement_rate: unknown\ncurrent_unresolved_alerts: unknown\ncurrent_escalation: unknown\ncurrent_human_effort: unknown\nexisting_system: partially_verified\ncapability_gap: unknown\ncustomer_roi: unknown\n\ncompany_pain_signal: direct_historical_workflow_evidence\nindustry_pain_signal: strong\nindustry_generalisability: high\nnext_checkpoint: OPP-012-02\ncommercial_status: discovery_continue\n```\n\n---",
+      "research_location": "OPP-012-01.md#AIL Compilation Metadata",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "AIL Compilation Metadata",
+        "line_start": 554,
+        "line_end": 609
+      }
+    },
+    {
+      "statement": "> **A Fortis multispeciality hospital in Bengaluru has published evidence of a high-volume critical-result notification workflow involving 2,199 critical values, SMS notification, telephone fallback, read-back and call logging. Indian and international evidence independently demonstrates that delayed notification, provider identification and acknowledgement failures can create patient-safety risk and human escalation work. The current Fortis capability gap and unresolved workload remain unknown.**\n\n**OPP-012-01 = PASS → CONTINUE**\n\n**Next: OPP-012-02 — Exception + Human Investigation Reconstruction**",
+      "research_location": "OPP-012-01.md#Integrity Statement",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-01.md",
+        "section": "Integrity Statement",
+        "line_start": 610,
+        "line_end": 616
+      }
+    },
+    {
+      "statement": "---\nid: OPP-012-02\nopportunity_id: OPP-012\nindustry: Healthcare / Hospital Operations\ncompany: Fortis Healthcare — Bengaluru\ncompany_candidate_site: Fortis Hospital CG Road, Bengaluru\nworkflow: Critical Laboratory Result Notification + Closed-Loop Acknowledgement\npain_type: Patient Safety / Time-Critical Clinical Communication\nresearch_stage: Exception + Human Investigation Reconstruction\nmethodology: Legacy VRL\nstatus: PASS\ndecision: HIGH_CONSEQUENCE_EXCEPTION_PATH_SUPPORTED_CONTINUE\ncompany_pain_signal: direct_historical_exception_evidence_current_gap_unknown\nindustry_generalizability: high\ncurrent_pain_magnitude: unknown\ncurrent_capability_gap: unknown\ncustomer_roi: unknown\ncommercial_status: discovery_continue\n---",
+      "research_location": "OPP-012-02.md#Front matter",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "Front matter",
+        "line_start": 1,
+        "line_end": 18
+      }
+    },
+    {
+      "statement": "**Industry:** Healthcare / Hospital Operations  \n**Company:** Fortis Healthcare — Bengaluru  \n**Candidate site:** Fortis Hospital CG Road, Bengaluru  \n**Workflow:** Critical Laboratory Result Notification + Closed-Loop Acknowledgement  \n**VRL checkpoint:** OPP-012-02  \n**Decision:** **PASS → High-consequence exception path supported; continue**\n\n---",
+      "research_location": "OPP-012-02.md#OPP-012-02 — Exception + Human Investigation Reconstruction",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "OPP-012-02 — Exception + Human Investigation Reconstruction",
+        "line_start": 21,
+        "line_end": 31
+      }
+    },
+    {
+      "statement": "> **When a critical laboratory result cannot be successfully communicated and acknowledged through the normal notification path, what human investigation, fallback communication and escalation work is required before the case can close?**\n\nThe Fortis Bengaluru study documents a critical-value workflow using telephone notification, SMS notification and read-back. It also identifies the workflow as a patient-safety process requiring immediate communication.\n\nThe published study does not provide a complete modern closed-loop escalation design for the hospital.\n\nTherefore this reconstruction separates:\n\n- **Fortis Bengaluru evidence**\n- **general critical-value workflow evidence**\n- **reconstructed exception path**\n\n---",
+      "research_location": "OPP-012-02.md#Checkpoint Question",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "1. Checkpoint Question",
+        "line_start": 32,
+        "line_end": 47
+      }
+    },
+    {
+      "statement": "The published study covered:\n\n```text\n75,156 TESTS\n      ↓\n2,199 CRITICAL VALUES\n      ↓\nEMERGENCY 55.7%\nINPATIENT 40.9%\nOUTPATIENT 3.4%\n```\n\nThe laboratory used:\n\n- telephone communication;\n- SMS communication;\n- read-back for telephone notification.\n\nThe study reports that SMS critical-alert send-outs helped reduce critical-value turnaround time.\n\n---",
+      "research_location": "OPP-012-02.md#Fortis Bengaluru Baseline",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "2. Fortis Bengaluru Baseline",
+        "line_start": 48,
+        "line_end": 71
+      }
+    },
+    {
+      "statement": "The evidence-supported normal path is:\n\n```text\nCRITICAL RESULT GENERATED\n        ↓\nRESULT VERIFIED\n        ↓\nRESPONSIBLE CAREGIVER IDENTIFIED\n        ↓\nTELEPHONE + / OR SMS\n        ↓\nREAD-BACK / RECEIPT\n        ↓\nDOCUMENT\n        ↓\nCLINICAL RESPONSE\n        ↓\nCLOSE\n```\n\nThe Fortis study explicitly identifies critical-value notification as immediate communication and reports use of both verbal and SMS notification plus read-back.\n\n---",
+      "research_location": "OPP-012-02.md#Normal Workflow",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "3. Normal Workflow",
+        "line_start": 72,
+        "line_end": 97
+      }
+    },
+    {
+      "statement": "The first exception is:\n\n```text\nCRITICAL RESULT\n      ↓\nNORMAL NOTIFICATION\n      ↓\nFAILURE\n```\n\nPossible failure states supported by the broader evidence include:\n\n- responsible clinician cannot be identified;\n- clinician cannot be reached;\n- notification is delayed;\n- acknowledgement does not occur;\n- the initial communication path fails.\n\nA paediatric hospital study found that timely outgoing notification exceeded 90%, while timely clinician acknowledgement was below 5% for one high-volume inpatient service; process analysis identified difficulty identifying appropriate clinicians and achieving closed-loop communication.\n\n---",
+      "research_location": "OPP-012-02.md#Exception A — Notification Failure",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "4. Exception A — Notification Failure",
+        "line_start": 98,
+        "line_end": 121
+      }
+    },
+    {
+      "statement": "The Fortis Bengaluru study establishes the use of SMS alongside telephone communication.\n\nThe broader closed-loop model demonstrates why an electronic send is insufficient:\n\n```text\nSEND\n ↓\nDELIVERY\n ↓\nACKNOWLEDGEMENT\n```\n\nThese are separate states.\n\nA system may successfully send a message while still failing to establish that the responsible clinician has received and acknowledged the result.\n\nTherefore the automation question is not:\n\n> “Was the SMS sent?”\n\nIt is:\n\n> **“Has an authorised caregiver acknowledged responsibility for the critical result?”**\n\n---",
+      "research_location": "OPP-012-02.md#Exception B — SMS / Electronic Notification Failure",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "5. Exception B — SMS / Electronic Notification Failure",
+        "line_start": 122,
+        "line_end": 149
+      }
+    },
+    {
+      "statement": "Critical-result workflows commonly require escalation when the initial provider cannot be reached.\n\nAn eight-hospital quality-improvement system used a defined escalation path when laboratory staff could not reach the provider within 15 minutes. Customer service then attempted contact, followed by pathology resident/clinical pathologist escalation if necessary.\n\nAnother tertiary-care centre used a three-tier escalation protocol based on specimen location, with escalation to clinical pathology when an appropriate provider could not be located.\n\nReconstructed:\n\n```text\nCRITICAL RESULT\n      ↓\nPRIMARY PROVIDER\n      ↓\nNO RESPONSE / NOT LOCATED\n      ↓\nSECONDARY CONTACT\n      ↓\nNO RESPONSE\n      ↓\nON-CALL / ESCALATION OWNER\n      ↓\nACKNOWLEDGEMENT\n      ↓\nCLOSE\n```\n\nThis is the core human exception path.\n\n---",
+      "research_location": "OPP-012-02.md#Exception C — Responsible Clinician Cannot Be Reached",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "6. Exception C — Responsible Clinician Cannot Be Reached",
+        "line_start": 150,
+        "line_end": 181
+      }
+    },
+    {
+      "statement": "The deeper investigation problem can be:\n\n```text\nCRITICAL RESULT\n      ↓\nWHO IS RESPONSIBLE RIGHT NOW?\n      ↓\nORDERING PROVIDER?\nCOVERING PHYSICIAN?\nWARD TEAM?\nICU TEAM?\nON-CALL?\n      ↓\nIDENTIFY CURRENT OWNER\n      ↓\nCONTACT\n      ↓\nACKNOWLEDGEMENT\n```\n\nThe paediatric closed-loop study specifically identified difficulty identifying appropriate licensed providers as a driver of notification failure.\n\nTherefore:\n\n> **Provider identification is itself an exception-investigation step.**\n\n---",
+      "research_location": "OPP-012-02.md#Exception D — Wrong / Unavailable Recipient",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "7. Exception D — Wrong / Unavailable Recipient",
+        "line_start": 182,
+        "line_end": 211
+      }
+    },
+    {
+      "statement": "The strongest ART-relevant state is:\n\n```text\nCRITICAL RESULT SENT\n      ↓\nNO ACKNOWLEDGEMENT\n      ↓\nOPEN SAFETY EXCEPTION\n```\n\nA mature closed-loop critical-value system explicitly tracks:\n\n- notification;\n- receipt acknowledgement;\n- timely acknowledgement;\n- clinician response.\n\nA five-year closed-loop hospital study used separate indicators for notification, receipt acknowledgement, timely acknowledgement and clinician response. If acknowledgement did not occur within the defined window, the system triggered telephone notification and documented the call.\n\nThis establishes the full lifecycle:\n\n```text\nNOTIFY\n→ ACKNOWLEDGE\n→ RESPOND\n→ CLOSE\n```\n\n---",
+      "research_location": "OPP-012-02.md#Exception E — No Acknowledgement",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "8. Exception E — No Acknowledgement",
+        "line_start": 212,
+        "line_end": 243
+      }
+    },
+    {
+      "statement": "The escalation path can become:\n\n```text\nNO ACKNOWLEDGEMENT\n       ↓\nREMINDER\n       ↓\nSECOND CONTACT\n       ↓\nESCALATION OWNER\n       ↓\nPHONE / DIRECT CONTACT\n       ↓\nACKNOWLEDGEMENT\n       ↓\nCLINICAL RESPONSE\n       ↓\nCLOSE\n```\n\nA closed-loop reporting system demonstrated that reminders and escalation reduced pages requiring telephone-operator escalation from approximately 30% to 11%, while operators closed many escalated cases by contacting the original or alternate physician.\n\nThis is external evidence, not Fortis evidence.\n\nIts value for VRL is demonstrating that **unacknowledged critical alerts create a repeatable human escalation workload**.\n\n---",
+      "research_location": "OPP-012-02.md#Exception F — Escalation",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "9. Exception F — Escalation",
+        "line_start": 244,
+        "line_end": 273
+      }
+    },
+    {
+      "statement": "Critical results can occur across:\n\n- emergency;\n- inpatient wards;\n- ICU;\n- operating areas;\n- outpatient services.\n\nThe Fortis Bengaluru study found **55.7% of critical values originated from emergency** and **40.9% from inpatient departments**.\n\nTherefore the responsible clinician may change with:\n\n```text\nLOCATION\n+\nSHIFT\n+\nON-CALL COVERAGE\n+\nPATIENT TRANSFER\n```\n\nPotential exception:\n\n```text\nCRITICAL RESULT\n      ↓\nORIGINAL PROVIDER UNAVAILABLE\n      ↓\nCURRENT COVERING TEAM UNKNOWN\n      ↓\nFIND CURRENT OWNER\n      ↓\nESCALATE\n```\n\nWhether Fortis currently experiences this as a material manual burden is unknown.\n\n---",
+      "research_location": "OPP-012-02.md#Exception G — Shift / Coverage Problem",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "10. Exception G — Shift / Coverage Problem",
+        "line_start": 274,
+        "line_end": 315
+      }
+    },
+    {
+      "statement": "Acknowledgement does not necessarily equal clinical action.\n\nA closed-loop critical-value system therefore separately measured:\n\n```text\nNOTIFICATION\n      ↓\nRECEIPT ACKNOWLEDGEMENT\n      ↓\nCLINICIAN RESPONSE\n```\n\nThe system monitored a separate clinician-response ratio to determine whether diagnosis or treatment was made in response to the critical value.\n\nThis creates a potentially important distinction:\n\n> **Communication closure ≠ clinical decision.**\n\nART may potentially verify that the communication was acknowledged, but it must not infer or make the clinical decision.\n\n---",
+      "research_location": "OPP-012-02.md#Exception H — Acknowledged but No Clinical Response",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "11. Exception H — Acknowledged but No Clinical Response",
+        "line_start": 316,
+        "line_end": 339
+      }
+    },
+    {
+      "statement": "The final exception state is:\n\n```text\nRESULT COMMUNICATED\n      ↓\nACKNOWLEDGED\n      ↓\nCLINICAL RESPONSE\n      ↓\nDOCUMENTATION\n      ↓\nCLOSED\n```\n\nThe closed-loop study maintained quality indicators covering notification, timely notification, receipt acknowledgement, timely acknowledgement and clinician response.\n\nThis shows that a mature workflow treats closure as a measurable state rather than assuming that a phone call means the case is finished.\n\n---",
+      "research_location": "OPP-012-02.md#Exception I — Documentation / Audit Closure",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "12. Exception I — Documentation / Audit Closure",
+        "line_start": 340,
+        "line_end": 361
+      }
+    },
+    {
+      "statement": "The strongest defensible exception path is:\n\n```text\nCRITICAL RESULT\n       ↓\nVERIFY RESULT\n       ↓\nIDENTIFY RESPONSIBLE CAREGIVER\n       ↓\nNOTIFY\n       ↓\nDELIVERY / ACKNOWLEDGEMENT?\n       ↓\nNO\n       ↓\nCHECK CURRENT OWNER / COVERAGE\n       ↓\nSECOND CONTACT\n       ↓\nAGE\n       ↓\nESCALATE\n       ↓\nDIRECT CONTACT\n       ↓\nACKNOWLEDGEMENT\n       ↓\nCLINICIAN RESPONSE\n       ↓\nDOCUMENT\n       ↓\nCLOSE\n```\n\nThis is not merely a messaging problem.\n\nIt is an **exception-management workflow**.\n\n---",
+      "research_location": "OPP-012-02.md#Reconstructed Human Investigation Loop",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "13. Reconstructed Human Investigation Loop",
+        "line_start": 362,
+        "line_end": 403
+      }
+    },
+    {
+      "statement": "The defensible ART layer is:\n\n```text\nCRITICAL EVENT\n      ↓\nCREATE SAFETY EXCEPTION\n      ↓\nIDENTIFY RESPONSIBLE TEAM\n      ↓\nSEND / ROUTE\n      ↓\nTRACK DELIVERY\n      ↓\nTRACK ACKNOWLEDGEMENT\n      ↓\nNO ACK?\n      ↓\nREMINDER\n      ↓\nESCALATION\n      ↓\nSECONDARY OWNER\n      ↓\nACKNOWLEDGED\n      ↓\nCLINICAL RESPONSE STATUS\n      ↓\nCLOSE + AUDIT\n```\n\nART could potentially automate:\n\n- exception creation;\n- routing;\n- acknowledgement tracking;\n- ageing;\n- reminders;\n- escalation;\n- alternate-owner routing;\n- closure verification;\n- audit trail.\n\nART should not:\n\n- interpret the result;\n- decide treatment;\n- replace the responsible clinician;\n- override hospital escalation policy.\n\n---",
+      "research_location": "OPP-012-02.md#ART Automation Surface",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "14. ART Automation Surface",
+        "line_start": 404,
+        "line_end": 456
+      }
+    },
+    {
+      "statement": "The Fortis study confirms that the laboratory already had:\n\n- critical-value selection;\n- telephone communication;\n- SMS communication;\n- read-back;\n- critical-value tracking.\n\nTherefore:\n\n> **ART is not a replacement for the LIS or laboratory notification process.**\n\nThe unresolved capability question is:\n\n```text\nLIS DETECTS\n      ↓\nLIS / STAFF NOTIFY\n      ↓\n?????????\n      ↓\nACKNOWLEDGEMENT\n      ↓\nESCALATION\n      ↓\nCLINICAL RESPONSE\n      ↓\nCLOSURE\n```\n\nThe `?????????` is the key capability-gap boundary.\n\n---",
+      "research_location": "OPP-012-02.md#Existing-System Boundary",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "15. Existing-System Boundary",
+        "line_start": 457,
+        "line_end": 492
+      }
+    },
+    {
+      "statement": "| Dimension | Status |\n|---|---|\n| Fortis Bengaluru critical-value workflow | VERIFIED |\n| 2,199 critical values in study | VERIFIED |\n| Telephone notification | VERIFIED |\n| SMS notification | VERIFIED |\n| Read-back | VERIFIED |\n| Critical-value logging | VERIFIED |\n| Manual fallback after notification failure | WORKFLOW-SUPPORTED |\n| Current acknowledgement tracking | UNKNOWN |\n| Current escalation automation | UNKNOWN |\n| Current unresolved alerts | UNKNOWN |\n| Current response time | UNKNOWN |\n| Current human effort | UNKNOWN |\n| Current capability gap | UNKNOWN |\n| Current ROI | UNKNOWN |\n\n---",
+      "research_location": "OPP-012-02.md#Company-Specific Pain Assessment",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "16. Company-Specific Pain Assessment",
+        "line_start": 493,
+        "line_end": 513
+      }
+    },
+    {
+      "statement": "The strongest defensible finding is:\n\n> **Critical-result management contains a distinct unresolved-exception state between notification and confirmed clinical acknowledgement/response. When the normal communication path fails, the workflow can require provider identification, repeated contact, escalation, documentation and closure.**\n\nThis pattern is independently demonstrated in closed-loop hospital systems.\n\n---",
+      "research_location": "OPP-012-02.md#Strongest Finding",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "17. Strongest Finding",
+        "line_start": 514,
+        "line_end": 523
+      }
+    },
+    {
+      "statement": "This workflow is highly generalisable:\n\n```text\nFORTIS BENGALURU\n       +\nINDIAN HOSPITAL STUDIES\n       +\nMULTI-HOSPITAL QUALITY-IMPROVEMENT STUDIES\n       ↓\nCRITICAL RESULT\n       ↓\nNOTIFICATION\n       ↓\nACKNOWLEDGEMENT\n       ↓\nESCALATION\n       ↓\nCLOSURE\n```\n\nThe repeatable industry problem is therefore not tied to Fortis:\n\n> **Time-critical clinical communication can fail after the initial alert, leaving humans to locate the responsible owner, chase acknowledgement and escalate until closure.**\n\n---",
+      "research_location": "OPP-012-02.md#Industry Generalisability",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "18. Industry Generalisability",
+        "line_start": 524,
+        "line_end": 551
+      }
+    },
+    {
+      "statement": "The next evidence question is not whether critical-value exceptions exist.\n\nThat is established.\n\nWe must determine:\n\n```text\nHOW OFTEN DOES FORTIS EXPERIENCE THEM?\n        ↓\nHOW MANY REQUIRE MANUAL FOLLOW-UP?\n        ↓\nHOW MANY REQUIRE ESCALATION?\n        ↓\nHOW LONG DOES CLOSURE TAKE?\n        ↓\nWHAT DOES THE EXISTING SYSTEM AUTOMATE?\n        ↓\nWHAT HUMAN WORK REMAINS?\n```\n\nThese determine whether this becomes a real ART opportunity.\n\n---",
+      "research_location": "OPP-012-02.md#What We Still Must Prove",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "19. What We Still Must Prove",
+        "line_start": 552,
+        "line_end": 577
+      }
+    },
+    {
+      "statement": "This checkpoint passes because the workflow demonstrates:\n\n- **high consequence**;\n- **time criticality**;\n- **existing technology**;\n- **observable exception paths**;\n- **human investigation**;\n- **escalation requirement**;\n- **strong cross-hospital generalisability**.\n\nThe company-specific residual burden remains unknown.\n\n---",
+      "research_location": "OPP-012-02.md#PASS → CONTINUE",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "PASS → CONTINUE",
+        "line_start": 580,
+        "line_end": 595
+      }
+    },
+    {
+      "statement": "The next question:\n\n> **What defensible hypothesis can be constructed for human time, escalation frequency and operational exposure created by unresolved critical-result notifications?**\n\nThe model should use:\n\n```text\nCRITICAL VALUES\n×\n% FAILED / UNACKNOWLEDGED\n×\nFOLLOW-UP / ESCALATION TIME\n```\n\nwhile clearly separating:\n\n- Fortis observed data;\n- Indian benchmarks;\n- external benchmark assumptions.\n\nDo not assign current Fortis failure rates unless directly supported.\n\n---",
+      "research_location": "OPP-012-02.md#OPP-012-03 — Human Effort / Pain Quantification",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "OPP-012-03 — Human Effort / Pain Quantification",
+        "line_start": 598,
+        "line_end": 623
+      }
+    },
+    {
+      "statement": "[Panacea Journal — Critical Value Analysis](https://newp.pjms.in/index.php/pjms/article/view/817)\n\n**Evidence:** 2,199 critical values; 75,156 tests; telephone + SMS notification; read-back; critical-value notification workflow.",
+      "research_location": "OPP-012-02.md#E-001 — Fortis Bengaluru Study",
+      "source_urls": [
+        "https://newp.pjms.in/index.php/pjms/article/view/817"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "E-001 — Fortis Bengaluru Study",
+        "line_start": 626,
+        "line_end": 631
+      }
+    },
+    {
+      "statement": "[Panacea Journal PDF](https://distantreader.org/stacks/journals/panacea/panacea-1647.pdf)\n\n**Evidence:** Fortis multispeciality hospital Bangalore; emergency/IPD/OPD distribution; critical-value workflow details.",
+      "research_location": "OPP-012-02.md#E-002 — Fortis Study PDF",
+      "source_urls": [
+        "https://distantreader.org/stacks/journals/panacea/panacea-1647.pdf"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "E-002 — Fortis Study PDF",
+        "line_start": 632,
+        "line_end": 637
+      }
+    },
+    {
+      "statement": "[PMC — Closed-Loop Critical Value Notification](https://pmc.ncbi.nlm.nih.gov/articles/PMC7031628/)\n\n**Evidence:** acknowledgement, timely acknowledgement, clinician response, escalation and five quality indicators across the full lifecycle.",
+      "research_location": "OPP-012-02.md#E-003 — Closed-Loop Critical-Value Management",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7031628/"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "E-003 — Closed-Loop Critical-Value Management",
+        "line_start": 638,
+        "line_end": 643
+      }
+    },
+    {
+      "statement": "[PMC — Provider-Team Smartphone Communication](https://pmc.ncbi.nlm.nih.gov/articles/PMC8442100/)\n\n**Evidence:** provider identification difficulty and acknowledgement failure; closed-loop intervention.",
+      "research_location": "OPP-012-02.md#E-004 — Closed-Loop Provider Communication",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8442100/"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "E-004 — Closed-Loop Provider Communication",
+        "line_start": 644,
+        "line_end": 649
+      }
+    },
+    {
+      "statement": "[American Journal of Clinical Pathology — Critical Value Escalation](https://academic.oup.com/ajcp/article/163/1/97/7739679)\n\n**Evidence:** escalation after inability to contact provider; customer-service and pathology escalation.",
+      "research_location": "OPP-012-02.md#E-005 — Multi-Hospital Escalation",
+      "source_urls": [
+        "https://academic.oup.com/ajcp/article/163/1/97/7739679"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "E-005 — Multi-Hospital Escalation",
+        "line_start": 650,
+        "line_end": 655
+      }
+    },
+    {
+      "statement": "[Journal of Applied Laboratory Medicine — Quality Improvement](https://academic.oup.com/jalm/article/6/4/985/6255453)\n\n**Evidence:** pending callback tracking and multi-tier escalation.",
+      "research_location": "OPP-012-02.md#E-006 — Critical-Value Delivery",
+      "source_urls": [
+        "https://academic.oup.com/jalm/article/6/4/985/6255453"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "E-006 — Critical-Value Delivery",
+        "line_start": 656,
+        "line_end": 661
+      }
+    },
+    {
+      "statement": "[ResearchGate — ALERTS Closed-Loop Reporting System](https://www.researchgate.net/publication/40812384_Implementation_of_a_Closed-Loop_Reporting_System_for_Critical_Values_and_Clinical_Communication_in_Compliance_with_Goals_of_The_Joint_Commission)\n\n**Evidence:** reminder/escalation reduced telephone-operator escalations; operator closure and acknowledgement metrics.\n\n---",
+      "research_location": "OPP-012-02.md#E-007 — Closed-Loop Alert System",
+      "source_urls": [
+        "https://www.researchgate.net/publication/40812384_Implementation_of_a_Closed-Loop_Reporting_System_for_Critical_Values_and_Clinical_Communication_in_Compliance_with_Goals_of_The_Joint_Commission"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "E-007 — Closed-Loop Alert System",
+        "line_start": 662,
+        "line_end": 669
+      }
+    },
+    {
+      "statement": "- Bengaluru laboratory study;\n- 75,156 tests;\n- 2,199 critical values;\n- SMS + telephone;\n- read-back;\n- critical-value workflow.",
+      "research_location": "OPP-012-02.md#Fortis-specific",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "Fortis-specific",
+        "line_start": 672,
+        "line_end": 680
+      }
+    },
+    {
+      "statement": "- acknowledgement failure;\n- provider identification;\n- escalation;\n- closed-loop communication;\n- unresolved alert management.",
+      "research_location": "OPP-012-02.md#Industry / external",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "Industry / external",
+        "line_start": 681,
+        "line_end": 688
+      }
+    },
+    {
+      "statement": "- current Fortis acknowledgement rate;\n- current Fortis failure rate;\n- current escalation rate;\n- current human minutes;\n- current system capability;\n- current capability gap;\n- current ROI.\n\n---",
+      "research_location": "OPP-012-02.md#Unknown",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "Unknown",
+        "line_start": 689,
+        "line_end": 700
+      }
+    },
+    {
+      "statement": "```yaml\nartifact_type: opportunity_intelligence\nopportunity_id: OPP-012\nindustry: healthcare_hospital_operations\ncompany: Fortis Healthcare\ncompany_candidate_site: Fortis Hospital CG Road Bengaluru\nworkflow: critical_laboratory_result_notification_closed_loop_acknowledgement\npain_type: patient_safety_time_critical_clinical_communication\nresearch_stage: exception_human_investigation_reconstruction\ndecision: pass_high_consequence_exception_path_supported\n\ncompany_linked_evidence:\n  tests: 75156\n  critical_values: 2199\n  emergency_share: 55.7_percent\n  inpatient_share: 40.9_percent\n  outpatient_share: 3.4_percent\n  telephone_notification: true\n  sms_notification: true\n  read_back: true\n  critical_value_logging: true\n\nexception_paths:\n  notification_failure: supported\n  provider_identification: industry_verified\n  no_acknowledgement: industry_verified\n  escalation: industry_verified\n  shift_coverage: plausible_workflow_condition\n  clinician_response: industry_verified\n  closure_audit: industry_verified\n\ncurrent_company_acknowledgement_rate: unknown\ncurrent_company_unresolved_alerts: unknown\ncurrent_company_escalation_rate: unknown\ncurrent_company_human_effort: unknown\nexisting_system: partially_verified\ncapability_gap: unknown\ncustomer_roi: unknown\n\ncompany_pain_signal: direct_historical_exception_evidence_current_gap_unknown\nindustry_pain_signal: strong\nindustry_generalisability: high\nnext_checkpoint: OPP-012-03\ncommercial_status: discovery_continue\n```\n\n---",
+      "research_location": "OPP-012-02.md#AIL Compilation Metadata",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "AIL Compilation Metadata",
+        "line_start": 701,
+        "line_end": 750
+      }
+    },
+    {
+      "statement": "> **Fortis Bengaluru evidence establishes a high-volume critical-result notification workflow using telephone, SMS and read-back. Broader closed-loop evidence establishes that failed acknowledgement can create provider-identification, follow-up, escalation and closure work. The exact current Fortis residual workload and system boundary remain unverified.**\n\n**OPP-012-02 = PASS → HIGH-CONSEQUENCE EXCEPTION PATH SUPPORTED**\n\n**Next: OPP-012-03 — Human Effort / Pain Quantification**",
+      "research_location": "OPP-012-02.md#Integrity Statement",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-02.md",
+        "section": "Integrity Statement",
+        "line_start": 751,
+        "line_end": 757
+      }
+    },
+    {
+      "statement": "---\nid: OPP-012-03\nopportunity_id: OPP-012\nindustry: Healthcare / Hospital Operations\ncompany: Fortis Healthcare — Bengaluru\ncompany_candidate_site: Fortis Hospital CG Road, Bengaluru\nworkflow: Critical Laboratory Result Notification + Closed-Loop Acknowledgement\npain_type: Patient Safety / Time-Critical Clinical Communication\nresearch_stage: Human Effort / Pain Quantification\nmethodology: Legacy VRL\nstatus: PASS\ndecision: HIGH_CONSEQUENCE_TIME_CRITICAL_EFFORT_SIGNAL\ncompany_pain_signal: direct_workflow_volume_strong_current_effort_unknown\nindustry_generalizability: high\ncurrent_pain_magnitude: hypothesis_only\ncurrent_capability_gap: unknown\ncustomer_roi: hypothesis_only\ncommercial_status: discovery_continue\n---",
+      "research_location": "OPP-012-03.md#Front matter",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "Front matter",
+        "line_start": 1,
+        "line_end": 18
+      }
+    },
+    {
+      "statement": "**Industry:** Healthcare / Hospital Operations  \n**Company:** Fortis Healthcare — Bengaluru  \n**Candidate site:** Fortis Hospital CG Road, Bengaluru  \n**Workflow:** Critical Laboratory Result Notification + Closed-Loop Acknowledgement  \n**VRL checkpoint:** OPP-012-03  \n**Decision:** **PASS → High-consequence, time-critical effort signal**\n\n---",
+      "research_location": "OPP-012-03.md#OPP-012-03 — Human Effort / Pain Quantification",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "OPP-012-03 — Human Effort / Pain Quantification",
+        "line_start": 21,
+        "line_end": 31
+      }
+    },
+    {
+      "statement": "> **How much human effort can be defensibly associated with critical-result notification, failed contact and escalation, without inventing a current Fortis failure rate?**\n\nThe Fortis Bengaluru study documented **2,199 critical values among 75,156 tests** and used telephone, SMS, read-back and critical-value logging.\n\nThe study does not provide a current Fortis Bengaluru figure for:\n\n- failed notifications;\n- unresolved acknowledgements;\n- escalation frequency;\n- staff minutes per exception.\n\nTherefore Fortis-specific current effort remains **unknown**.\n\n---",
+      "research_location": "OPP-012-03.md#Checkpoint Question",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "1. Checkpoint Question",
+        "line_start": 32,
+        "line_end": 48
+      }
+    },
+    {
+      "statement": "The published Fortis Bengaluru study gives:\n\n```text\n75,156 TESTS\n      ↓\n2,199 CRITICAL VALUES\n      ↓\n~2.9% OF TESTS\n```\n\nThis is the relevant workflow volume in the published study.\n\nIt is **not a current 2026 Fortis operating volume** and should not be extrapolated into current annual workload without primary data.\n\n---",
+      "research_location": "OPP-012-03.md#Direct Fortis Workload Signal",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "2. Direct Fortis Workload Signal",
+        "line_start": 49,
+        "line_end": 66
+      }
+    },
+    {
+      "statement": "An Indian tertiary-care laboratory study analysed **1,187 critical values** and found:\n\n- laboratory detection of a critical abnormality took approximately **30–40 minutes** after sample collection;\n- notification itself required an average **3–5 minutes** of laboratory staff time;\n- **64.61%** of critical values were notified between 30 and 120 minutes after sample receipt;\n- difficulty contacting the responsible caregiver was an important source of delay.\n\nThis is useful because it separates:\n\n```text\nDETECTION / LAB PROCESSING\n        ≠\nCOMMUNICATION EFFORT\n```\n\nThe ART surface is primarily the second.\n\n---",
+      "research_location": "OPP-012-03.md#Notification Effort Benchmark",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "3. Notification Effort Benchmark",
+        "line_start": 67,
+        "line_end": 87
+      }
+    },
+    {
+      "statement": "A College of American Pathologists Q-Probes study covering **3,545 inpatient and emergency critical-result notifications across 121 laboratories** found:\n\n- median notification time after testing was **5 minutes**;\n- the interquartile range was **1.5–8 minutes**;\n- **96%** of calls included read-back;\n- **89%** were initially called to a licensed caregiver.\n\nThis demonstrates that a normal successful notification can be relatively short.\n\nTherefore:\n\n> **The major automation value is not necessarily eliminating the first notification. It is eliminating repeated human work when the normal notification path fails.**\n\n---",
+      "research_location": "OPP-012-03.md#Multi-Hospital Benchmark",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "4. Multi-Hospital Benchmark",
+        "line_start": 88,
+        "line_end": 104
+      }
+    },
+    {
+      "statement": "The systematic review of automated critical-value notification describes the standard manual process as:\n\n```text\nCONTACT CLINICIAN\n      ↓\nCONNECT\n      ↓\nCONVEY RESULT\n      ↓\nIF UNSUCCESSFUL\n      ↓\nFOLLOW ROUTING RULES\n      ↓\nCONTACT ALTERNATE CLINICIAN\n      ↓\nESCALATE\n```\n\nThe review identifies this manual process as **time-consuming**, diverting laboratorian attention from other laboratory work and creating opportunities for information-transfer errors and reporting delays.\n\nThis directly supports the ART hypothesis:\n\n> **The cost is concentrated in failed communication paths, not necessarily successful calls.**\n\n---",
+      "research_location": "OPP-012-03.md#Exception Effort Benchmark",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "5. Exception Effort Benchmark",
+        "line_start": 105,
+        "line_end": 132
+      }
+    },
+    {
+      "statement": "A recent eight-hospital quality-improvement project used:\n\n```text\nNO PROVIDER CONTACT WITHIN 15 MINUTES\n        ↓\nCUSTOMER SERVICE\n        ↓\nUP TO 2 HOURS OF CONTACT ATTEMPTS\n        ↓\nPATHOLOGY RESIDENT / CLINICAL PATHOLOGIST\n```\n\nOne 529-bed hospital had approximately **250 escalated calls/month (25%)**, compared with approximately **100/month (10%)** at other hospitals in the system.\n\nThis is **not Fortis evidence**.\n\nIt establishes the possible magnitude of the human escalation workload in a real hospital system.\n\nIt also demonstrates that hospital-to-hospital variation can be large.\n\n---",
+      "research_location": "OPP-012-03.md#Escalation Benchmark",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "6. Escalation Benchmark",
+        "line_start": 133,
+        "line_end": 156
+      }
+    },
+    {
+      "statement": "An Indian tertiary-care study of **1,187 critical values** found:\n\n```text\n32.01% → notified within 30 minutes\n64.61% → 30–120 minutes\n0.034% → after 2 hours\n```\n\nThe laboratory reported approximately **3–5 minutes** of notification effort after the critical abnormality had been detected.\n\nImportant causes of delay included:\n\n- incomplete requisition information;\n- missing treating-physician information;\n- unknown ordering location;\n- difficulty contacting the appropriate caregiver.\n\nThis indicates that **routing and contact failure can consume time even when the communication itself is brief.**\n\n---",
+      "research_location": "OPP-012-03.md#Indian Delay Evidence",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "7. Indian Delay Evidence",
+        "line_start": 157,
+        "line_end": 179
+      }
+    },
+    {
+      "statement": "Because current Fortis failure rates are unavailable, use a scenario model only to test opportunity magnitude.\n\nAssume the published Fortis volume of **2,199 critical values** is used as a historical reference point.\n\n| Scenario | % requiring additional human follow-up | Cases | Extra effort/case |\n|---|---:|---:|---:|\n| Conservative | 2% | ~44 | 5 min |\n| Base | 5% | ~110 | 10 min |\n| High | 10% | ~220 | 15 min |\n\nThese are **research assumptions**, not Fortis measurements.\n\n---",
+      "research_location": "OPP-012-03.md#Screening Model — Explicitly Hypothetical",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "8. Screening Model — Explicitly Hypothetical",
+        "line_start": 180,
+        "line_end": 195
+      }
+    },
+    {
+      "statement": "Formula:\n\n```text\ncritical values\n×\nfollow-up rate\n×\nminutes per exception\n÷\n60\n```",
+      "research_location": "OPP-012-03.md#Hypothetical Annual/Study-Period Exception Hours",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "9. Hypothetical Annual/Study-Period Exception Hours",
+        "line_start": 196,
+        "line_end": 209
+      }
+    },
+    {
+      "statement": "```text\n2,199 × 2% × 5 ÷ 60\n≈ 3.7 hours\n```",
+      "research_location": "OPP-012-03.md#Conservative",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "Conservative",
+        "line_start": 210,
+        "line_end": 216
+      }
+    },
+    {
+      "statement": "```text\n2,199 × 5% × 10 ÷ 60\n≈ 18.3 hours\n```",
+      "research_location": "OPP-012-03.md#Base",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "Base",
+        "line_start": 217,
+        "line_end": 223
+      }
+    },
+    {
+      "statement": "```text\n2,199 × 10% × 15 ÷ 60\n≈ 55.0 hours\n```",
+      "research_location": "OPP-012-03.md#High",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "High",
+        "line_start": 224,
+        "line_end": 230
+      }
+    },
+    {
+      "statement": "> **~4–55 hypothetical human-hours per 2,199 critical values**\n\nAgain:\n\n**This is not Fortis actual labour.**\n\nIt is a sensitivity model showing that **notification exceptions alone may not create a large labour-only SaaS opportunity**.\n\n---",
+      "research_location": "OPP-012-03.md#Screening range",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "Screening range",
+        "line_start": 231,
+        "line_end": 242
+      }
+    },
+    {
+      "statement": "This checkpoint exposes an important weakness.\n\nIf ART only saves:\n\n> **3–55 hours per 2,199 critical values**\n\nthe labour-saving proposition may be insufficient.\n\nTherefore:\n\n> **Do not sell this opportunity as “save laboratory staff time.”**\n\nThe stronger value proposition is:\n\n```text\nTIME-CRITICAL COMMUNICATION\n+\nFAILED ACKNOWLEDGEMENT\n+\nESCALATION\n+\nUNRESOLVED SAFETY EXCEPTION\n```\n\nThe economic value may be in **risk reduction and faster closure**, but those benefits must not be monetized without primary evidence.\n\n---",
+      "research_location": "OPP-012-03.md#Important Commercial Finding",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "10. Important Commercial Finding",
+        "line_start": 243,
+        "line_end": 272
+      }
+    },
+    {
+      "statement": "Critical laboratory values are specifically intended to identify potentially life-threatening conditions requiring prompt communication. The Indian study describes ineffective notification as a patient-safety issue that can contribute to preventable diagnostic error.\n\nA recent study at Siriraj Hospital also analysed whether critical-result reporting led to treatment or further investigation within 30 minutes, demonstrating that the clinically relevant outcome is not merely notification but subsequent action.\n\nTherefore:\n\n```text\nNOTIFICATION TIME\n        +\nACKNOWLEDGEMENT\n        +\nCLINICAL RESPONSE\n```\n\nis more meaningful than notification labour alone.\n\n---",
+      "research_location": "OPP-012-03.md#Patient-Safety Consequence",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "11. Patient-Safety Consequence",
+        "line_start": 273,
+        "line_end": 292
+      }
+    },
+    {
+      "statement": "The addressable unit should be:\n\n> **unresolved critical-result exception**\n\nrather than:\n\n> **critical-result notification**\n\nPotential value components:\n\n```text\n1. FOLLOW-UP TIME\n2. ESCALATION TIME\n3. LABORATORIAN INTERRUPTION\n4. DELAY REDUCTION\n5. CLOSURE VISIBILITY\n6. AUDIT / QUALITY WORK\n7. POTENTIAL SAFETY-RISK REDUCTION\n```\n\nOnly **1–3** can currently be reasonably modelled with external time evidence.\n\n**4–7 require primary hospital evidence before quantification.**\n\n---",
+      "research_location": "OPP-012-03.md#Strongest ART Economics Hypothesis",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "12. Strongest ART Economics Hypothesis",
+        "line_start": 293,
+        "line_end": 320
+      }
+    },
+    {
+      "statement": "The potential automation remains:\n\n```text\nCRITICAL RESULT\n      ↓\nROUTE\n      ↓\nDELIVERY\n      ↓\nACKNOWLEDGEMENT\n      ↓\nNO ACK?\n      ↓\nTIMER\n      ↓\nREMINDER\n      ↓\nESCALATION\n      ↓\nSECONDARY OWNER\n      ↓\nACKNOWLEDGED\n      ↓\nCLINICAL RESPONSE STATUS\n      ↓\nCLOSE\n```\n\nThe largest potential efficiency comes from eliminating repeated manual contact and escalation.\n\n---",
+      "research_location": "OPP-012-03.md#ART Addressable Workflow",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "13. ART Addressable Workflow",
+        "line_start": 321,
+        "line_end": 354
+      }
+    },
+    {
+      "statement": "This opportunity becomes weak if Fortis already has:\n\n```text\nAUTOMATIC ROUTING\n+\nDELIVERY CONFIRMATION\n+\nACKNOWLEDGEMENT TRACKING\n+\nAUTOMATIC ESCALATION\n+\nALTERNATE OWNER ROUTING\n+\nCLOSURE AUDIT\n```\n\nIt becomes strong if:\n\n```text\nLIS DETECTS\n      ↓\nSTAFF MANUALLY CONTACT\n      ↓\nNO RESPONSE\n      ↓\nSTAFF FIND ALTERNATE OWNER\n      ↓\nSTAFF CALL AGAIN\n      ↓\nSTAFF ESCALATE\n      ↓\nSTAFF VERIFY CLOSURE\n```\n\nTherefore system maturity is commercially more important than raw critical-value volume.\n\n---",
+      "research_location": "OPP-012-03.md#Sensitivity to Existing Automation",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "14. Sensitivity to Existing Automation",
+        "line_start": 355,
+        "line_end": 394
+      }
+    },
+    {
+      "statement": "The same human-cost pattern is documented across healthcare:\n\n```text\nCRITICAL EVENT\n      ↓\nPRIMARY NOTIFICATION\n      ↓\nFAILED CONTACT\n      ↓\nREPEATED CONTACT\n      ↓\nESCALATION\n      ↓\nACKNOWLEDGEMENT\n      ↓\nCLOSURE\n```\n\nThe systematic review identifies manual notification and escalation as a recurring workflow across healthcare organisations.\n\nAn eight-hospital study further demonstrates significant differences in escalation volume between hospitals.\n\nThus the industry opportunity is potentially:\n\n> **Closed-loop management of time-critical clinical communication exceptions for hospitals with insufficient automated acknowledgement and escalation.**\n\n---",
+      "research_location": "OPP-012-03.md#Industry Generalisation",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "15. Industry Generalisation",
+        "line_start": 395,
+        "line_end": 424
+      }
+    },
+    {
+      "statement": "Do not claim:\n\n> “Fortis loses X hours every year.”\n\nUnknown.\n\nDo not claim:\n\n> “Fortis has X% failed notifications.”\n\nUnknown.\n\nDo not claim:\n\n> “ART will save lives.”\n\nUnsupported.\n\nDo not claim:\n\n> “ART will save ₹X.”\n\nNot yet established.\n\nThe defensible conclusion is:\n\n> **The workflow has measurable human communication effort, but labour savings alone may be too small to justify an opportunity. The commercial case depends on the frequency and consequence of unresolved acknowledgement/escalation failures.**\n\n---",
+      "research_location": "OPP-012-03.md#What We Must Not Claim",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "16. What We Must Not Claim",
+        "line_start": 425,
+        "line_end": 456
+      }
+    },
+    {
+      "statement": "The opportunity survives because:\n\n```text\nHIGH CONSEQUENCE\n+\nTIME CRITICALITY\n+\nREAL HUMAN EXCEPTION WORK\n+\nEXTERNAL EVIDENCE OF ESCALATION BURDEN\n+\nEXISTING-SYSTEM BOUNDARY\n+\nFAST AUTOMATION POTENTIAL\n```\n\nBut the economics are **not yet compelling on labour savings alone**.\n\nThat is an important finding, not a failure.\n\n---",
+      "research_location": "OPP-012-03.md#PASS → HIGH-CONSEQUENCE / TIME-CRITICAL EFFORT SIGNAL",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "PASS → HIGH-CONSEQUENCE / TIME-CRITICAL EFFORT SIGNAL",
+        "line_start": 459,
+        "line_end": 482
+      }
+    },
+    {
+      "statement": "Primary validation must answer only:\n\n```text\n1. How many critical results require manual follow-up?\n2. How many fail first-contact acknowledgement?\n3. How many require escalation?\n4. How long does an unresolved case remain open?\n5. What does the current LIS / HIS automate?\n6. Who owns escalation?\n7. Are unresolved cases visible until closure?\n8. Has a delayed communication ever created a documented operational/safety concern?\n```\n\nThe key commercial test is:\n\n> **Is the unresolved exception volume and consequence large enough that a closed-loop automation layer is worth buying?**\n\n---",
+      "research_location": "OPP-012-03.md#OPP-012-04 — Direct Operational Evidence / Pain Validation",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "OPP-012-04 — Direct Operational Evidence / Pain Validation",
+        "line_start": 485,
+        "line_end": 505
+      }
+    },
+    {
+      "statement": "[PMC — Study of Variables Affecting Critical Value Notification](https://pmc.ncbi.nlm.nih.gov/articles/PMC4310845/)\n\n**Evidence:** 1,187 critical values; 3–5 minutes average notification effort after detection; 64.61% notified 30–120 minutes after sample receipt; caregiver-contact problems.",
+      "research_location": "OPP-012-03.md#E-001 — Indian Human Notification Effort",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4310845/"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "E-001 — Indian Human Notification Effort",
+        "line_start": 508,
+        "line_end": 513
+      }
+    },
+    {
+      "statement": "[Archives of Pathology & Laboratory Medicine — CAP Q-Probes](https://meridian.allenpress.com/aplm/article/132/12/1862/460366/Notification-of-Critical-Results-A-College-of)\n\n**Evidence:** 3,545 notifications across 121 laboratories; median 5 minutes for notification after testing; 96% read-back.",
+      "research_location": "OPP-012-03.md#E-002 — Multi-Hospital Notification Benchmark",
+      "source_urls": [
+        "https://meridian.allenpress.com/aplm/article/132/12/1862/460366/Notification-of-Critical-Results-A-College-of"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "E-002 — Multi-Hospital Notification Benchmark",
+        "line_start": 514,
+        "line_end": 519
+      }
+    },
+    {
+      "statement": "[PMC — Automated Notification and Call Centers Systematic Review](https://pmc.ncbi.nlm.nih.gov/articles/PMC4518392/)\n\n**Evidence:** manual contact and escalation are time-consuming and divert laboratorian attention; automated notification/call-center alternatives evaluated.",
+      "research_location": "OPP-012-03.md#E-003 — Manual Notification Burden",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4518392/"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "E-003 — Manual Notification Burden",
+        "line_start": 520,
+        "line_end": 525
+      }
+    },
+    {
+      "statement": "[American Journal of Clinical Pathology — Escalation Process](https://academic.oup.com/ajcp/article/163/1/97/7739679)\n\n**Evidence:** 15-minute initial escalation threshold; customer service follow-up; pathology escalation; one 529-bed hospital approximately 250 escalations/month versus ~100 at others.",
+      "research_location": "OPP-012-03.md#E-004 — Escalation Workload",
+      "source_urls": [
+        "https://academic.oup.com/ajcp/article/163/1/97/7739679"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "E-004 — Escalation Workload",
+        "line_start": 526,
+        "line_end": 531
+      }
+    },
+    {
+      "statement": "[PMC — Quality Tools and Strategy for Critical Alerts](https://pmc.ncbi.nlm.nih.gov/articles/PMC9763056/)\n\n**Evidence:** critical notification delays and failed notifications; protocol/process improvement.",
+      "research_location": "OPP-012-03.md#E-005 — Indian Quality Improvement",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9763056/"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "E-005 — Indian Quality Improvement",
+        "line_start": 532,
+        "line_end": 537
+      }
+    },
+    {
+      "statement": "[PLOS One — Critical Laboratory Value Reporting and Patient Management](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0324594)\n\n**Evidence:** clinical actions following critical-result notification, including treatment or further investigation within 30 minutes.",
+      "research_location": "OPP-012-03.md#E-006 — Critical-Result Clinical Response",
+      "source_urls": [
+        "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0324594"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "E-006 — Critical-Result Clinical Response",
+        "line_start": 538,
+        "line_end": 543
+      }
+    },
+    {
+      "statement": "[Panacea Journal — Critical Value Analysis at Fortis Multispeciality Hospital, Bangalore](https://newp.pjms.in/index.php/pjms/article/view/817)\n\n**Evidence:** 75,156 tests; 2,199 critical values; SMS/telephone/read-back workflow.\n\n---",
+      "research_location": "OPP-012-03.md#E-007 — Fortis Bengaluru Company-Linked Study",
+      "source_urls": [
+        "https://newp.pjms.in/index.php/pjms/article/view/817"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "E-007 — Fortis Bengaluru Company-Linked Study",
+        "line_start": 544,
+        "line_end": 551
+      }
+    },
+    {
+      "statement": "- 75,156 tests.\n- 2,199 critical values.\n- Existing notification workflow.\n- SMS + telephone + read-back.",
+      "research_location": "OPP-012-03.md#Fortis-linked",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "Fortis-linked",
+        "line_start": 554,
+        "line_end": 560
+      }
+    },
+    {
+      "statement": "- 3–5 minutes average notification effort in an Indian tertiary laboratory.\n- 5-minute median notification effort across 121 laboratories.\n- Manual escalation can consume substantial staff attention.\n- Real hospitals demonstrate material escalation volumes.",
+      "research_location": "OPP-012-03.md#External benchmark",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "External benchmark",
+        "line_start": 561,
+        "line_end": 567
+      }
+    },
+    {
+      "statement": "- 2%, 5%, 10% follow-up rates.\n- 5, 10, 15 minutes per exception.\n- ~4–55 hours per 2,199 critical values.",
+      "research_location": "OPP-012-03.md#Hypothetical model",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "Hypothetical model",
+        "line_start": 568,
+        "line_end": 573
+      }
+    },
+    {
+      "statement": "- Current Fortis failure rate.\n- Current Fortis acknowledgement rate.\n- Current Fortis escalation rate.\n- Current human effort.\n- Current unresolved-case duration.\n- Current system capability.\n- Current safety impact.\n- Actual ROI.\n\n---",
+      "research_location": "OPP-012-03.md#Unknown",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "Unknown",
+        "line_start": 574,
+        "line_end": 586
+      }
+    },
+    {
+      "statement": "```yaml\nartifact_type: opportunity_intelligence\nopportunity_id: OPP-012\nindustry: healthcare_hospital_operations\ncompany: Fortis Healthcare\ncompany_candidate_site: Fortis Hospital CG Road Bengaluru\nworkflow: critical_laboratory_result_notification_closed_loop_acknowledgement\npain_type: patient_safety_time_critical_clinical_communication\nresearch_stage: human_effort_pain_quantification\ndecision: pass_high_consequence_time_critical_effort_signal\n\ncompany_linked_volume:\n  tests: 75156\n  critical_values: 2199\n\nexternal_effort_benchmarks:\n  indian_notification_effort: 3_to_5_minutes\n  cap_qprobes_median_notification: 5_minutes\n  manual_escalation: time_consuming\n  example_hospital_escalations: 250_per_month\n\nhypothesis_model:\n  follow_up_rate:\n    conservative: 2_percent\n    base: 5_percent\n    high: 10_percent\n  minutes_per_exception:\n    conservative: 5\n    base: 10\n    high: 15\n  hypothetical_hours_per_2199_critical_values:\n    conservative: 3.7\n    base: 18.3\n    high: 55.0\n\ninterpretation:\n  labour_savings_alone: potentially_insufficient\n  safety_value: potentially_high_but_unmonetized\n  commercial_decisive_factor: unresolved_exception_volume_and_consequence\n\ncurrent_failure_rate: unknown\ncurrent_acknowledgement_rate: unknown\ncurrent_escalation_rate: unknown\ncurrent_human_effort: unknown\ncurrent_system: partially_verified\ncapability_gap: unknown\ncustomer_roi: unknown\n\ncompany_pain_signal: direct_workflow_volume_strong_current_effort_unknown\nindustry_pain_signal: strong\nindustry_generalisability: high\nnext_checkpoint: OPP-012-04\ncommercial_status: discovery_continue\n```\n\n---",
+      "research_location": "OPP-012-03.md#AIL Compilation Metadata",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "AIL Compilation Metadata",
+        "line_start": 587,
+        "line_end": 645
+      }
+    },
+    {
+      "statement": "> **The Fortis Bengaluru evidence establishes meaningful critical-result workflow volume, while Indian and multi-hospital research quantifies notification effort and demonstrates that failed communication can create escalation work. Labour savings alone may not be sufficient to support a strong commercial opportunity. The decisive value question is whether unresolved acknowledgement/escalation failures are frequent and consequential enough to justify closed-loop automation.**\n\n**OPP-012-03 = PASS → HIGH-CONSEQUENCE / TIME-CRITICAL EFFORT SIGNAL**\n\n**Next: OPP-012-04 — Direct Operational Evidence / Pain Validation**",
+      "research_location": "OPP-012-03.md#Integrity Statement",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-03.md",
+        "section": "Integrity Statement",
+        "line_start": 646,
+        "line_end": 652
+      }
+    },
+    {
+      "statement": "---\nid: OPP-012-04\nopportunity_id: OPP-012\nindustry: Healthcare / Hospital Operations\ncompany: Fortis Healthcare — Bengaluru\ncompany_candidate_site: Fortis Hospital CG Road, Bengaluru\nworkflow: Critical Laboratory Result Notification + Closed-Loop Acknowledgement\npain_type: Patient Safety / Time-Critical Clinical Communication\nresearch_stage: Direct Operational Evidence / Pain Validation\nmethodology: Legacy VRL\nstatus: CONDITIONAL_PASS\ndecision: PRIMARY_VALIDATION_JUSTIFIED_COMPANY_PAIN_NOT_YET_PROVEN\ncompany_pain_signal: strong_historical_workflow_evidence_current_gap_unknown\nindustry_generalizability: high\ncurrent_pain_magnitude: unknown\ncurrent_capability_gap: unknown\ncustomer_roi: unknown\ncommercial_status: primary_validation_required\n---",
+      "research_location": "OPP-012-04.md#Front matter",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "Front matter",
+        "line_start": 1,
+        "line_end": 18
+      }
+    },
+    {
+      "statement": "**Industry:** Healthcare / Hospital Operations  \n**Company:** Fortis Healthcare — Bengaluru  \n**Candidate site:** Fortis Hospital CG Road, Bengaluru  \n**Workflow:** Critical Laboratory Result Notification + Closed-Loop Acknowledgement  \n**VRL checkpoint:** OPP-012-04  \n**Decision:** **CONDITIONAL PASS → Primary validation justified; company pain not yet proven**\n\n---",
+      "research_location": "OPP-012-04.md#OPP-012-04 — Direct Operational Evidence / Pain Validation",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "OPP-012-04 — Direct Operational Evidence / Pain Validation",
+        "line_start": 21,
+        "line_end": 31
+      }
+    },
+    {
+      "statement": "> **Is there enough direct operational evidence to establish that the Fortis Bengaluru workflow currently contains a material unresolved critical-result communication burden that should be automated?**",
+      "research_location": "OPP-012-04.md#Checkpoint Question",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "1. Checkpoint Question",
+        "line_start": 32,
+        "line_end": 35
+      }
+    },
+    {
+      "statement": "The evidence is strong enough to establish:\n\n- a real Fortis Bengaluru critical-value workflow;\n- meaningful historical critical-value volume;\n- existing notification infrastructure;\n- a known exception/fallback pathway;\n- a broader healthcare problem involving failed contact and escalation.\n\nBut it does **not** establish the current Fortis rate of:\n\n- failed first contact;\n- unacknowledged alerts;\n- escalations;\n- unresolved cases;\n- human time per exception.\n\nTherefore this checkpoint should **not** be marked as fully validated.\n\n---",
+      "research_location": "OPP-012-04.md#Answer: No — not yet.",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "Answer: No — not yet.",
+        "line_start": 36,
+        "line_end": 57
+      }
+    },
+    {
+      "statement": "A retrospective study conducted in the hematology and biochemistry laboratory of a **Fortis multispeciality hospital, Bangalore** reported:\n\n- **75,156 tests** over January 2020–June 2021;\n- **2,199 critical values**;\n- 1,224 critical values from emergency;\n- 900 from inpatient departments;\n- 75 from outpatient departments.\n\nThe laboratory used critical-value notification procedures including telephone communication, SMS and read-back.\n\nThis is strong company-linked workflow evidence.\n\nIt is **historical** and does not prove the current 2026 workflow at Fortis Hospital CG Road.\n\n---",
+      "research_location": "OPP-012-04.md#Strongest Fortis-Specific Evidence",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "2. Strongest Fortis-Specific Evidence",
+        "line_start": 58,
+        "line_end": 75
+      }
+    },
+    {
+      "statement": "The published Fortis workflow demonstrates:\n\n```text\nCRITICAL VALUE\n      ↓\nNOTIFICATION\n      ↓\nTELEPHONE / SMS\n      ↓\nREAD-BACK\n      ↓\nDOCUMENTATION\n```\n\nTherefore the hospital environment already contains a structured critical-result communication process.\n\nThis matters because ART should not be positioned as a replacement for the LIS or laboratory notification process.\n\n---",
+      "research_location": "OPP-012-04.md#What the Fortis Evidence Does Prove",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "3. What the Fortis Evidence Does Prove",
+        "line_start": 76,
+        "line_end": 97
+      }
+    },
+    {
+      "statement": "The available public evidence does not establish:\n\n```text\nCURRENT FAILURE RATE\nCURRENT ACKNOWLEDGEMENT RATE\nCURRENT ESCALATION RATE\nCURRENT UNRESOLVED CASES\nCURRENT RESPONSE TIME\nCURRENT MANUAL FOLLOW-UP TIME\nCURRENT SYSTEM CAPABILITY\nCURRENT CAPABILITY GAP\nCURRENT PATIENT-SAFETY INCIDENTS\n```\n\nThese must remain **UNKNOWN**.\n\n---",
+      "research_location": "OPP-012-04.md#What the Fortis Evidence Does NOT Prove",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "4. What the Fortis Evidence Does NOT Prove",
+        "line_start": 98,
+        "line_end": 117
+      }
+    },
+    {
+      "statement": "The broader evidence is much stronger than the company-specific evidence.\n\nA 2025 eight-hospital quality-improvement study found that one hospital escalated approximately **25% of critical-value calls**, compared with approximately **10%** at other hospitals. Process changes reduced escalation to approximately **9–14%**. The study also states that critical values require an escalation process when the initial call cannot be completed.\n\nThis demonstrates:\n\n> **Failed critical-result communication can create a recurring, measurable operational workload.**\n\nBut this is **not Fortis data**.\n\n---",
+      "research_location": "OPP-012-04.md#Strong Industry Evidence for the Same Pain",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "5. Strong Industry Evidence for the Same Pain",
+        "line_start": 118,
+        "line_end": 131
+      }
+    },
+    {
+      "statement": "An Indian tertiary-care laboratory study analysed **1,187 critical values** and found that critical-value notification required coordinated effort between laboratory staff and caregivers. It identified incomplete information and difficulty contacting responsible caregivers as factors affecting notification quality.\n\nThe authors specifically state that an automated system should be able to:\n\n- identify the person providing the information;\n- identify the person receiving it;\n- obtain acknowledgement;\n- support reliable communication.\n\nThis is closely aligned with the proposed ART capability boundary.\n\n---",
+      "research_location": "OPP-012-04.md#Indian Evidence",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "6. Indian Evidence",
+        "line_start": 132,
+        "line_end": 146
+      }
+    },
+    {
+      "statement": "A consensus statement on high-risk laboratory-result communication recommends that laboratories have:\n\n- defined alert lists;\n- reliable identification;\n- defined communication modes;\n- authorised recipients;\n- acknowledgement of receipt;\n- documentation;\n- escalation procedures when the recipient cannot be reached.\n\nIt defines an escalation procedure as an ordered set of alternative steps when the appropriate recipient cannot be reached within a clinically appropriate timeframe.\n\nThis confirms that:\n\n> **Closed-loop acknowledgement + escalation is a recognised safety workflow requirement, not an invented ART workflow.**\n\n---",
+      "research_location": "OPP-012-04.md#Industry Workflow Standard",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "7. Industry Workflow Standard",
+        "line_start": 147,
+        "line_end": 166
+      }
+    },
+    {
+      "statement": "The correct question is:\n\n```text\nCRITICAL RESULT\n      ↓\nEXISTING LIS DETECTION\n      ↓\nEXISTING NOTIFICATION\n      ↓\nACKNOWLEDGEMENT?\n      ↓\nNO\n      ↓\nWHO OWNS THE NEXT ACTION?\n      ↓\nESCALATION?\n      ↓\nACKNOWLEDGEMENT?\n      ↓\nCLOSE?\n```\n\nIf Fortis already automates all of this, the opportunity weakens substantially.\n\nIf the workflow still depends on staff to:\n\n- identify the current responsible person;\n- call again;\n- check whether the patient moved;\n- find the covering clinician;\n- escalate;\n- remember pending cases;\n- verify acknowledgement;\n- document closure;\n\nthen the opportunity becomes strong.\n\n---",
+      "research_location": "OPP-012-04.md#The Actual ART Capability Gap to Test",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "8. The Actual ART Capability Gap to Test",
+        "line_start": 167,
+        "line_end": 207
+      }
+    },
+    {
+      "statement": "Because this checkpoint is specifically about **primary validation**, the next step should be direct contact with:",
+      "research_location": "OPP-012-04.md#Direct Operational Validation Route",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "9. Direct Operational Validation Route",
+        "line_start": 208,
+        "line_end": 211
+      }
+    },
+    {
+      "statement": "**Fortis Hospital Bengaluru / Laboratory or Quality function**\n\nUse the official hospital channel rather than relying on an unverified individual.\n\nThe official Fortis Bengaluru site should be used to route the request to:\n\n> **Laboratory / Pathology Operations → Quality / NABH owner → Critical-result workflow owner**\n\n[Fortis Hospital Bengaluru — Official](https://www.fortishealthcare.com/)",
+      "research_location": "OPP-012-04.md#Hard route",
+      "source_urls": [
+        "https://www.fortishealthcare.com/"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "Hard route",
+        "line_start": 212,
+        "line_end": 223
+      }
+    },
+    {
+      "statement": "The Fortis Bengaluru critical-value publication is authored by **Shubha H.V.** and directly documents the historical workflow. The publication should be used as the research reference when approaching the hospital.\n\n---",
+      "research_location": "OPP-012-04.md#Research route",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "Research route",
+        "line_start": 224,
+        "line_end": 229
+      }
+    },
+    {
+      "statement": "Use:\n\n> “I am researching critical laboratory-result communication workflows in Indian hospitals. I came across the Fortis Bengaluru study covering critical-value notification and wanted to understand how the workflow operates today after a critical result is generated—particularly what happens when the first notification is not acknowledged or the responsible clinician cannot be reached. This is operational research, not a clinical evaluation or sales discussion.”\n\nThen ask:\n\n> **“What happens today when the first critical-result notification is not acknowledged?”**\n\nThis single question should reveal the real exception workflow.\n\n---",
+      "research_location": "OPP-012-04.md#Primary Validation Opening",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "10. Primary Validation Opening",
+        "line_start": 230,
+        "line_end": 243
+      }
+    },
+    {
+      "statement": "We do not need a large interview.\n\nThe minimum useful operational dataset is:\n\n```text\nCRITICAL VALUES / MONTH\n        ↓\nFAILED FIRST CONTACT %\n        ↓\nUNACKNOWLEDGED %\n        ↓\nESCALATION %\n        ↓\nAVERAGE FOLLOW-UP ATTEMPTS\n        ↓\nAVERAGE OPEN TIME\n        ↓\nCURRENT ESCALATION OWNER\n        ↓\nCURRENT SYSTEM CAPABILITY\n```\n\nOptional:\n\n```text\nCASES REACHING DISCHARGE / TRANSFER UNRESOLVED\nAVERAGE HUMAN MINUTES / ESCALATED CASE\nDOCUMENTED DELAY / SAFETY EVENT\n```\n\n---",
+      "research_location": "OPP-012-04.md#Minimum Data Required",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "11. Minimum Data Required",
+        "line_start": 244,
+        "line_end": 277
+      }
+    },
+    {
+      "statement": "Ask exactly:\n\n> **“If a critical result is sent but nobody acknowledges it within the required time, does the system automatically escalate it to the next responsible person, or does a staff member have to identify and contact the next person manually?”**\n\nThis determines whether the opportunity is:",
+      "research_location": "OPP-012-04.md#The Decisive Validation Question",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "12. The Decisive Validation Question",
+        "line_start": 278,
+        "line_end": 285
+      }
+    },
+    {
+      "statement": "```text\nAUTOMATED ROUTING\n+\nAUTOMATED ACKNOWLEDGEMENT\n+\nAUTOMATED ESCALATION\n+\nCLOSED LOOP\n```\n\nor:",
+      "research_location": "OPP-012-04.md#Weak",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "Weak",
+        "line_start": 286,
+        "line_end": 299
+      }
+    },
+    {
+      "statement": "```text\nALERT\n ↓\nNO ACK\n ↓\nHUMAN SEARCH\n ↓\nPHONE\n ↓\nWAIT\n ↓\nPHONE AGAIN\n ↓\nESCALATE\n ↓\nVERIFY\n ↓\nCLOSE\n```\n\n---",
+      "research_location": "OPP-012-04.md#Strong",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "Strong",
+        "line_start": 300,
+        "line_end": 323
+      }
+    },
+    {
+      "statement": "Any one of these would materially strengthen the opportunity:\n\n- recurring manual escalation;\n- measurable percentage of first-contact failures;\n- unresolved critical alerts;\n- staff-maintained pending lists;\n- manual provider lookup;\n- repeated calls/messages;\n- delays caused by unavailable/incorrect recipients;\n- lack of automatic acknowledgement tracking;\n- lack of automatic escalation;\n- cases remaining open across shift/department transitions.\n\nThe strongest evidence would be:\n\n> **“The LIS sends/records the critical result, but the follow-up and escalation are still handled manually until someone confirms acknowledgement.”**\n\n---",
+      "research_location": "OPP-012-04.md#High-Value Evidence That Would Convert This to PASS",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "13. High-Value Evidence That Would Convert This to PASS",
+        "line_start": 324,
+        "line_end": 344
+      }
+    },
+    {
+      "statement": "Kill the **Fortis-specific opportunity** if validation establishes:\n\n```text\nAUTOMATIC CRITICAL-VALUE DETECTION\n+\nAUTOMATIC ROUTING\n+\nDELIVERY CONFIRMATION\n+\nACKNOWLEDGEMENT TRACKING\n+\nAUTOMATIC ESCALATION\n+\nALTERNATE-OWNER ROUTING\n+\nCLOSURE AUDIT\n+\nLOW UNRESOLVED VOLUME\n```\n\nThe broader industry opportunity may still survive for lower-maturity hospitals.\n\n---",
+      "research_location": "OPP-012-04.md#Kill Conditions",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "14. Kill Conditions",
+        "line_start": 345,
+        "line_end": 370
+      }
+    },
+    {
+      "statement": "Even if Fortis has already solved the problem:\n\n```text\nFORTIS\n→ MATURE / SOLVED\n```\n\ndoes not kill the industry opportunity.\n\nThe VRL question then becomes:\n\n```text\nOTHER MID-SCALE INDIAN HOSPITALS\n        ↓\nSAME CRITICAL-RESULT WORKFLOW\n        ↓\nLOWER SYSTEM MATURITY\n        ↓\nMANUAL ACKNOWLEDGEMENT / ESCALATION\n        ↓\nRECURRING SAFETY-CRITICAL PAIN\n        ↓\nINDUSTRY OPPORTUNITY\n```\n\nThis is precisely why the company is an **evidence entry point**, not the final definition of the opportunity.\n\n---",
+      "research_location": "OPP-012-04.md#Industry-Level Opportunity Status",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "15. Industry-Level Opportunity Status",
+        "line_start": 371,
+        "line_end": 401
+      }
+    },
+    {
+      "statement": "| Dimension | Status |\n|---|---|\n| High-consequence workflow | **VERIFIED** |\n| Time-sensitive | **VERIFIED** |\n| Fortis Bengaluru workflow | **VERIFIED** |\n| Historical critical-value volume | **VERIFIED** |\n| Existing notification infrastructure | **VERIFIED** |\n| Exception/escalation concept | **INDUSTRY-VERIFIED** |\n| Industry recurrence | **STRONG** |\n| Current Fortis failure rate | **UNKNOWN** |\n| Current Fortis acknowledgement rate | **UNKNOWN** |\n| Current Fortis escalation rate | **UNKNOWN** |\n| Current Fortis human effort | **UNKNOWN** |\n| Current Fortis capability gap | **UNKNOWN** |\n| Current Fortis ROI | **UNKNOWN** |\n\n---",
+      "research_location": "OPP-012-04.md#Current VRL Evidence Matrix",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "16. Current VRL Evidence Matrix",
+        "line_start": 402,
+        "line_end": 421
+      }
+    },
+    {
+      "statement": "This is the correct stopping point.\n\nWe have enough evidence to say:\n\n> **This is a high-consequence, time-critical, industry-recurrent workflow with a credible automation surface.**\n\nWe do **not** yet have enough evidence to say:\n\n> **Fortis currently suffers from this automation gap.**\n\nTherefore:\n\n**Do not create another desk-research checkpoint.**\n\n**Do not manufacture ROI.**\n\n**Move this opportunity to primary operational validation.**\n\n---",
+      "research_location": "OPP-012-04.md#CONDITIONAL PASS → PRIMARY VALIDATION JUSTIFIED",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "CONDITIONAL PASS → PRIMARY VALIDATION JUSTIFIED",
+        "line_start": 424,
+        "line_end": 445
+      }
+    },
+    {
+      "statement": "The opportunity survives commercially only if:\n\n```text\nCRITICAL RESULTS\n        ×\nRECURRING UNACKNOWLEDGED / FAILED CONTACT\n        ×\nMANUAL FOLLOW-UP\n        ×\nESCALATION\n        ×\nTIME-SENSITIVE CONSEQUENCE\n        ×\nEXISTING-SYSTEM GAP\n        =\nART OPPORTUNITY\n```\n\nIf the company-specific evidence fails, search another hospital with the **same workflow**, rather than forcing Fortis.\n\n---",
+      "research_location": "OPP-012-04.md#Final Opportunity Test",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "18. Final Opportunity Test",
+        "line_start": 446,
+        "line_end": 469
+      }
+    },
+    {
+      "statement": "[Panacea Journal — Critical Value Analysis at Fortis Multispeciality Hospital, Bangalore](https://newp.pjms.in/index.php/pjms/article/view/817)\n\n**Evidence:** 75,156 tests; 2,199 critical values; Fortis Bengaluru laboratory; critical-value notification workflow.",
+      "research_location": "OPP-012-04.md#E-001 — Fortis Bengaluru Workflow",
+      "source_urls": [
+        "https://newp.pjms.in/index.php/pjms/article/view/817"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "E-001 — Fortis Bengaluru Workflow",
+        "line_start": 472,
+        "line_end": 477
+      }
+    },
+    {
+      "statement": "[ResearchGate — Fortis Bengaluru Critical Value Analysis](https://www.researchgate.net/publication/362766215_A_study_of_critical_value_analysis_at_hematology_and_biochemistry_sections_of_laboratory_in_a_multispeciality_hospital)\n\n**Evidence:** Fortis multispeciality hospital Bangalore; 2,199 critical values; department distribution.",
+      "research_location": "OPP-012-04.md#E-002 — Fortis Study Record",
+      "source_urls": [
+        "https://www.researchgate.net/publication/362766215_A_study_of_critical_value_analysis_at_hematology_and_biochemistry_sections_of_laboratory_in_a_multispeciality_hospital"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "E-002 — Fortis Study Record",
+        "line_start": 478,
+        "line_end": 483
+      }
+    },
+    {
+      "statement": "[PMC — Study of Variables Affecting Critical Value Notification](https://pmc.ncbi.nlm.nih.gov/articles/PMC4310845/)\n\n**Evidence:** 1,187 critical values; caregiver-contact variables; notification documentation/read-back; need for reliable acknowledgement.",
+      "research_location": "OPP-012-04.md#E-003 — Indian Critical Notification Evidence",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4310845/"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "E-003 — Indian Critical Notification Evidence",
+        "line_start": 484,
+        "line_end": 489
+      }
+    },
+    {
+      "statement": "[American Journal of Clinical Pathology — Critical Value Escalation](https://academic.oup.com/ajcp/article/163/1/97/7739679)\n\n**Evidence:** 8-hospital system; escalation when initial call fails; 25% versus ~10% escalation; process improvement reduced escalation.",
+      "research_location": "OPP-012-04.md#E-004 — Escalation Evidence",
+      "source_urls": [
+        "https://academic.oup.com/ajcp/article/163/1/97/7739679"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "E-004 — Escalation Evidence",
+        "line_start": 490,
+        "line_end": 495
+      }
+    },
+    {
+      "statement": "[PMC — Consensus Statement for High-Risk Laboratory Results](https://pmc.ncbi.nlm.nih.gov/articles/PMC4745612/)\n\n**Evidence:** acknowledgement, documentation and escalation are recommended components of high-risk result communication.",
+      "research_location": "OPP-012-04.md#E-005 — Consensus Safety Standard",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4745612/"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "E-005 — Consensus Safety Standard",
+        "line_start": 496,
+        "line_end": 501
+      }
+    },
+    {
+      "statement": "[PubMed — Variables Affecting Critical Value Notification](https://pubmed.ncbi.nlm.nih.gov/25646047/)\n\n**Evidence:** Indian tertiary-care critical-value notification study.",
+      "research_location": "OPP-012-04.md#E-006 — Indian Critical-Value Study",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/25646047/"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "E-006 — Indian Critical-Value Study",
+        "line_start": 502,
+        "line_end": 507
+      }
+    },
+    {
+      "statement": "[Journal of Applied Laboratory Medicine — Quality Improvement](https://academic.oup.com/jalm/article/6/4/985/6255453)\n\n**Evidence:** pending-callback tracking and multi-tier escalation protocol.\n\n---",
+      "research_location": "OPP-012-04.md#E-007 — Critical-Value Delivery Improvement",
+      "source_urls": [
+        "https://academic.oup.com/jalm/article/6/4/985/6255453"
+      ],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "E-007 — Critical-Value Delivery Improvement",
+        "line_start": 508,
+        "line_end": 515
+      }
+    },
+    {
+      "statement": "- historical critical-value workflow;\n- 75,156 tests;\n- 2,199 critical values;\n- critical-result notification process.",
+      "research_location": "OPP-012-04.md#Fortis-specific",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "Fortis-specific",
+        "line_start": 518,
+        "line_end": 524
+      }
+    },
+    {
+      "statement": "- notification failures;\n- acknowledgement requirements;\n- provider identification;\n- escalation;\n- closed-loop communication.",
+      "research_location": "OPP-012-04.md#Industry / Indian evidence",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "Industry / Indian evidence",
+        "line_start": 525,
+        "line_end": 532
+      }
+    },
+    {
+      "statement": "- current Fortis failure rate;\n- current Fortis acknowledgement rate;\n- current Fortis escalation rate;\n- current human effort;\n- current system capability;\n- current capability gap;\n- actual ROI.\n\n---",
+      "research_location": "OPP-012-04.md#Unknown",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "Unknown",
+        "line_start": 533,
+        "line_end": 544
+      }
+    },
+    {
+      "statement": "```yaml\nartifact_type: opportunity_intelligence\nopportunity_id: OPP-012\nindustry: healthcare_hospital_operations\ncompany: Fortis Healthcare\ncompany_candidate_site: Fortis Hospital CG Road Bengaluru\nworkflow: critical_laboratory_result_notification_closed_loop_acknowledgement\npain_type: patient_safety_time_critical_clinical_communication\nresearch_stage: direct_operational_evidence_pain_validation\ndecision: conditional_pass_primary_validation_justified\n\ncompany_linked_evidence:\n  historical_tests: 75156\n  historical_critical_values: 2199\n  notification_workflow: telephone_sms_readback\n  study_period: 2020-01_to_2021-06\n\nindustry_evidence:\n  escalation_failure: verified\n  acknowledgement_requirement: verified\n  provider_identification_problem: verified\n  closed_loop_requirement: verified\n\ncurrent_company_failure_rate: unknown\ncurrent_company_acknowledgement_rate: unknown\ncurrent_company_escalation_rate: unknown\ncurrent_company_unresolved_alerts: unknown\ncurrent_company_human_effort: unknown\ncurrent_system: partially_verified\ncapability_gap: unknown\ncustomer_roi: unknown\n\ncompany_pain_signal: strong_historical_workflow_evidence_current_gap_unknown\nindustry_pain_signal: strong\nindustry_generalisability: high\nprimary_validation: justified\ncommercial_status: primary_validation_required\nnext_action: direct_primary_validation\n```\n\n---",
+      "research_location": "OPP-012-04.md#AIL Compilation Metadata",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "AIL Compilation Metadata",
+        "line_start": 545,
+        "line_end": 588
+      }
+    },
+    {
+      "statement": "> **The evidence establishes a real Fortis Bengaluru critical-result workflow and a strong industry-wide pattern of notification failure, acknowledgement requirements and escalation. It does not establish the current Fortis operational burden or capability gap. Therefore OPP-012 should move to primary validation rather than additional speculative desk research.**\n\n**OPP-012-04 = CONDITIONAL PASS → PRIMARY VALIDATION JUSTIFIED**\n\n**OPP-012 is now ready for primary operational validation.**",
+      "research_location": "OPP-012-04.md#Integrity Statement",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-012-04.md",
+        "section": "Integrity Statement",
+        "line_start": 589,
+        "line_end": 595
+      }
+    }
+  ]
+}

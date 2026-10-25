@@ -1,0 +1,62 @@
+:root {
+  /* Brand Palette */
+  --art-teal: #05AAC3;
+  --art-black: #050505;
+  
+  /* Backgrounds */
+  --bg-primary: #F5F7F9;
+  --bg-secondary: #FFFFFF;
+  --bg-tertiary: #FAFAFA;
+  
+  /* Text Colors */
+  --text-primary: var(--art-black);
+  --text-secondary: #444444;
+  --text-tertiary: #777777;
+  
+  /* Borders */
+  --border-color: #E0E0E0;
+  --border-highlight: #CCCCCC;
+  
+  /* Accents */
+  --accent-blue: var(--art-teal);
+  --accent-gold: #00889c; /* Darker teal for accent text where gold was used previously */
+  
+  /* Status Colors (Mapped strictly to brand palette where possible) */
+  --status-confirmed: var(--art-teal); /* Teal used for positive/confirmed */
+  --status-unknown: var(--text-tertiary); /* Grey for unknown/warning */
+  --status-rejected: var(--art-black); /* Black for rejected/killed */
+  --status-testing: var(--text-secondary);
+  
+  /* Node Types - using greyscale and teal */
+  --node-s: #CCCCCC;
+  --node-e: var(--art-teal);
+  --node-c: #999999;
+  --node-i: #666666;
+  --node-h: var(--art-black);
+  --node-x: #888888;
+  --node-r: var(--art-teal);
+  --node-d: var(--art-teal);
+  
+  /* Typography */
+  --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+}

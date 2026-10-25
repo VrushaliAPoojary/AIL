@@ -1,0 +1,124 @@
+{
+  "Investigation": {
+    "id": "ART-GOV-005",
+    "canonicalBugId": "ART-GOV-005",
+    "slug": "policy-inputs-dropdown-cannot-scroll-available-facts",
+    "lifecyclePhase": "CONFIRMED",
+    "status": "OPEN",
+    "classification": "BUG",
+    "module": "GOV",
+    "severity": "HIGH",
+    "priority": "Not provided",
+    "assignee": null,
+    "originalInputId": "INP-ART-GOV-005",
+    "evidenceIds": [
+      "EVD-ART-GOV-005-01",
+      "EVD-ART-GOV-005-02"
+    ],
+    "aiAnalysisIds": [],
+    "researchIds": [],
+    "ticketRevisionIds": [
+      "TCK-ART-GOV-005-01"
+    ],
+    "activeTicketRevisionId": "TCK-ART-GOV-005-01",
+    "developerUpdateIds": [],
+    "retestIds": [],
+    "auditEventIds": [
+      "AUD-ART-GOV-005-01"
+    ],
+    "createdAt": "2026-09-24T00:00:00Z",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "OriginalInput": {
+    "id": "INP-ART-GOV-005",
+    "investigationId": "ART-GOV-005",
+    "testerDescription": "",
+    "reporter": "HUMAN_LEGACY_IMPORT",
+    "capturedAt": "2026-09-24T00:00:00Z",
+    "initialEvidenceIds": [
+      "EVD-ART-GOV-005-01",
+      "EVD-ART-GOV-005-02"
+    ],
+    "provenance": "HUMAN_SUPPLIED"
+  },
+  "EvidenceList": [
+    {
+      "id": "EVD-ART-GOV-005-01",
+      "investigationId": "ART-GOV-005",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-GOV-005__policy-inputs-required-facts-dropdown-unscrollable-clipped__2026-10-05__01.png",
+      "canonicalFilename": "ART-GOV-005__policy-inputs-required-facts-dropdown-unscrollable-clipped__2026-10-05__01.png",
+      "storagePath": "ART-Product-Validation/bugs/Governance/ART-GOV-005__policy-inputs-dropdown-cannot-scroll-available-facts/ART-GOV-005__policy-inputs-required-facts-dropdown-unscrollable-clipped__2026-10-05__01.png",
+      "sha256": "6f6b3e92623325f1e154142ad90ff55d95c2f2f6c1d2b871fa8559751f07d033",
+      "mimeType": "image/png",
+      "byteSize": 66566,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    },
+    {
+      "id": "EVD-ART-GOV-005-02",
+      "investigationId": "ART-GOV-005",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-GOV-005__new-action-step-4-policy-inputs-modal__2026-10-05__02.png",
+      "canonicalFilename": "ART-GOV-005__new-action-step-4-policy-inputs-modal__2026-10-05__02.png",
+      "storagePath": "ART-Product-Validation/bugs/Governance/ART-GOV-005__policy-inputs-dropdown-cannot-scroll-available-facts/ART-GOV-005__new-action-step-4-policy-inputs-modal__2026-10-05__02.png",
+      "sha256": "79769e22ae8f4c0ffa69d34591332df71619323cc123ab999438cf31f91ebfc3",
+      "mimeType": "image/png",
+      "byteSize": 55709,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    }
+  ],
+  "TicketArtifact": {
+    "ticketId": "TCK-ART-GOV-005-01",
+    "investigationId": "ART-GOV-005",
+    "revision": 1,
+    "title": "Policy Inputs Dropdown Cannot Scroll Through Available Facts",
+    "reproSteps": "Not provided",
+    "expectedResult": "Not provided",
+    "actualResult": "Not provided",
+    "businessImpact": "Not provided",
+    "recommendedSolution": "Not provided",
+    "module": "GOV",
+    "environment": "Not provided",
+    "severity": "HIGH",
+    "priority": "Not provided",
+    "tags": [
+      "gov"
+    ],
+    "discussion": [],
+    "provenance": "HUMAN_APPROVED",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "AuditEvent": {
+    "id": "AUD-ART-GOV-005-01",
+    "investigationId": "ART-GOV-005",
+    "timestamp": "2026-09-24T00:00:00Z",
+    "actor": "LEGACY_IMPORT_ADAPTER",
+    "eventType": "INVESTIGATION_CAPTURED",
+    "summary": "Imported legacy bug record ART-GOV-005 from ART-Product-Validation/bugs",
+    "details": {
+      "sourceMarkdownPath": "ART-Product-Validation/bugs/Governance/ART-GOV-005__policy-inputs-dropdown-cannot-scroll-available-facts/ART-GOV-005.md",
+      "rawContentSha256": "bc2636341802a6a2d365f70aa860611fb04109ac898682c10c71543989ea972c"
+    }
+  },
+  "sourceMetadata": {
+    "sourceMarkdownPath": "ART-Product-Validation/bugs/Governance/ART-GOV-005__policy-inputs-dropdown-cannot-scroll-available-facts/ART-GOV-005.md",
+    "rawMarkdownContent": "# ART-GOV-005 \u2014 Policy Inputs Dropdown Cannot Scroll Through Available Facts\n\n- **Canonical Bug ID:** ART-GOV-005\n- **Module:** GOV\n- **Severity:** HIGH\n- **Priority:** P2\n- **Environment:** Testing (Procurement Exception Agent / Governance / Action Registry / Professional Plan / InvestigationLab)\n- **Assignee:** Unassigned\n- **Tags:** Governance, Action-Registry, Policy-Inputs, Dropdown-Scroll, Modal-Clipping, Schema-Facts, UI-Blocking, P2\n- **Status:** OPEN\n- **Evidence Count:** 2\n- **Azure DevOps:** SYNCED ([#68948](https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68948))\n\n---\n\n## 1. Problem\nIn **Governance \u2192 Action Registry**, while configuring a new action in **Step 4 \u2014 Policy Inputs**, the **Required facts** and **Optional facts** dropdown selectors do not allow the user to scroll through all available fact options.\n\nWhen the dropdown is expanded, it renders initial schema properties (such as `properties / recommended_action / type`, `properties / decision_reason`, `properties / can_proceed`, etc.), but the dropdown menu is visually clipped by the bottom boundary of the modal dialog and does not scroll vertically. Because facts outside the visible portion cannot be reached or selected, workflow authors are blocked from selecting necessary policy inputs for actions governed by policy rules.\n\nThis defect acts as a hard UI blocker for Action Registry configuration on agents with larger or nested output schemas, preventing authors from establishing policy inputs and stalling downstream configuration and testing of Policy Rules and governed action execution.\n\n---\n\n## 2. Observed Behavior\n- **Dropdown List Rendered but Cut Off:** When the user clicks \"Select required facts\" in Step 4 of the New Action modal, the dropdown options list expands downwards.\n- **Visual Clipping:** The options container extends past the bottom boundary of the modal (`New Action`) and is visually truncated at `properties / can_proceed / type`.\n- **No Scroll Functionality:** Attempting to scroll using the mouse wheel, trackpad, or scrollbar does not scroll the list content; options beyond the initial five items remain inaccessible.\n- **Modal Step Context:** The issue occurs in **Step 4 of 4: Policy inputs** after completing Action basics (Step 1), Action capability (Step 2), and Execution limits (Step 3).\n- **Selection Blocking:** Since required facts outside the visible area cannot be selected, the user cannot complete action creation with the desired policy input bindings.\n\n---\n\n## 3. Reproduction\n1. Open an Agent (e.g. `Procurement Exception Agent`).\n2. Go to **Governance \u2192 Action Registry**.\n3. Click **+ Create action** (or **Create Action**).\n4. In **Step 1 (Action basics)**, provide an action name, set status to `ACTIVE`, and click **Continue**.\n5. In **Step 2 (Action capability)**, select a capability type (e.g. `Custom`) and click **Continue**.\n6. In **Step 3 (Execution limits)**, set execution timeout and click **Continue**.\n7. In **Step 4 (Policy inputs)**, click the **Required facts** (or **Optional facts**) dropdown input.\n8. Attempt to scroll through the list of available output-schema facts.\n9. Observe that the dropdown list cannot be scrolled and options beyond the initial visible list are cut off and inaccessible.\n\n---\n\n## 4. Expected Behavior\n- The Required facts and Optional facts dropdowns must have a bounded visible height with functional vertical scrolling.\n- Users must be able to scroll through and select every available policy-input field, regardless of schema size or depth.\n- Mouse wheel, trackpad, and keyboard arrow keys should smoothly navigate through all available options.\n- Long schema paths (e.g. deeply nested objects) should remain readable within the dropdown items.\n- Selecting an item must not unexpectedly dismiss or reset the modal dialog.\n\n---\n\n## 5. Business Impact\n- **Action Registry Validation Blocked:** Users with agents containing multi-field output schemas cannot bind required facts to governed actions if the target fact is not among the first few properties.\n- **Downstream Testing Halted:** Without being able to complete action registration with required policy inputs, downstream Policy Rules, condition builder evaluations, and human-in-the-loop (HIL) reviews cannot be tested or validated.\n- **Enterprise Governance Failure:** Governance cannot enforce policies against runtime facts if the authoring UI prevents linking those facts to registered actions.\n\n---\n\n## 6. User Experience\n- The user sees a dropdown that opens but is visibly clipped at the modal border, giving the impression that the UI is frozen or broken.\n- Scrolling attempts fail silently with no visual feedback.\n- Frustrating experience where completing steps 1 through 3 is wasted because step 4 cannot be completed.\n\n---\n\n## 7. Investigation Guidance\nInspect the Policy Inputs dropdown/popover component and its scroll/overflow container hierarchy:\n- **Max-Height and Overflow:** Check if the dropdown menu container (e.g. `ul` or `div` holding options) has `max-height` set without `overflow-y: auto`, or if `overflow: hidden` on a parent modal wrapper (`New Action` dialog) is clipping the popover.\n- **Portal Rendering:** Determine whether the dropdown is rendered inside the modal DOM hierarchy or via a React portal attached to `document.body`. If inside the modal, check `overflow` on modal body containers.\n- **Wheel Event Trapping:** Check if wheel/touch scroll event listeners on the modal backdrop or content container prevent the dropdown from receiving native scroll events.\n- **Keyboard Accessibility:** Verify whether `KeyDown` events (ArrowDown / ArrowUp) change the highlighted option and trigger `scrollIntoView()`.\n- **Search Filtering:** Investigate adding a filter/search input inside the dropdown to allow quick typing for large schema lists.\n\n---\n\n## 8. Fix Requirement\nThe Required facts and Optional facts selectors in the Action Registry Policy Inputs step must support full vertical scrolling of all available schema options with bounded height. All options must be reachable and selectable via mouse, trackpad, and keyboard navigation.\n\n---\n\n## 9. Recommended Solution\n1. **Bounded Dropdown Height & Auto Scroll:** Apply explicit `max-height: 240px` (or `max-h-60`) and `overflow-y: auto` to the options container.\n2. **Prevent Modal Clipping:** If the dropdown is rendered inline, either render it via a portal to break out of the modal overflow boundary or adjust parent modal container padding/overflow.\n3. **Keyboard Navigation Support:** Enable arrow key navigation with automatic scroll-into-view for focused options.\n4. **Searchable Selection:** Add search/filter input at the top of the dropdown list for schemas with many fields.\n5. **Consistency:** Ensure both Required facts and Optional facts selectors utilize the same fixed component behavior.\n\n---\n\n## 10. Minimum Working Fix\nAdd `max-height: 250px; overflow-y: auto;` to the CSS / style definition of the dropdown menu list container in the Policy Inputs step, ensuring the container permits scrolling and does not overflow outside the modal viewport without scrollbars.\n\n---\n\n## 11. Acceptance Criteria\n- [ ] The Policy Inputs Required facts dropdown has a bounded visible height and displays a working vertical scrollbar when options exceed the container height.\n- [ ] Users can scroll to and select the last available schema property in the list using mouse wheel, trackpad, and scrollbar.\n- [ ] Keyboard navigation (ArrowDown / ArrowUp) scrolls through all options and allows selection with Enter.\n- [ ] The Optional facts dropdown behaves identically with working vertical scrolling.\n- [ ] Long and nested schema property paths remain readable and properly formatted.\n- [ ] Short schemas with few properties continue to render correctly without unnecessary empty scroll space.\n\n---\n\n## 12. Environment\n- **Platform:** ART Agent Builder / Governance\n- **Module:** Governance \u2014 Action Registry\n- **Agent Workflow:** Procurement Exception Agent (`6ac3213fdfaa4ac34990c7e4`)\n- **Step:** New Action \u2192 Step 4 of 4 (Policy inputs)\n- **Environment:** Testing (InvestigationLab, Professional Plan)\n\n---\n\n## 13. Severity\n**HIGH** \u2014 Blocks action creation and policy input binding for any Agent whose required fact is not among the first few visible schema fields.\n\n---\n\n## 14. Priority\n**P2** \u2014 High priority blocker for Action Registry testing and downstream governance rule configuration.\n\n---\n\n## 15. Tags\n- `Governance`\n- `Action-Registry`\n- `Policy-Inputs`\n- `Dropdown-Scroll`\n- `Modal-Clipping`\n- `Schema-Facts`\n- `UI-Blocking`\n- `P2`\n\n---\n\n## 16. Assignee\n**Unassigned**\n\n---\n\n## 17. Evidence\n\n| File | Type | Description | SHA256 Hash | Byte Size |\n| :--- | :--- | :--- | :--- | :--- |\n| [ART-GOV-005__policy-inputs-required-facts-dropdown-unscrollable-clipped__2026-10-05__01.png](file:///home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-GOV-005__policy-inputs-dropdown-cannot-scroll-available-facts/ART-GOV-005__policy-inputs-required-facts-dropdown-unscrollable-clipped__2026-10-05__01.png) | Screenshot | New Action creation modal (Step 4 of 4: Policy inputs) in Governance -> Action Registry showing the expanded 'Required facts' dropdown. The dropdown list displays initial schema paths (properties / recommended_action / type, properties / decision_reason, properties / decision_reason / type, properties / can_proceed, properties / can_proceed / type) but is visually cut off and cannot be scrolled, preventing selection of remaining output-schema facts. | `6f6b3e92623325f1e154142ad90ff55d95c2f2f6c1d2b871fa8559751f07d033` | 66566 bytes |\n| [ART-GOV-005__new-action-step-4-policy-inputs-modal__2026-10-05__02.png](file:///home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-GOV-005__policy-inputs-dropdown-cannot-scroll-available-facts/ART-GOV-005__new-action-step-4-policy-inputs-modal__2026-10-05__02.png) | Screenshot | New Action creation modal (Step 4 of 4: Policy inputs) showing the initial collapsed state with 'Required facts' and 'Optional facts' selector fields before dropdown expansion. | `79769e22ae8f4c0ffa69d34591332df71619323cc123ab999438cf31f91ebfc3` | 55709 bytes |\n\n### Evidence Visual Gallery\n\n````carousel\n![ART-GOV-005__policy-inputs-required-facts-dropdown-unscrollable-clipped__2026-10-05__01.png](/home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-GOV-005__policy-inputs-dropdown-cannot-scroll-available-facts/ART-GOV-005__policy-inputs-required-facts-dropdown-unscrollable-clipped__2026-10-05__01.png)\n*New Action creation modal (Step 4 of 4: Policy inputs) in Governance -> Action Registry showing the expanded 'Required facts' dropdown. The dropdown list displays initial schema paths (properties / recommended_action / type, properties / decision_reason, properties / decision_reason / type, properties / can_proceed, properties / can_proceed / type) but is visually cut off and cannot be scrolled, preventing selection of remaining output-schema facts.*\n<!-- slide -->\n![ART-GOV-005__new-action-step-4-policy-inputs-modal__2026-10-05__02.png](/home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-GOV-005__policy-inputs-dropdown-cannot-scroll-available-facts/ART-GOV-005__new-action-step-4-policy-inputs-modal__2026-10-05__02.png)\n*New Action creation modal (Step 4 of 4: Policy inputs) showing the initial collapsed state with 'Required facts' and 'Optional facts' selector fields before dropdown expansion.*\n````\n\n---\n\n## 18. Discussion\n- **Testing Impact:** The QA decision notes that this defect is a hard blocker: Action Registry UI fails, Policy Input discovery is only partially visible, Policy Input selection is blocked, Action creation is blocked by UI, and downstream Policy Rules / HIL runtime cannot be tested.\n- **Smallest Safe Fix:** This is a UI container scroll/overflow defect in the New Action Step 4 modal. It requires no changes to governance policy semantics or backend schemas, only a bounded height and vertical overflow correction in the dropdown component.\n- **Intake Validation:** Evidence screenshots preserved with cryptographic SHA256 checksums and verified byte sizes. Zero Azure DevOps mutations performed during intake.\n\n---\n\n## 19. Azure DevOps\n- **Work Item ID:** 68948\n- **URL:** [https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68948](https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68948)\n- **Parent Feature:** Governance\n- **Parent Feature ID:** 68812\n- **Assigned To:** Unassigned\n- **Sync Status:** SYNCED\n- **Note:** Synchronized via Harness 02 V1 to Azure DevOps.\n",
+    "ledgerRow": {
+      "bug_id": "ART-GOV-005",
+      "rel_path": "bugs/Governance/ART-GOV-005__policy-inputs-dropdown-cannot-scroll-available-facts/ART-GOV-005.md",
+      "name": "Policy Inputs Dropdown Cannot Scroll Through Available Facts",
+      "severity": "HIGH",
+      "status": "OPEN",
+      "dev_update": "Pending.",
+      "retest": "Pending."
+    }
+  }
+}

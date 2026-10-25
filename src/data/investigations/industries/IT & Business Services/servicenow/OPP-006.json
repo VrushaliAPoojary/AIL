@@ -1,0 +1,4230 @@
+{
+  "investigation_id": "AOI-SNOW-OPP-006",
+  "company": "ServiceNow",
+  "industry": "IT & Business Services",
+  "opportunity": "Field-Service Policy-Arbitration Decision",
+  "investigation_type": "Discovery; conflict reconstruction; dispatcher judgment; policy selection; complexity test; residual arbitration test",
+  "research_status": "KILLED",
+  "presentation": {
+    "investigation_summary": "Field-service scheduling complexity, competing objectives, changing conditions, policy variation, and human exceptions are real. Current ServiceNow evidence shows policies, weighted objectives, hard/soft constraints, dynamic and intraday optimization, policy switching, contextual overrides, preferred technicians, appointment overrides, and manual exceptions. The proposed recurring material policy-arbitration burden was not established.\n\n1. Field-service exceptions may expose a new decision domain.\n2. Real conflicts and multi-objective dispatcher judgment were verified.\n3. The hypothesis narrowed to context-dependent policy selection and then policy explosion/arbitration.\n4. Native capability testing showed the platform can encode objectives, constraints, policies, dynamic reoptimization, context variation, and human override.\n5. **Final:** recurring material customer burden and ServiceNow-specific gap remain NOT ESTABLISHED. **KILL.**",
+    "key_findings": [
+      {
+        "id": "KF-006-01",
+        "statement": "Multi-skill, multi-objective field-service scheduling — Underlying complexity is real.",
+        "classification": "EVIDENCE",
+        "source_refs": [
+          "EV-006-001"
+        ]
+      },
+      {
+        "id": "KF-006-02",
+        "statement": "Policies, objectives, weights, and constraints — Core decision representation is native.",
+        "classification": "EVIDENCE",
+        "source_refs": [
+          "EV-006-002"
+        ]
+      },
+      {
+        "id": "KF-006-03",
+        "statement": "Dynamic and intraday optimization — Changing conditions are supported.",
+        "classification": "EVIDENCE",
+        "source_refs": [
+          "EV-006-003"
+        ]
+      },
+      {
+        "id": "KF-006-04",
+        "statement": "Dispatcher-selected policy and contextual overrides — Policy adaptation is supported.",
+        "classification": "EVIDENCE",
+        "source_refs": [
+          "EV-006-004"
+        ]
+      },
+      {
+        "id": "KF-006-05",
+        "statement": "Manual exception and preference mechanisms — Human involvement is designed into the workflow.",
+        "classification": "EVIDENCE",
+        "source_refs": [
+          "EV-006-005"
+        ]
+      },
+      {
+        "id": "KF-006-06",
+        "statement": "Policy explosion, recurring error, material loss — Residual opportunity fails.",
+        "classification": "RESULT",
+        "source_refs": [
+          "EV-006-006"
+        ]
+      }
+    ]
+  },
+  "decision": {
+    "decision": "**KILL OPP-006.** Do not create another field-service checkpoint or convert it to AIL. Start a new decision domain.",
+    "reason": "Field-service scheduling complexity, competing objectives, changing conditions, policy variation, and human exceptions are real. Current ServiceNow evidence shows policies, weighted objectives, hard/soft constraints, dynamic and intraday optimization, policy switching, contextual overrides, preferred technicians, appointment overrides, and manual exceptions. The proposed recurring material policy-arbitration burden was not established.\n\nKILL reflects an evidence failure at the residual opportunity boundary, not a claim that field-service complexity or human judgment is unreal.",
+    "reusable_intelligence": [
+      {
+        "id": "FSM-02",
+        "type": "WORKFLOW_PATTERN",
+        "title": "FSM-02 — Intraday Reoptimization",
+        "domain": "Field-Service Policy-Arbitration Decision",
+        "description": "Source:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/schedule-optimization-engine.html",
+        "evidence_status": "PARTIAL",
+        "status": "ACTIVE",
+        "confidence": "MEDIUM",
+        "reuse_potential": "HIGH",
+        "applications": [],
+        "source_refs": [
+          "SRC-FILE-OPP-006-01",
+          "SRC-EXT-006-014"
+        ],
+        "tags": [],
+        "provenance": {
+          "source_file": "OPP-006-01.md",
+          "section": "FSM-02 — Intraday Reoptimization",
+          "line_start": 1067,
+          "line_end": 1072
+        }
+      },
+      {
+        "id": "FSM-15",
+        "type": "WORKFLOW_PATTERN",
+        "title": "FSM-15 — Policy Catalog",
+        "domain": "Field-Service Policy-Arbitration Decision",
+        "description": "NORMAL\nHIGH VOLUME\nEMERGENCY\nOVERTIME\nSPECIAL CONDITIONS\n↓\nDISPATCHER SELECTS\nEvidence:\nhttps://trailhead.salesforce.com/content/learn/modules/field-service-lightning-scheduling-basics/customize-a-scheduling-policy\nThis is a reusable implementation benchmark.",
+        "evidence_status": "PARTIAL",
+        "status": "ACTIVE",
+        "confidence": "MEDIUM",
+        "reuse_potential": "HIGH",
+        "applications": [],
+        "source_refs": [
+          "SRC-FILE-OPP-006-04",
+          "SRC-EXT-006-037"
+        ],
+        "tags": [],
+        "provenance": {
+          "source_file": "OPP-006-04.md",
+          "section": "FSM-15 — Policy Catalog",
+          "line_start": 662,
+          "line_end": 681
+        }
+      },
+      {
+        "id": "FSM-16",
+        "type": "DECISION_PATTERN",
+        "title": "FSM-16 — Policy Shift for Emergency Conditions",
+        "domain": "Field-Service Policy-Arbitration Decision",
+        "description": "NORMAL POLICY\n↓\nEMERGENCY\n↓\nEMERGENCY POLICY\n↓\nREOPTIMIZE\nEvidence:\nhttps://trailhead.salesforce.com/content/learn/modules/field-service-lightning-scheduling-basics/customize-a-scheduling-policy",
+        "evidence_status": "PARTIAL",
+        "status": "ACTIVE",
+        "confidence": "MEDIUM",
+        "reuse_potential": "HIGH",
+        "applications": [],
+        "source_refs": [
+          "SRC-FILE-OPP-006-04",
+          "SRC-EXT-006-037"
+        ],
+        "tags": [],
+        "provenance": {
+          "source_file": "OPP-006-04.md",
+          "section": "FSM-16 — Policy Shift for Emergency Conditions",
+          "line_start": 682,
+          "line_end": 699
+        }
+      },
+      {
+        "id": "FSM-17",
+        "type": "WORKFLOW_PATTERN",
+        "title": "FSM-17 — Dispatcher Policy Override",
+        "domain": "Field-Service Policy-Arbitration Decision",
+        "description": "ServiceNow allows dispatchers to change the policy before running on-demand optimization.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-on-demand-optimization.html\nPattern:\nCURRENT CONDITIONS\n↓\nDISPATCHER\n↓\nSELECT POLICY\n↓\nOPTIMIZE",
+        "evidence_status": "PARTIAL",
+        "status": "ACTIVE",
+        "confidence": "MEDIUM",
+        "reuse_potential": "HIGH",
+        "applications": [],
+        "source_refs": [
+          "SRC-FILE-OPP-006-04",
+          "SRC-EXT-006-003"
+        ],
+        "tags": [],
+        "provenance": {
+          "source_file": "OPP-006-04.md",
+          "section": "FSM-17 — Dispatcher Policy Override",
+          "line_start": 700,
+          "line_end": 721
+        }
+      },
+      {
+        "id": "FSM-18",
+        "type": "DECISION_PATTERN",
+        "title": "FSM-18 — Policy by Time / Operating Context",
+        "domain": "Field-Service Policy-Arbitration Decision",
+        "description": "ServiceNow supports attribute overrides for particular time periods and group/territory configurations.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-intraday-optimization.html\nPattern:\nTIME / GROUP / TERRITORY\n↓\nOVERRIDE DEFAULT CONFIGURATION\n↓\nALTERNATIVE SCHEDULING BEHAVIOR\nThis is another reason the opportunity must not be framed as \"ServiceNow cannot adapt.\"",
+        "evidence_status": "VERIFIED",
+        "status": "ACTIVE",
+        "confidence": "HIGH",
+        "reuse_potential": "HIGH",
+        "applications": [],
+        "source_refs": [
+          "SRC-FILE-OPP-006-04",
+          "SRC-EXT-006-004"
+        ],
+        "tags": [],
+        "provenance": {
+          "source_file": "OPP-006-04.md",
+          "section": "FSM-18 — Policy by Time / Operating Context",
+          "line_start": 722,
+          "line_end": 743
+        }
+      },
+      {
+        "id": "FSM-19",
+        "type": "DECISION_PATTERN",
+        "title": "FSM-19 — Five-Level Scheduling Decision Stack",
+        "domain": "Field-Service Policy-Arbitration Decision",
+        "description": "EVENT\n↓\nFEASIBILITY\n↓\nOPTIMIZATION\n↓\nPOLICY SELECTION\n↓\nPOLICY GOVERNANCE\nThis provides a useful framework for analyzing other field-service companies.",
+        "evidence_status": "PARTIAL",
+        "status": "ACTIVE",
+        "confidence": "MEDIUM",
+        "reuse_potential": "HIGH",
+        "applications": [],
+        "source_refs": [
+          "SRC-FILE-OPP-006-05"
+        ],
+        "tags": [],
+        "provenance": {
+          "source_file": "OPP-006-05.md",
+          "section": "FSM-19 — Five-Level Scheduling Decision Stack",
+          "line_start": 690,
+          "line_end": 707
+        }
+      },
+      {
+        "id": "FSM-20",
+        "type": "WORKFLOW_PATTERN",
+        "title": "FSM-20 — Finite Policy Matrix Before AI",
+        "domain": "Field-Service Policy-Arbitration Decision",
+        "description": "Before adding an intelligence layer:\nIDENTIFY OPERATING MODES\n↓\nCREATE POLICY FOR EACH MODE\n↓\nDEFINE TRIGGERS\n↓\nTEST COVERAGE\n↓\nMEASURE EXCEPTIONS\n↓\nONLY THEN CONSIDER AI\n### Status\n**REUSABLE IMPLEMENTATION PATTERN**\nThis is an analytical recommendation derived from the evidence, not a documented ServiceNow feature.",
+        "evidence_status": "PARTIAL",
+        "status": "ACTIVE",
+        "confidence": "MEDIUM",
+        "reuse_potential": "HIGH",
+        "applications": [],
+        "source_refs": [
+          "SRC-FILE-OPP-006-05"
+        ],
+        "tags": [],
+        "provenance": {
+          "source_file": "OPP-006-05.md",
+          "section": "FSM-20 — Finite Policy Matrix Before AI",
+          "line_start": 708,
+          "line_end": 733
+        }
+      },
+      {
+        "id": "FSM-22",
+        "type": "DECISION_PATTERN",
+        "title": "FSM-22 — Policy + Objective + Constraint Stack",
+        "domain": "Field-Service Policy-Arbitration Decision",
+        "description": "POLICY\n↓\nOBJECTIVES\n+\nWEIGHTS\n+\nCONSTRAINTS\n↓\nOPTIMIZATION\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/create-policies-schedule-optimization.html",
+        "evidence_status": "PARTIAL",
+        "status": "ACTIVE",
+        "confidence": "MEDIUM",
+        "reuse_potential": "HIGH",
+        "applications": [],
+        "source_refs": [
+          "SRC-FILE-OPP-006-06",
+          "SRC-EXT-006-001"
+        ],
+        "tags": [],
+        "provenance": {
+          "source_file": "OPP-006-06.md",
+          "section": "FSM-22 — Policy + Objective + Constraint Stack",
+          "line_start": 902,
+          "line_end": 921
+        }
+      },
+      {
+        "id": "FSM-23",
+        "type": "WORKFLOW_PATTERN",
+        "title": "FSM-23 — Automatic Reoptimization + Human Exception",
+        "domain": "Field-Service Policy-Arbitration Decision",
+        "description": "NORMAL CONDITIONS\n↓\nAUTOMATION\n↓\nMATERIAL EXCEPTION\n↓\nDISPATCHER\n↓\nOVERRIDE / POLICY CHANGE\n↓\nREOPTIMIZATION\nSources:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-intraday-optimization.html\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-on-demand-optimization.html",
+        "evidence_status": "PARTIAL",
+        "status": "ACTIVE",
+        "confidence": "MEDIUM",
+        "reuse_potential": "HIGH",
+        "applications": [],
+        "source_refs": [
+          "SRC-FILE-OPP-006-06",
+          "SRC-EXT-006-004",
+          "SRC-EXT-006-003"
+        ],
+        "tags": [],
+        "provenance": {
+          "source_file": "OPP-006-06.md",
+          "section": "FSM-23 — Automatic Reoptimization + Human Exception",
+          "line_start": 922,
+          "line_end": 945
+        }
+      },
+      {
+        "id": "FSM-24",
+        "type": "IMPLEMENTATION_PATTERN",
+        "title": "FSM-24 — Contextual Configuration Overrides",
+        "domain": "Field-Service Policy-Arbitration Decision",
+        "description": "DEFAULT CONFIGURATION\n↓\nGROUP / TERRITORY\n↓\nTIME-BASED OVERRIDE\n↓\nCONTEXT-SPECIFIC BEHAVIOR\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-intraday-optimization.html",
+        "evidence_status": "PARTIAL",
+        "status": "ACTIVE",
+        "confidence": "MEDIUM",
+        "reuse_potential": "HIGH",
+        "applications": [],
+        "source_refs": [
+          "SRC-FILE-OPP-006-06",
+          "SRC-EXT-006-004"
+        ],
+        "tags": [],
+        "provenance": {
+          "source_file": "OPP-006-06.md",
+          "section": "FSM-24 — Contextual Configuration Overrides",
+          "line_start": 946,
+          "line_end": 963
+        }
+      },
+      {
+        "id": "FSM-25",
+        "type": "DECISION_PATTERN",
+        "title": "FSM-25 — Human Exception Override",
+        "domain": "Field-Service Policy-Arbitration Decision",
+        "description": "AUTOMATED RULE\n↓\nEXCEPTION\n↓\nHUMAN OVERRIDE\n↓\nWARNING / TRACE\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/prevent-excluded-agents.html",
+        "evidence_status": "PARTIAL",
+        "status": "ACTIVE",
+        "confidence": "MEDIUM",
+        "reuse_potential": "HIGH",
+        "applications": [],
+        "source_refs": [
+          "SRC-FILE-OPP-006-06",
+          "SRC-EXT-006-006"
+        ],
+        "tags": [],
+        "provenance": {
+          "source_file": "OPP-006-06.md",
+          "section": "FSM-25 — Human Exception Override",
+          "line_start": 964,
+          "line_end": 981
+        }
+      },
+      {
+        "id": "RI-006-012",
+        "type": "DECISION_PATTERN",
+        "title": "Policy + objective + constraint stack",
+        "domain": "Field-Service Policy-Arbitration Decision",
+        "description": "POLICY → OBJECTIVES + WEIGHTS + CONSTRAINTS → OPTIMIZATION",
+        "evidence_status": "PARTIAL",
+        "status": "ACTIVE",
+        "confidence": "MEDIUM",
+        "reuse_potential": "HIGH",
+        "applications": [],
+        "source_refs": [
+          "SRC-FILE-OPPORTUNITY"
+        ],
+        "tags": [],
+        "provenance": {
+          "source_file": "opportunity.md",
+          "section": "Policy + objective + constraint stack",
+          "line_start": 47,
+          "line_end": 47
+        }
+      },
+      {
+        "id": "RI-006-013",
+        "type": "WORKFLOW_PATTERN",
+        "title": "Automatic reoptimization + human exception",
+        "domain": "Field-Service Policy-Arbitration Decision",
+        "description": "Normal conditions automate; material exceptions permit dispatcher policy change or override; reoptimize.",
+        "evidence_status": "PARTIAL",
+        "status": "ACTIVE",
+        "confidence": "MEDIUM",
+        "reuse_potential": "HIGH",
+        "applications": [],
+        "source_refs": [
+          "SRC-FILE-OPPORTUNITY"
+        ],
+        "tags": [],
+        "provenance": {
+          "source_file": "opportunity.md",
+          "section": "Automatic reoptimization + human exception",
+          "line_start": 48,
+          "line_end": 48
+        }
+      },
+      {
+        "id": "RI-006-014",
+        "type": "IMPLEMENTATION_PATTERN",
+        "title": "Contextual configuration overrides",
+        "domain": "Field-Service Policy-Arbitration Decision",
+        "description": "Group, territory, time, and attribute context can change behavior.",
+        "evidence_status": "PARTIAL",
+        "status": "ACTIVE",
+        "confidence": "MEDIUM",
+        "reuse_potential": "HIGH",
+        "applications": [],
+        "source_refs": [
+          "SRC-FILE-OPPORTUNITY"
+        ],
+        "tags": [],
+        "provenance": {
+          "source_file": "opportunity.md",
+          "section": "Contextual configuration overrides",
+          "line_start": 49,
+          "line_end": 49
+        }
+      },
+      {
+        "id": "RI-006-015",
+        "type": "RESEARCH_METHOD",
+        "title": "Configuration-first falsification",
+        "domain": "Field-Service Policy-Arbitration Decision",
+        "description": "Test policy, objective, constraint, override, automation, and human-exception surfaces before claiming an AI gap.",
+        "evidence_status": "PARTIAL",
+        "status": "ACTIVE",
+        "confidence": "MEDIUM",
+        "reuse_potential": "HIGH",
+        "applications": [],
+        "source_refs": [
+          "SRC-FILE-OPPORTUNITY"
+        ],
+        "tags": [],
+        "provenance": {
+          "source_file": "opportunity.md",
+          "section": "Configuration-first falsification",
+          "line_start": 50,
+          "line_end": 50
+        }
+      }
+    ],
+    "provenance": {
+      "source_file": "opportunity.md",
+      "section": "Final decision",
+      "line_start": 52,
+      "line_end": 55
+    }
+  },
+  "primary_question": "Whether complex field-service context creates recurring human policy-selection burden beyond finite policies, objectives, constraints, overrides, and optimization\n\nThe investigation began by searching a new business decision domain after OPP-005. The initial hypothesis was that field-service exceptions might require intelligence beyond native scheduling. After real conflicts were found, it narrowed to whether dispatchers face recurring policy-arbitration burden that cannot be encoded economically.",
+  "sources": [
+    {
+      "id": "SRC-FILE-OPPORTUNITY",
+      "title": "opportunity.md",
+      "url": "opportunities/IT_and_Business_Services/servicenow/opportunity06/opportunity.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": [
+        "EV-006-001",
+        "EV-006-002",
+        "EV-006-003",
+        "EV-006-004",
+        "EV-006-005",
+        "EV-006-006"
+      ]
+    },
+    {
+      "id": "SRC-FILE-WALKTHROUGH",
+      "title": "walkthrough.md",
+      "url": "opportunities/IT_and_Business_Services/servicenow/opportunity06/walkthrough.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": []
+    },
+    {
+      "id": "SRC-FILE-OPP-006-01",
+      "title": "OPP-006-01.md",
+      "url": "opportunities/IT_and_Business_Services/servicenow/opportunity06/OPP-006-01.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": [
+        "CP-OPP-006-01"
+      ]
+    },
+    {
+      "id": "SRC-FILE-OPP-006-02",
+      "title": "OPP-006-02.md",
+      "url": "opportunities/IT_and_Business_Services/servicenow/opportunity06/OPP-006-02.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": [
+        "CP-OPP-006-02",
+        "EV-006-017"
+      ]
+    },
+    {
+      "id": "SRC-FILE-OPP-006-03",
+      "title": "OPP-006-03.md",
+      "url": "opportunities/IT_and_Business_Services/servicenow/opportunity06/OPP-006-03.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": [
+        "CP-OPP-006-03",
+        "EV-006-031",
+        "EV-006-034"
+      ]
+    },
+    {
+      "id": "SRC-FILE-OPP-006-04",
+      "title": "OPP-006-04.md",
+      "url": "opportunities/IT_and_Business_Services/servicenow/opportunity06/OPP-006-04.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": [
+        "CP-OPP-006-04",
+        "EV-006-049",
+        "EV-006-053",
+        "EV-006-055"
+      ]
+    },
+    {
+      "id": "SRC-FILE-OPP-006-05",
+      "title": "OPP-006-05.md",
+      "url": "opportunities/IT_and_Business_Services/servicenow/opportunity06/OPP-006-05.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": [
+        "CP-OPP-006-05",
+        "EV-006-065"
+      ]
+    },
+    {
+      "id": "SRC-FILE-OPP-006-06",
+      "title": "OPP-006-06.md",
+      "url": "opportunities/IT_and_Business_Services/servicenow/opportunity06/OPP-006-06.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": [
+        "CP-OPP-006-06",
+        "EV-006-080",
+        "EV-006-082"
+      ]
+    },
+    {
+      "id": "SRC-FILE-WORKFLOW",
+      "title": "workflow.md",
+      "url": "opportunities/IT_and_Business_Services/servicenow/opportunity06/workflow.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": []
+    },
+    {
+      "id": "SRC-EXT-006-001",
+      "title": "Create policies for Schedule Optimization",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/create-policies-schedule-optimization.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-03",
+        "CP-OPP-006-04",
+        "CP-OPP-006-05",
+        "CP-OPP-006-06",
+        "EV-006-039",
+        "EV-006-043",
+        "EV-006-045",
+        "EV-006-056",
+        "EV-006-057",
+        "EV-006-064",
+        "EV-006-069",
+        "EV-006-074",
+        "EV-006-081"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-002",
+      "title": "Objectives and constraints",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/hard-soft-constraints.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-03",
+        "CP-OPP-006-04",
+        "CP-OPP-006-05",
+        "CP-OPP-006-06",
+        "EV-006-035",
+        "EV-006-036",
+        "EV-006-037",
+        "EV-006-061",
+        "EV-006-063",
+        "EV-006-070",
+        "EV-006-071"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-003",
+      "title": "On-demand optimization",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-on-demand-optimization.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-04",
+        "CP-OPP-006-05",
+        "CP-OPP-006-06",
+        "EV-006-044",
+        "EV-006-058",
+        "EV-006-075"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-004",
+      "title": "Intraday optimization",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-intraday-optimization.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-04",
+        "CP-OPP-006-06",
+        "EV-006-046",
+        "EV-006-054",
+        "EV-006-073",
+        "EV-006-076"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-005",
+      "title": "Dynamic Scheduling",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/Configure-dynamic-scheduling.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-01",
+        "CP-OPP-006-02",
+        "CP-OPP-006-06",
+        "EV-006-009",
+        "EV-006-025",
+        "EV-006-028",
+        "EV-006-072"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-006",
+      "title": "Prevent excluded technicians",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/prevent-excluded-agents.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-06",
+        "EV-006-077"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-007",
+      "title": "Multi-objective field-service research",
+      "url": "https://doi.org/10.1016/j.cor.2020.104908",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-06",
+        "EV-006-067"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-008",
+      "title": "Field-service routing and scheduling research",
+      "url": "https://doi.org/10.1016/j.cor.2021.105472",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-03",
+        "CP-OPP-006-06",
+        "EV-006-032",
+        "EV-006-068"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-009",
+      "title": "https://www.servicenow.com/in/products/field-service-management/what-is-fsm.html",
+      "url": "https://www.servicenow.com/in/products/field-service-management/what-is-fsm.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-01"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-010",
+      "title": "https://www.servicenow.com/customers/bell.html",
+      "url": "https://www.servicenow.com/customers/bell.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-01",
+        "CP-OPP-006-02",
+        "EV-006-007",
+        "EV-006-023"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-011",
+      "title": "https://www.servicenow.com/customers/flinders-university.html",
+      "url": "https://www.servicenow.com/customers/flinders-university.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-01",
+        "CP-OPP-006-02",
+        "EV-006-008",
+        "EV-006-024"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-012",
+      "title": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/using-dynamic-scheduling.html",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/using-dynamic-scheduling.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-01"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-013",
+      "title": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/create-dynamic-scheduling-config.html",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/create-dynamic-scheduling-config.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-01",
+        "CP-OPP-006-02",
+        "EV-006-010",
+        "EV-006-026"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-014",
+      "title": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/schedule-optimization-engine.html",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/schedule-optimization-engine.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-01",
+        "CP-OPP-006-02",
+        "CP-OPP-006-03",
+        "CP-OPP-006-04",
+        "EV-006-011",
+        "EV-006-027",
+        "EV-006-040"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-015",
+      "title": "https://www.servicenow.com/docs/r/field-service-management/workforce-optimization-for-fsm.html",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/workforce-optimization-for-fsm.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-01",
+        "EV-006-012"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-016",
+      "title": "https://www.servicenow.com/docs/r/field-service-management/use-fsm.html",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/use-fsm.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-01",
+        "EV-006-013"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-017",
+      "title": "https://www.servicenow.com/content/dam/servicenow-assets/public/en-us/doc-type/resource-center/ebook/eb-customer-insights-customer-experience-testimonials.pdf",
+      "url": "https://www.servicenow.com/content/dam/servicenow-assets/public/en-us/doc-type/resource-center/ebook/eb-customer-insights-customer-experience-testimonials.pdf",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-01",
+        "EV-006-014"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-018",
+      "title": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/preferred-agents-for-tasks.html",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/preferred-agents-for-tasks.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-01",
+        "CP-OPP-006-02"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-019",
+      "title": "https://www.servicenow.com/products/field-service-management.html",
+      "url": "https://www.servicenow.com/products/field-service-management.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-01"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-020",
+      "title": "https://www.servicenow.com/docs/r/field-service-management/fsm-application-landing-page.html",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/fsm-application-landing-page.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-01"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-021",
+      "title": "https://www.servicenow.com/docs/r/field-service-management/dynamic-scheduling.html",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/dynamic-scheduling.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-01"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-022",
+      "title": "https://www.servicenow.com/docs/r/field-service-management/schedule-optimization.html",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/schedule-optimization.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-01",
+        "CP-OPP-006-03"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-023",
+      "title": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/scheduling-and-dispatching-agents.html",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/scheduling-and-dispatching-agents.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-01"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-024",
+      "title": "https://www.servicenow.com/customers/betmakers.html",
+      "url": "https://www.servicenow.com/customers/betmakers.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-01"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-025",
+      "title": "https://www.servicenow.com/customers/crown-castle.html",
+      "url": "https://www.servicenow.com/customers/crown-castle.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-01"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-026",
+      "title": "https://www.microsoft.com/en/customers/story/25279-ausgrid-dynamics-365-field-service",
+      "url": "https://www.microsoft.com/en/customers/story/25279-ausgrid-dynamics-365-field-service",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-02",
+        "EV-006-015",
+        "EV-006-016",
+        "EV-006-018",
+        "EV-006-029"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-027",
+      "title": "https://appyway.com/portfolio/morrison-energy-services/",
+      "url": "https://appyway.com/portfolio/morrison-energy-services/",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-02",
+        "EV-006-019",
+        "EV-006-020"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-028",
+      "title": "https://road.com/corp/images/CS_EON_23May06_v1.pdf",
+      "url": "https://road.com/corp/images/CS_EON_23May06_v1.pdf",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-02",
+        "EV-006-021",
+        "EV-006-022"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-029",
+      "title": "https://doi.org/10.1111/j.1937-5956.2007.tb00175.x",
+      "url": "https://doi.org/10.1111/j.1937-5956.2007.tb00175.x",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-03",
+        "EV-006-030"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-030",
+      "title": "https://www.researchgate.net/publication/333718957_Redesigning_Service_Operations_for_the_Digital_World_Towards_Automated_and_Data-driven_Field_Service_Planning",
+      "url": "https://www.researchgate.net/publication/333718957_Redesigning_Service_Operations_for_the_Digital_World_Towards_Automated_and_Data-driven_Field_Service_Planning",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-03",
+        "EV-006-033"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-031",
+      "title": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-the-policy-to-assign-preferred-technicians-to-tasks.html",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-the-policy-to-assign-preferred-technicians-to-tasks.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-03",
+        "CP-OPP-006-05",
+        "CP-OPP-006-06",
+        "EV-006-038",
+        "EV-006-062"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-032",
+      "title": "https://www.servicenow.com/docs/r/zurich/field-service-management/schedule-optimization.html",
+      "url": "https://www.servicenow.com/docs/r/zurich/field-service-management/schedule-optimization.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-03",
+        "EV-006-041"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-033",
+      "title": "https://promx.net/en/2026/05/hands-on-hands-off-from-manual-dispatching-to-system-driven-scheduling-in-dynamics-365-field-service/",
+      "url": "https://promx.net/en/2026/05/hands-on-hands-off-from-manual-dispatching-to-system-driven-scheduling-in-dynamics-365-field-service/",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-03",
+        "EV-006-042"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-034",
+      "title": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/add-objective-sched-opt-policy.html",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/add-objective-sched-opt-policy.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-03",
+        "CP-OPP-006-05"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-035",
+      "title": "https://www.servicenow.com/docs/r/field-service-management/optimizing-scheduling-and-dispatching-operations.html",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/optimizing-scheduling-and-dispatching-operations.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-03"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-036",
+      "title": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/triggering-optimization-on-task-or-agent-availability-change.html",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/triggering-optimization-on-task-or-agent-availability-change.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-04"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-037",
+      "title": "https://trailhead.salesforce.com/content/learn/modules/field-service-lightning-scheduling-basics/customize-a-scheduling-policy",
+      "url": "https://trailhead.salesforce.com/content/learn/modules/field-service-lightning-scheduling-basics/customize-a-scheduling-policy",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-04",
+        "CP-OPP-006-05",
+        "CP-OPP-006-06",
+        "EV-006-047",
+        "EV-006-048"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-038",
+      "title": "https://www.phmsa.dot.gov/sites/phmsa.dot.gov/files/docs/standards-rulemaking/pipeline/interpretations/77451/pge-and-local-1245-pi-23-0001-04-06-2023-part199-1.pdf",
+      "url": "https://www.phmsa.dot.gov/sites/phmsa.dot.gov/files/docs/standards-rulemaking/pipeline/interpretations/77451/pge-and-local-1245-pi-23-0001-04-06-2023-part199-1.pdf",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-04",
+        "EV-006-050"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-039",
+      "title": "https://www.sciencedirect.com/science/article/pii/S0167923612000395",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0167923612000395",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-04",
+        "EV-006-051"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-040",
+      "title": "https://www.researchgate.net/publication/290471804_Decision_Support_System_for_a_Real-Time_Field_Service_Engineer_Scheduling_Problem_with_Emergencies_and_Collaborations",
+      "url": "https://www.researchgate.net/publication/290471804_Decision_Support_System_for_a_Real-Time_Field_Service_Engineer_Scheduling_Problem_with_Emergencies_and_Collaborations",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-04",
+        "EV-006-052"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-041",
+      "title": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-scheduling-attributes.html",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-scheduling-attributes.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-04"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-042",
+      "title": "https://www.servicenow.com/docs/r/field-service-management/schedule-optimization-components.html",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/schedule-optimization-components.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-04",
+        "CP-OPP-006-05",
+        "EV-006-060"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-043",
+      "title": "https://verolog2017.sciencesconf.org/139637/139637.pdf",
+      "url": "https://verolog2017.sciencesconf.org/139637/139637.pdf",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-04"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-044",
+      "title": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/viewing-task-assignments-from-so-runs.html",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/viewing-task-assignments-from-so-runs.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-05",
+        "EV-006-066"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-045",
+      "title": "https://www.servicenow.com/docs/r/xanadu/field-service-management/field-service-scheduling/optimize-your-schedules-intraday.html",
+      "url": "https://www.servicenow.com/docs/r/xanadu/field-service-management/field-service-scheduling/optimize-your-schedules-intraday.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-05",
+        "EV-006-059"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-046",
+      "title": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/select-tasks-for-bulk-assignment.html",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/select-tasks-for-bulk-assignment.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-05"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-047",
+      "title": "https://www.servicenow.com/docs/r/field-service-management/work-order-management/assign-preferred-agents-tasks.html",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/work-order-management/assign-preferred-agents-tasks.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-06",
+        "EV-006-078"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-048",
+      "title": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/create-appt-sched-override.html",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/create-appt-sched-override.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-06",
+        "EV-006-079"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-049",
+      "title": "https://www.servicenow.com/docs/r/field-service-management/appointment-booking/appointment-booking-resched-appt.html",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/appointment-booking/appointment-booking-resched-appt.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-06"
+      ]
+    },
+    {
+      "id": "SRC-EXT-006-050",
+      "title": "https://doi.org/10.1111/j.1540-5915.1999.tb00906.x",
+      "url": "https://doi.org/10.1111/j.1540-5915.1999.tb00906.x",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-006-06"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "CP-OPP-006-01",
+      "title": "OPP-006-01 — Field Service Exception Decision Discovery",
+      "status": "DISCOVERY OPEN — CANDIDATE NOT ESTABLISHED",
+      "investigation_question": "## Company\nServiceNow\n## Opportunity\nOPP-006\n## Checkpoint\nOPP-006-01\n## Investigation Type\n**New business decision domain discovery**\n## Status",
+      "tested": "**New business decision domain discovery**",
+      "found": "OPP-005 was killed after testing Major Incident Management.\nOPP-006 therefore starts from a different business workflow:\n> **Field Service Management — exception-driven work allocation and service recovery.**\nThis is deliberately not an extension of major-incident management.\nThe initial domain is:\nCUSTOMER / SERVICE REQUEST\n↓\nFIELD WORK ORDER\n↓\nTECHNICIAN / CREW / PARTS / LOCATION\n↓\nSCHEDULE\n↓\nFIELD EXECUTION\n↓\nEXCEPTION\n↓\nRE-ALLOCATION / RESCHEDULING / RECOVERY\nThe objective is **not** to claim that ServiceNow has a Field Service gap.\nThe objective is to determine whether there is a specific consequential decision inside field-service exceptions that survives ServiceNow's current native capabilities.",
+      "what_changed": "DISCOVERY OPEN — CANDIDATE NOT ESTABLISHED",
+      "resulting_state": "DISCOVERY OPEN — CANDIDATE NOT ESTABLISHED",
+      "evidence_refs": [
+        "EV-006-007",
+        "EV-006-008",
+        "EV-006-009",
+        "EV-006-010",
+        "EV-006-011",
+        "EV-006-012",
+        "EV-006-013",
+        "EV-006-014"
+      ],
+      "source_refs": [
+        "SRC-FILE-OPP-006-01",
+        "SRC-EXT-006-009",
+        "SRC-EXT-006-010",
+        "SRC-EXT-006-011",
+        "SRC-EXT-006-005",
+        "SRC-EXT-006-012",
+        "SRC-EXT-006-013",
+        "SRC-EXT-006-014",
+        "SRC-EXT-006-015",
+        "SRC-EXT-006-016",
+        "SRC-EXT-006-017",
+        "SRC-EXT-006-018",
+        "SRC-EXT-006-019",
+        "SRC-EXT-006-020",
+        "SRC-EXT-006-021",
+        "SRC-EXT-006-022",
+        "SRC-EXT-006-023",
+        "SRC-EXT-006-024",
+        "SRC-EXT-006-025"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-01.md",
+        "section": "Checkpoint",
+        "line_start": 1,
+        "line_end": 24
+      }
+    },
+    {
+      "id": "CP-OPP-006-02",
+      "title": "OPP-006-02 — Real Field-Service Conflict Reconstruction",
+      "status": "REAL CONFLICT EVIDENCE FOUND — SERVICE NOW GAP NOT YET ESTABLISHED",
+      "investigation_question": "## Company\nServiceNow\n## Opportunity\nOPP-006\n## Checkpoint\nOPP-006-02\n## Investigation Type\n**Real field-service conflict reconstruction**\n## Status",
+      "tested": "**Real field-service conflict reconstruction**",
+      "found": "The real operational problem was significantly reduced through:\nUNIFIED SCHEDULE VISIBILITY\n+\nREAL-TIME FIELD STATUS\n+\nSELF-SERVICE JOB SELECTION\nThis is important counter-evidence.\nIt suggests that at least some apparent \"decision intelligence\" problems are actually **context-integration and visibility problems**.",
+      "what_changed": "REAL CONFLICT EVIDENCE FOUND — SERVICE NOW GAP NOT YET ESTABLISHED",
+      "resulting_state": "REAL CONFLICT EVIDENCE FOUND — SERVICE NOW GAP NOT YET ESTABLISHED",
+      "evidence_refs": [
+        "EV-006-015",
+        "EV-006-016",
+        "EV-006-017",
+        "EV-006-018",
+        "EV-006-019",
+        "EV-006-020",
+        "EV-006-021",
+        "EV-006-022",
+        "EV-006-023",
+        "EV-006-024",
+        "EV-006-025",
+        "EV-006-026",
+        "EV-006-027",
+        "EV-006-028",
+        "EV-006-029"
+      ],
+      "source_refs": [
+        "SRC-FILE-OPP-006-02",
+        "SRC-EXT-006-026",
+        "SRC-EXT-006-027",
+        "SRC-EXT-006-028",
+        "SRC-EXT-006-010",
+        "SRC-EXT-006-011",
+        "SRC-EXT-006-005",
+        "SRC-EXT-006-013",
+        "SRC-EXT-006-014",
+        "SRC-EXT-006-018"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-02.md",
+        "section": "Checkpoint",
+        "line_start": 1,
+        "line_end": 24
+      }
+    },
+    {
+      "id": "CP-OPP-006-03",
+      "title": "OPP-006-03 — Multi-Objective Dispatcher Judgment Test",
+      "status": "RESIDUAL JUDGMENT IS REAL — SERVICE NOW-SPECIFIC GAP NOT ESTABLISHED",
+      "investigation_question": "## Company\nServiceNow\n## Opportunity\nOPP-006\n## Checkpoint\nOPP-006-03\n## Investigation Type\n**Multi-objective dispatcher judgment test**\n## Status",
+      "tested": "**Multi-objective dispatcher judgment test**",
+      "found": "**YES**\nPeer-reviewed research confirms multiple objectives such as cost, priority and consumer satisfaction.\nSources:\nhttps://doi.org/10.1016/j.cor.2021.105472\nhttps://doi.org/10.1111/j.1937-5956.2007.tb00175.x",
+      "what_changed": "RESIDUAL JUDGMENT IS REAL — SERVICE NOW-SPECIFIC GAP NOT ESTABLISHED",
+      "resulting_state": "RESIDUAL JUDGMENT IS REAL — SERVICE NOW-SPECIFIC GAP NOT ESTABLISHED",
+      "evidence_refs": [
+        "EV-006-030",
+        "EV-006-031",
+        "EV-006-032",
+        "EV-006-033",
+        "EV-006-034",
+        "EV-006-035",
+        "EV-006-036",
+        "EV-006-037",
+        "EV-006-038",
+        "EV-006-039",
+        "EV-006-040",
+        "EV-006-041",
+        "EV-006-042"
+      ],
+      "source_refs": [
+        "SRC-FILE-OPP-006-03",
+        "SRC-EXT-006-029",
+        "SRC-EXT-006-008",
+        "SRC-EXT-006-030",
+        "SRC-EXT-006-002",
+        "SRC-EXT-006-001",
+        "SRC-EXT-006-031",
+        "SRC-EXT-006-014",
+        "SRC-EXT-006-032",
+        "SRC-EXT-006-033",
+        "SRC-EXT-006-022",
+        "SRC-EXT-006-034",
+        "SRC-EXT-006-035"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-03.md",
+        "section": "Checkpoint",
+        "line_start": 1,
+        "line_end": 24
+      }
+    },
+    {
+      "id": "CP-OPP-006-04",
+      "title": "OPP-006-04 — Context-Dependent Policy Selection Reconstruction",
+      "status": "POLICY-SHIFT PATTERN VERIFIED — SERVICE NOW GAP NOT ESTABLISHED",
+      "investigation_question": "## Company\nServiceNow\n## Opportunity\nOPP-006\n## Checkpoint\nOPP-006-04\n## Investigation Type\n**Context-dependent policy selection reconstruction**\n## Status",
+      "tested": "**Context-dependent policy selection reconstruction**",
+      "found": "OPP-006-03 narrowed the surviving hypothesis to:\n> **When operating context changes materially, the scheduling policy itself may need to change. The unresolved question is who or what determines that policy shift.**\nRequired chain:\nNORMAL OPERATING CONTEXT\n↓\nMATERIAL CONTEXT CHANGE\n↓\nCURRENT POLICY BECOMES LESS SUITABLE\n↓\nALTERNATIVE POLICY EXISTS\n↓\nPOLICY SELECTION\n↓\nREOPTIMIZATION\n↓\nOUTCOME\nThis checkpoint tests whether that pattern is real and whether ServiceNow has a meaningful residual gap at the policy-selection boundary.",
+      "what_changed": "POLICY-SHIFT PATTERN VERIFIED — SERVICE NOW GAP NOT ESTABLISHED",
+      "resulting_state": "POLICY-SHIFT PATTERN VERIFIED — SERVICE NOW GAP NOT ESTABLISHED",
+      "evidence_refs": [
+        "EV-006-043",
+        "EV-006-044",
+        "EV-006-045",
+        "EV-006-046",
+        "EV-006-047",
+        "EV-006-048",
+        "EV-006-049",
+        "EV-006-050",
+        "EV-006-051",
+        "EV-006-052",
+        "EV-006-053",
+        "EV-006-054",
+        "EV-006-055"
+      ],
+      "source_refs": [
+        "SRC-FILE-OPP-006-04",
+        "SRC-EXT-006-001",
+        "SRC-EXT-006-003",
+        "SRC-EXT-006-002",
+        "SRC-EXT-006-004",
+        "SRC-EXT-006-036",
+        "SRC-EXT-006-037",
+        "SRC-EXT-006-038",
+        "SRC-EXT-006-039",
+        "SRC-EXT-006-040",
+        "SRC-EXT-006-014",
+        "SRC-EXT-006-041",
+        "SRC-EXT-006-042",
+        "SRC-EXT-006-043"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-04.md",
+        "section": "Checkpoint",
+        "line_start": 1,
+        "line_end": 24
+      }
+    },
+    {
+      "id": "CP-OPP-006-05",
+      "title": "OPP-006-05 — Policy-Selection Complexity Test",
+      "status": "HYPOTHESIS WEAKENED — NO SERVICE NOW-SPECIFIC GAP ESTABLISHED",
+      "investigation_question": "## Company\nServiceNow\n## Opportunity\nOPP-006\n## Checkpoint\nOPP-006-05\n## Investigation Type\n**Policy-selection complexity test**\n## Status",
+      "tested": "**Policy-selection complexity test**",
+      "found": "",
+      "what_changed": "HYPOTHESIS WEAKENED — NO SERVICE NOW-SPECIFIC GAP ESTABLISHED",
+      "resulting_state": "HYPOTHESIS WEAKENED — NO SERVICE NOW-SPECIFIC GAP ESTABLISHED",
+      "evidence_refs": [
+        "EV-006-056",
+        "EV-006-057",
+        "EV-006-058",
+        "EV-006-059",
+        "EV-006-060",
+        "EV-006-061",
+        "EV-006-062",
+        "EV-006-063",
+        "EV-006-064",
+        "EV-006-065",
+        "EV-006-066"
+      ],
+      "source_refs": [
+        "SRC-FILE-OPP-006-05",
+        "SRC-EXT-006-001",
+        "SRC-EXT-006-002",
+        "SRC-EXT-006-003",
+        "SRC-EXT-006-044",
+        "SRC-EXT-006-045",
+        "SRC-EXT-006-042",
+        "SRC-EXT-006-031",
+        "SRC-EXT-006-037",
+        "SRC-EXT-006-034",
+        "SRC-EXT-006-046"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-05.md",
+        "section": "Checkpoint",
+        "line_start": 1,
+        "line_end": 24
+      }
+    },
+    {
+      "id": "CP-OPP-006-06",
+      "title": "OPP-006-06 — Residual Policy-Arbitration Evidence Test",
+      "status": "KILLED — RESIDUAL SERVICE NOW GAP NOT ESTABLISHED",
+      "investigation_question": "## Company\nServiceNow\n## Opportunity\nOPP-006\n## Checkpoint\nOPP-006-06\n## Investigation Type\n**Residual policy-arbitration evidence test**\n## Status",
+      "tested": "**Residual policy-arbitration evidence test**",
+      "found": "The evidence confirms that:\n- field-service scheduling is genuinely complex;\n- multiple objectives and constraints are real;\n- emergency and exceptional operating modes exist;\n- organizations use different policies for different conditions;\n- human dispatchers can make exceptions and policy choices.\nHowever, the evidence does **not** establish the critical final chain:\nCOMPLEX CONTEXT\n↓\nPOLICY SELECTION CANNOT BE\nRELIABLY ENCODED\n↓\nRECURRING MATERIAL HUMAN BURDEN\n↓\nEXISTING SERVICENOW CAPABILITY INADEQUATE\nMore importantly, current ServiceNow documentation shows that its field-service architecture already provides several mechanisms that directly attack the proposed residual problem:\n- multiple policies;\n- weighted objectives;\n- hard constraints;\n- dynamic scheduling;\n- automatic intraday optimization;\n- event-driven optimization;\n- scheduling attributes;\n- group/territory qualifiers;\n- attribute overrides;\n- dispatcher-selected policies;\n- manual overrides;\n- exception handling.\nSources:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/create-policies-schedule-optimization.html\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-on-demand-optimization.html\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-intraday-optimization.html\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/Configure-dynamic-scheduling.html\n### Final conclusion",
+      "what_changed": "KILLED — RESIDUAL SERVICE NOW GAP NOT ESTABLISHED",
+      "resulting_state": "KILLED — RESIDUAL SERVICE NOW GAP NOT ESTABLISHED",
+      "evidence_refs": [
+        "EV-006-067",
+        "EV-006-068",
+        "EV-006-069",
+        "EV-006-070",
+        "EV-006-071",
+        "EV-006-072",
+        "EV-006-073",
+        "EV-006-074",
+        "EV-006-075",
+        "EV-006-076",
+        "EV-006-077",
+        "EV-006-078",
+        "EV-006-079",
+        "EV-006-080",
+        "EV-006-081",
+        "EV-006-082"
+      ],
+      "source_refs": [
+        "SRC-FILE-OPP-006-06",
+        "SRC-EXT-006-001",
+        "SRC-EXT-006-003",
+        "SRC-EXT-006-004",
+        "SRC-EXT-006-005",
+        "SRC-EXT-006-007",
+        "SRC-EXT-006-008",
+        "SRC-EXT-006-002",
+        "SRC-EXT-006-006",
+        "SRC-EXT-006-047",
+        "SRC-EXT-006-031",
+        "SRC-EXT-006-048",
+        "SRC-EXT-006-049",
+        "SRC-EXT-006-037",
+        "SRC-EXT-006-050"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-06.md",
+        "section": "Checkpoint",
+        "line_start": 1,
+        "line_end": 24
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "EV-006-001",
+      "statement": "Multi-skill, multi-objective field-service scheduling",
+      "classification": "VERIFIED EXTERNAL EVIDENCE",
+      "source": "SRC-FILE-OPPORTUNITY",
+      "provenance": {
+        "source_file": "opportunity.md",
+        "section": "Evidence and counter-evidence",
+        "line_start": 36,
+        "line_end": 36
+      }
+    },
+    {
+      "id": "EV-006-002",
+      "statement": "Policies, objectives, weights, and constraints",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-FILE-OPPORTUNITY",
+      "provenance": {
+        "source_file": "opportunity.md",
+        "section": "Evidence and counter-evidence",
+        "line_start": 37,
+        "line_end": 37
+      }
+    },
+    {
+      "id": "EV-006-003",
+      "statement": "Dynamic and intraday optimization",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-FILE-OPPORTUNITY",
+      "provenance": {
+        "source_file": "opportunity.md",
+        "section": "Evidence and counter-evidence",
+        "line_start": 38,
+        "line_end": 38
+      }
+    },
+    {
+      "id": "EV-006-004",
+      "statement": "Dispatcher-selected policy and contextual overrides",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-FILE-OPPORTUNITY",
+      "provenance": {
+        "source_file": "opportunity.md",
+        "section": "Evidence and counter-evidence",
+        "line_start": 39,
+        "line_end": 39
+      }
+    },
+    {
+      "id": "EV-006-005",
+      "statement": "Manual exception and preference mechanisms",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-FILE-OPPORTUNITY",
+      "provenance": {
+        "source_file": "opportunity.md",
+        "section": "Evidence and counter-evidence",
+        "line_start": 40,
+        "line_end": 40
+      }
+    },
+    {
+      "id": "EV-006-006",
+      "statement": "Policy explosion, recurring error, material loss",
+      "classification": "UNKNOWN / NOT ESTABLISHED",
+      "source": "SRC-FILE-OPPORTUNITY",
+      "provenance": {
+        "source_file": "opportunity.md",
+        "section": "Evidence and counter-evidence",
+        "line_start": 41,
+        "line_end": 41
+      }
+    },
+    {
+      "id": "EV-006-007",
+      "statement": "ServiceNow's Bell customer story reports:\n- approximately 12,000 field-service employees;\n- more than 10,000 field tasks per day;\n- a field-service operation spanning Canada;\n- ServiceNow Field Service Management;\n- centralized orchestration of service crews;\n- route and schedule optimization;\n- escalation of on-site issues;\n- a consistent record of service interactions.\nSource:\nhttps://www.servicenow.com/customers/bell.html",
+      "classification": "VERIFIED EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-006-010",
+      "provenance": {
+        "source_file": "OPP-006-01.md",
+        "section": "3. Real Customer Evidence — Bell",
+        "line_start": 81,
+        "line_end": 98
+      }
+    },
+    {
+      "id": "EV-006-008",
+      "statement": "Flinders University reports using ServiceNow FSM for:\n- planned maintenance;\n- reactive work requests;\n- approximately 2,000 maintenance plans;\n- approximately 70,000 work orders;\n- real-time visibility between customer-service teams and technicians;\n- contractor coordination;\n- technician mobile workflows.\nSource:\nhttps://www.servicenow.com/customers/flinders-university.html",
+      "classification": "VERIFIED EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-006-011",
+      "provenance": {
+        "source_file": "OPP-006-01.md",
+        "section": "4. Real Customer Evidence — Flinders University",
+        "line_start": 126,
+        "line_end": 142
+      }
+    },
+    {
+      "id": "EV-006-009",
+      "statement": "ServiceNow's current Dynamic Scheduling automatically assigns work-order tasks based on configured criteria.\nIt can consider:\n- task priority;\n- technician skills;\n- availability;\n- travel time;\n- schedules;\n- customer preferences;\n- proximity;\n- agent time off.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/Configure-dynamic-scheduling.html\nDynamic Scheduling can run manually or automatically.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/using-dynamic-scheduling.html",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-005",
+      "provenance": {
+        "source_file": "OPP-006-01.md",
+        "section": "5. Current Native Capability — Dynamic Scheduling",
+        "line_start": 162,
+        "line_end": 187
+      }
+    },
+    {
+      "id": "EV-006-010",
+      "statement": "Dynamic Scheduling can unassign previously assigned tasks so a higher-priority task can be assigned.\nServiceNow provides unassignment constraints to prevent important tasks from being removed.\nExamples include:\n- downstream dependencies;\n- SLA breach risk;\n- parts already sourced.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/create-dynamic-scheduling-config.html",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-013",
+      "provenance": {
+        "source_file": "OPP-006-01.md",
+        "section": "6. Current Native Capability — Reprioritization",
+        "line_start": 193,
+        "line_end": 209
+      }
+    },
+    {
+      "id": "EV-006-011",
+      "statement": "ServiceNow Schedule Optimization creates optimized schedules and adapts to changing conditions.\nIt supports:\n- batch optimization;\n- intraday optimization;\n- prioritized-event optimization;\n- on-demand optimization.\nIt can respond to events such as:\n- cancelled tasks;\n- new high-priority tasks;\n- technicians running late;\n- technicians calling in sick.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/schedule-optimization-engine.html",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-014",
+      "provenance": {
+        "source_file": "OPP-006-01.md",
+        "section": "7. Current Native Capability — Schedule Optimization",
+        "line_start": 233,
+        "line_end": 255
+      }
+    },
+    {
+      "id": "EV-006-012",
+      "statement": "ServiceNow Workforce Optimization for Field Service provides:\n- workforce routing;\n- skills;\n- schedules;\n- performance monitoring;\n- real-time workload visibility;\n- team management;\n- coaching;\n- skill recommendations.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/workforce-optimization-for-fsm.html",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-015",
+      "provenance": {
+        "source_file": "OPP-006-01.md",
+        "section": "10. Current Native Capability — Workforce Optimization",
+        "line_start": 327,
+        "line_end": 344
+      }
+    },
+    {
+      "id": "EV-006-013",
+      "statement": "ServiceNow FSM can match tasks to agents using:\n- skills;\n- geographic territories;\n- available inventory.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/use-fsm.html",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-016",
+      "provenance": {
+        "source_file": "OPP-006-01.md",
+        "section": "11. Current Native Capability — Inventory and Technician Matching",
+        "line_start": 350,
+        "line_end": 362
+      }
+    },
+    {
+      "id": "EV-006-014",
+      "statement": "ServiceNow's customer-insights material reports Xerox using ServiceNow Field Service Management to connect remote support, call-center expertise, customers, and field technicians.\nXerox reports:\n- approximately 53 additional productive minutes per employee per day;\n- approximately 60,000 calls saved;\n- faster employee skill enablement.\nSource:\nhttps://www.servicenow.com/content/dam/servicenow-assets/public/en-us/doc-type/resource-center/ebook/eb-customer-insights-customer-experience-testimonials.pdf",
+      "classification": "VERIFIED EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-006-017",
+      "provenance": {
+        "source_file": "OPP-006-01.md",
+        "section": "12. Real Customer Evidence — Xerox",
+        "line_start": 384,
+        "line_end": 398
+      }
+    },
+    {
+      "id": "EV-006-015",
+      "statement": "Microsoft's official customer story for Ausgrid provides unusually direct evidence of a field-service scheduling conflict.\nAusgrid describes a situation where schedulers needed to dispatch an urgent unplanned job but could not see the planned work already assigned to field technicians.\nSource:\nhttps://www.microsoft.com/en/customers/story/25279-ausgrid-dynamics-365-field-service\nThe documented problem was:\nPLANNED FIELD WORK\n+\nURGENT UNPLANNED JOB\n↓\nSCHEDULER CANNOT SEE BOTH\n↓\nPRIORITIZATION FAILURE\n↓\nHIGH-PRIORITY JOBS COULD BE CANCELLED UNWITTINGLY\n↓\nCANCELLED WORK WAITED WEEKS FOR RESCHEDULING\n↓\nPRODUCTIVITY / EFFICIENCY IMPACT\n↓\nCUSTOMER COMMITMENT IMPACT\nSource:\nhttps://www.microsoft.com/en/customers/story/25279-ausgrid-dynamics-365-field-service",
+      "classification": "VERIFIED EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-006-026",
+      "provenance": {
+        "source_file": "OPP-006-02.md",
+        "section": "3. Strong Real-World Evidence — Ausgrid",
+        "line_start": 75,
+        "line_end": 109
+      }
+    },
+    {
+      "id": "EV-006-016",
+      "statement": "This is materially stronger than generic claims such as:\n> \"Field-service schedules change frequently.\"\nThe source describes an actual operational conflict:\nEXISTING PLANNED WORK\nVS\nURGENT NEW WORK\nThe problem was not simply lack of scheduling.\nIt was inability to see the competing commitments together before making the dispatch decision.\nThe documented consequence was that high-priority jobs could be cancelled unintentionally, with cancelled work taking weeks to reschedule.\nSource:\nhttps://www.microsoft.com/en/customers/story/25279-ausgrid-dynamics-365-field-service",
+      "classification": "VERIFIED EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-006-026",
+      "provenance": {
+        "source_file": "OPP-006-02.md",
+        "section": "4. Why the Ausgrid Event Matters",
+        "line_start": 115,
+        "line_end": 139
+      }
+    },
+    {
+      "id": "EV-006-017",
+      "statement": "The documented initial state was:\nTECHNICIANS\n↓\nPLANNED WORK ALREADY ASSIGNED\nThen:\nURGENT UNPLANNED JOB\n↓\nDISPATCH REQUIRED\nThe scheduler needed to decide how to accommodate the urgent job without destroying already-planned work.\nBut the scheduling information was fragmented.\n### Initial decision problem\nKEEP PLANNED WORK\nVS\nPRIORITIZE URGENT WORK\nThe organization could not reliably evaluate both sides because scheduling information was not visible across systems.",
+      "classification": "VERIFIED EXTERNAL EVIDENCE",
+      "source": "SRC-FILE-OPP-006-02",
+      "provenance": {
+        "source_file": "OPP-006-02.md",
+        "section": "5. Initial Decision Reconstruction",
+        "line_start": 145,
+        "line_end": 177
+      }
+    },
+    {
+      "id": "EV-006-018",
+      "statement": "The documented consequence was severe enough to matter operationally:\n- high-priority jobs could be cancelled unintentionally;\n- cancelled work could take weeks to reschedule;\n- productivity and efficiency were affected;\n- customer promises were at risk.\nSource:\nhttps://www.microsoft.com/en/customers/story/25279-ausgrid-dynamics-365-field-service\nThis establishes:\nDECISION FAILURE\n↓\nSCHEDULE DISRUPTION\n↓\nREWORK / RESCHEDULING\n↓\nCUSTOMER CONSEQUENCE",
+      "classification": "VERIFIED EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-006-026",
+      "provenance": {
+        "source_file": "OPP-006-02.md",
+        "section": "6. Material Consequence",
+        "line_start": 183,
+        "line_end": 208
+      }
+    },
+    {
+      "id": "EV-006-019",
+      "statement": "Morrison Energy Services reports that parking availability was causing technician delays and \"abortive visits\" that required customer appointments to be rescheduled.\nSource:\nhttps://appyway.com/portfolio/morrison-energy-services/\nThe documented operational chain was:\nTECHNICIAN\n↓\nARRIVES AT CUSTOMER LOCATION\n↓\nCANNOT SAFELY / EFFICIENTLY PARK\n↓\nABORTIVE VISIT\n↓\nCUSTOMER APPOINTMENT RESCHEDULE\nSource:\nhttps://appyway.com/portfolio/morrison-energy-services/",
+      "classification": "VERIFIED EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-006-027",
+      "provenance": {
+        "source_file": "OPP-006-02.md",
+        "section": "9. Real-World Evidence — Morrison Energy Services",
+        "line_start": 278,
+        "line_end": 304
+      }
+    },
+    {
+      "id": "EV-006-020",
+      "statement": "This provides a different type of field-service conflict.\nThe initial schedule may be feasible:\nTECHNICIAN\n+\nCUSTOMER APPOINTMENT\n+\nTRAVEL\nBut an external operational constraint emerges:\nPARKING / SITE ACCESS\n↓\nFIELD VISIT BECOMES INFEASIBLE\nThe resulting decision becomes:\nCONTINUE ATTEMPT\nVS\nABORT\nVS\nRESCHEDULE\nThe company reports that better parking intelligence helped technicians plan ahead and reduce these abortive visits.\nSource:\nhttps://appyway.com/portfolio/morrison-energy-services/",
+      "classification": "VERIFIED EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-006-027",
+      "provenance": {
+        "source_file": "OPP-006-02.md",
+        "section": "10. Why Morrison Matters",
+        "line_start": 310,
+        "line_end": 348
+      }
+    },
+    {
+      "id": "EV-006-021",
+      "statement": "A published case study concerning EHU describes a field-service environment where scheduling had to account for:\n- emergency work;\n- engineer traffic delays;\n- customer safety emergencies;\n- SLA commitments;\n- penalties;\n- resource utilization.\nSource:\nhttps://road.com/corp/images/CS_EON_23May06_v1.pdf\nThe case describes a system with multiple scheduling algorithms and real-time field-event visibility, matching real capacity with customer demand.\nSource:\nhttps://road.com/corp/images/CS_EON_23May06_v1.pdf",
+      "classification": "VERIFIED EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-006-028",
+      "provenance": {
+        "source_file": "OPP-006-02.md",
+        "section": "12. Real-World Evidence — Energy Field-Service Case",
+        "line_start": 380,
+        "line_end": 401
+      }
+    },
+    {
+      "id": "EV-006-022",
+      "statement": "The EHU evidence describes a problem closer to the target hypothesis:\nEMERGENCY / DELAY\n+\nCUSTOMER SLA\n+\nRESOURCE CAPACITY\n+\nCOST\n+\nFIELD CONDITIONS\n↓\nREAL-TIME SCHEDULING DECISION\nThe solution used:\n- multiple scheduling algorithms;\n- real-time field visibility;\n- capacity/demand matching;\n- customer dialogue.\nSource:\nhttps://road.com/corp/images/CS_EON_23May06_v1.pdf",
+      "classification": "VERIFIED EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-006-028",
+      "provenance": {
+        "source_file": "OPP-006-02.md",
+        "section": "13. Reconstructed Multi-Constraint Decision",
+        "line_start": 407,
+        "line_end": 436
+      }
+    },
+    {
+      "id": "EV-006-023",
+      "statement": "ServiceNow's Bell customer story reports a large field-service operation involving approximately:\n- 12,000 field-service employees;\n- more than 10,000 field tasks per day;\n- centralized orchestration;\n- route and schedule optimization;\n- escalation of on-site issues.\nSource:\nhttps://www.servicenow.com/customers/bell.html",
+      "classification": "VERIFIED EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-006-010",
+      "provenance": {
+        "source_file": "OPP-006-02.md",
+        "section": "15. ServiceNow Customer Evidence",
+        "line_start": 466,
+        "line_end": 480
+      }
+    },
+    {
+      "id": "EV-006-024",
+      "statement": "Flinders University reports:\n- approximately 2,000 maintenance plans;\n- approximately 70,000 work orders;\n- real-time task visibility;\n- coordination between customer-service teams and technicians;\n- contractor coordination;\n- mobile technician workflows.\nSource:\nhttps://www.servicenow.com/customers/flinders-university.html",
+      "classification": "VERIFIED EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-006-011",
+      "provenance": {
+        "source_file": "OPP-006-02.md",
+        "section": "16. ServiceNow Customer Evidence — Flinders University",
+        "line_start": 488,
+        "line_end": 503
+      }
+    },
+    {
+      "id": "EV-006-025",
+      "statement": "ServiceNow Dynamic Scheduling assigns work based on criteria including:\n- task priority;\n- technician skills;\n- availability;\n- travel time;\n- schedules;\n- customer preferences;\n- proximity.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/Configure-dynamic-scheduling.html",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-005",
+      "provenance": {
+        "source_file": "OPP-006-02.md",
+        "section": "17. Current ServiceNow Capability — Dynamic Scheduling",
+        "line_start": 511,
+        "line_end": 527
+      }
+    },
+    {
+      "id": "EV-006-026",
+      "statement": "ServiceNow can unassign existing tasks to accommodate higher-priority work, subject to constraints.\nConstraints can include:\n- downstream dependencies;\n- SLA breach risk;\n- parts already sourced.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/create-dynamic-scheduling-config.html",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-013",
+      "provenance": {
+        "source_file": "OPP-006-02.md",
+        "section": "18. Current ServiceNow Capability — Higher-Priority Work",
+        "line_start": 533,
+        "line_end": 547
+      }
+    },
+    {
+      "id": "EV-006-027",
+      "statement": "ServiceNow Schedule Optimization can respond to:\n- cancelled tasks;\n- new high-priority tasks;\n- technicians running late;\n- technicians calling in sick.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/schedule-optimization-engine.html",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-014",
+      "provenance": {
+        "source_file": "OPP-006-02.md",
+        "section": "19. Current ServiceNow Capability — Intraday Optimization",
+        "line_start": 569,
+        "line_end": 582
+      }
+    },
+    {
+      "id": "EV-006-028",
+      "statement": "ServiceNow Dynamic Scheduling can consider customer preferences.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/Configure-dynamic-scheduling.html\nPreferred-agent functionality also supports continuity of technician/customer relationships.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/preferred-agents-for-tasks.html",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-005",
+      "provenance": {
+        "source_file": "OPP-006-02.md",
+        "section": "20. Current ServiceNow Capability — Customer Preferences",
+        "line_start": 590,
+        "line_end": 604
+      }
+    },
+    {
+      "id": "EV-006-029",
+      "statement": "The strongest real-world evidence does **not** currently support:\n> \"Field-service organizations cannot make these decisions.\"\nInstead, it supports:\n> **Field-service organizations can experience severe scheduling conflicts when decision-makers lack integrated visibility into competing commitments, resource state, and changing conditions.**\nSources:\nhttps://www.microsoft.com/en/customers/story/25279-ausgrid-dynamics-365-field-service\nhttps://appyway.com/portfolio/morrison-energy-services/\nhttps://road.com/corp/images/CS_EON_23May06_v1.pdf",
+      "classification": "VERIFIED EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-006-026",
+      "provenance": {
+        "source_file": "OPP-006-02.md",
+        "section": "23. What the Real Evidence Actually Reveals",
+        "line_start": 678,
+        "line_end": 696
+      }
+    },
+    {
+      "id": "EV-006-030",
+      "statement": "A peer-reviewed research article, *Focusing on Customer Time in Field Service: A Normative Approach*, explicitly studies the trade-off between customer convenience and field-service provider cost.\nSource:\nhttps://doi.org/10.1111/j.1937-5956.2007.tb00175.x\nThe paper states that customer convenience should be central to field-service operations and investigates the explicit inclusion of customer time in nonemergency field-service decisions together with the trade-off between customer convenience and provider cost.",
+      "classification": "VERIFIED EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-006-029",
+      "provenance": {
+        "source_file": "OPP-006-03.md",
+        "section": "3. Strongest External Evidence — Customer Time vs Provider Cost",
+        "line_start": 65,
+        "line_end": 75
+      }
+    },
+    {
+      "id": "EV-006-031",
+      "statement": "This is stronger than simply saying field-service scheduling has multiple objectives.\nIt establishes a genuine business trade-off:\nCUSTOMER CONVENIENCE\nVS\nPROVIDER COST\nA schedule can therefore be operationally feasible while still producing different business outcomes.",
+      "classification": "VERIFIED EXTERNAL EVIDENCE",
+      "source": "SRC-FILE-OPP-006-03",
+      "provenance": {
+        "source_file": "OPP-006-03.md",
+        "section": "4. What This Proves",
+        "line_start": 81,
+        "line_end": 95
+      }
+    },
+    {
+      "id": "EV-006-032",
+      "statement": "A peer-reviewed open-access study in *Computers & Operations Research* describes field-service scheduling as involving multiple objectives including:\n- cost;\n- task priorities;\n- consumer satisfaction.\nSource:\nhttps://doi.org/10.1016/j.cor.2021.105472\nThe study describes a two-level optimization approach in which tasks are assigned to time intervals and then precisely scheduled and routed.",
+      "classification": "VERIFIED EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-006-008",
+      "provenance": {
+        "source_file": "OPP-006-03.md",
+        "section": "5. Stronger Multi-Objective Evidence",
+        "line_start": 101,
+        "line_end": 115
+      }
+    },
+    {
+      "id": "EV-006-033",
+      "statement": "A published study on data-driven field-service planning reports that dispatchers struggle with multiple competing objectives including:\n- technician utilization;\n- response time;\n- customer satisfaction.\nSource:\nhttps://www.researchgate.net/publication/333718957_Redesigning_Service_Operations_for_the_Digital_World_Towards_Automated_and_Data-driven_Field_Service_Planning\nThe study describes approaches that consolidate competing objectives into an optimization problem and support dynamic rescheduling when conditions change.",
+      "classification": "VERIFIED EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-006-030",
+      "provenance": {
+        "source_file": "OPP-006-03.md",
+        "section": "7. Industry Evidence — Dispatchers Face Competing Objectives",
+        "line_start": 143,
+        "line_end": 157
+      }
+    },
+    {
+      "id": "EV-006-034",
+      "statement": "The same research points toward optimization rather than an unavoidable human-reasoning bottleneck.\nThe documented approach is:\nCOMPETING OBJECTIVES\n↓\nFORMALIZE OBJECTIVES\n↓\nOPTIMIZATION\n↓\nDYNAMIC RESCHEDULING\nTherefore:\n> **The existence of competing objectives does not itself establish the need for a separate reasoning layer.**",
+      "classification": "VERIFIED EXTERNAL EVIDENCE",
+      "source": "SRC-FILE-OPP-006-03",
+      "provenance": {
+        "source_file": "OPP-006-03.md",
+        "section": "8. Important Counter-Evidence",
+        "line_start": 163,
+        "line_end": 183
+      }
+    },
+    {
+      "id": "EV-006-035",
+      "statement": "ServiceNow's current Schedule Optimization explicitly separates:\n### Objectives\nSoft goals that influence which schedule is preferred.\n### Constraints\nHard rules that an assignment must satisfy.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/hard-soft-constraints.html\nServiceNow states that objectives are weighted, with higher weights receiving greater priority.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/hard-soft-constraints.html",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-002",
+      "provenance": {
+        "source_file": "OPP-006-03.md",
+        "section": "9. ServiceNow's Native Objective Model",
+        "line_start": 189,
+        "line_end": 211
+      }
+    },
+    {
+      "id": "EV-006-036",
+      "statement": "ServiceNow allows both:\nMINIMIZE SLA VIOLATION\n+\nMINIMIZE OVERTIME\nto be configured as objectives.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/hard-soft-constraints.html\nThe optimization policy can assign weights to objectives.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/create-policies-schedule-optimization.html",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-002",
+      "provenance": {
+        "source_file": "OPP-006-03.md",
+        "section": "11. Example — SLA vs Overtime",
+        "line_start": 241,
+        "line_end": 263
+      }
+    },
+    {
+      "id": "EV-006-037",
+      "statement": "ServiceNow provides an intraday objective:\n**Maximize existing assignments**\nIt also provides objectives for high-priority work and delayed tasks.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/hard-soft-constraints.html\nThis means a conflict can already be expressed approximately as:\nPRESERVE CURRENT SCHEDULE\nVS\nACCOMMODATE NEW PRIORITY\nthrough configured objectives.",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-002",
+      "provenance": {
+        "source_file": "OPP-006-03.md",
+        "section": "12. Example — Existing Commitment vs New Priority",
+        "line_start": 269,
+        "line_end": 291
+      }
+    },
+    {
+      "id": "EV-006-038",
+      "statement": "ServiceNow supports preferred technicians as an optimization feature.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-the-policy-to-assign-preferred-technicians-to-tasks.html\nThis means another apparent judgment problem:\nCUSTOMER PREFERS TECHNICIAN A\nVS\nTECHNICIAN B IS MORE OPERATIONALLY EFFICIENT\ncan at least be represented through configuration.",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-031",
+      "provenance": {
+        "source_file": "OPP-006-03.md",
+        "section": "13. Example — Customer Preference",
+        "line_start": 297,
+        "line_end": 315
+      }
+    },
+    {
+      "id": "EV-006-039",
+      "statement": "ServiceNow allows different policies for different optimization configurations.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/create-policies-schedule-optimization.html\nPolicies combine objectives and constraints.\nHigher-weight objectives receive greater priority.",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-001",
+      "provenance": {
+        "source_file": "OPP-006-03.md",
+        "section": "14. Example — Multiple Policies",
+        "line_start": 321,
+        "line_end": 333
+      }
+    },
+    {
+      "id": "EV-006-040",
+      "statement": "ServiceNow Schedule Optimization supports:\n- batch optimization;\n- intraday optimization;\n- prioritized-event optimization;\n- on-demand optimization.\nIt can respond to changing conditions including:\n- cancelled tasks;\n- new high-priority tasks;\n- technicians running late;\n- technicians calling in sick.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/schedule-optimization-engine.html",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-014",
+      "provenance": {
+        "source_file": "OPP-006-03.md",
+        "section": "18. Current ServiceNow Adaptation Capability",
+        "line_start": 430,
+        "line_end": 450
+      }
+    },
+    {
+      "id": "EV-006-041",
+      "statement": "ServiceNow's documentation explicitly describes Schedule Optimization as handling the majority of scheduling while dispatchers focus on exceptional cases.\nSource:\nhttps://www.servicenow.com/docs/r/zurich/field-service-management/schedule-optimization.html\nThe current workflow therefore does not attempt to eliminate human judgment completely.\nIt is closer to:\nAUTOMATION\n↓\nMAJORITY OF SCHEDULING\n↓\nEXCEPTION\n↓\nDISPATCHER",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-032",
+      "provenance": {
+        "source_file": "OPP-006-03.md",
+        "section": "19. Human Dispatcher Role",
+        "line_start": 456,
+        "line_end": 478
+      }
+    },
+    {
+      "id": "EV-006-042",
+      "statement": "A current 2026 field-service implementation article discussing Microsoft Dynamics 365 Resource Scheduling Optimization reports that optimization handles complex combinations of resources, rules and goals, but that strict rules can produce no feasible result and users may find it difficult to understand why a technician was reassigned or why work was postponed.\nSource:\nhttps://promx.net/en/2026/05/hands-on-hands-off-from-manual-dispatching-to-system-driven-scheduling-in-dynamics-365-field-service/\nThe article identifies a tension:\nSTRONG AUTOMATION\n↓\nCONSISTENT RULE EXECUTION\nVS\nOPERATIONAL TRANSPARENCY",
+      "classification": "VERIFIED EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-006-033",
+      "provenance": {
+        "source_file": "OPP-006-03.md",
+        "section": "21. Closest Evidence of Dispatcher Burden",
+        "line_start": 508,
+        "line_end": 526
+      }
+    },
+    {
+      "id": "EV-006-043",
+      "statement": "ServiceNow explicitly documents that multiple scheduling policies can be created and that policies define rules and priorities for optimization.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/create-policies-schedule-optimization.html\nServiceNow states that different policies can be used for different batch or intraday configurations.",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-001",
+      "provenance": {
+        "source_file": "OPP-006-04.md",
+        "section": "3. Strongest Direct ServiceNow Evidence",
+        "line_start": 67,
+        "line_end": 77
+      }
+    },
+    {
+      "id": "EV-006-044",
+      "statement": "ServiceNow's current documentation goes further.\nIts on-demand optimization documentation explicitly states:\n> Dispatchers can change the policy before running optimization to adapt to current conditions.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-on-demand-optimization.html\nServiceNow gives examples of maintaining multiple policies, including policies that:\n- allow overtime;\n- allow travel outside regular working hours.\nThe dispatcher can select the appropriate policy before running optimization.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-on-demand-optimization.html",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-003",
+      "provenance": {
+        "source_file": "OPP-006-04.md",
+        "section": "4. Stronger Evidence — Dispatcher Can Change Policy",
+        "line_start": 83,
+        "line_end": 106
+      }
+    },
+    {
+      "id": "EV-006-045",
+      "statement": "ServiceNow defines a policy as a grouping of objectives and constraints that determines how tasks are assigned.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/create-policies-schedule-optimization.html\nThe objectives have weights, and higher-weight objectives receive greater priority.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/hard-soft-constraints.html\nTherefore:\nBUSINESS PRIORITY\n↓\nPOLICY\n↓\nOBJECTIVES + WEIGHTS\n+\nCONSTRAINTS\n↓\nOPTIMIZATION",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-001",
+      "provenance": {
+        "source_file": "OPP-006-04.md",
+        "section": "6. Native Evidence — Policy as Business Rules",
+        "line_start": 144,
+        "line_end": 172
+      }
+    },
+    {
+      "id": "EV-006-046",
+      "statement": "ServiceNow's intraday optimization reacts to conditions such as:\n- technician running late;\n- technician calling in sick;\n- PTO;\n- cancelled task;\n- new high-priority task.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-intraday-optimization.html\nPrioritized-event optimization can rapidly target affected technicians and tasks after critical events.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/triggering-optimization-on-task-or-agent-availability-change.html",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-004",
+      "provenance": {
+        "source_file": "OPP-006-04.md",
+        "section": "7. Native Evidence — Current Conditions Can Trigger Reoptimization",
+        "line_start": 178,
+        "line_end": 198
+      }
+    },
+    {
+      "id": "EV-006-047",
+      "statement": "Salesforce provides unusually explicit documentation of the same operational pattern.\nIts field-service scheduling documentation describes multiple policies for different scenarios.\nExamples include:\n- Customer First;\n- High Intensity;\n- Soft Boundaries;\n- Emergency.\nThe documentation explicitly states that dispatchers select different scheduling policies as the situation changes.\nSource:\nhttps://trailhead.salesforce.com/content/learn/modules/field-service-lightning-scheduling-basics/customize-a-scheduling-policy\n### Example documented scenario\nAn emergency such as a local power outage can require rescheduling appointments in a territory.\nThe documented response is to select a different scheduling policy.\nSource:\nhttps://trailhead.salesforce.com/content/learn/modules/field-service-lightning-scheduling-basics/customize-a-scheduling-policy",
+      "classification": "VERIFIED EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-006-037",
+      "provenance": {
+        "source_file": "OPP-006-04.md",
+        "section": "9. External Evidence — Salesforce Policy Shifting",
+        "line_start": 242,
+        "line_end": 271
+      }
+    },
+    {
+      "id": "EV-006-048",
+      "statement": "Salesforce's documented pattern is:\nNORMAL DAY\n↓\nCUSTOMER-FIRST POLICY\n↓\nOPERATING CONDITIONS CHANGE\n↓\nEMERGENCY / HIGH VOLUME\n↓\nPOLICY SHIFT\n↓\nEMERGENCY / HIGH-INTENSITY POLICY\n↓\nREOPTIMIZE\nSource:\nhttps://trailhead.salesforce.com/content/learn/modules/field-service-lightning-scheduling-basics/customize-a-scheduling-policy",
+      "classification": "VERIFIED EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-006-037",
+      "provenance": {
+        "source_file": "OPP-006-04.md",
+        "section": "10. Reconstructed External Workflow",
+        "line_start": 279,
+        "line_end": 303
+      }
+    },
+    {
+      "id": "EV-006-049",
+      "statement": "This proves that:\n> **Context-dependent policy selection is a real field-service operating pattern.**\nIt is not merely a theoretical AI workflow.\nIt also demonstrates that mature field-service platforms can implement the pattern without a specialized reasoning engine.",
+      "classification": "VERIFIED EXTERNAL EVIDENCE",
+      "source": "SRC-FILE-OPP-006-04",
+      "provenance": {
+        "source_file": "OPP-006-04.md",
+        "section": "11. Why This Matters",
+        "line_start": 309,
+        "line_end": 319
+      }
+    },
+    {
+      "id": "EV-006-050",
+      "statement": "A PG&E utility procedure provides a more operationally concrete example.\nThe documented procedure covers Priority Zero gas field orders.\nWhen an emergency field order is dispatched to personnel already working on non-priority work, the dispatcher may reschedule or reassign the non-emergency work.\nWhen an emergency order is dispatched to personnel working on a customer-generated field order, the dispatcher may reassign the customer order if necessary.\nSource:\nhttps://www.phmsa.dot.gov/sites/phmsa.dot.gov/files/docs/standards-rulemaking/pipeline/interpretations/77451/pge-and-local-1245-pi-23-0001-04-06-2023-part199-1.pdf",
+      "classification": "VERIFIED EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-006-038",
+      "provenance": {
+        "source_file": "OPP-006-04.md",
+        "section": "12. External Evidence — Utility Dispatch",
+        "line_start": 325,
+        "line_end": 339
+      }
+    },
+    {
+      "id": "EV-006-051",
+      "statement": "A peer-reviewed study on field-service scheduling uses a real-world mobile-phone-provider case involving almost 20,000 base stations and several hundred engineers.\nThe tasks have:\n- different priorities;\n- deadlines;\n- skill requirements;\n- service-affecting disturbances;\n- regular maintenance.\nSource:\nhttps://www.sciencedirect.com/science/article/pii/S0167923612000395\nThe study explicitly models dynamic scheduling using real-time information.",
+      "classification": "VERIFIED EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-006-039",
+      "provenance": {
+        "source_file": "OPP-006-04.md",
+        "section": "14. External Research — Real Field-Service Scheduling",
+        "line_start": 376,
+        "line_end": 394
+      }
+    },
+    {
+      "id": "EV-006-052",
+      "statement": "A published decision-support study addresses real-time field-service engineer scheduling with emergencies and collaboration.\nIt describes emergency levels and policies for repair jobs and uses event-driven replanning and rescheduling.\nSource:\nhttps://www.researchgate.net/publication/290471804_Decision_Support_System_for_a_Real-Time_Field_Service_Engineer_Scheduling_Problem_with_Emergencies_and_Collaborations",
+      "classification": "VERIFIED EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-006-040",
+      "provenance": {
+        "source_file": "OPP-006-04.md",
+        "section": "15. External Research — Emergency Replanning",
+        "line_start": 400,
+        "line_end": 410
+      }
+    },
+    {
+      "id": "EV-006-053",
+      "statement": "Across ServiceNow documentation, Salesforce documentation, utility procedures, and academic field-service research, the following pattern is supported:\nOPERATING CONTEXT\n↓\nEVENT / CONDITION CHANGE\n↓\nCURRENT PRIORITY MODEL\nMAY BECOME INAPPROPRIATE\n↓\nALTERNATIVE POLICY / PRIORITY MODEL\n↓\nPOLICY SELECTION\n↓\nREOPTIMIZATION / DISPATCH",
+      "classification": "VERIFIED EXTERNAL + DIRECT EVIDENCE",
+      "source": "SRC-FILE-OPP-006-04",
+      "provenance": {
+        "source_file": "OPP-006-04.md",
+        "section": "16. The Real Pattern Is Now Verified",
+        "line_start": 422,
+        "line_end": 441
+      }
+    },
+    {
+      "id": "EV-006-054",
+      "statement": "This is where the evidence becomes decisive.\nServiceNow automatically responds to many scheduling disruptions.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-intraday-optimization.html\nBut its current on-demand policy-selection workflow explicitly puts policy choice with the dispatcher.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-on-demand-optimization.html\nTherefore:\nEVENT DETECTION\n↓\nAUTOMATED\nwhile:\nWHICH POLICY SHOULD APPLY?\n↓\nDISPATCHER\nat least in the documented on-demand workflow.",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-004",
+      "provenance": {
+        "source_file": "OPP-006-04.md",
+        "section": "17. But What Does ServiceNow Actually Automate?",
+        "line_start": 447,
+        "line_end": 481
+      }
+    },
+    {
+      "id": "EV-006-055",
+      "statement": "We do not have evidence showing:\n- how often ServiceNow customers change policies;\n- how long policy-selection decisions take;\n- how often the wrong policy is selected;\n- whether policy selection causes SLA failures;\n- whether policy selection causes overtime or customer churn;\n- whether dispatchers lack sufficient context;\n- whether multiple policies become difficult to distinguish at scale;\n- whether policy selection could be safely automated;\n- whether customers would pay for such automation.",
+      "classification": "UNKNOWN",
+      "source": "SRC-FILE-OPP-006-04",
+      "provenance": {
+        "source_file": "OPP-006-04.md",
+        "section": "20. What We Still Do Not Know",
+        "line_start": 550,
+        "line_end": 564
+      }
+    },
+    {
+      "id": "EV-006-056",
+      "statement": "ServiceNow Schedule Optimization policies are explicitly built from objectives and constraints.\nObjectives have weights, and higher-weight objectives receive greater priority.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/create-policies-schedule-optimization.html\nThe current objectives include, among others:\n- maximize task assignment;\n- minimize travel;\n- maximize high-priority assignments;\n- minimize SLA violations;\n- minimize overtime;\n- maximize preferred-agent assignments;\n- maximize existing assignments;\n- minimize delayed tasks;\n- minimize unassigned tasks.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/hard-soft-constraints.html",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-001",
+      "provenance": {
+        "source_file": "OPP-006-05.md",
+        "section": "YES",
+        "line_start": 69,
+        "line_end": 95
+      }
+    },
+    {
+      "id": "EV-006-057",
+      "statement": "ServiceNow explicitly supports multiple policies for different optimization configurations.\nA policy defines the objectives and constraints that guide optimization.\nDifferent policies can be used for different batch or intraday configurations.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/create-policies-schedule-optimization.html\n### Example\nNORMAL OPERATIONS\n↓\nPOLICY A\nEMERGENCY OPERATIONS\n↓\nPOLICY B\nHIGH-OVERTIME CONDITION\n↓\nPOLICY C",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-001",
+      "provenance": {
+        "source_file": "OPP-006-05.md",
+        "section": "YES",
+        "line_start": 109,
+        "line_end": 137
+      }
+    },
+    {
+      "id": "EV-006-058",
+      "statement": "ServiceNow's Schedule Optimization workflow supports dispatcher-triggered on-demand optimization using an applicable policy.\nCurrent ServiceNow documentation describes on-demand optimization as a dispatcher-triggered optimization mode.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-on-demand-optimization.html\nServiceNow's current optimization documentation also states that on-demand optimization can be triggered from Dispatcher Workspace and applies the configured policy.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/viewing-task-assignments-from-so-runs.html",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-003",
+      "provenance": {
+        "source_file": "OPP-006-05.md",
+        "section": "YES",
+        "line_start": 151,
+        "line_end": 167
+      }
+    },
+    {
+      "id": "EV-006-059",
+      "statement": "ServiceNow's intraday optimization is event-based.\nIt can respond to:\n- cancelled tasks;\n- technicians running late;\n- technicians calling in sick;\n- PTO;\n- new high-priority tasks.\nSource:\nhttps://www.servicenow.com/docs/r/xanadu/field-service-management/field-service-scheduling/optimize-your-schedules-intraday.html\nCurrent documentation also describes batch, intraday, prioritized-event, and on-demand optimization modes.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/viewing-task-assignments-from-so-runs.html",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-045",
+      "provenance": {
+        "source_file": "OPP-006-05.md",
+        "section": "YES, PARTIALLY",
+        "line_start": 185,
+        "line_end": 207
+      }
+    },
+    {
+      "id": "EV-006-060",
+      "statement": "ServiceNow supports global and qualifier-level scheduling attribute configurations.\nScheduling settings can be configured at global, group, or territory levels, with qualifier-level overrides.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/schedule-optimization-components.html\nThe documented configuration model includes:\nGLOBAL CONFIGURATION\n↓\nGROUP / TERRITORY OVERRIDE\n↓\nLOCALIZED SCHEDULING BEHAVIOR",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-042",
+      "provenance": {
+        "source_file": "OPP-006-05.md",
+        "section": "YES",
+        "line_start": 223,
+        "line_end": 243
+      }
+    },
+    {
+      "id": "EV-006-061",
+      "statement": "ServiceNow distinguishes objectives from constraints.\nObjectives are soft targets.\nConstraints are mandatory assignment conditions.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/hard-soft-constraints.html\nThis creates:\nHARD CONSTRAINTS\n↓\nREMOVE INFEASIBLE OPTIONS\n↓\nSOFT OBJECTIVES\n↓\nRANK / PREFER FEASIBLE OPTIONS",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-002",
+      "provenance": {
+        "source_file": "OPP-006-05.md",
+        "section": "YES",
+        "line_start": 257,
+        "line_end": 281
+      }
+    },
+    {
+      "id": "EV-006-062",
+      "statement": "ServiceNow supports preferred, secondary, required, and excluded technician configurations.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-the-policy-to-assign-preferred-technicians-to-tasks.html\nThe current documentation includes:\n- maximize preferred-agent assignment;\n- required technician constraints;\n- excluded technicians.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-the-policy-to-assign-preferred-technicians-to-tasks.html",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-031",
+      "provenance": {
+        "source_file": "OPP-006-05.md",
+        "section": "YES",
+        "line_start": 297,
+        "line_end": 315
+      }
+    },
+    {
+      "id": "EV-006-063",
+      "statement": "ServiceNow explicitly supports weighted objectives.\nExamples include:\nMINIMIZE OVERTIME\nVS\nMAXIMIZE SLA COMPLIANCE\nMINIMIZE TRAVEL\nVS\nMAXIMIZE HIGH-PRIORITY TASKS\nPRESERVE EXISTING ASSIGNMENTS\nVS\nACCOMMODATE NEW WORK\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/hard-soft-constraints.html\nThe optimizer uses objective weights to prioritize among soft goals.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/create-policies-schedule-optimization.html",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-002",
+      "provenance": {
+        "source_file": "OPP-006-05.md",
+        "section": "YES",
+        "line_start": 329,
+        "line_end": 359
+      }
+    },
+    {
+      "id": "EV-006-064",
+      "statement": "The evidence from ServiceNow and other field-service platforms shows a common operating pattern:\nOPERATING CONDITION\n↓\nKNOWN MODE\n↓\nKNOWN POLICY\n↓\nOPTIMIZATION\nExamples include:\nNORMAL\nEMERGENCY\nHIGH VOLUME\nOVERTIME\nSPECIAL TERRITORY\nServiceNow's policy model supports multiple policies.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/create-policies-schedule-optimization.html\nSalesforce independently documents the same pattern with policies for different scheduling situations, including emergency conditions.\nSource:\nhttps://trailhead.salesforce.com/content/learn/modules/field-service-lightning-scheduling-basics/customize-a-scheduling-policy",
+      "classification": "VERIFIED EXTERNAL EVIDENCE + DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-001",
+      "provenance": {
+        "source_file": "OPP-006-05.md",
+        "section": "YES — IN PRINCIPLE",
+        "line_start": 373,
+        "line_end": 409
+      }
+    },
+    {
+      "id": "EV-006-065",
+      "statement": "We found credible evidence that field-service scheduling involves:\n- multiple objectives;\n- emergencies;\n- changing conditions;\n- dynamic rescheduling;\n- competing customer/provider interests.\nHowever, the research did not establish a ServiceNow customer case showing:\nCOMPLEX CONTEXT\n↓\nPOLICY CHOICE\n↓\nRECURRING HUMAN BURDEN\n↓\nMATERIAL ERROR / COST / DELAY\n↓\nSERVICE NOW INADEQUATE",
+      "classification": "UNKNOWN",
+      "source": "SRC-FILE-OPP-006-05",
+      "provenance": {
+        "source_file": "OPP-006-05.md",
+        "section": "NO",
+        "line_start": 423,
+        "line_end": 447
+      }
+    },
+    {
+      "id": "EV-006-066",
+      "statement": "Current ServiceNow documentation shows that policy selection is an explicit administrative/dispatcher function.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/viewing-task-assignments-from-so-runs.html\nBut explicit human involvement does not prove:\n- excessive workload;\n- poor decisions;\n- lack of context;\n- material delays;\n- unacceptable cost;\n- customer dissatisfaction.",
+      "classification": "UNKNOWN",
+      "source": "SRC-EXT-006-044",
+      "provenance": {
+        "source_file": "OPP-006-05.md",
+        "section": "NOT ESTABLISHED",
+        "line_start": 459,
+        "line_end": 476
+      }
+    },
+    {
+      "id": "EV-006-067",
+      "statement": "Peer-reviewed research describes real-life multi-skill workforce scheduling and routing problems in field-service operations.\nOne study describes a real electricity-distribution problem with two competing objectives:\n- completing higher-priority tasks earlier;\n- minimizing operational costs.\nSource:\nhttps://doi.org/10.1016/j.cor.2020.104908\nAnother peer-reviewed study describes field-service operations involving:\n- technician skills;\n- capabilities;\n- local knowledge;\n- cost;\n- task priorities;\n- consumer satisfaction.\nSource:\nhttps://doi.org/10.1016/j.cor.2021.105472",
+      "classification": "VERIFIED EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-006-007",
+      "provenance": {
+        "source_file": "OPP-006-06.md",
+        "section": "VERIFIED",
+        "line_start": 145,
+        "line_end": 171
+      }
+    },
+    {
+      "id": "EV-006-068",
+      "statement": "Research demonstrates that multi-objective field-service scheduling can be formulated as an optimization problem.\nThe literature explicitly models combinations such as:\nTASK PRIORITY\n+\nOPERATIONAL COST\n+\nCUSTOMER SATISFACTION\nSource:\nhttps://doi.org/10.1016/j.cor.2021.105472\nA separate real-life workforce scheduling study models:\nHIGH-PRIORITY TASK COMPLETION\n+\nMINIMIZE OPERATIONAL COST\nSource:\nhttps://doi.org/10.1016/j.cor.2020.104908",
+      "classification": "VERIFIED EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-006-008",
+      "provenance": {
+        "source_file": "OPP-006-06.md",
+        "section": "NO",
+        "line_start": 187,
+        "line_end": 217
+      }
+    },
+    {
+      "id": "EV-006-069",
+      "statement": "ServiceNow policies are built from objectives and constraints.\nObjectives control prioritization during optimization.\nConstraints define mandatory assignment conditions.\nDifferent policies can be used for different batch or intraday configurations.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/create-policies-schedule-optimization.html",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-001",
+      "provenance": {
+        "source_file": "OPP-006-06.md",
+        "section": "YES",
+        "line_start": 237,
+        "line_end": 251
+      }
+    },
+    {
+      "id": "EV-006-070",
+      "statement": "ServiceNow supports objective weights.\nHigher-weight objectives receive greater priority.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/hard-soft-constraints.html\nExamples of supported objectives include:\n- high-priority task assignment;\n- SLA violation minimization;\n- overtime minimization;\n- travel minimization;\n- existing assignment maximization;\n- delayed-task minimization;\n- unassigned-task minimization.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/hard-soft-constraints.html",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-002",
+      "provenance": {
+        "source_file": "OPP-006-06.md",
+        "section": "YES",
+        "line_start": 265,
+        "line_end": 289
+      }
+    },
+    {
+      "id": "EV-006-071",
+      "statement": "ServiceNow distinguishes constraints from objectives.\nConstraints establish mandatory assignment conditions.\nObjectives express preferences.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/hard-soft-constraints.html\nThis gives:\nWHAT IS POSSIBLE?\n↓\nHARD CONSTRAINTS\nWHAT IS PREFERRED?\n↓\nSOFT OBJECTIVES",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-002",
+      "provenance": {
+        "source_file": "OPP-006-06.md",
+        "section": "YES",
+        "line_start": 303,
+        "line_end": 327
+      }
+    },
+    {
+      "id": "EV-006-072",
+      "statement": "Dynamic Scheduling automatically optimizes assignments using current conditions and can:\n- prioritize tasks;\n- unassign previously assigned work for higher-priority tasks;\n- consider skills and travel time;\n- reassign work when agents take time off.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/Configure-dynamic-scheduling.html",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-005",
+      "provenance": {
+        "source_file": "OPP-006-06.md",
+        "section": "YES",
+        "line_start": 341,
+        "line_end": 354
+      }
+    },
+    {
+      "id": "EV-006-073",
+      "statement": "ServiceNow Intraday Optimization can update assignments as conditions change.\nCurrent documentation supports:\n- scheduled intraday processing;\n- on-demand optimization;\n- group/territory qualifiers;\n- attribute overrides;\n- changing task conditions.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-intraday-optimization.html",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-004",
+      "provenance": {
+        "source_file": "OPP-006-06.md",
+        "section": "YES",
+        "line_start": 364,
+        "line_end": 380
+      }
+    },
+    {
+      "id": "EV-006-074",
+      "statement": "ServiceNow explicitly allows different policies for different batch or intraday configurations.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/create-policies-schedule-optimization.html",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-001",
+      "provenance": {
+        "source_file": "OPP-006-06.md",
+        "section": "YES",
+        "line_start": 390,
+        "line_end": 398
+      }
+    },
+    {
+      "id": "EV-006-075",
+      "statement": "ServiceNow explicitly documents:\n> Dispatchers can change the policy before running optimization to adapt to current conditions.\nThe documentation gives examples of maintaining multiple policies, including policies that enable overtime or travel outside regular working hours.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-on-demand-optimization.html",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-003",
+      "provenance": {
+        "source_file": "OPP-006-06.md",
+        "section": "YES",
+        "line_start": 408,
+        "line_end": 420
+      }
+    },
+    {
+      "id": "EV-006-076",
+      "statement": "Intraday configuration supports qualifiers for groups and territories.\nIt also supports attribute overrides for particular time periods.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-intraday-optimization.html",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-004",
+      "provenance": {
+        "source_file": "OPP-006-06.md",
+        "section": "YES",
+        "line_start": 438,
+        "line_end": 448
+      }
+    },
+    {
+      "id": "EV-006-077",
+      "statement": "ServiceNow documents cases where dispatchers can manually override exclusions and assign work to otherwise excluded technicians, with a warning.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/prevent-excluded-agents.html",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-006",
+      "provenance": {
+        "source_file": "OPP-006-06.md",
+        "section": "YES",
+        "line_start": 464,
+        "line_end": 472
+      }
+    },
+    {
+      "id": "EV-006-078",
+      "statement": "ServiceNow supports:\n- preferred technicians;\n- secondary technicians;\n- excluded technicians;\n- required technicians.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/work-order-management/assign-preferred-agents-tasks.html\nThe optimization engine can use these preferences when assigning work.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-the-policy-to-assign-preferred-technicians-to-tasks.html",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-047",
+      "provenance": {
+        "source_file": "OPP-006-06.md",
+        "section": "YES",
+        "line_start": 500,
+        "line_end": 519
+      }
+    },
+    {
+      "id": "EV-006-079",
+      "statement": "ServiceNow supports appointment schedule overrides for specific dates and scenarios.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/create-appt-sched-override.html\nIt also allows dispatchers or agents to reschedule customer appointments subject to configured reschedule/cancel windows.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/appointment-booking/appointment-booking-resched-appt.html",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-048",
+      "provenance": {
+        "source_file": "OPP-006-06.md",
+        "section": "YES",
+        "line_start": 533,
+        "line_end": 547
+      }
+    },
+    {
+      "id": "EV-006-080",
+      "statement": "The investigation found substantial evidence of:\n- field-service optimization complexity;\n- emergency scheduling;\n- dynamic scheduling;\n- multiple objectives;\n- policy variation;\n- dispatcher exceptions.\nBut it did not find credible ServiceNow-specific evidence establishing:\nPOLICY SELECTION\n↓\nFREQUENT\n↓\nDIFFICULT\n↓\nERROR-PRONE\n↓\nMATERIAL BUSINESS LOSS",
+      "classification": "UNKNOWN / NOT ESTABLISHED",
+      "source": "SRC-FILE-OPP-006-06",
+      "provenance": {
+        "source_file": "OPP-006-06.md",
+        "section": "NO",
+        "line_start": 561,
+        "line_end": 586
+      }
+    },
+    {
+      "id": "EV-006-081",
+      "statement": "The available evidence supports a configuration-first interpretation:\nOPERATING MODE\n↓\nPOLICY\n↓\nOBJECTIVES\n+\nWEIGHTS\n+\nCONSTRAINTS\n↓\nOPTIMIZATION\nServiceNow explicitly supports multiple policies and policy switching.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/create-policies-schedule-optimization.html\nExternal field-service platforms independently use the same model.\nFor example, Salesforce documents scheduling policies for different scenarios, including emergency situations.\nSource:\nhttps://trailhead.salesforce.com/content/learn/modules/field-service-lightning-scheduling-basics/customize-a-scheduling-policy",
+      "classification": "VERIFIED EXTERNAL + DIRECT EVIDENCE",
+      "source": "SRC-EXT-006-001",
+      "provenance": {
+        "source_file": "OPP-006-06.md",
+        "section": "YES, FOR THE EVIDENCE AVAILABLE",
+        "line_start": 598,
+        "line_end": 630
+      }
+    },
+    {
+      "id": "EV-006-082",
+      "statement": "We found no reliable ServiceNow customer evidence showing:\n- dozens or hundreds of competing field-service policies;\n- frequent policy conflicts;\n- unmanageable policy maintenance;\n- dispatchers unable to determine which policy applies;\n- recurring policy-selection errors.",
+      "classification": "UNKNOWN",
+      "source": "SRC-FILE-OPP-006-06",
+      "provenance": {
+        "source_file": "OPP-006-06.md",
+        "section": "NO",
+        "line_start": 646,
+        "line_end": 656
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "CL-006-001",
+      "statement": "Underlying complexity is real.",
+      "evidence_basis": [
+        "EV-006-001"
+      ],
+      "provenance": {
+        "source_file": "opportunity.md",
+        "section": "Evidence and counter-evidence",
+        "line_start": 36,
+        "line_end": 36
+      }
+    },
+    {
+      "id": "CL-006-002",
+      "statement": "Core decision representation is native.",
+      "evidence_basis": [
+        "EV-006-002"
+      ],
+      "provenance": {
+        "source_file": "opportunity.md",
+        "section": "Evidence and counter-evidence",
+        "line_start": 37,
+        "line_end": 37
+      }
+    },
+    {
+      "id": "CL-006-003",
+      "statement": "Changing conditions are supported.",
+      "evidence_basis": [
+        "EV-006-003"
+      ],
+      "provenance": {
+        "source_file": "opportunity.md",
+        "section": "Evidence and counter-evidence",
+        "line_start": 38,
+        "line_end": 38
+      }
+    },
+    {
+      "id": "CL-006-004",
+      "statement": "Policy adaptation is supported.",
+      "evidence_basis": [
+        "EV-006-004"
+      ],
+      "provenance": {
+        "source_file": "opportunity.md",
+        "section": "Evidence and counter-evidence",
+        "line_start": 39,
+        "line_end": 39
+      }
+    },
+    {
+      "id": "CL-006-005",
+      "statement": "Human involvement is designed into the workflow.",
+      "evidence_basis": [
+        "EV-006-005"
+      ],
+      "provenance": {
+        "source_file": "opportunity.md",
+        "section": "Evidence and counter-evidence",
+        "line_start": 40,
+        "line_end": 40
+      }
+    },
+    {
+      "id": "CL-006-006",
+      "statement": "Residual opportunity fails.",
+      "evidence_basis": [
+        "EV-006-006"
+      ],
+      "provenance": {
+        "source_file": "opportunity.md",
+        "section": "Evidence and counter-evidence",
+        "line_start": 41,
+        "line_end": 41
+      }
+    }
+  ],
+  "inferences": [
+    {
+      "id": "INF-006-001",
+      "statement": "If the Ausgrid scenario were represented using the ServiceNow capability model, the workflow could be represented as:\nPLANNED WORK\n↓\nNEW URGENT TASK\n↓\nPRIORITY EVALUATION\n↓\nCURRENT ASSIGNMENTS\n+\nTECHNICIAN AVAILABILITY\n+\nSKILLS\n+\nTRAVEL\n+\nSLA\n+\nCONSTRAINTS\n↓\nREOPTIMIZATION\n↓\nPRESERVE CRITICAL WORK\nOR\nREASSIGN / RESCHEDULE\n↓\nUPDATED FIELD SCHEDULE\nThis is not proof that ServiceNow would reproduce Ausgrid's exact implementation.\nIt demonstrates that the **class of decision is within the conceptual scope of the documented native scheduling model**.",
+      "basis": [
+        "EV-006-015",
+        "EV-006-016",
+        "EV-006-017",
+        "EV-006-018",
+        "EV-006-019",
+        "EV-006-020",
+        "EV-006-021",
+        "EV-006-022",
+        "EV-006-023",
+        "EV-006-024",
+        "EV-006-025",
+        "EV-006-026",
+        "EV-006-027",
+        "EV-006-028",
+        "EV-006-029"
+      ],
+      "implication": "It demonstrates that the **class of decision is within the conceptual scope of the documented native scheduling model**.\n**INFERENCE**",
+      "provenance": {
+        "source_file": "OPP-006-02.md",
+        "section": "22. Native Reconstruction of the Ausgrid Scenario",
+        "line_start": 636,
+        "line_end": 672
+      }
+    },
+    {
+      "id": "INF-006-002",
+      "statement": "The issue is no longer optimization.\nIt is:\nWHAT SHOULD THE OBJECTIVE WEIGHTS BE\nRIGHT NOW?\nServiceNow can optimize according to configured objectives.\nThe unresolved question is whether an external reasoning layer is needed to determine when the business policy itself should change.",
+      "basis": [
+        "EV-006-030",
+        "EV-006-031",
+        "EV-006-032",
+        "EV-006-033",
+        "EV-006-034",
+        "EV-006-035",
+        "EV-006-036",
+        "EV-006-037",
+        "EV-006-038",
+        "EV-006-039",
+        "EV-006-040",
+        "EV-006-041",
+        "EV-006-042"
+      ],
+      "implication": "The unresolved question is whether an external reasoning layer is needed to determine when the business policy itself should change.\n**INFERENCE**",
+      "provenance": {
+        "source_file": "OPP-006-03.md",
+        "section": "16. Why This Is Different",
+        "line_start": 375,
+        "line_end": 390
+      }
+    },
+    {
+      "id": "INF-006-003",
+      "statement": "ServiceNow's documentation explicitly says policies define the rules and priorities guiding Schedule Optimization.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/create-policies-schedule-optimization.html\nTherefore an organization can create different policies for different operating conditions.\nThis weakens the hypothesis that ServiceNow has no way to adapt business priorities.\n### Important implication\nA sophisticated organization could potentially implement:\nNORMAL POLICY\n↓\nEMERGENCY POLICY\n↓\nHIGH-VALUE CUSTOMER POLICY\n↓\nCAPACITY-CONSTRAINED POLICY\nwithout introducing a new intelligence engine.",
+      "basis": [
+        "EV-006-030",
+        "EV-006-031",
+        "EV-006-032",
+        "EV-006-033",
+        "EV-006-034",
+        "EV-006-035",
+        "EV-006-036",
+        "EV-006-037",
+        "EV-006-038",
+        "EV-006-039",
+        "EV-006-040",
+        "EV-006-041",
+        "EV-006-042"
+      ],
+      "implication": "without introducing a new intelligence engine.\n**INFERENCE**",
+      "provenance": {
+        "source_file": "OPP-006-03.md",
+        "section": "17. Strong Counter-Evidence",
+        "line_start": 396,
+        "line_end": 424
+      }
+    },
+    {
+      "id": "INF-006-004",
+      "statement": "This checkpoint produces a useful architectural distinction:\nLEVEL 1 — EVENT DETECTION\n↓\nWHAT CHANGED?\nLEVEL 2 — FEASIBILITY\n↓\nWHAT CAN STILL BE DONE?\nLEVEL 3 — OPTIMIZATION\n↓\nWHAT IS THE BEST SCHEDULE UNDER CURRENT POLICY?\nLEVEL 4 — POLICY SELECTION\n↓\nWHICH POLICY SHOULD APPLY?\nLEVEL 5 — BUSINESS GOVERNANCE\n↓\nSHOULD THE POLICY ITSELF CHANGE?\nServiceNow has strong documented capability across Levels 1–3 and explicit human mechanisms at Level 4.\nThe potential residual research area is Level 5.",
+      "basis": [
+        "EV-006-056",
+        "EV-006-057",
+        "EV-006-058",
+        "EV-006-059",
+        "EV-006-060",
+        "EV-006-061",
+        "EV-006-062",
+        "EV-006-063",
+        "EV-006-064",
+        "EV-006-065",
+        "EV-006-066"
+      ],
+      "implication": "**INFERENCE**\nThis is not evidence of a ServiceNow gap.",
+      "provenance": {
+        "source_file": "OPP-006-05.md",
+        "section": "19. Important Architectural Finding",
+        "line_start": 650,
+        "line_end": 680
+      }
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "HYP-006-001",
+      "statement": "Because broad scheduling is already well supported, the investigation should move one layer deeper.\nA candidate residual decision is:\n> **When a field-service task becomes infeasible or materially changes after assignment, can the organization determine the best recovery action when several commitments and constraints conflict?**\nPossible state:\nTASK ASSIGNED\n↓\nTECHNICIAN BECOMES UNAVAILABLE\nOR\nPART IS MISSING\nOR\nCUSTOMER WINDOW CHANGES\nOR\nTRAVEL TIME CHANGES\nOR\nNEW HIGH-PRIORITY TASK ARRIVES\n↓\nEXISTING PLAN BECOMES INFEASIBLE\n↓\nRECOVERY OPTIONS\nPossible options:\nREASSIGN\nRESCHEDULE\nSWAP TECHNICIAN\nUSE CREW\nSOURCE PART\nCHANGE CUSTOMER APPOINTMENT\nESCALATE\nDEFER LOWER-PRIORITY WORK",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "EV-006-007",
+        "EV-006-008",
+        "EV-006-009",
+        "EV-006-010",
+        "EV-006-011",
+        "EV-006-012",
+        "EV-006-013",
+        "EV-006-014"
+      ],
+      "falsification_basis": [],
+      "provenance": {
+        "source_file": "OPP-006-01.md",
+        "section": "13. Candidate Decision Boundary",
+        "line_start": 422,
+        "line_end": 463
+      }
+    },
+    {
+      "id": "HYP-006-002",
+      "statement": "Potential scenario:\nCUSTOMER A\nSLA / APPOINTMENT\n+\nCUSTOMER B\nHIGHER PRIORITY\n+\nLIMITED TECHNICIAN CAPACITY\n↓\nCONFLICT\n↓\nWHICH CUSTOMER SHOULD MOVE?\nServiceNow supports priority ordering, customer preferences, SLA constraints, and scheduling policies.\nSources:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/Configure-dynamic-scheduling.html\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/create-dynamic-scheduling-config.html\n### Potential residual question\n> Can the system reason about the business consequence of breaking one customer commitment versus another when the configured priorities do not fully determine the answer?",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "EV-006-007",
+        "EV-006-008",
+        "EV-006-009",
+        "EV-006-010",
+        "EV-006-011",
+        "EV-006-012",
+        "EV-006-013",
+        "EV-006-014"
+      ],
+      "falsification_basis": [],
+      "provenance": {
+        "source_file": "OPP-006-01.md",
+        "section": "18. Candidate Scenario D — Customer Commitment Conflict",
+        "line_start": 598,
+        "line_end": 628
+      }
+    },
+    {
+      "id": "HYP-006-003",
+      "statement": "ServiceNow supports preferred agents based on customer familiarity and customer preferences.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/preferred-agents-for-tasks.html\nPotential conflict:\nCUSTOMER PREFERS TECHNICIAN A\nVS\nTECHNICIAN B IS\n20 MINUTES AWAY\nAND\nCAN MEET SLA\n### Residual question\n> How should the system trade customer preference against travel, SLA, technician utilization, and other business objectives when the configured rules do not uniquely determine the best choice?",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "EV-006-007",
+        "EV-006-008",
+        "EV-006-009",
+        "EV-006-010",
+        "EV-006-011",
+        "EV-006-012",
+        "EV-006-013",
+        "EV-006-014"
+      ],
+      "falsification_basis": [],
+      "provenance": {
+        "source_file": "OPP-006-01.md",
+        "section": "19. Candidate Scenario E — Technician Preference vs Business Priority",
+        "line_start": 636,
+        "line_end": 659
+      }
+    },
+    {
+      "id": "HYP-006-004",
+      "statement": "The original hypothesis was:\n> **ServiceNow may not adequately resolve conflicting customer commitments under constrained field capacity.**\nAfter this checkpoint, that is too broad.\nA more defensible hypothesis is:\n> **Some field-service environments may contain high-consequence conflicts where configured scheduling objectives and constraints do not fully capture business consequences, requiring human judgment beyond optimization.**",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "EV-006-015",
+        "EV-006-016",
+        "EV-006-017",
+        "EV-006-018",
+        "EV-006-019",
+        "EV-006-020",
+        "EV-006-021",
+        "EV-006-022",
+        "EV-006-023",
+        "EV-006-024",
+        "EV-006-025",
+        "EV-006-026",
+        "EV-006-027",
+        "EV-006-028",
+        "EV-006-029"
+      ],
+      "falsification_basis": [],
+      "provenance": {
+        "source_file": "OPP-006-02.md",
+        "section": "24. Hypothesis Revision",
+        "line_start": 702,
+        "line_end": 714
+      }
+    },
+    {
+      "id": "HYP-006-005",
+      "statement": "The original hypothesis was:\n> **ServiceNow may not adequately resolve conflicting customer commitments under constrained field capacity.**\nAfter this checkpoint, that is too broad.\nA more defensible hypothesis is:\n> **Some field-service environments may contain high-consequence conflicts where configured scheduling objectives and constraints do not fully capture business consequences, requiring human judgment beyond optimization.**\n### Classification\n**HYPOTHESIS**\nThis remains unvalidated.",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "EV-006-015",
+        "EV-006-016",
+        "EV-006-017",
+        "EV-006-018",
+        "EV-006-019",
+        "EV-006-020",
+        "EV-006-021",
+        "EV-006-022",
+        "EV-006-023",
+        "EV-006-024",
+        "EV-006-025",
+        "EV-006-026",
+        "EV-006-027",
+        "EV-006-028",
+        "EV-006-029"
+      ],
+      "falsification_basis": [],
+      "provenance": {
+        "source_file": "OPP-006-02.md",
+        "section": "24. Hypothesis Revision",
+        "line_start": 702,
+        "line_end": 721
+      }
+    },
+    {
+      "id": "HYP-006-006",
+      "statement": "OPP-006 should be killed if:\n1. all observed conflicts are resolved through objective/constraint configuration;\n2. optimization engines already solve the trade-offs;\n3. the remaining human work is simply approval;\n4. the real issue is missing data;\n5. the issue is poor process configuration;\n6. another control system already owns the decision;\n7. no material customer/business consequence exists;\n8. no ServiceNow customer evidence demonstrates the residual burden.",
+      "status": "KILLED",
+      "supporting_basis": [
+        "EV-006-015",
+        "EV-006-016",
+        "EV-006-017",
+        "EV-006-018",
+        "EV-006-019",
+        "EV-006-020",
+        "EV-006-021",
+        "EV-006-022",
+        "EV-006-023",
+        "EV-006-024",
+        "EV-006-025",
+        "EV-006-026",
+        "EV-006-027",
+        "EV-006-028",
+        "EV-006-029"
+      ],
+      "falsification_basis": [],
+      "provenance": {
+        "source_file": "OPP-006-02.md",
+        "section": "26. What Would Kill the Hypothesis?",
+        "line_start": 773,
+        "line_end": 787
+      }
+    },
+    {
+      "id": "HYP-006-007",
+      "statement": "At this point, the hypothesis cannot be:\n> \"ServiceNow cannot handle competing objectives.\"\nThat is disproven.\nThe remaining question is:\n> **What happens when the correct objective weights themselves depend on contextual business judgment that is not known when the policy is configured?**\nExample:\nNORMAL DAY\nMINIMIZE TRAVEL\n↓\nEMERGENCY DAY\nMAXIMIZE RESPONSE\n↓\nVIP CUSTOMER ESCALATION\nCUSTOMER RETENTION BECOMES MORE IMPORTANT\n↓\nMAJOR PART SHORTAGE\nFIRST-TIME-FIX MAY BECOME MORE IMPORTANT",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "EV-006-030",
+        "EV-006-031",
+        "EV-006-032",
+        "EV-006-033",
+        "EV-006-034",
+        "EV-006-035",
+        "EV-006-036",
+        "EV-006-037",
+        "EV-006-038",
+        "EV-006-039",
+        "EV-006-040",
+        "EV-006-041",
+        "EV-006-042"
+      ],
+      "falsification_basis": [],
+      "provenance": {
+        "source_file": "OPP-006-03.md",
+        "section": "15. The Actual Residual Question",
+        "line_start": 339,
+        "line_end": 367
+      }
+    },
+    {
+      "id": "HYP-006-008",
+      "statement": "Consider:\nNORMAL OPERATING MODE\nObjective weights:\nTravel = HIGH\nUtilization = HIGH\nSLA = HIGH\nCustomer preference = MEDIUM\nThen:\nSUPPLY SHORTAGE\n↓\nFIRST-TIME-FIX BECOMES MORE IMPORTANT\n↓\nCURRENT WEIGHTS MAY BE WRONG\nOr:\nVIP CUSTOMER ESCALATION\n↓\nCUSTOMER RETENTION BECOMES MORE IMPORTANT\n↓\nCURRENT TRAVEL / UTILIZATION BALANCE MAY BE WRONG\nOr:\nREGIONAL EMERGENCY\n↓\nRESPONSE TIME BECOMES DOMINANT\n↓\nNORMAL UTILIZATION POLICY MAY BE INAPPROPRIATE\nThe question is:\n> **Who or what determines that policy shift?**\nThis remains unresolved.",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "EV-006-030",
+        "EV-006-031",
+        "EV-006-032",
+        "EV-006-033",
+        "EV-006-034",
+        "EV-006-035",
+        "EV-006-036",
+        "EV-006-037",
+        "EV-006-038",
+        "EV-006-039",
+        "EV-006-040",
+        "EV-006-041",
+        "EV-006-042"
+      ],
+      "falsification_basis": [],
+      "provenance": {
+        "source_file": "OPP-006-03.md",
+        "section": "28. Example of the Remaining Hypothesis",
+        "line_start": 828,
+        "line_end": 879
+      }
+    },
+    {
+      "id": "HYP-006-009",
+      "statement": "HYPOTHESIS — NOT VALIDATED",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "EV-006-043",
+        "EV-006-044",
+        "EV-006-045",
+        "EV-006-046",
+        "EV-006-047",
+        "EV-006-048",
+        "EV-006-049",
+        "EV-006-050",
+        "EV-006-051",
+        "EV-006-052",
+        "EV-006-053",
+        "EV-006-054",
+        "EV-006-055"
+      ],
+      "falsification_basis": [],
+      "provenance": {
+        "source_file": "OPP-006-04.md",
+        "section": "HYPOTHESIS — NOT VALIDATED",
+        "line_start": 578,
+        "line_end": 581
+      }
+    },
+    {
+      "id": "HYP-006-010",
+      "statement": "This checkpoint did not kill OPP-006 because the residual question remains technically possible.\nBut the evidence substantially weakens it.\nThe strongest current interpretation is:\nSERVICE NOW\n↓\nMULTIPLE POLICIES\n+\nAUTOMATIC EVENT RESPONSE\n+\nMANUAL POLICY SWITCHING\n+\nTIME / GROUP / TERRITORY OVERRIDES\n↓\nSTRONG EXISTING MECHANISM\nTherefore the remaining potential gap is only:\n> **automated interpretation of complex business context to select the appropriate existing policy.**\nThat is a much smaller claim.",
+      "status": "KILLED",
+      "supporting_basis": [
+        "EV-006-043",
+        "EV-006-044",
+        "EV-006-045",
+        "EV-006-046",
+        "EV-006-047",
+        "EV-006-048",
+        "EV-006-049",
+        "EV-006-050",
+        "EV-006-051",
+        "EV-006-052",
+        "EV-006-053",
+        "EV-006-054",
+        "EV-006-055"
+      ],
+      "falsification_basis": [],
+      "provenance": {
+        "source_file": "OPP-006-04.md",
+        "section": "CONTINUE INVESTIGATION — BUT THE HYPOTHESIS IS WEAKENED",
+        "line_start": 766,
+        "line_end": 795
+      }
+    },
+    {
+      "id": "HYP-006-011",
+      "statement": "The hypothesis has now become:\n> **Some complex field-service environments may contain context combinations that cannot be represented economically through a finite set of policies, rules, objectives, weights, constraints, and overrides, creating recurring human policy-selection burden.**",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "EV-006-056",
+        "EV-006-057",
+        "EV-006-058",
+        "EV-006-059",
+        "EV-006-060",
+        "EV-006-061",
+        "EV-006-062",
+        "EV-006-063",
+        "EV-006-064",
+        "EV-006-065",
+        "EV-006-066"
+      ],
+      "falsification_basis": [],
+      "provenance": {
+        "source_file": "OPP-006-05.md",
+        "section": "15. The Remaining Hypothesis",
+        "line_start": 525,
+        "line_end": 531
+      }
+    },
+    {
+      "id": "HYP-006-012",
+      "statement": "HYPOTHESIS WEAKENED — NO SERVICE NOW-SPECIFIC GAP ESTABLISHED",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "EV-006-056",
+        "EV-006-057",
+        "EV-006-058",
+        "EV-006-059",
+        "EV-006-060",
+        "EV-006-061",
+        "EV-006-062",
+        "EV-006-063",
+        "EV-006-064",
+        "EV-006-065",
+        "EV-006-066"
+      ],
+      "falsification_basis": [],
+      "provenance": {
+        "source_file": "OPP-006-05.md",
+        "section": "HYPOTHESIS WEAKENED — NO SERVICE NOW-SPECIFIC GAP ESTABLISHED",
+        "line_start": 21,
+        "line_end": 24
+      }
+    },
+    {
+      "id": "HYP-006-013",
+      "statement": "The hypothesis has now become:\n> **Some complex field-service environments may contain context combinations that cannot be represented economically through a finite set of policies, rules, objectives, weights, constraints, and overrides, creating recurring human policy-selection burden.**\n### Classification\n**HYPOTHESIS**\nThis is narrower than the original OPP-006 hypothesis.",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "EV-006-056",
+        "EV-006-057",
+        "EV-006-058",
+        "EV-006-059",
+        "EV-006-060",
+        "EV-006-061",
+        "EV-006-062",
+        "EV-006-063",
+        "EV-006-064",
+        "EV-006-065",
+        "EV-006-066"
+      ],
+      "falsification_basis": [],
+      "provenance": {
+        "source_file": "OPP-006-05.md",
+        "section": "15. The Remaining Hypothesis",
+        "line_start": 525,
+        "line_end": 538
+      }
+    },
+    {
+      "id": "HYP-006-014",
+      "statement": "We would need evidence of:\nMANY CONTEXT VARIABLES\n+\nMANY POSSIBLE POLICY STATES\n↓\nPOLICY MATRIX BECOMES HARD TO MAINTAIN\n↓\nDISPATCHER MUST INTERPRET CONTEXT\n↓\nDECISION IS RECURRING\n↓\nDECISION IS MATERIAL\nStrong evidence would show:\n- policy proliferation;\n- frequent exceptions;\n- contradictory rules;\n- manual escalation;\n- repeated dispatcher overrides;\n- policy-selection errors;\n- measurable SLA or cost consequences;\n- inability to encode business context cleanly.",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "EV-006-056",
+        "EV-006-057",
+        "EV-006-058",
+        "EV-006-059",
+        "EV-006-060",
+        "EV-006-061",
+        "EV-006-062",
+        "EV-006-063",
+        "EV-006-064",
+        "EV-006-065",
+        "EV-006-066"
+      ],
+      "falsification_basis": [],
+      "provenance": {
+        "source_file": "OPP-006-05.md",
+        "section": "16. What Would Make This Hypothesis Credible?",
+        "line_start": 539,
+        "line_end": 569
+      }
+    },
+    {
+      "id": "HYP-006-015",
+      "statement": "It does not yet survive as a commercial opportunity.",
+      "status": "SURVIVED",
+      "supporting_basis": [
+        "EV-006-056",
+        "EV-006-057",
+        "EV-006-058",
+        "EV-006-059",
+        "EV-006-060",
+        "EV-006-061",
+        "EV-006-062",
+        "EV-006-063",
+        "EV-006-064",
+        "EV-006-065",
+        "EV-006-066"
+      ],
+      "falsification_basis": [],
+      "provenance": {
+        "source_file": "OPP-006-05.md",
+        "section": "HYPOTHESIS SURVIVES ONLY AS A WEAK RESEARCH QUESTION",
+        "line_start": 644,
+        "line_end": 649
+      }
+    },
+    {
+      "id": "HYP-006-016",
+      "statement": "A proposition that could have justified further investigation but was not established.",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "EV-006-067",
+        "EV-006-068",
+        "EV-006-069",
+        "EV-006-070",
+        "EV-006-071",
+        "EV-006-072",
+        "EV-006-073",
+        "EV-006-074",
+        "EV-006-075",
+        "EV-006-076",
+        "EV-006-077",
+        "EV-006-078",
+        "EV-006-079",
+        "EV-006-080",
+        "EV-006-081",
+        "EV-006-082"
+      ],
+      "falsification_basis": [],
+      "provenance": {
+        "source_file": "OPP-006-06.md",
+        "section": "HYPOTHESIS",
+        "line_start": 127,
+        "line_end": 130
+      }
+    },
+    {
+      "id": "HYP-006-017",
+      "statement": "The investigation began by searching a new business decision domain after OPP-005. The initial hypothesis was that field-service exceptions might require intelligence beyond native scheduling. After real conflicts were found, it narrowed to whether dispatchers face recurring policy-arbitration burden that cannot be encoded economically.",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "EV-006-001",
+        "EV-006-002",
+        "EV-006-003",
+        "EV-006-004",
+        "EV-006-005",
+        "EV-006-006"
+      ],
+      "falsification_basis": [],
+      "provenance": {
+        "source_file": "walkthrough.md",
+        "section": "Initial question and hypothesis",
+        "line_start": 34,
+        "line_end": 37
+      }
+    }
+  ],
+  "results": [
+    {
+      "id": "RES-006-001",
+      "statement": "The real operational problem was significantly reduced through:\nUNIFIED SCHEDULE VISIBILITY\n+\nREAL-TIME FIELD STATUS\n+\nSELF-SERVICE JOB SELECTION\nThis is important counter-evidence.\nIt suggests that at least some apparent \"decision intelligence\" problems are actually **context-integration and visibility problems**.",
+      "status": "UNVERIFIED",
+      "provenance": {
+        "source_file": "OPP-006-02.md",
+        "section": "Result",
+        "line_start": 226,
+        "line_end": 243
+      }
+    },
+    {
+      "id": "RES-006-002",
+      "statement": "**YES**\nPeer-reviewed research confirms multiple objectives such as cost, priority and consumer satisfaction.\nSources:\nhttps://doi.org/10.1016/j.cor.2021.105472\nhttps://doi.org/10.1111/j.1937-5956.2007.tb00175.x",
+      "status": "PASSED",
+      "provenance": {
+        "source_file": "OPP-006-03.md",
+        "section": "Result",
+        "line_start": 654,
+        "line_end": 665
+      }
+    },
+    {
+      "id": "RES-006-003",
+      "statement": "## Test 2 — Can ServiceNow represent multiple objectives?\n### Result\n**YES**\nServiceNow provides weighted objectives and hard constraints.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/hard-soft-constraints.html\n### Status",
+      "status": "PASSED",
+      "provenance": {
+        "source_file": "OPP-006-03.md",
+        "section": "VERIFIED",
+        "line_start": 668,
+        "line_end": 685
+      }
+    },
+    {
+      "id": "RES-006-004",
+      "statement": "**YES**\nServiceNow provides weighted objectives and hard constraints.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/hard-soft-constraints.html",
+      "status": "PASSED",
+      "provenance": {
+        "source_file": "OPP-006-03.md",
+        "section": "Result",
+        "line_start": 674,
+        "line_end": 683
+      }
+    },
+    {
+      "id": "RES-006-005",
+      "statement": "The broad hypothesis is disproven.\n## Test 3 — Can ServiceNow change scheduling when conditions change?\n### Result\n**YES**\nIntraday and prioritized-event optimization support changing conditions.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/schedule-optimization-engine.html\n### Status",
+      "status": "KILLED",
+      "provenance": {
+        "source_file": "OPP-006-03.md",
+        "section": "KILLED",
+        "line_start": 686,
+        "line_end": 705
+      }
+    },
+    {
+      "id": "RES-006-006",
+      "statement": "**YES**\nIntraday and prioritized-event optimization support changing conditions.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/schedule-optimization-engine.html",
+      "status": "PASSED",
+      "provenance": {
+        "source_file": "OPP-006-03.md",
+        "section": "Result",
+        "line_start": 694,
+        "line_end": 703
+      }
+    },
+    {
+      "id": "RES-006-007",
+      "statement": "## Test 4 — Can ServiceNow prioritize existing commitments against new work?\n### Result\n**YES**\nExisting-assignment, delayed-task, high-priority, SLA and related objectives are documented.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/hard-soft-constraints.html\n### Status",
+      "status": "KILLED",
+      "provenance": {
+        "source_file": "OPP-006-03.md",
+        "section": "KILLED",
+        "line_start": 706,
+        "line_end": 723
+      }
+    },
+    {
+      "id": "RES-006-008",
+      "statement": "**YES**\nExisting-assignment, delayed-task, high-priority, SLA and related objectives are documented.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/hard-soft-constraints.html",
+      "status": "PASSED",
+      "provenance": {
+        "source_file": "OPP-006-03.md",
+        "section": "Result",
+        "line_start": 712,
+        "line_end": 721
+      }
+    },
+    {
+      "id": "RES-006-009",
+      "statement": "## Test 5 — Can ServiceNow represent customer preference?\n### Result\n**YES**\nPreferred technician optimization is documented.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-the-policy-to-assign-preferred-technicians-to-tasks.html\n### Status",
+      "status": "KILLED",
+      "provenance": {
+        "source_file": "OPP-006-03.md",
+        "section": "KILLED",
+        "line_start": 724,
+        "line_end": 741
+      }
+    },
+    {
+      "id": "RES-006-010",
+      "statement": "**YES**\nPreferred technician optimization is documented.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-the-policy-to-assign-preferred-technicians-to-tasks.html",
+      "status": "PASSED",
+      "provenance": {
+        "source_file": "OPP-006-03.md",
+        "section": "Result",
+        "line_start": 730,
+        "line_end": 739
+      }
+    },
+    {
+      "id": "RES-006-011",
+      "statement": "## Test 6 — Can ServiceNow support exceptional human judgment?\n### Result\n**YES, structurally**\nServiceNow explicitly positions dispatchers to handle exceptional cases while automation handles routine scheduling.\nSource:\nhttps://www.servicenow.com/docs/r/zurich/field-service-management/schedule-optimization.html\n### Status",
+      "status": "KILLED",
+      "provenance": {
+        "source_file": "OPP-006-03.md",
+        "section": "KILLED",
+        "line_start": 742,
+        "line_end": 759
+      }
+    },
+    {
+      "id": "RES-006-012",
+      "statement": "**YES, structurally**\nServiceNow explicitly positions dispatchers to handle exceptional cases while automation handles routine scheduling.\nSource:\nhttps://www.servicenow.com/docs/r/zurich/field-service-management/schedule-optimization.html",
+      "status": "PASSED",
+      "provenance": {
+        "source_file": "OPP-006-03.md",
+        "section": "Result",
+        "line_start": 748,
+        "line_end": 757
+      }
+    },
+    {
+      "id": "RES-006-013",
+      "statement": "**UNKNOWN**\nThe public documentation establishes configurable policies and objectives but does not establish a generalized autonomous mechanism that discovers changing business priorities from context.",
+      "status": "UNKNOWN",
+      "provenance": {
+        "source_file": "OPP-006-03.md",
+        "section": "Result",
+        "line_start": 766,
+        "line_end": 771
+      }
+    },
+    {
+      "id": "RES-006-014",
+      "statement": "## Test 8 — Is that unknown a customer problem?\n### Result\n**NOT ESTABLISHED**\nNo credible ServiceNow customer evidence has been found showing that changing objective weights is a recurring material burden.\n### Status",
+      "status": "UNKNOWN",
+      "provenance": {
+        "source_file": "OPP-006-03.md",
+        "section": "UNKNOWN",
+        "line_start": 774,
+        "line_end": 787
+      }
+    },
+    {
+      "id": "RES-006-015",
+      "statement": "**NOT ESTABLISHED**\nNo credible ServiceNow customer evidence has been found showing that changing objective weights is a recurring material burden.",
+      "status": "UNVERIFIED",
+      "provenance": {
+        "source_file": "OPP-006-03.md",
+        "section": "Result",
+        "line_start": 780,
+        "line_end": 785
+      }
+    },
+    {
+      "id": "RES-006-016",
+      "statement": "UNKNOWN",
+      "status": "UNKNOWN",
+      "provenance": {
+        "source_file": "OPP-006-03.md",
+        "section": "UNKNOWN",
+        "line_start": 788,
+        "line_end": 791
+      }
+    },
+    {
+      "id": "RES-006-017",
+      "statement": "Result",
+      "status": "UNVERIFIED",
+      "provenance": {
+        "source_file": "OPP-006-05.md",
+        "section": "Result",
+        "line_start": 67,
+        "line_end": 68
+      }
+    },
+    {
+      "id": "RES-006-018",
+      "statement": "Current ServiceNow documentation shows that policy selection is an explicit administrative/dispatcher function.\nSource:\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/viewing-task-assignments-from-so-runs.html\nBut explicit human involvement does not prove:\n- excessive workload;\n- poor decisions;\n- lack of context;\n- material delays;\n- unacceptable cost;\n- customer dissatisfaction.\n### Classification\n**UNKNOWN**",
+      "status": "UNKNOWN",
+      "provenance": {
+        "source_file": "OPP-006-05.md",
+        "section": "NOT ESTABLISHED",
+        "line_start": 459,
+        "line_end": 481
+      }
+    },
+    {
+      "id": "RES-006-019",
+      "statement": "At this checkpoint:\nMULTI-OBJECTIVE OPTIMIZATION\n↓\nSUPPORTED\nMULTIPLE POLICIES\n↓\nSUPPORTED\nCONTEXTUAL POLICY CHANGES\n↓\nSUPPORTED\nAUTOMATIC REOPTIMIZATION\n↓\nSUPPORTED\nHUMAN POLICY SELECTION\n↓\nSUPPORTED\nCOMPLEX POLICY ARBITRATION\n↓\nNOT PROVEN\nMATERIAL CUSTOMER BURDEN\n↓\nNOT PROVEN\nSERVICENOW GAP\n↓\nNOT PROVEN\n### Result",
+      "status": "UNVERIFIED",
+      "provenance": {
+        "source_file": "OPP-006-05.md",
+        "section": "18. Falsification Result",
+        "line_start": 604,
+        "line_end": 643
+      }
+    },
+    {
+      "id": "RES-006-020",
+      "statement": "KILLED — RESIDUAL SERVICE NOW GAP NOT ESTABLISHED",
+      "status": "KILLED",
+      "provenance": {
+        "source_file": "OPP-006-06.md",
+        "section": "KILLED — RESIDUAL SERVICE NOW GAP NOT ESTABLISHED",
+        "line_start": 21,
+        "line_end": 24
+      }
+    },
+    {
+      "id": "RES-006-021",
+      "statement": "Credible academic or operational evidence demonstrating that the underlying field-service decision problem exists.",
+      "status": "PASSED",
+      "provenance": {
+        "source_file": "OPP-006-06.md",
+        "section": "VERIFIED EXTERNAL EVIDENCE",
+        "line_start": 119,
+        "line_end": 122
+      }
+    },
+    {
+      "id": "RES-006-022",
+      "statement": "Information not available from the evidence.",
+      "status": "UNKNOWN",
+      "provenance": {
+        "source_file": "OPP-006-06.md",
+        "section": "UNKNOWN",
+        "line_start": 131,
+        "line_end": 134
+      }
+    },
+    {
+      "id": "RES-006-023",
+      "statement": "Peer-reviewed research describes real-life multi-skill workforce scheduling and routing problems in field-service operations.\nOne study describes a real electricity-distribution problem with two competing objectives:\n- completing higher-priority tasks earlier;\n- minimizing operational costs.\nSource:\nhttps://doi.org/10.1016/j.cor.2020.104908\nAnother peer-reviewed study describes field-service operations involving:\n- technician skills;\n- capabilities;\n- local knowledge;\n- cost;\n- task priorities;\n- consumer satisfaction.\nSource:\nhttps://doi.org/10.1016/j.cor.2021.105472\n### Classification\n**VERIFIED EXTERNAL EVIDENCE**\n### Conclusion\nThe underlying complexity is real.\nBut complexity alone does not establish a ServiceNow gap.",
+      "status": "PASSED",
+      "provenance": {
+        "source_file": "OPP-006-06.md",
+        "section": "VERIFIED",
+        "line_start": 145,
+        "line_end": 182
+      }
+    },
+    {
+      "id": "RES-006-024",
+      "statement": "The required chain was:\nREAL CONTEXT\n↓\nMULTIPLE POLICY OPTIONS\n↓\nNO SIMPLE TRIGGER\n↓\nNO STABLE DECISION TABLE\n↓\nEXISTING CONFIGURATION INSUFFICIENT\n↓\nHUMAN CONTEXTUAL JUDGMENT\n↓\nRECURRING DECISION\n↓\nMATERIAL CONSEQUENCE\nEvidence status:\nREAL CONTEXT\n↓\nVERIFIED\nMULTIPLE POLICY OPTIONS\n↓\nVERIFIED\nNO SIMPLE TRIGGER\n↓\nNOT ESTABLISHED\nNO STABLE DECISION TABLE\n↓\nNOT ESTABLISHED\nEXISTING CONFIGURATION INSUFFICIENT\n↓\nNOT ESTABLISHED\nHUMAN CONTEXTUAL JUDGMENT\n↓\nVERIFIED AS POSSIBLE\nRECURRING DECISION\n↓\nNOT ESTABLISHED\nMATERIAL CONSEQUENCE\n↓\nNOT ESTABLISHED\n### Result",
+      "status": "PASSED",
+      "provenance": {
+        "source_file": "OPP-006-06.md",
+        "section": "21. Falsification Result",
+        "line_start": 694,
+        "line_end": 753
+      }
+    },
+    {
+      "id": "RES-006-025",
+      "statement": "No sufficient customer-specific evidence was found.",
+      "status": "UNVERIFIED",
+      "provenance": {
+        "source_file": "OPP-006-06.md",
+        "section": "NOT ESTABLISHED",
+        "line_start": 894,
+        "line_end": 899
+      }
+    },
+    {
+      "id": "RES-006-026",
+      "statement": "Not because the field-service problem is unreal.\nNot because ServiceNow is incapable of field-service optimization.\nKilled because:\n> **The evidence did not establish a sufficiently specific, material, recurring ServiceNow gap at the proposed policy-arbitration boundary.**\nThis is an evidence failure, not a claim that such a gap can never exist.",
+      "status": "KILLED",
+      "provenance": {
+        "source_file": "OPP-006-06.md",
+        "section": "KILLED",
+        "line_start": 1033,
+        "line_end": 1046
+      }
+    }
+  ],
+  "falsification": [
+    {
+      "statement": "1. the real problem is simply technician scheduling;",
+      "outcome": "KILLED",
+      "basis": [
+        "EV-006-007",
+        "EV-006-008",
+        "EV-006-009",
+        "EV-006-010",
+        "EV-006-011",
+        "EV-006-012",
+        "EV-006-013",
+        "EV-006-014"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-01.md",
+        "section": "28. Falsification Rules",
+        "line_start": 921,
+        "line_end": 935
+      }
+    },
+    {
+      "statement": "2. dynamic scheduling already resolves it;",
+      "outcome": "KILLED",
+      "basis": [
+        "EV-006-007",
+        "EV-006-008",
+        "EV-006-009",
+        "EV-006-010",
+        "EV-006-011",
+        "EV-006-012",
+        "EV-006-013",
+        "EV-006-014"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-01.md",
+        "section": "28. Falsification Rules",
+        "line_start": 921,
+        "line_end": 935
+      }
+    },
+    {
+      "statement": "3. the trade-off can be fully expressed through existing objectives and constraints;",
+      "outcome": "KILLED",
+      "basis": [
+        "EV-006-007",
+        "EV-006-008",
+        "EV-006-009",
+        "EV-006-010",
+        "EV-006-011",
+        "EV-006-012",
+        "EV-006-013",
+        "EV-006-014"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-01.md",
+        "section": "28. Falsification Rules",
+        "line_start": 921,
+        "line_end": 935
+      }
+    },
+    {
+      "statement": "4. the issue is only poor configuration;",
+      "outcome": "KILLED",
+      "basis": [
+        "EV-006-007",
+        "EV-006-008",
+        "EV-006-009",
+        "EV-006-010",
+        "EV-006-011",
+        "EV-006-012",
+        "EV-006-013",
+        "EV-006-014"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-01.md",
+        "section": "28. Falsification Rules",
+        "line_start": 921,
+        "line_end": 935
+      }
+    },
+    {
+      "statement": "5. no real multi-objective conflict can be reconstructed;",
+      "outcome": "KILLED",
+      "basis": [
+        "EV-006-007",
+        "EV-006-008",
+        "EV-006-009",
+        "EV-006-010",
+        "EV-006-011",
+        "EV-006-012",
+        "EV-006-013",
+        "EV-006-014"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-01.md",
+        "section": "28. Falsification Rules",
+        "line_start": 921,
+        "line_end": 935
+      }
+    },
+    {
+      "statement": "6. no material business consequence exists;",
+      "outcome": "KILLED",
+      "basis": [
+        "EV-006-007",
+        "EV-006-008",
+        "EV-006-009",
+        "EV-006-010",
+        "EV-006-011",
+        "EV-006-012",
+        "EV-006-013",
+        "EV-006-014"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-01.md",
+        "section": "28. Falsification Rules",
+        "line_start": 921,
+        "line_end": 935
+      }
+    },
+    {
+      "statement": "7. the decision is actually handled by another control system rather than ServiceNow;",
+      "outcome": "KILLED",
+      "basis": [
+        "EV-006-007",
+        "EV-006-008",
+        "EV-006-009",
+        "EV-006-010",
+        "EV-006-011",
+        "EV-006-012",
+        "EV-006-013",
+        "EV-006-014"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-01.md",
+        "section": "28. Falsification Rules",
+        "line_start": 921,
+        "line_end": 935
+      }
+    },
+    {
+      "statement": "8. no evidence shows recurring decision difficulty.",
+      "outcome": "KILLED",
+      "basis": [
+        "EV-006-007",
+        "EV-006-008",
+        "EV-006-009",
+        "EV-006-010",
+        "EV-006-011",
+        "EV-006-012",
+        "EV-006-013",
+        "EV-006-014"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-01.md",
+        "section": "28. Falsification Rules",
+        "line_start": 921,
+        "line_end": 935
+      }
+    },
+    {
+      "statement": "1. all observed conflicts are resolved through objective/constraint configuration;",
+      "outcome": "KILLED",
+      "basis": [
+        "EV-006-015",
+        "EV-006-016",
+        "EV-006-017",
+        "EV-006-018",
+        "EV-006-019",
+        "EV-006-020",
+        "EV-006-021",
+        "EV-006-022",
+        "EV-006-023",
+        "EV-006-024",
+        "EV-006-025",
+        "EV-006-026",
+        "EV-006-027",
+        "EV-006-028",
+        "EV-006-029"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-02.md",
+        "section": "26. What Would Kill the Hypothesis?",
+        "line_start": 773,
+        "line_end": 787
+      }
+    },
+    {
+      "statement": "2. optimization engines already solve the trade-offs;",
+      "outcome": "KILLED",
+      "basis": [
+        "EV-006-015",
+        "EV-006-016",
+        "EV-006-017",
+        "EV-006-018",
+        "EV-006-019",
+        "EV-006-020",
+        "EV-006-021",
+        "EV-006-022",
+        "EV-006-023",
+        "EV-006-024",
+        "EV-006-025",
+        "EV-006-026",
+        "EV-006-027",
+        "EV-006-028",
+        "EV-006-029"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-02.md",
+        "section": "26. What Would Kill the Hypothesis?",
+        "line_start": 773,
+        "line_end": 787
+      }
+    },
+    {
+      "statement": "3. the remaining human work is simply approval;",
+      "outcome": "KILLED",
+      "basis": [
+        "EV-006-015",
+        "EV-006-016",
+        "EV-006-017",
+        "EV-006-018",
+        "EV-006-019",
+        "EV-006-020",
+        "EV-006-021",
+        "EV-006-022",
+        "EV-006-023",
+        "EV-006-024",
+        "EV-006-025",
+        "EV-006-026",
+        "EV-006-027",
+        "EV-006-028",
+        "EV-006-029"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-02.md",
+        "section": "26. What Would Kill the Hypothesis?",
+        "line_start": 773,
+        "line_end": 787
+      }
+    },
+    {
+      "statement": "4. the real issue is missing data;",
+      "outcome": "KILLED",
+      "basis": [
+        "EV-006-015",
+        "EV-006-016",
+        "EV-006-017",
+        "EV-006-018",
+        "EV-006-019",
+        "EV-006-020",
+        "EV-006-021",
+        "EV-006-022",
+        "EV-006-023",
+        "EV-006-024",
+        "EV-006-025",
+        "EV-006-026",
+        "EV-006-027",
+        "EV-006-028",
+        "EV-006-029"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-02.md",
+        "section": "26. What Would Kill the Hypothesis?",
+        "line_start": 773,
+        "line_end": 787
+      }
+    },
+    {
+      "statement": "5. the issue is poor process configuration;",
+      "outcome": "KILLED",
+      "basis": [
+        "EV-006-015",
+        "EV-006-016",
+        "EV-006-017",
+        "EV-006-018",
+        "EV-006-019",
+        "EV-006-020",
+        "EV-006-021",
+        "EV-006-022",
+        "EV-006-023",
+        "EV-006-024",
+        "EV-006-025",
+        "EV-006-026",
+        "EV-006-027",
+        "EV-006-028",
+        "EV-006-029"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-02.md",
+        "section": "26. What Would Kill the Hypothesis?",
+        "line_start": 773,
+        "line_end": 787
+      }
+    },
+    {
+      "statement": "6. another control system already owns the decision;",
+      "outcome": "KILLED",
+      "basis": [
+        "EV-006-015",
+        "EV-006-016",
+        "EV-006-017",
+        "EV-006-018",
+        "EV-006-019",
+        "EV-006-020",
+        "EV-006-021",
+        "EV-006-022",
+        "EV-006-023",
+        "EV-006-024",
+        "EV-006-025",
+        "EV-006-026",
+        "EV-006-027",
+        "EV-006-028",
+        "EV-006-029"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-02.md",
+        "section": "26. What Would Kill the Hypothesis?",
+        "line_start": 773,
+        "line_end": 787
+      }
+    },
+    {
+      "statement": "7. no material customer/business consequence exists;",
+      "outcome": "KILLED",
+      "basis": [
+        "EV-006-015",
+        "EV-006-016",
+        "EV-006-017",
+        "EV-006-018",
+        "EV-006-019",
+        "EV-006-020",
+        "EV-006-021",
+        "EV-006-022",
+        "EV-006-023",
+        "EV-006-024",
+        "EV-006-025",
+        "EV-006-026",
+        "EV-006-027",
+        "EV-006-028",
+        "EV-006-029"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-02.md",
+        "section": "26. What Would Kill the Hypothesis?",
+        "line_start": 773,
+        "line_end": 787
+      }
+    },
+    {
+      "statement": "8. no ServiceNow customer evidence demonstrates the residual burden.",
+      "outcome": "KILLED",
+      "basis": [
+        "EV-006-015",
+        "EV-006-016",
+        "EV-006-017",
+        "EV-006-018",
+        "EV-006-019",
+        "EV-006-020",
+        "EV-006-021",
+        "EV-006-022",
+        "EV-006-023",
+        "EV-006-024",
+        "EV-006-025",
+        "EV-006-026",
+        "EV-006-027",
+        "EV-006-028",
+        "EV-006-029"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-02.md",
+        "section": "26. What Would Kill the Hypothesis?",
+        "line_start": 773,
+        "line_end": 787
+      }
+    },
+    {
+      "statement": "## Test 1 — Is multi-objective scheduling real?\n### Result\n**YES**\nPeer-reviewed research confirms multiple objectives such as cost, priority and consumer satisfaction.\nSources:\nhttps://doi.org/10.1016/j.cor.2021.105472\nhttps://doi.org/10.1111/j.1937-5956.2007.tb00175.x\n### Status",
+      "outcome": "UNKNOWN",
+      "basis": [
+        "EV-006-030",
+        "EV-006-031",
+        "EV-006-032",
+        "EV-006-033",
+        "EV-006-034",
+        "EV-006-035",
+        "EV-006-036",
+        "EV-006-037",
+        "EV-006-038",
+        "EV-006-039",
+        "EV-006-040",
+        "EV-006-041",
+        "EV-006-042"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-03.md",
+        "section": "26. Falsification Test",
+        "line_start": 650,
+        "line_end": 667
+      }
+    },
+    {
+      "statement": "OPP-006 should be killed if evidence shows:\n### Kill condition A\nPolicies are selected by simple deterministic triggers.\nExample:\nEMERGENCY = TRUE\n↓\nEMERGENCY POLICY\n### Kill condition B\nDispatchers simply follow a documented policy matrix.\n### Kill condition C\nThe number of policies is small and selection is trivial.\n### Kill condition D\nWrong policy selection has no material consequence.\n### Kill condition E\nThe policy-selection problem is already automated through existing ServiceNow configuration or customer-specific workflows.\n### Kill condition F\nNo ServiceNow customer evidence demonstrates the problem.",
+      "outcome": "KILLED",
+      "basis": [
+        "EV-006-043",
+        "EV-006-044",
+        "EV-006-045",
+        "EV-006-046",
+        "EV-006-047",
+        "EV-006-048",
+        "EV-006-049",
+        "EV-006-050",
+        "EV-006-051",
+        "EV-006-052",
+        "EV-006-053",
+        "EV-006-054",
+        "EV-006-055"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-04.md",
+        "section": "23. What Would Kill It?",
+        "line_start": 622,
+        "line_end": 659
+      }
+    },
+    {
+      "statement": "Policies are selected by simple deterministic triggers.\nExample:\nEMERGENCY = TRUE\n↓\nEMERGENCY POLICY",
+      "outcome": "UNKNOWN",
+      "basis": [
+        "EV-006-043",
+        "EV-006-044",
+        "EV-006-045",
+        "EV-006-046",
+        "EV-006-047",
+        "EV-006-048",
+        "EV-006-049",
+        "EV-006-050",
+        "EV-006-051",
+        "EV-006-052",
+        "EV-006-053",
+        "EV-006-054",
+        "EV-006-055"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-04.md",
+        "section": "Kill condition A",
+        "line_start": 626,
+        "line_end": 637
+      }
+    },
+    {
+      "statement": "Dispatchers simply follow a documented policy matrix.",
+      "outcome": "UNKNOWN",
+      "basis": [
+        "EV-006-043",
+        "EV-006-044",
+        "EV-006-045",
+        "EV-006-046",
+        "EV-006-047",
+        "EV-006-048",
+        "EV-006-049",
+        "EV-006-050",
+        "EV-006-051",
+        "EV-006-052",
+        "EV-006-053",
+        "EV-006-054",
+        "EV-006-055"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-04.md",
+        "section": "Kill condition B",
+        "line_start": 638,
+        "line_end": 641
+      }
+    },
+    {
+      "statement": "The number of policies is small and selection is trivial.",
+      "outcome": "UNKNOWN",
+      "basis": [
+        "EV-006-043",
+        "EV-006-044",
+        "EV-006-045",
+        "EV-006-046",
+        "EV-006-047",
+        "EV-006-048",
+        "EV-006-049",
+        "EV-006-050",
+        "EV-006-051",
+        "EV-006-052",
+        "EV-006-053",
+        "EV-006-054",
+        "EV-006-055"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-04.md",
+        "section": "Kill condition C",
+        "line_start": 642,
+        "line_end": 645
+      }
+    },
+    {
+      "statement": "Wrong policy selection has no material consequence.",
+      "outcome": "UNKNOWN",
+      "basis": [
+        "EV-006-043",
+        "EV-006-044",
+        "EV-006-045",
+        "EV-006-046",
+        "EV-006-047",
+        "EV-006-048",
+        "EV-006-049",
+        "EV-006-050",
+        "EV-006-051",
+        "EV-006-052",
+        "EV-006-053",
+        "EV-006-054",
+        "EV-006-055"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-04.md",
+        "section": "Kill condition D",
+        "line_start": 646,
+        "line_end": 649
+      }
+    },
+    {
+      "statement": "The policy-selection problem is already automated through existing ServiceNow configuration or customer-specific workflows.",
+      "outcome": "UNKNOWN",
+      "basis": [
+        "EV-006-043",
+        "EV-006-044",
+        "EV-006-045",
+        "EV-006-046",
+        "EV-006-047",
+        "EV-006-048",
+        "EV-006-049",
+        "EV-006-050",
+        "EV-006-051",
+        "EV-006-052",
+        "EV-006-053",
+        "EV-006-054",
+        "EV-006-055"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-04.md",
+        "section": "Kill condition E",
+        "line_start": 650,
+        "line_end": 653
+      }
+    },
+    {
+      "statement": "No ServiceNow customer evidence demonstrates the problem.",
+      "outcome": "UNKNOWN",
+      "basis": [
+        "EV-006-043",
+        "EV-006-044",
+        "EV-006-045",
+        "EV-006-046",
+        "EV-006-047",
+        "EV-006-048",
+        "EV-006-049",
+        "EV-006-050",
+        "EV-006-051",
+        "EV-006-052",
+        "EV-006-053",
+        "EV-006-054",
+        "EV-006-055"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-04.md",
+        "section": "Kill condition F",
+        "line_start": 654,
+        "line_end": 659
+      }
+    },
+    {
+      "statement": "The hypothesis should be killed if:\n### Kill condition 1\nA finite policy matrix covers the meaningful operating states.\n### Kill condition 2\nSimple deterministic triggers select the correct policy.\n### Kill condition 3\nExisting ServiceNow configuration handles the required context.\n### Kill condition 4\nDispatchers rarely need to choose among policies.\n### Kill condition 5\nPolicy selection has negligible business consequences.\n### Kill condition 6\nThe remaining complexity is merely poor implementation/configuration.\n### Kill condition 7\nNo ServiceNow customer evidence demonstrates recurring policy-selection difficulty.",
+      "outcome": "KILLED",
+      "basis": [
+        "EV-006-056",
+        "EV-006-057",
+        "EV-006-058",
+        "EV-006-059",
+        "EV-006-060",
+        "EV-006-061",
+        "EV-006-062",
+        "EV-006-063",
+        "EV-006-064",
+        "EV-006-065",
+        "EV-006-066"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-05.md",
+        "section": "17. What Would Kill It?",
+        "line_start": 570,
+        "line_end": 603
+      }
+    },
+    {
+      "statement": "A finite policy matrix covers the meaningful operating states.",
+      "outcome": "UNKNOWN",
+      "basis": [
+        "EV-006-056",
+        "EV-006-057",
+        "EV-006-058",
+        "EV-006-059",
+        "EV-006-060",
+        "EV-006-061",
+        "EV-006-062",
+        "EV-006-063",
+        "EV-006-064",
+        "EV-006-065",
+        "EV-006-066"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-05.md",
+        "section": "Kill condition 1",
+        "line_start": 574,
+        "line_end": 577
+      }
+    },
+    {
+      "statement": "Simple deterministic triggers select the correct policy.",
+      "outcome": "UNKNOWN",
+      "basis": [
+        "EV-006-056",
+        "EV-006-057",
+        "EV-006-058",
+        "EV-006-059",
+        "EV-006-060",
+        "EV-006-061",
+        "EV-006-062",
+        "EV-006-063",
+        "EV-006-064",
+        "EV-006-065",
+        "EV-006-066"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-05.md",
+        "section": "Kill condition 2",
+        "line_start": 578,
+        "line_end": 581
+      }
+    },
+    {
+      "statement": "Existing ServiceNow configuration handles the required context.",
+      "outcome": "UNKNOWN",
+      "basis": [
+        "EV-006-056",
+        "EV-006-057",
+        "EV-006-058",
+        "EV-006-059",
+        "EV-006-060",
+        "EV-006-061",
+        "EV-006-062",
+        "EV-006-063",
+        "EV-006-064",
+        "EV-006-065",
+        "EV-006-066"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-05.md",
+        "section": "Kill condition 3",
+        "line_start": 582,
+        "line_end": 585
+      }
+    },
+    {
+      "statement": "Dispatchers rarely need to choose among policies.",
+      "outcome": "UNKNOWN",
+      "basis": [
+        "EV-006-056",
+        "EV-006-057",
+        "EV-006-058",
+        "EV-006-059",
+        "EV-006-060",
+        "EV-006-061",
+        "EV-006-062",
+        "EV-006-063",
+        "EV-006-064",
+        "EV-006-065",
+        "EV-006-066"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-05.md",
+        "section": "Kill condition 4",
+        "line_start": 586,
+        "line_end": 589
+      }
+    },
+    {
+      "statement": "Policy selection has negligible business consequences.",
+      "outcome": "UNKNOWN",
+      "basis": [
+        "EV-006-056",
+        "EV-006-057",
+        "EV-006-058",
+        "EV-006-059",
+        "EV-006-060",
+        "EV-006-061",
+        "EV-006-062",
+        "EV-006-063",
+        "EV-006-064",
+        "EV-006-065",
+        "EV-006-066"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-05.md",
+        "section": "Kill condition 5",
+        "line_start": 590,
+        "line_end": 593
+      }
+    },
+    {
+      "statement": "The remaining complexity is merely poor implementation/configuration.",
+      "outcome": "UNKNOWN",
+      "basis": [
+        "EV-006-056",
+        "EV-006-057",
+        "EV-006-058",
+        "EV-006-059",
+        "EV-006-060",
+        "EV-006-061",
+        "EV-006-062",
+        "EV-006-063",
+        "EV-006-064",
+        "EV-006-065",
+        "EV-006-066"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-05.md",
+        "section": "Kill condition 6",
+        "line_start": 594,
+        "line_end": 597
+      }
+    },
+    {
+      "statement": "No ServiceNow customer evidence demonstrates recurring policy-selection difficulty.",
+      "outcome": "UNKNOWN",
+      "basis": [
+        "EV-006-056",
+        "EV-006-057",
+        "EV-006-058",
+        "EV-006-059",
+        "EV-006-060",
+        "EV-006-061",
+        "EV-006-062",
+        "EV-006-063",
+        "EV-006-064",
+        "EV-006-065",
+        "EV-006-066"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-05.md",
+        "section": "Kill condition 7",
+        "line_start": 598,
+        "line_end": 603
+      }
+    },
+    {
+      "statement": "At this checkpoint:\nMULTI-OBJECTIVE OPTIMIZATION\n↓\nSUPPORTED\nMULTIPLE POLICIES\n↓\nSUPPORTED\nCONTEXTUAL POLICY CHANGES\n↓\nSUPPORTED\nAUTOMATIC REOPTIMIZATION\n↓\nSUPPORTED\nHUMAN POLICY SELECTION\n↓\nSUPPORTED\nCOMPLEX POLICY ARBITRATION\n↓\nNOT PROVEN\nMATERIAL CUSTOMER BURDEN\n↓\nNOT PROVEN\nSERVICENOW GAP\n↓\nNOT PROVEN\n### Result",
+      "outcome": "UNKNOWN",
+      "basis": [
+        "EV-006-056",
+        "EV-006-057",
+        "EV-006-058",
+        "EV-006-059",
+        "EV-006-060",
+        "EV-006-061",
+        "EV-006-062",
+        "EV-006-063",
+        "EV-006-064",
+        "EV-006-065",
+        "EV-006-066"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-05.md",
+        "section": "18. Falsification Result",
+        "line_start": 604,
+        "line_end": 643
+      }
+    },
+    {
+      "statement": "NEW \"AI GAP\"\n↓\nTEST POLICIES\n↓\nTEST OBJECTIVES\n↓\nTEST WEIGHTS\n↓\nTEST CONSTRAINTS\n↓\nTEST OVERRIDES\n↓\nTEST AUTOMATION\n↓\nONLY THEN CLAIM GAP\n### Status\n**RESEARCH METHODOLOGY**\nThis should be reused in future opportunities.",
+      "outcome": "UNKNOWN",
+      "basis": [
+        "EV-006-056",
+        "EV-006-057",
+        "EV-006-058",
+        "EV-006-059",
+        "EV-006-060",
+        "EV-006-061",
+        "EV-006-062",
+        "EV-006-063",
+        "EV-006-064",
+        "EV-006-065",
+        "EV-006-066"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-05.md",
+        "section": "FSM-21 — Configuration-First Falsification",
+        "line_start": 734,
+        "line_end": 761
+      }
+    },
+    {
+      "statement": "## Has OPP-006 been killed?",
+      "outcome": "KILLED",
+      "basis": [
+        "EV-006-056",
+        "EV-006-057",
+        "EV-006-058",
+        "EV-006-059",
+        "EV-006-060",
+        "EV-006-061",
+        "EV-006-062",
+        "EV-006-063",
+        "EV-006-064",
+        "EV-006-065",
+        "EV-006-066"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-05.md",
+        "section": "22. Falsification Status",
+        "line_start": 784,
+        "line_end": 787
+      }
+    },
+    {
+      "statement": "If the answer is:\n> **\"A policy matrix / deterministic rule / existing configuration is sufficient.\"**\nthen:",
+      "outcome": "UNKNOWN",
+      "basis": [
+        "EV-006-056",
+        "EV-006-057",
+        "EV-006-058",
+        "EV-006-059",
+        "EV-006-060",
+        "EV-006-061",
+        "EV-006-062",
+        "EV-006-063",
+        "EV-006-064",
+        "EV-006-065",
+        "EV-006-066"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-05.md",
+        "section": "Kill condition",
+        "line_start": 866,
+        "line_end": 873
+      }
+    },
+    {
+      "statement": "The required chain was:\nREAL CONTEXT\n↓\nMULTIPLE POLICY OPTIONS\n↓\nNO SIMPLE TRIGGER\n↓\nNO STABLE DECISION TABLE\n↓\nEXISTING CONFIGURATION INSUFFICIENT\n↓\nHUMAN CONTEXTUAL JUDGMENT\n↓\nRECURRING DECISION\n↓\nMATERIAL CONSEQUENCE\nEvidence status:\nREAL CONTEXT\n↓\nVERIFIED\nMULTIPLE POLICY OPTIONS\n↓\nVERIFIED\nNO SIMPLE TRIGGER\n↓\nNOT ESTABLISHED\nNO STABLE DECISION TABLE\n↓\nNOT ESTABLISHED\nEXISTING CONFIGURATION INSUFFICIENT\n↓\nNOT ESTABLISHED\nHUMAN CONTEXTUAL JUDGMENT\n↓\nVERIFIED AS POSSIBLE\nRECURRING DECISION\n↓\nNOT ESTABLISHED\nMATERIAL CONSEQUENCE\n↓\nNOT ESTABLISHED\n### Result",
+      "outcome": "NOT ESTABLISHED",
+      "basis": [
+        "EV-006-067",
+        "EV-006-068",
+        "EV-006-069",
+        "EV-006-070",
+        "EV-006-071",
+        "EV-006-072",
+        "EV-006-073",
+        "EV-006-074",
+        "EV-006-075",
+        "EV-006-076",
+        "EV-006-077",
+        "EV-006-078",
+        "EV-006-079",
+        "EV-006-080",
+        "EV-006-081",
+        "EV-006-082"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-06.md",
+        "section": "21. Falsification Result",
+        "line_start": 694,
+        "line_end": 753
+      }
+    },
+    {
+      "statement": "AI GAP CLAIM\n↓\nPOLICY TEST\n↓\nOBJECTIVE TEST\n↓\nCONSTRAINT TEST\n↓\nOVERRIDE TEST\n↓\nAUTOMATION TEST\n↓\nHUMAN EXCEPTION TEST\n↓\nONLY THEN\nCLAIM RESIDUAL GAP\n### Classification\n**REUSABLE RESEARCH METHODOLOGY**\nThis pattern should be reused in future company opportunities.",
+      "outcome": "UNKNOWN",
+      "basis": [
+        "EV-006-067",
+        "EV-006-068",
+        "EV-006-069",
+        "EV-006-070",
+        "EV-006-071",
+        "EV-006-072",
+        "EV-006-073",
+        "EV-006-074",
+        "EV-006-075",
+        "EV-006-076",
+        "EV-006-077",
+        "EV-006-078",
+        "EV-006-079",
+        "EV-006-080",
+        "EV-006-081",
+        "EV-006-082"
+      ],
+      "provenance": {
+        "source_file": "OPP-006-06.md",
+        "section": "FSM-26 — Configuration-First Opportunity Falsification",
+        "line_start": 982,
+        "line_end": 1010
+      }
+    },
+    {
+      "statement": "Policy explosion, recurring error, material loss — Residual opportunity fails.",
+      "outcome": "UNKNOWN / NOT ESTABLISHED",
+      "basis": [
+        "EV-006-006"
+      ],
+      "provenance": {
+        "source_file": "opportunity.md",
+        "section": "Evidence and counter-evidence",
+        "line_start": 1,
+        "line_end": 70
+      }
+    }
+  ],
+  "traceability": [
+    {
+      "statement": "Policies, objectives, and constraints are native",
+      "research_location": "OPP-006-06, §§6–8",
+      "source_urls": [
+        "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/create-policies-schedule-optimization.html",
+        "https://www.servicenow.com/docs/r/field-service-management/hard-soft-constraints.html"
+      ],
+      "provenance": {
+        "source_file": "walkthrough.md",
+        "section": "Traceability",
+        "line_start": 72,
+        "line_end": 72
+      }
+    },
+    {
+      "statement": "Policy can change with conditions",
+      "research_location": "OPP-006-06, §§9–13",
+      "source_urls": [
+        "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-on-demand-optimization.html",
+        "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-intraday-optimization.html"
+      ],
+      "provenance": {
+        "source_file": "walkthrough.md",
+        "section": "Traceability",
+        "line_start": 73,
+        "line_end": 73
+      }
+    },
+    {
+      "statement": "Recurring material burden was not established",
+      "research_location": "OPP-006-06, §§17–21",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "walkthrough.md",
+        "section": "Traceability",
+        "line_start": 74,
+        "line_end": 74
+      }
+    },
+    {
+      "statement": "Native policy stack: OPP-006-06, §§6–13, policies, hard/soft constraints.",
+      "research_location": "workflow.md",
+      "source_urls": [
+        "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/create-policies-schedule-optimization.html",
+        "https://www.servicenow.com/docs/r/field-service-management/hard-soft-constraints.html"
+      ],
+      "provenance": {
+        "source_file": "workflow.md",
+        "section": "Traceability and reusable patterns",
+        "line_start": 56,
+        "line_end": 56
+      }
+    },
+    {
+      "statement": "Exception flow: OPP-006-06, §§14–16, prevent excluded agents.",
+      "research_location": "workflow.md",
+      "source_urls": [
+        "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/prevent-excluded-agents.html"
+      ],
+      "provenance": {
+        "source_file": "workflow.md",
+        "section": "Traceability and reusable patterns",
+        "line_start": 57,
+        "line_end": 57
+      }
+    },
+    {
+      "statement": "Reusable lesson: configuration-first falsification before an intelligence-layer claim.",
+      "research_location": "workflow.md",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "workflow.md",
+        "section": "Traceability and reusable patterns",
+        "line_start": 58,
+        "line_end": 58
+      }
+    }
+  ]
+}

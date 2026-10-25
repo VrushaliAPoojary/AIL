@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://art.product.resolution/schemas/ticket_artifact.json",
+  "title": "TicketArtifact",
+  "description": "Canonical ticket contract maintaining strict logical field order",
+  "type": "object",
+  "required": [
+    "ticketId",
+    "investigationId",
+    "revision",
+    "title",
+    "reproSteps",
+    "expectedResult",
+    "actualResult",
+    "businessImpact",
+    "recommendedSolution",
+    "module",
+    "environment",
+    "severity",
+    "priority",
+    "tags",
+    "discussion",
+    "provenance",
+    "updatedAt"
+  ],
+  "properties": {
+    "ticketId": {
+      "type": "string"
+    },
+    "investigationId": {
+      "type": "string"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "title": {
+      "type": "string"
+    },
+    "reproSteps": {
+      "type": "string"
+    },
+    "expectedResult": {
+      "type": "string"
+    },
+    "actualResult": {
+      "type": "string"
+    },
+    "businessImpact": {
+      "type": "string"
+    },
+    "recommendedSolution": {
+      "type": "string"
+    },
+    "module": {
+      "type": "string"
+    },
+    "environment": {
+      "type": "string"
+    },
+    "severity": {
+      "$ref": "common.json#/definitions/Severity"
+    },
+    "priority": {
+      "$ref": "common.json#/definitions/Priority"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "discussion": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["author", "message", "timestamp"],
+        "properties": {
+          "author": { "type": "string" },
+          "message": { "type": "string" },
+          "timestamp": { "$ref": "common.json#/definitions/IsoTimestamp" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "provenance": {
+      "$ref": "common.json#/definitions/ProvenanceType"
+    },
+    "updatedAt": {
+      "$ref": "common.json#/definitions/IsoTimestamp"
+    }
+  },
+  "additionalProperties": false
+}

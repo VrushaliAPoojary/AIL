@@ -1,0 +1,182 @@
+{
+  "Investigation": {
+    "id": "INV-PLACEHOLDER-0001",
+    "canonicalBugId": null,
+    "slug": "placeholder-slug",
+    "lifecyclePhase": "CAPTURE",
+    "status": null,
+    "classification": null,
+    "module": "Not provided",
+    "severity": "Not provided",
+    "priority": "Not provided",
+    "assignee": null,
+    "originalInputId": "INP-PLACEHOLDER-0001",
+    "evidenceIds": ["EVD-PLACEHOLDER-0001"],
+    "aiAnalysisIds": [],
+    "researchIds": [],
+    "ticketRevisionIds": [],
+    "activeTicketRevisionId": null,
+    "developerUpdateIds": [],
+    "retestIds": [],
+    "auditEventIds": ["AUD-PLACEHOLDER-0001"],
+    "createdAt": "2026-09-25T12:00:00Z",
+    "updatedAt": "2026-09-25T12:00:00Z"
+  },
+  "OriginalInput": {
+    "id": "INP-PLACEHOLDER-0001",
+    "investigationId": "INV-PLACEHOLDER-0001",
+    "testerDescription": "Placeholder intake description for schema verification",
+    "reporter": "qa-tester",
+    "capturedAt": "2026-09-25T12:00:00Z",
+    "initialEvidenceIds": ["EVD-PLACEHOLDER-0001"],
+    "provenance": "HUMAN_SUPPLIED"
+  },
+  "Evidence": {
+    "id": "EVD-PLACEHOLDER-0001",
+    "investigationId": "INV-PLACEHOLDER-0001",
+    "stage": "ORIGINAL",
+    "evidenceType": "SCREENSHOT",
+    "originalFilename": "placeholder.png",
+    "canonicalFilename": "INV-PLACEHOLDER__evidence__01.png",
+    "storagePath": "contracts/fixtures/placeholder.png",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "mimeType": "image/png",
+    "byteSize": 1024,
+    "uploadedBy": "qa-tester",
+    "capturedAt": "2026-09-25T12:00:00Z",
+    "notes": null,
+    "provenance": "HUMAN_SUPPLIED"
+  },
+  "AIArtifact": {
+    "generationId": "GEN-PLACEHOLDER-0001",
+    "investigationId": "INV-PLACEHOLDER-0001",
+    "purpose": "CAPTURE_ANALYSIS",
+    "modelIdentifier": "gpt-4o",
+    "generatedTimestamp": "2026-09-25T12:01:00Z",
+    "inputEvidenceReferences": ["EVD-PLACEHOLDER-0001"],
+    "structuredOutput": {
+      "extractedFacts": [
+        {
+          "field": "Error Message",
+          "value": "Placeholder error string",
+          "evidenceId": "EVD-PLACEHOLDER-0001",
+          "boundingRegion": null,
+          "provenance": "EVIDENCE_BACKED_FACT"
+        }
+      ],
+      "inferences": {
+        "classification": "BUG",
+        "module": "Not provided",
+        "severity": "MEDIUM",
+        "inferredRootCause": "Placeholder root cause hypothesis",
+        "provenance": "AI_INFERENCE"
+      },
+      "draftTicket": {
+        "title": "Placeholder Bug Title",
+        "reproSteps": "1. Step one\n2. Step two",
+        "expectedResult": "Should work without error",
+        "actualResult": "Throws placeholder error",
+        "businessImpact": "Workflow blocked",
+        "recommendedSolution": "Fix error handler",
+        "provenance": "AI_RECOMMENDATION"
+      },
+      "competitorResearchRecommendation": {
+        "recommended": false,
+        "reasoning": null
+      }
+    },
+    "optionalUsageMetadata": {
+      "promptTokens": 100,
+      "completionTokens": 50,
+      "totalTokens": 150
+    },
+    "provenance": "AI_INFERENCE"
+  },
+  "ResearchArtifact": {
+    "id": "RES-PLACEHOLDER-0001",
+    "investigationId": "INV-PLACEHOLDER-0001",
+    "researchQuestion": "How do comparable workflow tools handle tool registration?",
+    "triggerReason": "Investigating extensibility pattern",
+    "sources": [
+      {
+        "sourceId": "SRC-01",
+        "sourceName": "Industry Standard Documentation",
+        "sourceUrl": "https://example.com/spec",
+        "sourceType": "DOCUMENTATION"
+      }
+    ],
+    "observations": [
+      {
+        "observationId": "OBS-01",
+        "statement": "Central capability registries require explicit publication state check.",
+        "sourceIds": ["SRC-01"]
+      }
+    ],
+    "relevanceToArt": "Highlights need for unified catalog query.",
+    "possibleArtApproach": "Unify connector discovery in single registry.",
+    "generatedTimestamp": "2026-09-25T12:02:00Z",
+    "provenance": "AI_RECOMMENDATION"
+  },
+  "TicketArtifact": {
+    "ticketId": "TCK-PLACEHOLDER-0001",
+    "investigationId": "INV-PLACEHOLDER-0001",
+    "revision": 1,
+    "title": "Placeholder Canonical Ticket Title",
+    "reproSteps": "1. Open app\n2. Trigger tool action",
+    "expectedResult": "Expected behavior succeeds",
+    "actualResult": "Actual behavior fails with error",
+    "businessImpact": "High impact on user flow",
+    "recommendedSolution": "Apply production fix",
+    "module": "Not provided",
+    "environment": "Not provided",
+    "severity": "HIGH",
+    "priority": "P1",
+    "tags": ["placeholder", "test"],
+    "discussion": [
+      {
+        "author": "tester",
+        "message": "Initial test logged",
+        "timestamp": "2026-09-25T12:03:00Z"
+      }
+    ],
+    "provenance": "HUMAN_APPROVED",
+    "updatedAt": "2026-09-25T12:03:00Z"
+  },
+  "DeveloperUpdate": {
+    "id": "DEV-PLACEHOLDER-0001",
+    "investigationId": "INV-PLACEHOLDER-0001",
+    "developerUsername": "art-dev",
+    "summaryOfChanges": "Implemented fix for error handler",
+    "commitHashOrPR": "abc1234",
+    "resolvedInVersionOrBranch": "fix/placeholder-bug",
+    "testInstructionsForQA": "Run test script and check error banner disappears",
+    "submittedAt": "2026-09-25T12:04:00Z",
+    "provenance": "DEVELOPER_UPDATE"
+  },
+  "RetestArtifact": {
+    "id": "RET-PLACEHOLDER-0001",
+    "investigationId": "INV-PLACEHOLDER-0001",
+    "retestEvidenceIds": ["EVD-PLACEHOLDER-0002"],
+    "aiComparisonRecommendation": {
+      "recommendation": "PASSED",
+      "notes": "Error banner no longer visible in verification capture."
+    },
+    "humanConfirmation": {
+      "confirmed": true,
+      "verdict": "VERIFIED",
+      "confirmedBy": "lead-qa",
+      "notes": "Verified in test environment. Fix operates correctly."
+    },
+    "executedAt": "2026-09-25T12:05:00Z",
+    "provenance": "RETEST_VERIFICATION"
+  },
+  "AuditEvent": {
+    "id": "AUD-PLACEHOLDER-0001",
+    "investigationId": "INV-PLACEHOLDER-0001",
+    "timestamp": "2026-09-25T12:00:00Z",
+    "actor": "qa-tester",
+    "eventType": "INVESTIGATION_CAPTURED",
+    "summary": "Investigation captured from rough notes",
+    "details": { "source": "clipboard_paste" }
+  }
+}

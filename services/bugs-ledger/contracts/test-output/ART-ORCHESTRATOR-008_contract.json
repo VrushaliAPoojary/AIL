@@ -1,0 +1,106 @@
+{
+  "Investigation": {
+    "id": "ART-ORCHESTRATOR-008",
+    "canonicalBugId": "ART-ORCHESTRATOR-008",
+    "slug": "orchestrator-test-blank-response-after-successful-execution",
+    "lifecyclePhase": "CONFIRMED",
+    "status": "OPEN",
+    "classification": "BUG",
+    "module": "ORCHESTRATOR",
+    "severity": "HIGH",
+    "priority": "Not provided",
+    "assignee": null,
+    "originalInputId": "INP-ART-ORCHESTRATOR-008",
+    "evidenceIds": [
+      "EVD-ART-ORCHESTRATOR-008-01"
+    ],
+    "aiAnalysisIds": [],
+    "researchIds": [],
+    "ticketRevisionIds": [
+      "TCK-ART-ORCHESTRATOR-008-01"
+    ],
+    "activeTicketRevisionId": "TCK-ART-ORCHESTRATOR-008-01",
+    "developerUpdateIds": [],
+    "retestIds": [],
+    "auditEventIds": [
+      "AUD-ART-ORCHESTRATOR-008-01"
+    ],
+    "createdAt": "2026-09-24T00:00:00Z",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "OriginalInput": {
+    "id": "INP-ART-ORCHESTRATOR-008",
+    "investigationId": "ART-ORCHESTRATOR-008",
+    "testerDescription": "",
+    "reporter": "HUMAN_LEGACY_IMPORT",
+    "capturedAt": "2026-09-24T00:00:00Z",
+    "initialEvidenceIds": [
+      "EVD-ART-ORCHESTRATOR-008-01"
+    ],
+    "provenance": "HUMAN_SUPPLIED"
+  },
+  "EvidenceList": [
+    {
+      "id": "EVD-ART-ORCHESTRATOR-008-01",
+      "investigationId": "ART-ORCHESTRATOR-008",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-ORCHESTRATOR-008__orchestrator-test-completed-blank-response__2026-10-01__01.png",
+      "canonicalFilename": "ART-ORCHESTRATOR-008__orchestrator-test-completed-blank-response__2026-10-01__01.png",
+      "storagePath": "ART-Product-Validation/bugs/Orchestrator/ART-ORCHESTRATOR-008__orchestrator-test-blank-response-after-successful-execution/ART-ORCHESTRATOR-008__orchestrator-test-completed-blank-response__2026-10-01__01.png",
+      "sha256": "2ccd2b989aeb46a37cead266cc9fbb596960695451f93088bc2a92c8d88dc8fe",
+      "mimeType": "image/png",
+      "byteSize": 322082,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    }
+  ],
+  "TicketArtifact": {
+    "ticketId": "TCK-ART-ORCHESTRATOR-008-01",
+    "investigationId": "ART-ORCHESTRATOR-008",
+    "revision": 1,
+    "title": "Orchestrator Test Shows Blank Response After Successful Workflow Execution",
+    "reproSteps": "Not provided",
+    "expectedResult": "Not provided",
+    "actualResult": "Not provided",
+    "businessImpact": "Not provided",
+    "recommendedSolution": "Not provided",
+    "module": "ORCHESTRATOR",
+    "environment": "Not provided",
+    "severity": "HIGH",
+    "priority": "Not provided",
+    "tags": [
+      "orchestrator"
+    ],
+    "discussion": [],
+    "provenance": "HUMAN_APPROVED",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "AuditEvent": {
+    "id": "AUD-ART-ORCHESTRATOR-008-01",
+    "investigationId": "ART-ORCHESTRATOR-008",
+    "timestamp": "2026-09-24T00:00:00Z",
+    "actor": "LEGACY_IMPORT_ADAPTER",
+    "eventType": "INVESTIGATION_CAPTURED",
+    "summary": "Imported legacy bug record ART-ORCHESTRATOR-008 from ART-Product-Validation/bugs",
+    "details": {
+      "sourceMarkdownPath": "ART-Product-Validation/bugs/Orchestrator/ART-ORCHESTRATOR-008__orchestrator-test-blank-response-after-successful-execution/ART-ORCHESTRATOR-008.md",
+      "rawContentSha256": "7ad0156d9a3486582b7d9832ed062ab78a27aa8a5e97857dbe331745389d5634"
+    }
+  },
+  "sourceMetadata": {
+    "sourceMarkdownPath": "ART-Product-Validation/bugs/Orchestrator/ART-ORCHESTRATOR-008__orchestrator-test-blank-response-after-successful-execution/ART-ORCHESTRATOR-008.md",
+    "rawMarkdownContent": "# ART-ORCHESTRATOR-008 \u2014 Orchestrator Test Shows Blank Response After Successful Workflow Execution\n\n- **Canonical Bug ID:** ART-ORCHESTRATOR-008\n- **Module:** ORCHESTRATOR\n- **Severity:** HIGH\n- **Priority:** P1\n- **Environment:** Testing (Daily Work Coordinator Orchestrator V2 / Orchestrator Test / Professional Plan / InvestigationLab)\n- **Assignee:** Unassigned\n- **Tags:** Orchestrator, Test-UI, Response-Rendering, Blank-Response, Workflow-Output, Agent-Output, UX-Critical, Response-Resolver\n- **Status:** OPEN\n- **Evidence Count:** 1\n- **Azure DevOps:** SYNCED ([#68915](https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68915))\n\n---\n\n## 1. Problem\nWhen testing an Orchestrator workflow, the workflow completes successfully (thread header shows **Completed**) but the Orchestrator's response in the Test conversation panel is **completely blank**. The user input is received and displayed correctly, but the Orchestrator response bubbles contain no text, structured data, or any visible content.\n\nThis creates a critical UX contradiction: **\"Completed\" communicates success while giving the user no usable result.** The user cannot determine whether the Agent returned a valid output, the Condition node routed correctly, or the workflow produced any meaningful result.\n\nThe Orchestrator Test should always resolve a completed execution into a displayable response. Workflows such as `Start \u2192 Agent` or `Start \u2192 Agent \u2192 Condition` should expose the result of the completed execution path rather than silently returning blank. An empty assistant bubble must never be rendered for a completed execution.\n\n---\n\n## 2. Observed Behavior\n- **Execution Status:** The Orchestrator Test thread `af1821e...` is marked **Completed**, indicating the workflow finished without error.\n- **User Input Displayed Correctly:** Two user messages are rendered in the conversation panel as structured schema tables showing `additionalProperties: false`, `properties: message / type / string`, `required: [0]` with the user's input text (`Add a task called Prepare customer presentation. Set priority to HIGH and deadline to 4 PM.` and `I need to update one of my tasks.`).\n- **Blank Orchestrator Responses:** Two Orchestrator response bubbles appear (green icon, timestamp `03:33 PM`) but contain **no visible content** \u2014 the response area is completely empty white space.\n- **No Error Indication:** There is no error banner, warning toast, or diagnostic message indicating that the response could not be resolved. The blank bubble silently implies a successful but empty result.\n- **Workflow Canvas Context:** The workflow consists of `Start` \u2192 `Daily Work Coordinator` (Agent node, 23 runs, 100%) \u2192 `Condition Builder` (14 runs, 100%). Both nodes show successful execution statistics.\n- **TEST INPUT Panel:** Correctly shows `message: string`, `required[0]: \"I need to update one of my tasks.\"`, `type: object`, with `\u25b6 Run` button.\n\n---\n\n## 3. Reproduction\n1. Open the Daily Work Coordinator Orchestrator (or any Orchestrator with a `Start \u2192 Agent \u2192 Condition` workflow and no explicit Sender/response node).\n2. Open **Orchestrator Test** (Draft mode).\n3. Submit a test input such as `\"Add a task called Prepare customer presentation. Set priority to HIGH and deadline to 4 PM.\"` or `\"I need to update one of my tasks.\"`.\n4. Wait for the workflow to complete \u2014 observe the thread header shows **Completed**.\n5. Inspect the Orchestrator response bubbles in the Test conversation panel.\n6. Observe that the Orchestrator response bubbles (green icon, timestamped `03:33 PM`) are completely blank with no text, structured data, or any content displayed.\n\n---\n\n## 4. Expected Behavior\n- A successfully completed Orchestrator execution must always provide a visible response or an explicit no-output state.\n- The Orchestrator Test should resolve the workflow result using a deterministic fallback chain:\n  1. **Explicit workflow response/output** (e.g., Sender node output)\n  2. **Output of the final successful user-facing node** (e.g., branch result from Condition)\n  3. **Latest successful Agent output** (e.g., the Agent's structured response)\n  4. **Structured workflow result rendered as JSON** (e.g., the raw completion payload)\n  5. **Explicit \"No response was produced by this workflow\"** message\n- An empty assistant bubble must **never** be rendered for a completed execution.\n- Sender should not be required for the Test panel to display results. A workflow consisting of `Start \u2192 Agent` must still display the Agent's result in Test.\n\n---\n\n## 5. Business Impact\n- **Unreliable Testing:** Users cannot determine whether the workflow produced the expected result, making Orchestrator testing unreliable for validating Agent behavior, condition routing, and downstream node execution.\n- **False Failure Impression:** A \"Completed\" status with a blank response creates the false impression that the workflow is broken, even when the underlying Agent executed correctly.\n- **Blocked Validation:** Workflow authors cannot validate Agent output, condition routing results, or downstream node behavior through the Test UI without adding a Sender node, which should not be a requirement for testing.\n- **Combined with Observability Gap:** When paired with ART-ORCHESTRATOR-005 (Observability not showing runtime input/output), users have no way to inspect what data the workflow produced \u2014 neither through Test UI nor through Observability.\n\n---\n\n## 6. User Experience\n- The user sees their input rendered correctly but receives blank responses from the Orchestrator, creating confusion about whether the workflow is functioning.\n- The \"Completed\" badge communicates success while providing no evidence of success, undermining user trust in the testing interface.\n- Users are forced to add Sender nodes solely to make Test usable, which is a workflow design burden that should not exist.\n\n---\n\n## 7. Investigation Guidance\nInvestigate the Orchestrator Test response rendering pipeline and the workflow output resolution mechanism:\n- **Response Resolution Logic:** Inspect how the Orchestrator Test conversation component resolves the displayable response after workflow completion. Check whether it only renders output from explicit Sender/response nodes or if it can resolve output from the final executed node in the workflow graph.\n- **Agent Output Availability:** The Agent node (`Daily Work Coordinator`) executed successfully (23 runs, 100%). Check whether the Agent's structured output (e.g., `needs_clarification`, `clarification_question`, `tasks`) is available in the execution context but not being resolved by the Test response renderer.\n- **Condition Node Output:** The Condition Builder node also executed successfully. Check whether the output of the selected condition branch is available but not propagated to the Test conversation.\n- **Empty Bubble Rendering:** Identify the frontend component that renders the Orchestrator response bubble. Check whether it renders regardless of content availability or if it should have a guard to prevent rendering when no content is resolved.\n- **Relationship to ART-ORCHESTRATOR-005:** The blank response in Test and the blank Details panel in Observability may share a common root cause \u2014 the execution pipeline may not be storing or propagating node outputs to downstream consumers (Test renderer, Observability trace store).\n\n---\n\n## 8. Fix Requirement\nThe Orchestrator Test must never display a blank response bubble for a completed execution. The Test conversation renderer must resolve the workflow result through a deterministic fallback chain and always display either the resolved output or an explicit no-output message. Sender nodes must not be required for Test to display results.\n\n---\n\n## 9. Recommended Solution\n1. **Orchestrator Response Resolver:** Add a deterministic response resolution pipeline that resolves the final displayable result from a completed workflow execution.\n2. **Resolution Priority Chain:**\n   - Explicit workflow response/output (Sender node)\n   - Output of the final successful user-facing node\n   - Latest successful Agent output\n   - Structured workflow result rendered as JSON\n   - Explicit \"No response was produced by this workflow\" state\n3. **Structured Output Rendering:** When the resolved result is structured JSON (e.g., Agent output with `needs_clarification`, `clarification_question`, `tasks`), render the human-facing field intelligently (e.g., display `clarification_question` text) or display the full structured object in a formatted code block.\n4. **Never Empty:** The Test conversation must never render an empty assistant bubble for a completed execution. If no output exists after all resolution fallbacks, display an explicit no-output message.\n5. **Sender Independence:** The response resolver must not require a Sender node. A workflow consisting of `Start \u2192 Agent` should still display the Agent's result in Test.\n\n---\n\n## 10. Minimum Working Fix\nResolve the latest successful Agent output from the completed workflow execution context and render it in the Orchestrator Test response bubble. If the output is structured JSON, render it as a formatted code block. If no output is available, display \"No response was produced by this workflow\" instead of an empty bubble.\n\n---\n\n## 11. Acceptance Criteria\n- [ ] A completed Orchestrator workflow execution always displays a visible response or an explicit no-output message in the Test conversation.\n- [ ] The Orchestrator Test response resolver follows a deterministic fallback chain (explicit output \u2192 final node output \u2192 Agent output \u2192 structured result \u2192 no-output message).\n- [ ] Empty assistant bubbles are never rendered for completed executions.\n- [ ] Workflows without a Sender node (e.g., `Start \u2192 Agent`) still display the Agent's result in Test.\n- [ ] Structured Agent output (e.g., JSON with `needs_clarification`, `clarification_question`) is rendered in a readable format.\n- [ ] Existing workflows with explicit Sender/response nodes continue working without regression.\n\n---\n\n## 12. Environment\n- **Platform:** ART Agent Builder / Orchestrator\n- **Workflow:** Daily Work Coordinator Orchestrator V2\n- **Agent:** Daily Work Coordinator V2\n- **Workflow Structure:** Start \u2192 Daily Work Coordinator (Agent) \u2192 Condition Builder\n- **Test Mode:** Orchestrator Test (Draft)\n- **Thread ID:** `af1821e...`\n- **Environment:** Testing (InvestigationLab, Professional Plan)\n\n---\n\n## 13. Severity\n**HIGH** \u2014 Completed workflow executions render blank responses, making Orchestrator testing unreliable and hiding actual workflow results from users.\n\n---\n\n## 14. Priority\n**P1** \u2014 Critical UX defect that directly blocks reliable Orchestrator workflow testing and validation.\n\n---\n\n## 15. Tags\n- `Orchestrator`\n- `Test-UI`\n- `Response-Rendering`\n- `Blank-Response`\n- `Workflow-Output`\n- `Agent-Output`\n- `UX-Critical`\n- `Response-Resolver`\n\n---\n\n## 16. Assignee\n**Unassigned**\n\n---\n\n## 17. Evidence\n\n| File | Type | Description | SHA256 Hash | Byte Size |\n| :--- | :--- | :--- | :--- | :--- |\n| [ART-ORCHESTRATOR-008__orchestrator-test-completed-blank-response__2026-10-01__01.png](file:///home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-ORCHESTRATOR-008__orchestrator-test-blank-response-after-successful-execution/ART-ORCHESTRATOR-008__orchestrator-test-completed-blank-response__2026-10-01__01.png) | Screenshot | Daily Work Coordinator Orchestrator Test panel showing thread af1821e marked Completed with two user messages rendered as structured schema tables and two blank Orchestrator response bubbles (green icon, 03:33 PM, empty content). Workflow canvas shows Start \u2192 Daily Work Coordinator Agent \u2192 Condition Builder. TEST INPUT displays message: string, required[0]: 'I need to update one of my tasks.' | `2ccd2b989aeb46a37cead266cc9fbb596960695451f93088bc2a92c8d88dc8fe` | 322082 bytes |\n\n### Evidence Visual Gallery\n\n````carousel\n![ART-ORCHESTRATOR-008__orchestrator-test-completed-blank-response__2026-10-01__01.png](/home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-ORCHESTRATOR-008__orchestrator-test-blank-response-after-successful-execution/ART-ORCHESTRATOR-008__orchestrator-test-completed-blank-response__2026-10-01__01.png)\n*Daily Work Coordinator Orchestrator Test panel showing thread af1821e marked Completed with two user messages rendered as structured schema tables and two blank Orchestrator response bubbles (green icon, 03:33 PM, empty content). Workflow canvas shows Start \u2192 Daily Work Coordinator Agent \u2192 Condition Builder. TEST INPUT displays message: string, required[0]: 'I need to update one of my tasks.'*\n````\n\n---\n\n## 18. Discussion\n- **Reporter Analysis:** This is an Orchestrator product defect, not a configuration mistake. The Orchestrator Test panel needs its own output contract. A perfectly valid workflow (`Start \u2192 Agent`) should display the Agent's result in Test without requiring a Sender node. The response resolver should follow a deterministic fallback chain to ensure completed executions always produce visible output.\n- **Relationship to ART-ORCHESTRATOR-005:** This defect compounds with the Observability gap (ART-ORCHESTRATOR-005). When the Test UI shows blank responses AND Observability does not expose node input/output details, the user has zero visibility into what the workflow produced. These two defects working together create a complete diagnostic blind spot.\n- **Relationship to ART-ORCHESTRATOR-003:** ART-ORCHESTRATOR-003 reports that user input is rendered as schema definition structure rather than runtime input fields. The evidence for this bug also shows user messages rendered as structured schema tables (`additionalProperties: false`, `properties`, `required`, `type: object`) rather than plain text, confirming ART-ORCHESTRATOR-003 is still active.\n- **Intake Validation:** Evidence screenshot preserved with cryptographic SHA256 checksum and verified byte size. Zero Azure DevOps mutations performed during intake.\n\n---\n\n## 19. Azure DevOps\n- **Work Item ID:** 68915\n- **URL:** [https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68915](https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68915)\n- **Parent Feature:** Orchestrator\n- **Parent Feature ID:** 68806\n- **Assigned To:** Unassigned\n- **Sync Status:** SYNCED\n- **Note:** Synchronized via Harness 02 V1 to Azure DevOps.\n",
+    "ledgerRow": {
+      "bug_id": "ART-ORCHESTRATOR-008",
+      "rel_path": "bugs/Orchestrator/ART-ORCHESTRATOR-008__orchestrator-test-blank-response-after-successful-execution/ART-ORCHESTRATOR-008.md",
+      "name": "Orchestrator Test Shows Blank Response After Successful Workflow Execution",
+      "severity": "HIGH",
+      "status": "OPEN",
+      "dev_update": "Pending.",
+      "retest": "Pending."
+    }
+  }
+}

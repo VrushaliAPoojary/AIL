@@ -1,0 +1,124 @@
+{
+  "Investigation": {
+    "id": "ART-AGENT-003",
+    "canonicalBugId": "ART-AGENT-003",
+    "slug": "agent-workflow-displays-default-robot-icon-instead-of-custom-icon",
+    "lifecyclePhase": "CONFIRMED",
+    "status": "OPEN",
+    "classification": "BUG",
+    "module": "AGENT",
+    "severity": "LOW",
+    "priority": "Not provided",
+    "assignee": null,
+    "originalInputId": "INP-ART-AGENT-003",
+    "evidenceIds": [
+      "EVD-ART-AGENT-003-01",
+      "EVD-ART-AGENT-003-02"
+    ],
+    "aiAnalysisIds": [],
+    "researchIds": [],
+    "ticketRevisionIds": [
+      "TCK-ART-AGENT-003-01"
+    ],
+    "activeTicketRevisionId": "TCK-ART-AGENT-003-01",
+    "developerUpdateIds": [],
+    "retestIds": [],
+    "auditEventIds": [
+      "AUD-ART-AGENT-003-01"
+    ],
+    "createdAt": "2026-09-24T00:00:00Z",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "OriginalInput": {
+    "id": "INP-ART-AGENT-003",
+    "investigationId": "ART-AGENT-003",
+    "testerDescription": "The Agent Builder workflow canvas fails to display a configured custom logo/icon on the Agent node, continuing to show the default ART robot icon instead.",
+    "reporter": "HUMAN_LEGACY_IMPORT",
+    "capturedAt": "2026-09-24T00:00:00Z",
+    "initialEvidenceIds": [
+      "EVD-ART-AGENT-003-01",
+      "EVD-ART-AGENT-003-02"
+    ],
+    "provenance": "HUMAN_SUPPLIED"
+  },
+  "EvidenceList": [
+    {
+      "id": "EVD-ART-AGENT-003-01",
+      "investigationId": "ART-AGENT-003",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-AGENT-003__custom-agent-icon-asset__2026-09-29__01.png",
+      "canonicalFilename": "ART-AGENT-003__custom-agent-icon-asset__2026-09-29__01.png",
+      "storagePath": "ART-Product-Validation/bugs/Agent Lab/ART-AGENT-003__agent-workflow-displays-default-robot-icon-instead-of-custom-icon/ART-AGENT-003__custom-agent-icon-asset__2026-09-29__01.png",
+      "sha256": "e2c182f4a043f9d254e0595c8543ad1ca61fec916d7d3fbb1d3433a0f72892e6",
+      "mimeType": "image/png",
+      "byteSize": 4449,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    },
+    {
+      "id": "EVD-ART-AGENT-003-02",
+      "investigationId": "ART-AGENT-003",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-AGENT-003__agent-workflow-canvas-default-robot-icon__2026-09-29__02.png",
+      "canonicalFilename": "ART-AGENT-003__agent-workflow-canvas-default-robot-icon__2026-09-29__02.png",
+      "storagePath": "ART-Product-Validation/bugs/Agent Lab/ART-AGENT-003__agent-workflow-displays-default-robot-icon-instead-of-custom-icon/ART-AGENT-003__agent-workflow-canvas-default-robot-icon__2026-09-29__02.png",
+      "sha256": "c061df6a5841d2dec1f32ffe3e0cf9e57ae39484dcdf91337a75ccf0219b2a88",
+      "mimeType": "image/png",
+      "byteSize": 272001,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    }
+  ],
+  "TicketArtifact": {
+    "ticketId": "TCK-ART-AGENT-003-01",
+    "investigationId": "ART-AGENT-003",
+    "revision": 1,
+    "title": "Agent Workflow Displays Default Robot Icon Instead of Configured Custom Icon",
+    "reproSteps": "Not provided",
+    "expectedResult": "After a custom Agent logo/icon is configured, the Agent Builder should display that configured icon consistently on the Agent node instead of the default robot icon.",
+    "actualResult": "In the Agent Lab workflow for \"attacking agent\", the central Agent node renders the default ART robot icon. A custom agent icon was configured and provided separately, but the custom graphic is not displayed on the Agent node in the workflow canvas.",
+    "businessImpact": "Not provided",
+    "recommendedSolution": "1. In the Agent node canvas component, bind the node avatar image source to the agent's custom icon URL/property if defined.\n2. Maintain the default ART robot icon as a fallback when no custom icon is configured or if the custom image fails to load.\n3. Ensure the workflow loader and canvas state management preserve the custom icon metadata when loading the agent workflow.\n4. Ensure appropriate CSS sizing (e.g. `object-fit: contain`) so custom icons scale neatly within the node avatar container.",
+    "module": "AGENT",
+    "environment": "Not provided",
+    "severity": "LOW",
+    "priority": "Not provided",
+    "tags": [
+      "agent"
+    ],
+    "discussion": [],
+    "provenance": "HUMAN_APPROVED",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "AuditEvent": {
+    "id": "AUD-ART-AGENT-003-01",
+    "investigationId": "ART-AGENT-003",
+    "timestamp": "2026-09-24T00:00:00Z",
+    "actor": "LEGACY_IMPORT_ADAPTER",
+    "eventType": "INVESTIGATION_CAPTURED",
+    "summary": "Imported legacy bug record ART-AGENT-003 from ART-Product-Validation/bugs",
+    "details": {
+      "sourceMarkdownPath": "ART-Product-Validation/bugs/Agent Lab/ART-AGENT-003__agent-workflow-displays-default-robot-icon-instead-of-custom-icon/ART-AGENT-003.md",
+      "rawContentSha256": "8efd527f3a720eb5c917457fc7a3028cc8ab22cf2db74b06a4e5b7dab1e215b1"
+    }
+  },
+  "sourceMetadata": {
+    "sourceMarkdownPath": "ART-Product-Validation/bugs/Agent Lab/ART-AGENT-003__agent-workflow-displays-default-robot-icon-instead-of-custom-icon/ART-AGENT-003.md",
+    "rawMarkdownContent": "# ART-AGENT-003 \u2014 Agent Workflow Displays Default Robot Icon Instead of Configured Custom Icon\n\n- **Canonical Bug ID:** ART-AGENT-003\n- **Title:** Agent Workflow Displays Default Robot Icon Instead of Configured Custom Icon\n- **Module:** AGENT\n- **Status:** OPEN\n- **Severity:** LOW\n- **Priority:** P3\n- **Assignee:** Unassigned\n- **Environment:** Testing (Enterprise Plan)\n- **Tags:** Agent-Lab, Agent-Builder, Agent-Node, Custom-Icon, UI-Branding, Workflow-Canvas\n\n## Problem\n\nA custom logo/icon was provided for the Agent, but the Agent workflow still displays the default ART robot icon instead of the configured custom logo.\nIn the attached evidence, the custom agent icon is provided separately, while the Agent Builder workflow for \"attacking agent\" continues to show the default robot icon on the Agent node.\n\n## Bug\n\nThe Agent Builder workflow canvas fails to display a configured custom logo/icon on the Agent node, continuing to show the default ART robot icon instead.\n\n## Observed Behavior\n\nIn the Agent Lab workflow for \"attacking agent\", the central Agent node renders the default ART robot icon. A custom agent icon was configured and provided separately, but the custom graphic is not displayed on the Agent node in the workflow canvas.\n\n## Reproduction\n\nNot provided.\n\n## Expected Behavior\n\nAfter a custom Agent logo/icon is configured, the Agent Builder should display that configured icon consistently on the Agent node instead of the default robot icon.\n\n## Business Impact\n\nCustom agent branding and visual differentiation are not reflected in the workflow canvas. Organizations and users cannot visually identify specialized agents (such as the \"attacking agent\" / AEGIS Attack Planner) by their custom logos, reducing clarity in multi-agent environments and degrading the white-label/branding experience.\n\n## User Experience\n\nUsers who upload or assign a custom icon to an agent observe no visual change on the workflow canvas. The agent node continues to display the generic ART robot graphic, creating uncertainty as to whether the custom logo configuration was successfully saved or applied.\n\n## Investigation Guidance\n\nInspect the Agent Lab frontend workflow canvas where Agent node components are rendered.\nTrace the following:\n1. Examine the Agent node view model and determine how the icon/avatar property is resolved from the agent configuration entity.\n2. Investigate whether the Agent node component checks for a custom icon asset reference or URL before rendering the fallback default robot icon.\n3. Verify if the agent configuration save and workflow load pipelines serialize, persist, and deserialize the custom icon URL or asset identifier.\n4. Check if the image element or SVG wrapper in the node component handles custom image URLs and supports expected image dimensions and formats.\n\n## Fix Requirement\n\nThe Agent node component on the Agent Builder workflow canvas must check for a configured custom icon or logo on the agent definition. If a custom icon is present, it must render that custom image in the agent node avatar area instead of displaying the default robot icon.\n\n## Recommended Solution\n\n1. In the Agent node canvas component, bind the node avatar image source to the agent's custom icon URL/property if defined.\n2. Maintain the default ART robot icon as a fallback when no custom icon is configured or if the custom image fails to load.\n3. Ensure the workflow loader and canvas state management preserve the custom icon metadata when loading the agent workflow.\n4. Ensure appropriate CSS sizing (e.g. `object-fit: contain`) so custom icons scale neatly within the node avatar container.\n\n## Minimum Working Fix\n\nUpdate the Agent node canvas component to display the configured custom icon URL when present on the agent model, falling back to the default robot icon only when the custom icon property is empty or undefined.\n\n## Acceptance Criteria\n\n- When a custom icon/logo is configured for an Agent, the Agent node in the Agent Builder workflow canvas displays that custom icon.\n- When no custom icon is configured, the Agent node continues to display the default ART robot icon.\n- If a custom icon fails to load, the Agent node gracefully falls back to the default robot icon.\n- The custom icon renders with correct aspect ratio and scaling within the Agent node header.\n\n## Environment\n\nTesting (Enterprise Plan)\n\n## Severity\n\nLOW\n\n## Priority\n\nP3\n\n## Tags\n\n- Agent-Lab\n- Agent-Builder\n- Agent-Node\n- Custom-Icon\n- UI-Branding\n- Workflow-Canvas\n\n## Assignee\n\nUnassigned\n\n## Evidence\n\n- [ART-AGENT-003__custom-agent-icon-asset__2026-09-29__01.png](ART-AGENT-003__custom-agent-icon-asset__2026-09-29__01.png)\n- [ART-AGENT-003__agent-workflow-canvas-default-robot-icon__2026-09-29__02.png](ART-AGENT-003__agent-workflow-canvas-default-robot-icon__2026-09-29__02.png)\n\n## Discussion\n\nNot provided\n\n## Developer Update\n\nPending.\n\n## Retest\n\nPending.\n\n## Azure DevOps\n\n- **Work Item ID:** 68852\n- **URL:** https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68852\n- **Parent Feature:** Agent Lab\n- **Parent Feature ID:** 68783\n- **Assigned To:** Unassigned\n- **Sync Status:** SYNCED\n",
+    "ledgerRow": {
+      "bug_id": "ART-AGENT-003",
+      "rel_path": "bugs/Agent Lab/ART-AGENT-003__agent-workflow-displays-default-robot-icon-instead-of-custom-icon/ART-AGENT-003.md",
+      "name": "Agent Workflow Displays Default Robot Icon Instead of Configured Custom Icon",
+      "severity": "LOW",
+      "status": "OPEN",
+      "dev_update": "Pending.",
+      "retest": "Pending."
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "res_01m1bwdj8amjbgekgz3xdypg0w",
+  "type": "FILE",
+  "fingerprint": "9c09c5719561b6fbd8c65bc251bbcb661f9962f1edd4e1b315ec005f9e9b86b5",
+  "payload": {
+    "type": "FILE",
+    "resource": {
+      "file": {
+        "name": "InvestigationBrief.md",
+        "mime_type": "text/markdown",
+        "size": 21043
+      }
+    }
+  },
+  "created_at": "2026-08-31T12:24:00.522Z",
+  "updated_at": "2026-08-31T12:24:00.522Z"
+}

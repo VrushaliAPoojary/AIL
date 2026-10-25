@@ -1,0 +1,160 @@
+{
+  "Investigation": {
+    "id": "ART-ORCHESTRATOR-002",
+    "canonicalBugId": "ART-ORCHESTRATOR-002",
+    "slug": "orchestrator-fails-to-update-agent-output-schema",
+    "lifecyclePhase": "CONFIRMED",
+    "status": "OPEN",
+    "classification": "BUG",
+    "module": "ORCHESTRATOR",
+    "severity": "HIGH",
+    "priority": "Not provided",
+    "assignee": null,
+    "originalInputId": "INP-ART-ORCHESTRATOR-002",
+    "evidenceIds": [
+      "EVD-ART-ORCHESTRATOR-002-01",
+      "EVD-ART-ORCHESTRATOR-002-02",
+      "EVD-ART-ORCHESTRATOR-002-03",
+      "EVD-ART-ORCHESTRATOR-002-04"
+    ],
+    "aiAnalysisIds": [],
+    "researchIds": [],
+    "ticketRevisionIds": [
+      "TCK-ART-ORCHESTRATOR-002-01"
+    ],
+    "activeTicketRevisionId": "TCK-ART-ORCHESTRATOR-002-01",
+    "developerUpdateIds": [],
+    "retestIds": [],
+    "auditEventIds": [
+      "AUD-ART-ORCHESTRATOR-002-01"
+    ],
+    "createdAt": "2026-09-24T00:00:00Z",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "OriginalInput": {
+    "id": "INP-ART-ORCHESTRATOR-002",
+    "investigationId": "ART-ORCHESTRATOR-002",
+    "testerDescription": "In the Ticket Resolution Agent, updated and saved output schema fields such as `media_status`, `media_summary`, `observed_facts`, and `reported_facts` fail to propagate to the Ticket Resolution Orchestration. Even after saving the agent, rebuilding/publishing the orchestration, and hard refreshing, downstream nodes such as the Condition Builder, Data Mapper, and Serverless Function mapping only display stale, legacy fields (`classification`, `inferences`, `missing_information`, `ready_for_ticket`, `ticket.*`, and stale `facts`). As a result, latest Agent output values cannot be mapped or used downstream.",
+    "reporter": "HUMAN_LEGACY_IMPORT",
+    "capturedAt": "2026-09-24T00:00:00Z",
+    "initialEvidenceIds": [
+      "EVD-ART-ORCHESTRATOR-002-01",
+      "EVD-ART-ORCHESTRATOR-002-02",
+      "EVD-ART-ORCHESTRATOR-002-03",
+      "EVD-ART-ORCHESTRATOR-002-04"
+    ],
+    "provenance": "HUMAN_SUPPLIED"
+  },
+  "EvidenceList": [
+    {
+      "id": "EVD-ART-ORCHESTRATOR-002-01",
+      "investigationId": "ART-ORCHESTRATOR-002",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-ORCHESTRATOR-004__orchestrator-data-mapper-stale-schema__2026-09-29__04.png",
+      "canonicalFilename": "ART-ORCHESTRATOR-004__orchestrator-data-mapper-stale-schema__2026-09-29__04.png",
+      "storagePath": "ART-Product-Validation/bugs/Orchestrator/ART-ORCHESTRATOR-002__orchestrator-fails-to-update-agent-output-schema/ART-ORCHESTRATOR-004__orchestrator-data-mapper-stale-schema__2026-09-29__04.png",
+      "sha256": "afee3e619c4266ab616bd2679c40962835df3ee8a4a413354c13c3da119ccd41",
+      "mimeType": "image/png",
+      "byteSize": 313133,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    },
+    {
+      "id": "EVD-ART-ORCHESTRATOR-002-02",
+      "investigationId": "ART-ORCHESTRATOR-002",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-ORCHESTRATOR-003__orchestrator-data-mapper-stale-schema__2026-09-29__03.png",
+      "canonicalFilename": "ART-ORCHESTRATOR-003__orchestrator-data-mapper-stale-schema__2026-09-29__03.png",
+      "storagePath": "ART-Product-Validation/bugs/Orchestrator/ART-ORCHESTRATOR-002__orchestrator-fails-to-update-agent-output-schema/ART-ORCHESTRATOR-003__orchestrator-data-mapper-stale-schema__2026-09-29__03.png",
+      "sha256": "2b089422710589826af1eb6ce59c12c4e5faea7ffa80ae6736ecbbb455b4f367",
+      "mimeType": "image/png",
+      "byteSize": 478286,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    },
+    {
+      "id": "EVD-ART-ORCHESTRATOR-002-03",
+      "investigationId": "ART-ORCHESTRATOR-002",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-ORCHESTRATOR-002__agent-output-schema-configured__2026-09-29__01.png",
+      "canonicalFilename": "ART-ORCHESTRATOR-002__agent-output-schema-configured__2026-09-29__01.png",
+      "storagePath": "ART-Product-Validation/bugs/Orchestrator/ART-ORCHESTRATOR-002__orchestrator-fails-to-update-agent-output-schema/ART-ORCHESTRATOR-002__agent-output-schema-configured__2026-09-29__01.png",
+      "sha256": "f12338e60d1185fdb230b1efdd13a83a3ea9997a8ee4c1a3ef41cdde26857576",
+      "mimeType": "image/png",
+      "byteSize": 114193,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    },
+    {
+      "id": "EVD-ART-ORCHESTRATOR-002-04",
+      "investigationId": "ART-ORCHESTRATOR-002",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-ORCHESTRATOR-002__orchestrator-data-mapper-stale-schema__2026-09-29__02.png",
+      "canonicalFilename": "ART-ORCHESTRATOR-002__orchestrator-data-mapper-stale-schema__2026-09-29__02.png",
+      "storagePath": "ART-Product-Validation/bugs/Orchestrator/ART-ORCHESTRATOR-002__orchestrator-fails-to-update-agent-output-schema/ART-ORCHESTRATOR-002__orchestrator-data-mapper-stale-schema__2026-09-29__02.png",
+      "sha256": "3b17d8cd09e1450819f3f55a95665d2d87d2c492d9f56afa7c59501a7a8e8c62",
+      "mimeType": "image/png",
+      "byteSize": 105201,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    }
+  ],
+  "TicketArtifact": {
+    "ticketId": "TCK-ART-ORCHESTRATOR-002-01",
+    "investigationId": "ART-ORCHESTRATOR-002",
+    "revision": 1,
+    "title": "Orchestrator Downstream Nodes Display Stale Agent Output Schema After Update",
+    "reproSteps": "Not provided",
+    "expectedResult": "The Orchestrator should use the Agent's latest saved/published output schema and expose all updated fields correctly to downstream nodes upon save, rebuild/publish, or schema refresh.",
+    "actualResult": "Downstream nodes in the Orchestration retain stale, cached schema definitions and do not expose newly configured fields (`media_status`, `media_summary`, `observed_facts`, `reported_facts`), continuing to display legacy fields (`classification`, `inferences`, `missing_information`, `ready_for_ticket`, `ticket.*`, and stale `facts`).",
+    "businessImpact": "Not provided",
+    "recommendedSolution": "Implement reactive schema synchronization and cache invalidation between Agent Lab and Workflow Orchestrator:\n\n1. Invalidate Orchestrator node schema caches whenever an underlying Agent definition or output schema is saved or published.\n2. Implement schema version tracking on Agent nodes so Orchestration workflows detect when an agent node schema is out of date.\n3. Ensure Build and Publish re-fetches canonical output schemas for all referenced workflow agent nodes before compiling downstream port definitions.\n4. Provide an explicit \"Refresh Node Schema\" or \"Sync Agent Schema\" action in the Orchestrator node configuration drawer.\n5. Update Data Mapper and Condition Builder source field resolvers to pull schema definitions directly from the active agent version rather than stale session state.",
+    "module": "ORCHESTRATOR",
+    "environment": "Not provided",
+    "severity": "HIGH",
+    "priority": "Not provided",
+    "tags": [
+      "orchestrator"
+    ],
+    "discussion": [],
+    "provenance": "HUMAN_APPROVED",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "AuditEvent": {
+    "id": "AUD-ART-ORCHESTRATOR-002-01",
+    "investigationId": "ART-ORCHESTRATOR-002",
+    "timestamp": "2026-09-24T00:00:00Z",
+    "actor": "LEGACY_IMPORT_ADAPTER",
+    "eventType": "INVESTIGATION_CAPTURED",
+    "summary": "Imported legacy bug record ART-ORCHESTRATOR-002 from ART-Product-Validation/bugs",
+    "details": {
+      "sourceMarkdownPath": "ART-Product-Validation/bugs/Orchestrator/ART-ORCHESTRATOR-002__orchestrator-fails-to-update-agent-output-schema/ART-ORCHESTRATOR-002.md",
+      "rawContentSha256": "01f0de0c3c87f42fe4cb34c0dc36a56178506cd737f1f3b20b827e81ec2b3f48"
+    }
+  },
+  "sourceMetadata": {
+    "sourceMarkdownPath": "ART-Product-Validation/bugs/Orchestrator/ART-ORCHESTRATOR-002__orchestrator-fails-to-update-agent-output-schema/ART-ORCHESTRATOR-002.md",
+    "rawMarkdownContent": "# ART-ORCHESTRATOR-002 \u2014 Orchestrator Downstream Nodes Display Stale Agent Output Schema After Update\n\n- **Canonical Bug ID:** ART-ORCHESTRATOR-002\n- **Title:** Orchestrator Downstream Nodes Display Stale Agent Output Schema After Update\n- **Module:** ORCHESTRATOR\n- **Status:** OPEN\n- **Severity:** HIGH\n- **Priority:** P1\n- **Assignee:** Unassigned\n- **Environment:** Testing / InvestigationLab\n- **Tags:** Orchestrator, Agent-Lab, Schema-Validation, Workflow-Routing, State-Consistency\n\n## Problem\n\nWhen an Agent's output message schema is updated and saved with new fields (such as `media_status`, `media_summary`, `observed_facts`, and `reported_facts`), downstream nodes in the Orchestration (including Condition Builder, Data Mapper, and Serverless Function mapping) do not reflect the new fields. Even after saving the agent, rebuilding/publishing the orchestration, and performing a hard refresh, the orchestrator continues displaying outdated schema fields (such as `classification`, `inferences`, `missing_information`, `ready_for_ticket`, `ticket.*`, and stale `facts`). This prevents updated agent output data from being mapped or utilized across workflow steps.\n\n## Bug\n\nIn the Ticket Resolution Agent, updated and saved output schema fields such as `media_status`, `media_summary`, `observed_facts`, and `reported_facts` fail to propagate to the Ticket Resolution Orchestration. Even after saving the agent, rebuilding/publishing the orchestration, and hard refreshing, downstream nodes such as the Condition Builder, Data Mapper, and Serverless Function mapping only display stale, legacy fields (`classification`, `inferences`, `missing_information`, `ready_for_ticket`, `ticket.*`, and stale `facts`). As a result, latest Agent output values cannot be mapped or used downstream.\n\n## Expected\n\nThe Orchestrator should use the Agent's latest saved/published output schema and expose all updated fields correctly to downstream nodes upon save, rebuild/publish, or schema refresh.\n\n## Expected Result\n\nThe Orchestrator should use the Agent's latest saved/published output schema and expose all updated fields correctly to downstream nodes upon save, rebuild/publish, or schema refresh.\n\n## Actual\n\nDownstream nodes in the Orchestration retain stale, cached schema definitions and do not expose newly configured fields (`media_status`, `media_summary`, `observed_facts`, `reported_facts`), continuing to display legacy fields (`classification`, `inferences`, `missing_information`, `ready_for_ticket`, `ticket.*`, and stale `facts`).\n\n## Actual Result\n\nDownstream nodes in the Orchestration retain stale, cached schema definitions and do not expose newly configured fields (`media_status`, `media_summary`, `observed_facts`, `reported_facts`), continuing to display legacy fields (`classification`, `inferences`, `missing_information`, `ready_for_ticket`, `ticket.*`, and stale `facts`).\n\n## Business Impact\n\nWorkflows relying on updated agent capabilities cannot access new output data, preventing automated ticket processing, multi-modal media status handling, and fact-based routing. This blocks feature rollout and breaks end-to-end orchestration pipelines.\n\n## User Experience\n\nUsers configure new output fields in Agent Lab expecting them to be available in the workflow Orchestration. However, dropdowns in Data Mapper and Condition Builder omit the new fields and display obsolete structures, causing confusion and blocking workflow completion despite rebuilding and refreshing.\n\n## Recommended Solution\n\nImplement reactive schema synchronization and cache invalidation between Agent Lab and Workflow Orchestrator:\n\n1. Invalidate Orchestrator node schema caches whenever an underlying Agent definition or output schema is saved or published.\n2. Implement schema version tracking on Agent nodes so Orchestration workflows detect when an agent node schema is out of date.\n3. Ensure Build and Publish re-fetches canonical output schemas for all referenced workflow agent nodes before compiling downstream port definitions.\n4. Provide an explicit \"Refresh Node Schema\" or \"Sync Agent Schema\" action in the Orchestrator node configuration drawer.\n5. Update Data Mapper and Condition Builder source field resolvers to pull schema definitions directly from the active agent version rather than stale session state.\n\n## Production-Grade Fix Proposal\n\nImplement reactive schema synchronization and cache invalidation between Agent Lab and Workflow Orchestrator:\n\n### Required implementation\n\n1. Invalidate Orchestrator node schema caches whenever an underlying Agent definition or output schema is saved or published.\n2. Implement schema version tracking on Agent nodes so Orchestration workflows detect when an agent node schema is out of date.\n3. Ensure Build and Publish re-fetches canonical output schemas for all referenced workflow agent nodes before compiling downstream port definitions.\n4. Provide an explicit \"Refresh Node Schema\" or \"Sync Agent Schema\" action in the Orchestrator node configuration drawer.\n5. Update Data Mapper and Condition Builder source field resolvers to pull schema definitions directly from the active agent version rather than stale session state.\n\n### Acceptance criteria\n\n- Saving changes to an Agent's output schema propagates updated fields to the Orchestration workflow.\n- Newly added agent output fields appear immediately in downstream Data Mapper source field pickers.\n- Newly added agent output fields are selectable in Condition Builder routing rules.\n- Rebuilding and publishing the Orchestration persists and enforces the updated schema contract.\n- Deprecated or removed schema fields are flagged or removed from downstream mappings.\n\n## Minimum Working Fix\n\nInvalidate the workflow node schema cache and re-fetch the latest Agent output schema during workflow load and rebuild/publish so downstream node field pickers receive updated schema definitions.\n\n## Acceptance Criteria\n\n- Saving changes to an Agent's output schema propagates updated fields to the Orchestration workflow.\n- Newly added agent output fields appear immediately in downstream Data Mapper source field pickers.\n- Newly added agent output fields are selectable in Condition Builder routing rules.\n- Rebuilding and publishing the Orchestration persists and enforces the updated schema contract.\n- Deprecated or removed schema fields are flagged or removed from downstream mappings.\n\n## Evidence\n\n- [ART-ORCHESTRATOR-002__agent-output-schema-configured__2026-09-29__01.png](ART-ORCHESTRATOR-002__agent-output-schema-configured__2026-09-29__01.png)\n- [ART-ORCHESTRATOR-002__orchestrator-data-mapper-stale-schema__2026-09-29__02.png](ART-ORCHESTRATOR-002__orchestrator-data-mapper-stale-schema__2026-09-29__02.png)\n\n## Discussion\n\nNot provided\n\n## Developer Update\n\nPending.\n\n## Retest\n\nPending.\n\n## Azure DevOps\n\n- **Work Item ID:** 68840\n- **URL:** https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68840\n- **Parent Feature:** Orchestrator\n- **Parent Feature ID:** 68806\n- **Assigned To:** Unassigned\n- **Sync Status:** SYNCED\n",
+    "ledgerRow": {
+      "bug_id": "ART-ORCHESTRATOR-002",
+      "rel_path": "bugs/Orchestrator/ART-ORCHESTRATOR-002__orchestrator-fails-to-update-agent-output-schema/ART-ORCHESTRATOR-002.md",
+      "name": "Orchestrator Downstream Nodes Display Stale Agent Output Schema After Update",
+      "severity": "HIGH",
+      "status": "OPEN",
+      "dev_update": "",
+      "retest": ""
+    }
+  }
+}

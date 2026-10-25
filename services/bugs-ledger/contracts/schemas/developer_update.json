@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://art.product.resolution/schemas/developer_update.json",
+  "title": "DeveloperUpdate",
+  "description": "Developer work submission recording fix details and branch info",
+  "type": "object",
+  "required": [
+    "id",
+    "investigationId",
+    "developerUsername",
+    "summaryOfChanges",
+    "commitHashOrPR",
+    "resolvedInVersionOrBranch",
+    "testInstructionsForQA",
+    "submittedAt",
+    "provenance"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "investigationId": {
+      "type": "string"
+    },
+    "developerUsername": {
+      "type": "string"
+    },
+    "summaryOfChanges": {
+      "type": "string"
+    },
+    "commitHashOrPR": {
+      "type": ["string", "null"]
+    },
+    "resolvedInVersionOrBranch": {
+      "type": "string"
+    },
+    "testInstructionsForQA": {
+      "type": "string"
+    },
+    "submittedAt": {
+      "$ref": "common.json#/definitions/IsoTimestamp"
+    },
+    "provenance": {
+      "$ref": "common.json#/definitions/ProvenanceType",
+      "const": "DEVELOPER_UPDATE"
+    }
+  },
+  "additionalProperties": false
+}

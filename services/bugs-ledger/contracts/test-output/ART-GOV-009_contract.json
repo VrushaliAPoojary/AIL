@@ -1,0 +1,124 @@
+{
+  "Investigation": {
+    "id": "ART-GOV-009",
+    "canonicalBugId": "ART-GOV-009",
+    "slug": "hil-runtime-fails-after-valid-human-review-configuration",
+    "lifecyclePhase": "CONFIRMED",
+    "status": "OPEN",
+    "classification": "BUG",
+    "module": "GOV",
+    "severity": "HIGH",
+    "priority": "Not provided",
+    "assignee": null,
+    "originalInputId": "INP-ART-GOV-009",
+    "evidenceIds": [
+      "EVD-ART-GOV-009-01",
+      "EVD-ART-GOV-009-02"
+    ],
+    "aiAnalysisIds": [],
+    "researchIds": [],
+    "ticketRevisionIds": [
+      "TCK-ART-GOV-009-01"
+    ],
+    "activeTicketRevisionId": "TCK-ART-GOV-009-01",
+    "developerUpdateIds": [],
+    "retestIds": [],
+    "auditEventIds": [
+      "AUD-ART-GOV-009-01"
+    ],
+    "createdAt": "2026-09-24T00:00:00Z",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "OriginalInput": {
+    "id": "INP-ART-GOV-009",
+    "investigationId": "ART-GOV-009",
+    "testerDescription": "",
+    "reporter": "HUMAN_LEGACY_IMPORT",
+    "capturedAt": "2026-09-24T00:00:00Z",
+    "initialEvidenceIds": [
+      "EVD-ART-GOV-009-01",
+      "EVD-ART-GOV-009-02"
+    ],
+    "provenance": "HUMAN_SUPPLIED"
+  },
+  "EvidenceList": [
+    {
+      "id": "EVD-ART-GOV-009-01",
+      "investigationId": "ART-GOV-009",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-GOV-009__agent-result-agent-runtime-error-hil-failure__2026-10-05__01.png",
+      "canonicalFilename": "ART-GOV-009__agent-result-agent-runtime-error-hil-failure__2026-10-05__01.png",
+      "storagePath": "ART-Product-Validation/bugs/Governance/ART-GOV-009__hil-runtime-fails-after-valid-human-review-configuration/ART-GOV-009__agent-result-agent-runtime-error-hil-failure__2026-10-05__01.png",
+      "sha256": "6004ba8d4ed95e1d9e42683cb7b9c7669cc7b5042cb2267861a580004f83feb5",
+      "mimeType": "image/png",
+      "byteSize": 246940,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    },
+    {
+      "id": "EVD-ART-GOV-009-02",
+      "investigationId": "ART-GOV-009",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-GOV-009__observability-structured-output-human-review-required__2026-10-05__02.png",
+      "canonicalFilename": "ART-GOV-009__observability-structured-output-human-review-required__2026-10-05__02.png",
+      "storagePath": "ART-Product-Validation/bugs/Governance/ART-GOV-009__hil-runtime-fails-after-valid-human-review-configuration/ART-GOV-009__observability-structured-output-human-review-required__2026-10-05__02.png",
+      "sha256": "6fe6f9ebbf5d72a71a775fb58c03912c2bd8335fb149c63d18719e9e432bb7da",
+      "mimeType": "image/png",
+      "byteSize": 251506,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    }
+  ],
+  "TicketArtifact": {
+    "ticketId": "TCK-ART-GOV-009-01",
+    "investigationId": "ART-GOV-009",
+    "revision": 1,
+    "title": "HIL Runtime Fails After Valid Human Review Configuration",
+    "reproSteps": "Not provided",
+    "expectedResult": "Not provided",
+    "actualResult": "Not provided",
+    "businessImpact": "Not provided",
+    "recommendedSolution": "Not provided",
+    "module": "GOV",
+    "environment": "Not provided",
+    "severity": "HIGH",
+    "priority": "Not provided",
+    "tags": [
+      "gov"
+    ],
+    "discussion": [],
+    "provenance": "HUMAN_APPROVED",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "AuditEvent": {
+    "id": "AUD-ART-GOV-009-01",
+    "investigationId": "ART-GOV-009",
+    "timestamp": "2026-09-24T00:00:00Z",
+    "actor": "LEGACY_IMPORT_ADAPTER",
+    "eventType": "INVESTIGATION_CAPTURED",
+    "summary": "Imported legacy bug record ART-GOV-009 from ART-Product-Validation/bugs",
+    "details": {
+      "sourceMarkdownPath": "ART-Product-Validation/bugs/Governance/ART-GOV-009__hil-runtime-fails-after-valid-human-review-configuration/ART-GOV-009.md",
+      "rawContentSha256": "9edfe918aa1873f1c3d162447f2b738970434aaf8bd394c562b983dc8bc420d0"
+    }
+  },
+  "sourceMetadata": {
+    "sourceMarkdownPath": "ART-Product-Validation/bugs/Governance/ART-GOV-009__hil-runtime-fails-after-valid-human-review-configuration/ART-GOV-009.md",
+    "rawMarkdownContent": "# ART-GOV-009 \u2014 HIL Runtime Fails After Valid Human Review Configuration\n\n- **Canonical Bug ID:** ART-GOV-009\n- **Module:** GOV\n- **Severity:** HIGH\n- **Priority:** P1\n- **Environment:** Testing (Procurement Exception Agent / Governance / Human Review / Professional Plan / InvestigationLab)\n- **Assignee:** Unassigned\n- **Tags:** Governance, Human-Review, Human-in-the-Loop, HIL-Runtime, HIL-Execution, Group-Approval, Agent-Runtime-Error, Execution-Suspension, Observability, P1\n- **Status:** OPEN\n- **Evidence Count:** 2\n- **Azure DevOps:** SYNCED ([#68952](https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68952))\n\n---\n\n## 1. Problem\nAfter configuring an active Human Review approval flow with a valid **GROUP** participant (and ART successfully accepts the group, with the Human Review card reflecting `1 group`), submitting a high-risk procurement request that triggers human review fails at runtime with:\n\n```json\n{\n  \"type\": \"agent_error_response\",\n  \"status\": \"error\",\n  \"code\": \"AGENT_RUNTIME_ERROR\",\n  \"message\": \"The agent could not complete this request.\"\n}\n```\n\nBecause this failure occurs consistently across both `USER` (ART-GOV-007) and `GROUP` approver configurations, the root defect is within the core Human-in-the-Loop (HIL) runtime execution pipeline itself: ART fails to resolve the participant/group, create the approval request, dispatch notifications, or suspend execution, and then masks the internal failure by collapsing it into a generic `AGENT_RUNTIME_ERROR`.\n\n---\n\n## 2. Observed Behavior\n- **Agent Model Evaluates Correctly:** The LLM produces a complete structured output with `human_review_required: true`, `risk_assessment: \"High risk...\"`, `exception_type: \"NON_PREFERRED_SUPPLIER\"`, and `recommended_next_action: \"Escalate for human review...\"` (Observability trace `9833e3e1`).\n- **Valid GROUP Configuration Accepted:** In Governance \u2192 Human Review, `High-Risk Procurement Exception` is configured with Approver type `GROUP`, showing `1 group` on the summary card.\n- **Generic Runtime Error:** In Agent Test (thread `382d3da9...`), execution halts and the Agent result preview modal reveals:\n  - `type`: `agent_error_response`\n  - `status`: `error`\n  - `code`: `AGENT_RUNTIME_ERROR`\n  - `message`: `The agent could not complete this request.`\n- **No Review Created or Suspended:** No pending approval request is created, no notification is sent, and execution does not pause into an interactive approval state.\n- **Zero Boundary Telemetry:** Observability traces lack telemetry for review resolution, participant lookup, or approval creation, giving no insight into which stage failed.\n\n---\n\n## 3. Reproduction\n1. Open an Agent with Governance enabled (e.g. `Procurement Exception Agent`).\n2. Navigate to **Governance \u2192 Human Review**.\n3. Create or edit an approval review (e.g. `High-Risk Procurement Exception`):\n   - Set Approver type to `GROUP`.\n   - Select an active group (e.g. `ART group test user`).\n   - Set Approval mode to `ANY ONE`.\n   - Save and ensure the card reflects `1 group`.\n4. Open **Agent Test** in Draft mode.\n5. Submit a high-risk prompt (e.g. purchase request for \u20b918,75,000 for 25 laptops from Nova Systems, non-preferred supplier, bypass review).\n6. Observe that execution fails with red banner `The agent could not complete this request.`\n7. Click **Preview** on the error message and observe modal showing `code: AGENT_RUNTIME_ERROR`.\n\n---\n\n## 4. Expected Behavior\n- For an applicable Human Review, ART must:\n  1. Evaluate governance rules against the Agent's structured output.\n  2. Resolve the configured Human Review policy.\n  3. Resolve the GROUP participant into active member identities.\n  4. Create and persist a pending approval request.\n  5. Dispatch notifications to eligible participants.\n  6. Suspend governed execution and expose the pending review state in Agent Test.\n- If any stage fails, ART must emit a typed diagnostic (e.g. `HIL_PARTICIPANT_RESOLUTION_FAILED`, `HIL_GROUP_EMPTY`, `HIL_REVIEW_CREATION_FAILED`) identifying the failed stage and root reason, rather than collapsing into `AGENT_RUNTIME_ERROR`.\n\n---\n\n## 5. Business Impact\n- **HIL Functional Testing Blocked:** QA and developers cannot validate Human-in-the-Loop workflows for either individual users or approval groups.\n- **Enterprise Governance Broken:** Critical financial, procurement, and security guardrails requiring human authorization fail silently or abort runs, preventing production rollout.\n- **Diagnostic Invisibility:** Generic error messages obscure whether the failure is an identity lookup issue, database persistence error, notification failure, or policy rule mismatch.\n\n---\n\n## 6. User Experience\n- The user configures an approval group, confirms it displays \"1 group\" in Governance, and runs a test scenario, only to receive a cryptic `AGENT_RUNTIME_ERROR: The agent could not complete this request.`\n- The preview modal provides zero actionable details, leaving the builder unable to determine how to fix the workflow.\n\n---\n\n## 7. Investigation Guidance\nTrace the complete Human-in-the-Loop runtime invocation path:\n- **Trace Path:** `Agent result \u2192 governance evaluation \u2192 applicable policy/review resolution \u2192 Human Review config \u2192 GROUP participant resolution \u2192 group members \u2192 approval request persistence \u2192 notification dispatch \u2192 execution suspension \u2192 response`.\n- **Group Resolution:** Check how the group ID/name (`ART group test user`) is resolved to member user IDs. Verify whether group membership resolution fails or returns an empty list.\n- **Approval Request Creation:** Check the database transaction or service call that persists the approval request entity. Verify if a foreign key constraint or schema mismatch triggers an unhandled exception.\n- **Execution State Machine:** Check how the execution engine suspends the agent run when awaiting human input. Verify whether the orchestrator fails to handle the suspended state and throws `AGENT_RUNTIME_ERROR`.\n- **Boundary Logging:** Add structured logging across all HIL boundaries:\n  - `review_config_id`\n  - `review_type`\n  - `participant_type`\n  - `participant/group ID`\n  - `resolved_participant_count`\n  - `approval_mode`\n  - `review_request_id`\n  - `notification result`\n  - `execution state`\n  - actual failure code and exception message.\n\n---\n\n## 8. Fix Requirement\nNever convert an internal Human-in-the-Loop execution failure into only `AGENT_RUNTIME_ERROR`. The runtime must either successfully create the pending approval request and pause execution or return a specific diagnostic (e.g. `HIL_PARTICIPANT_RESOLUTION_FAILED`, `HIL_REVIEW_CREATION_FAILED`, `HIL_POLICY_NOT_MATCHED`) indicating the exact failed stage.\n\n---\n\n## 9. Recommended Solution\n1. **End-to-End HIL State Machine:** Ensure the agent execution engine supports execution suspension when a governed action or human review is triggered, transitioning the run to `WAITING_FOR_APPROVAL` instead of throwing an error.\n2. **Robust Group Resolution:** Ensure the group participant resolver retrieves active member user accounts and validates that the member list is non-empty before initiating the review.\n3. **Structured Governance Error Responses:** When human review initialization fails, return typed error payloads:\n   ```json\n   {\n     \"type\": \"governance_error_response\",\n     \"status\": \"error\",\n     \"code\": \"HIL_PARTICIPANT_RESOLUTION_FAILED\",\n     \"stage\": \"participant_resolution\",\n     \"details\": \"Could not resolve active members for group 'ART group test user'\"\n   }\n   ```\n4. **Interactive Test UI:** When execution is paused for review, display an interactive approval widget in Agent Test showing the pending approval, assigned reviewers, and action buttons (Approve / Reject).\n\n---\n\n## 10. Minimum Working Fix\nCatch internal exceptions within the Human Review execution pipeline specifically and return an informative diagnostic identifying the failed stage (e.g. `HIL_PARTICIPANT_RESOLUTION_FAILED` or `HIL_REVIEW_CREATION_FAILED`) instead of letting the exception bubble up to the global catch block that emits generic `AGENT_RUNTIME_ERROR`.\n\n---\n\n## 11. Acceptance Criteria\n- [ ] High-risk requests triggering Human Review do not produce generic `AGENT_RUNTIME_ERROR`.\n- [ ] Active GROUP review configurations successfully resolve group members and create a pending approval request.\n- [ ] Agent Test displays the pending review state and execution suspension.\n- [ ] Any failure in the HIL pipeline returns a structured diagnostic with the specific failure code and failed stage.\n- [ ] Observability traces record `review_config_id`, `participant_type`, `resolved_participant_count`, and `execution_state`.\n\n---\n\n## 12. Environment\n- **Platform:** ART Agent Builder / Governance / Human Review\n- **Module:** Governance \u2014 Human Review / Human-in-the-Loop Runtime\n- **Workflow:** Procurement Exception Agent (`6ac3213fdfaa4ac34990c7e4`)\n- **Review Name:** High-Risk Procurement Exception (Approver type: GROUP)\n- **Environment:** Testing (InvestigationLab, Professional Plan)\n\n---\n\n## 13. Severity\n**HIGH** \u2014 Breaks core Human-in-the-Loop governance execution across both USER and GROUP configurations, blocking functional validation of approvals.\n\n---\n\n## 14. Priority\n**P1** \u2014 Blocker for enterprise governance and human approval workflows.\n\n---\n\n## 15. Tags\n- `Governance`\n- `Human-Review`\n- `Human-in-the-Loop`\n- `HIL-Runtime`\n- `HIL-Execution`\n- `Group-Approval`\n- `Agent-Runtime-Error`\n- `Execution-Suspension`\n- `Observability`\n- `P1`\n\n---\n\n## 16. Assignee\n**Unassigned**\n\n---\n\n## 17. Evidence\n\n| File | Type | Description | SHA256 Hash | Byte Size |\n| :--- | :--- | :--- | :--- | :--- |\n| [ART-GOV-009__agent-result-agent-runtime-error-hil-failure__2026-10-05__01.png](file:///home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-GOV-009__hil-runtime-fails-after-valid-human-review-configuration/ART-GOV-009__agent-result-agent-runtime-error-hil-failure__2026-10-05__01.png) | Screenshot | Agent Test in Procurement Exception Agent showing the execution failure modal with code AGENT_RUNTIME_ERROR ('The agent could not complete this request.') after evaluating a high-risk procurement prompt with an active GROUP Human Review configuration. | `6004ba8d4ed95e1d9e42683cb7b9c7669cc7b5042cb2267861a580004f83feb5` | 246940 bytes |\n| [ART-GOV-009__observability-structured-output-human-review-required__2026-10-05__02.png](file:///home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-GOV-009__hil-runtime-fails-after-valid-human-review-configuration/ART-GOV-009__observability-structured-output-human-review-required__2026-10-05__02.png) | Screenshot | Observability Conversation Explorer (thread 9833e3e1) showing the Agent successfully generated a complete structured output with human_review_required: true, risk_assessment: 'High risk...', and recommended_next_action: 'Escalate for human review...' for a \u20b918,75,000 purchase request. | `6fe6f9ebbf5d72a71a775fb58c03912c2bd8335fb149c63d18719e9e432bb7da` | 251506 bytes |\n\n### Evidence Visual Gallery\n\n````carousel\n![ART-GOV-009__agent-result-agent-runtime-error-hil-failure__2026-10-05__01.png](/home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-GOV-009__hil-runtime-fails-after-valid-human-review-configuration/ART-GOV-009__agent-result-agent-runtime-error-hil-failure__2026-10-05__01.png)\n*Agent Test in Procurement Exception Agent showing the execution failure modal with code AGENT_RUNTIME_ERROR ('The agent could not complete this request.') after evaluating a high-risk procurement prompt with an active GROUP Human Review configuration.*\n<!-- slide -->\n![ART-GOV-009__observability-structured-output-human-review-required__2026-10-05__02.png](/home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-GOV-009__hil-runtime-fails-after-valid-human-review-configuration/ART-GOV-009__observability-structured-output-human-review-required__2026-10-05__02.png)\n*Observability Conversation Explorer (thread 9833e3e1) showing the Agent successfully generated a complete structured output with human_review_required: true, risk_assessment: 'High risk...', and recommended_next_action: 'Escalate for human review...' for a \u20b918,75,000 purchase request.*\n````\n\n---\n\n## 18. Discussion\n- **Reporter Analysis:** Changing the approver from USER to GROUP and seeing ART accept the group (card displays `1 group`) eliminates individual-user configuration as the sole failure point. The issue is in the HIL execution engine itself, which fails to create/route the review and collapses into `AGENT_RUNTIME_ERROR`.\n- **QA Impact:** HIL runtime is marked as BLOCKED for deeper functional testing until this core execution failure is diagnosed and addressed.\n- **Intake Validation:** Evidence screenshots preserved with cryptographic SHA256 checksums and verified byte sizes. Zero Azure DevOps mutations performed during intake.\n\n---\n\n## 19. Azure DevOps\n- **Work Item ID:** 68952\n- **URL:** [https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68952](https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68952)\n- **Parent Feature:** Governance\n- **Parent Feature ID:** 68812\n- **Assigned To:** Unassigned\n- **Sync Status:** SYNCED\n- **Note:** Synchronized via Harness 02 V1 to Azure DevOps.\n",
+    "ledgerRow": {
+      "bug_id": "ART-GOV-009",
+      "rel_path": "bugs/Governance/ART-GOV-009__hil-runtime-fails-after-valid-human-review-configuration/ART-GOV-009.md",
+      "name": "HIL Runtime Fails After Valid Human Review Configuration",
+      "severity": "HIGH",
+      "status": "OPEN",
+      "dev_update": "Pending.",
+      "retest": "Pending."
+    }
+  }
+}

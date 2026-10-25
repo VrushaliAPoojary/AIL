@@ -1,0 +1,124 @@
+{
+  "Investigation": {
+    "id": "ART-AGENT-006",
+    "canonicalBugId": "ART-AGENT-006",
+    "slug": "agent-output-schema-allowed-values-not-strictly-enforced",
+    "lifecyclePhase": "CONFIRMED",
+    "status": "OPEN",
+    "classification": "BUG",
+    "module": "AGENT",
+    "severity": "HIGH",
+    "priority": "Not provided",
+    "assignee": null,
+    "originalInputId": "INP-ART-AGENT-006",
+    "evidenceIds": [
+      "EVD-ART-AGENT-006-01",
+      "EVD-ART-AGENT-006-02"
+    ],
+    "aiAnalysisIds": [],
+    "researchIds": [],
+    "ticketRevisionIds": [
+      "TCK-ART-AGENT-006-01"
+    ],
+    "activeTicketRevisionId": "TCK-ART-AGENT-006-01",
+    "developerUpdateIds": [],
+    "retestIds": [],
+    "auditEventIds": [
+      "AUD-ART-AGENT-006-01"
+    ],
+    "createdAt": "2026-09-24T00:00:00Z",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "OriginalInput": {
+    "id": "INP-ART-AGENT-006",
+    "investigationId": "ART-AGENT-006",
+    "testerDescription": "",
+    "reporter": "HUMAN_LEGACY_IMPORT",
+    "capturedAt": "2026-09-24T00:00:00Z",
+    "initialEvidenceIds": [
+      "EVD-ART-AGENT-006-01",
+      "EVD-ART-AGENT-006-02"
+    ],
+    "provenance": "HUMAN_SUPPLIED"
+  },
+  "EvidenceList": [
+    {
+      "id": "EVD-ART-AGENT-006-01",
+      "investigationId": "ART-AGENT-006",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-AGENT-006__type-validation-error-on-incompatible-types__2026-09-30__02.png",
+      "canonicalFilename": "ART-AGENT-006__type-validation-error-on-incompatible-types__2026-09-30__02.png",
+      "storagePath": "ART-Product-Validation/bugs/Agent Lab/ART-AGENT-006__agent-output-schema-allowed-values-not-strictly-enforced/ART-AGENT-006__type-validation-error-on-incompatible-types__2026-09-30__02.png",
+      "sha256": "3f7e42be16934854b7b48266f700d65d77b6e1986e20c601e39b2f9a529721a5",
+      "mimeType": "image/png",
+      "byteSize": 236648,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    },
+    {
+      "id": "EVD-ART-AGENT-006-02",
+      "investigationId": "ART-AGENT-006",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-AGENT-006__agent-result-accepts-unallowed-text-values__2026-09-30__01.png",
+      "canonicalFilename": "ART-AGENT-006__agent-result-accepts-unallowed-text-values__2026-09-30__01.png",
+      "storagePath": "ART-Product-Validation/bugs/Agent Lab/ART-AGENT-006__agent-output-schema-allowed-values-not-strictly-enforced/ART-AGENT-006__agent-result-accepts-unallowed-text-values__2026-09-30__01.png",
+      "sha256": "d5df3bd41e22398151b33733e84eb909637f89a61dc9c431f5bd70b0bd6263df",
+      "mimeType": "image/png",
+      "byteSize": 189743,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    }
+  ],
+  "TicketArtifact": {
+    "ticketId": "TCK-ART-AGENT-006-01",
+    "investigationId": "ART-AGENT-006",
+    "revision": 1,
+    "title": "Agent Output Schema Allowed Values Are Not Strictly Enforced for Text Fields",
+    "reproSteps": "Not provided",
+    "expectedResult": "Not provided",
+    "actualResult": "Not provided",
+    "businessImpact": "Not provided",
+    "recommendedSolution": "Not provided",
+    "module": "AGENT",
+    "environment": "Not provided",
+    "severity": "HIGH",
+    "priority": "Not provided",
+    "tags": [
+      "agent"
+    ],
+    "discussion": [],
+    "provenance": "HUMAN_APPROVED",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "AuditEvent": {
+    "id": "AUD-ART-AGENT-006-01",
+    "investigationId": "ART-AGENT-006",
+    "timestamp": "2026-09-24T00:00:00Z",
+    "actor": "LEGACY_IMPORT_ADAPTER",
+    "eventType": "INVESTIGATION_CAPTURED",
+    "summary": "Imported legacy bug record ART-AGENT-006 from ART-Product-Validation/bugs",
+    "details": {
+      "sourceMarkdownPath": "ART-Product-Validation/bugs/Agent Lab/ART-AGENT-006__agent-output-schema-allowed-values-not-strictly-enforced/ART-AGENT-006.md",
+      "rawContentSha256": "abcdf6ad3f1faffee733c2294cd591b07708d066ac252faa5d2b9535ba0fa7ea"
+    }
+  },
+  "sourceMetadata": {
+    "sourceMarkdownPath": "ART-Product-Validation/bugs/Agent Lab/ART-AGENT-006__agent-output-schema-allowed-values-not-strictly-enforced/ART-AGENT-006.md",
+    "rawMarkdownContent": "# ART-AGENT-006 \u2014 Agent Output Schema Allowed Values Are Not Strictly Enforced for Text Fields\n\n- **Canonical Bug ID:** ART-AGENT-006\n- **Module:** AGENT\n- **Severity:** HIGH\n- **Priority:** P1\n- **Environment:** Testing (Daily Work Coordinator V2)\n- **Assignee:** Unassigned\n- **Tags:** Agent-Lab, Output-Schema, Output-Validation, Enum-Validation, Allowed-Values, Structured-Output\n- **Status:** OPEN\n- **Evidence Count:** 2\n- **Azure DevOps:** SYNCED ([#68876](https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68876))\n\n---\n\n## 1. Problem\nIn Daily Work Coordinator V2 (Agent Lab), the Agent Output Schema is configured with Text fields and restricted allowed values for structured properties such as `intent`, `status`, and `priority`. \n\nDuring testing, when the Agent is prompted to create or update structured items with values outside the configured allowed-value contract (e.g. setting `status` to `STARTED` and `priority` to `URGENT`), the validation layer does not enforce the restricted allowed-value contract for Text fields. The Agent execution completes successfully and outputs the invalid text values as a valid structured result (`custom_6abb997e92bd477cd1a327b8`).\n\nIn contrast, primitive type validation is actively enforced: when incompatible types (such as numeric priority or boolean status) are provided, ART detects the type mismatch and halts execution with an error (`code: invalid_task_fields`, `message: Task priority and status values are invalid.`). This demonstrates that while type checking operates, the configured allowed-value restrictions for Text fields are bypassed, allowing schema-violating strings to be treated as successful results and propagated downstream.\n\n---\n\n## 2. Observed Behavior\n- **Allowed-Value Violation (Passed / Unenforced):**\n  When prompted with:\n  > \"Add a task called Prepare ART demo. Set the status to STARTED and priority to URGENT.\"\n  \n  The configured schema does not allow `STARTED` for status or `URGENT` for priority. However, the Agent run completes successfully and emits the following structured payload:\n  - `intent`: `task_tracking`\n  - `tasks`:\n    - `task_name`: `Prepare ART demo`\n    - `status`: `started`\n    - `priority`: `urgent`\n    - `deadline`: `null`\n    - `waiting_on`: `null`\n    - `blocker`: `null`\n    - `dependency`: `null`\n  - `response`: `Tracked task 'Prepare ART demo' with urgent priority and started status.`\n  - `type`: `custom_6abb997e92bd477cd1a327b8`\n  - `thread_id`: `ab5807dc-1359-4c8a-a3e1-c053df3bf84b`\n  - `ref_id`: `6abcc3293907d66296b6d9ed_agent_com_6abb98f892bd477cd1a327b3_12`\n\n- **Type Incompatibility (Caught / Enforced):**\n  When incompatible value types are provided for the same fields (such as numeric priority and boolean status), ART halts execution and returns an error response:\n  - `type`: `agent_error_response`\n  - `status`: `error`\n  - `code`: `invalid_task_fields`\n  - `details`:\n    - `reason`: `priority must be a valid task priority and status must be a valid task status; numeric and boolean values are not supported.`\n  - `message`: `Task priority and status values are invalid.`\n\n- **Summary of Discrepancy:**\n  The runtime validation checks whether values are strings, but fails to check whether string values belong to the configured allowed-value set defined in the schema contract.\n\n---\n\n## 3. Reproduction\n1. Navigate to **Agent Lab** and open the **Daily Work Coordinator V2** agent workflow (`agent_id`: `6abb98f892bd477cd1a327b3`).\n2. Verify that the Agent Output Schema configures Text fields with restricted allowed values for `status` (e.g. `planned`, `in progress`, `completed`, `blocked`) and `priority` (e.g. `high`, `medium`, `low`).\n3. Open **Agent Test** to initiate a test conversation thread.\n4. Submit a task creation message with values outside the allowed-value set:\n   > \"Add a task called Prepare ART demo. Set the status to STARTED and priority to URGENT.\"\n5. Open the **Agent result** modal upon completion.\n6. Observe that the Agent returns a successful result with `status: started` and `priority: urgent` instead of rejecting the output or repairing the values to schema-valid enums.\n7. For comparison, submit a prompt supplying incompatible primitive types (e.g. numeric priority or boolean status).\n8. Observe that ART rejects the incompatible types with `code: invalid_task_fields`.\n\n---\n\n## 4. Expected Behavior\nART should validate the final Agent output against the complete configured Output Schema before accepting the result:\n- For Text fields with configured allowed values:\n  - Values within the allowed set should be accepted.\n  - Text values outside the allowed set must not be accepted as valid output.\n  - Invalid values should either be safely repaired to a contract-valid value or execution should halt with a clear output-validation error.\n  - The validation error should identify the affected field and invalid value.\n  - Invalid structured output must not be exposed as a successful Agent result or propagated downstream.\n\n---\n\n## 5. Business Impact\n- **Downstream Orchestration Failures:** Orchestrators, routers, and switch nodes expecting standardized enum values (e.g. branching on `high`, `medium`, `low`) fail to match conditions when encountering unstandardized strings like `urgent`, causing workflows to drop execution branches or fail silently.\n- **Data Integrity Degradation:** Task ledgers, analytics dashboards, and external issue trackers receive corrupted, unstandardized status values (e.g. `started` instead of `in progress`), undermining automated reporting.\n- **Contract Reliability:** The platform's guarantee of schema-driven agent execution is weakened when configured schema constraints are not enforced at runtime.\n\n---\n\n## 6. User Experience\n- Builders define explicit allowed values in the Schema Builder expecting the platform to enforce them, but find that end-user inputs can inject arbitrary values directly into the final agent output.\n- Debugging downstream workflow issues is frustrating because the upstream Agent reports successful execution despite producing contract-violating outputs.\n\n---\n\n## 7. Investigation Guidance\nInvestigate the post-execution Agent output validation pipeline:\n- **Validation Execution Point:** Identify where post-model execution output validation takes place (between LLM response parsing and the creation of `custom_...` structured result).\n- **JSON Schema Compilation:** Check how the Agent Output Schema is compiled into a JSON Schema validator. Determine whether `enum` or `oneOf` constraints configured for Text fields in the UI builder are included in the compiled schema or dropped during compilation.\n- **Type Checking vs. Schema Validation:** Contrast the implementation of `invalid_task_fields` (which detects non-string primitive types) with the general schema validation routine. Determine whether allowed-value checks were omitted from the custom field validation logic or if schema validation only checks primitive types (`type: \"string\"`).\n- **Repair / Coercion Logic:** Check whether an auto-repair or normalization step exists and why unallowed values bypass it without triggering a fallback error.\n\n---\n\n## 8. Fix Requirement\nThe Agent output validation engine must enforce configured allowed-value (enum) constraints on all Text fields. Any output value not belonging to the allowed-value set must not be accepted as a successful result; it must either be coerced/repaired to a valid allowed value or rejected with an informative output-validation error.\n\n---\n\n## 9. Recommended Solution\n1. **Include Enum Constraints in Schema Definition:** Ensure the schema generator always populates the `enum` array for Text fields with configured allowed values.\n2. **Strict Server-Side Validation:** Enforce strict JSON Schema validation against the complete compiled schema after agent execution.\n3. **Structured Validation Error Response:** If an output field contains an unallowed string value, return an error payload (e.g., `code: invalid_field_allowed_value` with details specifying the field, received value, and allowed choices) rather than emitting a successful `custom_...` response.\n4. **Automated Regression Testing:** Add unit and integration tests verifying that outputs with unallowed text values are rejected or repaired.\n\n---\n\n## 10. Minimum Working Fix\nIn the agent output validation routine, add an explicit check for all Text fields with defined allowed values verifying `value in field_spec[\"allowed_values\"]`. If the value is outside the allowed list, emit an `invalid_task_fields` error response instead of proceeding to emit the successful result payload.\n\n---\n\n## 11. Acceptance Criteria\n- [ ] Text fields configured with allowed values reject any output value outside the allowed set with a clear validation error.\n- [ ] The validation error identifies the invalid field name and the offending value.\n- [ ] Valid enum values within the allowed set continue to be accepted and processed normally.\n- [ ] Incompatible primitive types (e.g. numeric, boolean) continue to be rejected.\n- [ ] Invalid structured outputs are never emitted as successful `custom_...` results or passed to downstream nodes.\n\n---\n\n## 12. Environment\n- **Component:** Daily Work Coordinator V2 (Agent ID: `6abb98f892bd477cd1a327b3`)\n- **Schema:** `custom_6abb997e92bd477cd1a327b8`\n- **Module:** Agent Lab \u2014 Output Schema / Output Validation\n- **Test Thread ID:** `ab5807dc-1359-4c8a-a3e1-c053df3bf84b`\n- **Environment:** Testing\n\n---\n\n## 13. Severity\n**HIGH** \u2014 Breaks schema contract enforcement; allows unvalidated and contract-violating data to pass as successful outputs.\n\n---\n\n## 14. Priority\n**P1** \u2014 Core integrity defect in Agent Lab's structured output schema and validation system.\n\n---\n\n## 15. Tags\n- `Agent-Lab`\n- `Output-Schema`\n- `Output-Validation`\n- `Enum-Validation`\n- `Allowed-Values`\n- `Structured-Output`\n\n---\n\n## 16. Assignee\n**Unassigned**\n\n---\n\n## 17. Evidence\n\n| File | Type | Description | SHA256 Hash | Byte Size |\n| :--- | :--- | :--- | :--- | :--- |\n| [ART-AGENT-006__agent-result-accepts-unallowed-text-values__2026-09-30__01.png](file:///home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-AGENT-006__agent-output-schema-allowed-values-not-strictly-enforced/ART-AGENT-006__agent-result-accepts-unallowed-text-values__2026-09-30__01.png) | Screenshot | Agent result modal displaying accepted unallowed text values 'started' for status and 'urgent' for priority within custom schema custom_6abb997e92bd477cd1a327b8. | `d5df3bd41e22398151b33733e84eb909637f89a61dc9c431f5bd70b0bd6263df` | 189743 bytes |\n| [ART-AGENT-006__type-validation-error-on-incompatible-types__2026-09-30__02.png](file:///home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-AGENT-006__agent-output-schema-allowed-values-not-strictly-enforced/ART-AGENT-006__type-validation-error-on-incompatible-types__2026-09-30__02.png) | Screenshot | Agent error response displaying code 'invalid_task_fields' when numeric/boolean values are provided, demonstrating that type checking occurs while string allowed-value validation is not enforced. | `3f7e42be16934854b7b48266f700d65d77b6e1986e20c601e39b2f9a529721a5` | 236648 bytes |\n\n### Evidence Visual Gallery\n\n````carousel\n![ART-AGENT-006__agent-result-accepts-unallowed-text-values__2026-09-30__01.png](/home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-AGENT-006__agent-output-schema-allowed-values-not-strictly-enforced/ART-AGENT-006__agent-result-accepts-unallowed-text-values__2026-09-30__01.png)\n*Agent result modal displaying accepted unallowed text values 'started' for status and 'urgent' for priority within custom schema custom_6abb997e92bd477cd1a327b8.*\n<!-- slide -->\n![ART-AGENT-006__type-validation-error-on-incompatible-types__2026-09-30__02.png](/home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-AGENT-006__agent-output-schema-allowed-values-not-strictly-enforced/ART-AGENT-006__type-validation-error-on-incompatible-types__2026-09-30__02.png)\n*Agent error response displaying code 'invalid_task_fields' when numeric/boolean values are provided, demonstrating that type checking occurs while string allowed-value validation is not enforced.*\n````\n\n---\n\n## 18. Discussion\n- **Reporter Note:** In Daily Work Coordinator V2, testing out-of-contract values revealed that string values outside the configured allowed set (`started`, `urgent`) pass validation and produce a successful agent result. Incompatible primitive types (numeric/boolean) are correctly rejected with `invalid_task_fields`. This proves that primitive type checking is functional, but allowed-value / enum restrictions on Text fields are completely unenforced.\n\n---\n\n## 19. Azure DevOps\n- **Work Item ID:** 68876\n- **URL:** [https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68876](https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68876)\n- **Parent Feature:** Agent Lab\n- **Parent Feature ID:** 68783\n- **Assigned To:** Unassigned\n- **Sync Status:** SYNCED\n- **Note:** Synchronized via Harness 02 V1 to Azure DevOps.\n",
+    "ledgerRow": {
+      "bug_id": "ART-AGENT-006",
+      "rel_path": "bugs/Agent Lab/ART-AGENT-006__agent-output-schema-allowed-values-not-strictly-enforced/ART-AGENT-006.md",
+      "name": "Agent Output Schema Allowed Values Are Not Strictly Enforced for Text Fields",
+      "severity": "HIGH",
+      "status": "OPEN",
+      "dev_update": "Pending.",
+      "retest": "Pending."
+    }
+  }
+}

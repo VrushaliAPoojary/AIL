@@ -1,0 +1,1642 @@
+{
+  "investigation_id": "AOI-SNOW-OPP-002",
+  "company": "ServiceNow",
+  "industry": "IT & Business Services",
+  "opportunity": "Exception Resolution Decision Intelligence",
+  "investigation_type": "Discovery; native exception-prioritization test; evidence-grounded portfolio-capacity test",
+  "research_status": "KILLED",
+  "presentation": {
+    "investigation_summary": "The investigation began with a verified class of exception-heavy operational work: most work may be straight-through, while a smaller exception population requires classification, prioritization, investigation, coordination, and resolution before time-sensitive consequences. Checkpoint OPP-002-01 narrowed the question from generic exception automation to allocation of scarce operational attention. OPP-002-02 then showed that ServiceNow already documents multi-factor prioritization, AI prioritization, domain-specific exception priority, queue visibility, human reprioritization, and agentic adaptation. OPP-002-03 expanded the native baseline further with capacity-aware assignment, queue-level priority, skills and availability routing, dynamic reassignment, workload balancing, and capacity reservations. Analytical evidence established that portfolio allocation is technically coherent, but did not establish a ServiceNow customer problem, a native failure, a specialized advantage, or willingness to pay. The real exception-management problem class survived as implementation intelligence, while the residual opportunity was killed and marked not ready for AIL.",
+    "key_findings": [
+      {
+        "id": "KF-001",
+        "statement": "The real high-volume exception-management problem class is verified, including the legacy manual handling described for Jefferies and the high-volume scheduling and exception context described for TridentCare.",
+        "classification": "EVIDENCE",
+        "source_refs": [
+          "EV-002",
+          "EV-006",
+          "EV-015",
+          "EV-032"
+        ]
+      },
+      {
+        "id": "KF-002",
+        "statement": "ServiceNow already substantially addresses exception identification, classification, prioritization, workflow generation, work planning, and exception management.",
+        "classification": "CLAIM",
+        "source_refs": [
+          "EV-003",
+          "EV-004",
+          "EV-008",
+          "CL-002"
+        ]
+      },
+      {
+        "id": "KF-003",
+        "statement": "The native ServiceNow capability surface includes capacity, queues, skills, availability, workload balancing, dynamic reassignment, and capacity reservation, so these mechanisms do not remain differentiators for OPP-002.",
+        "classification": "CLAIM",
+        "source_refs": [
+          "EV-022",
+          "EV-023",
+          "EV-024",
+          "EV-025",
+          "EV-026",
+          "EV-027",
+          "RES-002"
+        ]
+      },
+      {
+        "id": "KF-004",
+        "statement": "A portfolio-level allocation problem is technically coherent and conceptually distinct from assigning each exception a priority, but that distinction is an inference or hypothesis rather than customer evidence.",
+        "classification": "INFERENCE",
+        "source_refs": [
+          "EV-028",
+          "EV-030",
+          "INF-002",
+          "INF-003",
+          "HYP-004"
+        ]
+      },
+      {
+        "id": "KF-005",
+        "statement": "The research preserves explicit unknowns: whether the residual problem exists after implementation, whether native capabilities already solve it, whether it is material or frequent, whether formal optimization would outperform native mechanisms, and whether customers would pay.",
+        "classification": "EVIDENCE",
+        "source_refs": [
+          "EV-007",
+          "EV-018",
+          "EV-034"
+        ]
+      },
+      {
+        "id": "KF-006",
+        "statement": "OPP-002 is killed because no consequential customer gap survived the native-capability and evidence tests; the real exception problem remains reusable implementation intelligence, and the opportunity is not ready for AIL.",
+        "classification": "DECISION",
+        "source_refs": [
+          "RES-005",
+          "RES-006",
+          "RES-007",
+          "EV-005",
+          "EV-036"
+        ]
+      }
+    ]
+  },
+  "decision": {
+    "decision": "KILL OPP-002",
+    "reason": "# 15. Decision\n\n# KILL OPP-002\n\nThis is the appropriate evidence-driven conclusion.\n\nThe hypothetical evidence successfully demonstrates that the proposed portfolio-allocation problem is technically legitimate.\n\nBut it also reveals that the strongest reasonable interpretation of current ServiceNow capabilities already includes:\n\n```text\nPRIORITY\n+\nCAPACITY\n+\nSKILLS\n+\nAVAILABILITY\n+\nQUEUE PRIORITY\n+\nWORKLOAD BALANCING\n+\nDYNAMIC REASSIGNMENT\n+\nCAPACITY RESERVATION\n+\nAGENTIC WORK PLANNING\n```\n\nThe missing proof is not technical possibility.\n\nThe missing proof is **a consequential customer gap**.\n\nWe do not have it.",
+    "reusable_intelligence": [
+      {
+        "id": "INT-001",
+        "type": "ARCHITECTURE_PATTERN",
+        "title": "Native capability baseline",
+        "domain": "ServiceNow opportunity research",
+        "description": "Workflow automation, exception management, prioritization, AI work planning, capacity-aware assignment, queue priorities, workload balancing, dynamic reassignment, and capacity reservation should be treated as existing capability surface.",
+        "pattern": "Compare any proposed capability against the documented native ServiceNow surface before treating it as a residual gap.",
+        "lesson": "A future opportunity should start somewhere outside this already-covered capability surface, unless new evidence demonstrates a material failure.",
+        "evidence_status": "VERIFIED",
+        "status": "ACTIVE",
+        "confidence": "HIGH",
+        "reuse_potential": "HIGH",
+        "applications": [
+          "Future ServiceNow opportunity research"
+        ],
+        "source_checkpoint": "OPP-002-03",
+        "source_refs": [
+          "EV-036",
+          "CL-003"
+        ],
+        "source_location": "OPP-002-03.md §19",
+        "tags": [
+          "native-capability",
+          "service-now",
+          "opportunity-screening"
+        ],
+        "provenance": {
+          "source_file": "opportunity.md",
+          "section": "## Reusable intelligence",
+          "line_start": 60,
+          "line_end": 66
+        }
+      },
+      {
+        "id": "INT-002",
+        "type": "RESEARCH_METHOD",
+        "title": "Capability-boundary test",
+        "domain": "Opportunity validation",
+        "description": "Compare a proposed optimizer with the strongest native priority, capacity, skills, reassignment, and human-override model before claiming a gap.",
+        "lesson": "The proposed residual opportunity must be tested against the strongest current native capability surface.",
+        "evidence_status": "PARTIAL",
+        "status": "ACTIVE",
+        "confidence": "HIGH",
+        "reuse_potential": "HIGH",
+        "applications": [
+          "Future ServiceNow opportunity research"
+        ],
+        "source_checkpoint": "OPP-002-03",
+        "source_refs": [
+          "EV-023",
+          "EV-024",
+          "EV-025",
+          "EV-026",
+          "EV-027",
+          "EV-029",
+          "EV-031"
+        ],
+        "source_location": "opportunity.md §Reusable intelligence; OPP-002-03 §12",
+        "tags": [
+          "capability-boundary",
+          "falsification",
+          "research-method"
+        ],
+        "provenance": {
+          "source_file": "opportunity.md",
+          "section": "## Reusable intelligence",
+          "line_start": 60,
+          "line_end": 66
+        }
+      },
+      {
+        "id": "INT-003",
+        "type": "GUARDRAIL",
+        "title": "Evidence discipline",
+        "domain": "Evidence-grounded opportunity assessment",
+        "description": "Analytical optimization evidence establishes technical coherence only; it cannot prove customer pain or commercial value.",
+        "lesson": "Hypothetical evidence can test whether a decision problem is coherent, but cannot establish a ServiceNow customer gap or willingness to pay.",
+        "anti_pattern": "Manufacturing a customer problem out of an optimization model.",
+        "do_not_assume": [
+          "Technical coherence is customer evidence.",
+          "A theoretical distinction is a commercially relevant capability gap."
+        ],
+        "evidence_status": "VERIFIED",
+        "status": "ACTIVE",
+        "confidence": "HIGH",
+        "reuse_potential": "HIGH",
+        "applications": [
+          "Evidence-gated opportunity decisions"
+        ],
+        "source_checkpoint": "OPP-002-03",
+        "source_refs": [
+          "EV-028",
+          "EV-033",
+          "EV-035",
+          "CL-005",
+          "CL-006"
+        ],
+        "source_location": "OPP-002-03.md §§8, 16",
+        "tags": [
+          "evidence-discipline",
+          "unknowns",
+          "commercial-validation"
+        ],
+        "provenance": {
+          "source_file": "opportunity.md",
+          "section": "## Reusable intelligence",
+          "line_start": 60,
+          "line_end": 66
+        }
+      },
+      {
+        "id": "INT-004",
+        "type": "WORKFLOW_PATTERN",
+        "title": "Native exception handling and capacity-aware assignment",
+        "domain": "Exception-management workflow",
+        "description": "The represented native chain is: exception intake; prioritize and queue; capacity and skill match; work plan; reassignment and reservation, with human review or override where noted.",
+        "pattern": "EXCEPTION → CLASSIFY → PRIORITIZE → QUEUE → CAPACITY → SKILLS → ASSIGN → WORK PLAN → DYNAMIC REASSIGNMENT → RESERVATION → HUMAN OVERRIDE",
+        "lesson": "The real exception workflow survives as implementation intelligence; the proposed residual opportunity does not.",
+        "evidence_status": "PARTIAL",
+        "status": "ACTIVE",
+        "confidence": "MEDIUM",
+        "reuse_potential": "HIGH",
+        "applications": [
+          "Future exception-management workflow analysis"
+        ],
+        "source_checkpoint": "OPP-002-03",
+        "source_refs": [
+          "EV-005",
+          "EV-023",
+          "EV-024",
+          "EV-025",
+          "EV-026",
+          "EV-027"
+        ],
+        "source_location": "workflow.md §§Workflow A, Exceptions and uncertainty",
+        "tags": [
+          "workflow",
+          "exception-management",
+          "capacity",
+          "human-override"
+        ],
+        "provenance": {
+          "source_file": "workflow.md",
+          "section": "## Workflow A — Native exception handling and capacity-aware assignment",
+          "line_start": 18,
+          "line_end": 38
+        }
+      },
+      {
+        "id": "INT-005",
+        "type": "NEGATIVE_INTELLIGENCE",
+        "title": "Covered capability surface is not a residual opportunity",
+        "domain": "ServiceNow opportunity screening",
+        "description": "The accumulated evidence falsified recovery optimization, exception prioritization, capacity-aware assignment, workload balancing, dynamic scheduling, and generic agentic decisioning as sufficient bases for this opportunity.",
+        "lesson": "The next ServiceNow opportunity must be materially different from the covered capability surface unless new evidence demonstrates a material failure.",
+        "do_not_assume": [
+          "A real exception problem class automatically creates a ServiceNow capability gap.",
+          "An external optimizer is justified by mathematical richness alone."
+        ],
+        "evidence_status": "VERIFIED",
+        "status": "ACTIVE",
+        "confidence": "HIGH",
+        "reuse_potential": "HIGH",
+        "applications": [
+          "Future ServiceNow opportunity screening"
+        ],
+        "source_checkpoint": "OPP-002-03",
+        "source_refs": [
+          "RES-005",
+          "RES-007",
+          "EV-036"
+        ],
+        "source_location": "OPP-002-03.md §§17–19",
+        "tags": [
+          "negative-intelligence",
+          "killed-opportunity",
+          "screening"
+        ],
+        "provenance": {
+          "source_file": "OPP-002-03.md",
+          "section": "# 18. What We Learned",
+          "line_start": 661,
+          "line_end": 686
+        }
+      }
+    ],
+    "provenance": {
+      "source_file": "OPP-002-03.md",
+      "section": "# 15. Decision",
+      "line_start": 577,
+      "line_end": 611
+    }
+  },
+  "primary_question": "Can independent evidence, including the closest defensible hypothetical/analytical sources where direct customer evidence is unavailable, establish a meaningful decision problem in which scarce operational capacity must be allocated across interacting exceptions—and does current ServiceNow capability already address that problem?",
+  "sources": [
+    {
+      "id": "SRC-INT-OPPORTUNITY",
+      "title": "opportunity.md",
+      "url": "opportunities/IT_and_Business_Services/servicenow/opportunity02/opportunity.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": [
+        "CL-003"
+      ]
+    },
+    {
+      "id": "SRC-INT-WALKTHROUGH",
+      "title": "walkthrough.md",
+      "url": "opportunities/IT_and_Business_Services/servicenow/opportunity02/walkthrough.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": [
+        "HYP-001",
+        "RES-006"
+      ]
+    },
+    {
+      "id": "SRC-INT-OPP-002-01",
+      "title": "OPP-002-01.md",
+      "url": "opportunities/IT_and_Business_Services/servicenow/opportunity02/OPP-002-01.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": [
+        "EV-001",
+        "EV-005",
+        "EV-007",
+        "CP-OPP-002-01",
+        "CL-001",
+        "CL-004",
+        "INF-001",
+        "HYP-002",
+        "RES-001"
+      ]
+    },
+    {
+      "id": "SRC-INT-OPP-002-02",
+      "title": "OPP-002-02.md",
+      "url": "opportunities/IT_and_Business_Services/servicenow/opportunity02/OPP-002-02.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": [
+        "EV-016",
+        "EV-017",
+        "EV-018",
+        "EV-019",
+        "CP-OPP-002-02",
+        "CL-002",
+        "INF-003",
+        "HYP-003",
+        "RES-002",
+        "RES-003"
+      ]
+    },
+    {
+      "id": "SRC-INT-OPP-002-03",
+      "title": "OPP-002-03.md",
+      "url": "opportunities/IT_and_Business_Services/servicenow/opportunity02/OPP-002-03.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": [
+        "EV-021",
+        "EV-028",
+        "EV-029",
+        "EV-030",
+        "EV-031",
+        "EV-033",
+        "EV-034",
+        "EV-035",
+        "EV-036",
+        "CP-OPP-002-03",
+        "CL-005",
+        "CL-006",
+        "INF-002",
+        "INF-004",
+        "HYP-004",
+        "RES-004",
+        "RES-005",
+        "RES-007"
+      ]
+    },
+    {
+      "id": "SRC-INT-WORKFLOW",
+      "title": "workflow.md",
+      "url": "opportunities/IT_and_Business_Services/servicenow/opportunity02/workflow.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": []
+    },
+    {
+      "id": "SRC-EXT-001",
+      "title": "ServiceNow — TridentCare customer announcement",
+      "url": "https://newsroom.servicenow.com/press-releases/details/2026/TridentCare-achieves-96-scheduling-automation-with-ServiceNow-AI-powered-CRM-improving-care-for-millions-of-patients/default.aspx",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "EV-006",
+        "CP-OPP-002-01"
+      ]
+    },
+    {
+      "id": "SRC-EXT-002",
+      "title": "ServiceNow — Jefferies case study PDF",
+      "url": "https://www.servicenow.com/content/dam/servicenow-assets/public/en-us/doc-type/resource-center/case-study/cs-jefferies.pdf",
+      "source_type": "EXTERNAL",
+      "used_by": []
+    },
+    {
+      "id": "SRC-EXT-003",
+      "title": "ServiceNow — Jefferies customer story",
+      "url": "https://www.servicenow.com/customers/jefferies.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "EV-002",
+        "EV-003",
+        "EV-015",
+        "EV-020",
+        "EV-032",
+        "CP-OPP-002-01",
+        "CP-OPP-002-03"
+      ]
+    },
+    {
+      "id": "SRC-EXT-004",
+      "title": "ServiceNow — Decision Tables",
+      "url": "https://www.servicenow.com/docs/r/build-workflows/use-decision-tables.html",
+      "source_type": "EXTERNAL",
+      "used_by": []
+    },
+    {
+      "id": "SRC-EXT-005",
+      "title": "ServiceNow — Configure Agentic Playbooks",
+      "url": "https://www.servicenow.com/docs/r/build-workflows/workflow-studio/configure-agentic-playbooks.html",
+      "source_type": "EXTERNAL",
+      "used_by": []
+    },
+    {
+      "id": "SRC-EXT-006",
+      "title": "ServiceNow — Decision Activities",
+      "url": "https://www.servicenow.com/docs/r/build-workflows/workflow-studio/create-a-decision-activity.html",
+      "source_type": "EXTERNAL",
+      "used_by": []
+    },
+    {
+      "id": "SRC-EXT-007",
+      "title": "ServiceNow — Advanced Work Assignment: Work assignments",
+      "url": "https://www.servicenow.com/docs/r/conversational-interfaces/advanced-work-assignment/awa-assignment.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "EV-023",
+        "CP-OPP-002-03"
+      ]
+    },
+    {
+      "id": "SRC-EXT-008",
+      "title": "ServiceNow — Dynamic Scheduling",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/dynamic-scheduling.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "EV-026",
+        "CP-OPP-002-03"
+      ]
+    },
+    {
+      "id": "SRC-EXT-009",
+      "title": "ServiceNow — Dynamic Scheduling configuration",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/Configure-dynamic-scheduling.html",
+      "source_type": "EXTERNAL",
+      "used_by": []
+    },
+    {
+      "id": "SRC-EXT-010",
+      "title": "ServiceNow — Capacity reservation rules",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/workforce-optimization-for-field-service/capacity-reservations.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "EV-027",
+        "CP-OPP-002-03"
+      ]
+    },
+    {
+      "id": "SRC-EXT-011",
+      "title": "ServiceNow — Generate my work plan",
+      "url": "https://www.servicenow.com/docs/r/intelligent-experiences/generate-work-plan.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "EV-009",
+        "EV-010",
+        "CP-OPP-002-02"
+      ]
+    },
+    {
+      "id": "SRC-EXT-012",
+      "title": "ServiceNow — Help optimize team productivity",
+      "url": "https://www.servicenow.com/docs/r/intelligent-experiences/help-optimize-productivity.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "EV-022",
+        "CP-OPP-002-03"
+      ]
+    },
+    {
+      "id": "SRC-EXT-013",
+      "title": "ServiceNow — Platform agentic workflows",
+      "url": "https://www.servicenow.com/docs/r/intelligent-experiences/platform-use-cases.html",
+      "source_type": "EXTERNAL",
+      "used_by": []
+    },
+    {
+      "id": "SRC-EXT-014",
+      "title": "ServiceNow — Now Assist agentic workflows",
+      "url": "https://www.servicenow.com/docs/r/intelligent-experiences/sn-aia-use-cases-list.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "EV-004",
+        "EV-008",
+        "EV-011",
+        "CP-OPP-002-01"
+      ]
+    },
+    {
+      "id": "SRC-EXT-015",
+      "title": "ServiceNow — Now Assist AI Agents release notes",
+      "url": "https://www.servicenow.com/docs/r/release-notes/now-assist-ai-agents-rn.html",
+      "source_type": "EXTERNAL",
+      "used_by": []
+    },
+    {
+      "id": "SRC-EXT-016",
+      "title": "ServiceNow — Assigning priority to a purchase order exception",
+      "url": "https://www.servicenow.com/docs/r/source-to-pay-operations/assigning-priority-to-po.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "EV-012",
+        "CP-OPP-002-02"
+      ]
+    },
+    {
+      "id": "SRC-EXT-017",
+      "title": "ServiceNow — Change priority level of a purchase order exception",
+      "url": "https://www.servicenow.com/docs/r/source-to-pay-operations/change-priority-of-poe.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "EV-013",
+        "CP-OPP-002-02"
+      ]
+    },
+    {
+      "id": "SRC-EXT-018",
+      "title": "ServiceNow — Purchase Order Management workspace",
+      "url": "https://www.servicenow.com/docs/r/source-to-pay-operations/source-to-pay-workspace/purch-order-mgmt-tab-s2pws.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "EV-014"
+      ]
+    },
+    {
+      "id": "SRC-EXT-019",
+      "title": "ServiceNow — Priority-based order routing",
+      "url": "https://www.servicenow.com/docs/r/telecom-media-technology/order-mgt-priority-awa.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "EV-025"
+      ]
+    },
+    {
+      "id": "SRC-EXT-020",
+      "title": "ServiceNow — AWA group queue priorities",
+      "url": "https://www.servicenow.com/docs/r/yokohama/servicenow-platform/advanced-work-assignment/awa-group-queue-priorities.html",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "EV-024",
+        "CP-OPP-002-03"
+      ]
+    },
+    {
+      "id": "SRC-EXT-021",
+      "title": "ServiceNow — Zurich Dynamic Scheduling configuration",
+      "url": "https://www.servicenow.com/docs/r/zurich/field-service-management/field-service-scheduling/Configure-dynamic-scheduling.html",
+      "source_type": "EXTERNAL",
+      "used_by": []
+    },
+    {
+      "id": "SRC-EXT-022",
+      "title": "ServiceNow — Zurich Now Assist AI Agents release notes",
+      "url": "https://www.servicenow.com/docs/r/zurich/release-notes/now-assist-ai-agents-rn-d26825e7785.html",
+      "source_type": "EXTERNAL",
+      "used_by": []
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "CP-OPP-002-01",
+      "title": "OPP-002-01 — Exception Resolution Decision Intelligence",
+      "status": "CONTINUE INVESTIGATION; not ready for AIL",
+      "investigation_question": "Whether exception-heavy operational work creates a consequential decision boundary beyond ServiceNow’s existing automation.",
+      "tested": "Whether exception-heavy operational work creates a consequential decision boundary beyond ServiceNow’s existing automation.",
+      "found": "The problem class was supported by real customer evidence, while ServiceNow already addressed much of the legacy exception workflow.",
+      "what_changed": "The broad exception pattern became a narrower decision-boundary hypothesis.",
+      "resulting_state": "CONTINUE INVESTIGATION — NOT READY FOR AIL",
+      "evidence_refs": [
+        "EV-001",
+        "EV-002",
+        "EV-003",
+        "EV-004",
+        "EV-006",
+        "EV-007"
+      ],
+      "source_refs": [
+        "SRC-INT-OPP-002-01",
+        "SRC-EXT-003",
+        "SRC-EXT-014",
+        "SRC-EXT-001"
+      ],
+      "provenance": {
+        "source_file": "OPP-002-01.md",
+        "section": "# OPP-002-01 — Exception Resolution Decision Intelligence",
+        "line_start": 1,
+        "line_end": 509
+      }
+    },
+    {
+      "id": "CP-OPP-002-02",
+      "title": "OPP-002-02 — Native Exception Prioritization and Agentic Capability Test",
+      "status": "RESIDUAL HYPOTHESIS WEAKENED — CONTINUE ONLY IF A NARROWER DECISION GAP CAN BE EVIDENCED",
+      "investigation_question": "Can current ServiceNow capabilities already make the scarce-attention allocation decision across competing exceptions, or does a genuine residual decision problem remain?",
+      "tested": "Can current ServiceNow capabilities already make the scarce-attention allocation decision across competing exceptions, or does a genuine residual decision problem remain?",
+      "found": "ServiceNow documentation showed explicit multi-factor prioritization, AI prioritization, domain-specific exception priority, queue visibility, human reprioritization, and agentic adaptation.",
+      "what_changed": "Basic prioritization, queue competition, AI prioritization, dynamic adaptation, and human override were killed as differentiators; only a narrower portfolio-level hypothesis remained.",
+      "resulting_state": "CONTINUE INVESTIGATION — FINAL EVIDENCE GATE",
+      "evidence_refs": [
+        "EV-009",
+        "EV-010",
+        "EV-011",
+        "EV-012",
+        "EV-013",
+        "EV-014",
+        "EV-015",
+        "EV-017",
+        "EV-018"
+      ],
+      "source_refs": [
+        "SRC-INT-OPP-002-02",
+        "SRC-EXT-011",
+        "SRC-EXT-016",
+        "SRC-EXT-017"
+      ],
+      "provenance": {
+        "source_file": "OPP-002-02.md",
+        "section": "# OPP-002-02 — Native Exception Prioritization and Agentic Capability Test",
+        "line_start": 1,
+        "line_end": 763
+      }
+    },
+    {
+      "id": "CP-OPP-002-03",
+      "title": "OPP-002-03 — Evidence-Grounded Portfolio Capacity Test",
+      "status": "HYPOTHESIS UNDER HEAVY FALSIFICATION — NATIVE CAPABILITY GAP NOT ESTABLISHED",
+      "investigation_question": "Can independent evidence, including the closest defensible hypothetical/analytical sources where direct customer evidence is unavailable, establish a meaningful decision problem in which scarce operational capacity must be allocated across interacting exceptions—and does current ServiceNow capability already address that problem?",
+      "tested": "Whether the remaining portfolio-capacity hypothesis was supported by independent evidence and materially outside the strongest native ServiceNow model.",
+      "found": "Native evidence covered capacity, queues, skills, workload balancing, dynamic reassignment, and reservations; analytical evidence showed technical coherence only.",
+      "what_changed": "The remaining hypothesis was tested against the strongest native model and analytical resource-allocation evidence.",
+      "resulting_state": "CUSTOMER NEED AND CAPABILITY GAP NOT ESTABLISHED — KILL",
+      "evidence_refs": [
+        "EV-022",
+        "EV-023",
+        "EV-024",
+        "EV-025",
+        "EV-026",
+        "EV-027",
+        "EV-028",
+        "EV-029",
+        "EV-030",
+        "EV-031",
+        "EV-033",
+        "EV-034",
+        "EV-035",
+        "EV-036"
+      ],
+      "source_refs": [
+        "SRC-INT-OPP-002-03",
+        "SRC-EXT-012",
+        "SRC-EXT-007",
+        "SRC-EXT-020",
+        "SRC-EXT-008",
+        "SRC-EXT-010",
+        "SRC-EXT-003"
+      ],
+      "provenance": {
+        "source_file": "OPP-002-03.md",
+        "section": "# OPP-002-03 — Evidence-Grounded Portfolio Capacity Test",
+        "line_start": 1,
+        "line_end": 858
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "EV-001",
+      "statement": "# 1. Why OPP-002 Exists\n\nOPP-001 investigated recovery decision intelligence and was killed after the native ServiceNow capability baseline proved strong, the controlled simulation produced no specialized advantage, and public customer evidence did not establish a residual recovery-decision gap.\n\nOPP-002 starts from a different operational domain visible in the accumulated ServiceNow evidence:\n\n> **Exception-heavy operational workflows where most work is straight-through, but a smaller population of exceptions requires classification, prioritization, investigation, coordination, and resolution before a time-sensitive consequence occurs.**\n\nThis pattern is directly documented in ServiceNow customer evidence.\n\nIt is **not yet a capability-gap claim**.",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-INT-OPP-002-01",
+      "provenance": {
+        "source_file": "OPP-002-01.md",
+        "section": "# 1. Why OPP-002 Exists",
+        "line_start": 20,
+        "line_end": 30
+      }
+    },
+    {
+      "id": "EV-002",
+      "statement": "# 2. Initial Evidence Trigger — Jefferies\n\nServiceNow's customer story describes Jefferies' post-trade settlement operations.\n\nJefferies processes hundreds of thousands of daily trades. Most settlements proceed without manual intervention, but settlement breaks require operational handling before deadlines.\n\nThe legacy process involved operations staff:\n\n- pulling reports from systems of record;\n- manually filtering exceptions;\n- manually classifying exceptions;\n- manually prioritizing exceptions;\n- sorting large volumes of email;\n- assigning work;\n- correlating communications with exceptions using spreadsheets or documents.\n\nSource:\n\nhttps://www.servicenow.com/customers/jefferies.html\n\nThe associated ServiceNow case study provides the same operational description.\n\nSource:\n\nhttps://www.servicenow.com/content/dam/servicenow-assets/public/en-us/doc-type/resource-center/case-study/cs-jefferies.pdf\n\n**Classification:** VERIFIED EXTERNAL EVIDENCE",
+      "classification": "VERIFIED EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-003",
+      "provenance": {
+        "source_file": "OPP-002-01.md",
+        "section": "# 2. Initial Evidence Trigger — Jefferies",
+        "line_start": 34,
+        "line_end": 60
+      }
+    },
+    {
+      "id": "EV-003",
+      "statement": "# 3. What ServiceNow Already Solved\n\nThe Jefferies case states that ServiceNow created an overlay for exception workflows.\n\nThe solution:\n\n- generated exception workflows directly from system-of-record data;\n- converted emails into work items;\n- connected communications to related workflows;\n- provided management visibility;\n- created an audit trail;\n- reduced manual exception identification and classification.\n\nThe case reports that a CSDR-violation proof of concept reduced resolution time from approximately 30 minutes to a few minutes.\n\nSource:\n\nhttps://www.servicenow.com/customers/jefferies.html\n\n**Classification:** DIRECT EVIDENCE\n\nTherefore OPP-002 cannot be:\n\n> “ServiceNow needs AI to classify and route exceptions.”\n\nThat capability is already substantially addressed.",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-003",
+      "provenance": {
+        "source_file": "OPP-002-01.md",
+        "section": "# 3. What ServiceNow Already Solved",
+        "line_start": 64,
+        "line_end": 89
+      }
+    },
+    {
+      "id": "EV-004",
+      "statement": "# 4. Current Native Capability\n\nServiceNow's current platform documentation states that agentic workflows can:\n\n- dynamically plan;\n- execute;\n- adapt actions based on context;\n- gather information;\n- reason over data;\n- take actions;\n- verify results.\n\nSource:\n\nhttps://www.servicenow.com/docs/r/intelligent-experiences/sn-aia-use-cases-list.html\n\nServiceNow also documents Agentic Playbooks that can automatically complete activities or provide recommendations for human review, editing, and approval.\n\nSource:\n\nhttps://www.servicenow.com/docs/r/build-workflows/workflow-studio/configure-agentic-playbooks.html\n\nServiceNow also provides platform agentic workflows including **Generate my work plan**, which provides a personalized work plan based on current work and historical data.\n\nSource:\n\nhttps://www.servicenow.com/docs/r/intelligent-experiences/platform-use-cases.html\n\nDecision activities and decision tables provide explicit workflow decisioning.\n\nSources:\n\nhttps://www.servicenow.com/docs/r/build-workflows/workflow-studio/create-a-decision-activity.html\n\nhttps://www.servicenow.com/docs/r/build-workflows/use-decision-tables.html\n\n**Consequence:** generic prioritization, workflow branching, work planning, and agentic reasoning cannot be claimed as gaps.",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-014",
+      "provenance": {
+        "source_file": "OPP-002-01.md",
+        "section": "# 4. Current Native Capability",
+        "line_start": 93,
+        "line_end": 129
+      }
+    },
+    {
+      "id": "EV-005",
+      "statement": "# 5. Reconstructed Exception Workflow\n\nThe documented Jefferies process can be represented as:\n\n```text\nTRADE / TRANSACTION\n        ↓\nSTRAIGHT-THROUGH PROCESSING\n        │\n        └── EXCEPTION / SETTLEMENT BREAK\n                    ↓\n              IDENTIFICATION\n                    ↓\n               CLASSIFICATION\n                    ↓\n               PRIORITIZATION\n                    ↓\n               ASSIGNMENT\n                    ↓\n        COMMUNICATION / INVESTIGATION\n                    ↓\n              RESOLUTION\n                    ↓\n              SETTLEMENT\n```\n\nThe legacy process contained substantial manual work before ServiceNow implementation.\n\nThe ServiceNow implementation consolidated that workflow.",
+      "classification": "RECONSTRUCTED WORKFLOW",
+      "source": "SRC-INT-OPP-002-01",
+      "provenance": {
+        "source_file": "OPP-002-01.md",
+        "section": "# 5. Reconstructed Exception Workflow",
+        "line_start": 133,
+        "line_end": 161
+      }
+    },
+    {
+      "id": "EV-006",
+      "statement": "# 8. Additional Real-World Evidence — TridentCare\n\nServiceNow's 2026 TridentCare announcement describes a complex field-service environment involving:\n\n- 5.4 million annual visits;\n- thousands of credentialed clinical professionals;\n- manual scheduling;\n- intelligent routing;\n- proactive exception management.\n\nServiceNow states that AI agents automate scheduling and routing and allow dispatchers to focus on exceptions.\n\nSource:\n\nhttps://newsroom.servicenow.com/press-releases/details/2026/TridentCare-achieves-96-scheduling-automation-with-ServiceNow-AI-powered-CRM-improving-care-for-millions-of-patients/default.aspx\n\nThe customer reports that the majority of schedules previously included manual overrides and that ServiceNow reduced the process to touching exceptions.\n\n**Classification:** VERIFIED EXTERNAL EVIDENCE\n\n### Consequence\n\nGeneric exception management is already a demonstrated ServiceNow use case.\n\nThis reinforces the need to investigate the **remaining decision burden**, if any.",
+      "classification": "VERIFIED EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-001",
+      "provenance": {
+        "source_file": "OPP-002-01.md",
+        "section": "# 8. Additional Real-World Evidence — TridentCare",
+        "line_start": 204,
+        "line_end": 228
+      }
+    },
+    {
+      "id": "EV-007",
+      "statement": "# 10. Evidence Required to Continue\n\nWe need a real documented case containing:\n\n```text\nHIGH EXCEPTION VOLUME\n        ↓\nLIMITED HUMAN CAPACITY\n        ↓\nMULTIPLE SIMULTANEOUS EXCEPTIONS\n        ↓\nDIFFERENT DEADLINES / RISKS\n        ↓\nCOMPETING PRIORITIES\n        ↓\nMANUAL OR EXPERT ALLOCATION\n        ↓\nMEASURABLE CONSEQUENCE\n```\n\nThe Jefferies case establishes high exception volume and manual classification/prioritization in the **legacy** process.\n\nIt does not establish that the same residual decision problem remains after ServiceNow implementation.\n\nTherefore Jefferies is evidence for the **problem class**, not evidence for a current ServiceNow gap.",
+      "classification": "EXPLICIT LIMITATION",
+      "source": "SRC-INT-OPP-002-01",
+      "provenance": {
+        "source_file": "OPP-002-01.md",
+        "section": "# 10. Evidence Required to Continue",
+        "line_start": 244,
+        "line_end": 268
+      }
+    },
+    {
+      "id": "EV-008",
+      "statement": "## DIRECT EVIDENCE\n\nServiceNow currently provides:\n\n- exception workflows;\n- task classification;\n- workflow generation;\n- agentic workflows;\n- decision activities;\n- decision tables;\n- work-plan generation;\n- agentic playbooks;\n- exception management.\n\nSources:\n\nhttps://www.servicenow.com/docs/r/intelligent-experiences/sn-aia-use-cases-list.html\n\nhttps://www.servicenow.com/docs/r/intelligent-experiences/platform-use-cases.html\n\nhttps://www.servicenow.com/docs/r/build-workflows/workflow-studio/create-a-decision-activity.html\n\nhttps://www.servicenow.com/docs/r/build-workflows/use-decision-tables.html\n\nhttps://www.servicenow.com/docs/r/build-workflows/workflow-studio/configure-agentic-playbooks.html",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-014",
+      "provenance": {
+        "source_file": "OPP-002-01.md",
+        "section": "## DIRECT EVIDENCE",
+        "line_start": 303,
+        "line_end": 327
+      }
+    },
+    {
+      "id": "EV-009",
+      "statement": "## 2.1 Generate my work plan\n\nServiceNow's current Platform Generate my work plan agentic workflow creates personalized work plans for assigned work.\n\nIt identifies assigned work, predicts effort using historical records, and generates an actionable work plan.\n\nThe documented prioritization inputs include:\n\n- user sentiment;\n- short description;\n- priority;\n- description;\n- due date;\n- escalation;\n- state;\n- updated time;\n- impact;\n- SLA.\n\nThe workflow provides reasoning for its decisions.\n\nServiceNow also documents a **Prioritize work AI Agent**, which dynamically orders tasks using factors such as urgency, priority, SLAs, sentiment, and impact.\n\nSource:\n\nhttps://www.servicenow.com/docs/r/intelligent-experiences/generate-work-plan.html\n\n**Classification: DIRECT EVIDENCE**",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-011",
+      "provenance": {
+        "source_file": "OPP-002-02.md",
+        "section": "## 2.1 Generate my work plan",
+        "line_start": 27,
+        "line_end": 54
+      }
+    },
+    {
+      "id": "EV-010",
+      "statement": "# 3. Native Prioritization Is Explicitly Supported\n\nServiceNow's documentation goes beyond generic workflow capability.\n\nThe current platform includes an AI agent specifically designed to prioritize work.\n\nThe documented default ordering for the work-plan configuration includes:\n\n```text\npriority\n↓\ndue date\n↓\nescalation\n↓\ncreation time\n```\n\nThe workflow can also use:\n\n- impact;\n- SLA;\n- sentiment;\n- historical effort;\n- user schedule;\n- configured filters;\n- AI Search information.\n\nSource:\n\nhttps://www.servicenow.com/docs/r/intelligent-experiences/generate-work-plan.html\n\nThis directly attacks the OPP-002 hypothesis.",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-011",
+      "provenance": {
+        "source_file": "OPP-002-02.md",
+        "section": "# 3. Native Prioritization Is Explicitly Supported",
+        "line_start": 58,
+        "line_end": 90
+      }
+    },
+    {
+      "id": "EV-011",
+      "statement": "# 4. Native Agentic Adaptation\n\nServiceNow states that its agentic workflows can dynamically plan, execute, and adapt actions based on context, data, and intermediate results.\n\nSource:\n\nhttps://www.servicenow.com/docs/r/intelligent-experiences/sn-aia-use-cases-list.html\n\nThe platform also documents that Generate my work plan can rerun after work is completed and that suggested next steps can be produced.\n\nSource:\n\nhttps://www.servicenow.com/docs/r/zurich/release-notes/now-assist-ai-agents-rn-d26825e7785.html\n\n**Classification: DIRECT EVIDENCE**",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-014",
+      "provenance": {
+        "source_file": "OPP-002-02.md",
+        "section": "# 4. Native Agentic Adaptation",
+        "line_start": 94,
+        "line_end": 108
+      }
+    },
+    {
+      "id": "EV-012",
+      "statement": "# 5. Native Exception Prioritization in Specific Workflows\n\nThe ServiceNow platform contains domain-specific exception prioritization.\n\n## Purchase Order Exceptions\n\nServiceNow documents automatic priority assignment for purchase-order exceptions.\n\nPriority is calculated from:\n\n```text\nTIME REMAINING TO DELIVERY\n        +\nSUPPLIER DELIVERY DEVIATION\n        ↓\nIMPACT + URGENCY\n        ↓\nPRIORITY\n```\n\nPriority levels include:\n\n- Critical;\n- High;\n- Moderate;\n- Low.\n\nThe business rule can be configured to fit organizational practices and can use product model and supplier information.\n\nSource:\n\nhttps://www.servicenow.com/docs/r/source-to-pay-operations/assigning-priority-to-po.html\n\n**Classification: DIRECT EVIDENCE**",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-016",
+      "provenance": {
+        "source_file": "OPP-002-02.md",
+        "section": "# 5. Native Exception Prioritization in Specific Workflows",
+        "line_start": 112,
+        "line_end": 145
+      }
+    },
+    {
+      "id": "EV-013",
+      "statement": "# 6. Human Re-Prioritization Is Also Native\n\nServiceNow allows an operational buyer to manually change the priority of a purchase-order exception to reflect urgency and business impact.\n\nSource:\n\nhttps://www.servicenow.com/docs/r/source-to-pay-operations/change-priority-of-poe.html\n\nThis matters because the native model is not limited to static automation.\n\nIt supports:\n\n```text\nAUTOMATIC PRIORITY\n       +\nHUMAN OVERRIDE\n```",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-017",
+      "provenance": {
+        "source_file": "OPP-002-02.md",
+        "section": "# 6. Human Re-Prioritization Is Also Native",
+        "line_start": 149,
+        "line_end": 165
+      }
+    },
+    {
+      "id": "EV-014",
+      "statement": "# 7. Exception Queue Visibility\n\nServiceNow's Purchase Order Management workspace provides:\n\n- top exceptions;\n- priority sorting;\n- elapsed time;\n- open exceptions by priority;\n- incoming exception tasks;\n- new activity;\n- in-progress exceptions;\n- task workload.\n\nSource:\n\nhttps://www.servicenow.com/docs/r/source-to-pay-operations/source-to-pay-workspace/purch-order-mgmt-tab-s2pws.html\n\nThis provides an operational mechanism for humans to see and act on prioritized exception queues.\n\n**Classification: DIRECT EVIDENCE**",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-018",
+      "provenance": {
+        "source_file": "OPP-002-02.md",
+        "section": "# 7. Exception Queue Visibility",
+        "line_start": 169,
+        "line_end": 188
+      }
+    },
+    {
+      "id": "EV-015",
+      "statement": "# 8. Jefferies Revisited\n\nThe Jefferies customer evidence is particularly important because it describes the exact legacy problem that motivated OPP-002.\n\nThe legacy team manually:\n\n- filtered exceptions;\n- classified exceptions;\n- prioritized exceptions;\n- sorted emails;\n- assigned work;\n- correlated communications.\n\nAfter implementing ServiceNow, managers could:\n\n- assess risk;\n- prioritize;\n- categorize;\n- assign exceptions;\n- analyze exceptions by location or client;\n- focus on high-priority problems.\n\nSource:\n\nhttps://www.servicenow.com/customers/jefferies.html\n\nThe customer explicitly states that ServiceNow provides easy prioritization and faster resolution.\n\nSource:\n\nhttps://www.servicenow.com/content/dam/servicenow-assets/public/en-us/doc-type/resource-center/case-study/cs-jefferies.pdf\n\n**Classification: VERIFIED EXTERNAL EVIDENCE**",
+      "classification": "VERIFIED EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-003",
+      "provenance": {
+        "source_file": "OPP-002-02.md",
+        "section": "# 8. Jefferies Revisited",
+        "line_start": 192,
+        "line_end": 224
+      }
+    },
+    {
+      "id": "EV-016",
+      "statement": "# 9. Strongest Native Baseline\n\nThe accumulated evidence now supports the following native baseline:\n\n```text\nEXCEPTION ARRIVES\n      ↓\nCLASSIFICATION\n      ↓\nRISK / IMPACT ASSESSMENT\n      ↓\nPRIORITY\n      ↓\nSLA / DEADLINE\n      ↓\nWORK PLAN\n      ↓\nASSIGNMENT\n      ↓\nAGENTIC / HUMAN ADAPTATION\n      ↓\nRESOLUTION\n```\n\nServiceNow can perform this using combinations of:\n\n- business rules;\n- priority fields;\n- decision logic;\n- work plans;\n- AI agents;\n- agentic workflows;\n- human overrides;\n- domain-specific exception management.",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-INT-OPP-002-02",
+      "provenance": {
+        "source_file": "OPP-002-02.md",
+        "section": "# 9. Strongest Native Baseline",
+        "line_start": 228,
+        "line_end": 261
+      }
+    },
+    {
+      "id": "EV-017",
+      "statement": "# 13. What Has NOT Been Tested\n\nThere remains one technically interesting but unproven distinction.\n\nServiceNow documents prioritization of individual work items.\n\nThe research has **not** established whether a real customer has a decision requiring simultaneous optimization across a portfolio where:\n\n```text\nException A\nException B\nException C\nException D\n        ↓\nLIMITED HUMAN CAPACITY\n        ↓\nALLOCATION DECISION\n        ↓\nCHOOSING ONE ACTION\nMAY DELAY ANOTHER\n```\n\nwith all of the following interacting:\n\n- resource capacity;\n- deadlines;\n- business impact;\n- dependencies between exceptions;\n- downstream consequences;\n- opportunity cost;\n- cross-case interactions.\n\nThis is different from simply assigning each exception a priority score.\n\nBut this remains a **hypothesis**, not evidence.",
+      "classification": "EXPLICIT LIMITATION",
+      "source": "SRC-INT-OPP-002-02",
+      "provenance": {
+        "source_file": "OPP-002-02.md",
+        "section": "# 13. What Has NOT Been Tested",
+        "line_start": 391,
+        "line_end": 425
+      }
+    },
+    {
+      "id": "EV-018",
+      "statement": "# 14. The Potential Residual Boundary\n\nThe only defensible residual question is now:\n\n> **Does ServiceNow optimize the allocation of scarce operational capacity across interacting exception cases, or does it primarily prioritize individual work items and generate work plans from those priorities?**\n\nThis is a much narrower question.\n\n### Important limitation\n\nThe available documentation does not establish that ServiceNow cannot perform such portfolio-level optimization.\n\nIt only documents the capabilities found in this research.\n\nTherefore:\n\n**Capability gap: UNKNOWN**",
+      "classification": "EXPLICIT UNKNOWN",
+      "source": "SRC-INT-OPP-002-02",
+      "provenance": {
+        "source_file": "OPP-002-02.md",
+        "section": "# 14. The Potential Residual Boundary",
+        "line_start": 429,
+        "line_end": 445
+      }
+    },
+    {
+      "id": "EV-019",
+      "statement": "## DIRECT EVIDENCE\n\nServiceNow documents:\n\n- AI-based work prioritization;\n- work-plan generation;\n- urgency and priority;\n- SLA and due-date consideration;\n- impact and sentiment;\n- historical effort;\n- exception priority rules;\n- human priority overrides;\n- exception queue visibility;\n- dynamic agentic workflows.\n\nSources:\n\nhttps://www.servicenow.com/docs/r/intelligent-experiences/generate-work-plan.html\n\nhttps://www.servicenow.com/docs/r/source-to-pay-operations/assigning-priority-to-po.html\n\nhttps://www.servicenow.com/docs/r/source-to-pay-operations/change-priority-of-poe.html\n\nhttps://www.servicenow.com/docs/r/source-to-pay-operations/source-to-pay-workspace/purch-order-mgmt-tab-s2pws.html\n\nhttps://www.servicenow.com/docs/r/intelligent-experiences/sn-aia-use-cases-list.html",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-INT-OPP-002-02",
+      "provenance": {
+        "source_file": "OPP-002-02.md",
+        "section": "## DIRECT EVIDENCE",
+        "line_start": 477,
+        "line_end": 502
+      }
+    },
+    {
+      "id": "EV-020",
+      "statement": "## VERIFIED EXTERNAL EVIDENCE\n\nJefferies demonstrates a real legacy exception-prioritization problem and subsequent ServiceNow improvement.\n\nSource:\n\nhttps://www.servicenow.com/customers/jefferies.html\n\nTridentCare demonstrates a real high-volume operational environment where ServiceNow AI handles scheduling, routing, and exceptions.\n\nSource:\n\nhttps://newsroom.servicenow.com/press-releases/details/2026/TridentCare-achieves-96-scheduling-automation-with-ServiceNow-AI-powered-CRM-improving-care-for-millions-of-patients/default.aspx",
+      "classification": "VERIFIED EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-003",
+      "provenance": {
+        "source_file": "OPP-002-02.md",
+        "section": "## VERIFIED EXTERNAL EVIDENCE",
+        "line_start": 506,
+        "line_end": 518
+      }
+    },
+    {
+      "id": "EV-021",
+      "statement": "# 1. Investigation Question\n\n> **Can independent evidence, including the closest defensible hypothetical/analytical sources where direct customer evidence is unavailable, establish a meaningful decision problem in which scarce operational capacity must be allocated across interacting exceptions—and does current ServiceNow capability already address that problem?**\n\n## Important evidence rule\n\nThe research constraint is acknowledged:\n\n> Public sources generally do not expose customers' internal decision logs, queue states, resource constraints, trade-offs, or post-implementation failure records.\n\nTherefore this checkpoint may use **closest hypothetical / analytical sources** to test whether the decision problem is technically coherent.\n\nHowever:\n\n**A hypothetical source cannot be upgraded into proof that a ServiceNow customer actually experiences the gap.**\n\nEvidence hierarchy remains:\n\n```text\nDIRECT CUSTOMER EVIDENCE\n        ↓\nVERIFIED EXTERNAL EVIDENCE\n        ↓\nPUBLISHED ANALYTICAL / HYPOTHETICAL MODEL\n        ↓\nINFERENCE\n        ↓\nHYPOTHESIS\n```\n\nThe distinction is mandatory.",
+      "classification": "EVIDENCE DISCIPLINE",
+      "source": "SRC-INT-OPP-002-03",
+      "provenance": {
+        "source_file": "OPP-002-03.md",
+        "section": "# 1. Investigation Question",
+        "line_start": 21,
+        "line_end": 51
+      }
+    },
+    {
+      "id": "EV-022",
+      "statement": "## 2.1 Help Optimize Team Productivity\n\nServiceNow's current platform includes an agentic workflow called **Help optimize team productivity**.\n\nThe documentation states that it:\n\n- analyzes historical performance of team members;\n- calculates workloads relative to each team member's typical capacity;\n- improves assignments;\n- balances workloads;\n- provides proactive team-management insights.\n\nSource:\n\nhttps://www.servicenow.com/docs/r/intelligent-experiences/help-optimize-productivity.html\n\n**Classification: DIRECT EVIDENCE**\n\nThis is directly relevant to the OPP-002 hypothesis.",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-012",
+      "provenance": {
+        "source_file": "OPP-002-03.md",
+        "section": "## 2.1 Help Optimize Team Productivity",
+        "line_start": 61,
+        "line_end": 79
+      }
+    },
+    {
+      "id": "EV-023",
+      "statement": "# 3. Advanced Work Assignment Already Uses Capacity\n\nServiceNow Advanced Work Assignment (AWA) can route work based on:\n\n- queue priority;\n- agent availability;\n- agent capacity;\n- skills;\n- assignment rules.\n\nThe current documentation describes a **Most capacity** assignment rule that sends the next work item to the agent with the greatest available capacity.\n\nSource:\n\nhttps://www.servicenow.com/docs/r/conversational-interfaces/advanced-work-assignment/awa-assignment.html\n\n**Classification: DIRECT EVIDENCE**\n\nThe current platform therefore already addresses:\n\n```text\nWORK ITEM\n    ↓\nQUEUE PRIORITY\n    ↓\nELIGIBLE AGENTS\n    ↓\nCAPACITY\n    ↓\nSKILLS\n    ↓\nASSIGNMENT\n```\n\nThis significantly weakens the residual hypothesis.",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-007",
+      "provenance": {
+        "source_file": "OPP-002-03.md",
+        "section": "# 3. Advanced Work Assignment Already Uses Capacity",
+        "line_start": 83,
+        "line_end": 117
+      }
+    },
+    {
+      "id": "EV-024",
+      "statement": "# 4. Queue-Level Prioritization Also Exists\n\nServiceNow AWA group queue priorities allow organizations to establish priorities among queues and work items assigned to groups.\n\nThe assignment engine evaluates queue priority and available capacity when routing work.\n\nSource:\n\nhttps://www.servicenow.com/docs/r/yokohama/servicenow-platform/advanced-work-assignment/awa-group-queue-priorities.html\n\nThe documentation explicitly describes scenarios where a group has limited capacity and one queue should be preferred over another.\n\n**Classification: DIRECT EVIDENCE**\n\nThis is extremely close to the proposed OPP-002 decision boundary.",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-020",
+      "provenance": {
+        "source_file": "OPP-002-03.md",
+        "section": "# 4. Queue-Level Prioritization Also Exists",
+        "line_start": 121,
+        "line_end": 135
+      }
+    },
+    {
+      "id": "EV-025",
+      "statement": "# 5. ServiceNow Already Combines Priority + Capacity + Skills\n\nServiceNow's order-routing capability states that AWA can route order tasks based on:\n\n- priority;\n- availability;\n- capacity;\n- skills.\n\nSource:\n\nhttps://www.servicenow.com/docs/r/telecom-media-technology/order-mgt-priority-awa.html\n\nTherefore:\n\n```text\nPRIORITY\n   +\nCAPACITY\n   +\nSKILLS\n   +\nAVAILABILITY\n        ↓\nROUTING DECISION\n```\n\nis already a native ServiceNow capability.",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-019",
+      "provenance": {
+        "source_file": "OPP-002-03.md",
+        "section": "# 5. ServiceNow Already Combines Priority + Capacity + Skills",
+        "line_start": 139,
+        "line_end": 166
+      }
+    },
+    {
+      "id": "EV-026",
+      "statement": "# 6. ServiceNow Also Supports Dynamic Reallocation\n\nServiceNow Dynamic Scheduling can:\n\n- prioritize tasks;\n- reassign previously assigned tasks;\n- adapt to changing conditions;\n- account for agent skills;\n- account for travel time;\n- reassign work when agents become unavailable;\n- respond to newly arising high-priority tasks.\n\nSource:\n\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/Configure-dynamic-scheduling.html\n\nThe current Dynamic Scheduling documentation further states that tasks can be reassigned when new high-priority work arises and that capacity reservations can allocate capacity across different work attributes.\n\nSource:\n\nhttps://www.servicenow.com/docs/r/field-service-management/dynamic-scheduling.html\n\n**Classification: DIRECT EVIDENCE**\n\nThis is a major falsification result.",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-008",
+      "provenance": {
+        "source_file": "OPP-002-03.md",
+        "section": "# 6. ServiceNow Also Supports Dynamic Reallocation",
+        "line_start": 170,
+        "line_end": 194
+      }
+    },
+    {
+      "id": "EV-027",
+      "statement": "# 7. Capacity Reservation Is Already Native\n\nServiceNow Capacity Reservations can distribute total work capacity among work-order tasks based on:\n\n- work type;\n- location;\n- priority;\n- demand.\n\nRules can reserve a percentage of capacity for specified categories of work.\n\nSource:\n\nhttps://www.servicenow.com/docs/r/field-service-management/workforce-optimization-for-field-service/capacity-reservations.html\n\nTherefore ServiceNow already supports:\n\n```text\nTOTAL CAPACITY\n       ↓\nCAPACITY ALLOCATION RULES\n       ↓\nWORK CATEGORY\n       ↓\nRESERVED CAPACITY\n```\n\nThis directly challenges the idea that ServiceNow merely ranks exceptions without considering scarce capacity.",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-EXT-010",
+      "provenance": {
+        "source_file": "OPP-002-03.md",
+        "section": "# 7. Capacity Reservation Is Already Native",
+        "line_start": 198,
+        "line_end": 225
+      }
+    },
+    {
+      "id": "EV-028",
+      "statement": "# 8. Analytical / Hypothetical Evidence\n\nBecause public customer evidence does not expose internal post-implementation decision logs, the investigation also examined the closest defensible analytical evidence.\n\nThe general operations-research literature treats the following as established classes of decision problems:\n\n- scheduling under limited resources;\n- prioritization under deadlines;\n- resource-constrained scheduling;\n- multi-objective scheduling;\n- dispatching under changing conditions;\n- optimization under competing constraints.\n\nThese analytical models establish that portfolio-level allocation can be a legitimate mathematical decision problem.\n\nHowever, they do **not** establish:\n\n- that a ServiceNow customer has this exact problem;\n- that ServiceNow cannot solve it;\n- that a specialized external engine would outperform ServiceNow;\n- that customers would pay for such a system.\n\n**Classification: VERIFIED ANALYTICAL EVIDENCE**\n\nAnalytical evidence therefore proves the **coherence of the problem class**, not the commercial gap.",
+      "classification": "VERIFIED ANALYTICAL EVIDENCE",
+      "source": "SRC-INT-OPP-002-03",
+      "provenance": {
+        "source_file": "OPP-002-03.md",
+        "section": "# 8. Analytical / Hypothetical Evidence",
+        "line_start": 229,
+        "line_end": 253
+      }
+    },
+    {
+      "id": "EV-029",
+      "statement": "# 10. Native ServiceNow Test Against the Hypothetical\n\nThe strongest reasonable native interpretation now includes:\n\n```text\nEXCEPTIONS\n   ↓\nCLASSIFY\n   ↓\nPRIORITIZE\n   ↓\nQUEUE PRIORITY\n   ↓\nCAPACITY\n   ↓\nSKILLS\n   ↓\nASSIGNMENT\n   ↓\nWORK PLAN\n   ↓\nDYNAMIC REASSIGNMENT\n   ↓\nCAPACITY RESERVATION\n   ↓\nHUMAN OVERRIDE\n```\n\nRelevant sources:\n\nhttps://www.servicenow.com/docs/r/intelligent-experiences/generate-work-plan.html\n\nhttps://www.servicenow.com/docs/r/intelligent-experiences/help-optimize-productivity.html\n\nhttps://www.servicenow.com/docs/r/conversational-interfaces/advanced-work-assignment/awa-assignment.html\n\nhttps://www.servicenow.com/docs/r/yokohama/servicenow-platform/advanced-work-assignment/awa-group-queue-priorities.html\n\nhttps://www.servicenow.com/docs/r/field-service-management/dynamic-scheduling.html\n\nhttps://www.servicenow.com/docs/r/field-service-management/workforce-optimization-for-field-service/capacity-reservations.html\n\n### Result\n\nThe strongest native model already covers much of the hypothetical decision.",
+      "classification": "RECONSTRUCTED NATIVE TEST",
+      "source": "SRC-INT-OPP-002-03",
+      "provenance": {
+        "source_file": "OPP-002-03.md",
+        "section": "# 10. Native ServiceNow Test Against the Hypothetical",
+        "line_start": 321,
+        "line_end": 365
+      }
+    },
+    {
+      "id": "EV-030",
+      "statement": "# 11. Critical Remaining Distinction\n\nOne possible distinction remains:\n\n```text\nSERVICE NOW\n    ↓\nRULES + PRIORITIES + AGENTIC REASONING\n    ↓\nCAPACITY-AWARE ASSIGNMENT\n```\n\nversus:\n\n```text\nSPECIALIZED OPTIMIZER\n    ↓\nGLOBAL MULTI-CASE OPTIMIZATION\n    ↓\nEXPLICIT OPPORTUNITY-COST TRADE-OFFS\n    ↓\nOPTIMAL PORTFOLIO\n```\n\nThe second model may be mathematically richer.\n\nBut mathematical richness does **not** establish business need.\n\nThe crucial question remains:\n\n> **Does a real customer actually need the second model badly enough that native ServiceNow capabilities are materially inadequate?**\n\nCurrent evidence does not answer yes.",
+      "classification": "EXPLICIT LIMITATION",
+      "source": "SRC-INT-OPP-002-03",
+      "provenance": {
+        "source_file": "OPP-002-03.md",
+        "section": "# 11. Critical Remaining Distinction",
+        "line_start": 369,
+        "line_end": 401
+      }
+    },
+    {
+      "id": "EV-031",
+      "statement": "## Kill Test E — Portfolio optimization\n\nA richer global optimization model may still be technically distinguishable.\n\n**Result: NOT TESTED**\n\nBut no evidence currently proves that this difference matters to ServiceNow customers.",
+      "classification": "EXPLICIT LIMITATION",
+      "source": "SRC-INT-OPP-002-03",
+      "provenance": {
+        "source_file": "OPP-002-03.md",
+        "section": "## Kill Test E — Portfolio optimization",
+        "line_start": 457,
+        "line_end": 463
+      }
+    },
+    {
+      "id": "EV-032",
+      "statement": "## VERIFIED EXTERNAL EVIDENCE\n\nJefferies provides real evidence of a high-volume exception-management problem that ServiceNow addressed.\n\nSource:\n\nhttps://www.servicenow.com/customers/jefferies.html\n\nTridentCare provides real evidence of high-volume operational scheduling and exception management with ServiceNow AI.\n\nSource:\n\nhttps://newsroom.servicenow.com/press-releases/details/2026/TridentCare-achieves-96-scheduling-automation-with-ServiceNow-AI-powered-CRM-improving-care-for-millions-of-patients/default.aspx",
+      "classification": "VERIFIED EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-003",
+      "provenance": {
+        "source_file": "OPP-002-03.md",
+        "section": "## VERIFIED EXTERNAL EVIDENCE",
+        "line_start": 499,
+        "line_end": 511
+      }
+    },
+    {
+      "id": "EV-033",
+      "statement": "## VERIFIED ANALYTICAL EVIDENCE\n\nOperations-research literature establishes resource-constrained scheduling and multi-objective allocation as legitimate classes of decision problems.\n\n**Important limitation:** this evidence establishes technical coherence only.\n\nIt does not establish a ServiceNow customer gap.",
+      "classification": "VERIFIED ANALYTICAL EVIDENCE",
+      "source": "SRC-INT-OPP-002-03",
+      "provenance": {
+        "source_file": "OPP-002-03.md",
+        "section": "## VERIFIED ANALYTICAL EVIDENCE",
+        "line_start": 515,
+        "line_end": 521
+      }
+    },
+    {
+      "id": "EV-034",
+      "statement": "## UNKNOWN\n\n1. Whether such a problem is material in ServiceNow customer environments.\n2. Whether ServiceNow's agentic capabilities can already reason through it.\n3. Whether configuration/customization could solve it.\n4. Whether global optimization would materially outperform native capabilities.\n5. Whether the decision occurs frequently enough to matter.\n6. Whether customers would pay for an external engine.",
+      "classification": "EXPLICIT UNKNOWN",
+      "source": "SRC-INT-OPP-002-03",
+      "provenance": {
+        "source_file": "OPP-002-03.md",
+        "section": "## UNKNOWN",
+        "line_start": 545,
+        "line_end": 552
+      }
+    },
+    {
+      "id": "EV-035",
+      "statement": "# 16. Why Hypothetical Evidence Cannot Rescue OPP-002\n\nThe user-requested strategy of using closest hypothetical sources is useful for answering:\n\n> “Could this decision problem exist?”\n\nIt is not sufficient to answer:\n\n> “Does ServiceNow have a commercially meaningful gap here?”\n\nThat distinction must remain intact.\n\nTherefore:\n\n```text\nHYPOTHETICAL MODEL\n        ↓\nPROVES DECISION CLASS IS COHERENT\n        ↓\nDOES NOT PROVE CUSTOMER PAIN\n        ↓\nDOES NOT PROVE SERVICE NOW GAP\n        ↓\nDOES NOT PROVE WILLINGNESS TO PAY\n```\n\nThis prevents the research from manufacturing a customer problem out of an optimization model.",
+      "classification": "EXPLICIT LIMITATION",
+      "source": "SRC-INT-OPP-002-03",
+      "provenance": {
+        "source_file": "OPP-002-03.md",
+        "section": "# 16. Why Hypothetical Evidence Cannot Rescue OPP-002",
+        "line_start": 615,
+        "line_end": 641
+      }
+    },
+    {
+      "id": "EV-036",
+      "statement": "# 19. Reusable ServiceNow Capability Baseline\n\nFuture ServiceNow opportunity research can now treat the following as already strongly evidenced:\n\n```text\nWORKFLOW AUTOMATION\n        ✓\n\nEXCEPTION MANAGEMENT\n        ✓\n\nPRIORITIZATION\n        ✓\n\nAI WORK PLANNING\n        ✓\n\nAGENTIC WORKFLOWS\n        ✓\n\nCAPACITY-AWARE ASSIGNMENT\n        ✓\n\nSKILL-BASED ASSIGNMENT\n        ✓\n\nQUEUE PRIORITIZATION\n        ✓\n\nWORKLOAD BALANCING\n        ✓\n\nDYNAMIC REASSIGNMENT\n        ✓\n\nCAPACITY RESERVATION\n        ✓\n```\n\nA future opportunity should therefore start somewhere **outside this already-covered capability surface**, unless new evidence demonstrates a material failure.",
+      "classification": "DIRECT EVIDENCE",
+      "source": "SRC-INT-OPP-002-03",
+      "provenance": {
+        "source_file": "OPP-002-03.md",
+        "section": "# 19. Reusable ServiceNow Capability Baseline",
+        "line_start": 690,
+        "line_end": 729
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "CL-001",
+      "statement": "## CLAIM\n\n> High-volume operational exceptions can create substantial manual coordination and prioritization work.\n\n**Status:** SUPPORTED by customer evidence.",
+      "evidence_basis": [
+        "EV-002",
+        "EV-006"
+      ],
+      "provenance": {
+        "source_file": "OPP-002-01.md",
+        "section": "## CLAIM",
+        "line_start": 341,
+        "line_end": 345
+      }
+    },
+    {
+      "id": "CL-002",
+      "statement": "## CLAIM\n\n> ServiceNow already provides substantial native capabilities for exception prioritization and AI-assisted work planning.\n\n**Status: STRONGLY SUPPORTED**",
+      "evidence_basis": [
+        "EV-009",
+        "EV-010",
+        "EV-012",
+        "EV-013",
+        "EV-014",
+        "EV-015"
+      ],
+      "provenance": {
+        "source_file": "OPP-002-02.md",
+        "section": "## CLAIM",
+        "line_start": 522,
+        "line_end": 526
+      }
+    },
+    {
+      "id": "CL-003",
+      "statement": "- **DIRECT EVIDENCE:** ServiceNow documents AI work planning, prioritization, queue priorities, capacity-aware assignment, skills-based assignment, dynamic reassignment, workload balancing, and capacity reservations. [OPP-002-03, §§2.1, 3–7, 10–13](./OPP-002-03.md).\n- **VERIFIED EXTERNAL EVIDENCE:** Jefferies and TridentCare provide real high-volume exception or scheduling evidence. [OPP-002-03, §13](./OPP-002-03.md).\n- **VERIFIED ANALYTICAL EVIDENCE:** operations-research material supports the technical coherence of resource-constrained and multi-objective allocation, but not a ServiceNow customer gap. [OPP-002-03, §13](./OPP-002-03.md).\n- **INFERENCE:** a specialized global optimizer could be mathematically richer than native prioritization, but theoretical distinction is not commercial evidence. [OPP-002-03, §13](./OPP-002-03.md).",
+      "evidence_basis": [
+        "EV-003",
+        "EV-009",
+        "EV-022",
+        "EV-023",
+        "EV-024",
+        "EV-025",
+        "EV-026",
+        "EV-027"
+      ],
+      "provenance": {
+        "source_file": "opportunity.md",
+        "section": "## Evidence summary",
+        "line_start": 31,
+        "line_end": 34
+      }
+    },
+    {
+      "id": "CL-004",
+      "statement": "The Jefferies case establishes high exception volume and manual classification/prioritization in the **legacy** process.\n\nIt does not establish that the same residual decision problem remains after ServiceNow implementation.\n\nTherefore Jefferies is evidence for the **problem class**, not evidence for a current ServiceNow gap.",
+      "evidence_basis": [
+        "EV-002",
+        "EV-003",
+        "EV-007",
+        "EV-015"
+      ],
+      "provenance": {
+        "source_file": "OPP-002-01.md",
+        "section": "# 10. Evidence Required to Continue",
+        "line_start": 264,
+        "line_end": 268
+      }
+    },
+    {
+      "id": "CL-005",
+      "statement": "These analytical models establish that portfolio-level allocation can be a legitimate mathematical decision problem.\n\nHowever, they do **not** establish:\n\n- that a ServiceNow customer has this exact problem;\n- that ServiceNow cannot solve it;\n- that a specialized external engine would outperform ServiceNow;\n- that customers would pay for such a system.\n\n**Classification: VERIFIED ANALYTICAL EVIDENCE**\n\nAnalytical evidence therefore proves the **coherence of the problem class**, not the commercial gap.",
+      "evidence_basis": [
+        "EV-028",
+        "EV-033"
+      ],
+      "provenance": {
+        "source_file": "OPP-002-03.md",
+        "section": "# 8. Analytical / Hypothetical Evidence",
+        "line_start": 242,
+        "line_end": 253
+      }
+    },
+    {
+      "id": "CL-006",
+      "statement": "The user-requested strategy of using closest hypothetical sources is useful for answering:\n\n> “Could this decision problem exist?”\n\nIt is not sufficient to answer:\n\n> “Does ServiceNow have a commercially meaningful gap here?”\n\nThat distinction must remain intact.\n\nTherefore:\n\n```text\nHYPOTHETICAL MODEL\n        ↓\nPROVES DECISION CLASS IS COHERENT\n        ↓\nDOES NOT PROVE CUSTOMER PAIN\n        ↓\nDOES NOT PROVE SERVICE NOW GAP\n        ↓\nDOES NOT PROVE WILLINGNESS TO PAY\n```\n\nThis prevents the research from manufacturing a customer problem out of an optimization model.",
+      "evidence_basis": [
+        "EV-028",
+        "EV-033",
+        "EV-035"
+      ],
+      "provenance": {
+        "source_file": "OPP-002-03.md",
+        "section": "# 16. Why Hypothetical Evidence Cannot Rescue OPP-002",
+        "line_start": 617,
+        "line_end": 641
+      }
+    }
+  ],
+  "inferences": [
+    {
+      "id": "INF-001",
+      "statement": "## INFERENCE\n\nThe remaining commercially interesting problem, if one exists, may occur after basic exception identification and routing: allocation of scarce operational attention across competing exceptions.\n\n**Confidence:** Moderate.",
+      "basis": [
+        "EV-002",
+        "EV-003",
+        "EV-006",
+        "EV-007"
+      ],
+      "implication": "The residual opportunity, if real, would require evidence of allocation across competing exceptions rather than generic exception routing.",
+      "provenance": {
+        "source_file": "OPP-002-01.md",
+        "section": "## INFERENCE",
+        "line_start": 347,
+        "line_end": 351
+      }
+    },
+    {
+      "id": "INF-002",
+      "statement": "## INFERENCE\n\nA specialized global optimizer could theoretically differ from ServiceNow's native prioritization and assignment mechanisms.\n\n**Confidence:** High as a conceptual distinction.\n\nBut:\n\n> **Theoretical distinction ≠ commercially relevant capability gap.**",
+      "basis": [
+        "EV-023",
+        "EV-024",
+        "EV-025",
+        "EV-026",
+        "EV-027",
+        "EV-028"
+      ],
+      "implication": "A conceptual distinction is not sufficient to establish a commercially relevant ServiceNow capability gap.",
+      "provenance": {
+        "source_file": "OPP-002-03.md",
+        "section": "## INFERENCE",
+        "line_start": 525,
+        "line_end": 533
+      }
+    },
+    {
+      "id": "INF-003",
+      "statement": "This is different from simply assigning each exception a priority score.\n\nBut this remains a **hypothesis**, not evidence.",
+      "basis": [
+        "EV-016",
+        "EV-017"
+      ],
+      "implication": "A portfolio-level allocation decision is analytically distinct from assigning each exception a priority score, but remains unproven here.",
+      "provenance": {
+        "source_file": "OPP-002-02.md",
+        "section": "# 13. What Has NOT Been Tested",
+        "line_start": 423,
+        "line_end": 425
+      }
+    },
+    {
+      "id": "INF-004",
+      "statement": "The second model may be mathematically richer.\n\nBut mathematical richness does **not** establish business need.\n\nThe crucial question remains:\n\n> **Does a real customer actually need the second model badly enough that native ServiceNow capabilities are materially inadequate?**\n\nCurrent evidence does not answer yes.",
+      "basis": [
+        "EV-029",
+        "EV-030"
+      ],
+      "implication": "The specialized model may be mathematically richer, but customer materiality must be established independently.",
+      "provenance": {
+        "source_file": "OPP-002-03.md",
+        "section": "# 11. Critical Remaining Distinction",
+        "line_start": 393,
+        "line_end": 401
+      }
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "HYP-001",
+      "statement": "## Initial question and hypothesis\n\nThe initial question was whether exception-heavy operational work creates a consequential decision boundary beyond ServiceNow’s existing automation. The initial hypothesis was **UNVALIDATED**: competing exceptions might require a specialized intelligence layer for classification, prioritization, coordination, and resolution.",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "EV-001",
+        "EV-002",
+        "EV-006"
+      ],
+      "falsification_basis": [
+        "EV-003",
+        "EV-004"
+      ],
+      "provenance": {
+        "source_file": "walkthrough.md",
+        "section": "## Initial question and hypothesis",
+        "line_start": 34,
+        "line_end": 36
+      }
+    },
+    {
+      "id": "HYP-002",
+      "statement": "# 6. Residual Hypothesis\n\nA narrower hypothesis is:\n\n> **In high-volume exception environments, the difficult residual problem may not be creating or routing exception work, but deciding how scarce operational attention should be allocated when multiple exceptions compete under different deadlines, risks, dependencies, and consequences.**\n\n**Status:** HYPOTHESIS\n\nNo capability gap is established.",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "EV-002",
+        "EV-006",
+        "EV-007"
+      ],
+      "falsification_basis": [
+        "EV-003",
+        "EV-004",
+        "EV-009",
+        "EV-010"
+      ],
+      "provenance": {
+        "source_file": "OPP-002-01.md",
+        "section": "# 6. Residual Hypothesis",
+        "line_start": 165,
+        "line_end": 173
+      }
+    },
+    {
+      "id": "HYP-003",
+      "statement": "# 10. OPP-002 Hypothesis Test\n\nOriginal residual hypothesis:\n\n> In high-volume exception environments, a specialized decision layer may improve prioritization when exception queues contain interacting deadlines, risk, dependencies and limited human capacity.\n\n## Finding\n\nThe hypothesis is now materially weakened.",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "EV-017",
+        "EV-018",
+        "EV-028"
+      ],
+      "falsification_basis": [
+        "EV-009",
+        "EV-010",
+        "EV-011",
+        "EV-012",
+        "EV-013",
+        "EV-014",
+        "EV-015"
+      ],
+      "provenance": {
+        "source_file": "OPP-002-02.md",
+        "section": "# 10. OPP-002 Hypothesis Test",
+        "line_start": 265,
+        "line_end": 273
+      }
+    },
+    {
+      "id": "HYP-004",
+      "statement": "## HYPOTHESIS\n\nSome organizations may have portfolio-level resource-allocation decisions that are more complex than ServiceNow's documented native assignment and prioritization mechanisms.\n\n**Status: UNVALIDATED**",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "EV-028",
+        "EV-029",
+        "EV-030"
+      ],
+      "falsification_basis": [
+        "EV-022",
+        "EV-023",
+        "EV-024",
+        "EV-025",
+        "EV-026",
+        "EV-027",
+        "EV-031"
+      ],
+      "provenance": {
+        "source_file": "OPP-002-03.md",
+        "section": "## HYPOTHESIS",
+        "line_start": 537,
+        "line_end": 542
+      }
+    }
+  ],
+  "results": [
+    {
+      "id": "RES-001",
+      "statement": "# 14. Current Status\n\n# OPP-002 — INVESTIGATION OPEN\n\nThis is intentionally **not** an opportunity declaration.\n\nIt earned another investigation because:\n\n1. the problem class is supported by real customer evidence;\n2. the problem is materially different from OPP-001;\n3. ServiceNow already solves much of the legacy problem;\n4. a narrower residual decision can be articulated;\n5. that residual decision has not yet been tested.",
+      "status": "ACTIVE",
+      "provenance": {
+        "source_file": "OPP-002-01.md",
+        "section": "# 14. Current Status",
+        "line_start": 388,
+        "line_end": 400
+      }
+    },
+    {
+      "id": "RES-002",
+      "statement": "# 12. Attempt to Kill OPP-002\n\n## Kill Test A — Basic exception prioritization\n\n### Result\n\n**KILLED AS DIFFERENTIATOR**\n\nServiceNow explicitly supports automatic exception priority calculation.\n\nSource:\n\nhttps://www.servicenow.com/docs/r/source-to-pay-operations/assigning-priority-to-po.html\n\n---\n\n## Kill Test B — Multi-factor work prioritization\n\n### Result\n\n**KILLED AS DIFFERENTIATOR**\n\nGenerate my work plan considers priority, due date, escalation, impact, SLA, sentiment and historical effort.\n\nSource:\n\nhttps://www.servicenow.com/docs/r/intelligent-experiences/generate-work-plan.html\n\n---\n\n## Kill Test C — AI prioritization\n\n### Result\n\n**KILLED AS DIFFERENTIATOR**\n\nServiceNow has a dedicated Prioritize work AI Agent.\n\nSource:\n\nhttps://www.servicenow.com/docs/r/intelligent-experiences/generate-work-plan.html\n\n---\n\n## Kill Test D — Dynamic adaptation\n\n### Result\n\n**KILLED AS DIFFERENTIATOR**\n\nServiceNow documents agentic planning, execution and adaptation.\n\nSource:\n\nhttps://www.servicenow.com/docs/r/intelligent-experiences/sn-aia-use-cases-list.html\n\n---\n\n## Kill Test E — Human override\n\n### Result\n\n**KILLED AS DIFFERENTIATOR**\n\nServiceNow allows users to manually change exception priority.\n\nSource:\n\nhttps://www.servicenow.com/docs/r/source-to-pay-operations/change-priority-of-poe.html",
+      "status": "KILLED",
+      "provenance": {
+        "source_file": "OPP-002-02.md",
+        "section": "# 12. Attempt to Kill OPP-002",
+        "line_start": 319,
+        "line_end": 387
+      }
+    },
+    {
+      "id": "RES-003",
+      "statement": "### Final status\n\n**Basic exception-prioritization opportunity:** `KILLED`\n\n**Residual portfolio-allocation hypothesis:** `UNPROVEN`\n\n**Native ServiceNow prioritization:** `STRONGLY EVIDENCED`\n\n**Capability gap:** `UNKNOWN`\n\n**Customer problem for residual hypothesis:** `NOT ESTABLISHED`\n\n**Technical advantage:** `NOT TESTED`\n\n**Commercial opportunity:** `UNKNOWN`\n\n**AOI Decision:** `CONTINUE INVESTIGATION — FINAL EVIDENCE GATE`\n\n**AIL:** `NOT READY`",
+      "status": "KILLED",
+      "provenance": {
+        "source_file": "OPP-002-02.md",
+        "section": "### Final status",
+        "line_start": 683,
+        "line_end": 701
+      }
+    },
+    {
+      "id": "RES-004",
+      "statement": "## Kill Test E — Portfolio optimization\n\nA richer global optimization model may still be technically distinguishable.\n\n**Result: NOT TESTED**\n\nBut no evidence currently proves that this difference matters to ServiceNow customers.",
+      "status": "UNVERIFIED",
+      "provenance": {
+        "source_file": "OPP-002-03.md",
+        "section": "## Kill Test E — Portfolio optimization",
+        "line_start": 457,
+        "line_end": 463
+      }
+    },
+    {
+      "id": "RES-005",
+      "statement": "# 15. Decision\n\n# KILL OPP-002\n\nThis is the appropriate evidence-driven conclusion.\n\nThe hypothetical evidence successfully demonstrates that the proposed portfolio-allocation problem is technically legitimate.\n\nBut it also reveals that the strongest reasonable interpretation of current ServiceNow capabilities already includes:\n\n```text\nPRIORITY\n+\nCAPACITY\n+\nSKILLS\n+\nAVAILABILITY\n+\nQUEUE PRIORITY\n+\nWORKLOAD BALANCING\n+\nDYNAMIC REASSIGNMENT\n+\nCAPACITY RESERVATION\n+\nAGENTIC WORK PLANNING\n```\n\nThe missing proof is not technical possibility.\n\nThe missing proof is **a consequential customer gap**.\n\nWe do not have it.",
+      "status": "KILLED",
+      "provenance": {
+        "source_file": "OPP-002-03.md",
+        "section": "# 15. Decision",
+        "line_start": 577,
+        "line_end": 611
+      }
+    },
+    {
+      "id": "RES-006",
+      "statement": "## What was falsified and what survived\n\n| Item                                      | Outcome                                                     |\n| ----------------------------------------- | ----------------------------------------------------------- |\n| Capacity awareness as differentiator      | KILLED                                                      |\n| Queue-level competition as differentiator | KILLED                                                      |\n| Dynamic reallocation as differentiator    | KILLED                                                      |\n| Workload balancing as differentiator      | KILLED                                                      |\n| Global portfolio optimization distinction | HYPOTHESIS ONLY; not tested as a customer problem           |\n| Real exception-management problem         | SURVIVED as a verified problem class, not as an opportunity |\n| Commercial opportunity                    | KILLED / NOT ESTABLISHED                                    |",
+      "status": "SURVIVED",
+      "provenance": {
+        "source_file": "walkthrough.md",
+        "section": "## What was falsified and what survived",
+        "line_start": 55,
+        "line_end": 65
+      }
+    },
+    {
+      "id": "RES-007",
+      "statement": "### Final status\n\n**OPP-002:** `KILLED`\n\n**Real exception problem:** `VERIFIED`\n\n**Hypothetical portfolio-allocation problem:** `TECHNICALLY COHERENT`\n\n**ServiceNow capability gap:** `NOT ESTABLISHED`\n\n**Specialized technical advantage:** `NOT DEMONSTRATED`\n\n**Customer willingness to pay:** `UNKNOWN`\n\n**AOI Decision:** `KILL`\n\n**AIL:** `NOT READY`",
+      "status": "KILLED",
+      "provenance": {
+        "source_file": "OPP-002-03.md",
+        "section": "### Final status",
+        "line_start": 775,
+        "line_end": 791
+      }
+    }
+  ],
+  "falsification": [
+    {
+      "statement": "## Kill Test A — Basic exception prioritization\n\n### Result\n\n**KILLED AS DIFFERENTIATOR**\n\nServiceNow explicitly supports automatic exception priority calculation.\n\nSource:\n\nhttps://www.servicenow.com/docs/r/source-to-pay-operations/assigning-priority-to-po.html",
+      "outcome": "KILLED AS DIFFERENTIATOR",
+      "basis": [
+        "EV-012"
+      ],
+      "provenance": {
+        "source_file": "OPP-002-02.md",
+        "section": "## Kill Test A — Basic exception prioritization",
+        "line_start": 321,
+        "line_end": 331
+      }
+    },
+    {
+      "statement": "## Kill Test B — Multi-factor work prioritization\n\n### Result\n\n**KILLED AS DIFFERENTIATOR**\n\nGenerate my work plan considers priority, due date, escalation, impact, SLA, sentiment and historical effort.\n\nSource:\n\nhttps://www.servicenow.com/docs/r/intelligent-experiences/generate-work-plan.html",
+      "outcome": "KILLED AS DIFFERENTIATOR",
+      "basis": [
+        "EV-009",
+        "EV-010"
+      ],
+      "provenance": {
+        "source_file": "OPP-002-02.md",
+        "section": "## Kill Test B — Multi-factor work prioritization",
+        "line_start": 335,
+        "line_end": 345
+      }
+    },
+    {
+      "statement": "## Kill Test C — AI prioritization\n\n### Result\n\n**KILLED AS DIFFERENTIATOR**\n\nServiceNow has a dedicated Prioritize work AI Agent.\n\nSource:\n\nhttps://www.servicenow.com/docs/r/intelligent-experiences/generate-work-plan.html",
+      "outcome": "KILLED AS DIFFERENTIATOR",
+      "basis": [
+        "EV-009",
+        "EV-011"
+      ],
+      "provenance": {
+        "source_file": "OPP-002-02.md",
+        "section": "## Kill Test C — AI prioritization",
+        "line_start": 349,
+        "line_end": 359
+      }
+    },
+    {
+      "statement": "## Kill Test D — Dynamic adaptation\n\n### Result\n\n**KILLED AS DIFFERENTIATOR**\n\nServiceNow documents agentic planning, execution and adaptation.\n\nSource:\n\nhttps://www.servicenow.com/docs/r/intelligent-experiences/sn-aia-use-cases-list.html",
+      "outcome": "KILLED AS DIFFERENTIATOR",
+      "basis": [
+        "EV-011"
+      ],
+      "provenance": {
+        "source_file": "OPP-002-02.md",
+        "section": "## Kill Test D — Dynamic adaptation",
+        "line_start": 363,
+        "line_end": 373
+      }
+    },
+    {
+      "statement": "## Kill Test E — Human override\n\n### Result\n\n**KILLED AS DIFFERENTIATOR**\n\nServiceNow allows users to manually change exception priority.\n\nSource:\n\nhttps://www.servicenow.com/docs/r/source-to-pay-operations/change-priority-of-poe.html",
+      "outcome": "KILLED AS DIFFERENTIATOR",
+      "basis": [
+        "EV-013"
+      ],
+      "provenance": {
+        "source_file": "OPP-002-02.md",
+        "section": "## Kill Test E — Human override",
+        "line_start": 377,
+        "line_end": 387
+      }
+    },
+    {
+      "statement": "## Kill Test A — Capacity awareness\n\nServiceNow already accounts for capacity in AWA.\n\n**Result: KILLED AS DIFFERENTIATOR**\n\nSource:\n\nhttps://www.servicenow.com/docs/r/conversational-interfaces/advanced-work-assignment/awa-assignment.html",
+      "outcome": "KILLED AS DIFFERENTIATOR",
+      "basis": [
+        "EV-023"
+      ],
+      "provenance": {
+        "source_file": "OPP-002-03.md",
+        "section": "## Kill Test A — Capacity awareness",
+        "line_start": 407,
+        "line_end": 415
+      }
+    },
+    {
+      "statement": "## Kill Test B — Queue-level competition\n\nServiceNow already supports queue priorities when groups have limited capacity.\n\n**Result: KILLED AS DIFFERENTIATOR**\n\nSource:\n\nhttps://www.servicenow.com/docs/r/yokohama/servicenow-platform/advanced-work-assignment/awa-group-queue-priorities.html",
+      "outcome": "KILLED AS DIFFERENTIATOR",
+      "basis": [
+        "EV-024"
+      ],
+      "provenance": {
+        "source_file": "OPP-002-03.md",
+        "section": "## Kill Test B — Queue-level competition",
+        "line_start": 419,
+        "line_end": 427
+      }
+    },
+    {
+      "statement": "## Kill Test C — Dynamic reallocation\n\nServiceNow Dynamic Scheduling can reassign work when higher-priority work appears or conditions change.\n\n**Result: KILLED AS DIFFERENTIATOR**\n\nSources:\n\nhttps://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/Configure-dynamic-scheduling.html\n\nhttps://www.servicenow.com/docs/r/field-service-management/dynamic-scheduling.html",
+      "outcome": "KILLED AS DIFFERENTIATOR",
+      "basis": [
+        "EV-026"
+      ],
+      "provenance": {
+        "source_file": "OPP-002-03.md",
+        "section": "## Kill Test C — Dynamic reallocation",
+        "line_start": 431,
+        "line_end": 441
+      }
+    },
+    {
+      "statement": "## Kill Test D — Workload balancing\n\nServiceNow has an agentic workflow explicitly designed to balance workloads relative to team capacity.\n\n**Result: KILLED AS DIFFERENTIATOR**\n\nSource:\n\nhttps://www.servicenow.com/docs/r/intelligent-experiences/help-optimize-productivity.html",
+      "outcome": "KILLED AS DIFFERENTIATOR",
+      "basis": [
+        "EV-022"
+      ],
+      "provenance": {
+        "source_file": "OPP-002-03.md",
+        "section": "## Kill Test D — Workload balancing",
+        "line_start": 445,
+        "line_end": 453
+      }
+    },
+    {
+      "statement": "## Kill Test E — Portfolio optimization\n\nA richer global optimization model may still be technically distinguishable.\n\n**Result: NOT TESTED**\n\nBut no evidence currently proves that this difference matters to ServiceNow customers.",
+      "outcome": "NOT TESTED",
+      "basis": [
+        "EV-028",
+        "EV-029",
+        "EV-031"
+      ],
+      "provenance": {
+        "source_file": "OPP-002-03.md",
+        "section": "## Kill Test E — Portfolio optimization",
+        "line_start": 457,
+        "line_end": 463
+      }
+    }
+  ],
+  "traceability": [
+    {
+      "statement": "Native model includes prioritization, capacity, skills, reassignment, and override.",
+      "research_location": "walkthrough.md; §Traceability; OPP-002-03",
+      "source_urls": [
+        "https://www.servicenow.com/docs/r/intelligent-experiences/help-optimize-productivity.html"
+      ],
+      "provenance": {
+        "source_file": "walkthrough.md",
+        "section": "## Traceability",
+        "line_start": 71,
+        "line_end": 77
+      }
+    },
+    {
+      "statement": "Real high-volume exception evidence exists.",
+      "research_location": "walkthrough.md; §Traceability; OPP-002-03",
+      "source_urls": [
+        "https://www.servicenow.com/customers/jefferies.html",
+        "https://newsroom.servicenow.com/press-releases/details/2026/TridentCare-achieves-96-scheduling-automation-with-ServiceNow-AI-powered-CRM-improving-care-for-millions-of-patients/default.aspx"
+      ],
+      "provenance": {
+        "source_file": "walkthrough.md",
+        "section": "## Traceability",
+        "line_start": 71,
+        "line_end": 77
+      }
+    },
+    {
+      "statement": "Portfolio optimization remains an unvalidated hypothesis.",
+      "research_location": "walkthrough.md; §Traceability; OPP-002-03; analytical sources listed in the canonical checkpoint",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "walkthrough.md",
+        "section": "## Traceability",
+        "line_start": 71,
+        "line_end": 77
+      }
+    },
+    {
+      "statement": "## Traceability and reusable patterns\n\n- Native workflow chain: [`OPP-002-03`](./OPP-002-03.md)with [ServiceNow work-plan](https://www.servicenow.com/docs/r/intelligent-experiences/generate-work-plan.html), [AWA assignment](https://www.servicenow.com/docs/r/conversational-interfaces/advanced-work-assignment/awa-assignment.html), and [dynamic scheduling](https://www.servicenow.com/docs/r/field-service-management/dynamic-scheduling.html).\n- Capacity and balancing: [`OPP-002-03`](./OPP-002-03.md)with [team productivity](https://www.servicenow.com/docs/r/intelligent-experiences/help-optimize-productivity.html) and [capacity reservations](https://www.servicenow.com/docs/r/field-service-management/workforce-optimization-for-field-service/capacity-reservations.html).\n- Reusable lesson: test the strongest existing capability surface before creating a specialized opportunity.",
+      "research_location": "workflow.md; §Traceability and reusable patterns",
+      "source_urls": [
+        "https://www.servicenow.com/docs/r/intelligent-experiences/generate-work-plan.html",
+        "https://www.servicenow.com/docs/r/conversational-interfaces/advanced-work-assignment/awa-assignment.html",
+        "https://www.servicenow.com/docs/r/field-service-management/dynamic-scheduling.html",
+        "https://www.servicenow.com/docs/r/intelligent-experiences/help-optimize-productivity.html",
+        "https://www.servicenow.com/docs/r/field-service-management/workforce-optimization-for-field-service/capacity-reservations.html"
+      ],
+      "provenance": {
+        "source_file": "workflow.md",
+        "section": "## Traceability and reusable patterns",
+        "line_start": 67,
+        "line_end": 71
+      }
+    }
+  ]
+}

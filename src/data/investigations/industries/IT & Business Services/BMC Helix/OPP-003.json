@@ -1,0 +1,2046 @@
+{
+  "investigation_id": "AOI-BMC-OPP-003",
+  "company": "BMC Helix / BMC Software",
+  "industry": "IT & Business Services",
+  "opportunity": "OPP-03 — Change Management",
+  "investigation_type": "**Change-Collision Economic Impact and Residual-Gap Test",
+  "research_status": "KILLED",
+  "presentation": {
+    "investigation_summary": "This investigation reviewed 4 BMC Helix research checkpoints. It tested the question recorded in OPP-003-02.md, then followed the later checkpoint decisions. The final source record states: COLLISION-SPECIFIC ECONOMIC CASE NOT PROVEN — KILL OPP-03 AS A CURRENT OPPORTUNITY. The source records also preserve the implementation and workflow intelligence found during the research.",
+    "key_findings": [
+      {
+        "id": "KF-BMC-003-01",
+        "statement": "# 5. BMC's own economic model also treats change risk broadly\n\nForrester's composite assumes:\n\n- 10,000 annual changes/service requests from DevOps;\n- 5% previously led to incidents;\n- governance and automation avoid 33% to 90% of those incidents depending on year;\n- each avoided incident saves substantial IT/developer and end-user labor.\n\n\n\nThis produces a quantified incident-mitigation benefit.\n\nBut there is still no public metric for:\n\n```text\nCOLLISIONS / 10,000 CHANGES\n```\n\nor:\n\n```text\nCOLLISION → INCIDENT\n```\n\nor:\n\n```text\nCOLLISION → DELAY → COST\n```\n\nTherefore:",
+        "classification": "INFERENCE",
+        "source_refs": [
+          "SRC-FILE-BMC-003-05",
+          "EV-BMC-003-014",
+          "EV-BMC-003-015",
+          "EV-BMC-003-016",
+          "RS-BMC-003-008"
+        ]
+      },
+      {
+        "id": "KF-BMC-003-02",
+        "statement": "# 6. Strong evidence that BMC already monetizes automation around change\n\nForrester reports that BMC Helix saved an estimated **90 minutes of IT and developer labor per change or service request** in one modeled DevOps scenario. The composite used 10,000 annual change/service requests and modeled 30 minutes saved for developers plus 60 minutes for IT engineers per request.\n\nThis is useful because it demonstrates that change-related workflow efficiency can have measurable economic value.\n\nBut again:\n\n```text\n90 MINUTES SAVED / CHANGE\n```\n\nis not:\n\n```text\nMINUTES SAVED / COLLISION\n```\n\nThe two cannot be substituted.\n\n---",
+        "classification": "EVIDENCE",
+        "source_refs": [
+          "SRC-FILE-BMC-003-05",
+          "EV-BMC-003-014",
+          "EV-BMC-003-015",
+          "EV-BMC-003-016",
+          "RS-BMC-003-008"
+        ]
+      },
+      {
+        "id": "KF-BMC-003-03",
+        "statement": "# 7. BMC already automates collision detection\n\nBMC Helix automatically detects collisions when:\n\n```text\nSAME CI / SERVICE\n+\nOVERLAPPING IMPLEMENTATION WINDOWS\n```\n\nand supports impact analysis for dependent CIs.\n\nThe system also exposes:\n\n- conflicting change;\n- CI;\n- status;\n- coordinator;\n- scheduled dates;\n- collision status;\n- business justification;\n- audit history.\n\n\n\nTherefore:",
+        "classification": "INFERENCE",
+        "source_refs": [
+          "SRC-FILE-BMC-003-05",
+          "EV-BMC-003-014",
+          "EV-BMC-003-015",
+          "EV-BMC-003-016",
+          "RS-BMC-003-008"
+        ]
+      },
+      {
+        "id": "KF-BMC-003-04",
+        "statement": "# 8. BMC already supports the main collision response mechanisms\n\nBMC documents:\n\n```text\nDETECTED\n ↓\nINVESTIGATING\n ↓\nIGNORE\nOR\nRESCHEDULE\nOR\nRESOLVE\n```\n\nand allows the user to change schedules, modify CI relationships where appropriate, communicate with conflicting coordinators, and document the rationale.\n\nBMC also re-evaluates collision information when schedules change.\n\nTherefore:",
+        "classification": "INFERENCE",
+        "source_refs": [
+          "SRC-FILE-BMC-003-05",
+          "EV-BMC-003-014",
+          "EV-BMC-003-015",
+          "EV-BMC-003-016",
+          "RS-BMC-003-008"
+        ]
+      },
+      {
+        "id": "KF-BMC-003-05",
+        "statement": "# CONTEXTUAL MULTI-OPTION CHANGE ARBITRATION\n\nHowever, the public evidence does not establish that customers are suffering a sufficiently large economic burden because BMC lacks this capability.\n\nTherefore:",
+        "classification": "INFERENCE",
+        "source_refs": [
+          "SRC-FILE-BMC-003-05",
+          "EV-BMC-003-014",
+          "EV-BMC-003-015",
+          "EV-BMC-003-016",
+          "RS-BMC-003-008"
+        ]
+      },
+      {
+        "id": "KF-BMC-003-06",
+        "statement": "### A. Change management has material economic consequences\n\nYES.\n\nForrester quantified significant benefits from BMC Helix's automation, governance and incident mitigation.",
+        "classification": "INFERENCE",
+        "source_refs": [
+          "SRC-FILE-BMC-003-05",
+          "EV-BMC-003-014",
+          "EV-BMC-003-015",
+          "EV-BMC-003-016",
+          "RS-BMC-003-008"
+        ]
+      }
+    ]
+  },
+  "decision": {
+    "decision": "OPP-03 — KILLED",
+    "reason": "# 20. Final opportunity score\n\n| Dimension | Verdict |\n|---|---|\n| Evidence density | 🟢 High |\n| Automation richness | 🟢 Very high |\n| Decision complexity | 🟢 High |\n| Exception richness | 🟢 High |\n| Reusable implementation intelligence | 🟢 Very high |\n| Quantifiable general change economics | 🟢 Strong |\n| Quantifiable collision economics | 🔴 Weak |\n| Specific customer burden | 🔴 Not established |\n| ART differentiation | 🟡 Technically plausible |\n| Commercial opportunity | 🔴 Not validated |\n\n---\n\n### Reason\n\n> **The research established a real, complex, multi-option collision decision but failed to establish collision-specific economic burden or customer demand for an additional intelligence layer.**\n\nThis is a successful research outcome.\n\nWe did not fail to find an opportunity.\n\nWe successfully prevented ART from pursuing an opportunity that cannot currently be defended with evidence.\n\n---\n\n# 22. No OPP-03-06\n\nDo **not** create:\n\n```text\nOPP-03-06.md\n```\n\nThe research should move to a genuinely different BMC business decision domain.\n\nThe next domain should be selected using the improved scoring model:\n\n```text\nEVIDENCE DENSITY\n+\nAUTOMATION RICHNESS\n+\nDECISION COMPLEXITY\n+\nEXCEPTION DENSITY\n+\nMULTIPLE WORKFLOW POTENTIAL\n+\nREUSABLE IMPLEMENTATION INTELLIGENCE\n+\nQUANTIFIABLE CUSTOMER BURDEN\n```\n\nThe last criterion now has substantially greater weight.\n\n---\n\n# 23. Recommended next move\n\nStart:\n\n# `OPP-04-01.md`\n\nwith a different BMC business decision domain.\n\nDo not attempt to rescue collision arbitration.\n\nThe useful intelligence from OPP-03 should be carried forward automatically.\n\n---\n\n# NOT READY\n\nNo OPP-03 candidate enters the Opportunity Intelligence Layer.\n\n---\n\n# 25. Research integrity conclusion\n\nThe strongest available economic evidence says BMC Helix creates significant value through:\n\n- automation;\n- IT operations efficiency;\n- DevOps efficiency;\n- change-risk governance;\n- incident prevention;\n- reduced remediation effort.\n\nForrester's customer evidence includes an insurance organization reducing change-related incidents by 80%, a customer reducing incidents caused by changes from over 90% to under 1%, and a modeled 90 minutes of IT/developer labor saved per change or service request.\n\nThose are powerful findings.\n\nBut none establish:\n\n```text\nCOLLISION\n ↓\nHUMAN ARBITRATION\n ↓\nMEASURABLE COST\n```\n\nThat missing link is decisive.\n\nTherefore:\n\n# KILL OPP-03\n\nand preserve the implementation intelligence for future ART opportunity discovery.",
+    "reusable_intelligence": [
+      {
+        "id": "II-077",
+        "type": "WORKFLOW_PATTERN",
+        "title": "II-077 — Human coordination is part of enterprise workflow",
+        "domain": "OPP-03 — Change Management",
+        "description": "## II-077 — Human coordination is part of enterprise workflow\n\nBMC provides direct contact mechanisms between conflicting change coordinators.",
+        "evidence_status": "VERIFIED",
+        "status": "ACTIVE",
+        "confidence": "HIGH",
+        "reuse_potential": "HIGH",
+        "applications": [],
+        "source_checkpoint": "OPP-003-03",
+        "source_refs": [
+          "SRC-FILE-BMC-003-03",
+          "EV-BMC-003-002",
+          "EV-BMC-003-003",
+          "EV-BMC-003-004",
+          "EV-BMC-003-005"
+        ],
+        "source_location": "OPP-003-03.md::II-077 — Human coordination is part of enterprise workflow",
+        "original_source": "OPP-003-03.md",
+        "tags": [],
+        "provenance": {
+          "source_file": "OPP-003-03.md",
+          "section": "II-077 — Human coordination is part of enterprise workflow",
+          "line_start": 774,
+          "line_end": 777
+        }
+      },
+      {
+        "id": "II-089",
+        "type": "DECISION_PATTERN",
+        "title": "II-089 — Use customer outcome evidence at the exact hypothesis level",
+        "domain": "OPP-03 — Change Management",
+        "description": "## II-089 — Use customer outcome evidence at the exact hypothesis level\n\nForrester reports an insurance customer reducing change-related incidents by 80%.\n\nThat supports:\n\n```text\nCHANGE-RISK / GOVERNANCE VALUE\n```\n\nIt does not support:\n\n```text\nCOLLISION-ARBITRATION VALUE\n```",
+        "evidence_status": "HYPOTHESIS",
+        "status": "ACTIVE",
+        "confidence": "LOW",
+        "reuse_potential": "HIGH",
+        "applications": [],
+        "source_checkpoint": "OPP-003-05",
+        "source_refs": [
+          "SRC-FILE-BMC-003-05",
+          "EV-BMC-003-014",
+          "EV-BMC-003-015",
+          "EV-BMC-003-016"
+        ],
+        "source_location": "OPP-003-05.md::II-089 — Use customer outcome evidence at the exact hypothesis level",
+        "original_source": "OPP-003-05.md",
+        "tags": [],
+        "provenance": {
+          "source_file": "OPP-003-05.md",
+          "section": "II-089 — Use customer outcome evidence at the exact hypothesis level",
+          "line_start": 573,
+          "line_end": 588
+        }
+      }
+    ],
+    "provenance": {
+      "source_file": "OPP-003-05.md",
+      "section": "Final verdict",
+      "line_start": 657,
+      "line_end": 837
+    }
+  },
+  "primary_question": "OPP-03-01 identified a strong real-world workload: BMC describes a large Asia/Pacific bank managing **hundreds of job-scheduling change requests daily**, with manual creation and status checking in BMC Helix ITSM. BMC's Control-M Workload Change Manager integration was positioned to automate that administrative interaction.\n\nThe question now is:\n\n> What is the actual change decision, what evidence informs it, what does BMC already automate, and where does human judgment remain?\n\nThis is deliberately different from asking whether change management is automated.\n\n---",
+  "sources": [
+    {
+      "id": "SRC-FILE-BMC-003-02",
+      "title": "OPP-003-02.md",
+      "url": "opportunities/IT_and_Business_Services/bmc-helix/opportunity03/OPP-003-02.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": [
+        "EV-BMC-003-001",
+        "OPP-003-02"
+      ]
+    },
+    {
+      "id": "SRC-FILE-BMC-003-03",
+      "title": "OPP-003-03.md",
+      "url": "opportunities/IT_and_Business_Services/bmc-helix/opportunity03/OPP-003-03.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": [
+        "EV-BMC-003-002",
+        "EV-BMC-003-003",
+        "EV-BMC-003-004",
+        "EV-BMC-003-005",
+        "EV-BMC-003-006",
+        "EV-BMC-003-007",
+        "OPP-003-03"
+      ]
+    },
+    {
+      "id": "SRC-FILE-BMC-003-04",
+      "title": "OPP-003-04.md",
+      "url": "opportunities/IT_and_Business_Services/bmc-helix/opportunity03/OPP-003-04.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": [
+        "EV-BMC-003-008",
+        "EV-BMC-003-009",
+        "EV-BMC-003-010",
+        "EV-BMC-003-011",
+        "EV-BMC-003-012",
+        "EV-BMC-003-013",
+        "OPP-003-04"
+      ]
+    },
+    {
+      "id": "SRC-FILE-BMC-003-05",
+      "title": "OPP-003-05.md",
+      "url": "opportunities/IT_and_Business_Services/bmc-helix/opportunity03/OPP-003-05.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": [
+        "EV-BMC-003-014",
+        "EV-BMC-003-015",
+        "EV-BMC-003-016",
+        "OPP-003-05"
+      ]
+    },
+    {
+      "id": "SRC-UNKNOWN-BMC-003-001",
+      "title": "Unresolved or unverified source state recorded in research",
+      "url": "UNKNOWN",
+      "source_type": "UNKNOWN",
+      "used_by": [
+        "OPP-003-02",
+        "OPP-003-03",
+        "OPP-003-04",
+        "OPP-003-05"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "OPP-003-02",
+      "title": "1. Decisive research question",
+      "status": "CONTINUE — REAL DECISION SURFACE VERIFIED; RESIDUAL BURDEN NOT YET QUANTIFIED",
+      "investigation_question": "OPP-03-01 identified a strong real-world workload: BMC describes a large Asia/Pacific bank managing **hundreds of job-scheduling change requests daily**, with manual creation and status checking in BMC Helix ITSM. BMC's Control-M Workload Change Manager integration was positioned to automate that administrative interaction.\n\nThe question now is:\n\n> What is the actual change decision, what evidence informs it, what does BMC already automate, and where does human judgment remain?\n\nThis is deliberately different from asking whether change management is automated.\n\n---",
+      "tested": "OPP-03-01 identified a strong real-world workload: BMC describes a large Asia/Pacific bank managing **hundreds of job-scheduling change requests daily**, with manual creation and status checking in BMC Helix ITSM. BMC's Control-M Workload Change Manager integration was positioned to automate that administrative interaction.\n\nThe question now is:\n\n> What is the actual change decision, what evidence informs it, what does BMC already automate, and where does human judgment remain?\n\nThis is deliberately different from asking whether change management is automated.\n\n---",
+      "found": "# BMC Helix — OPP-03-02.md\n## Real Change-Decision Reconstruction\n\n### Company\nBMC Software / BMC Helix\n\n### Opportunity\nOPP-03 — Change Management\n\n### Checkpoint\nOPP-03-02\n\n### Status\n# CONTINUE — REAL DECISION SURFACE VERIFIED; RESIDUAL BURDEN NOT YET QUANTIFIED\n\n---\n\n## 1. Decisive research question\n\nOPP-03-01 identified a strong real-world workload: BMC describes a large Asia/Pacific bank managing **hundreds of job-scheduling change requests daily**, with manual creation and status checking in BMC Helix ITSM. BMC's Control-M Workload Change Manager integration was positioned to automate that administrative interaction.\n\nThe question now is:\n\n> What is the actual change decision, what evidence informs it, what does BMC already automate, and where does human judgment remain?\n\nThis is deliberately different from asking whether change management is automated.\n\n---\n\n## 2. Real workload\n\nThe bank case establishes:\n\n```text\nJOB-SCHEDULING CHANGE\n        ↓\nCHANGE REQUEST\n        ↓\nBMC HELIX ITSM\n        ↓\nAPPROVAL / STATUS\n        ↓\nIMPLEMENTATION\n```\n\nThe original burden was specifically manual change-request creation and status checking at high volume.\n\n### Evidence\n# DIRECT BMC CASE EVIDENCE\n\n### Important limitation\nThe published case does **not** quantify the residual burden of risk arbitration, collision resolution, or scheduling decisions.\n\n---\n\n## 3. Decision #1 — Should the change be approved?\n\nBMC documents that approvers review the change's:\n\n- schedule;\n- budget;\n- impact;\n- risk.\n\nThey can approve, reject, or hold the change.\n\n```text\nCHANGE\n ↓\nRISK + IMPACT + SCHEDULE + BUDGET\n ↓\nAPPROVE / REJECT / HOLD\n```\n\n### Classification\n# VERIFIED NATIVE DECISION\n\n---\n\n## 4. Decision #2 — What is the change risk?\n\nBMC's current Change Management documentation describes a Cognitive risk assessment panel using ML-based operational metrics and potentially impacted parameters. It also provides service-CI information and a 12-month incident trend in the risk-information history panel.\n\n```text\nCHANGE\n ↓\nOPERATIONAL METRICS\n+\nIMPACTED PARAMETERS\n+\nHISTORICAL INCIDENTS\n ↓\nCHANGE RISK REPORT\n```\n\n### Classification\n# VERIFIED NATIVE AI/ANALYTICS CAPABILITY\n\n---\n\n## 5. AI is already part of the decision-support layer\n\nBMC states that, when Change Risk Management is enabled, AI-suggested risk information helps users make informed decisions to approve, hold, or reject a change.\n\nTherefore this hypothesis is already invalid:\n\n> \"BMC has no AI-supported change-risk decision capability.\"\n\n# REJECT\n\nThe surviving question must be narrower.\n\n---\n\n## 6. Risk is multi-dimensional\n\nBMC documents risk considerations including:\n\n- number of people affected;\n- financial concerns;\n- productivity loss from downtime;\n- resource allocation;\n- seasonal factors;\n- holidays;\n- weather;\n- geographic impact.\n\n```text\nRISK\n ├─ PEOPLE\n ├─ FINANCIAL\n ├─ PRODUCTIVITY\n ├─ RESOURCES\n ├─ SEASON\n ├─ HOLIDAYS\n └─ WEATHER\n```\n\nThis is materially richer than a simple static risk score.\n\n---\n\n## 7. Decision #3 — Is there a change collision?\n\nBMC automatically detects collisions when the same service or CI is associated with multiple changes whose implementation schedules overlap.\n\n```text\nCHANGE A + CHANGE B\n        ↓\nSAME CI?\n+\nOVERLAPPING WINDOW?\n        ↓\nCOLLISION\n```\n\n### Classification\n# VERIFIED AUTOMATION\n\n---\n\n## 8. Collision detection produces a genuine judgment point\n\nBMC documents collision statuses including:\n\n- Detected;\n- Investigating;\n- Ignored;\n- Resolved.\n\nThe coordinator can provide a rationale/business justification, and status changes are retained in an audit trail.\n\nThis creates:\n\n```text\nCOLLISION\n ↓\nINVESTIGATE\n ↓\nDECIDE\n ↓\nIGNORE / RESOLVE / OTHER ACTION\n ↓\nRATIONALE + AUDIT\n```\n\nThis is the strongest residual decision surface found so far.\n\n---\n\n## 9. Decision #4 — Does the collision actually matter?\n\nBMC explicitly states that colliding changes can coexist when the change coordinator or manager determines that the changes do not actually conflict—for example, when one implementation will not impede or undo the other.\n\nTherefore:\n\n```text\nCOLLISION DETECTED\n        ↓\nDO THEY ACTUALLY CONFLICT?\n        ↓\nYES → MANAGE / RESCHEDULE / RESOLVE\nNO  → IGNORE WITH JUSTIFICATION\n```\n\n### Classification\n# VERIFIED HUMAN DECISION\n\nThis is materially different from merely detecting a collision.\n\n---\n\n## 10. Human collaboration is explicitly supported\n\nWhen a collision is detected, BMC provides a chat mechanism so change coordinators/managers can discuss the conflict. The conversation can be saved with the change records.\n\n```text\nCOLLISION\n ↓\nCONTEXT\n ↓\nHUMAN DISCUSSION\n ↓\nDECISION\n ↓\nAUDIT\n```\n\n### Important limitation\n\nThis proves a human coordination step exists.\n\nIt does **not** prove that the step is sufficiently frequent, slow, expensive, or inconsistent to constitute an ART opportunity.\n\n---\n\n## 11. Decision #5 — Should the change be rescheduled?\n\nBMC's Calendar and collision mechanisms allow users to inspect conflicts and adjust scheduled dates. The system can rerun collision detection after schedule changes.\n\n```text\nCONFLICT\n ↓\nSCHEDULE OPTIONS\n ↓\nRESCHEDULE / RETAIN\n```\n\nBMC therefore provides the decision-support and execution mechanisms.\n\nA generalized autonomous scheduler is **not established**.\n\n---\n\n## 12. Decision #6 — Are hidden dependencies involved?\n\nBMC recommends impact analysis before collision detection so additional dependent CIs can be related to a change.\n\n```text\nCHANGE\n ↓\nIMPACT ANALYSIS\n ↓\nDEPENDENCIES\n ↓\nRELATED CIs\n ↓\nCOLLISION DETECTION\n```\n\n### Classification\n# VERIFIED\n\n---\n\n## 13. Decision #7 — Does this change require approval?\n\nBMC allows organizations to configure which change requests require approval and which approval process applies. Some change classes can bypass approval; the documented Standard change process is an example.\n\n```text\nCHANGE CLASS / POLICY\n ↓\nAPPROVAL REQUIRED?\n ├─ YES\n └─ NO\n```\n\n### Classification\n# VERIFIED\n\n---\n\n## 14. Decision #8 — Who approves?\n\nBMC supports configurable approval processes, approvers, sequences, approval outcomes, and behavior when approvers are unavailable.\n\n```text\nCHANGE\n ↓\nAPPROVAL POLICY\n ↓\nAPPROVER(S)\n ↓\nAPPROVE / REJECT / HOLD\n```\n\n### Classification\n# VERIFIED\n\n---\n\n## 15. Reconstructed real change-decision workflow\n\nThe strongest evidence-backed reconstruction is:\n\n```text\nCHANGE PROPOSED\n        ↓\nCHANGE CLASS / POLICY\n        ↓\nAPPROVAL REQUIRED?\n        ↓\nRISK + IMPACT ANALYSIS\n        ↓\nAI-SUGGESTED RISK INFORMATION\n        ↓\nDEPENDENCY / IMPACT ANALYSIS\n        ↓\nCOLLISION DETECTION\n        ↓\nSCHEDULE CHECK\n        ↓\nAPPROVAL\n ┌──────┼──────┐\nAPPROVE HOLD REJECT\n        ↓\nIMPLEMENT\n```\n\nThis is a reconstruction from documented BMC capabilities, not an invented architecture.\n\n---\n\n## 16. Where human judgment remains\n\n### Collision interpretation\nBMC detects the collision, but a coordinator/manager can determine whether it genuinely conflicts.\n\n### Approval\nHumans can approve, reject, or hold after reviewing risk and impact.\n\n### Scheduling\nUsers can adjust dates and resolve conflicts through the Calendar.\n\n### Business justification\nIgnoring/resolving a collision requires justification.\n\nThese are genuine human decision surfaces.\n\n---\n\n# 17. But human judgment is not automatically an opportunity\n\nWe still need:\n\n```text\nREPEATED\n+\nTIME-CONSUMING\n+\nCOSTLY\n+\nRISKY\n+\nINCONSISTENT\n+\nMEASURABLE\n```\n\nThe bank case establishes high-volume **administrative change processing**, but it does not quantify the residual burden of:\n\n- collision interpretation;\n- rescheduling;\n- risk arbitration;\n- approval judgment.\n\nTherefore we cannot yet claim the residual decision is commercially important.\n\n---\n\n# 18. Candidate opportunity AO-03-A — Autonomous Change Approval\n\n```text\nCHANGE\n ↓\nRISK + IMPACT + DEPENDENCIES + HISTORY\n ↓\nAPPROVE / HOLD / REJECT\n```\n\nBMC already provides risk analytics, AI-suggested risk information, and approval workflows.\n\n### Status\n# WEAK — DO NOT PURSUE GENERICALLY\n\n---\n\n# 19. Candidate opportunity AO-03-B — Dynamic Change Scheduling\n\n```text\nCHANGE\n ↓\nCOLLISIONS\n+\nBLACKOUTS\n+\nDEPENDENCIES\n+\nBUSINESS CONSTRAINTS\n ↓\nOPTIMAL WINDOW\n```\n\nBMC already provides Calendar scheduling, collision detection, impact analysis and availability management.\n\n### Status\n# WEAK — NATIVE SURFACE STRONG\n\n---\n\n# 20. Candidate opportunity AO-03-C — Collision Arbitration\n\n```text\nCOLLISION\n ↓\nACTUAL INTERACTION\n+\nDEPENDENCIES\n+\nTIMING\n+\nCHANGE TYPE\n+\nBUSINESS IMPACT\n ↓\nIGNORE / RESCHEDULE / BLOCK / COORDINATE\n```\n\nBMC detects collisions but explicitly leaves interpretation and coordination to change managers/coordinators in some situations.\n\n### Status\n# STRONGEST CURRENT HYPOTHESIS\n\nBut customer burden is not yet proven.\n\n---\n\n# 21. Candidate opportunity AO-03-D — Change Outcome Learning\n\n```text\nCHANGE\n ↓\nDECISION\n ↓\nIMPLEMENTATION\n ↓\nOUTCOME\n ↓\nSUCCESS / FAILURE\n ↓\nLEARN\n ↓\nFUTURE DECISION\n```\n\nBMC already provides historical risk information and change analytics. Whether it learns from outcomes sufficiently to alter future decision recommendations is not established by the reviewed evidence.\n\n### Status\n# HYPOTHESIS\n\n---\n\n# 22. Candidate opportunity AO-03-E — Competing-Change Portfolio Arbitration\n\n```text\nCHANGE A\nCHANGE B\nCHANGE C\n        ↓\nTIME + RESOURCE + DEPENDENCY + BUSINESS CONSTRAINTS\n        ↓\nORDER / RESCHEDULE / DEFER\n```\n\nBMC detects collisions, but a generalized continuous portfolio optimizer is not established.\n\n### Status\n# PLAUSIBLE BUT UNPROVEN\n\n---\n\n# 23. Implementation Intelligence Register\n\n## II-064 — Quantitative + qualitative risk\nBMC combines quantitative and qualitative criteria in change-risk assessment.\n\n## II-065 — Historical incidents as change-risk context\nBMC's risk information history includes incident trends over the previous 12 months.\n\n## II-066 — AI as decision support with human governance\nBMC describes AI-suggested risk information supporting approve/hold/reject decisions rather than eliminating governance.\n\n## II-067 — Automatic collision detection\nBMC detects conflicts from CI relationships and overlapping schedules.\n\n## II-068 — Rationale + audit trail\nCollision status changes can require business justification and are retained in the audit trail.\n\n## II-069 — Impact analysis before collision analysis\nBMC recommends identifying dependencies before running collision detection.\n\n## II-070 — Configurable approval policy\nOrganizations can configure approval requirements, sequences and outcomes.\n\n## II-071 — Governance connected directly to execution\nControl-M Workload Change Manager links workload changes to BMC Helix ITSM change governance and status.\n\nThese implementation patterns must be retained independently of whether OPP-03 survives.\n\n---\n\n# 24. Native vs ART boundary\n\n## BMC clearly has\n\n```text\nCHANGE LIFECYCLE\n✓\nRISK ASSESSMENT\n✓\nML / AI RISK INPUT\n✓\nHISTORICAL INCIDENT CONTEXT\n✓\nIMPACT ANALYSIS\n✓\nDEPENDENCY ANALYSIS\n✓\nCOLLISION DETECTION\n✓\nSCHEDULING\n✓\nAPPROVAL\n✓\nHOLD / REJECT / APPROVE\n✓\nAUDIT / JUSTIFICATION\n✓\nWORKLOAD ↔ ITSM INTEGRATION\n✓\n```\n\n## Not established\n\n```text\nAUTONOMOUS COLLISION ARBITRATION\n?\nCONTINUOUS CHANGE PORTFOLIO OPTIMIZATION\n?\nOUTCOME-LEARNED CHANGE POLICY OPTIMIZATION\n?\nGENERALIZED MULTI-OBJECTIVE CHANGE SELECTION\n?\n```\n\n---\n\n# 25. Opportunity assessment\n\n| Dimension | Finding |\n|---|---|\n| Real enterprise change workload | 🟢 Strong |\n| High-volume workload | 🟢 Hundreds/day documented |\n| Manual administrative burden | 🟢 Verified |\n| Native automation | 🟢 Very strong |\n| AI risk assessment | 🟢 Verified |\n| Human decision surface | 🟢 Verified |\n| Collision arbitration | 🟡 Strong hypothesis |\n| Portfolio optimization | 🟡 Unknown |\n| Outcome learning | 🟡 Unknown |\n| Quantified residual decision burden | 🔴 Not established |\n| ART advantage | 🔴 Not established |\n| Commercial opportunity | 🟡 Open |\n| AIL | 🔴 Not ready |\n\n---\n\n# 26. Strategic decision\n\nOPP-03 should continue, but only around:\n\n# CHANGE-COLLISION ARBITRATION / COMPETING-CHANGE COORDINATION\n\nDo not revert to generic:\n\n- change automation;\n- change-risk assessment;\n- approval automation;\n- scheduling automation.\n\nThose are already strong native BMC capabilities.\n\n---\n\n# 27. Surviving hypothesis\n\n> **When multiple change requests compete for the same infrastructure/time window, BMC can detect collisions and provide context, but human coordinators/managers may still need to determine whether the changes actually conflict and whether to ignore, coordinate, or reschedule them.**\n\nBMC explicitly documents that collisions may require discussion and can be ignored when their nature does not create a real conflict, with business justification recorded.\n\nThis is a real decision.\n\nIt is not yet a validated commercial opportunity.\n\n---\n\n# 28. Next checkpoint\n\n## `OPP-03-03.md — Real Change-Collision Decision Reconstruction`\n\nThe next checkpoint should reconstruct **one concrete collision decision**:\n\n```text\nCHANGE A\n+\nCHANGE B\n ↓\nSAME CI / OVERLAPPING WINDOW\n ↓\nCOLLISION\n ↓\nWHAT MUST THE HUMAN DETERMINE?\n ↓\nIGNORE?\nRESCHEDULE A?\nRESCHEDULE B?\nBLOCK?\nCOORDINATE?\nESCALATE?\n ↓\nWHAT EVIDENCE IS USED?\n ↓\nHOW LONG DOES IT TAKE?\n ↓\nWHAT IS THE BUSINESS COST?\n```\n\nThe objective is to find evidence of the **residual decision burden**, not another list of BMC features.\n\nIf the burden is not demonstrable, kill OPP-03.\n\nIf it is demonstrable, then test whether ART can improve the decision materially.\n\n---\n\n# 29. AIL status\n\n# NOT READY\n\n---\n\n# 30. Final verdict\n\n**Real change workload:** YES\n\n**High volume:** YES\n\n**Manual administrative burden:** YES\n\n**Native risk assessment:** YES\n\n**AI-supported risk decision:** YES\n\n**Impact/dependency analysis:** YES\n\n**Automatic collision detection:** YES\n\n**Human collision interpretation:** YES\n\n**Residual collision burden:** NOT YET PROVEN\n\n**ART advantage:** NOT ESTABLISHED\n\n**Commercial opportunity:** NOT YET\n\n# CONTINUE OPP-03 — NARROWED TO COLLISION ARBITRATION\n\nThe next decisive test is:\n\n# `OPP-03-03.md — Real Change-Collision Decision Reconstruction`\n\n---\n\n## Source Register\n\n- **Integrating Control-M Workload Change Manager & BMC Helix ITSM** — real large-bank case, hundreds of job-scheduling changes daily, manual change creation/status checking and integrated automation.\n- **Assessing the risk for a change request** — risk criteria, ML-based operational metrics, impacted parameters and historical incident trends.\n- **AI-suggested change risk** — AI-supported approve/hold/reject decision context.\n- **Detecting collisions between change requests** — automatic collision detection, interpretation, collaboration, business justification and audit trail.\n- **Approving change requests** — review of schedule, budget, impact and risk; approve/reject/hold.\n- **Submitting change requests through approval phases** — configurable approval requirements and governance.\n- **Learning about Change Management** — impact analysis, collision detection, scheduling and availability.\n\n---\n\n# Research Integrity Note\n\nThis checkpoint deliberately separates:\n\n```text\nREAL WORKLOAD\n+\nREAL DECISION\n+\nNATIVE AUTOMATION\n+\nRESIDUAL HUMAN JUDGMENT\n```\n\nfrom the much stronger claim:\n\n```text\nCUSTOMER PAIN\n+\nMEASURABLE BURDEN\n+\nART BUYING NEED\n```\n\nWe have established the first group.\n\nWe have **not** established the second.\n\nThat is why OPP-03 remains open, but only as a tightly bounded collision-arbitration hypothesis.",
+      "what_changed": "CONTINUE — REAL DECISION SURFACE VERIFIED; RESIDUAL BURDEN NOT YET QUANTIFIED",
+      "resulting_state": "CONTINUE — REAL DECISION SURFACE VERIFIED; RESIDUAL BURDEN NOT YET QUANTIFIED",
+      "evidence_refs": [
+        "EV-BMC-003-001"
+      ],
+      "source_refs": [
+        "SRC-FILE-BMC-003-02",
+        "SRC-UNKNOWN-BMC-003-001"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-02.md",
+        "section": "Source document",
+        "line_start": 1,
+        "line_end": 745
+      }
+    },
+    {
+      "id": "OPP-003-03",
+      "title": "A. Time factor",
+      "status": "DECISION SURFACE VERIFIED — RESIDUAL HUMAN ARBITRATION IS REAL; COMMERCIAL BURDEN STILL UNPROVEN",
+      "investigation_question": "OPP-03-02 established that BMC already provides:\n\n- automatic collision detection;\n- impact analysis;\n- dependency awareness;\n- scheduling tools;\n- risk information;\n- approval workflows;\n- auditability.\n\nThe next question is narrower:\n\n> **When BMC detects a change collision, what exactly must the human decide, what evidence is available, what actions can be taken, and is this residual decision sufficiently burdensome to justify ART?**\n\nThis checkpoint therefore reconstructs the collision decision itself.\n\n---",
+      "tested": "OPP-03-02 established that BMC already provides:\n\n- automatic collision detection;\n- impact analysis;\n- dependency awareness;\n- scheduling tools;\n- risk information;\n- approval workflows;\n- auditability.\n\nThe next question is narrower:\n\n> **When BMC detects a change collision, what exactly must the human decide, what evidence is available, what actions can be taken, and is this residual decision sufficiently burdensome to justify ART?**\n\nThis checkpoint therefore reconstructs the collision decision itself.\n\n---",
+      "found": "# BMC Helix — OPP-03-03.md\n## Real Change-Collision Decision Reconstruction\n\n### Company\nBMC Software / BMC Helix\n\n### Opportunity\nOPP-03 — Change Management\n\n### Checkpoint\nOPP-03-03\n\n### Investigation Type\n**Real Change-Collision Decision Reconstruction**\n\n### Status\n\n# DECISION SURFACE VERIFIED — RESIDUAL HUMAN ARBITRATION IS REAL; COMMERCIAL BURDEN STILL UNPROVEN\n\n---\n\n# 1. Decisive research question\n\nOPP-03-02 established that BMC already provides:\n\n- automatic collision detection;\n- impact analysis;\n- dependency awareness;\n- scheduling tools;\n- risk information;\n- approval workflows;\n- auditability.\n\nThe next question is narrower:\n\n> **When BMC detects a change collision, what exactly must the human decide, what evidence is available, what actions can be taken, and is this residual decision sufficiently burdensome to justify ART?**\n\nThis checkpoint therefore reconstructs the collision decision itself.\n\n---\n\n# 2. What BMC defines as a collision\n\nBMC defines a collision as a situation where the same service or configuration item (CI) is related to two or more change requests and their implementation schedules overlap. Collision detection depends on both:\n\n```text\nCI RELATIONSHIP\n+\nTIME OVERLAP\n```\n\nBMC recommends impact analysis first so dependent CIs can also be identified before collision detection.\n\n### Classification\n\n# DIRECT VERIFIED BMC DEFINITION\n\n---\n\n# 3. Collision is not necessarily a true operational conflict\n\nThis is the most important finding in the checkpoint.\n\nBMC explicitly states that two colliding changes can coexist when the change coordinator or change manager determines that the nature of the changes does not actually create a conflict—for example, when one change will not impede or undo the other.\n\nTherefore:\n\n```text\nSYSTEM DETECTS COLLISION\n        ↓\nHUMAN INTERPRETS ACTUAL INTERACTION\n        ↓\nTRUE CONFLICT?\n ┌─────────────┴─────────────┐\n YES                         NO\n ↓                            ↓\nMANAGE / CHANGE             IGNORE\nSCHEDULE                     +\n                             JUSTIFICATION\n```\n\n### Classification\n\n# VERIFIED HUMAN JUDGMENT SURFACE\n\nThis is substantially more interesting than simple collision detection.\n\n---\n\n# 4. What information does the human receive?\n\nBMC's Collision Detection dialog can expose:\n\n- Change ID;\n- summary;\n- CI name;\n- status;\n- change coordinator;\n- scheduled start/end dates;\n- conflicting change ID;\n- conflicting scheduled dates.\n\nUsers can also inspect the change coordinator profile and contact conflicting coordinators.\n\nThis means the human decision is not made from a binary alert alone.\n\nThe decision context is approximately:\n\n```text\nCURRENT CHANGE\n+\nCONFLICTING CHANGE\n+\nCI\n+\nSTATUS\n+\nTIMING\n+\nOWNERSHIP\n```\n\n### Classification\n\n# VERIFIED DECISION CONTEXT\n\n---\n\n# 5. The collision has two major dimensions\n\nBMC explicitly explains that collisions depend on:\n\n## A. Time factor\n\nPossible schedule patterns include:\n\n- identical dates;\n- complete schedule overlap;\n- partial start/end overlap.\n\nThese can make the CI unavailable to personnel working on another change.\n\n## B. CI factor\n\nPossible relationships include:\n\n- direct effect on the same CI;\n- indirect effect through dependent CIs.\n\nThe latter means a change may collide even when the two requests are not directly attached to exactly the same CI.\n\nTherefore:\n\n```text\nCOLLISION RISK\n=\nTIME RELATIONSHIP\n+\nCI / DEPENDENCY RELATIONSHIP\n```\n\n---\n\n# 6. Concrete BMC collision example\n\nBMC provides a specific example:\n\n```text\nCHANGE A\nOperating-system upgrade\nVM\n4 PM–5 PM\n\nCHANGE B\nAdd hard disk to host server\n3 PM–6 PM\n```\n\nThe VM is hosted on the server affected by Change B.\n\nThe schedules overlap and the server change indirectly affects the VM.\n\nBMC therefore treats the two requests as colliding and states that a schedule change is necessary to implement both efficiently.\n\nThis gives us a real reconstruction:\n\n```text\nCHANGE A\n     +\nCHANGE B\n     ↓\nOVERLAPPING WINDOWS\n     +\nDEPENDENCY\n     ↓\nCOLLISION\n     ↓\nSCHEDULE CHANGE\n```\n\n### Classification\n\n# DIRECT BMC DOCUMENTED SCENARIO\n\n---\n\n# 7. But BMC does not automatically decide the schedule\n\nBMC provides tools to inspect and reschedule colliding events.\n\nThe Calendar allows users to:\n\n- view collisions;\n- select conflicting events;\n- drag and drop events;\n- edit event schedules;\n- refresh collision indicators.\n\nIf a new schedule creates another collision, the indicator remains visible.\n\nTherefore:\n\n```text\nDETECT\n ↓\nDISPLAY OPTIONS\n ↓\nHUMAN SELECTS / ADJUSTS\n ↓\nRECHECK\n```\n\n### Classification\n\n# VERIFIED HUMAN SCHEDULING LOOP\n\n---\n\n# 8. The decision is iterative\n\nThe documented workflow is not:\n\n```text\nCOLLISION → FIXED\n```\n\nIt can be:\n\n```text\nCOLLISION\n ↓\nRESCHEDULE\n ↓\nRECHECK\n ↓\nNEW COLLISION?\n ├── YES → RESCHEDULE AGAIN\n └── NO  → CONTINUE\n```\n\nBMC explicitly states that if a new schedule collides with other events, the collision indicator remains displayed.\n\n### ART implementation intelligence\n\nThis is a valuable pattern:\n\n> **Decision execution must be followed by constraint re-evaluation.**\n\nDo not assume that an action resolves the entire decision problem.\n\n---\n\n# 9. Possible resolution paths\n\nBMC documents several ways to handle a collision.\n\n## Path A — Change the schedule\n\nModify scheduled start/end dates of one of the colliding changes.\n\n```text\nCOLLISION\n ↓\nRESCHEDULE A OR B\n ↓\nRECHECK\n```\n\n## Path B — Remove an incorrect CI relationship\n\nBMC documentation for collision resolution also allows unlinking a CI from a colliding change where appropriate.\n\n```text\nCOLLISION\n ↓\nCI RELATIONSHIP INCORRECT?\n ↓\nUNLINK\n ↓\nRECHECK\n```\n\n## Path C — Ignore the collision\n\nIf the changes do not actually conflict, the coordinator/manager can mark the collision Ignored with justification.\n\n```text\nCOLLISION\n ↓\nNO TRUE CONFLICT\n ↓\nIGNORE\n+\nJUSTIFICATION\n```\n\n## Path D — Investigate\n\nBMC supports an Investigating state while the conflict is being assessed.\n\n```text\nCOLLISION\n ↓\nINSUFFICIENT INFORMATION\n ↓\nINVESTIGATING\n```\n\n---\n\n# 10. Important distinction — \"Resolved\" does not necessarily mean physically removed\n\nBMC explicitly warns that changing collision status to Resolved does not itself eliminate the underlying schedule conflict.\n\nThe actual schedule must be changed for the collision to cease to exist.\n\nThis creates an important state distinction:\n\n```text\nCOLLISION RECORD STATUS\n        ≠\nPHYSICAL SCHEDULE STATE\n```\n\n### ART implementation intelligence\n\nA workflow system should distinguish:\n\n```text\nDECLARED RESOLUTION\n```\n\nfrom:\n\n```text\nUNDERLYING CONSTRAINT ACTUALLY SATISFIED\n```\n\n---\n\n# 11. Business justification is part of the decision\n\nWhen changing collision status, BMC provides a field for business justification.\n\nThe status and rationale are recorded in the Activity feed, and the Collision Status Audit Trail records:\n\n- date/time;\n- user;\n- new collision status;\n- reason for the change.\n\nTherefore:\n\n```text\nDECISION\n ↓\nRATIONALE\n ↓\nAUDIT\n```\n\n### Classification\n\n# VERIFIED GOVERNANCE PATTERN\n\n---\n\n# 12. Human coordination is explicitly part of the workflow\n\nBMC provides a link to send email to all change coordinators with conflicting change requests so schedules and priorities can be discussed.\n\nThis means the collision workflow can become:\n\n```text\nCOLLISION\n ↓\nIDENTIFY OTHER OWNER\n ↓\nCONTACT OWNER\n ↓\nDISCUSS SCHEDULE / PRIORITY\n ↓\nDECIDE\n```\n\nThis is a genuine coordination dependency.\n\n---\n\n# 13. The decision criteria we can actually verify\n\nFrom BMC's documented collision logic, the human is at minimum evaluating:\n\n| Criterion | Verified? |\n|---|---|\n| Same CI/service | YES |\n| Direct vs indirect CI relationship | YES |\n| Schedule overlap | YES |\n| Degree/type of overlap | YES |\n| Dependency relationship | YES |\n| Change status | YES — visible |\n| Change ownership | YES |\n| Whether implementation impedes another | YES |\n| Whether implementation could undo another | YES |\n| Schedule feasibility | YES |\n| Business justification | YES |\n| Priority | Discussed in collision coordination context |\n| Broader business impact | NOT specifically established as collision-arbitration logic |\n| Historical collision outcomes | NOT established |\n| Change success probability | NOT established |\n| Portfolio-wide optimization | NOT established |\n\nThis is a useful boundary.\n\n---\n\n# 14. The actual human decision\n\nThe most defensible reconstruction is:\n\n```text\nCOLLISION DETECTED\n        ↓\nUNDERSTAND:\n ├─ WHAT CI?\n ├─ WHAT CHANGES?\n ├─ WHAT TIMES?\n ├─ DIRECT OR INDIRECT?\n └─ WHO OWNS THEM?\n        ↓\nDO THEY ACTUALLY INTERFERE?\n        ↓\n ┌───────────┴───────────┐\n YES                       NO\n ↓                         ↓\nWHAT IS THE BEST           IGNORE\nWAY TO COORDINATE?         +\n                           JUSTIFY\n ↓\nRESCHEDULE A/B\nOR COORDINATE\nOR OTHER CONTROL\n ↓\nRECHECK\n ↓\nNO COLLISION?\n ↓\nCONTINUE\n```\n\n### Classification\n\n# STRONG EVIDENCE-BACKED DECISION RECONSTRUCTION\n\n---\n\n# 15. Where ART could theoretically add intelligence\n\nA hypothetical ART layer would need to go beyond collision detection:\n\n```text\nCOLLISION\n ↓\nUNDERSTAND RELATIONSHIP\n ↓\nUNDERSTAND BUSINESS IMPACT\n ↓\nCOMPARE CHANGE OPTIONS\n ↓\nPREDICT CONSEQUENCES\n ↓\nRECOMMEND:\n ├─ KEEP A\n ├─ MOVE A\n ├─ MOVE B\n ├─ COORDINATE\n └─ ESCALATE\n ↓\nEXECUTE\n ↓\nRECHECK\n```\n\nPotential additional criteria could include:\n\n- business criticality;\n- implementation risk;\n- historical success;\n- expected duration;\n- rollback difficulty;\n- downstream dependencies;\n- blackout windows;\n- resource constraints;\n- urgency;\n- customer impact.\n\n### Important classification\n\n# HYPOTHESIS ONLY\n\nBMC public collision documentation does not establish this generalized optimization layer.\n\n---\n\n# 16. BMC already has some scheduling assistance\n\nBMC's change workflow documentation describes a Schedule Assist tool for finding available times and collision detection for checking conflicting changes.\n\nTherefore ART cannot simply claim:\n\n> \"We find a free time for the change.\"\n\nBMC already supports that workflow.\n\nThe potential residual would need to be:\n\n> **selecting the best feasible schedule among competing business and technical constraints.**\n\nThat is materially different.\n\n---\n\n# 17. Collision detection is already proactive\n\nBMC can show potential collisions while a change is being created or updated, before saving the request.\n\nAfter saving, unresolved collisions can trigger an alert banner.\n\nTherefore:\n\n```text\nCREATE / EDIT\n ↓\nCHECK COLLISION\n ↓\nWARN\n```\n\nis already native.\n\n### Opportunity implication\n\nA generic \"AI collision detector\" is:\n\n# KILLED\n\n---\n\n# 18. The strongest surviving opportunity hypothesis\n\nThe remaining hypothesis is not:\n\n> Detect conflicts.\n\nIt is:\n\n> **When several technically feasible ways exist to resolve a change collision, can ART recommend the best coordination decision using business, technical, temporal and historical evidence?**\n\nFor example:\n\n```text\nCHANGE A\nCHANGE B\nCHANGE C\n ↓\nCONFLICT GRAPH\n ↓\nOPTIONS\n ├─ MOVE A\n ├─ MOVE B\n ├─ MOVE C\n ├─ COORDINATE\n └─ ACCEPT COLLISION\n ↓\nOPTIMIZE\n ├─ BUSINESS IMPACT\n ├─ RISK\n ├─ URGENCY\n ├─ DEPENDENCIES\n ├─ RESOURCE\n └─ SCHEDULE\n ↓\nRECOMMEND\n```\n\n### Status\n\n# TECHNICALLY PLAUSIBLE\n\n# COMMERCIAL OPPORTUNITY NOT YET PROVEN\n\n---\n\n# 19. Critical counterevidence\n\nBMC already provides enough tooling for a competent change coordinator to:\n\n- detect the collision;\n- see the conflicting change;\n- see the CI;\n- see timing;\n- contact the other coordinator;\n- inspect the calendar;\n- reschedule;\n- recheck;\n- document the rationale.\n\n\n\nTherefore ART must demonstrate something stronger than:\n\n> \"We put all the information in one screen.\"\n\nThat would be UI improvement, not a defensible intelligence opportunity.\n\n---\n\n# 20. Commercial burden evidence\n\nThis checkpoint found strong evidence that collision decisions are **operationally real**.\n\nBMC explicitly describes collision detection as helping organizations avoid inefficient resource use and infrastructure instability.\n\nBMC's broader Change Management scenario also has the change coordinator actively resolving conflicts before planning the forward schedule.\n\nHowever:\n\n### We still do not have public evidence quantifying:\n\n- collision volume per organization;\n- average collision-resolution time;\n- number of coordinator interactions;\n- percentage requiring rescheduling;\n- cost of coordination;\n- collision-related change delays;\n- collision-related incidents;\n- inconsistent collision decisions.\n\n### Verdict\n\n# OPERATIONAL BURDEN: PLAUSIBLE\n\n# QUANTIFIED BURDEN: NOT ESTABLISHED\n\nThis is the key remaining weakness.\n\n---\n\n# 21. Candidate opportunity assessment\n\n| Candidate | Native capability | Residual gap | Status |\n|---|---|---|---|\n| Collision detection | Strong | None established | KILLED |\n| Collision visualization | Strong | None established | KILLED |\n| Schedule assistance | Strong | None established | KILLED |\n| Collision status management | Strong | None established | KILLED |\n| Collision coordination | Strong | Human interaction remains | INTERESTING |\n| Collision arbitration | Partial | Contextual recommendation potentially missing | OPEN |\n| Portfolio-wide optimization | Not established | Potentially significant | OPEN |\n| Outcome-based collision learning | Not established | Potentially significant | OPEN |\n\n---\n\n# 22. Implementation Intelligence\n\n## II-072 — Collision = Time × CI Relationship\n\nBMC defines collision from both schedule overlap and CI relationship.\n\n### ART pattern\n\n```text\nCONFLICT\n=\nRESOURCE RELATIONSHIP\n+\nTIME RELATIONSHIP\n```\n\n---\n\n## II-073 — Direct and indirect dependencies matter\n\nA change can collide indirectly through dependent CIs.\n\n### ART pattern\n\n```text\nCHANGE A\n ↓\nCI A\n ↓\nDEPENDENCY\n ↓\nCI B\n ↓\nCHANGE B\n```\n\nDo not model collision only as direct record-to-record matching.\n\n---\n\n## II-074 — Detection and arbitration are different stages\n\nBMC automates collision detection but leaves interpretation of whether changes truly conflict to change coordinators/managers in documented scenarios.\n\n### ART pattern\n\n```text\nDETECT\n ↓\nINTERPRET\n ↓\nDECIDE\n```\n\nDo not confuse these capabilities.\n\n---\n\n## II-075 — \"Ignored\" can be a legitimate decision\n\nBMC allows a collision to be ignored when the changes do not actually interfere, with rationale recorded.\n\n### ART pattern\n\nA decision engine must support:\n\n```text\nNO ACTION\n```\n\nwhen evidence shows no meaningful conflict.\n\n---\n\n## II-076 — Resolution must be constraint-verified\n\nBMC explicitly warns that marking a collision Resolved does not itself remove the underlying schedule conflict.\n\n### ART pattern\n\n```text\nACTION\n ↓\nRE-EVALUATE CONSTRAINTS\n ↓\nCONFIRM ACTUAL RESOLUTION\n```\n\n---\n\n## II-077 — Human coordination is part of enterprise workflow\n\nBMC provides direct contact mechanisms between conflicting change coordinators.\n\n### ART pattern\n\nWhen automation cannot safely decide:\n\n```text\nAI\n ↓\nIDENTIFY DECISION OWNER\n ↓\nPRESENT EVIDENCE\n ↓\nREQUEST HUMAN DECISION\n ↓\nRECORD OUTCOME\n```\n\n---\n\n## II-078 — Decisions need audit rationale\n\nBMC records collision status changes and reasons in an audit trail.\n\n### ART pattern\n\nEvery recommendation should preserve:\n\n```text\nDECISION\n+\nEVIDENCE\n+\nRATIONALE\n+\nACTOR\n+\nTIME\n+\nOUTCOME\n```\n\n---\n\n## II-079 — Collision resolution is iterative\n\nChanging one schedule can create another collision. BMC keeps collision indicators active when new conflicts appear.\n\n### ART pattern\n\n```text\nRECOMMEND\n ↓\nSIMULATE\n ↓\nCHECK NEW CONFLICTS\n ↓\nREPLAN\n```\n\n---\n\n# 23. Native vs ART boundary\n\n## BMC clearly has\n\n```text\nCOLLISION DETECTION          ✓\nCI DEPENDENCY ANALYSIS      ✓\nTIME OVERLAP ANALYSIS       ✓\nCOLLISION VISUALIZATION     ✓\nSCHEDULE ASSIST             ✓\nRESCHEDULING                ✓\nOWNER COORDINATION          ✓\nCOLLISION STATUS            ✓\nBUSINESS JUSTIFICATION      ✓\nAUDIT TRAIL                 ✓\nRECHECK AFTER CHANGE        ✓\n```\n\n## Not established\n\n```text\nSEMANTIC CONFLICT ANALYSIS          ?\nBUSINESS-IMPACT-OPTIMAL ARBITRATION ?\nMULTI-CHANGE PORTFOLIO OPTIMIZATION ?\nOUTCOME-LEARNED ARBITRATION         ?\nAUTONOMOUS RESOLUTION SELECTION     ?\n```\n\n---\n\n# 24. Decision\n\nOPP-03 remains alive.\n\nBut the opportunity is now narrowed to:\n\n# **CONTEXTUAL CHANGE-COLLISION ARBITRATION**\n\nNot:\n\n- collision detection;\n- scheduling;\n- change automation;\n- risk assessment;\n- approval.\n\nThose are already native.\n\n---\n\n# 25. Current opportunity strength\n\n| Dimension | Assessment |\n|---|---|\n| Real decision | 🟢 Strong |\n| Native workflow evidence | 🟢 Very strong |\n| Human judgment | 🟢 Verified |\n| Multiple resolution paths | 🟢 Verified |\n| Cross-change dependencies | 🟢 Verified |\n| Iterative replanning | 🟢 Verified |\n| Quantified collision burden | 🔴 Not established |\n| Customer economic pain | 🔴 Not established |\n| ART differentiation | 🟡 Plausible |\n| Commercial opportunity | 🟡 Open |\n| AIL | 🔴 Not ready |\n\n---\n\n# 26. What we should NOT do next\n\nDo not immediately build:\n\n```text\nAI collision detector\n```\n\nBMC already has it.\n\nDo not build:\n\n```text\nAI calendar\n```\n\nBMC already has scheduling/collision tools.\n\nDo not claim:\n\n```text\nBMC cannot understand dependencies\n```\n\nBMC explicitly supports impact analysis and dependent CIs.\n\nDo not claim:\n\n```text\nBMC cannot coordinate conflicting changes\n```\n\nBMC provides coordinator contact and collaboration mechanisms.\n\n---\n\n# 27. The next decisive question\n\nWe now need to determine whether the human arbitration step has measurable burden.\n\nThe next checkpoint should therefore be:\n\n# `OPP-03-04.md — Change-Collision Decision Burden and Option-Comparison Test`\n\nIt should investigate:\n\n```text\nCOLLISION\n ↓\nHOW MANY OPTIONS?\n ↓\nHOW MANY PEOPLE INVOLVED?\n ↓\nHOW MUCH INFORMATION MUST THEY COLLECT?\n ↓\nHOW MANY BACK-AND-FORTH INTERACTIONS?\n ↓\nHOW LONG TO RESOLVE?\n ↓\nHOW OFTEN DOES RESCHEDULING CREATE NEW COLLISIONS?\n ↓\nWHAT HAPPENS WHEN PRIORITIES CONFLICT?\n ↓\nWHAT IS THE COST OF DELAY?\n ↓\nCAN A DECISION BE MADE WITH EXISTING BMC DATA?\n```\n\nThe objective is now explicitly **economic and operational burden**.\n\nIf the evidence remains only:\n\n> \"a human sometimes decides whether two changes really conflict\"\n\nthen we kill OPP-03.\n\nIf we find:\n\n```text\nHIGH FREQUENCY\n+\nMULTI-PERSON COORDINATION\n+\nLONG DECISION TIME\n+\nRECURRING RESCHEDULING\n+\nMATERIAL BUSINESS IMPACT\n```\n\nthen OPP-03 becomes a serious ART candidate.\n\n---\n\n# 28. AIL status\n\n# NOT READY\n\n---\n\n# 29. Final verdict\n\n### Proven\n\n**Collision is real:** YES\n\n**Collision detection is automated:** YES\n\n**Direct/indirect dependencies matter:** YES\n\n**Schedule overlap matters:** YES\n\n**Human interpretation remains:** YES\n\n**Multiple resolution paths exist:** YES\n\n**Human coordination exists:** YES\n\n**Rationale/audit exists:** YES\n\n**Resolution is iterative:** YES\n\n### Not proven\n\n**High collision frequency:** NO\n\n**High human decision burden:** NO\n\n**Quantified cost:** NO\n\n**Material inconsistency:** NO\n\n**Customer demand for better arbitration:** NO\n\n**ART commercial advantage:** NO\n\n# CONTINUE — BUT ONLY AS COLLISION ARBITRATION RESEARCH\n\nThe next checkpoint should test the **burden and option-comparison economics**, not another BMC capability.\n\n---\n\n# Source Register\n\n- **Detecting collisions between change requests** — collision definition, time/CI factors, direct/indirect effects, human interpretation, statuses, rationale, audit trail and documented VM/server example.\n- **Learning about Change Management** — coordinator workflow, collision resolution, forward scheduling and risk/impact review.\n- **Detecting conflicts by using the Calendar** — collision display, coordinator contact, rescheduling and iterative collision checking.\n- **Performing changes that require approval** — real change-coordinator scheduling workflow and Collision Detection/Schedule Assist.\n- **Managing change request collisions** — collision visibility and coordinator communication.\n\n---\n\n# Research Integrity Note\n\nThis checkpoint is stronger because we can now distinguish **detection from arbitration**.\n\nBMC has already solved:\n\n```text\nDETECT\nDISPLAY\nSCHEDULE\nCONTACT\nAUDIT\nRECHECK\n```\n\nThe remaining question is:\n\n```text\nUNDERSTAND\n+\nCOMPARE OPTIONS\n+\nCHOOSE BEST RESOLUTION\n```\n\nThere is evidence that humans perform this judgment.\n\nThere is **not yet evidence that this judgment is sufficiently burdensome to constitute a business opportunity**.\n\nThat is exactly what the next checkpoint must prove or kill.",
+      "what_changed": "DECISION SURFACE VERIFIED — RESIDUAL HUMAN ARBITRATION IS REAL; COMMERCIAL BURDEN STILL UNPROVEN",
+      "resulting_state": "DECISION SURFACE VERIFIED — RESIDUAL HUMAN ARBITRATION IS REAL; COMMERCIAL BURDEN STILL UNPROVEN",
+      "evidence_refs": [
+        "EV-BMC-003-002",
+        "EV-BMC-003-003",
+        "EV-BMC-003-004",
+        "EV-BMC-003-005",
+        "EV-BMC-003-006",
+        "EV-BMC-003-007"
+      ],
+      "source_refs": [
+        "SRC-FILE-BMC-003-03",
+        "SRC-UNKNOWN-BMC-003-001"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "Source document",
+        "line_start": 1,
+        "line_end": 1088
+      }
+    },
+    {
+      "id": "OPP-003-04",
+      "title": "Option A — Reschedule",
+      "status": "BURDEN IS REAL AT THE WORKFLOW LEVEL, BUT COLLISION-SPECIFIC ECONOMIC BURDEN REMAINS UNQUANTIFIED — DO NOT DECLARE OPPORTUNITY YET",
+      "investigation_question": "OPP-03-03 established that BMC's collision workflow contains genuine human arbitration:\n\n```text\nCOLLISION\n ↓\nUNDERSTAND THE RELATIONSHIP\n ↓\nDETERMINE WHETHER IT IS A TRUE CONFLICT\n ↓\nCHOOSE A RESPONSE\n ↓\nRESCHEDULE / COORDINATE / IGNORE / INVESTIGATE\n ↓\nRECHECK\n```\n\nThe current checkpoint asks:\n\n> **Is that residual decision sufficiently frequent, coordination-heavy, slow, costly, risky, or difficult that an ART decision-intelligence layer would have a defensible economic reason to exist?**\n\nThe test deliberately separates:\n\n```text\nWORKFLOW BURDEN\n```\n\nfrom:\n\n```text\nCOLLISION-DECISION BURDEN\n```\n\n---",
+      "tested": "OPP-03-03 established that BMC's collision workflow contains genuine human arbitration:\n\n```text\nCOLLISION\n ↓\nUNDERSTAND THE RELATIONSHIP\n ↓\nDETERMINE WHETHER IT IS A TRUE CONFLICT\n ↓\nCHOOSE A RESPONSE\n ↓\nRESCHEDULE / COORDINATE / IGNORE / INVESTIGATE\n ↓\nRECHECK\n```\n\nThe current checkpoint asks:\n\n> **Is that residual decision sufficiently frequent, coordination-heavy, slow, costly, risky, or difficult that an ART decision-intelligence layer would have a defensible economic reason to exist?**\n\nThe test deliberately separates:\n\n```text\nWORKFLOW BURDEN\n```\n\nfrom:\n\n```text\nCOLLISION-DECISION BURDEN\n```\n\n---",
+      "found": "# BMC Helix — OPP-03-04.md\n## Change-Collision Decision Burden and Option-Comparison Test\n\n### Company\nBMC Software / BMC Helix\n\n### Opportunity\nOPP-03 — Change Management\n\n### Checkpoint\nOPP-03-04\n\n### Investigation Type\n**Change-Collision Decision Burden and Option-Comparison Test**\n\n### Status\n\n# BURDEN IS REAL AT THE WORKFLOW LEVEL, BUT COLLISION-SPECIFIC ECONOMIC BURDEN REMAINS UNQUANTIFIED — DO NOT DECLARE OPPORTUNITY YET\n\n---\n\n# 1. Decisive research question\n\nOPP-03-03 established that BMC's collision workflow contains genuine human arbitration:\n\n```text\nCOLLISION\n ↓\nUNDERSTAND THE RELATIONSHIP\n ↓\nDETERMINE WHETHER IT IS A TRUE CONFLICT\n ↓\nCHOOSE A RESPONSE\n ↓\nRESCHEDULE / COORDINATE / IGNORE / INVESTIGATE\n ↓\nRECHECK\n```\n\nThe current checkpoint asks:\n\n> **Is that residual decision sufficiently frequent, coordination-heavy, slow, costly, risky, or difficult that an ART decision-intelligence layer would have a defensible economic reason to exist?**\n\nThe test deliberately separates:\n\n```text\nWORKFLOW BURDEN\n```\n\nfrom:\n\n```text\nCOLLISION-DECISION BURDEN\n```\n\n---\n\n# 2. Strongest direct enterprise burden evidence\n\nBMC publishes a case involving one of the largest banks in the Asia/Pacific region.\n\nThe bank managed **hundreds of job-scheduling change requests daily** using Control-M Workload Automation.\n\nThe documented process required the scheduling team to:\n\n- manually create change requests in BMC Helix ITSM;\n- check their status;\n- communicate with relevant application stakeholders through email or Teams;\n- verify status before implementation.\n\nBMC describes the entire process as manual, inefficient and time-consuming.\n\nThis is strong evidence of a real high-volume change-management burden.\n\n### But the crucial limitation\n\nThe published case does **not** quantify:\n\n- how many of those changes collided;\n- how many required rescheduling;\n- how many required coordinator-to-coordinator negotiation;\n- average collision-resolution time;\n- cost per collision;\n- collision-related delay;\n- collision-related incidents.\n\nTherefore:\n\n# HIGH-VOLUME CHANGE BURDEN: VERIFIED\n\n# COLLISION-SPECIFIC BURDEN: NOT QUANTIFIED\n\n---\n\n# 3. The coordination burden is real, but broader than collision arbitration\n\nThe same bank case explicitly states that the scheduling team communicated with application stakeholders through email or Teams and that this led to poor tracking of conversations between teams.\n\nThis establishes:\n\n```text\nCHANGE\n ↓\nMULTIPLE STAKEHOLDERS\n ↓\nEMAIL / TEAMS\n ↓\nPOOR CONVERSATION TRACKING\n ↓\nMANUAL COORDINATION\n```\n\nThe Control-M Workload Change Manager integration addressed this by providing structured workflow, workspace notes, real-time status updates, and a control that prevents changes from being committed until the change request is approved.\n\n### Important finding\n\nThe strongest quantified/explicit burden evidence is actually **change coordination and governance**, not collision arbitration.\n\nThis matters because the original OPP-03 hypothesis must not silently expand from:\n\n> collision decision burden\n\nto:\n\n> any change-management coordination burden.\n\nThat broader problem is already being addressed by BMC.\n\n---\n\n# 4. Collision detection itself is already automated\n\nBMC automatically detects collisions when a CI is related to multiple changes with overlapping implementation schedules.\n\nThe system can expose:\n\n- Change ID;\n- summary;\n- CI;\n- status;\n- coordinator;\n- scheduled dates.\n\nIt can also provide a mechanism to contact conflicting change coordinators.\n\nTherefore:\n\n# COLLISION DISCOVERY BURDEN: LARGELY AUTOMATED\n\nA product positioned as:\n\n> \"AI finds your change collisions\"\n\nwould not represent a defensible ART opportunity.\n\n---\n\n# 5. The remaining human burden\n\nThe documented residual workflow is:\n\n```text\nCOLLISION DETECTED\n ↓\nREVIEW CONFLICT\n ↓\nUNDERSTAND WHETHER IT IS ACTUALLY HARMFUL\n ↓\nCHOOSE ACTION\n```\n\nBMC allows collision statuses:\n\n- Detected;\n- Investigating;\n- Ignored;\n- Resolved.\n\nA rationale can be recorded for the status decision.\n\nThe human may therefore need to answer:\n\n```text\n1. Is this a genuine operational conflict?\n2. Which change should move?\n3. Can both proceed?\n4. Is the CI relationship itself incorrect?\n5. Does the collision require coordination?\n6. Has the conflict actually disappeared after the action?\n```\n\n### Classification\n\n# REAL DECISION BURDEN\n\nBut the **magnitude** remains unknown.\n\n---\n\n# 6. Option set is broader than a simple reschedule\n\nBMC documentation exposes several response paths.\n\n## Option A — Reschedule\n\nChange the scheduled start/end dates.\n\n## Option B — Correct the CI relationship\n\nWhere a collision is caused by an incorrect CI relationship, the relationship can be changed/unlinked in supported workflows.\n\n## Option C — Investigate\n\nThe collision can remain in an Investigating state while the conflict is assessed.\n\n## Option D — Ignore\n\nA collision can be marked Ignored when the changes do not actually conflict, with rationale.\n\n## Option E — Resolve\n\nA collision can be marked Resolved, but BMC warns that this status alone does not remove the underlying schedule conflict.\n\nThus:\n\n```text\nCOLLISION\n ├─ RESCHEDULE\n ├─ CORRECT RELATIONSHIP\n ├─ INVESTIGATE\n ├─ IGNORE + JUSTIFY\n └─ RESOLVE / CONTINUE REASSESSMENT\n```\n\nThis is a genuine multi-option decision.\n\n---\n\n# 7. The system already supports option comparison indirectly\n\nBMC's Calendar provides a graphical representation of collisions and allows schedule changes to be evaluated again. BMC also supports filtering collision views and viewing related events such as CI outages.\n\nThe workflow is therefore:\n\n```text\nOPTION\n ↓\nCHANGE SCHEDULE\n ↓\nRECHECK\n ↓\nNEW COLLISION?\n ↓\nREPEAT\n```\n\nThis is important counterevidence.\n\nBMC already supports an iterative form of option testing.\n\n---\n\n# 8. BMC already has Schedule Assist\n\nBMC documents Schedule Assist as part of the change-planning workflow and uses collision detection to help identify workable scheduling options.\n\nTherefore:\n\n> \"ART should find an available slot.\"\n\nis too weak.\n\nThe remaining potential would need to be:\n\n> **select the best feasible option when several feasible schedules exist under competing business, technical and operational constraints.**\n\nThat is a materially harder problem.\n\n---\n\n# 9. What BMC does not publicly quantify\n\nThe reviewed BMC sources do not provide a public metric for:\n\n```text\nCOLLISIONS / DAY\nCOLLISIONS / CHANGE\nAVG TIME TO RESOLVE COLLISION\nAVG NUMBER OF PEOPLE INVOLVED\nAVG NUMBER OF RESCHEDULE ATTEMPTS\nCOLLISION-RELATED SLA DELAY\nCOLLISION-RELATED INCIDENTS\nCOST PER COLLISION\n```\n\nThis is the biggest evidence gap.\n\n### Classification\n\n# COLLISION ECONOMICS: UNKNOWN\n\n---\n\n# 10. Can we infer collision burden from the \"hundreds of changes daily\" case?\n\nNo.\n\nThe logic:\n\n```text\nHUNDREDS OF CHANGES / DAY\n+\nCOLLISION CAPABILITY\n=\nHIGH COLLISION BURDEN\n```\n\nis invalid.\n\nA high volume of changes does not imply a high volume of collisions.\n\nLikewise:\n\n```text\nCOLLISION EXISTS\n=\nEXPENSIVE DECISION\n```\n\nis invalid.\n\nThe research must not make that leap.\n\n### Verdict\n\n# DO NOT INFER COLLISION VOLUME FROM CHANGE VOLUME\n\n---\n\n# 11. What we can infer safely\n\nWe can establish:\n\n```text\nHIGH CHANGE VOLUME\n        ↓\nHIGH POTENTIAL FOR COORDINATION\n```\n\nand:\n\n```text\nCOLLISION\n        ↓\nREAL HUMAN INTERPRETATION\n```\n\nBut we cannot establish:\n\n```text\nHIGH COLLISION VOLUME\n```\n\nor:\n\n```text\nHIGH COLLISION-ARBITRATION COST\n```\n\nwithout evidence.\n\n---\n\n# 12. Multi-person coordination is explicitly supported\n\nBMC's collision workflow allows users to contact all change coordinators with conflicting change requests to discuss schedules and priorities.\n\nTherefore a collision can involve:\n\n```text\nCOORDINATOR A\n+\nCOORDINATOR B\n+\nPOSSIBLY OTHER STAKEHOLDERS\n```\n\nThe bank case independently confirms that change scheduling can require communication with application stakeholders through email or Teams.\n\n### Classification\n\n# MULTI-PARTY COORDINATION: VERIFIED\n\n### But\n\nThe sources do not establish how often this coordination is specifically caused by collisions.\n\n---\n\n# 13. Priority conflicts are a real decision dimension\n\nBMC's collision interface explicitly provides a mechanism to contact conflicting change coordinators when schedules and priorities need discussion.\n\nThis creates a meaningful decision problem:\n\n```text\nCHANGE A PRIORITY\n+\nCHANGE B PRIORITY\n ↓\nCONFLICT\n ↓\nWHICH ONE SHOULD MOVE?\n```\n\nHowever, BMC does not publish a generalized algorithm that automatically resolves conflicting priorities.\n\n### Classification\n\n# DECISION SURFACE VERIFIED\n\n# PRIORITY-ARBITRATION BURDEN NOT QUANTIFIED\n\n---\n\n# 14. Repeated replanning is possible\n\nBMC warns that after changing a schedule, the system can show updated collision information; a new schedule may create another collision.\n\nThis gives a potential loop:\n\n```text\nCOLLISION\n ↓\nMOVE A\n ↓\nNEW COLLISION\n ↓\nMOVE B\n ↓\nNEW COLLISION\n ↓\nCOORDINATE\n ↓\nRECHECK\n```\n\n### Important ART pattern\n\nThis is a **constraint-propagation problem**.\n\nA proposed action changes the system state, so the decision must be evaluated again.\n\n### But\n\nNo public BMC source reviewed here quantifies how frequently such multi-step replanning occurs.\n\n---\n\n# 15. Option comparison is therefore only partially automated\n\nBMC can:\n\n```text\nDETECT\n+\nDISPLAY\n+\nCHECK\n+\nRECHECK\n```\n\nBut public documentation does not establish a generalized optimizer that says:\n\n```text\nOPTION A → LOWEST TOTAL RISK\nOPTION B → HIGHEST BUSINESS IMPACT\nOPTION C → BEST OVERALL\n```\n\n### Classification\n\n# OPTION GENERATION / RECHECKING: STRONG\n\n# OPTION RANKING: NOT ESTABLISHED\n\nThis is the most technically interesting residual.\n\n---\n\n# 16. Potential ART decision model\n\nA hypothetical ART layer could construct:\n\n```text\nCOLLISION GRAPH\n      ↓\nCANDIDATE ACTIONS\n      ↓\nSIMULATE EACH ACTION\n      ↓\nCHECK:\n ├─ NEW COLLISIONS\n ├─ BUSINESS CRITICALITY\n ├─ CHANGE RISK\n ├─ DEPENDENCIES\n ├─ URGENCY\n ├─ RESOURCE CONSTRAINTS\n ├─ BLACKOUTS\n └─ EXPECTED IMPACT\n      ↓\nRANK\n      ↓\nRECOMMEND\n      ↓\nHUMAN APPROVAL\n      ↓\nEXECUTE\n      ↓\nRECHECK\n```\n\n### Classification\n\n# ART HYPOTHESIS\n\nNot a demonstrated customer requirement.\n\n---\n\n# 17. Strong counterevidence — BMC already has broad planning context\n\nBMC's current Change Management documentation describes the planning stage as including:\n\n- planning approved changes;\n- target dates;\n- estimated risks and costs;\n- impact analysis;\n- risk re-evaluation;\n- implementation plans;\n- backout plans;\n- task assignment and scheduling.\n\nThis means ART cannot credibly claim:\n\n> \"BMC does not consider risk, cost, impact or rollback when planning changes.\"\n\nIt does.\n\nThe potential residual must be **dynamic arbitration across competing feasible options**, not basic context gathering.\n\n---\n\n# 18. Strong counterevidence — BMC supports business-event constraints\n\nBMC's current Calendar documentation supports time-segment availability based on business events and operational categories, while change-freeze schedules can also be managed in the Calendar.\n\nTherefore a generic:\n\n> \"AI knows blackout windows\"\n\nopportunity is weak.\n\n---\n\n# 19. Strong counterevidence — BMC supports auditability\n\nBMC stores collision status and rationale and provides a collision-status audit trail with timestamp, user, status and reason.\n\nART therefore needs to preserve at least:\n\n```text\nRECOMMENDATION\n+\nEVIDENCE\n+\nRATIONALE\n+\nDECISION OWNER\n+\nOUTCOME\n```\n\nif it ever participates in this workflow.\n\n---\n\n# 20. Candidate opportunity assessment\n\n| Candidate | Native capability | Residual | Status |\n|---|---|---|---|\n| Collision detection | Strong | None established | KILLED |\n| Collision visualization | Strong | None established | KILLED |\n| Generic schedule finding | Strong | None established | KILLED |\n| Dependency detection | Strong | None established | KILLED |\n| Collision notification | Strong | None established | KILLED |\n| Human collision interpretation | Partial | Human judgment remains | OPEN |\n| Multi-option collision arbitration | Not established | Potential | OPEN |\n| Portfolio-wide change optimization | Not established | Potential | OPEN |\n| Outcome-based arbitration | Not established | Potential | OPEN |\n\n---\n\n# 21. Opportunity burden score\n\nUsing only evidence currently available:\n\n| Burden dimension | Evidence |\n|---|---|\n| High change volume | 🟢 Strong |\n| Manual change coordination | 🟢 Strong |\n| Multi-party communication | 🟢 Strong |\n| Collision existence | 🟢 Strong |\n| Human collision interpretation | 🟢 Strong |\n| Multiple resolution options | 🟢 Strong |\n| Repeated replanning | 🟡 Possible / not quantified |\n| Collision frequency | 🔴 Unknown |\n| Collision resolution time | 🔴 Unknown |\n| Collision cost | 🔴 Unknown |\n| Collision-related incidents | 🔴 Unknown |\n| Collision-related SLA impact | 🔴 Unknown |\n| Decision inconsistency | 🔴 Unknown |\n\n### Overall\n\n# BURDEN EVIDENCE: MEDIUM FOR CHANGE COORDINATION, LOW FOR COLLISION ARBITRATION\n\nThat distinction should control the opportunity decision.\n\n---\n\n# 22. The dangerous temptation\n\nIt would be easy to say:\n\n> \"Hundreds of changes per day + human collision decisions = huge AI opportunity.\"\n\nThat conclusion is unsupported.\n\nWe have no denominator:\n\n```text\nTOTAL CHANGES\nvs\nCOLLISIONS\n```\n\nand no economics:\n\n```text\nCOLLISIONS\n×\nTIME\n×\nPEOPLE\n×\nCOST\n```\n\nWithout those, the commercial case is incomplete.\n\n---\n\n# 23. What would make the opportunity strong?\n\nAny credible evidence of the following would materially change the assessment:\n\n### A. Collision rate\n\n```text\nX% OF CHANGES COLLIDE\n```\n\n### B. Resolution burden\n\n```text\nAVERAGE X MINUTES / COLLISION\n```\n\n### C. Coordination burden\n\n```text\nAVERAGE X PEOPLE / COLLISION\n```\n\n### D. Replanning burden\n\n```text\nX RESCHEDULE ATTEMPTS / COLLISION\n```\n\n### E. Business consequence\n\n```text\nX HOURS OF DELAY\nX SLA BREACHES\nX INCIDENTS\nX COST\n```\n\n### F. Customer demand\n\nEvidence that organizations are actively seeking automated collision arbitration or portfolio scheduling.\n\nWithout at least one or more of these, the opportunity remains speculative.\n\n---\n\n# 24. Implementation Intelligence\n\n## II-080 — Distinguish workload volume from exception volume\n\nA high volume of changes does not prove high collision volume.\n\n### ART rule\n\n```text\nTOTAL WORK\n≠\nEXCEPTION WORK\n```\n\nAlways seek the exception denominator.\n\n---\n\n## II-081 — Detect first, arbitrate second\n\nBMC separates:\n\n```text\nCOLLISION DETECTION\n```\n\nfrom:\n\n```text\nCOLLISION MANAGEMENT\n```\n\n\n\n### ART rule\n\nModel detection and decision as separate workflow stages.\n\n---\n\n## II-082 — Multi-option decisions require explicit option enumeration\n\nThe collision workflow provides several possible responses.\n\n### ART rule\n\nRepresent:\n\n```text\nOPTIONS\n+\nCONSTRAINTS\n+\nOUTCOMES\n```\n\nrather than jumping directly from detection to recommendation.\n\n---\n\n## II-083 — Test options against the updated state\n\nBMC re-evaluates collisions after schedule changes.\n\n### ART rule\n\n```text\nPROPOSE\n ↓\nSIMULATE / EXECUTE\n ↓\nRECHECK\n```\n\n---\n\n## II-084 — Preserve the human governance layer\n\nBMC requires rationale for collision status decisions.\n\n### ART rule\n\nAI recommendations should remain:\n\n```text\nEXPLAINABLE\n+\nAUDITABLE\n+\nHUMAN-APPROVABLE\n```\n\nwhere the operational risk warrants it.\n\n---\n\n## II-085 — Coordination itself can be an automation target\n\nThe bank case shows that email/Teams coordination created poor tracking and that structured workspace notes improved communication tracking.\n\n### ART rule\n\nWhen multiple owners participate:\n\n```text\nDECISION\n+\nCOMMUNICATION\n+\nSTATUS\n+\nAUDIT\n```\n\nshould ideally remain in one workflow context.\n\n---\n\n## II-086 — Don't sell existing platform capabilities as ART differentiation\n\nBMC already provides:\n\n```text\nCOLLISION DETECTION\nSCHEDULE ASSIST\nCALENDAR\nIMPACT ANALYSIS\nDEPENDENCIES\nRISK\nAUDIT\n```\n\n### ART rule\n\nThe opportunity must sit above these capabilities, not duplicate them.\n\n---\n\n# 25. Native vs ART boundary\n\n## BMC clearly has\n\n```text\nCOLLISION DETECTION          ✓\nCI / DEPENDENCY ANALYSIS    ✓\nTIME OVERLAP ANALYSIS       ✓\nCALENDAR                    ✓\nSCHEDULE ASSIST             ✓\nRESCHEDULING                ✓\nRECHECK                     ✓\nSTAKEHOLDER CONTACT         ✓\nCOLLISION STATUS            ✓\nBUSINESS JUSTIFICATION      ✓\nAUDIT TRAIL                 ✓\nBUSINESS-EVENT CONSTRAINTS  ✓\nRISK / COST PLANNING        ✓\n```\n\n## Not established\n\n```text\nAUTOMATIC TRUE-CONFLICT SEMANTIC ANALYSIS   ?\nBEST-OPTION ARBITRATION                     ?\nMULTI-CHANGE PORTFOLIO OPTIMIZATION        ?\nOUTCOME-LEARNED COLLISION POLICY            ?\nCONTINUOUS AUTONOMOUS REPLANNING             ?\n```\n\n---\n\n# 26. Strategic decision\n\n## DO NOT DECLARE AIL\n\nOPP-03 has a real decision surface.\n\nBut the evidence currently supports:\n\n```text\nHIGH-VOLUME CHANGE COORDINATION\n        +\nREAL COLLISION ARBITRATION\n        +\nMULTI-OPTION DECISION\n```\n\nIt does **not** yet support:\n\n```text\nHIGH-VOLUME COLLISION ARBITRATION\n        +\nHIGH COST\n        +\nMATERIAL BUSINESS IMPACT\n```\n\nTherefore the opportunity remains:\n\n# OPEN — BUT NOT VALIDATED\n\n---\n\n# 27. What the next checkpoint should do\n\nThe next checkpoint should be decisive rather than another generic BMC capability study.\n\n## `OPP-03-05.md — Change-Collision Economic Impact and Residual-Gap Test`\n\nIt should search specifically for:\n\n```text\nCOLLISION RATE\n+\nCOLLISION RESOLUTION TIME\n+\nCOORDINATION COST\n+\nRESCHEDULING FREQUENCY\n+\nCHANGE DELAY\n+\nINCIDENT / OUTAGE IMPACT\n+\nCUSTOMER DEMAND\n```\n\nPriority sources:\n\n1. BMC customer case studies;\n2. BMC implementation/partner material;\n3. BMC community discussions;\n4. ITIL/change-management case studies;\n5. enterprise change-risk research;\n6. public postmortems involving change collisions;\n7. quantified change-management benchmarks.\n\nThe objective is no longer to prove that collisions exist.\n\nThat is already proven.\n\nThe objective is:\n\n> **Prove that the collision decision is economically painful enough to justify a new intelligence layer.**\n\nIf evidence remains weak:\n\n# KILL OPP-03.\n\nIf the economic burden becomes measurable:\n\n# TEST ART AGAINST THE NATIVE BMC WORKFLOW.\n\n---\n\n# 28. AIL status\n\n# NOT READY\n\n---\n\n# 29. Final verdict\n\n### Proven\n\n**Real change workload:** YES\n\n**High change volume:** YES\n\n**Manual coordination burden:** YES\n\n**Collision detection:** YES\n\n**Human collision decision:** YES\n\n**Multiple response options:** YES\n\n**Iterative rechecking:** YES\n\n**Multi-party coordination:** YES\n\n### Not proven\n\n**Collision frequency:** NO\n\n**Collision-resolution time:** NO\n\n**Collision cost:** NO\n\n**Collision-related SLA/business impact:** NO\n\n**Decision inconsistency:** NO\n\n**Customer demand for collision arbitration:** NO\n\n**ART commercial advantage:** NO\n\nTherefore:\n\n# OPP-03 REMAINS OPEN, BUT IS NOT YET AN OPPORTUNITY\n\nThe strongest residual hypothesis is:\n\n> **Contextual multi-option arbitration of competing changes.**\n\nBut the next research step must now prove its **economic burden**, not its technical existence.\n\n---\n\n# Source Register\n\n- **Detecting collisions between change requests — BMC Helix ITSM** — collision definition, time/CI factors, direct/indirect effects, collision actions and documented VM/server example.\n- **Managing change request collisions — Smart IT** — collision detection, coordinator communication, rescheduling, filters, status and rationale.\n- **Detecting conflicts by using the Calendar** — current collision/calendar workflow and business-event context.\n- **Learning about Change Management** — planning, impact analysis, collision detection, scheduling and time-segment availability.\n- **Planning implementation of change requests** — risk, cost, impact, backout planning, scheduling and collision management.\n- **Control-M Workload Change Manager + BMC Helix ITSM case study** — hundreds of job-scheduling changes daily, manual creation/status checking, stakeholder communication and resulting workflow automation.\n- **BMC collision documentation — audit trail** — status-change rationale, timestamp, user and reason.\n\n---\n\n# Research Integrity Note\n\nThis checkpoint deliberately refuses to convert a plausible decision problem into a commercial opportunity without economic evidence.\n\nWe now have strong evidence for:\n\n```text\nREAL WORKLOAD\n+\nREAL COLLISIONS\n+\nREAL HUMAN JUDGMENT\n+\nREAL MULTI-OPTION RESPONSES\n```\n\nBut we still lack:\n\n```text\nCOLLISION FREQUENCY\n+\nDECISION TIME\n+\nCOST\n+\nBUSINESS IMPACT\n```\n\nThe bank case is valuable precisely because it shows how easily a large change-management burden can be confused with a narrower collision-arbitration burden. BMC documents **hundreds of changes daily**, but that does not tell us how many collide.\n\nThat is the line we must not cross.\n\n**OPP-03 therefore remains open, but the next checkpoint must be an economic-impact test.**",
+      "what_changed": "BURDEN IS REAL AT THE WORKFLOW LEVEL, BUT COLLISION-SPECIFIC ECONOMIC BURDEN REMAINS UNQUANTIFIED — DO NOT DECLARE OPPORTUNITY YET",
+      "resulting_state": "BURDEN IS REAL AT THE WORKFLOW LEVEL, BUT COLLISION-SPECIFIC ECONOMIC BURDEN REMAINS UNQUANTIFIED — DO NOT DECLARE OPPORTUNITY YET",
+      "evidence_refs": [
+        "EV-BMC-003-008",
+        "EV-BMC-003-009",
+        "EV-BMC-003-010",
+        "EV-BMC-003-011",
+        "EV-BMC-003-012",
+        "EV-BMC-003-013"
+      ],
+      "source_refs": [
+        "SRC-FILE-BMC-003-04",
+        "SRC-UNKNOWN-BMC-003-001"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-04.md",
+        "section": "Source document",
+        "line_start": 1,
+        "line_end": 1063
+      }
+    },
+    {
+      "id": "OPP-003-05",
+      "title": "II-087 — Exception economics must be measured separately",
+      "status": "COLLISION-SPECIFIC ECONOMIC CASE NOT PROVEN — KILL OPP-03 AS A CURRENT OPPORTUNITY",
+      "investigation_question": "The previous checkpoints established that BMC Helix has a genuine collision decision surface:\n\n```text\nCHANGE A\n+\nCHANGE B\n ↓\nCI / DEPENDENCY + TIME OVERLAP\n ↓\nCOLLISION\n ↓\nINVESTIGATE\n ↓\nIGNORE / RESCHEDULE / COORDINATE / RESOLVE\n ↓\nRECHECK\n```\n\nThe final question is:\n\n> **Is the residual human collision-arbitration burden sufficiently frequent, expensive, slow, risky, or commercially important to justify a separate ART intelligence layer?**\n\nThe answer from the available public evidence is:",
+      "tested": "The previous checkpoints established that BMC Helix has a genuine collision decision surface:\n\n```text\nCHANGE A\n+\nCHANGE B\n ↓\nCI / DEPENDENCY + TIME OVERLAP\n ↓\nCOLLISION\n ↓\nINVESTIGATE\n ↓\nIGNORE / RESCHEDULE / COORDINATE / RESOLVE\n ↓\nRECHECK\n```\n\nThe final question is:\n\n> **Is the residual human collision-arbitration burden sufficiently frequent, expensive, slow, risky, or commercially important to justify a separate ART intelligence layer?**\n\nThe answer from the available public evidence is:",
+      "found": "# BMC Helix — OPP-03-05.md\n## Change-Collision Economic Impact and Residual-Gap Test\n\n### Company\nBMC Software / BMC Helix\n\n### Opportunity\nOPP-03 — Change Management\n\n### Checkpoint\nOPP-03-05\n\n### Investigation Type\n**Change-Collision Economic Impact and Residual-Gap Test**\n\n### Status\n\n# COLLISION-SPECIFIC ECONOMIC CASE NOT PROVEN — KILL OPP-03 AS A CURRENT OPPORTUNITY\n\n---\n\n# 1. Decisive research question\n\nThe previous checkpoints established that BMC Helix has a genuine collision decision surface:\n\n```text\nCHANGE A\n+\nCHANGE B\n ↓\nCI / DEPENDENCY + TIME OVERLAP\n ↓\nCOLLISION\n ↓\nINVESTIGATE\n ↓\nIGNORE / RESCHEDULE / COORDINATE / RESOLVE\n ↓\nRECHECK\n```\n\nThe final question is:\n\n> **Is the residual human collision-arbitration burden sufficiently frequent, expensive, slow, risky, or commercially important to justify a separate ART intelligence layer?**\n\nThe answer from the available public evidence is:\n\n# NO — NOT ESTABLISHED\n\nThis is enough to kill the current opportunity rather than continue refining it.\n\n---\n\n# 2. Strongest economic evidence available for BMC Helix\n\nThe strongest independent economic evidence located is Forrester's Total Economic Impact study commissioned by BMC.\n\nForrester interviewed **14 decision-makers from 11 BMC Helix customer organizations** and built a composite organization. The composite represented 41,000 supported end users and 30 IT operations engineers/administrators.\n\nThe study found substantial overall economic value from BMC Helix:\n\n- $15.3M three-year risk-adjusted NPV for the full solution set;\n- 189% ROI;\n- 10-month payback;\n- $23.4M three-year risk-adjusted benefits PV.\n\n\n\n### Critical interpretation\n\nThis is strong evidence that:\n\n# BMC HELIX AUTOMATION HAS REAL ECONOMIC VALUE\n\nIt is **not** evidence that:\n\n# COLLISION ARBITRATION IS A MATERIAL CUSTOMER COST\n\nThe distinction is decisive.\n\n---\n\n# 3. Forrester provides change-related economic evidence\n\nThe Forrester study reports that BMC Helix helps organizations prevent and mitigate incidents by:\n\n- identifying changes and assets;\n- determining interdependencies;\n- evaluating risk using policies and AI;\n- assessing impact;\n- performing root-cause analysis.\n\nIt states that much of this process can be automated, with human labor required for exceptions and flagged issues.\n\nThis is directly relevant to ART.\n\nThe evidence supports the pattern:\n\n```text\nAUTOMATION\n ↓\nEXCEPTION / FLAG\n ↓\nHUMAN ATTENTION\n```\n\nBut the study does not identify **change collisions** as the economic driver of that residual human work.\n\n---\n\n# 4. Strong customer outcome: change-related incidents\n\nForrester reports that an insurance company using BMC Helix reduced incidents related to changes by **80%, from 1,000 to fewer than 200**, and reduced average MTTR from more than six hours to two hours.\n\nA separate e-commerce customer reported reducing the percentage of incidents caused by changes from **over 90% to under 1%**.\n\nThese are extremely valuable pieces of implementation intelligence.\n\nBut they concern:\n\n```text\nCHANGE-RELATED INCIDENT PREVENTION\n```\n\nnot:\n\n```text\nCHANGE-COLLISION ARBITRATION\n```\n\nWe must not reuse them as collision economics.\n\n---\n\n# 5. BMC's own economic model also treats change risk broadly\n\nForrester's composite assumes:\n\n- 10,000 annual changes/service requests from DevOps;\n- 5% previously led to incidents;\n- governance and automation avoid 33% to 90% of those incidents depending on year;\n- each avoided incident saves substantial IT/developer and end-user labor.\n\n\n\nThis produces a quantified incident-mitigation benefit.\n\nBut there is still no public metric for:\n\n```text\nCOLLISIONS / 10,000 CHANGES\n```\n\nor:\n\n```text\nCOLLISION → INCIDENT\n```\n\nor:\n\n```text\nCOLLISION → DELAY → COST\n```\n\nTherefore:\n\n# CHANGE-RISK ECONOMICS: STRONG\n\n# COLLISION ECONOMICS: UNKNOWN\n\n---\n\n# 6. Strong evidence that BMC already monetizes automation around change\n\nForrester reports that BMC Helix saved an estimated **90 minutes of IT and developer labor per change or service request** in one modeled DevOps scenario. The composite used 10,000 annual change/service requests and modeled 30 minutes saved for developers plus 60 minutes for IT engineers per request.\n\nThis is useful because it demonstrates that change-related workflow efficiency can have measurable economic value.\n\nBut again:\n\n```text\n90 MINUTES SAVED / CHANGE\n```\n\nis not:\n\n```text\nMINUTES SAVED / COLLISION\n```\n\nThe two cannot be substituted.\n\n---\n\n# 7. BMC already automates collision detection\n\nBMC Helix automatically detects collisions when:\n\n```text\nSAME CI / SERVICE\n+\nOVERLAPPING IMPLEMENTATION WINDOWS\n```\n\nand supports impact analysis for dependent CIs.\n\nThe system also exposes:\n\n- conflicting change;\n- CI;\n- status;\n- coordinator;\n- scheduled dates;\n- collision status;\n- business justification;\n- audit history.\n\n\n\nTherefore:\n\n# DETECTION GAP: NONE ESTABLISHED\n\n---\n\n# 8. BMC already supports the main collision response mechanisms\n\nBMC documents:\n\n```text\nDETECTED\n ↓\nINVESTIGATING\n ↓\nIGNORE\nOR\nRESCHEDULE\nOR\nRESOLVE\n```\n\nand allows the user to change schedules, modify CI relationships where appropriate, communicate with conflicting coordinators, and document the rationale.\n\nBMC also re-evaluates collision information when schedules change.\n\nTherefore:\n\n# BASIC COLLISION-MANAGEMENT GAP: NONE ESTABLISHED\n\n---\n\n# 9. The remaining theoretical ART gap\n\nThe strongest theoretical residual is:\n\n```text\nMULTIPLE FEASIBLE OPTIONS\n        ↓\nSIMULATE CONSEQUENCES\n        ↓\nCOMPARE:\n ├─ BUSINESS CRITICALITY\n ├─ RISK\n ├─ DEPENDENCIES\n ├─ URGENCY\n ├─ RESOURCE CONSTRAINTS\n ├─ TIME WINDOWS\n ├─ CHANGE PRIORITY\n └─ EXPECTED IMPACT\n        ↓\nRANK OPTIONS\n        ↓\nRECOMMEND BEST ACTION\n```\n\nThis would be:\n\n# CONTEXTUAL MULTI-OPTION CHANGE ARBITRATION\n\nHowever, the public evidence does not establish that customers are suffering a sufficiently large economic burden because BMC lacks this capability.\n\nTherefore:\n\n# TECHNICAL HYPOTHESIS: PLAUSIBLE\n\n# COMMERCIAL GAP: NOT PROVEN\n\n---\n\n# 10. The critical denominator problem\n\nThe most serious evidence gap is:\n\n```text\nTOTAL CHANGES\n        ↓\nHOW MANY COLLIDE?\n        ↓\nHOW MANY REQUIRE HUMAN ARBITRATION?\n        ↓\nHOW MANY REQUIRE MULTIPLE RESCHEDULEMENTS?\n        ↓\nHOW MANY CAUSE MATERIAL DELAY?\n        ↓\nHOW MUCH DOES THAT COST?\n```\n\nWe have evidence for the first quantity in some BMC customer scenarios.\n\nForrester's composite, for example, models 10,000 annual DevOps changes/service requests.\n\nBut we do not have credible public evidence for the next quantities.\n\nThat makes a collision-specific business case impossible to defend.\n\n---\n\n# 11. What we searched for\n\nThe research specifically tested for:\n\n- collision rate;\n- collision frequency;\n- collision-resolution time;\n- people involved per collision;\n- repeated rescheduling;\n- collision-related delays;\n- collision-related incidents;\n- collision-specific cost;\n- customer demand for automated collision arbitration.\n\n### Result\n\nNo sufficiently credible public source was found that quantifies these dimensions for BMC Helix customers.\n\n### Confidence\n\n# HIGH CONFIDENCE IN THE NEGATIVE FINDING\n\nThis does not mean such data do not exist privately.\n\nIt means:\n\n> **The publicly available evidence currently accessible to ART is insufficient to establish the commercial burden.**\n\n---\n\n# 12. Why we should not use generic change-management statistics\n\nThere is a temptation to use broader change-failure statistics to rescue this opportunity.\n\nThat would be methodologically wrong.\n\nFor example:\n\n```text\nCHANGE FAILURE\n```\n\nis not equivalent to:\n\n```text\nCHANGE COLLISION\n```\n\nLikewise:\n\n```text\nCHANGE MANAGEMENT COST\n```\n\nis not equivalent to:\n\n```text\nCOLLISION ARBITRATION COST\n```\n\nAnd:\n\n```text\nCHANGE-RELATED INCIDENT\n```\n\nis not equivalent to:\n\n```text\nCOLLISION-CAUSED INCIDENT\n```\n\nART's evidence discipline must preserve these distinctions.\n\n---\n\n# 13. What the evidence actually proves\n\n## Proven\n\n### A. Change management has material economic consequences\n\nYES.\n\nForrester quantified significant benefits from BMC Helix's automation, governance and incident mitigation.\n\n### B. Change-related failures can be costly\n\nYES.\n\nBMC/Forrester customer evidence shows large reductions in change-related incidents and MTTR.\n\n### C. Collision detection is operationally useful\n\nYES.\n\nBMC explicitly states that collision management helps avoid inefficient resource use and instability.\n\n### D. Human collision judgment exists\n\nYES.\n\nBMC allows coordinators/managers to investigate, ignore, reschedule, coordinate and justify collision decisions.\n\n### E. Collision arbitration has economic potential\n\nPOSSIBLE.\n\nBut:\n\n# NOT DEMONSTRATED\n\n---\n\n# 14. What is NOT proven\n\n```text\nCOLLISION RATE\n✗\n\nCOLLISION RESOLUTION TIME\n✗\n\nCOLLISION COORDINATION COST\n✗\n\nMULTI-RESCHEDULE FREQUENCY\n✗\n\nCOLLISION-RELATED SLA IMPACT\n✗\n\nCOLLISION-RELATED INCIDENT RATE\n✗\n\nCUSTOMER PURCHASE DEMAND\n✗\n```\n\nThat is too many missing commercial variables to keep the opportunity alive.\n\n---\n\n# 15. Residual-gap test\n\n| Test | Result |\n|---|---|\n| Native collision detection | YES |\n| Native CI/dependency analysis | YES |\n| Native scheduling support | YES |\n| Native collision workflow | YES |\n| Native human coordination | YES |\n| Native audit/rationale | YES |\n| Multi-option decision surface | YES |\n| Evidence of change-management economic value | YES |\n| Evidence of collision-specific burden | NO |\n| Collision frequency quantified | NO |\n| Collision resolution time quantified | NO |\n| Collision cost quantified | NO |\n| Collision-specific customer demand | NO |\n| ART differentiation | PLAUSIBLE BUT UNPROVEN |\n\n---\n\n# 16. Opportunity decision\n\n# KILL OPP-03\n\nThis is not a statement that contextual change arbitration is technically useless.\n\nIt is a statement that:\n\n> **We do not have enough public evidence to justify treating it as a commercial opportunity for ART.**\n\nContinuing to OPP-03-06 would likely produce increasingly sophisticated hypothetical architecture without solving the missing evidence problem.\n\nThat is exactly the research failure mode this methodology is designed to prevent.\n\n---\n\n# 17. What survives from OPP-03\n\nOPP-03 produces substantial reusable implementation intelligence.\n\n```text\nOPP-03\n  ↓\nKILLED\n  │\n  └── IMPLEMENTATION INTELLIGENCE\n        ├─ CI dependency mapping\n        ├─ impact analysis\n        ├─ collision detection\n        ├─ time-window conflict analysis\n        ├─ change-risk analysis\n        ├─ AI-supported risk assessment\n        ├─ schedule assistance\n        ├─ human arbitration\n        ├─ multi-party coordination\n        ├─ business justification\n        ├─ collision audit trail\n        ├─ iterative rechecking\n        ├─ change governance\n        ├─ change-related incident prevention\n        └─ quantified automation economics\n```\n\nThis intelligence remains valuable for ART's future research and pitch development.\n\n---\n\n# 18. Implementation Intelligence\n\n## II-087 — Exception economics must be measured separately\n\nA platform may process:\n\n```text\n10,000 CHANGES\n```\n\nwithout proving:\n\n```text\n1,000 COLLISIONS\n```\n\n### ART rule\n\nAlways seek:\n\n```text\nTOTAL WORKLOAD\n→ EXCEPTION RATE\n→ DECISION RATE\n→ COST / DECISION\n```\n\n---\n\n## II-088 — Don't confuse platform ROI with residual-gap ROI\n\nBMC Helix can produce millions of dollars of economic value while still having no proven residual opportunity in a particular workflow.\n\n### ART rule\n\n```text\nCUSTOMER BENEFIT FROM PLATFORM\n≠\nCUSTOMER NEED FOR ART\n```\n\n---\n\n## II-089 — Use customer outcome evidence at the exact hypothesis level\n\nForrester reports an insurance customer reducing change-related incidents by 80%.\n\nThat supports:\n\n```text\nCHANGE-RISK / GOVERNANCE VALUE\n```\n\nIt does not support:\n\n```text\nCOLLISION-ARBITRATION VALUE\n```\n\n### ART rule\n\nEvidence must match the exact opportunity hypothesis.\n\n---\n\n## II-090 — Exception handling is where automation economics can remain\n\nForrester states that BMC Helix automates change/asset identification, interdependency analysis, risk evaluation and impact analysis, with human labor remaining for exceptions and flagged issues.\n\n### ART pattern\n\n```text\nAUTOMATE NORMAL\n ↓\nFLAG EXCEPTION\n ↓\nINTELLIGENT HUMAN DECISION\n```\n\nThis pattern should be retained even though OPP-03 is killed.\n\n---\n\n## II-091 — Measure automation using time and outcome\n\nForrester quantifies change/service-request efficiency in minutes saved per request and incident mitigation in avoided incidents and remediation hours.\n\n### ART rule\n\nFuture opportunities should seek:\n\n```text\nTIME SAVED\n+\nLABOR SAVED\n+\nINCIDENTS AVOIDED\n+\nDOWNTIME AVOIDED\n+\nRISK REDUCED\n```\n\nrather than generic \"efficiency.\"\n\n---\n\n## II-092 — Governance and automation can coexist\n\nBMC's change-management architecture combines:\n\n```text\nAUTOMATION\n+\nAI RISK\n+\nPOLICY\n+\nAPPROVAL\n+\nAUDIT\n```\n\nForrester reports that this combination helped customers reduce change-related incidents and accelerate delivery.\n\n### ART rule\n\nEnterprise AI should strengthen governance rather than bypass it.\n\n---\n\n## II-093 — Collision resolution must be state-aware\n\nBMC distinguishes between:\n\n```text\nCOLLISION STATUS\n```\n\nand:\n\n```text\nACTUAL SCHEDULE STATE\n```\n\nA collision marked Resolved can still have an underlying schedule conflict until the schedule is actually changed.\n\n### ART rule\n\nNever treat an administrative state change as proof that the physical constraint has been resolved.\n\n---\n\n# 19. Native vs ART boundary\n\n## BMC clearly provides\n\n```text\nCHANGE LIFECYCLE             ✓\nCI / DEPENDENCY ANALYSIS     ✓\nIMPACT ANALYSIS              ✓\nRISK ANALYSIS                ✓\nAI RISK INPUT                ✓\nCOLLISION DETECTION          ✓\nCALENDAR / SCHEDULING        ✓\nCOLLISION MANAGEMENT         ✓\nCOORDINATOR COMMUNICATION    ✓\nBUSINESS JUSTIFICATION       ✓\nAUDIT TRAIL                  ✓\nRECHECKING                   ✓\nCHANGE GOVERNANCE            ✓\nAUTOMATION / ORCHESTRATION   ✓\n```\n\n## Potential ART capabilities not established as unmet needs\n\n```text\nSEMANTIC TRUE-CONFLICT ANALYSIS       ?\nBEST-OPTION ARBITRATION               ?\nPORTFOLIO OPTIMIZATION                ?\nOUTCOME-LEARNED ARBITRATION           ?\nAUTONOMOUS MULTI-CHANGE REPLANNING    ?\n```\n\nThese remain **implementation hypotheses**, not validated opportunities.\n\n---\n\n# 20. Final opportunity score\n\n| Dimension | Verdict |\n|---|---|\n| Evidence density | 🟢 High |\n| Automation richness | 🟢 Very high |\n| Decision complexity | 🟢 High |\n| Exception richness | 🟢 High |\n| Reusable implementation intelligence | 🟢 Very high |\n| Quantifiable general change economics | 🟢 Strong |\n| Quantifiable collision economics | 🔴 Weak |\n| Specific customer burden | 🔴 Not established |\n| ART differentiation | 🟡 Technically plausible |\n| Commercial opportunity | 🔴 Not validated |\n\n---\n\n# 21. Final decision\n\n# OPP-03 — KILLED\n\n### Reason\n\n> **The research established a real, complex, multi-option collision decision but failed to establish collision-specific economic burden or customer demand for an additional intelligence layer.**\n\nThis is a successful research outcome.\n\nWe did not fail to find an opportunity.\n\nWe successfully prevented ART from pursuing an opportunity that cannot currently be defended with evidence.\n\n---\n\n# 22. No OPP-03-06\n\nDo **not** create:\n\n```text\nOPP-03-06.md\n```\n\nThe research should move to a genuinely different BMC business decision domain.\n\nThe next domain should be selected using the improved scoring model:\n\n```text\nEVIDENCE DENSITY\n+\nAUTOMATION RICHNESS\n+\nDECISION COMPLEXITY\n+\nEXCEPTION DENSITY\n+\nMULTIPLE WORKFLOW POTENTIAL\n+\nREUSABLE IMPLEMENTATION INTELLIGENCE\n+\nQUANTIFIABLE CUSTOMER BURDEN\n```\n\nThe last criterion now has substantially greater weight.\n\n---\n\n# 23. Recommended next move\n\nStart:\n\n# `OPP-04-01.md`\n\nwith a different BMC business decision domain.\n\nDo not attempt to rescue collision arbitration.\n\nThe useful intelligence from OPP-03 should be carried forward automatically.\n\n---\n\n# 24. AIL status\n\n# NOT READY\n\nNo OPP-03 candidate enters the Opportunity Intelligence Layer.\n\n---\n\n# 25. Research integrity conclusion\n\nThe strongest available economic evidence says BMC Helix creates significant value through:\n\n- automation;\n- IT operations efficiency;\n- DevOps efficiency;\n- change-risk governance;\n- incident prevention;\n- reduced remediation effort.\n\nForrester's customer evidence includes an insurance organization reducing change-related incidents by 80%, a customer reducing incidents caused by changes from over 90% to under 1%, and a modeled 90 minutes of IT/developer labor saved per change or service request.\n\nThose are powerful findings.\n\nBut none establish:\n\n```text\nCOLLISION\n ↓\nHUMAN ARBITRATION\n ↓\nMEASURABLE COST\n```\n\nThat missing link is decisive.\n\nTherefore:\n\n# KILL OPP-03\n\nand preserve the implementation intelligence for future ART opportunity discovery.",
+      "what_changed": "COLLISION-SPECIFIC ECONOMIC CASE NOT PROVEN — KILL OPP-03 AS A CURRENT OPPORTUNITY",
+      "resulting_state": "COLLISION-SPECIFIC ECONOMIC CASE NOT PROVEN — KILL OPP-03 AS A CURRENT OPPORTUNITY",
+      "evidence_refs": [
+        "EV-BMC-003-014",
+        "EV-BMC-003-015",
+        "EV-BMC-003-016"
+      ],
+      "source_refs": [
+        "SRC-FILE-BMC-003-05",
+        "SRC-UNKNOWN-BMC-003-001"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-05.md",
+        "section": "Source document",
+        "line_start": 1,
+        "line_end": 837
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "EV-BMC-003-001",
+      "statement": "## Source Register\n\n- **Integrating Control-M Workload Change Manager & BMC Helix ITSM** — real large-bank case, hundreds of job-scheduling changes daily, manual change creation/status checking and integrated automation.\n- **Assessing the risk for a change request** — risk criteria, ML-based operational metrics, impacted parameters and historical incident trends.\n- **AI-suggested change risk** — AI-supported approve/hold/reject decision context.\n- **Detecting collisions between change requests** — automatic collision detection, interpretation, collaboration, business justification and audit trail.\n- **Approving change requests** — review of schedule, budget, impact and risk; approve/reject/hold.\n- **Submitting change requests through approval phases** — configurable approval requirements and governance.\n- **Learning about Change Management** — impact analysis, collision detection, scheduling and availability.\n\n---",
+      "classification": "SOURCE_EVIDENCE",
+      "source": "SRC-FILE-BMC-003-02",
+      "provenance": {
+        "source_file": "OPP-003-02.md",
+        "section": "Source Register",
+        "line_start": 704,
+        "line_end": 715
+      }
+    },
+    {
+      "id": "EV-BMC-003-002",
+      "statement": "# 12. Human coordination is explicitly part of the workflow\n\nBMC provides a link to send email to all change coordinators with conflicting change requests so schedules and priorities can be discussed.\n\nThis means the collision workflow can become:\n\n```text\nCOLLISION\n ↓\nIDENTIFY OTHER OWNER\n ↓\nCONTACT OWNER\n ↓\nDISCUSS SCHEDULE / PRIORITY\n ↓\nDECIDE\n```\n\nThis is a genuine coordination dependency.\n\n---",
+      "classification": "SOURCE_EVIDENCE",
+      "source": "SRC-FILE-BMC-003-03",
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "12. Human coordination is explicitly part of the workflow",
+        "line_start": 388,
+        "line_end": 409
+      }
+    },
+    {
+      "id": "EV-BMC-003-003",
+      "statement": "# 19. Critical counterevidence\n\nBMC already provides enough tooling for a competent change coordinator to:\n\n- detect the collision;\n- see the conflicting change;\n- see the CI;\n- see timing;\n- contact the other coordinator;\n- inspect the calendar;\n- reschedule;\n- recheck;\n- document the rationale.\n\n\n\nTherefore ART must demonstrate something stronger than:\n\n> \"We put all the information in one screen.\"\n\nThat would be UI improvement, not a defensible intelligence opportunity.\n\n---",
+      "classification": "SOURCE_EVIDENCE",
+      "source": "SRC-FILE-BMC-003-03",
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "19. Critical counterevidence",
+        "line_start": 614,
+        "line_end": 637
+      }
+    },
+    {
+      "id": "EV-BMC-003-004",
+      "statement": "# 20. Commercial burden evidence\n\nThis checkpoint found strong evidence that collision decisions are **operationally real**.\n\nBMC explicitly describes collision detection as helping organizations avoid inefficient resource use and infrastructure instability.\n\nBMC's broader Change Management scenario also has the change coordinator actively resolving conflicts before planning the forward schedule.\n\nHowever:",
+      "classification": "SOURCE_EVIDENCE",
+      "source": "SRC-FILE-BMC-003-03",
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "20. Commercial burden evidence",
+        "line_start": 638,
+        "line_end": 647
+      }
+    },
+    {
+      "id": "EV-BMC-003-005",
+      "statement": "### We still do not have public evidence quantifying:\n\n- collision volume per organization;\n- average collision-resolution time;\n- number of coordinator interactions;\n- percentage requiring rescheduling;\n- cost of coordination;\n- collision-related change delays;\n- collision-related incidents;\n- inconsistent collision decisions.",
+      "classification": "SOURCE_EVIDENCE",
+      "source": "SRC-FILE-BMC-003-03",
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "We still do not have public evidence quantifying:",
+        "line_start": 648,
+        "line_end": 658
+      }
+    },
+    {
+      "id": "EV-BMC-003-006",
+      "statement": "## II-077 — Human coordination is part of enterprise workflow\n\nBMC provides direct contact mechanisms between conflicting change coordinators.",
+      "classification": "DIRECT_EVIDENCE",
+      "source": "SRC-FILE-BMC-003-03",
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "II-077 — Human coordination is part of enterprise workflow",
+        "line_start": 774,
+        "line_end": 777
+      }
+    },
+    {
+      "id": "EV-BMC-003-007",
+      "statement": "# Source Register\n\n- **Detecting collisions between change requests** — collision definition, time/CI factors, direct/indirect effects, human interpretation, statuses, rationale, audit trail and documented VM/server example.\n- **Learning about Change Management** — coordinator workflow, collision resolution, forward scheduling and risk/impact review.\n- **Detecting conflicts by using the Calendar** — collision display, coordinator contact, rescheduling and iterative collision checking.\n- **Performing changes that require approval** — real change-coordinator scheduling workflow and Collision Detection/Schedule Assist.\n- **Managing change request collisions** — collision visibility and coordinator communication.\n\n---",
+      "classification": "DIRECT_EVIDENCE",
+      "source": "SRC-FILE-BMC-003-03",
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "Source Register",
+        "line_start": 1048,
+        "line_end": 1057
+      }
+    },
+    {
+      "id": "EV-BMC-003-008",
+      "statement": "# 2. Strongest direct enterprise burden evidence\n\nBMC publishes a case involving one of the largest banks in the Asia/Pacific region.\n\nThe bank managed **hundreds of job-scheduling change requests daily** using Control-M Workload Automation.\n\nThe documented process required the scheduling team to:\n\n- manually create change requests in BMC Helix ITSM;\n- check their status;\n- communicate with relevant application stakeholders through email or Teams;\n- verify status before implementation.\n\nBMC describes the entire process as manual, inefficient and time-consuming.\n\nThis is strong evidence of a real high-volume change-management burden.",
+      "classification": "DIRECT_EVIDENCE",
+      "source": "SRC-FILE-BMC-003-04",
+      "provenance": {
+        "source_file": "OPP-003-04.md",
+        "section": "2. Strongest direct enterprise burden evidence",
+        "line_start": 58,
+        "line_end": 74
+      }
+    },
+    {
+      "id": "EV-BMC-003-009",
+      "statement": "# 17. Strong counterevidence — BMC already has broad planning context\n\nBMC's current Change Management documentation describes the planning stage as including:\n\n- planning approved changes;\n- target dates;\n- estimated risks and costs;\n- impact analysis;\n- risk re-evaluation;\n- implementation plans;\n- backout plans;\n- task assignment and scheduling.\n\nThis means ART cannot credibly claim:\n\n> \"BMC does not consider risk, cost, impact or rollback when planning changes.\"\n\nIt does.\n\nThe potential residual must be **dynamic arbitration across competing feasible options**, not basic context gathering.\n\n---",
+      "classification": "SOURCE_EVIDENCE",
+      "source": "SRC-FILE-BMC-003-04",
+      "provenance": {
+        "source_file": "OPP-003-04.md",
+        "section": "17. Strong counterevidence — BMC already has broad planning context",
+        "line_start": 532,
+        "line_end": 554
+      }
+    },
+    {
+      "id": "EV-BMC-003-010",
+      "statement": "# 18. Strong counterevidence — BMC supports business-event constraints\n\nBMC's current Calendar documentation supports time-segment availability based on business events and operational categories, while change-freeze schedules can also be managed in the Calendar.\n\nTherefore a generic:\n\n> \"AI knows blackout windows\"\n\nopportunity is weak.\n\n---",
+      "classification": "SOURCE_EVIDENCE",
+      "source": "SRC-FILE-BMC-003-04",
+      "provenance": {
+        "source_file": "OPP-003-04.md",
+        "section": "18. Strong counterevidence — BMC supports business-event constraints",
+        "line_start": 555,
+        "line_end": 566
+      }
+    },
+    {
+      "id": "EV-BMC-003-011",
+      "statement": "# 19. Strong counterevidence — BMC supports auditability\n\nBMC stores collision status and rationale and provides a collision-status audit trail with timestamp, user, status and reason.\n\nART therefore needs to preserve at least:\n\n```text\nRECOMMENDATION\n+\nEVIDENCE\n+\nRATIONALE\n+\nDECISION OWNER\n+\nOUTCOME\n```\n\nif it ever participates in this workflow.\n\n---",
+      "classification": "SOURCE_EVIDENCE",
+      "source": "SRC-FILE-BMC-003-04",
+      "provenance": {
+        "source_file": "OPP-003-04.md",
+        "section": "19. Strong counterevidence — BMC supports auditability",
+        "line_start": 567,
+        "line_end": 588
+      }
+    },
+    {
+      "id": "EV-BMC-003-012",
+      "statement": "# BURDEN EVIDENCE: MEDIUM FOR CHANGE COORDINATION, LOW FOR COLLISION ARBITRATION\n\nThat distinction should control the opportunity decision.\n\n---",
+      "classification": "SOURCE_EVIDENCE",
+      "source": "SRC-FILE-BMC-003-04",
+      "provenance": {
+        "source_file": "OPP-003-04.md",
+        "section": "BURDEN EVIDENCE: MEDIUM FOR CHANGE COORDINATION, LOW FOR COLLISION ARBITRATION",
+        "line_start": 627,
+        "line_end": 632
+      }
+    },
+    {
+      "id": "EV-BMC-003-013",
+      "statement": "# Source Register\n\n- **Detecting collisions between change requests — BMC Helix ITSM** — collision definition, time/CI factors, direct/indirect effects, collision actions and documented VM/server example.\n- **Managing change request collisions — Smart IT** — collision detection, coordinator communication, rescheduling, filters, status and rationale.\n- **Detecting conflicts by using the Calendar** — current collision/calendar workflow and business-event context.\n- **Learning about Change Management** — planning, impact analysis, collision detection, scheduling and time-segment availability.\n- **Planning implementation of change requests** — risk, cost, impact, backout planning, scheduling and collision management.\n- **Control-M Workload Change Manager + BMC Helix ITSM case study** — hundreds of job-scheduling changes daily, manual creation/status checking, stakeholder communication and resulting workflow automation.\n- **BMC collision documentation — audit trail** — status-change rationale, timestamp, user and reason.\n\n---",
+      "classification": "DIRECT_EVIDENCE",
+      "source": "SRC-FILE-BMC-003-04",
+      "provenance": {
+        "source_file": "OPP-003-04.md",
+        "section": "Source Register",
+        "line_start": 1018,
+        "line_end": 1029
+      }
+    },
+    {
+      "id": "EV-BMC-003-014",
+      "statement": "# 2. Strongest economic evidence available for BMC Helix\n\nThe strongest independent economic evidence located is Forrester's Total Economic Impact study commissioned by BMC.\n\nForrester interviewed **14 decision-makers from 11 BMC Helix customer organizations** and built a composite organization. The composite represented 41,000 supported end users and 30 IT operations engineers/administrators.\n\nThe study found substantial overall economic value from BMC Helix:\n\n- $15.3M three-year risk-adjusted NPV for the full solution set;\n- 189% ROI;\n- 10-month payback;\n- $23.4M three-year risk-adjusted benefits PV.",
+      "classification": "SOURCE_EVIDENCE",
+      "source": "SRC-FILE-BMC-003-05",
+      "provenance": {
+        "source_file": "OPP-003-05.md",
+        "section": "2. Strongest economic evidence available for BMC Helix",
+        "line_start": 54,
+        "line_end": 68
+      }
+    },
+    {
+      "id": "EV-BMC-003-015",
+      "statement": "# 3. Forrester provides change-related economic evidence\n\nThe Forrester study reports that BMC Helix helps organizations prevent and mitigate incidents by:\n\n- identifying changes and assets;\n- determining interdependencies;\n- evaluating risk using policies and AI;\n- assessing impact;\n- performing root-cause analysis.\n\nIt states that much of this process can be automated, with human labor required for exceptions and flagged issues.\n\nThis is directly relevant to ART.\n\nThe evidence supports the pattern:\n\n```text\nAUTOMATION\n ↓\nEXCEPTION / FLAG\n ↓\nHUMAN ATTENTION\n```\n\nBut the study does not identify **change collisions** as the economic driver of that residual human work.\n\n---",
+      "classification": "SOURCE_EVIDENCE",
+      "source": "SRC-FILE-BMC-003-05",
+      "provenance": {
+        "source_file": "OPP-003-05.md",
+        "section": "3. Forrester provides change-related economic evidence",
+        "line_start": 83,
+        "line_end": 110
+      }
+    },
+    {
+      "id": "EV-BMC-003-016",
+      "statement": "# 6. Strong evidence that BMC already monetizes automation around change\n\nForrester reports that BMC Helix saved an estimated **90 minutes of IT and developer labor per change or service request** in one modeled DevOps scenario. The composite used 10,000 annual change/service requests and modeled 30 minutes saved for developers plus 60 minutes for IT engineers per request.\n\nThis is useful because it demonstrates that change-related workflow efficiency can have measurable economic value.\n\nBut again:\n\n```text\n90 MINUTES SAVED / CHANGE\n```\n\nis not:\n\n```text\nMINUTES SAVED / COLLISION\n```\n\nThe two cannot be substituted.\n\n---",
+      "classification": "SOURCE_EVIDENCE",
+      "source": "SRC-FILE-BMC-003-05",
+      "provenance": {
+        "source_file": "OPP-003-05.md",
+        "section": "6. Strong evidence that BMC already monetizes automation around change",
+        "line_start": 174,
+        "line_end": 195
+      }
+    }
+  ],
+  "claims": [],
+  "inferences": [
+    {
+      "id": "IN-BMC-003-001",
+      "statement": "## 5. AI is already part of the decision-support layer\n\nBMC states that, when Change Risk Management is enabled, AI-suggested risk information helps users make informed decisions to approve, hold, or reject a change.\n\nTherefore this hypothesis is already invalid:\n\n> \"BMC has no AI-supported change-risk decision capability.\"",
+      "basis": [
+        "EV-BMC-003-001"
+      ],
+      "implication": "## 5. AI is already part of the decision-support layer\n\nBMC states that, when Change Risk Management is enabled, AI-suggested risk information helps users make informed decisions to approve, hold, or reject a change.\n\nTherefore this hypothesis is already invalid:\n\n> \"BMC has no AI-supported change-risk decision capability.\"",
+      "provenance": {
+        "source_file": "OPP-003-02.md",
+        "section": "5. AI is already part of the decision-support layer",
+        "line_start": 101,
+        "line_end": 108
+      }
+    },
+    {
+      "id": "IN-BMC-003-002",
+      "statement": "## 9. Decision #4 — Does the collision actually matter?\n\nBMC explicitly states that colliding changes can coexist when the change coordinator or manager determines that the changes do not actually conflict—for example, when one implementation will not impede or undo the other.\n\nTherefore:\n\n```text\nCOLLISION DETECTED\n        ↓\nDO THEY ACTUALLY CONFLICT?\n        ↓\nYES → MANAGE / RESCHEDULE / RESOLVE\nNO  → IGNORE WITH JUSTIFICATION\n```",
+      "basis": [
+        "EV-BMC-003-001"
+      ],
+      "implication": "## 9. Decision #4 — Does the collision actually matter?\n\nBMC explicitly states that colliding changes can coexist when the change coordinator or manager determines that the changes do not actually conflict—for example, when one implementation will not impede or undo the other.\n\nTherefore:\n\n```text\nCOLLISION DETECTED\n        ↓\nDO THEY ACTUALLY CONFLICT?\n        ↓\nYES → MANAGE / RESCHEDULE / RESOLVE\nNO  → IGNORE WITH JUSTIFICATION\n```",
+      "provenance": {
+        "source_file": "OPP-003-02.md",
+        "section": "9. Decision #4 — Does the collision actually matter?",
+        "line_start": 191,
+        "line_end": 205
+      }
+    },
+    {
+      "id": "IN-BMC-003-003",
+      "statement": "## 11. Decision #5 — Should the change be rescheduled?\n\nBMC's Calendar and collision mechanisms allow users to inspect conflicts and adjust scheduled dates. The system can rerun collision detection after schedule changes.\n\n```text\nCONFLICT\n ↓\nSCHEDULE OPTIONS\n ↓\nRESCHEDULE / RETAIN\n```\n\nBMC therefore provides the decision-support and execution mechanisms.\n\nA generalized autonomous scheduler is **not established**.\n\n---",
+      "basis": [
+        "EV-BMC-003-001"
+      ],
+      "implication": "## 11. Decision #5 — Should the change be rescheduled?\n\nBMC's Calendar and collision mechanisms allow users to inspect conflicts and adjust scheduled dates. The system can rerun collision detection after schedule changes.\n\n```text\nCONFLICT\n ↓\nSCHEDULE OPTIONS\n ↓\nRESCHEDULE / RETAIN\n```\n\nBMC therefore provides the decision-support and execution mechanisms.\n\nA generalized autonomous scheduler is **not established**.\n\n---",
+      "provenance": {
+        "source_file": "OPP-003-02.md",
+        "section": "11. Decision #5 — Should the change be rescheduled?",
+        "line_start": 237,
+        "line_end": 254
+      }
+    },
+    {
+      "id": "IN-BMC-003-004",
+      "statement": "## 15. Reconstructed real change-decision workflow\n\nThe strongest evidence-backed reconstruction is:\n\n```text\nCHANGE PROPOSED\n        ↓\nCHANGE CLASS / POLICY\n        ↓\nAPPROVAL REQUIRED?\n        ↓\nRISK + IMPACT ANALYSIS\n        ↓\nAI-SUGGESTED RISK INFORMATION\n        ↓\nDEPENDENCY / IMPACT ANALYSIS\n        ↓\nCOLLISION DETECTION\n        ↓\nSCHEDULE CHECK\n        ↓\nAPPROVAL\n ┌──────┼──────┐\nAPPROVE HOLD REJECT\n        ↓\nIMPLEMENT\n```\n\nThis is a reconstruction from documented BMC capabilities, not an invented architecture.\n\n---",
+      "basis": [
+        "EV-BMC-003-001"
+      ],
+      "implication": "## 15. Reconstructed real change-decision workflow\n\nThe strongest evidence-backed reconstruction is:\n\n```text\nCHANGE PROPOSED\n        ↓\nCHANGE CLASS / POLICY\n        ↓\nAPPROVAL REQUIRED?\n        ↓\nRISK + IMPACT ANALYSIS\n        ↓\nAI-SUGGESTED RISK INFORMATION\n        ↓\nDEPENDENCY / IMPACT ANALYSIS\n        ↓\nCOLLISION DETECTION\n        ↓\nSCHEDULE CHECK\n        ↓\nAPPROVAL\n ┌──────┼──────┐\nAPPROVE HOLD REJECT\n        ↓\nIMPLEMENT\n```\n\nThis is a reconstruction from documented BMC capabilities, not an invented architecture.\n\n---",
+      "provenance": {
+        "source_file": "OPP-003-02.md",
+        "section": "15. Reconstructed real change-decision workflow",
+        "line_start": 312,
+        "line_end": 343
+      }
+    },
+    {
+      "id": "IN-BMC-003-005",
+      "statement": "# 17. But human judgment is not automatically an opportunity\n\nWe still need:\n\n```text\nREPEATED\n+\nTIME-CONSUMING\n+\nCOSTLY\n+\nRISKY\n+\nINCONSISTENT\n+\nMEASURABLE\n```\n\nThe bank case establishes high-volume **administrative change processing**, but it does not quantify the residual burden of:\n\n- collision interpretation;\n- rescheduling;\n- risk arbitration;\n- approval judgment.\n\nTherefore we cannot yet claim the residual decision is commercially important.\n\n---",
+      "basis": [
+        "EV-BMC-003-001"
+      ],
+      "implication": "# 17. But human judgment is not automatically an opportunity\n\nWe still need:\n\n```text\nREPEATED\n+\nTIME-CONSUMING\n+\nCOSTLY\n+\nRISKY\n+\nINCONSISTENT\n+\nMEASURABLE\n```\n\nThe bank case establishes high-volume **administrative change processing**, but it does not quantify the residual burden of:\n\n- collision interpretation;\n- rescheduling;\n- risk arbitration;\n- approval judgment.\n\nTherefore we cannot yet claim the residual decision is commercially important.\n\n---",
+      "provenance": {
+        "source_file": "OPP-003-02.md",
+        "section": "17. But human judgment is not automatically an opportunity",
+        "line_start": 362,
+        "line_end": 390
+      }
+    },
+    {
+      "id": "IN-BMC-003-006",
+      "statement": "## `OPP-03-03.md — Real Change-Collision Decision Reconstruction`\n\nThe next checkpoint should reconstruct **one concrete collision decision**:\n\n```text\nCHANGE A\n+\nCHANGE B\n ↓\nSAME CI / OVERLAPPING WINDOW\n ↓\nCOLLISION\n ↓\nWHAT MUST THE HUMAN DETERMINE?\n ↓\nIGNORE?\nRESCHEDULE A?\nRESCHEDULE B?\nBLOCK?\nCOORDINATE?\nESCALATE?\n ↓\nWHAT EVIDENCE IS USED?\n ↓\nHOW LONG DOES IT TAKE?\n ↓\nWHAT IS THE BUSINESS COST?\n```\n\nThe objective is to find evidence of the **residual decision burden**, not another list of BMC features.\n\nIf the burden is not demonstrable, kill OPP-03.\n\nIf it is demonstrable, then test whether ART can improve the decision materially.\n\n---",
+      "basis": [
+        "EV-BMC-003-001"
+      ],
+      "implication": "## `OPP-03-03.md — Real Change-Collision Decision Reconstruction`\n\nThe next checkpoint should reconstruct **one concrete collision decision**:\n\n```text\nCHANGE A\n+\nCHANGE B\n ↓\nSAME CI / OVERLAPPING WINDOW\n ↓\nCOLLISION\n ↓\nWHAT MUST THE HUMAN DETERMINE?\n ↓\nIGNORE?\nRESCHEDULE A?\nRESCHEDULE B?\nBLOCK?\nCOORDINATE?\nESCALATE?\n ↓\nWHAT EVIDENCE IS USED?\n ↓\nHOW LONG DOES IT TAKE?\n ↓\nWHAT IS THE BUSINESS COST?\n```\n\nThe objective is to find evidence of the **residual decision burden**, not another list of BMC features.\n\nIf the burden is not demonstrable, kill OPP-03.\n\nIf it is demonstrable, then test whether ART can improve the decision materially.\n\n---",
+      "provenance": {
+        "source_file": "OPP-003-02.md",
+        "section": "OPP-03-03.md — Real Change-Collision Decision Reconstruction",
+        "line_start": 629,
+        "line_end": 665
+      }
+    },
+    {
+      "id": "IN-BMC-003-007",
+      "statement": "# 1. Decisive research question\n\nOPP-03-02 established that BMC already provides:\n\n- automatic collision detection;\n- impact analysis;\n- dependency awareness;\n- scheduling tools;\n- risk information;\n- approval workflows;\n- auditability.\n\nThe next question is narrower:\n\n> **When BMC detects a change collision, what exactly must the human decide, what evidence is available, what actions can be taken, and is this residual decision sufficiently burdensome to justify ART?**\n\nThis checkpoint therefore reconstructs the collision decision itself.\n\n---",
+      "basis": [
+        "EV-BMC-003-002",
+        "EV-BMC-003-003",
+        "EV-BMC-003-004",
+        "EV-BMC-003-005",
+        "EV-BMC-003-006",
+        "EV-BMC-003-007"
+      ],
+      "implication": "# 1. Decisive research question\n\nOPP-03-02 established that BMC already provides:\n\n- automatic collision detection;\n- impact analysis;\n- dependency awareness;\n- scheduling tools;\n- risk information;\n- approval workflows;\n- auditability.\n\nThe next question is narrower:\n\n> **When BMC detects a change collision, what exactly must the human decide, what evidence is available, what actions can be taken, and is this residual decision sufficiently burdensome to justify ART?**\n\nThis checkpoint therefore reconstructs the collision decision itself.\n\n---",
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "1. Decisive research question",
+        "line_start": 22,
+        "line_end": 41
+      }
+    },
+    {
+      "id": "IN-BMC-003-008",
+      "statement": "# 3. Collision is not necessarily a true operational conflict\n\nThis is the most important finding in the checkpoint.\n\nBMC explicitly states that two colliding changes can coexist when the change coordinator or change manager determines that the nature of the changes does not actually create a conflict—for example, when one change will not impede or undo the other.\n\nTherefore:\n\n```text\nSYSTEM DETECTS COLLISION\n        ↓\nHUMAN INTERPRETS ACTUAL INTERACTION\n        ↓\nTRUE CONFLICT?\n ┌─────────────┴─────────────┐\n YES                         NO\n ↓                            ↓\nMANAGE / CHANGE             IGNORE\nSCHEDULE                     +\n                             JUSTIFICATION\n```",
+      "basis": [
+        "EV-BMC-003-002",
+        "EV-BMC-003-003",
+        "EV-BMC-003-004",
+        "EV-BMC-003-005",
+        "EV-BMC-003-006",
+        "EV-BMC-003-007"
+      ],
+      "implication": "# 3. Collision is not necessarily a true operational conflict\n\nThis is the most important finding in the checkpoint.\n\nBMC explicitly states that two colliding changes can coexist when the change coordinator or change manager determines that the nature of the changes does not actually create a conflict—for example, when one change will not impede or undo the other.\n\nTherefore:\n\n```text\nSYSTEM DETECTS COLLISION\n        ↓\nHUMAN INTERPRETS ACTUAL INTERACTION\n        ↓\nTRUE CONFLICT?\n ┌─────────────┴─────────────┐\n YES                         NO\n ↓                            ↓\nMANAGE / CHANGE             IGNORE\nSCHEDULE                     +\n                             JUSTIFICATION\n```",
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "3. Collision is not necessarily a true operational conflict",
+        "line_start": 60,
+        "line_end": 81
+      }
+    },
+    {
+      "id": "IN-BMC-003-009",
+      "statement": "# 4. What information does the human receive?\n\nBMC's Collision Detection dialog can expose:\n\n- Change ID;\n- summary;\n- CI name;\n- status;\n- change coordinator;\n- scheduled start/end dates;\n- conflicting change ID;\n- conflicting scheduled dates.\n\nUsers can also inspect the change coordinator profile and contact conflicting coordinators.\n\nThis means the human decision is not made from a binary alert alone.\n\nThe decision context is approximately:\n\n```text\nCURRENT CHANGE\n+\nCONFLICTING CHANGE\n+\nCI\n+\nSTATUS\n+\nTIMING\n+\nOWNERSHIP\n```",
+      "basis": [
+        "EV-BMC-003-002",
+        "EV-BMC-003-003",
+        "EV-BMC-003-004",
+        "EV-BMC-003-005",
+        "EV-BMC-003-006",
+        "EV-BMC-003-007"
+      ],
+      "implication": "# 4. What information does the human receive?\n\nBMC's Collision Detection dialog can expose:\n\n- Change ID;\n- summary;\n- CI name;\n- status;\n- change coordinator;\n- scheduled start/end dates;\n- conflicting change ID;\n- conflicting scheduled dates.\n\nUsers can also inspect the change coordinator profile and contact conflicting coordinators.\n\nThis means the human decision is not made from a binary alert alone.\n\nThe decision context is approximately:\n\n```text\nCURRENT CHANGE\n+\nCONFLICTING CHANGE\n+\nCI\n+\nSTATUS\n+\nTIMING\n+\nOWNERSHIP\n```",
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "4. What information does the human receive?",
+        "line_start": 90,
+        "line_end": 122
+      }
+    },
+    {
+      "id": "IN-BMC-003-010",
+      "statement": "## B. CI factor\n\nPossible relationships include:\n\n- direct effect on the same CI;\n- indirect effect through dependent CIs.\n\nThe latter means a change may collide even when the two requests are not directly attached to exactly the same CI.\n\nTherefore:\n\n```text\nCOLLISION RISK\n=\nTIME RELATIONSHIP\n+\nCI / DEPENDENCY RELATIONSHIP\n```\n\n---",
+      "basis": [
+        "EV-BMC-003-002",
+        "EV-BMC-003-003",
+        "EV-BMC-003-004",
+        "EV-BMC-003-005",
+        "EV-BMC-003-006",
+        "EV-BMC-003-007"
+      ],
+      "implication": "## B. CI factor\n\nPossible relationships include:\n\n- direct effect on the same CI;\n- indirect effect through dependent CIs.\n\nThe latter means a change may collide even when the two requests are not directly attached to exactly the same CI.\n\nTherefore:\n\n```text\nCOLLISION RISK\n=\nTIME RELATIONSHIP\n+\nCI / DEPENDENCY RELATIONSHIP\n```\n\n---",
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "B. CI factor",
+        "line_start": 143,
+        "line_end": 163
+      }
+    },
+    {
+      "id": "IN-BMC-003-011",
+      "statement": "# 6. Concrete BMC collision example\n\nBMC provides a specific example:\n\n```text\nCHANGE A\nOperating-system upgrade\nVM\n4 PM–5 PM\n\nCHANGE B\nAdd hard disk to host server\n3 PM–6 PM\n```\n\nThe VM is hosted on the server affected by Change B.\n\nThe schedules overlap and the server change indirectly affects the VM.\n\nBMC therefore treats the two requests as colliding and states that a schedule change is necessary to implement both efficiently.\n\nThis gives us a real reconstruction:\n\n```text\nCHANGE A\n     +\nCHANGE B\n     ↓\nOVERLAPPING WINDOWS\n     +\nDEPENDENCY\n     ↓\nCOLLISION\n     ↓\nSCHEDULE CHANGE\n```",
+      "basis": [
+        "EV-BMC-003-002",
+        "EV-BMC-003-003",
+        "EV-BMC-003-004",
+        "EV-BMC-003-005",
+        "EV-BMC-003-006",
+        "EV-BMC-003-007"
+      ],
+      "implication": "# 6. Concrete BMC collision example\n\nBMC provides a specific example:\n\n```text\nCHANGE A\nOperating-system upgrade\nVM\n4 PM–5 PM\n\nCHANGE B\nAdd hard disk to host server\n3 PM–6 PM\n```\n\nThe VM is hosted on the server affected by Change B.\n\nThe schedules overlap and the server change indirectly affects the VM.\n\nBMC therefore treats the two requests as colliding and states that a schedule change is necessary to implement both efficiently.\n\nThis gives us a real reconstruction:\n\n```text\nCHANGE A\n     +\nCHANGE B\n     ↓\nOVERLAPPING WINDOWS\n     +\nDEPENDENCY\n     ↓\nCOLLISION\n     ↓\nSCHEDULE CHANGE\n```",
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "6. Concrete BMC collision example",
+        "line_start": 164,
+        "line_end": 200
+      }
+    },
+    {
+      "id": "IN-BMC-003-012",
+      "statement": "# 7. But BMC does not automatically decide the schedule\n\nBMC provides tools to inspect and reschedule colliding events.\n\nThe Calendar allows users to:\n\n- view collisions;\n- select conflicting events;\n- drag and drop events;\n- edit event schedules;\n- refresh collision indicators.\n\nIf a new schedule creates another collision, the indicator remains visible.\n\nTherefore:\n\n```text\nDETECT\n ↓\nDISPLAY OPTIONS\n ↓\nHUMAN SELECTS / ADJUSTS\n ↓\nRECHECK\n```",
+      "basis": [
+        "EV-BMC-003-002",
+        "EV-BMC-003-003",
+        "EV-BMC-003-004",
+        "EV-BMC-003-005",
+        "EV-BMC-003-006",
+        "EV-BMC-003-007"
+      ],
+      "implication": "# 7. But BMC does not automatically decide the schedule\n\nBMC provides tools to inspect and reschedule colliding events.\n\nThe Calendar allows users to:\n\n- view collisions;\n- select conflicting events;\n- drag and drop events;\n- edit event schedules;\n- refresh collision indicators.\n\nIf a new schedule creates another collision, the indicator remains visible.\n\nTherefore:\n\n```text\nDETECT\n ↓\nDISPLAY OPTIONS\n ↓\nHUMAN SELECTS / ADJUSTS\n ↓\nRECHECK\n```",
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "7. But BMC does not automatically decide the schedule",
+        "line_start": 207,
+        "line_end": 232
+      }
+    },
+    {
+      "id": "IN-BMC-003-013",
+      "statement": "# 11. Business justification is part of the decision\n\nWhen changing collision status, BMC provides a field for business justification.\n\nThe status and rationale are recorded in the Activity feed, and the Collision Status Audit Trail records:\n\n- date/time;\n- user;\n- new collision status;\n- reason for the change.\n\nTherefore:\n\n```text\nDECISION\n ↓\nRATIONALE\n ↓\nAUDIT\n```",
+      "basis": [
+        "EV-BMC-003-002",
+        "EV-BMC-003-003",
+        "EV-BMC-003-004",
+        "EV-BMC-003-005",
+        "EV-BMC-003-006",
+        "EV-BMC-003-007"
+      ],
+      "implication": "# 11. Business justification is part of the decision\n\nWhen changing collision status, BMC provides a field for business justification.\n\nThe status and rationale are recorded in the Activity feed, and the Collision Status Audit Trail records:\n\n- date/time;\n- user;\n- new collision status;\n- reason for the change.\n\nTherefore:\n\n```text\nDECISION\n ↓\nRATIONALE\n ↓\nAUDIT\n```",
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "11. Business justification is part of the decision",
+        "line_start": 361,
+        "line_end": 381
+      }
+    },
+    {
+      "id": "IN-BMC-003-014",
+      "statement": "# 16. BMC already has some scheduling assistance\n\nBMC's change workflow documentation describes a Schedule Assist tool for finding available times and collision detection for checking conflicting changes.\n\nTherefore ART cannot simply claim:\n\n> \"We find a free time for the change.\"\n\nBMC already supports that workflow.\n\nThe potential residual would need to be:\n\n> **selecting the best feasible schedule among competing business and technical constraints.**\n\nThat is materially different.\n\n---",
+      "basis": [
+        "EV-BMC-003-002",
+        "EV-BMC-003-003",
+        "EV-BMC-003-004",
+        "EV-BMC-003-005",
+        "EV-BMC-003-006",
+        "EV-BMC-003-007"
+      ],
+      "implication": "# 16. BMC already has some scheduling assistance\n\nBMC's change workflow documentation describes a Schedule Assist tool for finding available times and collision detection for checking conflicting changes.\n\nTherefore ART cannot simply claim:\n\n> \"We find a free time for the change.\"\n\nBMC already supports that workflow.\n\nThe potential residual would need to be:\n\n> **selecting the best feasible schedule among competing business and technical constraints.**\n\nThat is materially different.\n\n---",
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "16. BMC already has some scheduling assistance",
+        "line_start": 525,
+        "line_end": 542
+      }
+    },
+    {
+      "id": "IN-BMC-003-015",
+      "statement": "# 17. Collision detection is already proactive\n\nBMC can show potential collisions while a change is being created or updated, before saving the request.\n\nAfter saving, unresolved collisions can trigger an alert banner.\n\nTherefore:\n\n```text\nCREATE / EDIT\n ↓\nCHECK COLLISION\n ↓\nWARN\n```\n\nis already native.",
+      "basis": [
+        "EV-BMC-003-002",
+        "EV-BMC-003-003",
+        "EV-BMC-003-004",
+        "EV-BMC-003-005",
+        "EV-BMC-003-006",
+        "EV-BMC-003-007"
+      ],
+      "implication": "# 17. Collision detection is already proactive\n\nBMC can show potential collisions while a change is being created or updated, before saving the request.\n\nAfter saving, unresolved collisions can trigger an alert banner.\n\nTherefore:\n\n```text\nCREATE / EDIT\n ↓\nCHECK COLLISION\n ↓\nWARN\n```\n\nis already native.",
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "17. Collision detection is already proactive",
+        "line_start": 543,
+        "line_end": 560
+      }
+    },
+    {
+      "id": "IN-BMC-003-016",
+      "statement": "### ART pattern\n\n```text\nCONFLICT\n=\nRESOURCE RELATIONSHIP\n+\nTIME RELATIONSHIP\n```\n\n---",
+      "basis": [
+        "EV-BMC-003-002",
+        "EV-BMC-003-003",
+        "EV-BMC-003-004",
+        "EV-BMC-003-005",
+        "EV-BMC-003-006",
+        "EV-BMC-003-007"
+      ],
+      "implication": "### ART pattern\n\n```text\nCONFLICT\n=\nRESOURCE RELATIONSHIP\n+\nTIME RELATIONSHIP\n```\n\n---",
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "ART pattern",
+        "line_start": 690,
+        "line_end": 701
+      }
+    },
+    {
+      "id": "IN-BMC-003-017",
+      "statement": "### ART pattern\n\n```text\nCHANGE A\n ↓\nCI A\n ↓\nDEPENDENCY\n ↓\nCI B\n ↓\nCHANGE B\n```\n\nDo not model collision only as direct record-to-record matching.\n\n---",
+      "basis": [
+        "EV-BMC-003-002",
+        "EV-BMC-003-003",
+        "EV-BMC-003-004",
+        "EV-BMC-003-005",
+        "EV-BMC-003-006",
+        "EV-BMC-003-007"
+      ],
+      "implication": "### ART pattern\n\n```text\nCHANGE A\n ↓\nCI A\n ↓\nDEPENDENCY\n ↓\nCI B\n ↓\nCHANGE B\n```\n\nDo not model collision only as direct record-to-record matching.\n\n---",
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "ART pattern",
+        "line_start": 706,
+        "line_end": 723
+      }
+    },
+    {
+      "id": "IN-BMC-003-018",
+      "statement": "### ART pattern\n\n```text\nDETECT\n ↓\nINTERPRET\n ↓\nDECIDE\n```\n\nDo not confuse these capabilities.\n\n---",
+      "basis": [
+        "EV-BMC-003-002",
+        "EV-BMC-003-003",
+        "EV-BMC-003-004",
+        "EV-BMC-003-005",
+        "EV-BMC-003-006",
+        "EV-BMC-003-007"
+      ],
+      "implication": "### ART pattern\n\n```text\nDETECT\n ↓\nINTERPRET\n ↓\nDECIDE\n```\n\nDo not confuse these capabilities.\n\n---",
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "ART pattern",
+        "line_start": 728,
+        "line_end": 741
+      }
+    },
+    {
+      "id": "IN-BMC-003-019",
+      "statement": "### ART pattern\n\nA decision engine must support:\n\n```text\nNO ACTION\n```\n\nwhen evidence shows no meaningful conflict.\n\n---",
+      "basis": [
+        "EV-BMC-003-002",
+        "EV-BMC-003-003",
+        "EV-BMC-003-004",
+        "EV-BMC-003-005",
+        "EV-BMC-003-006",
+        "EV-BMC-003-007"
+      ],
+      "implication": "### ART pattern\n\nA decision engine must support:\n\n```text\nNO ACTION\n```\n\nwhen evidence shows no meaningful conflict.\n\n---",
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "ART pattern",
+        "line_start": 746,
+        "line_end": 757
+      }
+    },
+    {
+      "id": "IN-BMC-003-020",
+      "statement": "### ART pattern\n\n```text\nACTION\n ↓\nRE-EVALUATE CONSTRAINTS\n ↓\nCONFIRM ACTUAL RESOLUTION\n```\n\n---",
+      "basis": [
+        "EV-BMC-003-002",
+        "EV-BMC-003-003",
+        "EV-BMC-003-004",
+        "EV-BMC-003-005",
+        "EV-BMC-003-006",
+        "EV-BMC-003-007"
+      ],
+      "implication": "### ART pattern\n\n```text\nACTION\n ↓\nRE-EVALUATE CONSTRAINTS\n ↓\nCONFIRM ACTUAL RESOLUTION\n```\n\n---",
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "ART pattern",
+        "line_start": 762,
+        "line_end": 773
+      }
+    },
+    {
+      "id": "IN-BMC-003-021",
+      "statement": "### ART pattern\n\nWhen automation cannot safely decide:\n\n```text\nAI\n ↓\nIDENTIFY DECISION OWNER\n ↓\nPRESENT EVIDENCE\n ↓\nREQUEST HUMAN DECISION\n ↓\nRECORD OUTCOME\n```\n\n---",
+      "basis": [
+        "EV-BMC-003-002",
+        "EV-BMC-003-003",
+        "EV-BMC-003-004",
+        "EV-BMC-003-005",
+        "EV-BMC-003-006",
+        "EV-BMC-003-007"
+      ],
+      "implication": "### ART pattern\n\nWhen automation cannot safely decide:\n\n```text\nAI\n ↓\nIDENTIFY DECISION OWNER\n ↓\nPRESENT EVIDENCE\n ↓\nREQUEST HUMAN DECISION\n ↓\nRECORD OUTCOME\n```\n\n---",
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "ART pattern",
+        "line_start": 778,
+        "line_end": 795
+      }
+    },
+    {
+      "id": "IN-BMC-003-022",
+      "statement": "### ART pattern\n\nEvery recommendation should preserve:\n\n```text\nDECISION\n+\nEVIDENCE\n+\nRATIONALE\n+\nACTOR\n+\nTIME\n+\nOUTCOME\n```\n\n---",
+      "basis": [
+        "EV-BMC-003-002",
+        "EV-BMC-003-003",
+        "EV-BMC-003-004",
+        "EV-BMC-003-005",
+        "EV-BMC-003-006",
+        "EV-BMC-003-007"
+      ],
+      "implication": "### ART pattern\n\nEvery recommendation should preserve:\n\n```text\nDECISION\n+\nEVIDENCE\n+\nRATIONALE\n+\nACTOR\n+\nTIME\n+\nOUTCOME\n```\n\n---",
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "ART pattern",
+        "line_start": 800,
+        "line_end": 819
+      }
+    },
+    {
+      "id": "IN-BMC-003-023",
+      "statement": "### ART pattern\n\n```text\nRECOMMEND\n ↓\nSIMULATE\n ↓\nCHECK NEW CONFLICTS\n ↓\nREPLAN\n```\n\n---",
+      "basis": [
+        "EV-BMC-003-002",
+        "EV-BMC-003-003",
+        "EV-BMC-003-004",
+        "EV-BMC-003-005",
+        "EV-BMC-003-006",
+        "EV-BMC-003-007"
+      ],
+      "implication": "### ART pattern\n\n```text\nRECOMMEND\n ↓\nSIMULATE\n ↓\nCHECK NEW CONFLICTS\n ↓\nREPLAN\n```\n\n---",
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "ART pattern",
+        "line_start": 824,
+        "line_end": 837
+      }
+    },
+    {
+      "id": "IN-BMC-003-024",
+      "statement": "# 27. The next decisive question\n\nWe now need to determine whether the human arbitration step has measurable burden.\n\nThe next checkpoint should therefore be:",
+      "basis": [
+        "EV-BMC-003-002",
+        "EV-BMC-003-003",
+        "EV-BMC-003-004",
+        "EV-BMC-003-005",
+        "EV-BMC-003-006",
+        "EV-BMC-003-007"
+      ],
+      "implication": "# 27. The next decisive question\n\nWe now need to determine whether the human arbitration step has measurable burden.\n\nThe next checkpoint should therefore be:",
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "27. The next decisive question",
+        "line_start": 942,
+        "line_end": 947
+      }
+    },
+    {
+      "id": "IN-BMC-003-025",
+      "statement": "### But the crucial limitation\n\nThe published case does **not** quantify:\n\n- how many of those changes collided;\n- how many required rescheduling;\n- how many required coordinator-to-coordinator negotiation;\n- average collision-resolution time;\n- cost per collision;\n- collision-related delay;\n- collision-related incidents.\n\nTherefore:",
+      "basis": [
+        "EV-BMC-003-008",
+        "EV-BMC-003-009",
+        "EV-BMC-003-010",
+        "EV-BMC-003-011",
+        "EV-BMC-003-012",
+        "EV-BMC-003-013"
+      ],
+      "implication": "### But the crucial limitation\n\nThe published case does **not** quantify:\n\n- how many of those changes collided;\n- how many required rescheduling;\n- how many required coordinator-to-coordinator negotiation;\n- average collision-resolution time;\n- cost per collision;\n- collision-related delay;\n- collision-related incidents.\n\nTherefore:",
+      "provenance": {
+        "source_file": "OPP-003-04.md",
+        "section": "But the crucial limitation",
+        "line_start": 75,
+        "line_end": 88
+      }
+    },
+    {
+      "id": "IN-BMC-003-026",
+      "statement": "# 4. Collision detection itself is already automated\n\nBMC automatically detects collisions when a CI is related to multiple changes with overlapping implementation schedules.\n\nThe system can expose:\n\n- Change ID;\n- summary;\n- CI;\n- status;\n- coordinator;\n- scheduled dates.\n\nIt can also provide a mechanism to contact conflicting change coordinators.\n\nTherefore:",
+      "basis": [
+        "EV-BMC-003-008",
+        "EV-BMC-003-009",
+        "EV-BMC-003-010",
+        "EV-BMC-003-011",
+        "EV-BMC-003-012",
+        "EV-BMC-003-013"
+      ],
+      "implication": "# 4. Collision detection itself is already automated\n\nBMC automatically detects collisions when a CI is related to multiple changes with overlapping implementation schedules.\n\nThe system can expose:\n\n- Change ID;\n- summary;\n- CI;\n- status;\n- coordinator;\n- scheduled dates.\n\nIt can also provide a mechanism to contact conflicting change coordinators.\n\nTherefore:",
+      "provenance": {
+        "source_file": "OPP-003-04.md",
+        "section": "4. Collision detection itself is already automated",
+        "line_start": 131,
+        "line_end": 147
+      }
+    },
+    {
+      "id": "IN-BMC-003-027",
+      "statement": "# 5. The remaining human burden\n\nThe documented residual workflow is:\n\n```text\nCOLLISION DETECTED\n ↓\nREVIEW CONFLICT\n ↓\nUNDERSTAND WHETHER IT IS ACTUALLY HARMFUL\n ↓\nCHOOSE ACTION\n```\n\nBMC allows collision statuses:\n\n- Detected;\n- Investigating;\n- Ignored;\n- Resolved.\n\nA rationale can be recorded for the status decision.\n\nThe human may therefore need to answer:\n\n```text\n1. Is this a genuine operational conflict?\n2. Which change should move?\n3. Can both proceed?\n4. Is the CI relationship itself incorrect?\n5. Does the collision require coordination?\n6. Has the conflict actually disappeared after the action?\n```",
+      "basis": [
+        "EV-BMC-003-008",
+        "EV-BMC-003-009",
+        "EV-BMC-003-010",
+        "EV-BMC-003-011",
+        "EV-BMC-003-012",
+        "EV-BMC-003-013"
+      ],
+      "implication": "# 5. The remaining human burden\n\nThe documented residual workflow is:\n\n```text\nCOLLISION DETECTED\n ↓\nREVIEW CONFLICT\n ↓\nUNDERSTAND WHETHER IT IS ACTUALLY HARMFUL\n ↓\nCHOOSE ACTION\n```\n\nBMC allows collision statuses:\n\n- Detected;\n- Investigating;\n- Ignored;\n- Resolved.\n\nA rationale can be recorded for the status decision.\n\nThe human may therefore need to answer:\n\n```text\n1. Is this a genuine operational conflict?\n2. Which change should move?\n3. Can both proceed?\n4. Is the CI relationship itself incorrect?\n5. Does the collision require coordination?\n6. Has the conflict actually disappeared after the action?\n```",
+      "provenance": {
+        "source_file": "OPP-003-04.md",
+        "section": "5. The remaining human burden",
+        "line_start": 158,
+        "line_end": 191
+      }
+    },
+    {
+      "id": "IN-BMC-003-028",
+      "statement": "# 7. The system already supports option comparison indirectly\n\nBMC's Calendar provides a graphical representation of collisions and allows schedule changes to be evaluated again. BMC also supports filtering collision views and viewing related events such as CI outages.\n\nThe workflow is therefore:\n\n```text\nOPTION\n ↓\nCHANGE SCHEDULE\n ↓\nRECHECK\n ↓\nNEW COLLISION?\n ↓\nREPEAT\n```\n\nThis is important counterevidence.\n\nBMC already supports an iterative form of option testing.\n\n---",
+      "basis": [
+        "EV-BMC-003-008",
+        "EV-BMC-003-009",
+        "EV-BMC-003-010",
+        "EV-BMC-003-011",
+        "EV-BMC-003-012",
+        "EV-BMC-003-013"
+      ],
+      "implication": "# 7. The system already supports option comparison indirectly\n\nBMC's Calendar provides a graphical representation of collisions and allows schedule changes to be evaluated again. BMC also supports filtering collision views and viewing related events such as CI outages.\n\nThe workflow is therefore:\n\n```text\nOPTION\n ↓\nCHANGE SCHEDULE\n ↓\nRECHECK\n ↓\nNEW COLLISION?\n ↓\nREPEAT\n```\n\nThis is important counterevidence.\n\nBMC already supports an iterative form of option testing.\n\n---",
+      "provenance": {
+        "source_file": "OPP-003-04.md",
+        "section": "7. The system already supports option comparison indirectly",
+        "line_start": 239,
+        "line_end": 262
+      }
+    },
+    {
+      "id": "IN-BMC-003-029",
+      "statement": "# 8. BMC already has Schedule Assist\n\nBMC documents Schedule Assist as part of the change-planning workflow and uses collision detection to help identify workable scheduling options.\n\nTherefore:\n\n> \"ART should find an available slot.\"\n\nis too weak.\n\nThe remaining potential would need to be:\n\n> **select the best feasible option when several feasible schedules exist under competing business, technical and operational constraints.**\n\nThat is a materially harder problem.\n\n---",
+      "basis": [
+        "EV-BMC-003-008",
+        "EV-BMC-003-009",
+        "EV-BMC-003-010",
+        "EV-BMC-003-011",
+        "EV-BMC-003-012",
+        "EV-BMC-003-013"
+      ],
+      "implication": "# 8. BMC already has Schedule Assist\n\nBMC documents Schedule Assist as part of the change-planning workflow and uses collision detection to help identify workable scheduling options.\n\nTherefore:\n\n> \"ART should find an available slot.\"\n\nis too weak.\n\nThe remaining potential would need to be:\n\n> **select the best feasible option when several feasible schedules exist under competing business, technical and operational constraints.**\n\nThat is a materially harder problem.\n\n---",
+      "provenance": {
+        "source_file": "OPP-003-04.md",
+        "section": "8. BMC already has Schedule Assist",
+        "line_start": 263,
+        "line_end": 280
+      }
+    },
+    {
+      "id": "IN-BMC-003-030",
+      "statement": "# 12. Multi-person coordination is explicitly supported\n\nBMC's collision workflow allows users to contact all change coordinators with conflicting change requests to discuss schedules and priorities.\n\nTherefore a collision can involve:\n\n```text\nCOORDINATOR A\n+\nCOORDINATOR B\n+\nPOSSIBLY OTHER STAKEHOLDERS\n```\n\nThe bank case independently confirms that change scheduling can require communication with application stakeholders through email or Teams.",
+      "basis": [
+        "EV-BMC-003-008",
+        "EV-BMC-003-009",
+        "EV-BMC-003-010",
+        "EV-BMC-003-011",
+        "EV-BMC-003-012",
+        "EV-BMC-003-013"
+      ],
+      "implication": "# 12. Multi-person coordination is explicitly supported\n\nBMC's collision workflow allows users to contact all change coordinators with conflicting change requests to discuss schedules and priorities.\n\nTherefore a collision can involve:\n\n```text\nCOORDINATOR A\n+\nCOORDINATOR B\n+\nPOSSIBLY OTHER STAKEHOLDERS\n```\n\nThe bank case independently confirms that change scheduling can require communication with application stakeholders through email or Teams.",
+      "provenance": {
+        "source_file": "OPP-003-04.md",
+        "section": "12. Multi-person coordination is explicitly supported",
+        "line_start": 374,
+        "line_end": 389
+      }
+    },
+    {
+      "id": "IN-BMC-003-031",
+      "statement": "### Important ART pattern\n\nThis is a **constraint-propagation problem**.\n\nA proposed action changes the system state, so the decision must be evaluated again.",
+      "basis": [
+        "EV-BMC-003-008",
+        "EV-BMC-003-009",
+        "EV-BMC-003-010",
+        "EV-BMC-003-011",
+        "EV-BMC-003-012",
+        "EV-BMC-003-013"
+      ],
+      "implication": "### Important ART pattern\n\nThis is a **constraint-propagation problem**.\n\nA proposed action changes the system state, so the decision must be evaluated again.",
+      "provenance": {
+        "source_file": "OPP-003-04.md",
+        "section": "Important ART pattern",
+        "line_start": 448,
+        "line_end": 453
+      }
+    },
+    {
+      "id": "IN-BMC-003-032",
+      "statement": "### E. Business consequence\n\n```text\nX HOURS OF DELAY\nX SLA BREACHES\nX INCIDENTS\nX COST\n```",
+      "basis": [
+        "EV-BMC-003-008",
+        "EV-BMC-003-009",
+        "EV-BMC-003-010",
+        "EV-BMC-003-011",
+        "EV-BMC-003-012",
+        "EV-BMC-003-013"
+      ],
+      "implication": "### E. Business consequence\n\n```text\nX HOURS OF DELAY\nX SLA BREACHES\nX INCIDENTS\nX COST\n```",
+      "provenance": {
+        "source_file": "OPP-003-04.md",
+        "section": "E. Business consequence",
+        "line_start": 693,
+        "line_end": 701
+      }
+    },
+    {
+      "id": "IN-BMC-003-033",
+      "statement": "## DO NOT DECLARE AIL\n\nOPP-03 has a real decision surface.\n\nBut the evidence currently supports:\n\n```text\nHIGH-VOLUME CHANGE COORDINATION\n        +\nREAL COLLISION ARBITRATION\n        +\nMULTI-OPTION DECISION\n```\n\nIt does **not** yet support:\n\n```text\nHIGH-VOLUME COLLISION ARBITRATION\n        +\nHIGH COST\n        +\nMATERIAL BUSINESS IMPACT\n```\n\nTherefore the opportunity remains:",
+      "basis": [
+        "EV-BMC-003-008",
+        "EV-BMC-003-009",
+        "EV-BMC-003-010",
+        "EV-BMC-003-011",
+        "EV-BMC-003-012",
+        "EV-BMC-003-013"
+      ],
+      "implication": "## DO NOT DECLARE AIL\n\nOPP-03 has a real decision surface.\n\nBut the evidence currently supports:\n\n```text\nHIGH-VOLUME CHANGE COORDINATION\n        +\nREAL COLLISION ARBITRATION\n        +\nMULTI-OPTION DECISION\n```\n\nIt does **not** yet support:\n\n```text\nHIGH-VOLUME COLLISION ARBITRATION\n        +\nHIGH COST\n        +\nMATERIAL BUSINESS IMPACT\n```\n\nTherefore the opportunity remains:",
+      "provenance": {
+        "source_file": "OPP-003-04.md",
+        "section": "DO NOT DECLARE AIL",
+        "line_start": 882,
+        "line_end": 907
+      }
+    },
+    {
+      "id": "IN-BMC-003-034",
+      "statement": "### Not proven\n\n**Collision frequency:** NO\n\n**Collision-resolution time:** NO\n\n**Collision cost:** NO\n\n**Collision-related SLA/business impact:** NO\n\n**Decision inconsistency:** NO\n\n**Customer demand for collision arbitration:** NO\n\n**ART commercial advantage:** NO\n\nTherefore:",
+      "basis": [
+        "EV-BMC-003-008",
+        "EV-BMC-003-009",
+        "EV-BMC-003-010",
+        "EV-BMC-003-011",
+        "EV-BMC-003-012",
+        "EV-BMC-003-013"
+      ],
+      "implication": "### Not proven\n\n**Collision frequency:** NO\n\n**Collision-resolution time:** NO\n\n**Collision cost:** NO\n\n**Collision-related SLA/business impact:** NO\n\n**Decision inconsistency:** NO\n\n**Customer demand for collision arbitration:** NO\n\n**ART commercial advantage:** NO\n\nTherefore:",
+      "provenance": {
+        "source_file": "OPP-003-04.md",
+        "section": "Not proven",
+        "line_start": 990,
+        "line_end": 1007
+      }
+    },
+    {
+      "id": "IN-BMC-003-035",
+      "statement": "# Research Integrity Note\n\nThis checkpoint deliberately refuses to convert a plausible decision problem into a commercial opportunity without economic evidence.\n\nWe now have strong evidence for:\n\n```text\nREAL WORKLOAD\n+\nREAL COLLISIONS\n+\nREAL HUMAN JUDGMENT\n+\nREAL MULTI-OPTION RESPONSES\n```\n\nBut we still lack:\n\n```text\nCOLLISION FREQUENCY\n+\nDECISION TIME\n+\nCOST\n+\nBUSINESS IMPACT\n```\n\nThe bank case is valuable precisely because it shows how easily a large change-management burden can be confused with a narrower collision-arbitration burden. BMC documents **hundreds of changes daily**, but that does not tell us how many collide.\n\nThat is the line we must not cross.\n\n**OPP-03 therefore remains open, but the next checkpoint must be an economic-impact test.**",
+      "basis": [
+        "EV-BMC-003-008",
+        "EV-BMC-003-009",
+        "EV-BMC-003-010",
+        "EV-BMC-003-011",
+        "EV-BMC-003-012",
+        "EV-BMC-003-013"
+      ],
+      "implication": "# Research Integrity Note\n\nThis checkpoint deliberately refuses to convert a plausible decision problem into a commercial opportunity without economic evidence.\n\nWe now have strong evidence for:\n\n```text\nREAL WORKLOAD\n+\nREAL COLLISIONS\n+\nREAL HUMAN JUDGMENT\n+\nREAL MULTI-OPTION RESPONSES\n```\n\nBut we still lack:\n\n```text\nCOLLISION FREQUENCY\n+\nDECISION TIME\n+\nCOST\n+\nBUSINESS IMPACT\n```\n\nThe bank case is valuable precisely because it shows how easily a large change-management burden can be confused with a narrower collision-arbitration burden. BMC documents **hundreds of changes daily**, but that does not tell us how many collide.\n\nThat is the line we must not cross.\n\n**OPP-03 therefore remains open, but the next checkpoint must be an economic-impact test.**",
+      "provenance": {
+        "source_file": "OPP-003-04.md",
+        "section": "Research Integrity Note",
+        "line_start": 1030,
+        "line_end": 1063
+      }
+    },
+    {
+      "id": "IN-BMC-003-036",
+      "statement": "# 5. BMC's own economic model also treats change risk broadly\n\nForrester's composite assumes:\n\n- 10,000 annual changes/service requests from DevOps;\n- 5% previously led to incidents;\n- governance and automation avoid 33% to 90% of those incidents depending on year;\n- each avoided incident saves substantial IT/developer and end-user labor.\n\n\n\nThis produces a quantified incident-mitigation benefit.\n\nBut there is still no public metric for:\n\n```text\nCOLLISIONS / 10,000 CHANGES\n```\n\nor:\n\n```text\nCOLLISION → INCIDENT\n```\n\nor:\n\n```text\nCOLLISION → DELAY → COST\n```\n\nTherefore:",
+      "basis": [
+        "EV-BMC-003-014",
+        "EV-BMC-003-015",
+        "EV-BMC-003-016"
+      ],
+      "implication": "# 5. BMC's own economic model also treats change risk broadly\n\nForrester's composite assumes:\n\n- 10,000 annual changes/service requests from DevOps;\n- 5% previously led to incidents;\n- governance and automation avoid 33% to 90% of those incidents depending on year;\n- each avoided incident saves substantial IT/developer and end-user labor.\n\n\n\nThis produces a quantified incident-mitigation benefit.\n\nBut there is still no public metric for:\n\n```text\nCOLLISIONS / 10,000 CHANGES\n```\n\nor:\n\n```text\nCOLLISION → INCIDENT\n```\n\nor:\n\n```text\nCOLLISION → DELAY → COST\n```\n\nTherefore:",
+      "provenance": {
+        "source_file": "OPP-003-05.md",
+        "section": "5. BMC's own economic model also treats change risk broadly",
+        "line_start": 135,
+        "line_end": 167
+      }
+    },
+    {
+      "id": "IN-BMC-003-037",
+      "statement": "# 7. BMC already automates collision detection\n\nBMC Helix automatically detects collisions when:\n\n```text\nSAME CI / SERVICE\n+\nOVERLAPPING IMPLEMENTATION WINDOWS\n```\n\nand supports impact analysis for dependent CIs.\n\nThe system also exposes:\n\n- conflicting change;\n- CI;\n- status;\n- coordinator;\n- scheduled dates;\n- collision status;\n- business justification;\n- audit history.\n\n\n\nTherefore:",
+      "basis": [
+        "EV-BMC-003-014",
+        "EV-BMC-003-015",
+        "EV-BMC-003-016"
+      ],
+      "implication": "# 7. BMC already automates collision detection\n\nBMC Helix automatically detects collisions when:\n\n```text\nSAME CI / SERVICE\n+\nOVERLAPPING IMPLEMENTATION WINDOWS\n```\n\nand supports impact analysis for dependent CIs.\n\nThe system also exposes:\n\n- conflicting change;\n- CI;\n- status;\n- coordinator;\n- scheduled dates;\n- collision status;\n- business justification;\n- audit history.\n\n\n\nTherefore:",
+      "provenance": {
+        "source_file": "OPP-003-05.md",
+        "section": "7. BMC already automates collision detection",
+        "line_start": 196,
+        "line_end": 222
+      }
+    },
+    {
+      "id": "IN-BMC-003-038",
+      "statement": "# 8. BMC already supports the main collision response mechanisms\n\nBMC documents:\n\n```text\nDETECTED\n ↓\nINVESTIGATING\n ↓\nIGNORE\nOR\nRESCHEDULE\nOR\nRESOLVE\n```\n\nand allows the user to change schedules, modify CI relationships where appropriate, communicate with conflicting coordinators, and document the rationale.\n\nBMC also re-evaluates collision information when schedules change.\n\nTherefore:",
+      "basis": [
+        "EV-BMC-003-014",
+        "EV-BMC-003-015",
+        "EV-BMC-003-016"
+      ],
+      "implication": "# 8. BMC already supports the main collision response mechanisms\n\nBMC documents:\n\n```text\nDETECTED\n ↓\nINVESTIGATING\n ↓\nIGNORE\nOR\nRESCHEDULE\nOR\nRESOLVE\n```\n\nand allows the user to change schedules, modify CI relationships where appropriate, communicate with conflicting coordinators, and document the rationale.\n\nBMC also re-evaluates collision information when schedules change.\n\nTherefore:",
+      "provenance": {
+        "source_file": "OPP-003-05.md",
+        "section": "8. BMC already supports the main collision response mechanisms",
+        "line_start": 227,
+        "line_end": 248
+      }
+    },
+    {
+      "id": "IN-BMC-003-039",
+      "statement": "# CONTEXTUAL MULTI-OPTION CHANGE ARBITRATION\n\nHowever, the public evidence does not establish that customers are suffering a sufficiently large economic burden because BMC lacks this capability.\n\nTherefore:",
+      "basis": [
+        "EV-BMC-003-014",
+        "EV-BMC-003-015",
+        "EV-BMC-003-016"
+      ],
+      "implication": "# CONTEXTUAL MULTI-OPTION CHANGE ARBITRATION\n\nHowever, the public evidence does not establish that customers are suffering a sufficiently large economic burden because BMC lacks this capability.\n\nTherefore:",
+      "provenance": {
+        "source_file": "OPP-003-05.md",
+        "section": "CONTEXTUAL MULTI-OPTION CHANGE ARBITRATION",
+        "line_start": 279,
+        "line_end": 284
+      }
+    },
+    {
+      "id": "IN-BMC-003-040",
+      "statement": "### A. Change management has material economic consequences\n\nYES.\n\nForrester quantified significant benefits from BMC Helix's automation, governance and incident mitigation.",
+      "basis": [
+        "EV-BMC-003-014",
+        "EV-BMC-003-015",
+        "EV-BMC-003-016"
+      ],
+      "implication": "### A. Change management has material economic consequences\n\nYES.\n\nForrester quantified significant benefits from BMC Helix's automation, governance and incident mitigation.",
+      "provenance": {
+        "source_file": "OPP-003-05.md",
+        "section": "A. Change management has material economic consequences",
+        "line_start": 399,
+        "line_end": 404
+      }
+    },
+    {
+      "id": "IN-BMC-003-041",
+      "statement": "### ART pattern\n\n```text\nAUTOMATE NORMAL\n ↓\nFLAG EXCEPTION\n ↓\nINTELLIGENT HUMAN DECISION\n```\n\nThis pattern should be retained even though OPP-03 is killed.\n\n---",
+      "basis": [
+        "EV-BMC-003-014",
+        "EV-BMC-003-015",
+        "EV-BMC-003-016"
+      ],
+      "implication": "### ART pattern\n\n```text\nAUTOMATE NORMAL\n ↓\nFLAG EXCEPTION\n ↓\nINTELLIGENT HUMAN DECISION\n```\n\nThis pattern should be retained even though OPP-03 is killed.\n\n---",
+      "provenance": {
+        "source_file": "OPP-003-05.md",
+        "section": "ART pattern",
+        "line_start": 599,
+        "line_end": 612
+      }
+    },
+    {
+      "id": "IN-BMC-003-042",
+      "statement": "# 25. Research integrity conclusion\n\nThe strongest available economic evidence says BMC Helix creates significant value through:\n\n- automation;\n- IT operations efficiency;\n- DevOps efficiency;\n- change-risk governance;\n- incident prevention;\n- reduced remediation effort.\n\nForrester's customer evidence includes an insurance organization reducing change-related incidents by 80%, a customer reducing incidents caused by changes from over 90% to under 1%, and a modeled 90 minutes of IT/developer labor saved per change or service request.\n\nThose are powerful findings.\n\nBut none establish:\n\n```text\nCOLLISION\n ↓\nHUMAN ARBITRATION\n ↓\nMEASURABLE COST\n```\n\nThat missing link is decisive.\n\nTherefore:",
+      "basis": [
+        "EV-BMC-003-014",
+        "EV-BMC-003-015",
+        "EV-BMC-003-016"
+      ],
+      "implication": "# 25. Research integrity conclusion\n\nThe strongest available economic evidence says BMC Helix creates significant value through:\n\n- automation;\n- IT operations efficiency;\n- DevOps efficiency;\n- change-risk governance;\n- incident prevention;\n- reduced remediation effort.\n\nForrester's customer evidence includes an insurance organization reducing change-related incidents by 80%, a customer reducing incidents caused by changes from over 90% to under 1%, and a modeled 90 minutes of IT/developer labor saved per change or service request.\n\nThose are powerful findings.\n\nBut none establish:\n\n```text\nCOLLISION\n ↓\nHUMAN ARBITRATION\n ↓\nMEASURABLE COST\n```\n\nThat missing link is decisive.\n\nTherefore:",
+      "provenance": {
+        "source_file": "OPP-003-05.md",
+        "section": "25. Research integrity conclusion",
+        "line_start": 805,
+        "line_end": 833
+      }
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "HY-BMC-003-001",
+      "statement": "# 27. Surviving hypothesis\n\n> **When multiple change requests compete for the same infrastructure/time window, BMC can detect collisions and provide context, but human coordinators/managers may still need to determine whether the changes actually conflict and whether to ignore, coordinate, or reschedule them.**\n\nBMC explicitly documents that collisions may require discussion and can be ignored when their nature does not create a real conflict, with business justification recorded.\n\nThis is a real decision.\n\nIt is not yet a validated commercial opportunity.\n\n---",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "EV-BMC-003-001"
+      ],
+      "falsification_basis": [
+        "RS-BMC-003-001",
+        "RS-BMC-003-002",
+        "RS-BMC-003-003"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-02.md",
+        "section": "27. Surviving hypothesis",
+        "line_start": 615,
+        "line_end": 626
+      }
+    },
+    {
+      "id": "HY-BMC-003-002",
+      "statement": "# HYPOTHESIS ONLY\n\nBMC public collision documentation does not establish this generalized optimization layer.\n\n---",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "EV-BMC-003-002",
+        "EV-BMC-003-003",
+        "EV-BMC-003-004",
+        "EV-BMC-003-005",
+        "EV-BMC-003-006",
+        "EV-BMC-003-007"
+      ],
+      "falsification_basis": [
+        "RS-BMC-003-004",
+        "RS-BMC-003-005"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "HYPOTHESIS ONLY",
+        "line_start": 519,
+        "line_end": 524
+      }
+    },
+    {
+      "id": "HY-BMC-003-003",
+      "statement": "# 18. The strongest surviving opportunity hypothesis\n\nThe remaining hypothesis is not:\n\n> Detect conflicts.\n\nIt is:\n\n> **When several technically feasible ways exist to resolve a change collision, can ART recommend the best coordination decision using business, technical, temporal and historical evidence?**\n\nFor example:\n\n```text\nCHANGE A\nCHANGE B\nCHANGE C\n ↓\nCONFLICT GRAPH\n ↓\nOPTIONS\n ├─ MOVE A\n ├─ MOVE B\n ├─ MOVE C\n ├─ COORDINATE\n └─ ACCEPT COLLISION\n ↓\nOPTIMIZE\n ├─ BUSINESS IMPACT\n ├─ RISK\n ├─ URGENCY\n ├─ DEPENDENCIES\n ├─ RESOURCE\n └─ SCHEDULE\n ↓\nRECOMMEND\n```",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "EV-BMC-003-002",
+        "EV-BMC-003-003",
+        "EV-BMC-003-004",
+        "EV-BMC-003-005",
+        "EV-BMC-003-006",
+        "EV-BMC-003-007"
+      ],
+      "falsification_basis": [
+        "RS-BMC-003-004",
+        "RS-BMC-003-005"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "18. The strongest surviving opportunity hypothesis",
+        "line_start": 569,
+        "line_end": 605
+      }
+    },
+    {
+      "id": "HY-BMC-003-004",
+      "statement": "# ART HYPOTHESIS\n\nNot a demonstrated customer requirement.\n\n---",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "EV-BMC-003-008",
+        "EV-BMC-003-009",
+        "EV-BMC-003-010",
+        "EV-BMC-003-011",
+        "EV-BMC-003-012",
+        "EV-BMC-003-013"
+      ],
+      "falsification_basis": [
+        "RS-BMC-003-006",
+        "RS-BMC-003-007"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-04.md",
+        "section": "ART HYPOTHESIS",
+        "line_start": 526,
+        "line_end": 531
+      }
+    },
+    {
+      "id": "HY-BMC-003-005",
+      "statement": "## II-089 — Use customer outcome evidence at the exact hypothesis level\n\nForrester reports an insurance customer reducing change-related incidents by 80%.\n\nThat supports:\n\n```text\nCHANGE-RISK / GOVERNANCE VALUE\n```\n\nIt does not support:\n\n```text\nCOLLISION-ARBITRATION VALUE\n```",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "EV-BMC-003-014",
+        "EV-BMC-003-015",
+        "EV-BMC-003-016"
+      ],
+      "falsification_basis": [
+        "RS-BMC-003-008"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-05.md",
+        "section": "II-089 — Use customer outcome evidence at the exact hypothesis level",
+        "line_start": 573,
+        "line_end": 588
+      }
+    }
+  ],
+  "results": [
+    {
+      "id": "RS-BMC-003-001",
+      "statement": "# 25. Opportunity assessment\n\n| Dimension | Finding |\n|---|---|\n| Real enterprise change workload | 🟢 Strong |\n| High-volume workload | 🟢 Hundreds/day documented |\n| Manual administrative burden | 🟢 Verified |\n| Native automation | 🟢 Very strong |\n| AI risk assessment | 🟢 Verified |\n| Human decision surface | 🟢 Verified |\n| Collision arbitration | 🟡 Strong hypothesis |\n| Portfolio optimization | 🟡 Unknown |\n| Outcome learning | 🟡 Unknown |\n| Quantified residual decision burden | 🔴 Not established |\n| ART advantage | 🔴 Not established |\n| Commercial opportunity | 🟡 Open |\n| AIL | 🔴 Not ready |\n\n---",
+      "status": "PASSED",
+      "provenance": {
+        "source_file": "OPP-003-02.md",
+        "section": "25. Opportunity assessment",
+        "line_start": 578,
+        "line_end": 597
+      }
+    },
+    {
+      "id": "RS-BMC-003-002",
+      "statement": "# 30. Final verdict\n\n**Real change workload:** YES\n\n**High volume:** YES\n\n**Manual administrative burden:** YES\n\n**Native risk assessment:** YES\n\n**AI-supported risk decision:** YES\n\n**Impact/dependency analysis:** YES\n\n**Automatic collision detection:** YES\n\n**Human collision interpretation:** YES\n\n**Residual collision burden:** NOT YET PROVEN\n\n**ART advantage:** NOT ESTABLISHED\n\n**Commercial opportunity:** NOT YET",
+      "status": "UNVERIFIED",
+      "provenance": {
+        "source_file": "OPP-003-02.md",
+        "section": "30. Final verdict",
+        "line_start": 672,
+        "line_end": 695
+      }
+    },
+    {
+      "id": "RS-BMC-003-003",
+      "statement": "CONTINUE — REAL DECISION SURFACE VERIFIED; RESIDUAL BURDEN NOT YET QUANTIFIED",
+      "status": "PASSED",
+      "provenance": {
+        "source_file": "OPP-003-02.md",
+        "section": "Status",
+        "line_start": 1,
+        "line_end": 745
+      }
+    },
+    {
+      "id": "RS-BMC-003-004",
+      "statement": "# 21. Candidate opportunity assessment\n\n| Candidate | Native capability | Residual gap | Status |\n|---|---|---|---|\n| Collision detection | Strong | None established | KILLED |\n| Collision visualization | Strong | None established | KILLED |\n| Schedule assistance | Strong | None established | KILLED |\n| Collision status management | Strong | None established | KILLED |\n| Collision coordination | Strong | Human interaction remains | INTERESTING |\n| Collision arbitration | Partial | Contextual recommendation potentially missing | OPEN |\n| Portfolio-wide optimization | Not established | Potentially significant | OPEN |\n| Outcome-based collision learning | Not established | Potentially significant | OPEN |\n\n---",
+      "status": "KILLED",
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "21. Candidate opportunity assessment",
+        "line_start": 669,
+        "line_end": 683
+      }
+    },
+    {
+      "id": "RS-BMC-003-005",
+      "statement": "DECISION SURFACE VERIFIED — RESIDUAL HUMAN ARBITRATION IS REAL; COMMERCIAL BURDEN STILL UNPROVEN",
+      "status": "PASSED",
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "Status",
+        "line_start": 1,
+        "line_end": 1088
+      }
+    },
+    {
+      "id": "RS-BMC-003-006",
+      "statement": "# 20. Candidate opportunity assessment\n\n| Candidate | Native capability | Residual | Status |\n|---|---|---|---|\n| Collision detection | Strong | None established | KILLED |\n| Collision visualization | Strong | None established | KILLED |\n| Generic schedule finding | Strong | None established | KILLED |\n| Dependency detection | Strong | None established | KILLED |\n| Collision notification | Strong | None established | KILLED |\n| Human collision interpretation | Partial | Human judgment remains | OPEN |\n| Multi-option collision arbitration | Not established | Potential | OPEN |\n| Portfolio-wide change optimization | Not established | Potential | OPEN |\n| Outcome-based arbitration | Not established | Potential | OPEN |\n\n---",
+      "status": "KILLED",
+      "provenance": {
+        "source_file": "OPP-003-04.md",
+        "section": "20. Candidate opportunity assessment",
+        "line_start": 589,
+        "line_end": 604
+      }
+    },
+    {
+      "id": "RS-BMC-003-007",
+      "statement": "BURDEN IS REAL AT THE WORKFLOW LEVEL, BUT COLLISION-SPECIFIC ECONOMIC BURDEN REMAINS UNQUANTIFIED — DO NOT DECLARE OPPORTUNITY YET",
+      "status": "UNKNOWN",
+      "provenance": {
+        "source_file": "OPP-003-04.md",
+        "section": "Status",
+        "line_start": 1,
+        "line_end": 1063
+      }
+    },
+    {
+      "id": "RS-BMC-003-008",
+      "statement": "COLLISION-SPECIFIC ECONOMIC CASE NOT PROVEN — KILL OPP-03 AS A CURRENT OPPORTUNITY",
+      "status": "KILLED",
+      "provenance": {
+        "source_file": "OPP-003-05.md",
+        "section": "Status",
+        "line_start": 1,
+        "line_end": 837
+      }
+    }
+  ],
+  "falsification": [
+    {
+      "statement": "## 11. Decision #5 — Should the change be rescheduled?\n\nBMC's Calendar and collision mechanisms allow users to inspect conflicts and adjust scheduled dates. The system can rerun collision detection after schedule changes.\n\n```text\nCONFLICT\n ↓\nSCHEDULE OPTIONS\n ↓\nRESCHEDULE / RETAIN\n```\n\nBMC therefore provides the decision-support and execution mechanisms.\n\nA generalized autonomous scheduler is **not established**.\n\n---",
+      "outcome": "UNVERIFIED",
+      "basis": [
+        "EV-BMC-003-001",
+        "RS-BMC-003-001",
+        "RS-BMC-003-002",
+        "RS-BMC-003-003"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-02.md",
+        "section": "11. Decision #5 — Should the change be rescheduled?",
+        "line_start": 237,
+        "line_end": 254
+      }
+    },
+    {
+      "statement": "# 21. Candidate opportunity AO-03-D — Change Outcome Learning\n\n```text\nCHANGE\n ↓\nDECISION\n ↓\nIMPLEMENTATION\n ↓\nOUTCOME\n ↓\nSUCCESS / FAILURE\n ↓\nLEARN\n ↓\nFUTURE DECISION\n```\n\nBMC already provides historical risk information and change analytics. Whether it learns from outcomes sufficiently to alter future decision recommendations is not established by the reviewed evidence.",
+      "outcome": "UNVERIFIED",
+      "basis": [
+        "EV-BMC-003-001",
+        "RS-BMC-003-001",
+        "RS-BMC-003-002",
+        "RS-BMC-003-003"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-02.md",
+        "section": "21. Candidate opportunity AO-03-D — Change Outcome Learning",
+        "line_start": 458,
+        "line_end": 477
+      }
+    },
+    {
+      "statement": "# 22. Candidate opportunity AO-03-E — Competing-Change Portfolio Arbitration\n\n```text\nCHANGE A\nCHANGE B\nCHANGE C\n        ↓\nTIME + RESOURCE + DEPENDENCY + BUSINESS CONSTRAINTS\n        ↓\nORDER / RESCHEDULE / DEFER\n```\n\nBMC detects collisions, but a generalized continuous portfolio optimizer is not established.",
+      "outcome": "UNVERIFIED",
+      "basis": [
+        "EV-BMC-003-001",
+        "RS-BMC-003-001",
+        "RS-BMC-003-002",
+        "RS-BMC-003-003"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-02.md",
+        "section": "22. Candidate opportunity AO-03-E — Competing-Change Portfolio Arbitration",
+        "line_start": 483,
+        "line_end": 496
+      }
+    },
+    {
+      "statement": "## Not established\n\n```text\nAUTONOMOUS COLLISION ARBITRATION\n?\nCONTINUOUS CHANGE PORTFOLIO OPTIMIZATION\n?\nOUTCOME-LEARNED CHANGE POLICY OPTIMIZATION\n?\nGENERALIZED MULTI-OBJECTIVE CHANGE SELECTION\n?\n```\n\n---",
+      "outcome": "UNVERIFIED",
+      "basis": [
+        "EV-BMC-003-001",
+        "RS-BMC-003-001",
+        "RS-BMC-003-002",
+        "RS-BMC-003-003"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-02.md",
+        "section": "Not established",
+        "line_start": 563,
+        "line_end": 577
+      }
+    },
+    {
+      "statement": "# 25. Opportunity assessment\n\n| Dimension | Finding |\n|---|---|\n| Real enterprise change workload | 🟢 Strong |\n| High-volume workload | 🟢 Hundreds/day documented |\n| Manual administrative burden | 🟢 Verified |\n| Native automation | 🟢 Very strong |\n| AI risk assessment | 🟢 Verified |\n| Human decision surface | 🟢 Verified |\n| Collision arbitration | 🟡 Strong hypothesis |\n| Portfolio optimization | 🟡 Unknown |\n| Outcome learning | 🟡 Unknown |\n| Quantified residual decision burden | 🔴 Not established |\n| ART advantage | 🔴 Not established |\n| Commercial opportunity | 🟡 Open |\n| AIL | 🔴 Not ready |\n\n---",
+      "outcome": "UNKNOWN",
+      "basis": [
+        "EV-BMC-003-001",
+        "RS-BMC-003-001",
+        "RS-BMC-003-002",
+        "RS-BMC-003-003"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-02.md",
+        "section": "25. Opportunity assessment",
+        "line_start": 578,
+        "line_end": 597
+      }
+    },
+    {
+      "statement": "# 30. Final verdict\n\n**Real change workload:** YES\n\n**High volume:** YES\n\n**Manual administrative burden:** YES\n\n**Native risk assessment:** YES\n\n**AI-supported risk decision:** YES\n\n**Impact/dependency analysis:** YES\n\n**Automatic collision detection:** YES\n\n**Human collision interpretation:** YES\n\n**Residual collision burden:** NOT YET PROVEN\n\n**ART advantage:** NOT ESTABLISHED\n\n**Commercial opportunity:** NOT YET",
+      "outcome": "UNVERIFIED",
+      "basis": [
+        "EV-BMC-003-001",
+        "RS-BMC-003-001",
+        "RS-BMC-003-002",
+        "RS-BMC-003-003"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-02.md",
+        "section": "30. Final verdict",
+        "line_start": 672,
+        "line_end": 695
+      }
+    },
+    {
+      "statement": "## Path D — Investigate\n\nBMC supports an Investigating state while the conflict is being assessed.\n\n```text\nCOLLISION\n ↓\nINSUFFICIENT INFORMATION\n ↓\nINVESTIGATING\n```\n\n---",
+      "outcome": "UNVERIFIED",
+      "basis": [
+        "EV-BMC-003-002",
+        "EV-BMC-003-003",
+        "EV-BMC-003-004",
+        "EV-BMC-003-005",
+        "EV-BMC-003-006",
+        "EV-BMC-003-007",
+        "RS-BMC-003-004",
+        "RS-BMC-003-005"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "Path D — Investigate",
+        "line_start": 317,
+        "line_end": 330
+      }
+    },
+    {
+      "statement": "# 13. The decision criteria we can actually verify\n\nFrom BMC's documented collision logic, the human is at minimum evaluating:\n\n| Criterion | Verified? |\n|---|---|\n| Same CI/service | YES |\n| Direct vs indirect CI relationship | YES |\n| Schedule overlap | YES |\n| Degree/type of overlap | YES |\n| Dependency relationship | YES |\n| Change status | YES — visible |\n| Change ownership | YES |\n| Whether implementation impedes another | YES |\n| Whether implementation could undo another | YES |\n| Schedule feasibility | YES |\n| Business justification | YES |\n| Priority | Discussed in collision coordination context |\n| Broader business impact | NOT specifically established as collision-arbitration logic |\n| Historical collision outcomes | NOT established |\n| Change success probability | NOT established |\n| Portfolio-wide optimization | NOT established |\n\nThis is a useful boundary.\n\n---",
+      "outcome": "UNVERIFIED",
+      "basis": [
+        "EV-BMC-003-002",
+        "EV-BMC-003-003",
+        "EV-BMC-003-004",
+        "EV-BMC-003-005",
+        "EV-BMC-003-006",
+        "EV-BMC-003-007",
+        "RS-BMC-003-004",
+        "RS-BMC-003-005"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "13. The decision criteria we can actually verify",
+        "line_start": 410,
+        "line_end": 436
+      }
+    },
+    {
+      "statement": "# HYPOTHESIS ONLY\n\nBMC public collision documentation does not establish this generalized optimization layer.\n\n---",
+      "outcome": "UNVERIFIED",
+      "basis": [
+        "EV-BMC-003-002",
+        "EV-BMC-003-003",
+        "EV-BMC-003-004",
+        "EV-BMC-003-005",
+        "EV-BMC-003-006",
+        "EV-BMC-003-007",
+        "RS-BMC-003-004",
+        "RS-BMC-003-005"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "HYPOTHESIS ONLY",
+        "line_start": 519,
+        "line_end": 524
+      }
+    },
+    {
+      "statement": "# 21. Candidate opportunity assessment\n\n| Candidate | Native capability | Residual gap | Status |\n|---|---|---|---|\n| Collision detection | Strong | None established | KILLED |\n| Collision visualization | Strong | None established | KILLED |\n| Schedule assistance | Strong | None established | KILLED |\n| Collision status management | Strong | None established | KILLED |\n| Collision coordination | Strong | Human interaction remains | INTERESTING |\n| Collision arbitration | Partial | Contextual recommendation potentially missing | OPEN |\n| Portfolio-wide optimization | Not established | Potentially significant | OPEN |\n| Outcome-based collision learning | Not established | Potentially significant | OPEN |\n\n---",
+      "outcome": "KILLED",
+      "basis": [
+        "EV-BMC-003-002",
+        "EV-BMC-003-003",
+        "EV-BMC-003-004",
+        "EV-BMC-003-005",
+        "EV-BMC-003-006",
+        "EV-BMC-003-007",
+        "RS-BMC-003-004",
+        "RS-BMC-003-005"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "21. Candidate opportunity assessment",
+        "line_start": 669,
+        "line_end": 683
+      }
+    },
+    {
+      "statement": "## Not established\n\n```text\nSEMANTIC CONFLICT ANALYSIS          ?\nBUSINESS-IMPACT-OPTIMAL ARBITRATION ?\nMULTI-CHANGE PORTFOLIO OPTIMIZATION ?\nOUTCOME-LEARNED ARBITRATION         ?\nAUTONOMOUS RESOLUTION SELECTION     ?\n```\n\n---",
+      "outcome": "UNVERIFIED",
+      "basis": [
+        "EV-BMC-003-002",
+        "EV-BMC-003-003",
+        "EV-BMC-003-004",
+        "EV-BMC-003-005",
+        "EV-BMC-003-006",
+        "EV-BMC-003-007",
+        "RS-BMC-003-004",
+        "RS-BMC-003-005"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "Not established",
+        "line_start": 856,
+        "line_end": 867
+      }
+    },
+    {
+      "statement": "# 25. Current opportunity strength\n\n| Dimension | Assessment |\n|---|---|\n| Real decision | 🟢 Strong |\n| Native workflow evidence | 🟢 Very strong |\n| Human judgment | 🟢 Verified |\n| Multiple resolution paths | 🟢 Verified |\n| Cross-change dependencies | 🟢 Verified |\n| Iterative replanning | 🟢 Verified |\n| Quantified collision burden | 🔴 Not established |\n| Customer economic pain | 🔴 Not established |\n| ART differentiation | 🟡 Plausible |\n| Commercial opportunity | 🟡 Open |\n| AIL | 🔴 Not ready |\n\n---",
+      "outcome": "UNVERIFIED",
+      "basis": [
+        "EV-BMC-003-002",
+        "EV-BMC-003-003",
+        "EV-BMC-003-004",
+        "EV-BMC-003-005",
+        "EV-BMC-003-006",
+        "EV-BMC-003-007",
+        "RS-BMC-003-004",
+        "RS-BMC-003-005"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "25. Current opportunity strength",
+        "line_start": 888,
+        "line_end": 905
+      }
+    },
+    {
+      "statement": "### Not proven\n\n**High collision frequency:** NO\n\n**High human decision burden:** NO\n\n**Quantified cost:** NO\n\n**Material inconsistency:** NO\n\n**Customer demand for better arbitration:** NO\n\n**ART commercial advantage:** NO",
+      "outcome": "UNVERIFIED",
+      "basis": [
+        "EV-BMC-003-002",
+        "EV-BMC-003-003",
+        "EV-BMC-003-004",
+        "EV-BMC-003-005",
+        "EV-BMC-003-006",
+        "EV-BMC-003-007",
+        "RS-BMC-003-004",
+        "RS-BMC-003-005"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "Not proven",
+        "line_start": 1028,
+        "line_end": 1041
+      }
+    },
+    {
+      "statement": "# REAL DECISION BURDEN\n\nBut the **magnitude** remains unknown.\n\n---",
+      "outcome": "UNKNOWN",
+      "basis": [
+        "EV-BMC-003-008",
+        "EV-BMC-003-009",
+        "EV-BMC-003-010",
+        "EV-BMC-003-011",
+        "EV-BMC-003-012",
+        "EV-BMC-003-013",
+        "RS-BMC-003-006",
+        "RS-BMC-003-007"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-04.md",
+        "section": "REAL DECISION BURDEN",
+        "line_start": 194,
+        "line_end": 199
+      }
+    },
+    {
+      "statement": "# 15. Option comparison is therefore only partially automated\n\nBMC can:\n\n```text\nDETECT\n+\nDISPLAY\n+\nCHECK\n+\nRECHECK\n```\n\nBut public documentation does not establish a generalized optimizer that says:\n\n```text\nOPTION A → LOWEST TOTAL RISK\nOPTION B → HIGHEST BUSINESS IMPACT\nOPTION C → BEST OVERALL\n```",
+      "outcome": "PARTIAL",
+      "basis": [
+        "EV-BMC-003-008",
+        "EV-BMC-003-009",
+        "EV-BMC-003-010",
+        "EV-BMC-003-011",
+        "EV-BMC-003-012",
+        "EV-BMC-003-013",
+        "RS-BMC-003-006",
+        "RS-BMC-003-007"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-04.md",
+        "section": "15. Option comparison is therefore only partially automated",
+        "line_start": 460,
+        "line_end": 481
+      }
+    },
+    {
+      "statement": "# OPTION RANKING: NOT ESTABLISHED\n\nThis is the most technically interesting residual.\n\n---",
+      "outcome": "UNVERIFIED",
+      "basis": [
+        "EV-BMC-003-008",
+        "EV-BMC-003-009",
+        "EV-BMC-003-010",
+        "EV-BMC-003-011",
+        "EV-BMC-003-012",
+        "EV-BMC-003-013",
+        "RS-BMC-003-006",
+        "RS-BMC-003-007"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-04.md",
+        "section": "OPTION RANKING: NOT ESTABLISHED",
+        "line_start": 486,
+        "line_end": 491
+      }
+    },
+    {
+      "statement": "# 20. Candidate opportunity assessment\n\n| Candidate | Native capability | Residual | Status |\n|---|---|---|---|\n| Collision detection | Strong | None established | KILLED |\n| Collision visualization | Strong | None established | KILLED |\n| Generic schedule finding | Strong | None established | KILLED |\n| Dependency detection | Strong | None established | KILLED |\n| Collision notification | Strong | None established | KILLED |\n| Human collision interpretation | Partial | Human judgment remains | OPEN |\n| Multi-option collision arbitration | Not established | Potential | OPEN |\n| Portfolio-wide change optimization | Not established | Potential | OPEN |\n| Outcome-based arbitration | Not established | Potential | OPEN |\n\n---",
+      "outcome": "KILLED",
+      "basis": [
+        "EV-BMC-003-008",
+        "EV-BMC-003-009",
+        "EV-BMC-003-010",
+        "EV-BMC-003-011",
+        "EV-BMC-003-012",
+        "EV-BMC-003-013",
+        "RS-BMC-003-006",
+        "RS-BMC-003-007"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-04.md",
+        "section": "20. Candidate opportunity assessment",
+        "line_start": 589,
+        "line_end": 604
+      }
+    },
+    {
+      "statement": "# 21. Opportunity burden score\n\nUsing only evidence currently available:\n\n| Burden dimension | Evidence |\n|---|---|\n| High change volume | 🟢 Strong |\n| Manual change coordination | 🟢 Strong |\n| Multi-party communication | 🟢 Strong |\n| Collision existence | 🟢 Strong |\n| Human collision interpretation | 🟢 Strong |\n| Multiple resolution options | 🟢 Strong |\n| Repeated replanning | 🟡 Possible / not quantified |\n| Collision frequency | 🔴 Unknown |\n| Collision resolution time | 🔴 Unknown |\n| Collision cost | 🔴 Unknown |\n| Collision-related incidents | 🔴 Unknown |\n| Collision-related SLA impact | 🔴 Unknown |\n| Decision inconsistency | 🔴 Unknown |",
+      "outcome": "UNKNOWN",
+      "basis": [
+        "EV-BMC-003-008",
+        "EV-BMC-003-009",
+        "EV-BMC-003-010",
+        "EV-BMC-003-011",
+        "EV-BMC-003-012",
+        "EV-BMC-003-013",
+        "RS-BMC-003-006",
+        "RS-BMC-003-007"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-04.md",
+        "section": "21. Opportunity burden score",
+        "line_start": 605,
+        "line_end": 624
+      }
+    },
+    {
+      "statement": "## Not established\n\n```text\nAUTOMATIC TRUE-CONFLICT SEMANTIC ANALYSIS   ?\nBEST-OPTION ARBITRATION                     ?\nMULTI-CHANGE PORTFOLIO OPTIMIZATION        ?\nOUTCOME-LEARNED COLLISION POLICY            ?\nCONTINUOUS AUTONOMOUS REPLANNING             ?\n```\n\n---",
+      "outcome": "UNVERIFIED",
+      "basis": [
+        "EV-BMC-003-008",
+        "EV-BMC-003-009",
+        "EV-BMC-003-010",
+        "EV-BMC-003-011",
+        "EV-BMC-003-012",
+        "EV-BMC-003-013",
+        "RS-BMC-003-006",
+        "RS-BMC-003-007"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-04.md",
+        "section": "Not established",
+        "line_start": 868,
+        "line_end": 879
+      }
+    },
+    {
+      "statement": "### Not proven\n\n**Collision frequency:** NO\n\n**Collision-resolution time:** NO\n\n**Collision cost:** NO\n\n**Collision-related SLA/business impact:** NO\n\n**Decision inconsistency:** NO\n\n**Customer demand for collision arbitration:** NO\n\n**ART commercial advantage:** NO\n\nTherefore:",
+      "outcome": "UNVERIFIED",
+      "basis": [
+        "EV-BMC-003-008",
+        "EV-BMC-003-009",
+        "EV-BMC-003-010",
+        "EV-BMC-003-011",
+        "EV-BMC-003-012",
+        "EV-BMC-003-013",
+        "RS-BMC-003-006",
+        "RS-BMC-003-007"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-04.md",
+        "section": "Not proven",
+        "line_start": 990,
+        "line_end": 1007
+      }
+    },
+    {
+      "statement": "# NO — NOT ESTABLISHED\n\nThis is enough to kill the current opportunity rather than continue refining it.\n\n---",
+      "outcome": "KILLED",
+      "basis": [
+        "EV-BMC-003-014",
+        "EV-BMC-003-015",
+        "EV-BMC-003-016",
+        "RS-BMC-003-008"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-05.md",
+        "section": "NO — NOT ESTABLISHED",
+        "line_start": 48,
+        "line_end": 53
+      }
+    },
+    {
+      "statement": "# CONTEXTUAL MULTI-OPTION CHANGE ARBITRATION\n\nHowever, the public evidence does not establish that customers are suffering a sufficiently large economic burden because BMC lacks this capability.\n\nTherefore:",
+      "outcome": "UNVERIFIED",
+      "basis": [
+        "EV-BMC-003-014",
+        "EV-BMC-003-015",
+        "EV-BMC-003-016",
+        "RS-BMC-003-008"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-05.md",
+        "section": "CONTEXTUAL MULTI-OPTION CHANGE ARBITRATION",
+        "line_start": 279,
+        "line_end": 284
+      }
+    },
+    {
+      "statement": "# HIGH CONFIDENCE IN THE NEGATIVE FINDING\n\nThis does not mean such data do not exist privately.\n\nIt means:\n\n> **The publicly available evidence currently accessible to ART is insufficient to establish the commercial burden.**\n\n---",
+      "outcome": "UNVERIFIED",
+      "basis": [
+        "EV-BMC-003-014",
+        "EV-BMC-003-015",
+        "EV-BMC-003-016",
+        "RS-BMC-003-008"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-05.md",
+        "section": "HIGH CONFIDENCE IN THE NEGATIVE FINDING",
+        "line_start": 339,
+        "line_end": 348
+      }
+    },
+    {
+      "statement": "# 14. What is NOT proven\n\n```text\nCOLLISION RATE\n✗\n\nCOLLISION RESOLUTION TIME\n✗\n\nCOLLISION COORDINATION COST\n✗\n\nMULTI-RESCHEDULE FREQUENCY\n✗\n\nCOLLISION-RELATED SLA IMPACT\n✗\n\nCOLLISION-RELATED INCIDENT RATE\n✗\n\nCUSTOMER PURCHASE DEMAND\n✗\n```\n\nThat is too many missing commercial variables to keep the opportunity alive.\n\n---",
+      "outcome": "UNVERIFIED",
+      "basis": [
+        "EV-BMC-003-014",
+        "EV-BMC-003-015",
+        "EV-BMC-003-016",
+        "RS-BMC-003-008"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-05.md",
+        "section": "14. What is NOT proven",
+        "line_start": 433,
+        "line_end": 461
+      }
+    },
+    {
+      "statement": "# 15. Residual-gap test\n\n| Test | Result |\n|---|---|\n| Native collision detection | YES |\n| Native CI/dependency analysis | YES |\n| Native scheduling support | YES |\n| Native collision workflow | YES |\n| Native human coordination | YES |\n| Native audit/rationale | YES |\n| Multi-option decision surface | YES |\n| Evidence of change-management economic value | YES |\n| Evidence of collision-specific burden | NO |\n| Collision frequency quantified | NO |\n| Collision resolution time quantified | NO |\n| Collision cost quantified | NO |\n| Collision-specific customer demand | NO |\n| ART differentiation | PLAUSIBLE BUT UNPROVEN |\n\n---",
+      "outcome": "UNVERIFIED",
+      "basis": [
+        "EV-BMC-003-014",
+        "EV-BMC-003-015",
+        "EV-BMC-003-016",
+        "RS-BMC-003-008"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-05.md",
+        "section": "15. Residual-gap test",
+        "line_start": 462,
+        "line_end": 482
+      }
+    },
+    {
+      "statement": "# 17. What survives from OPP-03\n\nOPP-03 produces substantial reusable implementation intelligence.\n\n```text\nOPP-03\n  ↓\nKILLED\n  │\n  └── IMPLEMENTATION INTELLIGENCE\n        ├─ CI dependency mapping\n        ├─ impact analysis\n        ├─ collision detection\n        ├─ time-window conflict analysis\n        ├─ change-risk analysis\n        ├─ AI-supported risk assessment\n        ├─ schedule assistance\n        ├─ human arbitration\n        ├─ multi-party coordination\n        ├─ business justification\n        ├─ collision audit trail\n        ├─ iterative rechecking\n        ├─ change governance\n        ├─ change-related incident prevention\n        └─ quantified automation economics\n```\n\nThis intelligence remains valuable for ART's future research and pitch development.\n\n---",
+      "outcome": "KILLED",
+      "basis": [
+        "EV-BMC-003-014",
+        "EV-BMC-003-015",
+        "EV-BMC-003-016",
+        "RS-BMC-003-008"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-05.md",
+        "section": "17. What survives from OPP-03",
+        "line_start": 499,
+        "line_end": 529
+      }
+    },
+    {
+      "statement": "### ART pattern\n\n```text\nAUTOMATE NORMAL\n ↓\nFLAG EXCEPTION\n ↓\nINTELLIGENT HUMAN DECISION\n```\n\nThis pattern should be retained even though OPP-03 is killed.\n\n---",
+      "outcome": "KILLED",
+      "basis": [
+        "EV-BMC-003-014",
+        "EV-BMC-003-015",
+        "EV-BMC-003-016",
+        "RS-BMC-003-008"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-05.md",
+        "section": "ART pattern",
+        "line_start": 599,
+        "line_end": 612
+      }
+    },
+    {
+      "statement": "## Potential ART capabilities not established as unmet needs\n\n```text\nSEMANTIC TRUE-CONFLICT ANALYSIS       ?\nBEST-OPTION ARBITRATION               ?\nPORTFOLIO OPTIMIZATION                ?\nOUTCOME-LEARNED ARBITRATION           ?\nAUTONOMOUS MULTI-CHANGE REPLANNING    ?\n```\n\nThese remain **implementation hypotheses**, not validated opportunities.\n\n---",
+      "outcome": "UNVERIFIED",
+      "basis": [
+        "EV-BMC-003-014",
+        "EV-BMC-003-015",
+        "EV-BMC-003-016",
+        "RS-BMC-003-008"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-05.md",
+        "section": "Potential ART capabilities not established as unmet needs",
+        "line_start": 704,
+        "line_end": 717
+      }
+    },
+    {
+      "statement": "# 20. Final opportunity score\n\n| Dimension | Verdict |\n|---|---|\n| Evidence density | 🟢 High |\n| Automation richness | 🟢 Very high |\n| Decision complexity | 🟢 High |\n| Exception richness | 🟢 High |\n| Reusable implementation intelligence | 🟢 Very high |\n| Quantifiable general change economics | 🟢 Strong |\n| Quantifiable collision economics | 🔴 Weak |\n| Specific customer burden | 🔴 Not established |\n| ART differentiation | 🟡 Technically plausible |\n| Commercial opportunity | 🔴 Not validated |\n\n---",
+      "outcome": "UNVERIFIED",
+      "basis": [
+        "EV-BMC-003-014",
+        "EV-BMC-003-015",
+        "EV-BMC-003-016",
+        "RS-BMC-003-008"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-05.md",
+        "section": "20. Final opportunity score",
+        "line_start": 718,
+        "line_end": 734
+      }
+    }
+  ],
+  "traceability": [
+    {
+      "statement": "1. Decisive research question: CONTINUE — REAL DECISION SURFACE VERIFIED; RESIDUAL BURDEN NOT YET QUANTIFIED",
+      "research_location": "OPP-003-02.md",
+      "source_urls": [
+        "UNKNOWN"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-02.md",
+        "section": "Source document",
+        "line_start": 1,
+        "line_end": 745
+      }
+    },
+    {
+      "statement": "A. Time factor: DECISION SURFACE VERIFIED — RESIDUAL HUMAN ARBITRATION IS REAL; COMMERCIAL BURDEN STILL UNPROVEN",
+      "research_location": "OPP-003-03.md",
+      "source_urls": [
+        "UNKNOWN"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-03.md",
+        "section": "Source document",
+        "line_start": 1,
+        "line_end": 1088
+      }
+    },
+    {
+      "statement": "Option A — Reschedule: BURDEN IS REAL AT THE WORKFLOW LEVEL, BUT COLLISION-SPECIFIC ECONOMIC BURDEN REMAINS UNQUANTIFIED — DO NOT DECLARE OPPORTUNITY YET",
+      "research_location": "OPP-003-04.md",
+      "source_urls": [
+        "UNKNOWN"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-04.md",
+        "section": "Source document",
+        "line_start": 1,
+        "line_end": 1063
+      }
+    },
+    {
+      "statement": "II-087 — Exception economics must be measured separately: COLLISION-SPECIFIC ECONOMIC CASE NOT PROVEN — KILL OPP-03 AS A CURRENT OPPORTUNITY",
+      "research_location": "OPP-003-05.md",
+      "source_urls": [
+        "UNKNOWN"
+      ],
+      "provenance": {
+        "source_file": "OPP-003-05.md",
+        "section": "Source document",
+        "line_start": 1,
+        "line_end": 837
+      }
+    }
+  ]
+}

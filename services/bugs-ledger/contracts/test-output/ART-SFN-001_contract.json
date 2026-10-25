@@ -1,0 +1,124 @@
+{
+  "Investigation": {
+    "id": "ART-SFN-001",
+    "canonicalBugId": "ART-SFN-001",
+    "slug": "serverless-function-not-available-as-tool-action",
+    "lifecyclePhase": "CONFIRMED",
+    "status": "OPEN",
+    "classification": "BUG",
+    "module": "SFN",
+    "severity": "HIGH",
+    "priority": "Not provided",
+    "assignee": null,
+    "originalInputId": "INP-ART-SFN-001",
+    "evidenceIds": [
+      "EVD-ART-SFN-001-01",
+      "EVD-ART-SFN-001-02"
+    ],
+    "aiAnalysisIds": [],
+    "researchIds": [],
+    "ticketRevisionIds": [
+      "TCK-ART-SFN-001-01"
+    ],
+    "activeTicketRevisionId": "TCK-ART-SFN-001-01",
+    "developerUpdateIds": [],
+    "retestIds": [],
+    "auditEventIds": [
+      "AUD-ART-SFN-001-01"
+    ],
+    "createdAt": "2026-09-24T00:00:00Z",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "OriginalInput": {
+    "id": "INP-ART-SFN-001",
+    "investigationId": "ART-SFN-001",
+    "testerDescription": "A serverless function connected to the agent through Tool Connector does not appear in Governance \u2192 Action Registry when the action capability is changed to Tool Action.\n\nThe workflow was built and published successfully, but the Tool selector still displays \u201cNo matches.\u201d",
+    "reporter": "HUMAN_LEGACY_IMPORT",
+    "capturedAt": "2026-09-24T00:00:00Z",
+    "initialEvidenceIds": [
+      "EVD-ART-SFN-001-01",
+      "EVD-ART-SFN-001-02"
+    ],
+    "provenance": "HUMAN_SUPPLIED"
+  },
+  "EvidenceList": [
+    {
+      "id": "EVD-ART-SFN-001-01",
+      "investigationId": "ART-SFN-001",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-SFN-001__action-registry-no-matches__2026-09-24__02.png",
+      "canonicalFilename": "ART-SFN-001__action-registry-no-matches__2026-09-24__02.png",
+      "storagePath": "ART-Product-Validation/bugs/Serverless Functions/ART-SFN-001__serverless-function-not-available-as-tool-action/ART-SFN-001__action-registry-no-matches__2026-09-24__02.png",
+      "sha256": "6a0a0701b2b65b2c1326462c39921819d1a5db53f0799f6e815b0889cda6e412",
+      "mimeType": "image/png",
+      "byteSize": 148370,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    },
+    {
+      "id": "EVD-ART-SFN-001-02",
+      "investigationId": "ART-SFN-001",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-SFN-001__workflow-tool-connector__2026-09-24__01.png",
+      "canonicalFilename": "ART-SFN-001__workflow-tool-connector__2026-09-24__01.png",
+      "storagePath": "ART-Product-Validation/bugs/Serverless Functions/ART-SFN-001__serverless-function-not-available-as-tool-action/ART-SFN-001__workflow-tool-connector__2026-09-24__01.png",
+      "sha256": "5afd0694f31c5d3812180d4137598b997bfd81c3a1ca7905860113a789625e55",
+      "mimeType": "image/png",
+      "byteSize": 330519,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    }
+  ],
+  "TicketArtifact": {
+    "ticketId": "TCK-ART-SFN-001-01",
+    "investigationId": "ART-SFN-001",
+    "revision": 1,
+    "title": "Serverless Function Not Available as Tool Action",
+    "reproSteps": "Not provided",
+    "expectedResult": "A connected and published serverless function should be selectable as the Tool Action target so its deterministic output can be governed by policy rules and Human Review.",
+    "actualResult": "The serverless function executes successfully from the workflow, but it is unavailable in the Action Registry Tool selector.\n\nThis prevents the function from being directly bound to the governed action.",
+    "businessImpact": "Not provided",
+    "recommendedSolution": "Published serverless functions connected to an agent workflow must be discoverable and selectable as governed Tool Actions.\n\n### Required implementation\n\n1. Register every successfully published serverless function in a central capability registry.\n2. Store:\n   - Function ID\n   - Published version\n   - Function name\n   - Provider\n   - Entrypoint\n   - Input schema\n   - Output schema\n   - Owning workspace\n   - Environment\n   - Publication status\n   - Agent bindings\n   - Governance eligibility\n3. Tool Connector and Action Registry must query the same capability registry.\n4. Only published and active function versions should appear in Tool Action selection.\n5. Filter available functions by workspace, environment, permissions, and agent binding.\n6. When no function is available, replace the generic `No matches` message with a diagnostic reason:\n   - Function not published\n   - Wrong environment\n   - Not connected to this agent\n   - Missing permission\n   - Unsupported capability type\n   - Registry synchronization failure\n7. When Build and Publish completes, update the registry atomically and invalidate relevant caches.\n8. Provide a manual registry refresh option for administrators.\n9. Preserve the selected function version in the governed action definition.\n10. Prevent silent version switching after deployment.\n11. Validate function input and output schemas before allowing the action to be saved.\n12. Show the serverless function as a first-class Tool Action without requiring users to recreate it as another tool.\n\n### Acceptance criteria\n\n- A published and connected serverless function appears in Tool Action selection.\n- Search finds the function by name and function ID.\n- Unavailable functions display a specific diagnostic reason.\n- Registry refresh does not require recreating the function.\n- The selected version remains locked after publishing.\n- Input and output schemas are available for policy facts and mappings.\n- Workspace and environment isolation are enforced.\n- The governed action successfully invokes the selected serverless function.",
+    "module": "SFN",
+    "environment": "Not provided",
+    "severity": "HIGH",
+    "priority": "Not provided",
+    "tags": [
+      "sfn"
+    ],
+    "discussion": [],
+    "provenance": "HUMAN_APPROVED",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "AuditEvent": {
+    "id": "AUD-ART-SFN-001-01",
+    "investigationId": "ART-SFN-001",
+    "timestamp": "2026-09-24T00:00:00Z",
+    "actor": "LEGACY_IMPORT_ADAPTER",
+    "eventType": "INVESTIGATION_CAPTURED",
+    "summary": "Imported legacy bug record ART-SFN-001 from ART-Product-Validation/bugs",
+    "details": {
+      "sourceMarkdownPath": "ART-Product-Validation/bugs/Serverless Functions/ART-SFN-001__serverless-function-not-available-as-tool-action/ART-SFN-001.md",
+      "rawContentSha256": "a0710ae5c95e2a15667295624c0239d25a874534662dd88d307908b28b4a5754"
+    }
+  },
+  "sourceMetadata": {
+    "sourceMarkdownPath": "ART-Product-Validation/bugs/Serverless Functions/ART-SFN-001__serverless-function-not-available-as-tool-action/ART-SFN-001.md",
+    "rawMarkdownContent": "# ART-SFN-001 \u2014 Serverless Function Not Available as Tool Action\n\n- **Severity:** HIGH\n- **Status:** OPEN\n\n## Bug\n\nA serverless function connected to the agent through Tool Connector does not appear in Governance \u2192 Action Registry when the action capability is changed to Tool Action.\n\nThe workflow was built and published successfully, but the Tool selector still displays \u201cNo matches.\u201d\n\n## Expected\n\nA connected and published serverless function should be selectable as the Tool Action target so its deterministic output can be governed by policy rules and Human Review.\n\n## Actual\n\nThe serverless function executes successfully from the workflow, but it is unavailable in the Action Registry Tool selector.\n\nThis prevents the function from being directly bound to the governed action.\n\n## Evidence\n\n- [ART-SFN-001__workflow-tool-connector__2026-09-24__01.png](ART-SFN-001__workflow-tool-connector__2026-09-24__01.png)\n- [ART-SFN-001__action-registry-no-matches__2026-09-24__02.png](ART-SFN-001__action-registry-no-matches__2026-09-24__02.png)\n\n## Production-Grade Fix Proposal\n\nPublished serverless functions connected to an agent workflow must be discoverable and selectable as governed Tool Actions.\n\n### Required implementation\n\n1. Register every successfully published serverless function in a central capability registry.\n2. Store:\n   - Function ID\n   - Published version\n   - Function name\n   - Provider\n   - Entrypoint\n   - Input schema\n   - Output schema\n   - Owning workspace\n   - Environment\n   - Publication status\n   - Agent bindings\n   - Governance eligibility\n3. Tool Connector and Action Registry must query the same capability registry.\n4. Only published and active function versions should appear in Tool Action selection.\n5. Filter available functions by workspace, environment, permissions, and agent binding.\n6. When no function is available, replace the generic `No matches` message with a diagnostic reason:\n   - Function not published\n   - Wrong environment\n   - Not connected to this agent\n   - Missing permission\n   - Unsupported capability type\n   - Registry synchronization failure\n7. When Build and Publish completes, update the registry atomically and invalidate relevant caches.\n8. Provide a manual registry refresh option for administrators.\n9. Preserve the selected function version in the governed action definition.\n10. Prevent silent version switching after deployment.\n11. Validate function input and output schemas before allowing the action to be saved.\n12. Show the serverless function as a first-class Tool Action without requiring users to recreate it as another tool.\n\n### Acceptance criteria\n\n- A published and connected serverless function appears in Tool Action selection.\n- Search finds the function by name and function ID.\n- Unavailable functions display a specific diagnostic reason.\n- Registry refresh does not require recreating the function.\n- The selected version remains locked after publishing.\n- Input and output schemas are available for policy facts and mappings.\n- Workspace and environment isolation are enforced.\n- The governed action successfully invokes the selected serverless function.\n\n## Developer Update\n\n## Retest\n\n## Azure DevOps\n\n- **Work Item ID:** 68834\n- **URL:** https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_apis/wit/workItems/68834\n- **Parent Feature:** Serverless Functions\n- **Parent Feature ID:** 68811\n- **Assigned To:** Unassigned\n- **Sync Status:** SYNCED\n",
+    "ledgerRow": {
+      "bug_id": "ART-SFN-001",
+      "rel_path": "bugs/Serverless Functions/ART-SFN-001__serverless-function-not-available-as-tool-action/ART-SFN-001.md",
+      "name": "Serverless Function Not Available as Tool Action",
+      "severity": "HIGH",
+      "status": "OPEN",
+      "dev_update": "",
+      "retest": ""
+    }
+  }
+}

@@ -1,0 +1,373 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AIL Investigation Brief",
+  "description": "Canonical structured InvestigationBrief contract for AIL and the migrated AOI compiler.",
+  "type": "object",
+  "definitions": {
+    "ResearchStatus": {
+      "type": "string",
+      "enum": [
+        "UNKNOWN",
+        "UNVERIFIED",
+        "PENDING",
+        "ACTIVE",
+        "PASSED",
+        "FAILED",
+        "BLOCKED",
+        "SURVIVED",
+        "KILLED"
+      ]
+    },
+    "WorkflowType": {
+      "type": "string",
+      "enum": ["OBSERVED", "RECONSTRUCTED", "PROPOSED_ART"]
+    },
+    "RelationshipType": {
+      "type": "string",
+      "enum": ["CONTRADICTS", "SUPPORTS", "DEPENDS_ON"]
+    },
+    "IntelligenceType": {
+      "type": "string",
+      "enum": [
+        "WORKFLOW_PATTERN",
+        "STRATEGY_PATTERN",
+        "DECISION_PATTERN",
+        "IMPLEMENTATION_PATTERN",
+        "ARCHITECTURE_PATTERN",
+        "GUARDRAIL",
+        "METRIC_PATTERN",
+        "RESEARCH_METHOD",
+        "DESIGN_PRINCIPLE",
+        "NEGATIVE_INTELLIGENCE",
+        "ART_IMPROVEMENT"
+      ]
+    },
+    "IntelligenceEvidenceStatus": {
+      "type": "string",
+      "enum": ["VERIFIED", "PARTIAL", "HYPOTHESIS", "UNKNOWN", "REJECTED"]
+    },
+    "IntelligenceStatus": {
+      "type": "string",
+      "enum": ["ACTIVE", "EXPERIMENTAL", "RETIRED"]
+    },
+    "ConfidenceLevel": {
+      "type": "string",
+      "enum": ["HIGH", "MEDIUM", "LOW"]
+    },
+    "ReusePotential": {
+      "type": "string",
+      "enum": ["HIGH", "MEDIUM", "LOW"]
+    },
+    "EpistemicClassification": {
+      "type": "string",
+      "enum": ["EVIDENCE", "CLAIM", "INFERENCE", "HYPOTHESIS", "FALSIFICATION", "RESULT", "DECISION"]
+    },
+    "Provenance": {
+      "type": "object",
+      "required": ["source_file", "section", "line_start", "line_end"],
+      "properties": {
+        "source_file": { "type": "string" },
+        "section": { "type": ["string", "null"] },
+        "line_start": { "type": ["number", "null"] },
+        "line_end": { "type": ["number", "null"] },
+        "url": { "type": ["string", "null"] }
+      }
+    },
+    "IntelligenceObject": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "title",
+        "domain",
+        "description",
+        "evidence_status",
+        "status",
+        "confidence",
+        "reuse_potential",
+        "applications",
+        "source_refs",
+        "tags",
+        "provenance"
+      ],
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "$ref": "#/definitions/IntelligenceType" },
+        "title": { "type": "string" },
+        "domain": { "type": "string" },
+        "description": { "type": "string" },
+        "pattern": { "type": ["string", "null"] },
+        "lesson": { "type": ["string", "null"] },
+        "art_learning": { "type": ["string", "null"] },
+        "art_improvement": { "type": ["string", "null"] },
+        "conditions": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "anti_pattern": { "type": ["string", "null"] },
+        "do_not_assume": {
+          "anyOf": [
+            { "type": "string" },
+            { "type": "array", "items": { "type": "string" } },
+            { "type": "null" }
+          ]
+        },
+        "evidence_status": { "$ref": "#/definitions/IntelligenceEvidenceStatus" },
+        "status": { "$ref": "#/definitions/IntelligenceStatus" },
+        "confidence": { "$ref": "#/definitions/ConfidenceLevel" },
+        "reuse_potential": { "$ref": "#/definitions/ReusePotential" },
+        "applications": { "type": "array", "items": { "type": "string" } },
+        "source_checkpoint": { "type": ["string", "null"] },
+        "source_refs": { "type": "array", "items": { "type": "string" } },
+        "source_location": { "type": ["string", "null"] },
+        "original_source": { "type": ["string", "null"] },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "provenance": { "$ref": "#/definitions/Provenance" }
+      }
+    },
+    "PresentationKeyFinding": {
+      "type": "object",
+      "required": ["id", "statement", "classification", "source_refs"],
+      "properties": {
+        "id": { "type": "string" },
+        "statement": { "type": "string" },
+        "classification": { "$ref": "#/definitions/EpistemicClassification" },
+        "source_refs": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "Presentation": {
+      "type": "object",
+      "required": ["investigation_summary", "key_findings"],
+      "properties": {
+        "investigation_summary": { "type": "string" },
+        "key_findings": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/PresentationKeyFinding" }
+        }
+      }
+    },
+    "Decision": {
+      "type": "object",
+      "required": ["decision", "reason", "reusable_intelligence", "provenance"],
+      "properties": {
+        "decision": { "type": "string" },
+        "reason": { "type": "string" },
+        "reusable_intelligence": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/IntelligenceObject" }
+        },
+        "provenance": { "$ref": "#/definitions/Provenance" }
+      }
+    },
+    "InvestigationSource": {
+      "type": "object",
+      "required": ["id", "title", "url", "source_type", "used_by"],
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "url": { "type": "string" },
+        "source_type": { "type": "string" },
+        "used_by": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "Checkpoint": {
+      "type": "object",
+      "required": ["id", "title", "what_changed", "provenance"],
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "status": { "type": ["string", "null"] },
+        "investigation_question": { "type": ["string", "null"] },
+        "tested": { "type": ["string", "null"] },
+        "found": { "type": ["string", "null"] },
+        "what_changed": { "type": "string" },
+        "resulting_state": { "type": ["string", "null"] },
+        "evidence_refs": { "type": ["array", "null"], "items": { "type": "string" } },
+        "source_refs": { "type": ["array", "null"], "items": { "type": "string" } },
+        "provenance": { "$ref": "#/definitions/Provenance" }
+      }
+    },
+    "Evidence": {
+      "type": "object",
+      "required": ["id", "statement", "classification", "source", "provenance"],
+      "properties": {
+        "id": { "type": "string" },
+        "statement": { "type": "string" },
+        "classification": { "type": "string" },
+        "source": { "type": "string" },
+        "provenance": { "$ref": "#/definitions/Provenance" }
+      }
+    },
+    "Claim": {
+      "type": "object",
+      "required": ["id", "statement", "evidence_basis", "provenance"],
+      "properties": {
+        "id": { "type": "string" },
+        "statement": { "type": "string" },
+        "evidence_basis": { "type": "array", "items": { "type": "string" } },
+        "provenance": { "$ref": "#/definitions/Provenance" }
+      }
+    },
+    "Inference": {
+      "type": "object",
+      "required": ["id", "statement", "basis", "implication", "provenance"],
+      "properties": {
+        "id": { "type": "string" },
+        "statement": { "type": "string" },
+        "basis": { "type": "array", "items": { "type": "string" } },
+        "implication": { "type": "string" },
+        "provenance": { "$ref": "#/definitions/Provenance" }
+      }
+    },
+    "Hypothesis": {
+      "type": "object",
+      "required": ["id", "statement", "status", "supporting_basis", "falsification_basis", "provenance"],
+      "properties": {
+        "id": { "type": "string" },
+        "statement": { "type": "string" },
+        "status": { "$ref": "#/definitions/ResearchStatus" },
+        "supporting_basis": { "type": "array", "items": { "type": "string" } },
+        "falsification_basis": { "type": "array", "items": { "type": "string" } },
+        "provenance": { "$ref": "#/definitions/Provenance" }
+      }
+    },
+    "Result": {
+      "type": "object",
+      "required": ["id", "statement", "status", "provenance"],
+      "properties": {
+        "id": { "type": "string" },
+        "statement": { "type": "string" },
+        "status": { "$ref": "#/definitions/ResearchStatus" },
+        "provenance": { "$ref": "#/definitions/Provenance" }
+      }
+    },
+    "Traceability": {
+      "type": "object",
+      "required": ["statement", "research_location", "source_urls", "provenance"],
+      "properties": {
+        "statement": { "type": "string" },
+        "research_location": { "type": "string" },
+        "source_urls": { "type": "array", "items": { "type": "string" } },
+        "provenance": { "$ref": "#/definitions/Provenance" }
+      }
+    },
+    "Section": {
+      "type": "object",
+      "required": ["id", "title", "provenance"],
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "summary": { "type": ["string", "null"] },
+        "evidence_refs": { "type": ["array", "null"], "items": { "type": "string" } },
+        "source_refs": { "type": ["array", "null"], "items": { "type": "string" } },
+        "provenance": { "$ref": "#/definitions/Provenance" }
+      }
+    },
+    "WorkflowStep": {
+      "type": "object",
+      "required": ["id", "title", "description", "provenance"],
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "actor": { "type": ["string", "null"] },
+        "system": { "type": ["string", "null"] },
+        "handoff_to": { "type": ["string", "null"] },
+        "state_information": { "type": ["string", "null"] },
+        "exception_refs": { "type": ["array", "null"], "items": { "type": "string" } },
+        "evidence_refs": { "type": ["array", "null"], "items": { "type": "string" } },
+        "source_refs": { "type": ["array", "null"], "items": { "type": "string" } },
+        "provenance": { "$ref": "#/definitions/Provenance" }
+      }
+    },
+    "Workflow": {
+      "type": "object",
+      "required": ["id", "title", "workflow_type", "steps", "provenance"],
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "workflow_type": { "$ref": "#/definitions/WorkflowType" },
+        "summary": { "type": ["string", "null"] },
+        "steps": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/WorkflowStep" }
+        },
+        "actors": { "type": ["array", "null"], "items": { "type": "string" } },
+        "systems": { "type": ["array", "null"], "items": { "type": "string" } },
+        "safety_boundaries": { "type": ["array", "null"], "items": { "type": "string" } },
+        "source_refs": { "type": ["array", "null"], "items": { "type": "string" } },
+        "provenance": { "$ref": "#/definitions/Provenance" }
+      }
+    },
+    "Relationship": {
+      "type": "object",
+      "required": ["id", "source_id", "target_id", "relationship_type", "provenance"],
+      "properties": {
+        "id": { "type": "string" },
+        "source_id": { "type": "string" },
+        "target_id": { "type": "string" },
+        "relationship_type": { "$ref": "#/definitions/RelationshipType" },
+        "provenance": { "$ref": "#/definitions/Provenance" }
+      }
+    },
+    "Falsification": {
+      "type": "object",
+      "required": ["statement", "outcome", "basis", "provenance"],
+      "properties": {
+        "statement": { "type": "string" },
+        "targetRef": { "type": ["string", "null"] },
+        "whatWasTested": { "type": ["string", "null"] },
+        "evidence": { "type": ["string", "null"] },
+        "outcome": {
+          "type": "string",
+          "enum": ["KILLED", "WEAKENED", "UNRESOLVED", "SURVIVED"]
+        },
+        "reason": { "type": ["string", "null"] },
+        "basis": { "type": "array", "items": { "type": "string" } },
+        "provenance": { "$ref": "#/definitions/Provenance" }
+      }
+    }
+  },
+  "required": [
+    "investigation_id",
+    "company",
+    "industry",
+    "opportunity",
+    "investigation_type",
+    "research_status",
+    "presentation",
+    "decision",
+    "primary_question",
+    "sources",
+    "checkpoints",
+    "evidence",
+    "claims",
+    "inferences",
+    "hypotheses",
+    "results",
+    "traceability"
+  ],
+  "properties": {
+    "investigation_id": { "type": "string" },
+    "company": { "type": "string" },
+    "industry": { "type": "string" },
+    "opportunity": { "type": "string" },
+    "investigation_type": { "type": "string" },
+    "research_status": { "$ref": "#/definitions/ResearchStatus" },
+    "presentation": { "$ref": "#/definitions/Presentation" },
+    "decision": { "$ref": "#/definitions/Decision" },
+    "primary_question": { "type": "string" },
+    "sources": { "type": "array", "items": { "$ref": "#/definitions/InvestigationSource" } },
+    "checkpoints": { "type": "array", "items": { "$ref": "#/definitions/Checkpoint" } },
+    "evidence": { "type": "array", "items": { "$ref": "#/definitions/Evidence" } },
+    "claims": { "type": "array", "items": { "$ref": "#/definitions/Claim" } },
+    "inferences": { "type": "array", "items": { "$ref": "#/definitions/Inference" } },
+    "hypotheses": { "type": "array", "items": { "$ref": "#/definitions/Hypothesis" } },
+    "results": { "type": "array", "items": { "$ref": "#/definitions/Result" } },
+    "traceability": { "type": "array", "items": { "$ref": "#/definitions/Traceability" } },
+    "workflows": { "type": "array", "items": { "$ref": "#/definitions/Workflow" } },
+    "sections": { "type": "array", "items": { "$ref": "#/definitions/Section" } },
+    "relationships": { "type": "array", "items": { "$ref": "#/definitions/Relationship" } },
+    "falsification": { "type": "array", "items": { "$ref": "#/definitions/Falsification" } }
+  }
+}

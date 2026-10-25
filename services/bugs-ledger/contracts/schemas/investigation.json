@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://art.product.resolution/schemas/investigation.json",
+  "title": "Investigation",
+  "description": "Root conceptual investigation model containing identity, relationships, and history",
+  "type": "object",
+  "required": [
+    "id",
+    "slug",
+    "lifecyclePhase",
+    "status",
+    "classification",
+    "module",
+    "severity",
+    "priority",
+    "assignee",
+    "originalInputId",
+    "evidenceIds",
+    "aiAnalysisIds",
+    "researchIds",
+    "ticketRevisionIds",
+    "developerUpdateIds",
+    "retestIds",
+    "auditEventIds",
+    "createdAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique investigation ID, e.g. INV-20260925-0001"
+    },
+    "canonicalBugId": {
+      "type": ["string", "null"],
+      "description": "Assigned only when confirmed as BUG, e.g. ART-AGENT-001"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "lifecyclePhase": {
+      "$ref": "common.json#/definitions/LifecyclePhase"
+    },
+    "status": {
+      "oneOf": [
+        { "$ref": "common.json#/definitions/CanonicalStatus" },
+        { "type": "null" }
+      ]
+    },
+    "classification": {
+      "oneOf": [
+        { "$ref": "common.json#/definitions/ClassificationType" },
+        { "type": "null" }
+      ]
+    },
+    "module": {
+      "type": "string",
+      "description": "Canonical module code (e.g. AGENT, SFN, GOV) or 'Not provided'"
+    },
+    "severity": {
+      "$ref": "common.json#/definitions/Severity"
+    },
+    "priority": {
+      "$ref": "common.json#/definitions/Priority"
+    },
+    "assignee": {
+      "type": ["string", "null"]
+    },
+    "originalInputId": {
+      "type": "string"
+    },
+    "evidenceIds": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "aiAnalysisIds": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "researchIds": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "ticketRevisionIds": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "activeTicketRevisionId": {
+      "type": ["string", "null"]
+    },
+    "developerUpdateIds": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "retestIds": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "auditEventIds": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "resolution": {
+      "type": "object",
+      "required": ["resolvedAt", "summary"],
+      "properties": {
+        "resolvedAt": { "$ref": "common.json#/definitions/IsoTimestamp" },
+        "summary": { "type": "string" },
+        "verifiedBy": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "createdAt": {
+      "$ref": "common.json#/definitions/IsoTimestamp"
+    },
+    "updatedAt": {
+      "$ref": "common.json#/definitions/IsoTimestamp"
+    }
+  },
+  "additionalProperties": false
+}

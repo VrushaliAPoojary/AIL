@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ART Product Validation - Public Quality & Resolution Dashboard">
+  <title>ART Product Validation Dashboard</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --card-border: #e2e8f0;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --text-dim: #94a3b8;
+      --accent: #0891b2;
+      --accent-hover: #0e7490;
+      --accent-light: #ecfeff;
+      --accent-border: #a5f3fc;
+      
+      --color-open: #d97706;
+      --color-fixing: #0284c7;
+      --color-retest: #9333ea;
+      --color-verified: #059669;
+      --color-closed: #64748b;
+      --color-blocked: #dc2626;
+
+      --sev-crit: #dc2626;
+      --sev-high: #ea580c;
+      --sev-med: #ca8a04;
+      --sev-low: #2563eb;
+
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.5;
+      padding: 24px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1560px;
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 16px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--card-border);
+      margin-bottom: 24px;
+    }
+
+    .header-title h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: var(--text-main);
+    }
+
+    .header-title p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-top: 4px;
+    }
+
+    .header-meta {
+      text-align: right;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .header-meta span {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Summary Cards */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .summary-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .summary-card:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-1px);
+    }
+
+    .summary-card .label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .summary-card .value {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .summary-card.total .value { color: var(--accent); }
+    .summary-card.open .value { color: var(--color-open); }
+    .summary-card.fixing .value { color: var(--color-fixing); }
+    .summary-card.retest .value { color: var(--color-retest); }
+    .summary-card.verified .value { color: var(--color-verified); }
+    .summary-card.closed .value { color: var(--color-closed); }
+    .summary-card.blocked .value { color: var(--color-blocked); }
+
+    /* Filters Bar */
+    .filter-panel {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .filter-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .input-wrapper {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      min-width: 200px;
+    }
+
+    label.filter-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-right: 6px;
+      white-space: nowrap;
+    }
+
+    input.search-input, select.filter-select {
+      background: #ffffff;
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.875rem;
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    input.search-input {
+      width: 100%;
+    }
+
+    input.search-input:focus, select.filter-select:focus {
+      border-color: var(--accent);
+      outline: 2px solid var(--accent-border);
+      outline-offset: 1px;
+    }
+
+    .reset-btn {
+      background: transparent;
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.15s ease;
+    }
+
+    .reset-btn:hover {
+      color: var(--text-main);
+      border-color: var(--text-muted);
+      background: #f1f5f9;
+    }
+
+    .reset-btn:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .results-count {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* Table */
+    .table-responsive {
+      overflow-x: auto;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    table.bugs-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.875rem;
+    }
+
+    table.bugs-table th {
+      background: #f8fafc;
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--card-border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      white-space: nowrap;
+    }
+
+    table.bugs-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #f1f5f9;
+      vertical-align: middle;
+    }
+
+    table.bugs-table tr:hover td {
+      background: #f8fafc;
+    }
+
+    .col-id code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      color: var(--accent);
+      background: var(--accent-light);
+      border: 1px solid var(--accent-border);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .col-title {
+      font-weight: 500;
+      color: var(--text-main);
+      max-width: 340px;
+    }
+
+    .feat-pill {
+      display: inline-block;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      background: #f1f5f9;
+      padding: 2px 8px;
+      border-radius: 12px;
+      border: 1px solid var(--card-border);
+      white-space: nowrap;
+    }
+
+    .dev-comment-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      max-width: 320px;
+      display: inline-block;
+    }
+
+    .col-lifecycle time {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      white-space: nowrap;
+    }
+
+    /* Badges */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .badge-azure {
+      background: #f1f5f9;
+      color: #334155;
+      border: 1px solid #cbd5e1;
+      font-weight: 500;
+      text-transform: none;
+    }
+
+    .badge-open { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+    .badge-fixing { background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; }
+    .badge-retest { background: #f3e8ff; color: #6b21a8; border: 1px solid #e9d5ff; }
+    .badge-verified { background: #d1fae5; color: #065f46; border: 1px solid #a7f3d0; }
+    .badge-closed { background: #f1f5f9; color: #475569; border: 1px solid #e2e8f0; }
+    .badge-blocked { background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
+
+    .badge-sev-critical { background: #fee2e2; color: #991b1b; border: 1px solid #f87171; }
+    .badge-sev-high { background: #ffedd5; color: #9a3412; border: 1px solid #fed7aa; }
+    .badge-sev-medium { background: #fef9c3; color: #854d0e; border: 1px solid #fef08a; }
+    .badge-sev-low { background: #eff6ff; color: #1e40af; border: 1px solid #dbeafe; }
+
+    .badge-retest-pending { background: #f1f5f9; color: #64748b; border: 1px solid #e2e8f0; }
+    .badge-retest-required { background: #f3e8ff; color: #6b21a8; border: 1px solid #d8b4fe; font-weight: 700; }
+    .badge-retest-not-required { background: #f8fafc; color: #94a3b8; border: 1px solid #e2e8f0; }
+    .badge-retest-passed { background: #d1fae5; color: #065f46; border: 1px solid #a7f3d0; }
+    .badge-retest-failed { background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
+
+    .no-results {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    footer {
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 1px solid var(--card-border);
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 768px) {
+      body { padding: 16px; }
+      .header-meta { text-align: left; }
+      .filter-panel { flex-direction: column; align-items: stretch; }
+      .filter-group { flex-direction: column; align-items: stretch; }
+      .input-wrapper { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-title">
+        <h1>ART Product Validation</h1>
+        <p>Product Quality & Resolution Dashboard</p>
+      </div>
+      <div class="header-meta">
+        <div>Report Generated: <span id="gen-time">2026-10-13 12:25 IST</span></div>
+        <div>Total Tracked Defects: <span>39</span></div>
+      </div>
+    </header>
+
+    <!-- Summary Cards -->
+    <section class="summary-grid" aria-label="Defect Summary Statistics">
+      <div class="summary-card total">
+        <span class="label">Total Bugs</span>
+        <span class="value" id="card-total">39</span>
+      </div>
+      <div class="summary-card open">
+        <span class="label">Open</span>
+        <span class="value" id="card-open">34</span>
+      </div>
+      <div class="summary-card fixing">
+        <span class="label">Fixing</span>
+        <span class="value" id="card-fixing">3</span>
+      </div>
+      <div class="summary-card retest">
+        <span class="label">Retest</span>
+        <span class="value" id="card-retest">1</span>
+      </div>
+      <div class="summary-card verified">
+        <span class="label">Verified</span>
+        <span class="value" id="card-verified">0</span>
+      </div>
+      <div class="summary-card closed">
+        <span class="label">Closed</span>
+        <span class="value" id="card-closed">0</span>
+      </div>
+      <div class="summary-card blocked">
+        <span class="label">Blocked</span>
+        <span class="value" id="card-blocked">1</span>
+      </div>
+    </section>
+
+    <!-- Filter & Search Controls -->
+    <section class="filter-panel" aria-label="Filter Controls">
+      <div class="filter-group">
+        <div class="input-wrapper">
+          <label for="search-input" class="filter-label">Search</label>
+          <input type="text" id="search-input" class="search-input" placeholder="Search by Bug ID, title, feature, Azure state, or comment..." autocomplete="off">
+        </div>
+
+        <div>
+          <label for="azure-state-filter" class="filter-label">Azure State</label>
+          <select id="azure-state-filter" class="filter-select">
+            <option value="">All Azure States</option>
+<option value="Closed">Closed</option>
+<option value="New">New</option>
+<option value="Resolved">Resolved</option>
+<option value="—">—</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="status-filter" class="filter-label">ART Status</label>
+          <select id="status-filter" class="filter-select">
+            <option value="">All Statuses</option>
+<option value="OPEN">OPEN</option>
+<option value="FIXING">FIXING</option>
+<option value="RETEST">RETEST</option>
+<option value="BLOCKED">BLOCKED</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="feature-filter" class="filter-label">Feature</label>
+          <select id="feature-filter" class="filter-select">
+            <option value="">All Features</option>
+<option value="ART Deployment Kit (ADK)">ART Deployment Kit (ADK)</option>
+<option value="Agent Lab">Agent Lab</option>
+<option value="Agent X">Agent X</option>
+<option value="Governance">Governance</option>
+<option value="Orchestrator">Orchestrator</option>
+<option value="Serverless Functions">Serverless Functions</option>
+<option value="Tool Builder">Tool Builder</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="severity-filter" class="filter-label">Severity</label>
+          <select id="severity-filter" class="filter-select">
+            <option value="">All Severities</option>
+<option value="HIGH">HIGH</option>
+<option value="MEDIUM">MEDIUM</option>
+<option value="LOW">LOW</option>
+          </select>
+        </div>
+
+        <button type="button" id="reset-filters" class="reset-btn">Reset Filters</button>
+      </div>
+
+      <div class="results-count" id="results-count">
+        Showing <span id="visible-count">39</span> of <span id="total-count">39</span> bugs
+      </div>
+    </section>
+
+    <!-- Main Table -->
+    <div class="table-responsive">
+      <table class="bugs-table" id="bugs-table">
+        <thead>
+          <tr>
+            <th scope="col">Bug ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Feature</th>
+            <th scope="col">Severity</th>
+            <th scope="col">Azure State</th>
+            <th scope="col">ART Status</th>
+            <th scope="col">Retest</th>
+            <th scope="col">Developer Comment</th>
+            <th scope="col">Last Lifecycle Update</th>
+          </tr>
+        </thead>
+        <tbody id="bugs-tbody">
+<tr data-id="ART-ADK-001" data-feature="ART Deployment Kit (ADK)" data-severity="HIGH" data-azure-state="New" data-status="OPEN" data-dev-comment="—">
+  <td class="col-id"><code>ART-ADK-001</code></td>
+  <td class="col-title">ADK file upload to Data Lake fails with 402 Payment Required while upload works in Test UI</td>
+  <td class="col-feat"><span class="feat-pill">ART Deployment Kit (ADK)</span></td>
+  <td class="col-sev"><span class="badge badge-sev-high">HIGH</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">New</span></td>
+  <td class="col-status"><span class="badge badge-open">OPEN</span></td>
+  <td class="col-retest"><span class="badge badge-retest-pending">Pending</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">—</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-AGENT-001" data-feature="Agent Lab" data-severity="HIGH" data-azure-state="New" data-status="OPEN" data-dev-comment="—">
+  <td class="col-id"><code>ART-AGENT-001</code></td>
+  <td class="col-title">Structured output contract is not strictly enforced</td>
+  <td class="col-feat"><span class="feat-pill">Agent Lab</span></td>
+  <td class="col-sev"><span class="badge badge-sev-high">HIGH</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">New</span></td>
+  <td class="col-status"><span class="badge badge-open">OPEN</span></td>
+  <td class="col-retest"><span class="badge badge-retest-pending">Pending</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">—</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-AGENT-002" data-feature="Agent Lab" data-severity="HIGH" data-azure-state="New" data-status="OPEN" data-dev-comment="—">
+  <td class="col-id"><code>ART-AGENT-002</code></td>
+  <td class="col-title">Agent Run Fails with Generic Error and No Diagnostics During Media Processing</td>
+  <td class="col-feat"><span class="feat-pill">Agent Lab</span></td>
+  <td class="col-sev"><span class="badge badge-sev-high">HIGH</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">New</span></td>
+  <td class="col-status"><span class="badge badge-open">OPEN</span></td>
+  <td class="col-retest"><span class="badge badge-retest-pending">Pending</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">—</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-AGENT-003" data-feature="Agent Lab" data-severity="LOW" data-azure-state="New" data-status="OPEN" data-dev-comment="—">
+  <td class="col-id"><code>ART-AGENT-003</code></td>
+  <td class="col-title">Agent Workflow Displays Default Robot Icon Instead of Configured Custom Icon</td>
+  <td class="col-feat"><span class="feat-pill">Agent Lab</span></td>
+  <td class="col-sev"><span class="badge badge-sev-low">LOW</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">New</span></td>
+  <td class="col-status"><span class="badge badge-open">OPEN</span></td>
+  <td class="col-retest"><span class="badge badge-retest-pending">Pending</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">—</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-AGENT-004" data-feature="Agent Lab" data-severity="MEDIUM" data-azure-state="New" data-status="OPEN" data-dev-comment="—">
+  <td class="col-id"><code>ART-AGENT-004</code></td>
+  <td class="col-title">Agent Description Does Not Sync Both Ways Between Agent Dashboard and Workflow</td>
+  <td class="col-feat"><span class="feat-pill">Agent Lab</span></td>
+  <td class="col-sev"><span class="badge badge-sev-medium">MEDIUM</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">New</span></td>
+  <td class="col-status"><span class="badge badge-open">OPEN</span></td>
+  <td class="col-retest"><span class="badge badge-retest-pending">Pending</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">—</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-AGENT-005" data-feature="Agent Lab" data-severity="HIGH" data-azure-state="New" data-status="OPEN" data-dev-comment="—">
+  <td class="col-id"><code>ART-AGENT-005</code></td>
+  <td class="col-title">Conversation State Inconsistency: Multi-Turn Task Reconciliation Omits Cumulative Tasks</td>
+  <td class="col-feat"><span class="feat-pill">Agent Lab</span></td>
+  <td class="col-sev"><span class="badge badge-sev-high">HIGH</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">New</span></td>
+  <td class="col-status"><span class="badge badge-open">OPEN</span></td>
+  <td class="col-retest"><span class="badge badge-retest-pending">Pending</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">—</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-AGENT-006" data-feature="Agent Lab" data-severity="HIGH" data-azure-state="Resolved" data-status="RETEST" data-dev-comment="—">
+  <td class="col-id"><code>ART-AGENT-006</code></td>
+  <td class="col-title">Agent Output Schema Allowed Values Are Not Strictly Enforced for Text Fields</td>
+  <td class="col-feat"><span class="feat-pill">Agent Lab</span></td>
+  <td class="col-sev"><span class="badge badge-sev-high">HIGH</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">Resolved</span></td>
+  <td class="col-status"><span class="badge badge-retest">RETEST</span></td>
+  <td class="col-retest"><span class="badge badge-retest-required">Required</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">—</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-AGENT-007" data-feature="Agent Lab" data-severity="MEDIUM" data-azure-state="New" data-status="OPEN" data-dev-comment="—">
+  <td class="col-id"><code>ART-AGENT-007</code></td>
+  <td class="col-title">Output Schema Fields Should Be Required by Default</td>
+  <td class="col-feat"><span class="feat-pill">Agent Lab</span></td>
+  <td class="col-sev"><span class="badge badge-sev-medium">MEDIUM</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">New</span></td>
+  <td class="col-status"><span class="badge badge-open">OPEN</span></td>
+  <td class="col-retest"><span class="badge badge-retest-pending">Pending</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">—</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-AGENT-008" data-feature="Agent Lab" data-severity="HIGH" data-azure-state="New" data-status="OPEN" data-dev-comment="—">
+  <td class="col-id"><code>ART-AGENT-008</code></td>
+  <td class="col-title">Output Parser Intermittently Fails Valid Agent Structured Responses with Trailing Characters</td>
+  <td class="col-feat"><span class="feat-pill">Agent Lab</span></td>
+  <td class="col-sev"><span class="badge badge-sev-high">HIGH</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">New</span></td>
+  <td class="col-status"><span class="badge badge-open">OPEN</span></td>
+  <td class="col-retest"><span class="badge badge-retest-pending">Pending</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">—</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-AGENT-009" data-feature="Agent Lab" data-severity="HIGH" data-azure-state="—" data-status="OPEN" data-dev-comment="Pending.">
+  <td class="col-id"><code>ART-AGENT-009</code></td>
+  <td class="col-title">Agent response runs indefinitely during test execution in Agent Lab</td>
+  <td class="col-feat"><span class="feat-pill">Agent Lab</span></td>
+  <td class="col-sev"><span class="badge badge-sev-high">HIGH</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">—</span></td>
+  <td class="col-status"><span class="badge badge-open">OPEN</span></td>
+  <td class="col-retest"><span class="badge badge-retest-pending">Pending</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">Pending.</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-AGENT-010" data-feature="Agent Lab" data-severity="HIGH" data-azure-state="New" data-status="OPEN" data-dev-comment="—">
+  <td class="col-id"><code>ART-AGENT-010</code></td>
+  <td class="col-title">Configure Prompt System Instructions Textarea Recomposes on Periodic Re-render Resetting Cursor to Start Position</td>
+  <td class="col-feat"><span class="feat-pill">Agent Lab</span></td>
+  <td class="col-sev"><span class="badge badge-sev-high">HIGH</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">New</span></td>
+  <td class="col-status"><span class="badge badge-open">OPEN</span></td>
+  <td class="col-retest"><span class="badge badge-retest-pending">Pending</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">—</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-AGENTX-001" data-feature="Agent X" data-severity="LOW" data-azure-state="Closed" data-status="FIXING" data-dev-comment="Fixed">
+  <td class="col-id"><code>ART-AGENTX-001</code></td>
+  <td class="col-title">Agent X authorization error message has incorrect padding and clipped close button on mobile</td>
+  <td class="col-feat"><span class="feat-pill">Agent X</span></td>
+  <td class="col-sev"><span class="badge badge-sev-low">LOW</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">Closed</span></td>
+  <td class="col-status"><span class="badge badge-fixing">FIXING</span></td>
+  <td class="col-retest"><span class="badge badge-retest-not-required">Not Required</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">Fixed</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-AGENTX-002" data-feature="Agent X" data-severity="LOW" data-azure-state="Resolved" data-status="FIXING" data-dev-comment="UI updated">
+  <td class="col-id"><code>ART-AGENTX-002</code></td>
+  <td class="col-title">Agent X mobile UI is trimmed at screen edges and corners</td>
+  <td class="col-feat"><span class="feat-pill">Agent X</span></td>
+  <td class="col-sev"><span class="badge badge-sev-low">LOW</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">Resolved</span></td>
+  <td class="col-status"><span class="badge badge-fixing">FIXING</span></td>
+  <td class="col-retest"><span class="badge badge-retest-not-required">Not Required</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">UI updated</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-AGENTX-003" data-feature="Agent X" data-severity="MEDIUM" data-azure-state="New" data-status="OPEN" data-dev-comment="—">
+  <td class="col-id"><code>ART-AGENTX-003</code></td>
+  <td class="col-title">Agent X has excessive loading delay when opening the sign-in flow</td>
+  <td class="col-feat"><span class="feat-pill">Agent X</span></td>
+  <td class="col-sev"><span class="badge badge-sev-medium">MEDIUM</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">New</span></td>
+  <td class="col-status"><span class="badge badge-open">OPEN</span></td>
+  <td class="col-retest"><span class="badge badge-retest-pending">Pending</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">—</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-AGENTX-004" data-feature="Agent X" data-severity="MEDIUM" data-azure-state="New" data-status="OPEN" data-dev-comment="—">
+  <td class="col-id"><code>ART-AGENTX-004</code></td>
+  <td class="col-title">Agent X social media navigation returns user to home screen instead of sign-up/sign-in page</td>
+  <td class="col-feat"><span class="feat-pill">Agent X</span></td>
+  <td class="col-sev"><span class="badge badge-sev-medium">MEDIUM</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">New</span></td>
+  <td class="col-status"><span class="badge badge-open">OPEN</span></td>
+  <td class="col-retest"><span class="badge badge-retest-pending">Pending</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">—</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-AGENTX-005" data-feature="Agent X" data-severity="MEDIUM" data-azure-state="New" data-status="OPEN" data-dev-comment="—">
+  <td class="col-id"><code>ART-AGENTX-005</code></td>
+  <td class="col-title">Agent X authentication screens flicker across Sign in, Sign up, and Forgot Password flows</td>
+  <td class="col-feat"><span class="feat-pill">Agent X</span></td>
+  <td class="col-sev"><span class="badge badge-sev-medium">MEDIUM</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">New</span></td>
+  <td class="col-status"><span class="badge badge-open">OPEN</span></td>
+  <td class="col-retest"><span class="badge badge-retest-pending">Pending</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">—</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-AGENTX-006" data-feature="Agent X" data-severity="HIGH" data-azure-state="—" data-status="OPEN" data-dev-comment="Pending.">
+  <td class="col-id"><code>ART-AGENTX-006</code></td>
+  <td class="col-title">Agent X verification code screen falls back to Sign Up before code can be entered</td>
+  <td class="col-feat"><span class="feat-pill">Agent X</span></td>
+  <td class="col-sev"><span class="badge badge-sev-high">HIGH</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">—</span></td>
+  <td class="col-status"><span class="badge badge-open">OPEN</span></td>
+  <td class="col-retest"><span class="badge badge-retest-pending">Pending</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">Pending.</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-AGENTX-007" data-feature="Agent X" data-severity="MEDIUM" data-azure-state="New" data-status="OPEN" data-dev-comment="—">
+  <td class="col-id"><code>ART-AGENTX-007</code></td>
+  <td class="col-title">Agent X sign-in autofill sometimes fills password but leaves email field empty</td>
+  <td class="col-feat"><span class="feat-pill">Agent X</span></td>
+  <td class="col-sev"><span class="badge badge-sev-medium">MEDIUM</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">New</span></td>
+  <td class="col-status"><span class="badge badge-open">OPEN</span></td>
+  <td class="col-retest"><span class="badge badge-retest-pending">Pending</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">—</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-GOV-002" data-feature="Governance" data-severity="HIGH" data-azure-state="New" data-status="OPEN" data-dev-comment="—">
+  <td class="col-id"><code>ART-GOV-002</code></td>
+  <td class="col-title">Human Review Displays Unresolved Runtime Variables</td>
+  <td class="col-feat"><span class="feat-pill">Governance</span></td>
+  <td class="col-sev"><span class="badge badge-sev-high">HIGH</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">New</span></td>
+  <td class="col-status"><span class="badge badge-open">OPEN</span></td>
+  <td class="col-retest"><span class="badge badge-retest-pending">Pending</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">—</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-GOV-003" data-feature="Governance" data-severity="HIGH" data-azure-state="New" data-status="OPEN" data-dev-comment="—">
+  <td class="col-id"><code>ART-GOV-003</code></td>
+  <td class="col-title">Duplicate Human Approval Request After Decision</td>
+  <td class="col-feat"><span class="feat-pill">Governance</span></td>
+  <td class="col-sev"><span class="badge badge-sev-high">HIGH</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">New</span></td>
+  <td class="col-status"><span class="badge badge-open">OPEN</span></td>
+  <td class="col-retest"><span class="badge badge-retest-pending">Pending</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">—</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-GOV-004" data-feature="Governance" data-severity="HIGH" data-azure-state="Resolved" data-status="FIXING" data-dev-comment="—">
+  <td class="col-id"><code>ART-GOV-004</code></td>
+  <td class="col-title">Governance Action Creation Fails Even When Required Tool Is Connected to Agent Workflow</td>
+  <td class="col-feat"><span class="feat-pill">Governance</span></td>
+  <td class="col-sev"><span class="badge badge-sev-high">HIGH</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">Resolved</span></td>
+  <td class="col-status"><span class="badge badge-fixing">FIXING</span></td>
+  <td class="col-retest"><span class="badge badge-retest-not-required">Not Required</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">—</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-GOV-005" data-feature="Governance" data-severity="HIGH" data-azure-state="New" data-status="OPEN" data-dev-comment="—">
+  <td class="col-id"><code>ART-GOV-005</code></td>
+  <td class="col-title">Policy Inputs Dropdown Cannot Scroll Through Available Facts</td>
+  <td class="col-feat"><span class="feat-pill">Governance</span></td>
+  <td class="col-sev"><span class="badge badge-sev-high">HIGH</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">New</span></td>
+  <td class="col-status"><span class="badge badge-open">OPEN</span></td>
+  <td class="col-retest"><span class="badge badge-retest-pending">Pending</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">—</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-GOV-006" data-feature="Governance" data-severity="HIGH" data-azure-state="New" data-status="OPEN" data-dev-comment="—">
+  <td class="col-id"><code>ART-GOV-006</code></td>
+  <td class="col-title">Fact Library Runtime Usage is Non-Deterministic and Cannot Be Verified</td>
+  <td class="col-feat"><span class="feat-pill">Governance</span></td>
+  <td class="col-sev"><span class="badge badge-sev-high">HIGH</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">New</span></td>
+  <td class="col-status"><span class="badge badge-open">OPEN</span></td>
+  <td class="col-retest"><span class="badge badge-retest-pending">Pending</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">—</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-GOV-007" data-feature="Governance" data-severity="HIGH" data-azure-state="New" data-status="OPEN" data-dev-comment="—">
+  <td class="col-id"><code>ART-GOV-007</code></td>
+  <td class="col-title">Human Review Execution Fails After Agent Identifies Review Requirement</td>
+  <td class="col-feat"><span class="feat-pill">Governance</span></td>
+  <td class="col-sev"><span class="badge badge-sev-high">HIGH</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">New</span></td>
+  <td class="col-status"><span class="badge badge-open">OPEN</span></td>
+  <td class="col-retest"><span class="badge badge-retest-pending">Pending</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">—</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-GOV-008" data-feature="Governance" data-severity="HIGH" data-azure-state="New" data-status="OPEN" data-dev-comment="—">
+  <td class="col-id"><code>ART-GOV-008</code></td>
+  <td class="col-title">HIL Participant Group User Selection is Incomplete</td>
+  <td class="col-feat"><span class="feat-pill">Governance</span></td>
+  <td class="col-sev"><span class="badge badge-sev-high">HIGH</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">New</span></td>
+  <td class="col-status"><span class="badge badge-open">OPEN</span></td>
+  <td class="col-retest"><span class="badge badge-retest-pending">Pending</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">—</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-GOV-009" data-feature="Governance" data-severity="HIGH" data-azure-state="New" data-status="OPEN" data-dev-comment="—">
+  <td class="col-id"><code>ART-GOV-009</code></td>
+  <td class="col-title">HIL Runtime Fails After Valid Human Review Configuration</td>
+  <td class="col-feat"><span class="feat-pill">Governance</span></td>
+  <td class="col-sev"><span class="badge badge-sev-high">HIGH</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">New</span></td>
+  <td class="col-status"><span class="badge badge-open">OPEN</span></td>
+  <td class="col-retest"><span class="badge badge-retest-pending">Pending</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">—</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-ORCHESTRATOR-001" data-feature="Orchestrator" data-severity="MEDIUM" data-azure-state="New" data-status="OPEN" data-dev-comment="—">
+  <td class="col-id"><code>ART-ORCHESTRATOR-001</code></td>
+  <td class="col-title">Condition Builder Key Dropdown Values Are Truncated and Unreadable</td>
+  <td class="col-feat"><span class="feat-pill">Orchestrator</span></td>
+  <td class="col-sev"><span class="badge badge-sev-medium">MEDIUM</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">New</span></td>
+  <td class="col-status"><span class="badge badge-open">OPEN</span></td>
+  <td class="col-retest"><span class="badge badge-retest-pending">Pending</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">—</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-ORCHESTRATOR-002" data-feature="Orchestrator" data-severity="HIGH" data-azure-state="New" data-status="OPEN" data-dev-comment="—">
+  <td class="col-id"><code>ART-ORCHESTRATOR-002</code></td>
+  <td class="col-title">Orchestrator Downstream Nodes Display Stale Agent Output Schema After Update</td>
+  <td class="col-feat"><span class="feat-pill">Orchestrator</span></td>
+  <td class="col-sev"><span class="badge badge-sev-high">HIGH</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">New</span></td>
+  <td class="col-status"><span class="badge badge-open">OPEN</span></td>
+  <td class="col-retest"><span class="badge badge-retest-pending">Pending</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">—</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-ORCHESTRATOR-003" data-feature="Orchestrator" data-severity="HIGH" data-azure-state="New" data-status="OPEN" data-dev-comment="—">
+  <td class="col-id"><code>ART-ORCHESTRATOR-003</code></td>
+  <td class="col-title">Orchestrator Test Exposes Schema Definition Structure Instead of Runtime Input Fields</td>
+  <td class="col-feat"><span class="feat-pill">Orchestrator</span></td>
+  <td class="col-sev"><span class="badge badge-sev-high">HIGH</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">New</span></td>
+  <td class="col-status"><span class="badge badge-open">OPEN</span></td>
+  <td class="col-retest"><span class="badge badge-retest-pending">Pending</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">—</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-ORCHESTRATOR-004" data-feature="Orchestrator" data-severity="HIGH" data-azure-state="New" data-status="OPEN" data-dev-comment="—">
+  <td class="col-id"><code>ART-ORCHESTRATOR-004</code></td>
+  <td class="col-title">Daily Work Coordinator V2 Works Differently When Executed Through Orchestrator Agent Node</td>
+  <td class="col-feat"><span class="feat-pill">Orchestrator</span></td>
+  <td class="col-sev"><span class="badge badge-sev-high">HIGH</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">New</span></td>
+  <td class="col-status"><span class="badge badge-open">OPEN</span></td>
+  <td class="col-retest"><span class="badge badge-retest-pending">Pending</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">—</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-ORCHESTRATOR-005" data-feature="Orchestrator" data-severity="MEDIUM" data-azure-state="New" data-status="OPEN" data-dev-comment="—">
+  <td class="col-id"><code>ART-ORCHESTRATOR-005</code></td>
+  <td class="col-title">Observability Does Not Display Runtime Input and Output Details for Orchestrator Agent Execution</td>
+  <td class="col-feat"><span class="feat-pill">Orchestrator</span></td>
+  <td class="col-sev"><span class="badge badge-sev-medium">MEDIUM</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">New</span></td>
+  <td class="col-status"><span class="badge badge-open">OPEN</span></td>
+  <td class="col-retest"><span class="badge badge-retest-pending">Pending</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">—</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-ORCHESTRATOR-006" data-feature="Orchestrator" data-severity="MEDIUM" data-azure-state="New" data-status="OPEN" data-dev-comment="—">
+  <td class="col-id"><code>ART-ORCHESTRATOR-006</code></td>
+  <td class="col-title">Media Node File Upload does not support PDF/non-image files and provides no clear response</td>
+  <td class="col-feat"><span class="feat-pill">Orchestrator</span></td>
+  <td class="col-sev"><span class="badge badge-sev-medium">MEDIUM</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">New</span></td>
+  <td class="col-status"><span class="badge badge-open">OPEN</span></td>
+  <td class="col-retest"><span class="badge badge-retest-pending">Pending</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">—</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-ORCHESTRATOR-007" data-feature="Orchestrator" data-severity="MEDIUM" data-azure-state="New" data-status="OPEN" data-dev-comment="—">
+  <td class="col-id"><code>ART-ORCHESTRATOR-007</code></td>
+  <td class="col-title">Orchestrator Test UI does not allow PDF upload while Agent Lab Test UI supports PDF</td>
+  <td class="col-feat"><span class="feat-pill">Orchestrator</span></td>
+  <td class="col-sev"><span class="badge badge-sev-medium">MEDIUM</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">New</span></td>
+  <td class="col-status"><span class="badge badge-open">OPEN</span></td>
+  <td class="col-retest"><span class="badge badge-retest-pending">Pending</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">—</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-ORCHESTRATOR-008" data-feature="Orchestrator" data-severity="HIGH" data-azure-state="New" data-status="OPEN" data-dev-comment="—">
+  <td class="col-id"><code>ART-ORCHESTRATOR-008</code></td>
+  <td class="col-title">Orchestrator Test Shows Blank Response After Successful Workflow Execution</td>
+  <td class="col-feat"><span class="feat-pill">Orchestrator</span></td>
+  <td class="col-sev"><span class="badge badge-sev-high">HIGH</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">New</span></td>
+  <td class="col-status"><span class="badge badge-open">OPEN</span></td>
+  <td class="col-retest"><span class="badge badge-retest-pending">Pending</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">—</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-SFN-001" data-feature="Serverless Functions" data-severity="HIGH" data-azure-state="New" data-status="OPEN" data-dev-comment="—">
+  <td class="col-id"><code>ART-SFN-001</code></td>
+  <td class="col-title">Serverless Function Not Available as Tool Action</td>
+  <td class="col-feat"><span class="feat-pill">Serverless Functions</span></td>
+  <td class="col-sev"><span class="badge badge-sev-high">HIGH</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">New</span></td>
+  <td class="col-status"><span class="badge badge-open">OPEN</span></td>
+  <td class="col-retest"><span class="badge badge-retest-pending">Pending</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">—</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-SFN-002" data-feature="Serverless Functions" data-severity="HIGH" data-azure-state="New" data-status="OPEN" data-dev-comment="—">
+  <td class="col-id"><code>ART-SFN-002</code></td>
+  <td class="col-title">Serverless Function Input Mapper Cannot Access Agent Output Fields</td>
+  <td class="col-feat"><span class="feat-pill">Serverless Functions</span></td>
+  <td class="col-sev"><span class="badge badge-sev-high">HIGH</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">New</span></td>
+  <td class="col-status"><span class="badge badge-open">OPEN</span></td>
+  <td class="col-retest"><span class="badge badge-retest-pending">Pending</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">—</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-TOOL-001" data-feature="Tool Builder" data-severity="MEDIUM" data-azure-state="New" data-status="OPEN" data-dev-comment="—">
+  <td class="col-id"><code>ART-TOOL-001</code></td>
+  <td class="col-title">Tool Builder: Added HTTPS Schema Fields Cannot Be Deleted</td>
+  <td class="col-feat"><span class="feat-pill">Tool Builder</span></td>
+  <td class="col-sev"><span class="badge badge-sev-medium">MEDIUM</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">New</span></td>
+  <td class="col-status"><span class="badge badge-open">OPEN</span></td>
+  <td class="col-retest"><span class="badge badge-retest-pending">Pending</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">—</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-TOOL-002" data-feature="Tool Builder" data-severity="HIGH" data-azure-state="—" data-status="OPEN" data-dev-comment="Pending.">
+  <td class="col-id"><code>ART-TOOL-002</code></td>
+  <td class="col-title">Add Built-in Row Filtering Support to Supabase Database Tools</td>
+  <td class="col-feat"><span class="feat-pill">Tool Builder</span></td>
+  <td class="col-sev"><span class="badge badge-sev-high">HIGH</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">—</span></td>
+  <td class="col-status"><span class="badge badge-open">OPEN</span></td>
+  <td class="col-retest"><span class="badge badge-retest-pending">Pending</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">Pending.</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+<tr data-id="ART-TOOL-003" data-feature="Tool Builder" data-severity="HIGH" data-azure-state="Resolved" data-status="BLOCKED" data-dev-comment="Editing prohibition is intentional for now. Will discuss with Kiran and change the behavior if needed">
+  <td class="col-id"><code>ART-TOOL-003</code></td>
+  <td class="col-title">Tool Builder existing tools cannot be edited because Edit Definition is unavailable/inaccessible</td>
+  <td class="col-feat"><span class="feat-pill">Tool Builder</span></td>
+  <td class="col-sev"><span class="badge badge-sev-high">HIGH</span></td>
+  <td class="col-azure-state"><span class="badge badge-azure">Resolved</span></td>
+  <td class="col-status"><span class="badge badge-blocked">BLOCKED</span></td>
+  <td class="col-retest"><span class="badge badge-retest-not-required">Not Required</span></td>
+  <td class="col-dev-comment"><span class="dev-comment-text">Editing prohibition is intentional for now. Will discuss with Kiran and change the behavior if needed</span></td>
+  <td class="col-lifecycle"><time>Not Available</time></td>
+</tr>
+        </tbody>
+      </table>
+      <div class="no-results" id="no-results">
+        No defects match the selected filter criteria.
+      </div>
+    </div>
+
+    <footer>
+      Report reflects the latest lifecycle data synchronized into the ART validation ledger.
+    </footer>
+  </div>
+
+  <script>
+    (function() {
+      const searchInput = document.getElementById('search-input');
+      const azureStateFilter = document.getElementById('azure-state-filter');
+      const statusFilter = document.getElementById('status-filter');
+      const featureFilter = document.getElementById('feature-filter');
+      const severityFilter = document.getElementById('severity-filter');
+      const resetBtn = document.getElementById('reset-filters');
+      const visibleCountEl = document.getElementById('visible-count');
+      const totalCountEl = document.getElementById('total-count');
+      const noResults = document.getElementById('no-results');
+      const tbody = document.getElementById('bugs-tbody');
+      const rows = Array.from(tbody.querySelectorAll('tr'));
+      const totalRows = rows.length;
+
+      function applyFilters() {
+        const query = searchInput.value.trim().toLowerCase();
+        const selAzureState = azureStateFilter.value;
+        const selStatus = statusFilter.value.toUpperCase();
+        const selFeature = featureFilter.value;
+        const selSeverity = severityFilter.value.toUpperCase();
+
+        let visibleCount = 0;
+
+        rows.forEach(row => {
+          const id = row.getAttribute('data-id').toLowerCase();
+          const feat = row.getAttribute('data-feature');
+          const featLower = feat.toLowerCase();
+          const sev = row.getAttribute('data-severity').toUpperCase();
+          const azureState = row.getAttribute('data-azure-state') || '';
+          const status = row.getAttribute('data-status').toUpperCase();
+          const devComment = (row.getAttribute('data-dev-comment') || '').toLowerCase();
+          const title = row.querySelector('.col-title').textContent.toLowerCase();
+
+          // Search matches Bug ID, Title, Feature, Azure State, or Developer Comment
+          const matchesQuery = !query || id.includes(query) || title.includes(query) || featLower.includes(query) || azureState.toLowerCase().includes(query) || devComment.includes(query);
+          const matchesAzureState = !selAzureState || azureState === selAzureState;
+          const matchesStatus = !selStatus || status === selStatus;
+          const matchesFeature = !selFeature || feat === selFeature;
+          const matchesSeverity = !selSeverity || sev === selSeverity;
+
+          if (matchesQuery && matchesAzureState && matchesStatus && matchesFeature && matchesSeverity) {
+            row.style.display = '';
+            visibleCount++;
+          } else {
+            row.style.display = 'none';
+          }
+        });
+
+        if (visibleCountEl) visibleCountEl.textContent = visibleCount;
+        if (totalCountEl) totalCountEl.textContent = totalRows;
+        if (noResults) noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+      }
+
+      searchInput.addEventListener('input', applyFilters);
+      azureStateFilter.addEventListener('change', applyFilters);
+      statusFilter.addEventListener('change', applyFilters);
+      featureFilter.addEventListener('change', applyFilters);
+      severityFilter.addEventListener('change', applyFilters);
+
+      resetBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        azureStateFilter.value = '';
+        statusFilter.value = '';
+        featureFilter.value = '';
+        severityFilter.value = '';
+        applyFilters();
+      });
+    })();
+  </script>
+</body>
+</html>

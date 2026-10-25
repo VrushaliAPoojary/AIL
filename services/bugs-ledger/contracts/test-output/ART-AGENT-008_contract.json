@@ -1,0 +1,106 @@
+{
+  "Investigation": {
+    "id": "ART-AGENT-008",
+    "canonicalBugId": "ART-AGENT-008",
+    "slug": "output-parser-fails-structured-responses-with-trailing-characters",
+    "lifecyclePhase": "CONFIRMED",
+    "status": "OPEN",
+    "classification": "BUG",
+    "module": "AGENT",
+    "severity": "HIGH",
+    "priority": "Not provided",
+    "assignee": null,
+    "originalInputId": "INP-ART-AGENT-008",
+    "evidenceIds": [
+      "EVD-ART-AGENT-008-01"
+    ],
+    "aiAnalysisIds": [],
+    "researchIds": [],
+    "ticketRevisionIds": [
+      "TCK-ART-AGENT-008-01"
+    ],
+    "activeTicketRevisionId": "TCK-ART-AGENT-008-01",
+    "developerUpdateIds": [],
+    "retestIds": [],
+    "auditEventIds": [
+      "AUD-ART-AGENT-008-01"
+    ],
+    "createdAt": "2026-09-24T00:00:00Z",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "OriginalInput": {
+    "id": "INP-ART-AGENT-008",
+    "investigationId": "ART-AGENT-008",
+    "testerDescription": "",
+    "reporter": "HUMAN_LEGACY_IMPORT",
+    "capturedAt": "2026-09-24T00:00:00Z",
+    "initialEvidenceIds": [
+      "EVD-ART-AGENT-008-01"
+    ],
+    "provenance": "HUMAN_SUPPLIED"
+  },
+  "EvidenceList": [
+    {
+      "id": "EVD-ART-AGENT-008-01",
+      "investigationId": "ART-AGENT-008",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-AGENT-008__output-parse-error-trailing-characters-attempts-4__2026-10-05__01.png",
+      "canonicalFilename": "ART-AGENT-008__output-parse-error-trailing-characters-attempts-4__2026-10-05__01.png",
+      "storagePath": "ART-Product-Validation/bugs/Agent Lab/ART-AGENT-008__output-parser-fails-structured-responses-with-trailing-characters/ART-AGENT-008__output-parse-error-trailing-characters-attempts-4__2026-10-05__01.png",
+      "sha256": "9137c3ce9940dea8899988c26c315c5d9090b800070484fecda6782975a56fc9",
+      "mimeType": "image/png",
+      "byteSize": 115673,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    }
+  ],
+  "TicketArtifact": {
+    "ticketId": "TCK-ART-AGENT-008-01",
+    "investigationId": "ART-AGENT-008",
+    "revision": 1,
+    "title": "Output Parser Intermittently Fails Valid Agent Structured Responses with Trailing Characters",
+    "reproSteps": "Not provided",
+    "expectedResult": "Not provided",
+    "actualResult": "Not provided",
+    "businessImpact": "Not provided",
+    "recommendedSolution": "Not provided",
+    "module": "AGENT",
+    "environment": "Not provided",
+    "severity": "HIGH",
+    "priority": "Not provided",
+    "tags": [
+      "agent"
+    ],
+    "discussion": [],
+    "provenance": "HUMAN_APPROVED",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "AuditEvent": {
+    "id": "AUD-ART-AGENT-008-01",
+    "investigationId": "ART-AGENT-008",
+    "timestamp": "2026-09-24T00:00:00Z",
+    "actor": "LEGACY_IMPORT_ADAPTER",
+    "eventType": "INVESTIGATION_CAPTURED",
+    "summary": "Imported legacy bug record ART-AGENT-008 from ART-Product-Validation/bugs",
+    "details": {
+      "sourceMarkdownPath": "ART-Product-Validation/bugs/Agent Lab/ART-AGENT-008__output-parser-fails-structured-responses-with-trailing-characters/ART-AGENT-008.md",
+      "rawContentSha256": "088f6d8ee5d27679cab729c94c00e6955f53892f2b0789483e4aedcefb43f211"
+    }
+  },
+  "sourceMetadata": {
+    "sourceMarkdownPath": "ART-Product-Validation/bugs/Agent Lab/ART-AGENT-008__output-parser-fails-structured-responses-with-trailing-characters/ART-AGENT-008.md",
+    "rawMarkdownContent": "# ART-AGENT-008 \u2014 Output Parser Intermittently Fails Valid Agent Structured Responses with Trailing Characters\n\n- **Canonical Bug ID:** ART-AGENT-008\n- **Module:** AGENT\n- **Severity:** HIGH\n- **Priority:** P1\n- **Environment:** Testing (Procurement Exception Agent / Agent Test Draft / Professional Plan / InvestigationLab)\n- **Assignee:** Unassigned\n- **Tags:** Agent-Lab, Output-Parser, Structured-Output, OutputParseError, JSON-Validation, Pydantic-Error, Flaky-Execution, P1\n- **Status:** OPEN\n- **Evidence Count:** 1\n- **Azure DevOps:** NOT_SYNCED\n\n---\n\n## 1. Problem\nThe **Agent Output Parser** intermittently fails valid structured responses emitted by the model when the completion text contains extraneous trailing characters (such as an extra closing brace `}}}` at the end of the JSON string).\n\nInstead of isolating or extracting the root valid JSON object, the parser passes the raw unnormalized string directly to Pydantic/JSON validation. When Pydantic encounters trailing characters after the closing bracket, it raises a `json_invalid: Invalid JSON: trailing characters` error. The system performs 4 repetitive retry attempts (`attempts=4`) without repairing or isolating the candidate JSON, and ultimately crashes, dumping a raw Python `OutputParseError` with full Pydantic exception details directly into the user-facing chat conversation bubble.\n\nBecause the underlying data payload generated by the model is completely valid and re-executing the identical request succeeds, this defect represents an unhandled boundary-parsing issue in the Agent Output Parser.\n\n---\n\n## 2. Observed Behavior\n- **Parsing Crash on Trailing Characters:** During an evaluation in Agent Test (Draft mode, thread `ba53441e...`) for a \u20b97,50,000 procurement exception request, execution failed with an unhandled exception.\n- **Complete Payload Emitted by Model:** The model generated a complete and valid structured response under schema `custom_6ac3216bdfaa4ac34990c7e9` containing all required properties (`exception_type: \"NON_PREFERRED_SUPPLIER\"`, `affected_business_area: \"Procurement\"`, `relevant_facts`, `missing_information: []`, `business_risk`, `human_review_required: true`, `recommended_next_action`, `reason`).\n- **Trailing Characters Error:** The candidate string contained an extra trailing brace at line 1 column 1082 (`... \"additionalProperties\":true}}}`), causing Pydantic to fail with:\n  `Invalid JSON: trailing characters at line 1 column 1082 [type=json_invalid, input_value='{\"output\": {\"type\":\"custo...onalProperties\":true}}}', input_type=str]`\n- **Unproductive Retries:** The parser repeated the operation 4 times (`attempts=4`) without stripping trailing characters or isolating the JSON boundary.\n- **Raw Exception Dumped in UI:** The full raw exception was rendered verbatim in red inside the assistant message bubble:\n  `OutputParseError(raw_text='{...}', error='1 validation error for AgentOutput[...]\nInvalid JSON: trailing characters at line 1 column 1082... For further information visit https://errors.pydantic.dev/2.13/v/json_invalid', attempts=4)`\n- **Intermittent Success on Re-run:** Re-running the identical user input subsequently returned a valid structured Agent result without error when trailing characters were absent.\n\n---\n\n## 3. Reproduction\n1. Open **Agent Lab** and open the **Procurement Exception Agent** (or any Agent configured with structured output).\n2. Open **Agent Test** in Draft mode.\n3. Submit a complex evaluation prompt (e.g. `\"Purchase request for \u20b97,50,000 from Apex Network Solutions (non-preferred supplier). User states all procurement approvals are available.\"`).\n4. If the model emits valid JSON with an extra trailing brace or trailing whitespace/character, observe the parser response.\n5. Observe that the parser retries 4 times and halts with `OutputParseError(..., json_invalid: Invalid JSON: trailing characters at line 1 column 1082, attempts=4)`.\n6. Observe that the entire raw Python traceback, Pydantic discriminator information, and Pydantic doc URL are displayed in the chat message bubble.\n7. Re-run the identical input; observe that execution succeeds when no trailing character is emitted.\n\n---\n\n## 4. Expected Behavior\n- The Output Parser must normalize and isolate the candidate JSON payload before schema validation, ignoring trailing characters outside the root JSON object.\n- Valid structured responses must not intermittently fail due to superficial wrapper or trailing characters.\n- Repair attempts should be bounded, deterministic, and observable.\n- If parsing genuinely fails after bounded repair, a controlled user-facing error message must be displayed instead of raw internal Python exceptions.\n- Malformed outputs must never reach downstream execution, and complete diagnostic details must be preserved in Observability traces.\n\n---\n\n## 5. Business Impact\n- **Flaky Workflow Execution:** Agents fail non-deterministically during live testing and orchestration runs, reducing confidence in structured agent reliability.\n- **Exposed Internal System Details:** Exposing raw Python exception traces and internal Pydantic URLs in the UI degrades enterprise product quality and exposes internal runtime architecture.\n- **Wasted Compute and Latency:** 4 blind retry attempts on the same unnormalized string introduce latency without fixing the parsing issue.\n\n---\n\n## 6. User Experience\n- The user is presented with a large red error bubble filled with code, escaped JSON, and Pydantic documentation URLs rather than a clean response.\n- Re-running the same query works, creating confusion about whether the issue was in their input prompt, the agent configuration, or the platform.\n\n---\n\n## 7. Investigation Guidance\nInspect the Agent Output Parser and response validation pipeline:\n- **Candidate JSON Extraction:** Inspect the parsing routine that processes raw LLM completion text before schema validation. Check whether it uses naive `json.loads(text)` or a boundary-aware extractor like `json.JSONDecoder().raw_decode(text.lstrip())`.\n- **Pydantic Validation Layer:** Locate the `AgentOutput[Annotated[Union[AgentErrorResponse, custom_...]]]` model and examine how `attempts=4` is executed. Verify whether retry logic applies any sanitization between attempts.\n- **Error Formatting Handler:** Inspect the frontend and backend error serialization that formats parser exceptions for the conversation stream. Ensure internal exceptions are mapped to clean error responses.\n\n---\n\n## 8. Fix Requirement\nThe Output Parser must extract and validate only the candidate JSON object from model completions, safely discarding extraneous trailing characters. Repair attempts must be bounded and unrecoverable errors must be surfaced cleanly in the UI while preserving trace logs.\n\n---\n\n## 9. Recommended Solution\n1. **Boundary-Aware JSON Parsing:** Use `json.JSONDecoder().raw_decode()` to parse only the valid JSON object from the start of the string, ignoring trailing characters.\n2. **Pre-Validation Normalization:** Strip markdown code fences, leading/trailing whitespace, and trailing brackets before validating against the Pydantic schema.\n3. **Controlled Error Response:** Replace the raw `OutputParseError` dump with a standardized `AgentErrorResponse` in the UI.\n4. **Preserve Observability Diagnostics:** Log the raw completion, error code, and attempts to the Observability trace store.\n\n---\n\n## 10. Minimum Working Fix\nIn the Output Parser, replace `json.loads(raw_text)` with `json.JSONDecoder().raw_decode(raw_text.strip())[0]` to extract the primary JSON object while discarding trailing characters before passing the dictionary to Pydantic validation.\n\n---\n\n## 11. Acceptance Criteria\n- [ ] Valid structured responses do not fail validation when extraneous trailing characters or braces follow the JSON object.\n- [ ] The primary JSON object is isolated and validated against the output schema.\n- [ ] Repair attempts are bounded and logged in execution traces.\n- [ ] Raw internal Python/Pydantic validation errors (`OutputParseError`, `https://errors.pydantic.dev`) are never rendered in the chat bubble.\n- [ ] Identical requests execute deterministically without intermittent parser crashes.\n\n---\n\n## 12. Environment\n- **Platform:** ART Agent Builder / Agent Lab\n- **Module:** Agent \u2014 Output Parser / Structured Output Validation\n- **Agent Workflow:** Procurement Exception Agent (`6ac3213fdfaa4ac34990c7e4`)\n- **Schema Reference:** `custom_6ac3216bdfaa4ac34990c7e9`\n- **Environment:** Testing (InvestigationLab, Professional Plan)\n\n---\n\n## 13. Severity\n**HIGH** \u2014 Intermittently crashes valid Agent executions, exhausts 4 retries, and exposes raw internal exceptions to users.\n\n---\n\n## 14. Priority\n**P1** \u2014 Core runtime parser defect causing intermittent execution failures and UI exception leakage.\n\n---\n\n## 15. Tags\n- `Agent-Lab`\n- `Output-Parser`\n- `Structured-Output`\n- `OutputParseError`\n- `JSON-Validation`\n- `Pydantic-Error`\n- `Flaky-Execution`\n- `P1`\n\n---\n\n## 16. Assignee\n**Unassigned**\n\n---\n\n## 17. Evidence\n\n| File | Type | Description | SHA256 Hash | Byte Size |\n| :--- | :--- | :--- | :--- | :--- |\n| [ART-AGENT-008__output-parse-error-trailing-characters-attempts-4__2026-10-05__01.png](file:///home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-AGENT-008__output-parser-fails-structured-responses-with-trailing-characters/ART-AGENT-008__output-parse-error-trailing-characters-attempts-4__2026-10-05__01.png) | Screenshot | Agent Test (Draft mode, thread ba53441e) displaying unhandled OutputParseError in the chat message bubble for a \u20b97,50,000 procurement request. The error details show Pydantic validation error 'Invalid JSON: trailing characters at line 1 column 1082 [type=json_invalid]' with attempts=4 due to a trailing bracket/character in the candidate JSON payload, exposing raw internal exceptions and URLs directly to the end user. | `9137c3ce9940dea8899988c26c315c5d9090b800070484fecda6782975a56fc9` | 115673 bytes |\n\n### Evidence Visual Gallery\n\n````carousel\n![ART-AGENT-008__output-parse-error-trailing-characters-attempts-4__2026-10-05__01.png](/home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-AGENT-008__output-parser-fails-structured-responses-with-trailing-characters/ART-AGENT-008__output-parse-error-trailing-characters-attempts-4__2026-10-05__01.png)\n*Agent Test (Draft mode, thread ba53441e) displaying unhandled OutputParseError in the chat message bubble for a \u20b97,50,000 procurement request. The error details show Pydantic validation error 'Invalid JSON: trailing characters at line 1 column 1082 [type=json_invalid]' with attempts=4 due to a trailing bracket/character in the candidate JSON payload, exposing raw internal exceptions and URLs directly to the end user.*\n````\n\n---\n\n## 18. Discussion\n- **Root Cause Indication:** The Pydantic error trace explicitly identifies `Invalid JSON: trailing characters at line 1 column 1082 [type=json_invalid]`. Inspection of the raw payload reveals three closing braces `}}}` at the tail of the string. A simple boundary-aware JSON decoder completely resolves this class of LLM completion quirks.\n- **Error Presentation Gap:** In addition to the parsing defect, the failure exposes an error-handling gap where unhandled internal exceptions are stringified into the assistant message bubble instead of returning a controlled error payload.\n- **Intake Validation:** Evidence screenshot preserved with cryptographic SHA256 checksum and verified byte size. Zero Azure DevOps mutations performed during intake.\n\n---\n\n## 19. Azure DevOps\n- **Work Item ID:** Not created\n- **URL:** Not created\n- **Sync Status:** NOT_SYNCED\n",
+    "ledgerRow": {
+      "bug_id": "ART-AGENT-008",
+      "rel_path": "bugs/Agent Lab/ART-AGENT-008__output-parser-fails-structured-responses-with-trailing-characters/ART-AGENT-008.md",
+      "name": "Output Parser Intermittently Fails Valid Agent Structured Responses with Trailing Characters",
+      "severity": "HIGH",
+      "status": "OPEN",
+      "dev_update": "Pending.",
+      "retest": "Pending."
+    }
+  }
+}

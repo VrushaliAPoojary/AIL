@@ -1,0 +1,106 @@
+{
+  "Investigation": {
+    "id": "ART-GOV-008",
+    "canonicalBugId": "ART-GOV-008",
+    "slug": "hil-participant-group-user-selection-incomplete",
+    "lifecyclePhase": "CONFIRMED",
+    "status": "OPEN",
+    "classification": "BUG",
+    "module": "GOV",
+    "severity": "HIGH",
+    "priority": "Not provided",
+    "assignee": null,
+    "originalInputId": "INP-ART-GOV-008",
+    "evidenceIds": [
+      "EVD-ART-GOV-008-01"
+    ],
+    "aiAnalysisIds": [],
+    "researchIds": [],
+    "ticketRevisionIds": [
+      "TCK-ART-GOV-008-01"
+    ],
+    "activeTicketRevisionId": "TCK-ART-GOV-008-01",
+    "developerUpdateIds": [],
+    "retestIds": [],
+    "auditEventIds": [
+      "AUD-ART-GOV-008-01"
+    ],
+    "createdAt": "2026-09-24T00:00:00Z",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "OriginalInput": {
+    "id": "INP-ART-GOV-008",
+    "investigationId": "ART-GOV-008",
+    "testerDescription": "",
+    "reporter": "HUMAN_LEGACY_IMPORT",
+    "capturedAt": "2026-09-24T00:00:00Z",
+    "initialEvidenceIds": [
+      "EVD-ART-GOV-008-01"
+    ],
+    "provenance": "HUMAN_SUPPLIED"
+  },
+  "EvidenceList": [
+    {
+      "id": "EVD-ART-GOV-008-01",
+      "investigationId": "ART-GOV-008",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-GOV-008__hil-participant-group-user-selection-incomplete__2026-10-05__01.png",
+      "canonicalFilename": "ART-GOV-008__hil-participant-group-user-selection-incomplete__2026-10-05__01.png",
+      "storagePath": "ART-Product-Validation/bugs/Governance/ART-GOV-008__hil-participant-group-user-selection-incomplete/ART-GOV-008__hil-participant-group-user-selection-incomplete__2026-10-05__01.png",
+      "sha256": "cd4a744e6f03dbe55c2eebc6073fbafc446320f5f2b6be32a637fde64b512553",
+      "mimeType": "image/png",
+      "byteSize": 138099,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    }
+  ],
+  "TicketArtifact": {
+    "ticketId": "TCK-ART-GOV-008-01",
+    "investigationId": "ART-GOV-008",
+    "revision": 1,
+    "title": "HIL Participant Group User Selection is Incomplete",
+    "reproSteps": "Not provided",
+    "expectedResult": "Not provided",
+    "actualResult": "Not provided",
+    "businessImpact": "Not provided",
+    "recommendedSolution": "Not provided",
+    "module": "GOV",
+    "environment": "Not provided",
+    "severity": "HIGH",
+    "priority": "Not provided",
+    "tags": [
+      "gov"
+    ],
+    "discussion": [],
+    "provenance": "HUMAN_APPROVED",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "AuditEvent": {
+    "id": "AUD-ART-GOV-008-01",
+    "investigationId": "ART-GOV-008",
+    "timestamp": "2026-09-24T00:00:00Z",
+    "actor": "LEGACY_IMPORT_ADAPTER",
+    "eventType": "INVESTIGATION_CAPTURED",
+    "summary": "Imported legacy bug record ART-GOV-008 from ART-Product-Validation/bugs",
+    "details": {
+      "sourceMarkdownPath": "ART-Product-Validation/bugs/Governance/ART-GOV-008__hil-participant-group-user-selection-incomplete/ART-GOV-008.md",
+      "rawContentSha256": "4c84d66dc687fdeef7cf0b9086f099eed88684ef5bd0392f71beafd43a2ca800"
+    }
+  },
+  "sourceMetadata": {
+    "sourceMarkdownPath": "ART-Product-Validation/bugs/Governance/ART-GOV-008__hil-participant-group-user-selection-incomplete/ART-GOV-008.md",
+    "rawMarkdownContent": "# ART-GOV-008 \u2014 HIL Participant Group User Selection is Incomplete\n\n- **Canonical Bug ID:** ART-GOV-008\n- **Module:** GOV\n- **Severity:** HIGH\n- **Priority:** P1\n- **Environment:** Testing (Procurement Exception Agent / Governance / Human Review / App Management / Professional Plan / InvestigationLab)\n- **Assignee:** Unassigned\n- **Tags:** Governance, Human-Review, Human-in-the-Loop, HIL-Participant, App-Management, Groups, User-Selector, Pagination, Directory-Search, P1\n- **Status:** OPEN\n- **Evidence Count:** 1\n- **Azure DevOps:** SYNCED ([#68951](https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68951))\n\n---\n\n## 1. Problem\nIn **App Management \u2192 Groups** and **Governance \u2192 Human Review** (Participants configuration), the user/group selector does not expose the full organization user directory, and users cannot be entered manually when they are missing from the dropdown list.\n\nWhen setting up Human-in-the-Loop (HIL) approval groups or assigning group participants to human review flows, the selector only displays a hardcoded or capped initial subset of accounts. Searching within the selector only filters against this preloaded list on the client side, rather than querying the backend user directory. As a result, valid active employees cannot be located or added to approval groups.\n\n---\n\n## 2. Observed Behavior\n- **Incomplete Directory Expose:** The user selector dropdown loads only a limited subset of accounts (e.g. showing only `ART group test user`).\n- **Client-Only Filtering:** Typing into the `Search...` field filters only within the already rendered dropdown items; it does not issue a remote query to search against the full directory.\n- **No Manual Entry Fallback:** Users cannot manually enter an email address or username to select an account that is not present in the preloaded set.\n- **Approval Groups Blocked:** Because the desired approvers cannot be selected, administrators are blocked from establishing correct group memberships for human review policies.\n\n---\n\n## 3. Reproduction\n1. Navigate to **App Management \u2192 Groups** (or **Governance \u2192 Human Review \u2192 Edit Human-in-Loop \u2192 Step 3: Participants**).\n2. Choose **Approver type: GROUP** (or create/edit a user group in App Management).\n3. Open the **Approvers** search input/dropdown.\n4. Attempt to find an active organization account that is not included in the initially loaded dropdown list.\n5. Enter the username or email in the `Search...` input.\n6. Observe that no results are found because search does not perform a backend query.\n7. Attempt to enter or paste the valid user identifier manually; observe that manual input is not accepted.\n\n---\n\n## 4. Expected Behavior\n- The participant selector should perform debounced server-side queries against the complete eligible user directory.\n- Valid users should be discoverable by username, display name, or email address.\n- The dropdown should support pagination or virtualized scrolling for large directories.\n- If manual entry is restricted, the UI should provide clear contextual feedback explaining the eligibility criteria and directory source.\n\n---\n\n## 5. Business Impact\n- **Inability to Deploy Approval Groups:** Organizations cannot establish approval groups containing designated risk managers, procurement leads, or department heads.\n- **Human Review Stalled:** Governance policies requiring group-based multi-approver or quorum decisions cannot be staffed, leaving critical exceptions unreviewed.\n- **Administrative Friction:** Teams must create workaround single-user approvals or test accounts because legitimate users cannot be chosen.\n\n---\n\n## 6. User Experience\n- The administrator types a known colleague's name into the search box, but the interface displays no matches.\n- There is no error message, no pagination indicator, and no way to enter the email manually, giving the impression that the user management system is broken or out of sync.\n\n---\n\n## 7. Investigation Guidance\n- **Frontend Component:** Inspect the user/group selector component used in App Management \u2192 Groups and the Human Review modal (`Step 3: Participants`).\n- **Data Fetching:** Check whether the component issues a single unpaginated `GET` request (e.g. `limit=20` or `page=1`) on mount without a dynamic query parameter.\n- **Search Query Pipeline:** Trace `Group UI \u2192 user search/query \u2192 pagination/filtering \u2192 eligible-user API \u2192 selected IDs \u2192 group persistence`.\n- **API Capabilities:** Verify if the user directory endpoint supports search filtering (e.g. `GET /api/v1/users?search=...`) and pagination parameters (`limit`, `offset`, `cursor`).\n\n---\n\n## 8. Fix Requirement\nThe user selector must allow discovering and selecting any eligible organization user through server-backed search and pagination, reliably resolving selected users to canonical user IDs.\n\n---\n\n## 9. Recommended Solution\n1. **Server-Side Debounced Search:** Connect the search input to a backend directory search endpoint with debouncing (e.g. 300ms) to query all active accounts matching the search term.\n2. **Paginated/Infinite Scroll:** Implement pagination in the dropdown menu so users can browse beyond the initial page of results.\n3. **Canonical ID Binding:** Persist canonical user UUIDs upon selection rather than fragile display strings.\n4. **Descriptive Empty State:** When a search returns no results, display helpful guidance (e.g. \"No users found in directory matching '<query>'\").\n\n---\n\n## 10. Minimum Working Fix\nImplement server-backed searchable and paginated participant lookup in the user selector component, ensuring that typing a query searches the entire user directory and resolves the selection to a valid canonical user ID.\n\n---\n\n## 11. Acceptance Criteria\n- [ ] Searching in the user selector queries the complete eligible user directory via backend API.\n- [ ] Valid users not in the initial dropdown list can be found by username or email.\n- [ ] Dropdown supports pagination or scrolling through the full set of eligible accounts.\n- [ ] Selected users reliably resolve to their canonical user IDs upon group save.\n- [ ] If arbitrary manual entry is prohibited, the interface clearly indicates eligibility and directory requirements.\n\n---\n\n## 12. Environment\n- **Platform:** ART Agent Builder / Governance / App Management\n- **Module:** Governance \u2014 Human Review / App Management Groups\n- **Workflow:** Procurement Exception Agent\n- **Configuration:** Edit Human-in-Loop Step 3: Participants (Approver type: GROUP)\n- **Environment:** Testing (InvestigationLab, Professional Plan)\n\n---\n\n## 13. Severity\n**HIGH** \u2014 Prevents configuring approval groups with required organization users, blocking group-based Human-in-the-Loop governance flows.\n\n---\n\n## 14. Priority\n**P1** \u2014 Core user management and governance approval configuration defect.\n\n---\n\n## 15. Tags\n- `Governance`\n- `Human-Review`\n- `Human-in-the-Loop`\n- `HIL-Participant`\n- `App-Management`\n- `Groups`\n- `User-Selector`\n- `Pagination`\n- `Directory-Search`\n- `P1`\n\n---\n\n## 16. Assignee\n**Unassigned**\n\n---\n\n## 17. Evidence\n\n| File | Type | Description | SHA256 Hash | Byte Size |\n| :--- | :--- | :--- | :--- | :--- |\n| [ART-GOV-008__hil-participant-group-user-selection-incomplete__2026-10-05__01.png](file:///home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-GOV-008__hil-participant-group-user-selection-incomplete/ART-GOV-008__hil-participant-group-user-selection-incomplete__2026-10-05__01.png) | Screenshot | Edit Human-in-Loop modal in Governance -> Human Review (Step 3: Participants) showing Approver type GROUP with approver search dropdown limited to subset 'ART group test user', failing to expose the complete user directory or allow manual entry of absent eligible users. | `cd4a744e6f03dbe55c2eebc6073fbafc446320f5f2b6be32a637fde64b512553` | 138099 bytes |\n\n### Evidence Visual Gallery\n\n````carousel\n![ART-GOV-008__hil-participant-group-user-selection-incomplete__2026-10-05__01.png](/home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-GOV-008__hil-participant-group-user-selection-incomplete/ART-GOV-008__hil-participant-group-user-selection-incomplete__2026-10-05__01.png)\n*Edit Human-in-Loop modal in Governance -> Human Review (Step 3: Participants) showing Approver type GROUP with approver search dropdown limited to subset 'ART group test user', failing to expose the complete user directory or allow manual entry of absent eligible users.*\n````\n\n---\n\n## 18. Discussion\n- **Reporter Analysis:** The dropdown selector loads only an initial subset of accounts and relies on client-side filtering. Because there is no backend query on input change and no pagination, users outside the first page cannot be selected, breaking approval group creation.\n- **Architectural Scope:** This selector is used both in App Management \u2192 Groups and in Governance \u2192 Human Review participants. A server-backed search component will fix both surfaces.\n- **Intake Validation:** Evidence screenshot preserved with cryptographic SHA256 checksum and verified byte size. Zero Azure DevOps mutations performed during intake.\n\n---\n\n## 19. Azure DevOps\n- **Work Item ID:** 68951\n- **URL:** [https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68951](https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68951)\n- **Parent Feature:** Governance\n- **Parent Feature ID:** 68812\n- **Assigned To:** Unassigned\n- **Sync Status:** SYNCED\n- **Note:** Synchronized via Harness 02 V1 to Azure DevOps.\n",
+    "ledgerRow": {
+      "bug_id": "ART-GOV-008",
+      "rel_path": "bugs/Governance/ART-GOV-008__hil-participant-group-user-selection-incomplete/ART-GOV-008.md",
+      "name": "HIL Participant Group User Selection is Incomplete",
+      "severity": "HIGH",
+      "status": "OPEN",
+      "dev_update": "Pending.",
+      "retest": "Pending."
+    }
+  }
+}

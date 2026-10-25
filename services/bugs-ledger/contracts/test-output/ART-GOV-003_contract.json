@@ -1,0 +1,124 @@
+{
+  "Investigation": {
+    "id": "ART-GOV-003",
+    "canonicalBugId": "ART-GOV-003",
+    "slug": "duplicate-human-approval-request-after-decision",
+    "lifecyclePhase": "CONFIRMED",
+    "status": "OPEN",
+    "classification": "BUG",
+    "module": "GOV",
+    "severity": "HIGH",
+    "priority": "Not provided",
+    "assignee": null,
+    "originalInputId": "INP-ART-GOV-003",
+    "evidenceIds": [
+      "EVD-ART-GOV-003-01",
+      "EVD-ART-GOV-003-02"
+    ],
+    "aiAnalysisIds": [],
+    "researchIds": [],
+    "ticketRevisionIds": [
+      "TCK-ART-GOV-003-01"
+    ],
+    "activeTicketRevisionId": "TCK-ART-GOV-003-01",
+    "developerUpdateIds": [],
+    "retestIds": [],
+    "auditEventIds": [
+      "AUD-ART-GOV-003-01"
+    ],
+    "createdAt": "2026-09-24T00:00:00Z",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "OriginalInput": {
+    "id": "INP-ART-GOV-003",
+    "investigationId": "ART-GOV-003",
+    "testerDescription": "After a reviewer approves or rejects an Implant Usage Evidence Review request, the agent can invoke the same governed action again and create another approval notification for the same case.\n\nThe previous approval request is resolved, but the workflow does not reliably continue to a final outcome.",
+    "reporter": "HUMAN_LEGACY_IMPORT",
+    "capturedAt": "2026-09-24T00:00:00Z",
+    "initialEvidenceIds": [
+      "EVD-ART-GOV-003-01",
+      "EVD-ART-GOV-003-02"
+    ],
+    "provenance": "HUMAN_SUPPLIED"
+  },
+  "EvidenceList": [
+    {
+      "id": "EVD-ART-GOV-003-01",
+      "investigationId": "ART-GOV-003",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-GOV-003__approval-loop-decision__2026-09-24__02.png",
+      "canonicalFilename": "ART-GOV-003__approval-loop-decision__2026-09-24__02.png",
+      "storagePath": "ART-Product-Validation/bugs/Governance/ART-GOV-003__duplicate-human-approval-request-after-decision/ART-GOV-003__approval-loop-decision__2026-09-24__02.png",
+      "sha256": "824e476f44f10b88981f8c87a3ab6a4423c8a80af781b2de51a5d04423c2bbc0",
+      "mimeType": "image/png",
+      "byteSize": 246721,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    },
+    {
+      "id": "EVD-ART-GOV-003-02",
+      "investigationId": "ART-GOV-003",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-GOV-003__duplicate-approval-notification__2026-09-24__01.png",
+      "canonicalFilename": "ART-GOV-003__duplicate-approval-notification__2026-09-24__01.png",
+      "storagePath": "ART-Product-Validation/bugs/Governance/ART-GOV-003__duplicate-human-approval-request-after-decision/ART-GOV-003__duplicate-approval-notification__2026-09-24__01.png",
+      "sha256": "4ae257c34eb4fd09472dbaf10a79b5ca761a3d9df596a52b7d43aea2b281556a",
+      "mimeType": "image/png",
+      "byteSize": 256969,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    }
+  ],
+  "TicketArtifact": {
+    "ticketId": "TCK-ART-GOV-003-01",
+    "investigationId": "ART-GOV-003",
+    "revision": 1,
+    "title": "Duplicate Human Approval Request After Decision",
+    "reproSteps": "Not provided",
+    "expectedResult": "Each case should create only one Human Review request.\n\nAfter the reviewer selects Approve or Reject, the agent should resume from that decision, return the final outcome and must not invoke the same governed action again for the same case.",
+    "actualResult": "A new approval notification can be generated after the previous human decision, resulting in a repeated approval loop.",
+    "businessImpact": "Not provided",
+    "recommendedSolution": "A Human Review decision must resume the suspended execution exactly once and must never create another approval request for the same action execution.\n\n### Required implementation\n\n1. Assign a unique `action_execution_id` to every governed action invocation.\n2. Create an approval request using an idempotency key derived from:\n   - Agent execution ID\n   - Action execution ID\n   - Policy ID\n3. Enforce a unique database constraint on the approval idempotency key.\n4. When Human Review is required:\n   - Persist the execution state.\n   - Mark it `WAITING_FOR_HUMAN`.\n   - Stop further agent reasoning and action invocation.\n5. When the reviewer approves or rejects:\n   - Persist the decision atomically.\n   - Mark the approval request resolved.\n   - Resume the original suspended execution from its saved continuation point.\n6. Do not restart the agent from the original user prompt after the decision.\n7. Pass the approval decision as a trusted system event, not as a new conversational user message.\n8. Before creating any approval request, check whether the action execution already has:\n   - A pending request\n   - An approved decision\n   - A rejected decision\n9. If a decision already exists, return the stored decision instead of invoking Human Review again.\n10. Ignore duplicate button clicks, retry deliveries, and repeated decision events using the same idempotency key.\n11. Record request creation, decision, resumption, and completion in one audit trail.\n\n### Acceptance criteria\n\n- One governed action execution creates no more than one approval request.\n- Approving does not generate another notification.\n- Rejecting does not generate another notification.\n- The original execution resumes rather than restarting.\n- Duplicate clicks do not create duplicate decisions.\n- Event retries do not create duplicate requests.\n- The final Agent Result references the original approval decision.\n- The audit trail shows one request, one decision, and one continuation.",
+    "module": "GOV",
+    "environment": "Not provided",
+    "severity": "HIGH",
+    "priority": "Not provided",
+    "tags": [
+      "gov"
+    ],
+    "discussion": [],
+    "provenance": "HUMAN_APPROVED",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "AuditEvent": {
+    "id": "AUD-ART-GOV-003-01",
+    "investigationId": "ART-GOV-003",
+    "timestamp": "2026-09-24T00:00:00Z",
+    "actor": "LEGACY_IMPORT_ADAPTER",
+    "eventType": "INVESTIGATION_CAPTURED",
+    "summary": "Imported legacy bug record ART-GOV-003 from ART-Product-Validation/bugs",
+    "details": {
+      "sourceMarkdownPath": "ART-Product-Validation/bugs/Governance/ART-GOV-003__duplicate-human-approval-request-after-decision/ART-GOV-003.md",
+      "rawContentSha256": "ee6caeffccdf8e8860f58d5bc4545691344bd8633314c7680de21df9b7ba4d5c"
+    }
+  },
+  "sourceMetadata": {
+    "sourceMarkdownPath": "ART-Product-Validation/bugs/Governance/ART-GOV-003__duplicate-human-approval-request-after-decision/ART-GOV-003.md",
+    "rawMarkdownContent": "# ART-GOV-003 \u2014 Duplicate Human Approval Request After Decision\n\n- **Severity:** HIGH\n- **Status:** OPEN\n\n## Bug\n\nAfter a reviewer approves or rejects an Implant Usage Evidence Review request, the agent can invoke the same governed action again and create another approval notification for the same case.\n\nThe previous approval request is resolved, but the workflow does not reliably continue to a final outcome.\n\n## Expected\n\nEach case should create only one Human Review request.\n\nAfter the reviewer selects Approve or Reject, the agent should resume from that decision, return the final outcome and must not invoke the same governed action again for the same case.\n\n## Actual\n\nA new approval notification can be generated after the previous human decision, resulting in a repeated approval loop.\n\n## Evidence\n\n- [ART-GOV-003__duplicate-approval-notification__2026-09-24__01.png](ART-GOV-003__duplicate-approval-notification__2026-09-24__01.png)\n- [ART-GOV-003__approval-loop-decision__2026-09-24__02.png](ART-GOV-003__approval-loop-decision__2026-09-24__02.png)\n\n## Production-Grade Fix Proposal\n\nA Human Review decision must resume the suspended execution exactly once and must never create another approval request for the same action execution.\n\n### Required implementation\n\n1. Assign a unique `action_execution_id` to every governed action invocation.\n2. Create an approval request using an idempotency key derived from:\n   - Agent execution ID\n   - Action execution ID\n   - Policy ID\n3. Enforce a unique database constraint on the approval idempotency key.\n4. When Human Review is required:\n   - Persist the execution state.\n   - Mark it `WAITING_FOR_HUMAN`.\n   - Stop further agent reasoning and action invocation.\n5. When the reviewer approves or rejects:\n   - Persist the decision atomically.\n   - Mark the approval request resolved.\n   - Resume the original suspended execution from its saved continuation point.\n6. Do not restart the agent from the original user prompt after the decision.\n7. Pass the approval decision as a trusted system event, not as a new conversational user message.\n8. Before creating any approval request, check whether the action execution already has:\n   - A pending request\n   - An approved decision\n   - A rejected decision\n9. If a decision already exists, return the stored decision instead of invoking Human Review again.\n10. Ignore duplicate button clicks, retry deliveries, and repeated decision events using the same idempotency key.\n11. Record request creation, decision, resumption, and completion in one audit trail.\n\n### Acceptance criteria\n\n- One governed action execution creates no more than one approval request.\n- Approving does not generate another notification.\n- Rejecting does not generate another notification.\n- The original execution resumes rather than restarting.\n- Duplicate clicks do not create duplicate decisions.\n- Event retries do not create duplicate requests.\n- The final Agent Result references the original approval decision.\n- The audit trail shows one request, one decision, and one continuation.\n\n## Developer Update\n\n## Retest\n\n## Azure DevOps\n\n- **Work Item ID:** 68833\n- **URL:** https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_apis/wit/workItems/68833\n- **Parent Feature:** Governance\n- **Parent Feature ID:** 68812\n- **Assigned To:** Unassigned\n- **Sync Status:** SYNCED\n",
+    "ledgerRow": {
+      "bug_id": "ART-GOV-003",
+      "rel_path": "bugs/Governance/ART-GOV-003__duplicate-human-approval-request-after-decision/ART-GOV-003.md",
+      "name": "Duplicate Human Approval Request After Decision",
+      "severity": "HIGH",
+      "status": "OPEN",
+      "dev_update": "",
+      "retest": ""
+    }
+  }
+}

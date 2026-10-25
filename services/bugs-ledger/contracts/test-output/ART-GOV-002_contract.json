@@ -1,0 +1,106 @@
+{
+  "Investigation": {
+    "id": "ART-GOV-002",
+    "canonicalBugId": "ART-GOV-002",
+    "slug": "human-review-values-unresolved",
+    "lifecyclePhase": "CONFIRMED",
+    "status": "OPEN",
+    "classification": "BUG",
+    "module": "GOV",
+    "severity": "HIGH",
+    "priority": "Not provided",
+    "assignee": null,
+    "originalInputId": "INP-ART-GOV-002",
+    "evidenceIds": [
+      "EVD-ART-GOV-002-01"
+    ],
+    "aiAnalysisIds": [],
+    "researchIds": [],
+    "ticketRevisionIds": [
+      "TCK-ART-GOV-002-01"
+    ],
+    "activeTicketRevisionId": "TCK-ART-GOV-002-01",
+    "developerUpdateIds": [],
+    "retestIds": [],
+    "auditEventIds": [
+      "AUD-ART-GOV-002-01"
+    ],
+    "createdAt": "2026-09-24T00:00:00Z",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "OriginalInput": {
+    "id": "INP-ART-GOV-002",
+    "investigationId": "ART-GOV-002",
+    "testerDescription": "The Human Review notification displays unresolved template variables instead of the actual runtime values generated during implant reconciliation agent.\n\nExamples displayed in the notification include:\n\n- `${IMPLANT_CASE_ID}`\n- `${RECONCILIATION_CLASSIFICATION}`\n- `${RECONCILIATION_MATCH_STATUS}`\n- `${RECONCILIATION_REASON}`\n- `${RECOMMENDED_NEXT_OWNER}`\n\nThe agent result and serverless-function result contain the correct values, but those values are not resolved inside the Human Review notification.",
+    "reporter": "HUMAN_LEGACY_IMPORT",
+    "capturedAt": "2026-09-24T00:00:00Z",
+    "initialEvidenceIds": [
+      "EVD-ART-GOV-002-01"
+    ],
+    "provenance": "HUMAN_SUPPLIED"
+  },
+  "EvidenceList": [
+    {
+      "id": "EVD-ART-GOV-002-01",
+      "investigationId": "ART-GOV-002",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-GOV-002__unresolved-template-values__2026-09-24__01.png",
+      "canonicalFilename": "ART-GOV-002__unresolved-template-values__2026-09-24__01.png",
+      "storagePath": "ART-Product-Validation/bugs/Governance/ART-GOV-002__human-review-values-unresolved/ART-GOV-002__unresolved-template-values__2026-09-24__01.png",
+      "sha256": "d4beaebc28b722aec6ace580b836782e517fe9129a8e568f67c546a0482b4874",
+      "mimeType": "image/png",
+      "byteSize": 396249,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    }
+  ],
+  "TicketArtifact": {
+    "ticketId": "TCK-ART-GOV-002-01",
+    "investigationId": "ART-GOV-002",
+    "revision": 1,
+    "title": "Human Review Displays Unresolved Runtime Variables",
+    "reproSteps": "Not provided",
+    "expectedResult": "The Human Review notification should display the actual case ID, classification, match status, reconciliation reason and recommended owner produced during the current execution.",
+    "actualResult": "The notification displays the template expressions as literal text, making the review information unreadable and preventing the reviewer from making an informed decision.",
+    "businessImpact": "Not provided",
+    "recommendedSolution": "Human Review must receive resolved runtime facts, not unresolved template expressions.\n\n### Required implementation\n\n1. Store Human Review mappings as typed references to registered facts, not as plain text containing `${...}`.\n2. Validate every mapped fact when the policy is saved.\n3. Validate every mapped fact again during Build and Publish.\n4. Resolve all fact references from the current action-execution context before creating the review request.\n5. Preserve the resolved values as an immutable approval snapshot.\n6. If a required fact is missing or unresolved:\n   - Do not create the Human Review request.\n   - Stop execution with `HUMAN_REVIEW_FACT_RESOLUTION_FAILED`.\n   - Identify the exact missing fact and its source action.\n7. Never display unresolved expressions such as `${IMPLANT_CASE_ID}` to reviewers.\n8. Provide a mapping preview containing representative typed values before publishing.\n9. Display human-readable labels in the reviewer interface while retaining technical keys in the audit view.\n10. Support structured fields such as arrays and objects with readable tables instead of raw serialized text.\n11. Record the source action, fact key, resolved value, data type, execution ID, and resolution timestamp in the audit log.\n\n### Acceptance criteria\n\n- Every configured field displays its resolved runtime value.\n- No `${...}` expression appears in a Human Review notification.\n- Missing required facts block request creation.\n- The reviewer sees readable labels and formatted values.\n- Arrays and objects render as structured content.\n- The approval snapshot cannot change after the request is created.\n- The audit log identifies the source of every resolved fact.",
+    "module": "GOV",
+    "environment": "Not provided",
+    "severity": "HIGH",
+    "priority": "Not provided",
+    "tags": [
+      "gov"
+    ],
+    "discussion": [],
+    "provenance": "HUMAN_APPROVED",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "AuditEvent": {
+    "id": "AUD-ART-GOV-002-01",
+    "investigationId": "ART-GOV-002",
+    "timestamp": "2026-09-24T00:00:00Z",
+    "actor": "LEGACY_IMPORT_ADAPTER",
+    "eventType": "INVESTIGATION_CAPTURED",
+    "summary": "Imported legacy bug record ART-GOV-002 from ART-Product-Validation/bugs",
+    "details": {
+      "sourceMarkdownPath": "ART-Product-Validation/bugs/Governance/ART-GOV-002__human-review-values-unresolved/ART-GOV-002.md",
+      "rawContentSha256": "0a09bcae5479a75e1371efa35a36e662a3356736c96d370e2abc869a79e87d62"
+    }
+  },
+  "sourceMetadata": {
+    "sourceMarkdownPath": "ART-Product-Validation/bugs/Governance/ART-GOV-002__human-review-values-unresolved/ART-GOV-002.md",
+    "rawMarkdownContent": "# ART-GOV-002 \u2014 Human Review Displays Unresolved Runtime Variables\n\n- **Severity:** HIGH\n- **Status:** OPEN\n\n## Bug\n\nThe Human Review notification displays unresolved template variables instead of the actual runtime values generated during implant reconciliation agent.\n\nExamples displayed in the notification include:\n\n- `${IMPLANT_CASE_ID}`\n- `${RECONCILIATION_CLASSIFICATION}`\n- `${RECONCILIATION_MATCH_STATUS}`\n- `${RECONCILIATION_REASON}`\n- `${RECOMMENDED_NEXT_OWNER}`\n\nThe agent result and serverless-function result contain the correct values, but those values are not resolved inside the Human Review notification.\n\n## Expected\n\nThe Human Review notification should display the actual case ID, classification, match status, reconciliation reason and recommended owner produced during the current execution.\n\n## Actual\n\nThe notification displays the template expressions as literal text, making the review information unreadable and preventing the reviewer from making an informed decision.\n\n## Evidence\n\n- [ART-GOV-002__unresolved-template-values__2026-09-24__01.png](ART-GOV-002__unresolved-template-values__2026-09-24__01.png)\n\n## Production-Grade Fix Proposal\n\nHuman Review must receive resolved runtime facts, not unresolved template expressions.\n\n### Required implementation\n\n1. Store Human Review mappings as typed references to registered facts, not as plain text containing `${...}`.\n2. Validate every mapped fact when the policy is saved.\n3. Validate every mapped fact again during Build and Publish.\n4. Resolve all fact references from the current action-execution context before creating the review request.\n5. Preserve the resolved values as an immutable approval snapshot.\n6. If a required fact is missing or unresolved:\n   - Do not create the Human Review request.\n   - Stop execution with `HUMAN_REVIEW_FACT_RESOLUTION_FAILED`.\n   - Identify the exact missing fact and its source action.\n7. Never display unresolved expressions such as `${IMPLANT_CASE_ID}` to reviewers.\n8. Provide a mapping preview containing representative typed values before publishing.\n9. Display human-readable labels in the reviewer interface while retaining technical keys in the audit view.\n10. Support structured fields such as arrays and objects with readable tables instead of raw serialized text.\n11. Record the source action, fact key, resolved value, data type, execution ID, and resolution timestamp in the audit log.\n\n### Acceptance criteria\n\n- Every configured field displays its resolved runtime value.\n- No `${...}` expression appears in a Human Review notification.\n- Missing required facts block request creation.\n- The reviewer sees readable labels and formatted values.\n- Arrays and objects render as structured content.\n- The approval snapshot cannot change after the request is created.\n- The audit log identifies the source of every resolved fact.\n\n## Developer Update\n\n## Retest\n\n## Azure DevOps\n\n- **Work Item ID:** 68832\n- **URL:** https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_apis/wit/workItems/68832\n- **Parent Feature:** Governance\n- **Parent Feature ID:** 68812\n- **Assigned To:** Unassigned\n- **Sync Status:** SYNCED\n",
+    "ledgerRow": {
+      "bug_id": "ART-GOV-002",
+      "rel_path": "bugs/Governance/ART-GOV-002__human-review-values-unresolved/ART-GOV-002.md",
+      "name": "Human Review Displays Unresolved Runtime Variables",
+      "severity": "HIGH",
+      "status": "OPEN",
+      "dev_update": "",
+      "retest": ""
+    }
+  }
+}

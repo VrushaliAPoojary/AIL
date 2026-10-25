@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://art.product.resolution/schemas/common.json",
+  "title": "CommonDefinitions",
+  "type": "object",
+  "definitions": {
+    "ProvenanceType": {
+      "type": "string",
+      "enum": [
+        "HUMAN_SUPPLIED",
+        "EVIDENCE_BACKED_FACT",
+        "AI_INFERENCE",
+        "AI_RECOMMENDATION",
+        "HUMAN_APPROVED",
+        "DEVELOPER_UPDATE",
+        "RETEST_VERIFICATION"
+      ]
+    },
+    "LifecyclePhase": {
+      "type": "string",
+      "enum": [
+        "CAPTURE",
+        "INVESTIGATING",
+        "CONFIRMED",
+        "RESOLVED"
+      ]
+    },
+    "CanonicalStatus": {
+      "type": "string",
+      "enum": [
+        "OPEN",
+        "FIXING",
+        "RETEST",
+        "VERIFIED",
+        "CLOSED",
+        "BLOCKED"
+      ]
+    },
+    "ClassificationType": {
+      "type": "string",
+      "enum": [
+        "BUG",
+        "PRODUCT_IMPROVEMENT",
+        "COMPETITOR_INSIGHT",
+        "PRODUCT_CONCEPT"
+      ]
+    },
+    "EvidenceStage": {
+      "type": "string",
+      "enum": [
+        "ORIGINAL",
+        "DEVELOPER_FIX",
+        "RETEST",
+        "SUPPLEMENTAL"
+      ]
+    },
+    "EvidenceType": {
+      "type": "string",
+      "enum": [
+        "SCREENSHOT",
+        "IMAGE",
+        "LOG",
+        "RAW_TEXT",
+        "HAR",
+        "VIDEO",
+        "OTHER"
+      ]
+    },
+    "Severity": {
+      "type": "string",
+      "enum": [
+        "CRITICAL",
+        "HIGH",
+        "MEDIUM",
+        "LOW",
+        "Not provided"
+      ]
+    },
+    "Priority": {
+      "type": "string",
+      "enum": [
+        "P0",
+        "P1",
+        "P2",
+        "P3",
+        "Not provided"
+      ]
+    },
+    "NullableOrNotProvidedString": {
+      "type": "string"
+    },
+    "IsoTimestamp": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

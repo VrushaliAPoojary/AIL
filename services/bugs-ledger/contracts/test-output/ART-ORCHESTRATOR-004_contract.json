@@ -1,0 +1,160 @@
+{
+  "Investigation": {
+    "id": "ART-ORCHESTRATOR-004",
+    "canonicalBugId": "ART-ORCHESTRATOR-004",
+    "slug": "orchestrator-agent-node-execution-inconsistency",
+    "lifecyclePhase": "CONFIRMED",
+    "status": "OPEN",
+    "classification": "BUG",
+    "module": "ORCHESTRATOR",
+    "severity": "HIGH",
+    "priority": "Not provided",
+    "assignee": null,
+    "originalInputId": "INP-ART-ORCHESTRATOR-004",
+    "evidenceIds": [
+      "EVD-ART-ORCHESTRATOR-004-01",
+      "EVD-ART-ORCHESTRATOR-004-02",
+      "EVD-ART-ORCHESTRATOR-004-03",
+      "EVD-ART-ORCHESTRATOR-004-04"
+    ],
+    "aiAnalysisIds": [],
+    "researchIds": [],
+    "ticketRevisionIds": [
+      "TCK-ART-ORCHESTRATOR-004-01"
+    ],
+    "activeTicketRevisionId": "TCK-ART-ORCHESTRATOR-004-01",
+    "developerUpdateIds": [],
+    "retestIds": [],
+    "auditEventIds": [
+      "AUD-ART-ORCHESTRATOR-004-01"
+    ],
+    "createdAt": "2026-09-24T00:00:00Z",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "OriginalInput": {
+    "id": "INP-ART-ORCHESTRATOR-004",
+    "investigationId": "ART-ORCHESTRATOR-004",
+    "testerDescription": "",
+    "reporter": "HUMAN_LEGACY_IMPORT",
+    "capturedAt": "2026-09-24T00:00:00Z",
+    "initialEvidenceIds": [
+      "EVD-ART-ORCHESTRATOR-004-01",
+      "EVD-ART-ORCHESTRATOR-004-02",
+      "EVD-ART-ORCHESTRATOR-004-03",
+      "EVD-ART-ORCHESTRATOR-004-04"
+    ],
+    "provenance": "HUMAN_SUPPLIED"
+  },
+  "EvidenceList": [
+    {
+      "id": "EVD-ART-ORCHESTRATOR-004-01",
+      "investigationId": "ART-ORCHESTRATOR-004",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-ORCHESTRATOR-004__orchestrator-execution-failed-conflicting-update-operators__2026-09-30__04.png",
+      "canonicalFilename": "ART-ORCHESTRATOR-004__orchestrator-execution-failed-conflicting-update-operators__2026-09-30__04.png",
+      "storagePath": "ART-Product-Validation/bugs/Orchestrator/ART-ORCHESTRATOR-004__orchestrator-agent-node-execution-inconsistency/ART-ORCHESTRATOR-004__orchestrator-execution-failed-conflicting-update-operators__2026-09-30__04.png",
+      "sha256": "667f7160c7e57f01b240db8d68e8b9bb9cf7646a36b321778596ab3f76b0be0b",
+      "mimeType": "image/png",
+      "byteSize": 171211,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    },
+    {
+      "id": "EVD-ART-ORCHESTRATOR-004-02",
+      "investigationId": "ART-ORCHESTRATOR-004",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-ORCHESTRATOR-004__orchestrator-test-empty-task-extraction-result__2026-09-30__03.png",
+      "canonicalFilename": "ART-ORCHESTRATOR-004__orchestrator-test-empty-task-extraction-result__2026-09-30__03.png",
+      "storagePath": "ART-Product-Validation/bugs/Orchestrator/ART-ORCHESTRATOR-004__orchestrator-agent-node-execution-inconsistency/ART-ORCHESTRATOR-004__orchestrator-test-empty-task-extraction-result__2026-09-30__03.png",
+      "sha256": "04e25062fd67ad676d6609083514bb6b8fea04af7905ce834454ad1b85042691",
+      "mimeType": "image/png",
+      "byteSize": 182312,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    },
+    {
+      "id": "EVD-ART-ORCHESTRATOR-004-03",
+      "investigationId": "ART-ORCHESTRATOR-004",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-ORCHESTRATOR-004__start-node-input-schema-configuration__2026-09-30__01.png",
+      "canonicalFilename": "ART-ORCHESTRATOR-004__start-node-input-schema-configuration__2026-09-30__01.png",
+      "storagePath": "ART-Product-Validation/bugs/Orchestrator/ART-ORCHESTRATOR-004__orchestrator-agent-node-execution-inconsistency/ART-ORCHESTRATOR-004__start-node-input-schema-configuration__2026-09-30__01.png",
+      "sha256": "7501eb631b57159c85d255520a355de1b02a62703757240375f4cd83c493261e",
+      "mimeType": "image/png",
+      "byteSize": 176102,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    },
+    {
+      "id": "EVD-ART-ORCHESTRATOR-004-04",
+      "investigationId": "ART-ORCHESTRATOR-004",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-ORCHESTRATOR-004__agent-node-message-mapping-configuration__2026-09-30__02.png",
+      "canonicalFilename": "ART-ORCHESTRATOR-004__agent-node-message-mapping-configuration__2026-09-30__02.png",
+      "storagePath": "ART-Product-Validation/bugs/Orchestrator/ART-ORCHESTRATOR-004__orchestrator-agent-node-execution-inconsistency/ART-ORCHESTRATOR-004__agent-node-message-mapping-configuration__2026-09-30__02.png",
+      "sha256": "ac9794f385baff2101acc7e44a062a9b3a0e83e52bacf7f1ea18f92939845107",
+      "mimeType": "image/png",
+      "byteSize": 209804,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    }
+  ],
+  "TicketArtifact": {
+    "ticketId": "TCK-ART-ORCHESTRATOR-004-01",
+    "investigationId": "ART-ORCHESTRATOR-004",
+    "revision": 1,
+    "title": "Daily Work Coordinator V2 Works Differently When Executed Through Orchestrator Agent Node",
+    "reproSteps": "Not provided",
+    "expectedResult": "Not provided",
+    "actualResult": "Not provided",
+    "businessImpact": "Not provided",
+    "recommendedSolution": "Not provided",
+    "module": "ORCHESTRATOR",
+    "environment": "Not provided",
+    "severity": "HIGH",
+    "priority": "Not provided",
+    "tags": [
+      "orchestrator"
+    ],
+    "discussion": [],
+    "provenance": "HUMAN_APPROVED",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "AuditEvent": {
+    "id": "AUD-ART-ORCHESTRATOR-004-01",
+    "investigationId": "ART-ORCHESTRATOR-004",
+    "timestamp": "2026-09-24T00:00:00Z",
+    "actor": "LEGACY_IMPORT_ADAPTER",
+    "eventType": "INVESTIGATION_CAPTURED",
+    "summary": "Imported legacy bug record ART-ORCHESTRATOR-004 from ART-Product-Validation/bugs",
+    "details": {
+      "sourceMarkdownPath": "ART-Product-Validation/bugs/Orchestrator/ART-ORCHESTRATOR-004__orchestrator-agent-node-execution-inconsistency/ART-ORCHESTRATOR-004.md",
+      "rawContentSha256": "202891862886c458a2f6dd995db4d80ce2c7ba101b0e67339dc1cddcee320644"
+    }
+  },
+  "sourceMetadata": {
+    "sourceMarkdownPath": "ART-Product-Validation/bugs/Orchestrator/ART-ORCHESTRATOR-004__orchestrator-agent-node-execution-inconsistency/ART-ORCHESTRATOR-004.md",
+    "rawMarkdownContent": "# ART-ORCHESTRATOR-004 \u2014 Daily Work Coordinator V2 Works Differently When Executed Through Orchestrator Agent Node\n\n- **Canonical Bug ID:** ART-ORCHESTRATOR-004\n- **Module:** ORCHESTRATOR\n- **Severity:** HIGH\n- **Priority:** P1\n- **Environment:** Testing (Daily Work Coordinator Orchestrator V2 / Daily Work Coordinator V2)\n- **Assignee:** Unassigned\n- **Tags:** Orchestrator, Agent-Node, Input-Mapping, Workflow-Execution, Data-Handoff, ConflictingUpdateOperators\n- **Status:** OPEN\n- **Evidence Count:** 4\n- **Azure DevOps:** SYNCED ([#68880](https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68880))\n\n---\n\n## 1. Problem\nIn Daily Work Coordinator Orchestrator V2, when the Daily Work Coordinator V2 agent is executed through an Orchestrator Agent node using mapped input (`message = ${start.message}`), the linked Agent fails to extract or recognize task information from the mapped message string.\n\nWhile direct execution of Daily Work Coordinator V2 in Agent Test accurately parses task entities (task name, status, priority, deadline) from natural language inputs and returns populated structured data, executing the exact same agent through the Orchestrator results in the Agent returning an empty task array (`tasks: []`) accompanied by a clarification message (`response: No task information was provided in the message.` or `No task updates were provided.`). \n\nFurthermore, Orchestrator test executions intermittently fail completely with a workflow execution error: `(ConflictingUpdateOperators) Updating the path 'version' would create a conflict at 'version'`. This indicates an inconsistency between direct Agent execution and Orchestrator-mediated Agent execution, likely stemming from input mapping handoff, linked runtime resolution, or execution state persistence conflicts.\n\n---\n\n## 2. Observed Behavior\n- **Configuration Context:**\n  - In `Configure Start`, the Start node input schema is defined with a required `message` string (`additionalProperties: false`, `type: object`).\n  - In `Configure Agent`, the linked Agent is Daily Work Coordinator V2, with message mapping set to:\n    ```json\n    {\n      \"message\": \"${start.message}\"\n    }\n    ```\n- **Direct Agent Test (Working):**\n  - When tested directly in Agent Lab, Daily Work Coordinator V2 identifies task information from natural-language messages and returns complete structured task objects.\n- **Orchestrator Execution (Failing to Extract Tasks):**\n  - Tested with:\n    > \"Add a task called ORCHESTRATOR-MAPPING-TEST-947. Set priority to HIGH and deadline to 6 PM.\"\n    \n    The Start node receives the message, but the linked Agent outputs:\n    ```json\n    {\n      \"intent\": \"parse_daily_work_update\",\n      \"needs_clarification\": true,\n      \"response\": \"No task information was provided in the message.\",\n      \"tasks\": []\n    }\n    ```\n  - Tested with:\n    > \"I need to finish the Agent X Play Store screenshots by 4 PM. This is high priority.\"\n    \n    The Agent outputs `tasks: []` and states no task updates were provided.\n  - Tested with:\n    > \"Add a task called Prepare customer presentation.\"\n    \n    The Agent outputs `tasks: []` and `response: No task updates were provided.`.\n- **Workflow Execution Failure:**\n  - In Thread `6b17226c-aa6e-4a34-a470-856bc7b27aa1`, Orchestrator Test halts with error badge `Could not complete the request`:\n    - Error: `ORCHESTRATOR ERROR: WORKFLOW_EXECUTION_FAILED`\n    - Exception: `(ConflictingUpdateOperators) Updating the path 'version' would create a conflict at 'version'`\n    - Metadata: `agent_id: 6ab2063392bd477cd1a3139c`, `ref_id: 6abce73b73ba24ec923cd225_orch_com_6ab119ae92bd477cd1a312a1_1`\n\n---\n\n## 3. Reproduction\n1. Open **Daily Work Coordinator Orchestrator V2** in Orchestrator Builder.\n2. Verify that the **Start** node input schema specifies a required `message` field of type `string` with `additionalProperties: false`.\n3. Verify that the **Agent** node is linked to **Daily Work Coordinator V2** with message mapping `message = \"${start.message}\"`.\n4. Open **Orchestrator Test**.\n5. Submit a natural-language task prompt into the Test Input form:\n   > \"Add a task called ORCHESTRATOR-MAPPING-TEST-947. Set priority to HIGH and deadline to 6 PM.\"\n6. Run the workflow and inspect the resulting output from the Agent node.\n7. Observe that the Agent returns `tasks: []` and claims no task information was provided.\n8. Submit alternative task creation prompts (e.g. \"I need to finish the Agent X Play Store screenshots by 4 PM. This is high priority.\") and observe identical behavior.\n9. Observe that certain execution runs encounter `WORKFLOW_EXECUTION_FAILED` with `(ConflictingUpdateOperators) Updating the path 'version' would create a conflict at 'version'`.\n\n---\n\n## 4. Expected Behavior\n- The Orchestrator Agent node must evaluate the `${start.message}` mapping and pass the exact runtime string to the linked Agent.\n- Given equivalent input, the linked Agent's execution behavior, intent classification, and structured task extraction must be identical whether executed directly in Agent Lab or via an Orchestrator Agent node.\n- If input mapping or handoff fails, ART should surface an explicit mapping error rather than silently invoking the Agent with an empty or unresolved payload.\n- Workflow execution state persistence must execute cleanly without database update operator conflicts on `version`.\n\n---\n\n## 5. Business Impact\n- **Broken End-to-End Orchestration:** Orchestrators cannot reliably invoke agents to extract and track tasks, breaking the core workflow automation promise of the ART platform.\n- **Silent Failures:** Workflows proceed along success branches while emitting empty data (`tasks: []`), causing downstream nodes (e.g. condition nodes, notifications, sheet updates) to process empty payloads.\n- **Workflow Halts:** Database conflict errors (`ConflictingUpdateOperators`) crash orchestrator executions, causing failed runs and broken end-user integrations.\n\n---\n\n## 6. User Experience\n- Builders who successfully build and test an Agent in Agent Lab experience unexpected failures when connecting the Agent to an Orchestrator workflow.\n- The UI displays green/successful runs even though the Agent failed to extract any tasks, obscuring the root cause and complicating workflow debugging.\n\n---\n\n## 7. Investigation Guidance\nInvestigate the Orchestrator-to-Agent execution and data handoff pipeline:\n- **Expression Evaluation & Handoff:** Trace how `${start.message}` is resolved during node execution. Verify the actual payload delivered to the linked agent runtime service. Check if the string is passed under the expected parameter name or if an empty string/null is received by the agent prompt.\n- **Agent Identity & Version Resolution:** Check which agent definition is loaded by `agent_id: 6ab2063392bd477cd1a3139c`. Verify whether the Orchestrator Agent node points to the latest configured version of Daily Work Coordinator V2 or a stale/unconfigured draft.\n- **Database Update Operator Conflict:** Investigate the persistence routine saving workflow execution state:\n  - Error: `(ConflictingUpdateOperators) Updating the path 'version' would create a conflict at 'version'`\n  - Check the MongoDB/document store update query for concurrent or conflicting operators (e.g. mixing `$set: { version: ... }` and `$inc: { version: 1 }` in the same update document).\n\n---\n\n## 8. Fix Requirement\nThe Orchestrator Agent node execution pipeline must correctly resolve input mappings from upstream nodes, provide the complete runtime input to the linked agent, and ensure workflow execution records are persisted without document update conflicts.\n\n---\n\n## 9. Recommended Solution\n1. **Fix Parameter Mapping:** Ensure the Orchestrator runtime expression evaluator properly substitutes `${start.message}` with the runtime input string and formats the Agent execution request payload matching the Agent's expected input schema.\n2. **Align Agent Runtime Configuration:** Verify that the linked Agent node loads the active, configured Agent graph and system prompts rather than an incomplete stub.\n3. **Resolve Database Update Conflict:** Refactor the workflow execution state update query to use a single update operator on the `version` field (e.g., standardizing on `$inc: { version: 1 }` or `$set: { version: new_version }`, never both).\n\n---\n\n## 10. Minimum Working Fix\nEnsure the mapped `${start.message}` string is correctly passed to the Agent's prompt execution payload, and remove the redundant or conflicting `version` operator in the workflow execution update query.\n\n---\n\n## 11. Acceptance Criteria\n- [ ] Mapped input strings (`${start.message}`) passed to an Agent node in Orchestrator extract task information consistently with direct Agent execution.\n- [ ] When valid task instructions are submitted in Orchestrator Test, the Agent node returns a populated `tasks` array.\n- [ ] Orchestrator workflow executions complete without `ConflictingUpdateOperators` errors on the `version` path.\n- [ ] If mapping resolution fails, an explicit execution/mapping error is raised rather than returning a silent empty extraction.\n\n---\n\n## 12. Environment\n- **Platform:** ART Orchestrator / Agent Lab\n- **Component:** Daily Work Coordinator Orchestrator V2 / Daily Work Coordinator V2\n- **Agent ID:** `6ab2063392bd477cd1a3139c`\n- **Linked Schema:** `custom_6abb997e92bd477cd1a327b8`\n- **Execution Thread:** `6b17226c-aa6e-4a34-a470-856bc7b27aa1`\n- **Environment:** Testing (InvestigationLab, Professional Plan)\n\n---\n\n## 13. Severity\n**HIGH** \u2014 Breaks Orchestrator-to-Agent integration and causes execution engine crashes.\n\n---\n\n## 14. Priority\n**P1** \u2014 Core product defect blocking end-to-end multi-agent orchestration.\n\n---\n\n## 15. Tags\n- `Orchestrator`\n- `Agent-Node`\n- `Input-Mapping`\n- `Workflow-Execution`\n- `Data-Handoff`\n- `ConflictingUpdateOperators`\n\n---\n\n## 16. Assignee\n**Unassigned**\n\n---\n\n## 17. Evidence\n\n| File | Type | Description | SHA256 Hash | Byte Size |\n| :--- | :--- | :--- | :--- | :--- |\n| [ART-ORCHESTRATOR-004__start-node-input-schema-configuration__2026-09-30__01.png](file:///home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-ORCHESTRATOR-004__orchestrator-agent-node-execution-inconsistency/ART-ORCHESTRATOR-004__start-node-input-schema-configuration__2026-09-30__01.png) | Screenshot | Configure Start modal in Daily Work Coordinator Orchestrator V2 showing Reactive activation and Start input schema with required property 'message' of type 'string' (additionalProperties: false). | `7501eb631b57159c85d255520a355de1b02a62703757240375f4cd83c493261e` | 176102 bytes |\n| [ART-ORCHESTRATOR-004__agent-node-message-mapping-configuration__2026-09-30__02.png](file:///home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-ORCHESTRATOR-004__orchestrator-agent-node-execution-inconsistency/ART-ORCHESTRATOR-004__agent-node-message-mapping-configuration__2026-09-30__02.png) | Screenshot | Configure Agent modal in Daily Work Coordinator Orchestrator V2 showing Agent message mapping configured as '{\"message\": \"${start.message}\"}'. | `ac9794f385baff2101acc7e44a062a9b3a0e83e52bacf7f1ea18f92939845107` | 209804 bytes |\n| [ART-ORCHESTRATOR-004__orchestrator-test-empty-task-extraction-result__2026-09-30__03.png](file:///home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-ORCHESTRATOR-004__orchestrator-agent-node-execution-inconsistency/ART-ORCHESTRATOR-004__orchestrator-test-empty-task-extraction-result__2026-09-30__03.png) | Screenshot | Orchestrator Test execution session showing that despite valid task input messages in Test Input, the Agent node returns empty tasks array and response 'No task updates were provided.'. | `04e25062fd67ad676d6609083514bb6b8fea04af7905ce834454ad1b85042691` | 182312 bytes |\n| [ART-ORCHESTRATOR-004__orchestrator-execution-failed-conflicting-update-operators__2026-09-30__04.png](file:///home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-ORCHESTRATOR-004__orchestrator-agent-node-execution-inconsistency/ART-ORCHESTRATOR-004__orchestrator-execution-failed-conflicting-update-operators__2026-09-30__04.png) | Screenshot | Orchestrator Test error modal showing WORKFLOW_EXECUTION_FAILED with error '(ConflictingUpdateOperators) Updating the path 'version' would create a conflict at 'version''. | `667f7160c7e57f01b240db8d68e8b9bb9cf7646a36b321778596ab3f76b0be0b` | 171211 bytes |\n\n### Evidence Visual Gallery\n\n````carousel\n![ART-ORCHESTRATOR-004__start-node-input-schema-configuration__2026-09-30__01.png](/home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-ORCHESTRATOR-004__orchestrator-agent-node-execution-inconsistency/ART-ORCHESTRATOR-004__start-node-input-schema-configuration__2026-09-30__01.png)\n*Configure Start modal in Daily Work Coordinator Orchestrator V2 showing Reactive activation and Start input schema with required property 'message' of type 'string' (additionalProperties: false).*\n<!-- slide -->\n![ART-ORCHESTRATOR-004__agent-node-message-mapping-configuration__2026-09-30__02.png](/home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-ORCHESTRATOR-004__orchestrator-agent-node-execution-inconsistency/ART-ORCHESTRATOR-004__agent-node-message-mapping-configuration__2026-09-30__02.png)\n*Configure Agent modal in Daily Work Coordinator Orchestrator V2 showing Agent message mapping configured as '{\"message\": \"${start.message}\"}'.*\n<!-- slide -->\n![ART-ORCHESTRATOR-004__orchestrator-test-empty-task-extraction-result__2026-09-30__03.png](/home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-ORCHESTRATOR-004__orchestrator-agent-node-execution-inconsistency/ART-ORCHESTRATOR-004__orchestrator-test-empty-task-extraction-result__2026-09-30__03.png)\n*Orchestrator Test execution session showing that despite valid task input messages in Test Input, the Agent node returns empty tasks array and response 'No task updates were provided.'.*\n<!-- slide -->\n![ART-ORCHESTRATOR-004__orchestrator-execution-failed-conflicting-update-operators__2026-09-30__04.png](/home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-ORCHESTRATOR-004__orchestrator-agent-node-execution-inconsistency/ART-ORCHESTRATOR-004__orchestrator-execution-failed-conflicting-update-operators__2026-09-30__04.png)\n*Orchestrator Test error modal showing WORKFLOW_EXECUTION_FAILED with error '(ConflictingUpdateOperators) Updating the path 'version' would create a conflict at 'version''.*\n````\n\n---\n\n## 18. Discussion\n- **Reporter Note:** Observed in Daily Work Coordinator Orchestrator V2 linked to Daily Work Coordinator V2. While direct agent testing parses task information reliably, running through the Orchestrator Agent node returns `tasks: []` and claims no task updates were provided. Certain runs crash with `WORKFLOW_EXECUTION_FAILED: (ConflictingUpdateOperators) Updating the path 'version' would create a conflict at 'version'`.\n- **Intake Validation:** All 4 screenshots preserved with cryptographic checksums and verified byte sizes. Zero Azure DevOps mutations performed during intake.\n\n---\n\n## 19. Azure DevOps\n- **Work Item ID:** 68880\n- **URL:** [https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68880](https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68880)\n- **Parent Feature:** Orchestrator\n- **Parent Feature ID:** 68806\n- **Assigned To:** Unassigned\n- **Sync Status:** SYNCED\n- **Note:** Synchronized via Harness 02 V1 to Azure DevOps.\n",
+    "ledgerRow": {
+      "bug_id": "ART-ORCHESTRATOR-004",
+      "rel_path": "bugs/Orchestrator/ART-ORCHESTRATOR-004__orchestrator-agent-node-execution-inconsistency/ART-ORCHESTRATOR-004.md",
+      "name": "Daily Work Coordinator V2 Works Differently When Executed Through Orchestrator Agent Node",
+      "severity": "HIGH",
+      "status": "OPEN",
+      "dev_update": "Pending.",
+      "retest": "Pending."
+    }
+  }
+}

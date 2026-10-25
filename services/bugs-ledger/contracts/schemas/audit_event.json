@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://art.product.resolution/schemas/audit_event.json",
+  "title": "AuditEvent",
+  "description": "Append-only audit event for lifecycle mutation tracking",
+  "type": "object",
+  "required": [
+    "id",
+    "investigationId",
+    "timestamp",
+    "actor",
+    "eventType",
+    "summary"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "investigationId": {
+      "type": "string"
+    },
+    "timestamp": {
+      "$ref": "common.json#/definitions/IsoTimestamp"
+    },
+    "actor": {
+      "type": "string"
+    },
+    "eventType": {
+      "type": "string",
+      "enum": [
+        "INVESTIGATION_CAPTURED",
+        "EVIDENCE_ADDED",
+        "AI_ANALYSIS_COMPLETED",
+        "RESEARCH_COMPLETED",
+        "TICKET_REVISED",
+        "TICKET_CONFIRMED",
+        "ASSIGNED",
+        "STATUS_TRANSITIONED",
+        "FIX_SUBMITTED",
+        "RETEST_EXECUTED",
+        "VERIFIED",
+        "LEGACY_SYNCED"
+      ]
+    },
+    "summary": {
+      "type": "string"
+    },
+    "details": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

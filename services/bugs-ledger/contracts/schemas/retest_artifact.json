@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://art.product.resolution/schemas/retest_artifact.json",
+  "title": "RetestArtifact",
+  "description": "Retest execution record separating AI comparison recommendation from human sign-off",
+  "type": "object",
+  "required": [
+    "id",
+    "investigationId",
+    "retestEvidenceIds",
+    "humanConfirmation",
+    "executedAt",
+    "provenance"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "investigationId": {
+      "type": "string"
+    },
+    "retestEvidenceIds": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "description": "Evidence appropriate to the bug (screenshot, log, HAR, etc.)"
+    },
+    "aiComparisonRecommendation": {
+      "type": "object",
+      "required": ["recommendation", "notes"],
+      "properties": {
+        "recommendation": {
+          "type": "string",
+          "enum": ["PASSED", "FAILED", "INCONCLUSIVE"]
+        },
+        "notes": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "humanConfirmation": {
+      "type": "object",
+      "required": ["confirmed", "verdict", "confirmedBy", "notes"],
+      "properties": {
+        "confirmed": { "type": "boolean" },
+        "verdict": {
+          "type": "string",
+          "enum": ["PASSED", "FAILED", "INCONCLUSIVE", "VERIFIED", "RETURNED_TO_FIXING", "BLOCKED"]
+        },
+        "confirmedBy": { "type": "string" },
+        "notes": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "executedAt": {
+      "$ref": "common.json#/definitions/IsoTimestamp"
+    },
+    "provenance": {
+      "$ref": "common.json#/definitions/ProvenanceType",
+      "const": "RETEST_VERIFICATION"
+    }
+  },
+  "additionalProperties": false
+}

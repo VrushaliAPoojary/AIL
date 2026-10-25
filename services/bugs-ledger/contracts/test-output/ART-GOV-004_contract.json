@@ -1,0 +1,106 @@
+{
+  "Investigation": {
+    "id": "ART-GOV-004",
+    "canonicalBugId": "ART-GOV-004",
+    "slug": "governance-action-creation-fails-for-connected-agent-tool",
+    "lifecyclePhase": "CONFIRMED",
+    "status": "OPEN",
+    "classification": "BUG",
+    "module": "GOV",
+    "severity": "HIGH",
+    "priority": "Not provided",
+    "assignee": null,
+    "originalInputId": "INP-ART-GOV-004",
+    "evidenceIds": [
+      "EVD-ART-GOV-004-01"
+    ],
+    "aiAnalysisIds": [],
+    "researchIds": [],
+    "ticketRevisionIds": [
+      "TCK-ART-GOV-004-01"
+    ],
+    "activeTicketRevisionId": "TCK-ART-GOV-004-01",
+    "developerUpdateIds": [],
+    "retestIds": [],
+    "auditEventIds": [
+      "AUD-ART-GOV-004-01"
+    ],
+    "createdAt": "2026-09-24T00:00:00Z",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "OriginalInput": {
+    "id": "INP-ART-GOV-004",
+    "investigationId": "ART-GOV-004",
+    "testerDescription": "",
+    "reporter": "HUMAN_LEGACY_IMPORT",
+    "capturedAt": "2026-09-24T00:00:00Z",
+    "initialEvidenceIds": [
+      "EVD-ART-GOV-004-01"
+    ],
+    "provenance": "HUMAN_SUPPLIED"
+  },
+  "EvidenceList": [
+    {
+      "id": "EVD-ART-GOV-004-01",
+      "investigationId": "ART-GOV-004",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-GOV-004__action-binding-not-connected-error__2026-09-30__01.png",
+      "canonicalFilename": "ART-GOV-004__action-binding-not-connected-error__2026-09-30__01.png",
+      "storagePath": "ART-Product-Validation/bugs/Governance/ART-GOV-004__governance-action-creation-fails-for-connected-agent-tool/ART-GOV-004__action-binding-not-connected-error__2026-09-30__01.png",
+      "sha256": "abb5903e9ced2c492ffc1639fe541edb4698ed014ec20255a30508952602f9fd",
+      "mimeType": "image/png",
+      "byteSize": 127789,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    }
+  ],
+  "TicketArtifact": {
+    "ticketId": "TCK-ART-GOV-004-01",
+    "investigationId": "ART-GOV-004",
+    "revision": 1,
+    "title": "Governance Action Creation Fails Even When Required Tool Is Connected to Agent Workflow",
+    "reproSteps": "Not provided",
+    "expectedResult": "Not provided",
+    "actualResult": "Not provided",
+    "businessImpact": "Not provided",
+    "recommendedSolution": "Not provided",
+    "module": "GOV",
+    "environment": "Not provided",
+    "severity": "HIGH",
+    "priority": "Not provided",
+    "tags": [
+      "gov"
+    ],
+    "discussion": [],
+    "provenance": "HUMAN_APPROVED",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "AuditEvent": {
+    "id": "AUD-ART-GOV-004-01",
+    "investigationId": "ART-GOV-004",
+    "timestamp": "2026-09-24T00:00:00Z",
+    "actor": "LEGACY_IMPORT_ADAPTER",
+    "eventType": "INVESTIGATION_CAPTURED",
+    "summary": "Imported legacy bug record ART-GOV-004 from ART-Product-Validation/bugs",
+    "details": {
+      "sourceMarkdownPath": "ART-Product-Validation/bugs/Governance/ART-GOV-004__governance-action-creation-fails-for-connected-agent-tool/ART-GOV-004.md",
+      "rawContentSha256": "46dab455b8af879ca325a599fa6bce6f7d1b78d3c89b998b8a3bbd67597d369a"
+    }
+  },
+  "sourceMetadata": {
+    "sourceMarkdownPath": "ART-Product-Validation/bugs/Governance/ART-GOV-004__governance-action-creation-fails-for-connected-agent-tool/ART-GOV-004.md",
+    "rawMarkdownContent": "# ART-GOV-004 \u2014 Governance Action Creation Fails Even When Required Tool Is Connected to Agent Workflow\n\n- **Canonical Bug ID:** ART-GOV-004\n- **Module:** GOV\n- **Severity:** HIGH\n- **Priority:** P1\n- **Environment:** Testing (Healthcare P2P Exception Agent / Governance Action Registry)\n- **Assignee:** Unassigned\n- **Tags:** Governance, Action-Registry, Tool-Action, Tool-Binding, Agent-Workflow, ERPNext-Tool, Policy-Inputs\n- **Status:** OPEN\n- **Evidence Count:** 1\n- **Azure DevOps:** SYNCED ([#68889](https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68889))\n\n---\n\n## 1. Problem\nIn **Agent \u2192 Governance \u2192 Action Registry**, an action cannot be created for a Tool that is already connected and available in the Agent workflow (e.g. Healthcare P2P Exception Agent with `erpnext_art__erpnext_get_purchase_invoice`).\n\nWhile creating the action through the **New Action** wizard, ART correctly detects the selected Tool capability and inherits its required input property (`invoice_name \u00b7 string \u00b7 required`) in Step 4 (Policy inputs). However, when the user clicks **CREATE ACTION**, the platform halts action creation with a blocking validation error:\n```\naction binding not connected to this agent's workflow: tool 'erpnext_art__erpnext_get_purchase_invoice' is not connected to this agent's workflow\n```\nBecause the ERPNext Tool is already connected to the Agent workflow, ART falsely identifies the Tool binding as disconnected, preventing builders from registering governed Tool Actions.\n\n---\n\n## 2. Observed Behavior\n- **Input Property Inheritance (Working):**\n  - In the **New Action** modal under Step 4 of 4 (`Policy inputs`), ART correctly populates `Inherited inputs`:\n    ```\n    invoice_name \u00b7 string \u00b7 required\n    ```\n  - This demonstrates that the wizard successfully inspected the Tool schema and identified its input contract.\n- **Action Creation Rejection (Failing):**\n  - Clicking **CREATE ACTION** triggers an error toast banner at the top of the viewport and an inline alert above `Inherited inputs`:\n    ```\n    action binding not connected to this agent's workflow: tool 'erpnext_art__erpnext_get_purchase_invoice' is not connected to this agent's workflow\n    ```\n  - Action registration is aborted, and the modal remains open in an un-saveable state.\n- **UI Contradiction:**\n  - The Governance wizard simultaneously recognizes the tool's input contract while declaring that the tool is not connected to the agent.\n\n---\n\n## 3. Reproduction\n1. Open an Agent configured with an active connected Tool (e.g. **Healthcare P2P Exception Agent** with ERPNext Tool `erpnext_art__erpnext_get_purchase_invoice`).\n2. Navigate to the **GOVERNANCE** tab and open **Action Registry**.\n3. Click **New Action** to launch the action creation wizard.\n4. Complete **Step 1 (Basics)**, **Step 2 (Capability)** by selecting the connected Tool, and **Step 3 (Limits)**.\n5. In **Step 4 of 4 (Policy inputs)**, verify that `invoice_name \u00b7 string \u00b7 required` is visible under `Inherited inputs`.\n6. Click **CREATE ACTION**.\n7. Observe that action creation is rejected with error: `action binding not connected to this agent\u2019s workflow: tool 'erpnext_art__erpnext_get_purchase_invoice' is not connected to this agent\u2019s workflow`.\n\n---\n\n## 4. Expected Behavior\n- When a Tool is connected to an Agent workflow, Governance Action Registry must validate that Tool as an active capability and successfully create the Action record.\n- Required inputs defined on the Tool schema must be bound to the Governance Action without false disconnection rejections.\n- If a Tool is genuinely missing from an Agent's configuration, validation should fail with an actionable description of which specific configuration or binding is missing.\n\n---\n\n## 5. Business Impact\n- **Blocks Policy Enforcement:** Organizations cannot apply governance policies, approval rules, or human review gates to Tool Actions, forcing either ungoverned execution or stalling deployment of critical business workflows (such as purchase invoice approvals in P2P).\n- **Broken Capability Handoff:** The platform's integrated workflow-to-governance architecture is severed when Governance fails to recognize tools configured in the agent workflow.\n\n---\n\n## 6. User Experience\n- Builders experience a confusing contradiction where the UI successfully retrieves and renders the tool's input schema in the form, but then rejects saving on the claim that the tool is not connected.\n- No explanation or resolution path is provided to clarify how to resolve the alleged disconnection.\n\n---\n\n## 7. Investigation Guidance\nInspect the Governance Action Registry creation endpoint and Tool binding validation logic:\n- **Identifier Matching:** Compare the tool identifier format in the Agent capability store (e.g. fully qualified `erpnext_art__erpnext_get_purchase_invoice` vs. provider-prefixed vs. unscoped name) with the identifier passed in the Action creation request payload.\n- **Node vs. Capability Resolution:** Check whether Governance action validation checks the Agent's capability list or if it erroneously expects a specific canvas node type (e.g. requiring a literal `Tool Connector` node in the visual graph when tools may be bound via agent configuration/capabilities).\n- **Workspace/Environment Scoping:** Verify whether the validation routine filters tools by workspace ID, agent ID, or environment, and if an ID mismatch causes valid tools to be excluded from the lookup set.\n\n---\n\n## 8. Fix Requirement\nThe Governance Action creation validation service must accurately resolve connected Agent tools against the Agent's active capability registry, allowing Action Registry entries to be saved for any tool available to the Agent.\n\n---\n\n## 9. Recommended Solution\n1. **Normalize Tool Identifiers:** Ensure the tool identifier format used in Governance matches the canonical identifier stored in the Agent's capability registry.\n2. **Capability-Based Validation:** Validate tool bindings against the Agent's configured capabilities rather than relying on strict visual canvas node presence.\n3. **Consistent Scope Check:** Ensure workspace and agent scoping during action validation correctly reflects the active agent's runtime environment.\n4. **Actionable Diagnostics:** If a tool binding fails validation, log and display both the requested tool identifier and the list of available agent capabilities.\n\n---\n\n## 10. Minimum Working Fix\nUpdate the Governance Action creation backend validator to check `tool_id in agent.get_connected_tools()`, ensuring consistent string normalization so that `erpnext_art__erpnext_get_purchase_invoice` resolves successfully.\n\n---\n\n## 11. Acceptance Criteria\n- [ ] A Tool connected and available to an Agent workflow is recognized by Governance as a valid action capability.\n- [ ] An Action Registry entry can be successfully created and saved for the connected Tool.\n- [ ] Required Tool inputs (e.g. `invoice_name`) continue to be inherited into the action contract.\n- [ ] Action creation does not falsely require a specific canvas node when the tool is already configured in the agent.\n- [ ] Genuinely disconnected tools continue to be rejected with appropriate diagnostic errors.\n- [ ] Unrelated Governance action types (Serverless Functions, Agent actions) remain unaffected.\n\n---\n\n## 12. Environment\n- **Platform:** ART Agent Lab / Governance\n- **Agent:** Healthcare P2P Exception Agent\n- **Component:** Governance \u2192 Action Registry (New Action wizard)\n- **Tool:** `erpnext_art__erpnext_get_purchase_invoice`\n- **Environment:** Testing (InvestigationLab, Professional Plan)\n\n---\n\n## 13. Severity\n**HIGH** \u2014 Blocks Governance Action creation and policy enforcement for connected Agent tools.\n\n---\n\n## 14. Priority\n**P1** \u2014 Core Governance capability defect preventing policy-controlled Tool execution.\n\n---\n\n## 15. Tags\n- `Governance`\n- `Action-Registry`\n- `Tool-Action`\n- `Tool-Binding`\n- `Agent-Workflow`\n- `ERPNext-Tool`\n- `Policy-Inputs`\n\n---\n\n## 16. Assignee\n**Unassigned**\n\n---\n\n## 17. Evidence\n\n| File | Type | Description | SHA256 Hash | Byte Size |\n| :--- | :--- | :--- | :--- | :--- |\n| [ART-GOV-004__action-binding-not-connected-error__2026-09-30__01.png](file:///home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-GOV-004__governance-action-creation-fails-for-connected-agent-tool/ART-GOV-004__action-binding-not-connected-error__2026-09-30__01.png) | Screenshot | New Action creation modal in Healthcare P2P Exception Agent (Governance -> Action Registry) displaying error 'action binding not connected to this agent\\'s workflow: tool erpnext_art__erpnext_get_purchase_invoice is not connected to this agent\\'s workflow' despite inheriting required input invoice_name. | `abb5903e9ced2c492ffc1639fe541edb4698ed014ec20255a30508952602f9fd` | 127789 bytes |\n\n### Evidence Visual Gallery\n\n````carousel\n![ART-GOV-004__action-binding-not-connected-error__2026-09-30__01.png](/home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-GOV-004__governance-action-creation-fails-for-connected-agent-tool/ART-GOV-004__action-binding-not-connected-error__2026-09-30__01.png)\n*New Action creation modal in Healthcare P2P Exception Agent (Governance -> Action Registry) displaying error 'action binding not connected to this agent\\'s workflow: tool erpnext_art__erpnext_get_purchase_invoice is not connected to this agent\\'s workflow' despite inheriting required input invoice_name.*\n````\n\n---\n\n## 18. Discussion\n- **Reporter Note:** In Healthcare P2P Exception Agent (Governance -> Action Registry), attempting to create a Governance Action for the connected ERPNext Tool ('erpnext_art__erpnext_get_purchase_invoice') fails with error 'action binding not connected to this agent\u2019s workflow: tool erpnext_art__erpnext_get_purchase_invoice is not connected to this agent\u2019s workflow'. This occurs despite Step 4 (Policy inputs) correctly inheriting the required input 'invoice_name \u00b7 string \u00b7 required', demonstrating that ART sees the tool schema but rejects action creation due to a broken binding check.\n- **Intake Validation:** Screenshot preserved with cryptographic SHA256 checksum and verified byte size. Zero Azure DevOps mutations performed during intake.\n\n---\n\n## 19. Azure DevOps\n- **Work Item ID:** 68889\n- **URL:** [https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68889](https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68889)\n- **Parent Feature:** Governance\n- **Parent Feature ID:** 68812\n- **Assigned To:** Unassigned\n- **Sync Status:** SYNCED\n- **Note:** Synchronized via Harness 02 V1 to Azure DevOps.\n",
+    "ledgerRow": {
+      "bug_id": "ART-GOV-004",
+      "rel_path": "bugs/Governance/ART-GOV-004__governance-action-creation-fails-for-connected-agent-tool/ART-GOV-004.md",
+      "name": "Governance Action Creation Fails Even When Required Tool Is Connected to Agent Workflow",
+      "severity": "HIGH",
+      "status": "OPEN",
+      "dev_update": "Pending.",
+      "retest": "Pending."
+    }
+  }
+}

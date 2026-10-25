@@ -1,0 +1,58 @@
+{
+  "unnikkannan": {
+    "alias": "unnikkannan",
+    "display_name": "Unnikkannan Adiyodi",
+    "azure_identity": "Unnikkannan.adiyodi@bixbytessolutions.com",
+    "descriptor": "aad.ODVkZGRkZTYtYjE3Yi03MTczLThmNDktMWZiZGY5MTMxZTEw",
+    "verified": true
+  },
+  "manjunatha": {
+    "alias": "manjunatha",
+    "display_name": "Manjunatha Shetty",
+    "azure_identity": "manjunatha.shetty@bixbytessolutions.com",
+    "descriptor": "aad.YWRlNDQzYTQtNGNhNS03NDUyLThlNjEtMjU5YzcyODFlMTY3",
+    "verified": true
+  },
+  "anusha": {
+    "alias": "anusha",
+    "display_name": "Anusha Ganesh Hegde",
+    "azure_identity": "anusha.hegde@bixbytessolutions.com",
+    "descriptor": "aad.MDdjNmJlZGQtOTU0NS03NjQ0LWI3NTEtYTE0NjZjZmZlZTlm",
+    "verified": true
+  },
+  "prajwal": {
+    "alias": "prajwal",
+    "display_name": "Prajwal Sanjeeva Bangera",
+    "azure_identity": "prajwal.bangera@bixbytessolutions.com",
+    "descriptor": "aad.OWI3YjQ0MmQtOTk4OS03MDUzLWJmOWMtYjExYWEwNDIzOTY2",
+    "verified": true
+  },
+  "yuresh": {
+    "alias": "yuresh",
+    "display_name": "Yuresh Kumar K",
+    "azure_identity": "yuresh.kumar@bixbytessolutions.com",
+    "descriptor": "aad.ZGI0YjdmOTgtMTk3Ny03MWM0LWE4YWMtOTk3NTQ0ZmY0MDhj",
+    "verified": true
+  },
+  "likhith": {
+    "alias": "likhith",
+    "display_name": "Likhith Kumar",
+    "azure_identity": "likhith.kumar@bixbytessolutions.com",
+    "descriptor": "aad.M2VmMzZmYTQtN2QyMy03MGU2LTgxMWItNTQ5NGU3NzJiYWIx",
+    "verified": true
+  },
+  "karthik": {
+    "alias": "karthik",
+    "display_name": "Karthik Suvarna",
+    "azure_identity": "karthik.suvarna@bixbytessolutions.com",
+    "descriptor": "aad.MTA0M2UwMWEtMmQxNi03ZjY2LWJjNGUtNGEzMmU1Y2Q0Yjhk",
+    "verified": true
+  },
+  "ashish": {
+    "alias": "ashish",
+    "display_name": "Ashish Aman Dmello",
+    "azure_identity": "ashish.dmello@bixbytessolutions.com",
+    "descriptor": "aad.YjViMTNjNGQtMDdkMy03NjVjLWFjMzgtMzBlMDBkNTQ2ZGVm",
+    "verified": true
+  }
+}

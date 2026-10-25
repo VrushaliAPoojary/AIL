@@ -1,0 +1,124 @@
+{
+  "Investigation": {
+    "id": "ART-GOV-006",
+    "canonicalBugId": "ART-GOV-006",
+    "slug": "fact-library-runtime-usage-nondeterministic-unverifiable",
+    "lifecyclePhase": "CONFIRMED",
+    "status": "OPEN",
+    "classification": "BUG",
+    "module": "GOV",
+    "severity": "HIGH",
+    "priority": "Not provided",
+    "assignee": null,
+    "originalInputId": "INP-ART-GOV-006",
+    "evidenceIds": [
+      "EVD-ART-GOV-006-01",
+      "EVD-ART-GOV-006-02"
+    ],
+    "aiAnalysisIds": [],
+    "researchIds": [],
+    "ticketRevisionIds": [
+      "TCK-ART-GOV-006-01"
+    ],
+    "activeTicketRevisionId": "TCK-ART-GOV-006-01",
+    "developerUpdateIds": [],
+    "retestIds": [],
+    "auditEventIds": [
+      "AUD-ART-GOV-006-01"
+    ],
+    "createdAt": "2026-09-24T00:00:00Z",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "OriginalInput": {
+    "id": "INP-ART-GOV-006",
+    "investigationId": "ART-GOV-006",
+    "testerDescription": "",
+    "reporter": "HUMAN_LEGACY_IMPORT",
+    "capturedAt": "2026-09-24T00:00:00Z",
+    "initialEvidenceIds": [
+      "EVD-ART-GOV-006-01",
+      "EVD-ART-GOV-006-02"
+    ],
+    "provenance": "HUMAN_SUPPLIED"
+  },
+  "EvidenceList": [
+    {
+      "id": "EVD-ART-GOV-006-01",
+      "investigationId": "ART-GOV-006",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-GOV-006__fact-library-senior-procurement-threshold-inactive__2026-10-05__02.png",
+      "canonicalFilename": "ART-GOV-006__fact-library-senior-procurement-threshold-inactive__2026-10-05__02.png",
+      "storagePath": "ART-Product-Validation/bugs/Governance/ART-GOV-006__fact-library-runtime-usage-nondeterministic-unverifiable/ART-GOV-006__fact-library-senior-procurement-threshold-inactive__2026-10-05__02.png",
+      "sha256": "ec4ebb8b0f529e514aa031fc9f3d33c17aa34942c0724e6ae30b8300710f14ca",
+      "mimeType": "image/png",
+      "byteSize": 125195,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    },
+    {
+      "id": "EVD-ART-GOV-006-02",
+      "investigationId": "ART-GOV-006",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-GOV-006__fact-library-senior-procurement-threshold-active__2026-10-05__01.png",
+      "canonicalFilename": "ART-GOV-006__fact-library-senior-procurement-threshold-active__2026-10-05__01.png",
+      "storagePath": "ART-Product-Validation/bugs/Governance/ART-GOV-006__fact-library-runtime-usage-nondeterministic-unverifiable/ART-GOV-006__fact-library-senior-procurement-threshold-active__2026-10-05__01.png",
+      "sha256": "2efb557e1a0e5cb1c47f964aeed0879cbb515c60812f15cf2e2f26093c169bf6",
+      "mimeType": "image/png",
+      "byteSize": 124773,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    }
+  ],
+  "TicketArtifact": {
+    "ticketId": "TCK-ART-GOV-006-01",
+    "investigationId": "ART-GOV-006",
+    "revision": 1,
+    "title": "Fact Library Runtime Usage is Non-Deterministic and Cannot Be Verified",
+    "reproSteps": "Not provided",
+    "expectedResult": "Not provided",
+    "actualResult": "Not provided",
+    "businessImpact": "Not provided",
+    "recommendedSolution": "Not provided",
+    "module": "GOV",
+    "environment": "Not provided",
+    "severity": "HIGH",
+    "priority": "Not provided",
+    "tags": [
+      "gov"
+    ],
+    "discussion": [],
+    "provenance": "HUMAN_APPROVED",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "AuditEvent": {
+    "id": "AUD-ART-GOV-006-01",
+    "investigationId": "ART-GOV-006",
+    "timestamp": "2026-09-24T00:00:00Z",
+    "actor": "LEGACY_IMPORT_ADAPTER",
+    "eventType": "INVESTIGATION_CAPTURED",
+    "summary": "Imported legacy bug record ART-GOV-006 from ART-Product-Validation/bugs",
+    "details": {
+      "sourceMarkdownPath": "ART-Product-Validation/bugs/Governance/ART-GOV-006__fact-library-runtime-usage-nondeterministic-unverifiable/ART-GOV-006.md",
+      "rawContentSha256": "7ca39b3609a27c97025f5a34c7ba1de5f4e9dd911a47968ba6b5c264bd713fb1"
+    }
+  },
+  "sourceMetadata": {
+    "sourceMarkdownPath": "ART-Product-Validation/bugs/Governance/ART-GOV-006__fact-library-runtime-usage-nondeterministic-unverifiable/ART-GOV-006.md",
+    "rawMarkdownContent": "# ART-GOV-006 \u2014 Fact Library Runtime Usage is Non-Deterministic and Cannot Be Verified\n\n- **Canonical Bug ID:** ART-GOV-006\n- **Module:** GOV\n- **Severity:** HIGH\n- **Priority:** P1\n- **Environment:** Testing (Procurement Exception Agent / Governance / Fact Library / Professional Plan / InvestigationLab)\n- **Assignee:** Unassigned\n- **Tags:** Governance, Fact-Library, Runtime-State, Non-Deterministic, Cache-Invalidation, Observability, Auditability, P1\n- **Status:** OPEN\n- **Evidence Count:** 2\n- **Azure DevOps:** SYNCED ([#68949](https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68949))\n\n---\n\n## 1. Problem\nIn **Governance \u2192 Fact Library**, an active Fact value does not produce deterministic runtime behavior across activation/deactivation cycles, and ART provides no visible evidence showing whether the fact was loaded or consumed during Agent execution.\n\nDuring testing with `SENIOR_PROCUREMENT_REVIEW_THRESHOLD = 500000`:\n1. An initial request for \u20b97,50,000 returned `APPROVAL_REQUIRED`.\n2. When the fact was toggled to `INACTIVE`, the same scenario returned `NO_EXCEPTION`.\n3. When the fact was toggled back to `ACTIVE`, the same scenario unexpectedly continued returning `NO_EXCEPTION`.\n\nBecause ART lacks runtime provenance and observability into fact resolution, users cannot verify whether a business fact was loaded, stale, cached, or never consumed by an active rule, creating an unpredictable governance execution environment.\n\n---\n\n## 2. Observed Behavior\n- **Non-Deterministic Runtime Effect:** With `SENIOR_PROCUREMENT_REVIEW_THRESHOLD` set to 500000:\n  - First run (ACTIVE): Evaluation of a \u20b97,50,000 request resulted in `APPROVAL_REQUIRED`.\n  - Second run (toggled to INACTIVE): Identical request resulted in `NO_EXCEPTION`.\n  - Third run (toggled back to ACTIVE): Identical request still returned `NO_EXCEPTION`.\n- **Zero Runtime Observability:** Neither Agent Test nor Observability traces display whether `SENIOR_PROCUREMENT_REVIEW_THRESHOLD` was loaded into the execution context, which version was evaluated, or which policy rule consumed it.\n- **Ambiguous Policy Binding:** The UI does not indicate whether a Fact Library entry requires an explicit Policy Rule or Action binding to influence model behavior, leaving authors uncertain whether facts act as passive context or active thresholds.\n- **UI State vs. Runtime Desynchronization:** Toggling fact status in the Fact Library (`ACTIVE` vs `INACTIVE`) does not reliably propagate to the agent's active execution snapshot.\n\n---\n\n## 3. Reproduction\n1. Open an Agent with Governance enabled (e.g. `Procurement Exception Agent`).\n2. Go to **Governance \u2192 Fact Library**.\n3. Create or edit a fact:\n   - Fact name: `Senior Procurement Review Threshold`\n   - Key: `SENIOR_PROCUREMENT_REVIEW_THRESHOLD`\n   - Type: `Number`\n   - Default value: `500000`\n   - Status: `ACTIVE`\n4. Open **Agent Test** and submit a test evaluation request exceeding the threshold (e.g. purchase request for \u20b97,50,000 from a non-preferred supplier).\n5. Observe that execution returns `APPROVAL_REQUIRED`.\n6. Return to **Fact Library**, edit the fact, toggle Status to `INACTIVE`, and save.\n7. Re-run the identical request in **Agent Test**; observe that execution returns `NO_EXCEPTION`.\n8. Return to **Fact Library**, edit the fact, toggle Status back to `ACTIVE`, and save.\n9. Re-run the identical request in **Agent Test**.\n10. Observe that execution continues returning `NO_EXCEPTION`, failing to honor the reactivated fact.\n\n---\n\n## 4. Expected Behavior\n- Fact activation state and runtime availability must be deterministic across executions.\n- When an active fact is configured, ART must consistently expose its resolved value to the governance runtime context.\n- Toggling a fact between `ACTIVE` and `INACTIVE` must predictably invalidate cached runtime snapshots and update subsequent runs.\n- If a fact requires an associated Policy Rule or Action to participate in decisions, ART should make that dependency explicit in the UI.\n- Observability traces must identify which facts were loaded, their source version, and whether they were evaluated.\n\n---\n\n## 5. Business Impact\n- **Loss of Governance Integrity:** Enterprise organizations cannot verify whether financial limits, compliance rules, or vendor thresholds defined in the Fact Library are enforced at runtime.\n- **Unverifiable Decisions:** Compliance officers cannot audit whether an AI decision was influenced by configured governance facts or arbitrary model output.\n- **Testing & Debugging Friction:** Developers cannot determine whether unexpected agent responses are caused by prompt variance, rule misconfiguration, or stale fact caching.\n\n---\n\n## 6. User Experience\n- Toggling a fact from Active to Inactive and back to Active produces inconsistent behavior, making the Governance settings feel unresponsive and broken.\n- No visibility into runtime fact resolution leaves users guessing about how Fact Library entries interact with agent decisions.\n\n---\n\n## 7. Investigation Guidance\nTrace the complete lifecycle of Fact Library entries from definition to runtime execution:\n- **Persistence & Versioning:** Check how facts are stored in the database and whether updates bump an entity version or revision hash.\n- **Cache Invalidation:** Inspect whether active agent workflows cache runtime snapshots or governance configuration. Verify if saving a fact triggers cache invalidation.\n- **Context Injection Pipeline:** Trace where Fact Library entries are compiled into the LLM system prompt or governance evaluation context.\n- **Policy Rule Dependency:** Determine whether facts are directly injected into prompt context or if they are only evaluated when referenced by an active Policy Rule or Action condition.\n- **Observability Telemetry:** Check what execution metadata is emitted to the trace store; verify if loaded facts and resolved values are logged.\n\n---\n\n## 8. Fix Requirement\nEnsure Fact Library state transitions (`ACTIVE` / `INACTIVE`) deterministically update the execution runtime snapshot, and expose runtime provenance in Observability to identify loaded and consumed facts.\n\n---\n\n## 9. Recommended Solution\n1. **Deterministic Snapshot Invalidation:** Invalidate and recompile the runtime configuration snapshot whenever Fact Library definitions or activation states are updated.\n2. **Context Injection Pipeline:** Ensure active facts are deterministically loaded into the agent/governance execution context on every invocation.\n3. **Runtime Fact Provenance in Observability:** Record detailed telemetry for each execution: list of loaded facts, resolved values, version/hash, source, and whether consumed by any policy rule or condition.\n4. **UI Consumer Relationship Indicator:** In the Fact Library, display badges or tooltips showing where a fact is consumed (e.g. 'Used in 1 Policy Rule' vs 'Unbound \u2014 requires Policy Rule to affect decisions').\n\n---\n\n## 10. Minimum Working Fix\nEnsure that saving an update to a Fact Library entry immediately invalidates the agent's cached runtime configuration, and include a `governance_facts` array in the execution trace recording loaded fact keys and resolved values.\n\n---\n\n## 11. Acceptance Criteria\n- [ ] Repeated execution against the same published configuration produces consistent fact availability.\n- [ ] Toggling a fact between ACTIVE and INACTIVE is deterministically reflected in subsequent test executions.\n- [ ] Observability traces identify the fact key, resolved value, version/source, and whether it was loaded and consumed.\n- [ ] The UI clearly indicates when a Fact requires an associated Policy Rule or consumer before it can affect decisions.\n- [ ] Identical inputs against identical published configurations execute deterministically without stale fact state.\n\n---\n\n## 12. Environment\n- **Platform:** ART Agent Builder / Governance\n- **Module:** Governance \u2014 Fact Library\n- **Agent Workflow:** Procurement Exception Agent (`6ac3213fdfaa4ac34990c7e4`)\n- **Fact Key:** `SENIOR_PROCUREMENT_REVIEW_THRESHOLD`\n- **Environment:** Testing (InvestigationLab, Professional Plan)\n\n---\n\n## 13. Severity\n**HIGH** \u2014 Breaks governance determinism and auditability; active facts do not reliably influence runtime decisions and cannot be verified in traces.\n\n---\n\n## 14. Priority\n**P1** \u2014 Core governance defect directly compromising enterprise compliance and policy enforcement.\n\n---\n\n## 15. Tags\n- `Governance`\n- `Fact-Library`\n- `Runtime-State`\n- `Non-Deterministic`\n- `Cache-Invalidation`\n- `Observability`\n- `Auditability`\n- `P1`\n\n---\n\n## 16. Assignee\n**Unassigned**\n\n---\n\n## 17. Evidence\n\n| File | Type | Description | SHA256 Hash | Byte Size |\n| :--- | :--- | :--- | :--- | :--- |\n| [ART-GOV-006__fact-library-senior-procurement-threshold-active__2026-10-05__01.png](file:///home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-GOV-006__fact-library-runtime-usage-nondeterministic-unverifiable/ART-GOV-006__fact-library-senior-procurement-threshold-active__2026-10-05__01.png) | Screenshot | Fact definition modal in Governance -> Fact Library showing SENIOR_PROCUREMENT_REVIEW_THRESHOLD configured as Number with default value 500000 and status set to ACTIVE. | `2efb557e1a0e5cb1c47f964aeed0879cbb515c60812f15cf2e2f26093c169bf6` | 124773 bytes |\n| [ART-GOV-006__fact-library-senior-procurement-threshold-inactive__2026-10-05__02.png](file:///home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-GOV-006__fact-library-runtime-usage-nondeterministic-unverifiable/ART-GOV-006__fact-library-senior-procurement-threshold-inactive__2026-10-05__02.png) | Screenshot | Fact definition modal in Governance -> Fact Library showing SENIOR_PROCUREMENT_REVIEW_THRESHOLD toggled to INACTIVE status. | `ec4ebb8b0f529e514aa031fc9f3d33c17aa34942c0724e6ae30b8300710f14ca` | 125195 bytes |\n\n### Evidence Visual Gallery\n\n````carousel\n![ART-GOV-006__fact-library-senior-procurement-threshold-active__2026-10-05__01.png](/home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-GOV-006__fact-library-runtime-usage-nondeterministic-unverifiable/ART-GOV-006__fact-library-senior-procurement-threshold-active__2026-10-05__01.png)\n*Fact definition modal in Governance -> Fact Library showing SENIOR_PROCUREMENT_REVIEW_THRESHOLD configured as Number with default value 500000 and status set to ACTIVE.*\n<!-- slide -->\n![ART-GOV-006__fact-library-senior-procurement-threshold-inactive__2026-10-05__02.png](/home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-GOV-006__fact-library-runtime-usage-nondeterministic-unverifiable/ART-GOV-006__fact-library-senior-procurement-threshold-inactive__2026-10-05__02.png)\n*Fact definition modal in Governance -> Fact Library showing SENIOR_PROCUREMENT_REVIEW_THRESHOLD toggled to INACTIVE status.*\n````\n\n---\n\n## 18. Discussion\n- **Reporter Analysis:** An active Fact Library value does not produce consistent runtime behavior, and ART provides no visible evidence showing whether the fact was loaded or used during the Agent execution. Enterprise users cannot reliably determine whether governed business facts are actually influencing AI decisions.\n- **Traceability Need:** The lack of runtime provenance makes it impossible to distinguish between a fact that was not loaded, a fact that was loaded with stale data, or a fact that was loaded but ignored because no policy rule was bound to it.\n- **Intake Validation:** Evidence screenshots preserved with cryptographic SHA256 checksums and verified byte sizes. Zero Azure DevOps mutations performed during intake.\n\n---\n\n## 19. Azure DevOps\n- **Work Item ID:** 68949\n- **URL:** [https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68949](https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68949)\n- **Parent Feature:** Governance\n- **Parent Feature ID:** 68812\n- **Assigned To:** Unassigned\n- **Sync Status:** SYNCED\n- **Note:** Synchronized via Harness 02 V1 to Azure DevOps.\n",
+    "ledgerRow": {
+      "bug_id": "ART-GOV-006",
+      "rel_path": "bugs/Governance/ART-GOV-006__fact-library-runtime-usage-nondeterministic-unverifiable/ART-GOV-006.md",
+      "name": "Fact Library Runtime Usage is Non-Deterministic and Cannot Be Verified",
+      "severity": "HIGH",
+      "status": "OPEN",
+      "dev_update": "Pending.",
+      "retest": "Pending."
+    }
+  }
+}

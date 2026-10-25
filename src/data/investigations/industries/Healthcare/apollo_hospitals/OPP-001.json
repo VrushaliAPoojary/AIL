@@ -1,0 +1,2237 @@
+{
+  "investigation_id": "AOI-SNOW-OPP-001",
+  "company": "Apollo Hospitals Enterprise Limited",
+  "industry": "Healthcare / Hospital Operations",
+  "opportunity": "Cashless Pre-Authorisation",
+  "investigation_type": "Legacy VRL Methodology",
+  "research_status": "PASSED",
+  "presentation": {
+    "investigation_summary": "Investigation journey from source checkpoints:\n\nOPP-001-01.md: NOT PROVIDED\n\nOPP-001-02.md: NOT PROVIDED\n\nOPP-001-03.md: NOT PROVIDED",
+    "key_findings": [
+      {
+        "id": "KF-001-01",
+        "statement": "OPP-001-01 — Healthcare Cashless Pre-Authorisation Workflow Discovery: NOT PROVIDED",
+        "classification": "EVIDENCE",
+        "source_refs": [
+          "CP-OPP-001-01"
+        ]
+      },
+      {
+        "id": "KF-001-02",
+        "statement": "OPP-001-02 — Existing Capability / Automation Reconstruction: NOT PROVIDED",
+        "classification": "CLAIM",
+        "source_refs": [
+          "EV-001-001",
+          "EV-001-002",
+          "EV-001-003",
+          "EV-001-004",
+          "EV-001-005"
+        ]
+      },
+      {
+        "id": "KF-001-03",
+        "statement": "OPP-001-03 — Exception + Human Investigation Reconstruction: NOT PROVIDED",
+        "classification": "DECISION",
+        "source_refs": [
+          "EV-001-006",
+          "EV-001-007",
+          "EV-001-008",
+          "EV-001-009",
+          "EV-001-010",
+          "EV-001-011",
+          "EV-001-012"
+        ]
+      }
+    ]
+  },
+  "decision": {
+    "decision": "PASS → CONTINUE",
+    "reason": "NOT PROVIDED",
+    "reusable_intelligence": [
+      {
+        "id": "RI-001-001",
+        "type": "WORKFLOW_PATTERN",
+        "title": "Workflow Discovery: Cashless Pre-Authorisation",
+        "domain": "Healthcare / Hospital Operations",
+        "description": "NOT PROVIDED",
+        "lesson": "Preserve the source boundary: current capability, human effort, and ROI remain unknown where the source says so.",
+        "evidence_status": "VERIFIED",
+        "status": "ACTIVE",
+        "confidence": "HIGH",
+        "reuse_potential": "MEDIUM",
+        "applications": [
+          "Healthcare hospital operations"
+        ],
+        "source_checkpoint": "CP-OPP-001-01",
+        "source_refs": [
+          "SRC-FILE-OPP-001-OPP-001-01"
+        ],
+        "tags": [
+          "source-supported",
+          "legacy-vrl"
+        ],
+        "provenance": {
+          "source_file": "OPP-001-01.md",
+          "section": "Integrity Statement",
+          "line_start": 494,
+          "line_end": 494
+        }
+      },
+      {
+        "id": "RI-001-002",
+        "type": "DECISION_PATTERN",
+        "title": "Existing Capability / Automation Reconstruction: Cashless Pre-Authorisation",
+        "domain": "Healthcare / Hospital Operations",
+        "description": "NOT PROVIDED",
+        "lesson": "Preserve the source boundary: current capability, human effort, and ROI remain unknown where the source says so.",
+        "evidence_status": "VERIFIED",
+        "status": "ACTIVE",
+        "confidence": "HIGH",
+        "reuse_potential": "MEDIUM",
+        "applications": [
+          "Healthcare hospital operations"
+        ],
+        "source_checkpoint": "CP-OPP-001-02",
+        "source_refs": [
+          "EV-001-001",
+          "EV-001-002",
+          "EV-001-003",
+          "EV-001-004",
+          "EV-001-005"
+        ],
+        "tags": [
+          "source-supported",
+          "legacy-vrl"
+        ],
+        "provenance": {
+          "source_file": "OPP-001-02.md",
+          "section": "Integrity Statement",
+          "line_start": 550,
+          "line_end": 550
+        }
+      },
+      {
+        "id": "RI-001-003",
+        "type": "STRATEGY_PATTERN",
+        "title": "Exception + Human Investigation Reconstruction: Cashless Pre-Authorisation",
+        "domain": "Healthcare / Hospital Operations",
+        "description": "NOT PROVIDED",
+        "lesson": "Preserve the source boundary: current capability, human effort, and ROI remain unknown where the source says so.",
+        "evidence_status": "VERIFIED",
+        "status": "ACTIVE",
+        "confidence": "HIGH",
+        "reuse_potential": "MEDIUM",
+        "applications": [
+          "Healthcare hospital operations"
+        ],
+        "source_checkpoint": "CP-OPP-001-03",
+        "source_refs": [
+          "EV-001-006",
+          "EV-001-007",
+          "EV-001-008",
+          "EV-001-009",
+          "EV-001-010",
+          "EV-001-011",
+          "EV-001-012"
+        ],
+        "tags": [
+          "source-supported",
+          "legacy-vrl"
+        ],
+        "provenance": {
+          "source_file": "OPP-001-03.md",
+          "section": "Integrity Statement",
+          "line_start": 742,
+          "line_end": 742
+        }
+      }
+    ],
+    "provenance": {
+      "source_file": "OPP-001-03.md",
+      "section": "Integrity Statement",
+      "line_start": 742,
+      "line_end": 742
+    }
+  },
+  "primary_question": "How does cashless pre-authorisation actually operate in an Indian hospital, what work and decisions occur from admission request to payer authorization, and which parts of the workflow should be investigated as a repeatable industry workflow across other hospitals?",
+  "sources": [
+    {
+      "id": "SRC-FILE-OPP-001-OPP-001-01",
+      "title": "OPP-001-01.md",
+      "url": "opportunities/Healthcare_and_Pharmaceuticals/apollo_hospitals/OPP-001-01.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": [
+        "CP-OPP-001-01"
+      ]
+    },
+    {
+      "id": "SRC-FILE-OPP-001-OPP-001-02",
+      "title": "OPP-001-02.md",
+      "url": "opportunities/Healthcare_and_Pharmaceuticals/apollo_hospitals/OPP-001-02.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": [
+        "CP-OPP-001-02"
+      ]
+    },
+    {
+      "id": "SRC-FILE-OPP-001-OPP-001-03",
+      "title": "OPP-001-03.md",
+      "url": "opportunities/Healthcare_and_Pharmaceuticals/apollo_hospitals/OPP-001-03.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": [
+        "CP-OPP-001-03"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-001-E4A3F73D",
+      "title": "https://www.apollohospitals.com/region/kolkata/insurance/",
+      "url": "https://www.apollohospitals.com/region/kolkata/insurance/",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-001-01",
+        "CP-OPP-001-02",
+        "CP-OPP-001-03"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-001-A9F24C14",
+      "title": "https://www.apollohospitals.com/cancer-treatment-centres/services/insurance/",
+      "url": "https://www.apollohospitals.com/cancer-treatment-centres/services/insurance/",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-001-01"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-001-C64305D7",
+      "title": "https://www.apollohealthaxis.com/capabilities/it-service",
+      "url": "https://www.apollohealthaxis.com/capabilities/it-service",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-001-02",
+        "CP-OPP-001-03"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-001-7458B1D1",
+      "title": "https://irdai.gov.in/health-dept",
+      "url": "https://irdai.gov.in/health-dept",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-001-02",
+        "CP-OPP-001-03"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-001-C49BBBD5",
+      "title": "https://www.apollohospitals.com/hospitals/apollo-speciality-hospitals-teynampet",
+      "url": "https://www.apollohospitals.com/hospitals/apollo-speciality-hospitals-teynampet",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-001-03"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-001-4C286324",
+      "title": "https://nha.gov.in/img/pmjay-files/RFE_Volume_II.pdf",
+      "url": "https://nha.gov.in/img/pmjay-files/RFE_Volume_II.pdf",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-001-03"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-001-0D5BD8AE",
+      "title": "https://nha.gov.in/img/resources/HBP-2.2-manual.pdf",
+      "url": "https://nha.gov.in/img/resources/HBP-2.2-manual.pdf",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-001-03"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "CP-OPP-001-01",
+      "title": "OPP-001-01 — Healthcare Cashless Pre-Authorisation Workflow Discovery",
+      "status": "PASS",
+      "investigation_question": "How does cashless pre-authorisation actually operate in an Indian hospital, what work and decisions occur from admission request to payer authorization, and which parts of the workflow should be investigated as a repeatable industry workflow across other hospitals?",
+      "tested": "OPP-001-01 — Healthcare Cashless Pre-Authorisation Workflow Discovery",
+      "found": "NOT PROVIDED",
+      "what_changed": "PASS → AOI",
+      "resulting_state": "PASS → AOI",
+      "evidence_refs": [],
+      "source_refs": [
+        "SRC-FILE-OPP-001-OPP-001-01",
+        "SRC-EXT-OPP-001-E4A3F73D",
+        "SRC-EXT-OPP-001-A9F24C14"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "Checkpoint",
+        "line_start": 1,
+        "line_end": 494
+      }
+    },
+    {
+      "id": "CP-OPP-001-02",
+      "title": "OPP-001-02 — Existing Capability / Automation Reconstruction",
+      "status": "PASS",
+      "investigation_question": "What existing hospital, payer/TPA and Apollo technology capabilities support cashless pre-authorisation, and what can actually be proven about the remaining automation gap?",
+      "tested": "OPP-001-02 — Existing Capability / Automation Reconstruction",
+      "found": "NOT PROVIDED",
+      "what_changed": "CONTINUE",
+      "resulting_state": "CONTINUE",
+      "evidence_refs": [
+        "EV-001-001",
+        "EV-001-002",
+        "EV-001-003",
+        "EV-001-004",
+        "EV-001-005"
+      ],
+      "source_refs": [
+        "SRC-FILE-OPP-001-OPP-001-02",
+        "SRC-EXT-OPP-001-E4A3F73D",
+        "SRC-EXT-OPP-001-C64305D7",
+        "SRC-EXT-OPP-001-7458B1D1"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "Checkpoint",
+        "line_start": 1,
+        "line_end": 550
+      }
+    },
+    {
+      "id": "CP-OPP-001-03",
+      "title": "OPP-001-03 — Exception + Human Investigation Reconstruction",
+      "status": "PASS",
+      "investigation_question": "When cashless pre-authorisation encounters an exception, what evidence is required, who acts on it, what decision is being resolved, and what human investigation work is actually proven?",
+      "tested": "OPP-001-03 — Exception + Human Investigation Reconstruction",
+      "found": "NOT PROVIDED",
+      "what_changed": "PASS → CONTINUE",
+      "resulting_state": "PASS → CONTINUE",
+      "evidence_refs": [
+        "EV-001-006",
+        "EV-001-007",
+        "EV-001-008",
+        "EV-001-009",
+        "EV-001-010",
+        "EV-001-011",
+        "EV-001-012"
+      ],
+      "source_refs": [
+        "SRC-FILE-OPP-001-OPP-001-03",
+        "SRC-EXT-OPP-001-E4A3F73D",
+        "SRC-EXT-OPP-001-C49BBBD5",
+        "SRC-EXT-OPP-001-4C286324",
+        "SRC-EXT-OPP-001-0D5BD8AE",
+        "SRC-EXT-OPP-001-C64305D7",
+        "SRC-EXT-OPP-001-7458B1D1"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "Checkpoint",
+        "line_start": 1,
+        "line_end": 742
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "EV-001-001",
+      "statement": "### E-001\n\nApollo operates a Corporate / Insurance Help Desk supporting cashless pre-authorisation.\n\n**Source:**  \nhttps://www.apollohospitals.com/region/kolkata/insurance/",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-001-E4A3F73D",
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "E-001",
+        "line_start": 358,
+        "line_end": 363
+      }
+    },
+    {
+      "id": "EV-001-002",
+      "statement": "### E-002\n\nApollo's process includes document collection, doctor-completed treatment information, completeness checking and TPA submission.\n\n**Source:**  \nhttps://www.apollohospitals.com/region/kolkata/insurance/",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-001-E4A3F73D",
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "E-002",
+        "line_start": 365,
+        "line_end": 370
+      }
+    },
+    {
+      "id": "EV-001-003",
+      "statement": "### E-003\n\nApollo documents enhancement handling when actual expenses exceed the pre-approved amount.\n\n**Source:**  \nhttps://www.apollohospitals.com/region/kolkata/insurance/",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-001-E4A3F73D",
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "E-003",
+        "line_start": 372,
+        "line_end": 377
+      }
+    },
+    {
+      "id": "EV-001-004",
+      "statement": "### E-004\n\nIRDAI establishes the insurer/TPA authorization layer and cashless authorization timing requirements.\n\n**Source:**  \nhttps://irdai.gov.in/health-dept",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-001-7458B1D1",
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "E-004",
+        "line_start": 379,
+        "line_end": 384
+      }
+    },
+    {
+      "id": "EV-001-005",
+      "statement": "### E-005\n\nApollo HealthAxis publicly describes an Ops Copilot with specialized AI agents for insurance pre-authorisation.\n\n**Source:**  \nhttps://www.apollohealthaxis.com/capabilities/it-service\n\n---",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-001-C64305D7",
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "E-005",
+        "line_start": 386,
+        "line_end": 393
+      }
+    },
+    {
+      "id": "EV-001-006",
+      "statement": "### E-001\nApollo documents insufficient information as a possible reason for non-approval and defines a query as clarification concerning treatment and insurance terms.\n\n**Source:**  \nhttps://www.apollohospitals.com/region/kolkata/insurance/",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-001-E4A3F73D",
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "E-001",
+        "line_start": 526,
+        "line_end": 530
+      }
+    },
+    {
+      "id": "EV-001-007",
+      "statement": "### E-002\nApollo documents policy exclusions and exhausted insurance cover as possible reasons for non-approval.\n\n**Source:**  \nhttps://www.apollohospitals.com/region/kolkata/insurance/",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-001-E4A3F73D",
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "E-002",
+        "line_start": 532,
+        "line_end": 536
+      }
+    },
+    {
+      "id": "EV-001-008",
+      "statement": "### E-003\nApollo documents enhancement requests when actual expenses exceed the pre-approved amount.\n\n**Source:**  \nhttps://www.apollohospitals.com/region/kolkata/insurance/",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-001-E4A3F73D",
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "E-003",
+        "line_start": 538,
+        "line_end": 542
+      }
+    },
+    {
+      "id": "EV-001-009",
+      "statement": "### E-004\nApollo identifies the Corporate Help Desk, treating doctor and TPA/insurer as distinct workflow participants.\n\n**Source:**  \nhttps://www.apollohospitals.com/region/kolkata/insurance/",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-001-E4A3F73D",
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "E-004",
+        "line_start": 544,
+        "line_end": 548
+      }
+    },
+    {
+      "id": "EV-001-010",
+      "statement": "### E-005\nApollo HealthAxis publicly describes One Hub / Ops Copilot with specialized AI agents for insurance pre-authorisation.\n\n**Source:**  \nhttps://www.apollohealthaxis.com/capabilities/it-service",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-001-C64305D7",
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "E-005",
+        "line_start": 550,
+        "line_end": 554
+      }
+    },
+    {
+      "id": "EV-001-011",
+      "statement": "### E-006\nNHA documentation establishes hospital-side pre-authorisation submission, treating-doctor information, clarification and document requirements in Indian government healthcare workflows.\n\n**Sources:**  \nhttps://nha.gov.in/img/pmjay-files/RFE_Volume_II.pdf  \nhttps://nha.gov.in/img/resources/HBP-2.2-manual.pdf",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-001-0D5BD8AE",
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "E-006",
+        "line_start": 556,
+        "line_end": 561
+      }
+    },
+    {
+      "id": "EV-001-012",
+      "statement": "### E-007\nIRDAI establishes one-hour pre-authorisation and three-hour final cashless authorization TATs.\n\n**Source:**  \nhttps://irdai.gov.in/health-dept\n\n---",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-001-7458B1D1",
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "E-007",
+        "line_start": 563,
+        "line_end": 569
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "CL-001-001",
+      "statement": "### C-001\n\nApollo has a defined operational capability for cashless pre-authorisation.\n\n**Basis:** E-001, E-002, E-003.",
+      "evidence_basis": [
+        "EV-001-001",
+        "EV-001-002",
+        "EV-001-003",
+        "EV-001-004",
+        "EV-001-005"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "C-001",
+        "line_start": 397,
+        "line_end": 401
+      }
+    },
+    {
+      "id": "CL-001-002",
+      "statement": "### C-002\n\nCashless authorization is a multi-organization workflow in which the hospital facilitates preparation/submission while the insurer/TPA owns authorization.\n\n**Basis:** E-001, E-004.",
+      "evidence_basis": [
+        "EV-001-001",
+        "EV-001-002",
+        "EV-001-003",
+        "EV-001-004",
+        "EV-001-005"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "C-002",
+        "line_start": 403,
+        "line_end": 407
+      }
+    },
+    {
+      "id": "CL-001-003",
+      "statement": "### C-003\n\nApollo's technology ecosystem has publicly described AI capability targeting insurance pre-authorisation.\n\n**Basis:** E-005.\n\n---",
+      "evidence_basis": [
+        "EV-001-001",
+        "EV-001-002",
+        "EV-001-003",
+        "EV-001-004",
+        "EV-001-005"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "C-003",
+        "line_start": 409,
+        "line_end": 415
+      }
+    },
+    {
+      "id": "CL-001-004",
+      "statement": "### C-001\nCashless pre-authorisation contains documented exception states involving clarification, rejection and enhancement.\n\n**Basis:** E-001, E-002, E-003.",
+      "evidence_basis": [
+        "EV-001-006",
+        "EV-001-007",
+        "EV-001-008",
+        "EV-001-009",
+        "EV-001-010",
+        "EV-001-011",
+        "EV-001-012"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "C-001",
+        "line_start": 573,
+        "line_end": 576
+      }
+    },
+    {
+      "id": "CL-001-005",
+      "statement": "### C-002\nHospital-side human roles participate in exception handling and evidence preparation.\n\n**Basis:** E-003, E-004.",
+      "evidence_basis": [
+        "EV-001-006",
+        "EV-001-007",
+        "EV-001-008",
+        "EV-001-009",
+        "EV-001-010",
+        "EV-001-011",
+        "EV-001-012"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "C-002",
+        "line_start": 578,
+        "line_end": 581
+      }
+    },
+    {
+      "id": "CL-001-006",
+      "statement": "### C-003\nApollo's broader technology ecosystem has publicly described AI capability for insurance pre-authorisation.\n\n**Basis:** E-005.",
+      "evidence_basis": [
+        "EV-001-006",
+        "EV-001-007",
+        "EV-001-008",
+        "EV-001-009",
+        "EV-001-010",
+        "EV-001-011",
+        "EV-001-012"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "C-003",
+        "line_start": 583,
+        "line_end": 586
+      }
+    },
+    {
+      "id": "CL-001-007",
+      "statement": "### C-004\nThe underlying exception pattern is relevant beyond Apollo because similar pre-authorisation and clarification mechanisms are documented in Indian government healthcare workflows.\n\n**Basis:** E-006.\n\n---",
+      "evidence_basis": [
+        "EV-001-006",
+        "EV-001-007",
+        "EV-001-008",
+        "EV-001-009",
+        "EV-001-010",
+        "EV-001-011",
+        "EV-001-012"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "C-004",
+        "line_start": 588,
+        "line_end": 593
+      }
+    }
+  ],
+  "inferences": [
+    {
+      "id": "INF-001-001",
+      "statement": "### I-001\n\nGeneric pre-authorisation automation should not currently be treated as a validated Apollo-specific ART gap.\n\n**Basis:** C-001, C-003.",
+      "basis": [
+        "EV-001-001",
+        "EV-001-002",
+        "EV-001-003",
+        "EV-001-004",
+        "EV-001-005"
+      ],
+      "implication": "Preserved from the source investigation.",
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "I-001",
+        "line_start": 419,
+        "line_end": 423
+      }
+    },
+    {
+      "id": "INF-001-002",
+      "statement": "### I-002\n\nApollo is more valuable at this stage as a reference implementation against which less mature hospital workflows can be investigated.\n\n**Basis:** C-001, C-003.\n\n---",
+      "basis": [
+        "EV-001-001",
+        "EV-001-002",
+        "EV-001-003",
+        "EV-001-004",
+        "EV-001-005"
+      ],
+      "implication": "Preserved from the source investigation.",
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "I-002",
+        "line_start": 425,
+        "line_end": 431
+      }
+    },
+    {
+      "id": "INF-001-003",
+      "statement": "### I-001\nThe commercially interesting problem, if one exists, is more likely to be a specific residual exception/investigation problem than generic pre-authorisation automation.\n\n**Basis:** C-001, C-003.",
+      "basis": [
+        "EV-001-006",
+        "EV-001-007",
+        "EV-001-008",
+        "EV-001-009",
+        "EV-001-010",
+        "EV-001-011",
+        "EV-001-012"
+      ],
+      "implication": "Preserved from the source investigation.",
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "I-001",
+        "line_start": 597,
+        "line_end": 600
+      }
+    },
+    {
+      "id": "INF-001-004",
+      "statement": "### I-002\nApollo is more useful as a capability benchmark than as the immediate customer target for generic pre-authorisation automation.\n\n**Basis:** C-003.",
+      "basis": [
+        "EV-001-006",
+        "EV-001-007",
+        "EV-001-008",
+        "EV-001-009",
+        "EV-001-010",
+        "EV-001-011",
+        "EV-001-012"
+      ],
+      "implication": "Preserved from the source investigation.",
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "I-002",
+        "line_start": 602,
+        "line_end": 605
+      }
+    },
+    {
+      "id": "INF-001-005",
+      "statement": "### I-003\nThe workflow archetype can be transferred to research on mid-scale hospitals, but each company's workflow and pain must be independently established.\n\n**Basis:** C-004.\n\n---",
+      "basis": [
+        "EV-001-006",
+        "EV-001-007",
+        "EV-001-008",
+        "EV-001-009",
+        "EV-001-010",
+        "EV-001-011",
+        "EV-001-012"
+      ],
+      "implication": "Preserved from the source investigation.",
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "I-003",
+        "line_start": 607,
+        "line_end": 612
+      }
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "HYP-001-001",
+      "statement": "The Apollo workflow is a **reference archetype** for subsequent research.\n\nThe transferable research question is:\n\n> Do mid-scale Indian hospitals perform the same or materially similar cashless pre-authorisation workflow, and if so, where does their implementation maturity differ from the reference workflow?\n\nThis is a **research hypothesis**, not a claim that mid-scale hospitals lack the capability.\n\nFuture company investigations must independently establish:\n\n```text\nSAME WORKFLOW?\n      ↓\nSAME EXCEPTIONS?\n      ↓\nDIFFERENT CAPABILITY MATURITY?\n      ↓\nREAL PAIN?\n      ↓\nMEASURABLE IMPACT?\n      ↓\nART FIT?\n```\n\n---",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "CP-OPP-001-01"
+      ],
+      "falsification_basis": [],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "13. Industry-Level Research Hypothesis",
+        "line_start": 345,
+        "line_end": 371
+      }
+    },
+    {
+      "id": "HYP-001-002",
+      "statement": "The strongest reusable finding is not:\n\n> \"Apollo has a pre-authorisation problem.\"\n\nIt is:\n\n> **Cashless pre-authorisation is an exception-bearing evidence and decision workflow that can be investigated across Indian hospitals for differences in workflow maturity, exception handling and residual human work.**\n\nThis creates the next research path:\n\n```text\nAPOLLO REFERENCE\n      ↓\nWORKFLOW ARCHETYPE\n      ↓\nMID-SCALE HOSPITAL\n      ↓\nSAME / SIMILAR WORKFLOW?\n      ↓\nLOWER CAPABILITY MATURITY?\n      ↓\nREAL EXCEPTION BURDEN?\n      ↓\nMEASURABLE PAIN?\n      ↓\nART GAP?\n```\n\nEach target company must be independently researched.\n\n---",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "EV-001-006",
+        "EV-001-007",
+        "EV-001-008",
+        "EV-001-009",
+        "EV-001-010",
+        "EV-001-011",
+        "EV-001-012"
+      ],
+      "falsification_basis": [],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "17. Industry Transfer Hypothesis",
+        "line_start": 489,
+        "line_end": 521
+      }
+    }
+  ],
+  "results": [
+    {
+      "id": "RES-001-001",
+      "statement": "PASS → AOI",
+      "status": "PASSED",
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "Decision",
+        "line_start": 202,
+        "line_end": 222
+      }
+    },
+    {
+      "id": "RES-001-002",
+      "statement": "CONTINUE",
+      "status": "PASSED",
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "Decision",
+        "line_start": 473,
+        "line_end": 474
+      }
+    },
+    {
+      "id": "RES-001-003",
+      "statement": "PASS → CONTINUE",
+      "status": "PASSED",
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "Decision",
+        "line_start": 136,
+        "line_end": 162
+      }
+    }
+  ],
+  "falsification": [],
+  "traceability": [
+    {
+      "statement": "---\nid: OPP-001-01\nopportunity_id: OPP-001\ncheckpoint: OPP-001-01\nindustry: Healthcare / Hospital Operations\ncompany: Apollo Hospitals Enterprise Limited\ncompany_role: Reference Workflow / Capability Benchmark\ngeography: India\nworkflow: Cashless Pre-Authorisation\nworkflow_archetype: Hospital Insurance / TPA Pre-Authorisation\nresearch_type: Legacy VRL Methodology\nresearch_stage: Workflow Discovery\nstatus: PASS\ndecision: AOI\nevidence_posture: Evidence-first\nsource_standard: Official company and institutional sources\nail_status: Ready for compilation\nconfidence: High\n---",
+      "research_location": "OPP-001-01.md#Front matter",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "Front matter",
+        "line_start": 1,
+        "line_end": 18
+      }
+    },
+    {
+      "statement": "**Industry:** Healthcare / Hospital Operations  \n**Company:** Apollo Hospitals Enterprise Limited  \n**Company Role:** Reference Workflow / Capability Benchmark  \n**Geography:** India  \n**Workflow:** Cashless Pre-Authorisation  \n**Checkpoint:** OPP-001-01  \n**Methodology:** Legacy VRL Methodology — unchanged  \n**Status:** PASS → AOI\n\n---",
+      "research_location": "OPP-001-01.md#OPP-001-01 — Healthcare Cashless Pre-Authorisation Workflow Discovery",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "OPP-001-01 — Healthcare Cashless Pre-Authorisation Workflow Discovery",
+        "line_start": 21,
+        "line_end": 33
+      }
+    },
+    {
+      "statement": "Reconstruct a real Indian hospital cashless pre-authorisation workflow from authoritative evidence.\n\nApollo Hospitals is used here as the **reference implementation**, not yet as the assumed ART customer.\n\nThe purpose is to understand:\n\n- the real workflow;\n- actors and ownership;\n- inputs and evidence;\n- decisions;\n- exception states;\n- existing capability;\n- workflow requirements that can later be tested across mid-scale Indian hospitals.\n\nNo pain point, ART gap, ROI, or customer opportunity is assumed at this checkpoint.\n\n---",
+      "research_location": "OPP-001-01.md#Investigation Purpose",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "1. Investigation Purpose",
+        "line_start": 34,
+        "line_end": 53
+      }
+    },
+    {
+      "statement": "> How does cashless pre-authorisation actually operate in an Indian hospital, what work and decisions occur from admission request to payer authorization, and which parts of the workflow should be investigated as a repeatable industry workflow across other hospitals?\n\n---",
+      "research_location": "OPP-001-01.md#Core Research Question",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "2. Core Research Question",
+        "line_start": 54,
+        "line_end": 59
+      }
+    },
+    {
+      "statement": "Apollo publicly documents a detailed cashless hospitalisation process.\n\nThe evidence identifies:\n\n- planned and emergency hospitalization;\n- Corporate Help Desk involvement;\n- insurance and identity documentation;\n- TPA-specific pre-authorisation forms;\n- doctor-completed treatment information;\n- completeness checking;\n- submission to the TPA;\n- payer approval/rejection;\n- enhancement when expenses exceed the approved amount.\n\n**Evidence:** Apollo Hospitals official insurance documentation.  \nhttps://www.apollohospitals.com/region/kolkata/insurance/\n\nApollo therefore provides a sufficiently visible workflow for reconstruction.\n\nThis does **not** mean every Indian hospital follows the same process or has the same capability maturity.\n\n---",
+      "research_location": "OPP-001-01.md#Why Apollo Is the Reference Company",
+      "source_urls": [
+        "https://www.apollohospitals.com/region/kolkata/insurance/"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "3. Why Apollo Is the Reference Company",
+        "line_start": 60,
+        "line_end": 84
+      }
+    },
+    {
+      "statement": "The workflow begins when a patient requires hospitalisation and intends to use cashless insurance.\n\nApollo distinguishes:",
+      "research_location": "OPP-001-01.md#Workflow Trigger",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "4. Workflow Trigger",
+        "line_start": 85,
+        "line_end": 90
+      }
+    },
+    {
+      "statement": "Pre-authorisation is initiated before admission.",
+      "research_location": "OPP-001-01.md#Planned Hospitalisation",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "Planned Hospitalisation",
+        "line_start": 91,
+        "line_end": 94
+      }
+    },
+    {
+      "statement": "The hospital insurance/corporate desk handles the pre-authorisation process on a fast-track basis.\n\n**Evidence:** Apollo Hospitals.  \nhttps://www.apollohospitals.com/region/kolkata/insurance/\n\n---",
+      "research_location": "OPP-001-01.md#Emergency Hospitalisation",
+      "source_urls": [
+        "https://www.apollohospitals.com/region/kolkata/insurance/"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "Emergency Hospitalisation",
+        "line_start": 95,
+        "line_end": 103
+      }
+    },
+    {
+      "statement": "```text\nPATIENT REQUIRES HOSPITALISATION\n              ↓\n        INSURANCE / TPA\n        IDENTIFICATION\n              ↓\n     CORPORATE / INSURANCE\n          HELP DESK\n              ↓\n     PRE-AUTHORIZATION FORM\n              ↓\n ┌───────────────────────────┐\n │ POLICY / PATIENT DETAILS  │\n │ +                         │\n │ TREATMENT DETAILS         │\n │ +                         │\n │ REQUIRED DOCUMENTS        │\n └───────────────────────────┘\n              ↓\n      DOCTOR COMPLETES\n      TREATMENT SECTION\n              ↓\n       HOSPITAL DESK\n    COMPLETENESS CHECK\n              ↓\n        SUBMIT TO TPA\n              ↓\n     INSURER / TPA REVIEW\n              ↓\n    ┌─────────┼─────────┐\n    ↓         ↓         ↓\n APPROVE    QUERY     REJECT\n    ↓         ↓         ↓\n ADMISSION   CLARIFY   ALTERNATIVE\n / TREATMENT INFORMATION PAYMENT\n              ↓\n        IF COST INCREASES\n              ↓\n        ENHANCEMENT\n              ↓\n        TPA DECISION\n```\n\n**Classification:** VERIFIED WORKFLOW RECONSTRUCTION.\n\n**Primary source:**  \nhttps://www.apollohospitals.com/region/kolkata/insurance/\n\n---",
+      "research_location": "OPP-001-01.md#Reconstructed Workflow",
+      "source_urls": [
+        "https://www.apollohospitals.com/region/kolkata/insurance/"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "5. Reconstructed Workflow",
+        "line_start": 104,
+        "line_end": 155
+      }
+    },
+    {
+      "statement": "| Actor | Role | Evidence |\n|---|---|---|\n| Patient / Caregiver | Provides insurance, identity and required information | VERIFIED |\n| Treating Doctor | Completes/signs treatment section | VERIFIED |\n| Hospital Corporate / Insurance Desk | Facilitates, checks completeness, submits and communicates status | VERIFIED |\n| TPA / Insurer | Reviews and decides authorization | VERIFIED |\n| Hospital Billing / Operations | Handles financial consequences of approval, rejection and enhancement | PARTIALLY VERIFIED |\n\n**Source:** Apollo Hospitals.  \nhttps://www.apollohospitals.com/region/kolkata/insurance/\n\n---",
+      "research_location": "OPP-001-01.md#Actors",
+      "source_urls": [
+        "https://www.apollohospitals.com/region/kolkata/insurance/"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "6. Actors",
+        "line_start": 156,
+        "line_end": 170
+      }
+    },
+    {
+      "statement": "The Apollo workflow identifies:",
+      "research_location": "OPP-001-01.md#Required Inputs / Evidence",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "7. Required Inputs / Evidence",
+        "line_start": 171,
+        "line_end": 174
+      }
+    },
+    {
+      "statement": "- health insurance card;\n- government-issued ID;\n- employee ID where applicable for corporate insurance.",
+      "research_location": "OPP-001-01.md#Policy / Identity",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "Policy / Identity",
+        "line_start": 175,
+        "line_end": 180
+      }
+    },
+    {
+      "statement": "- treatment information;\n- treating doctor's completed and signed section;\n- relevant supporting information.",
+      "research_location": "OPP-001-01.md#Clinical / Treatment",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "Clinical / Treatment",
+        "line_start": 181,
+        "line_end": 186
+      }
+    },
+    {
+      "statement": "- estimated hospital expense;\n- later, additional information for enhancement where the approved amount is exceeded.\n\nApollo Cancer Centres separately identifies insurance card, ID proof and investigation reports as documents used in its insurance admission process.\n\n**Sources:**\n\nhttps://www.apollohospitals.com/region/kolkata/insurance/\n\nhttps://www.apollohospitals.com/cancer-treatment-centres/services/insurance/\n\n---",
+      "research_location": "OPP-001-01.md#Financial",
+      "source_urls": [
+        "https://www.apollohospitals.com/region/kolkata/insurance/",
+        "https://www.apollohospitals.com/cancer-treatment-centres/services/insurance/"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "Financial",
+        "line_start": 187,
+        "line_end": 201
+      }
+    },
+    {
+      "statement": "The payer, not the hospital desk, owns the cashless authorization decision.\n\nApollo explicitly describes its Corporate Help Desk as a facilitator that cannot approve or reject the request.\n\nThe payer decision can result in:\n\n```text\nAPPROVE\nQUERY / FURTHER INFORMATION\nREJECT\n```\n\nApollo also documents rejection conditions including policy exclusions, insufficient information, and exhausted eligible insurance cover.\n\n**Evidence:** Apollo Hospitals.  \nhttps://www.apollohospitals.com/region/kolkata/insurance/\n\n---",
+      "research_location": "OPP-001-01.md#Decision Surface",
+      "source_urls": [
+        "https://www.apollohospitals.com/region/kolkata/insurance/"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "8. Decision Surface",
+        "line_start": 202,
+        "line_end": 222
+      }
+    },
+    {
+      "statement": "The documented workflow contains at least these exception classes:",
+      "research_location": "OPP-001-01.md#Exception Surface",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "9. Exception Surface",
+        "line_start": 223,
+        "line_end": 226
+      }
+    },
+    {
+      "statement": "The payer may lack sufficient information to reach a decision.",
+      "research_location": "OPP-001-01.md#EX-01 — Insufficient Information",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "EX-01 — Insufficient Information",
+        "line_start": 227,
+        "line_end": 230
+      }
+    },
+    {
+      "statement": "The requested treatment may fall outside policy coverage.",
+      "research_location": "OPP-001-01.md#EX-02 — Policy / Coverage Exclusion",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "EX-02 — Policy / Coverage Exclusion",
+        "line_start": 231,
+        "line_end": 234
+      }
+    },
+    {
+      "statement": "The eligible annual insurance cover may already be exhausted.",
+      "research_location": "OPP-001-01.md#EX-03 — Exhausted Insurance Cover",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "EX-03 — Exhausted Insurance Cover",
+        "line_start": 235,
+        "line_end": 238
+      }
+    },
+    {
+      "statement": "An enhancement request may be required.",
+      "research_location": "OPP-001-01.md#EX-04 — Cost Exceeds Pre-Approval",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "EX-04 — Cost Exceeds Pre-Approval",
+        "line_start": 239,
+        "line_end": 242
+      }
+    },
+    {
+      "statement": "Immediate hospitalization changes the operating path.\n\n**Evidence:** Apollo Hospitals.  \nhttps://www.apollohospitals.com/region/kolkata/insurance/\n\nThese are **workflow exceptions**, not automatically business pain points.\n\n---",
+      "research_location": "OPP-001-01.md#EX-05 — Emergency Timing",
+      "source_urls": [
+        "https://www.apollohospitals.com/region/kolkata/insurance/"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "EX-05 — Emergency Timing",
+        "line_start": 243,
+        "line_end": 253
+      }
+    },
+    {
+      "statement": "Apollo explicitly documents:\n\n```text\nAPPROVED AMOUNT\n      ↓\nACTUAL EXPENSE > APPROVED AMOUNT\n      ↓\nENHANCEMENT REQUEST\n      ↓\nCORPORATE HELP DESK\n      ↓\nDOCUMENTATION\n      ↓\nTPA\n      ↓\nAPPROVE / REJECT\n```\n\nIf the enhancement is rejected, the excess amount must be paid directly to the hospital before discharge.\n\n**Evidence:** Apollo Hospitals.  \nhttps://www.apollohospitals.com/region/kolkata/insurance/\n\n---",
+      "research_location": "OPP-001-01.md#Enhancement Branch",
+      "source_urls": [
+        "https://www.apollohospitals.com/region/kolkata/insurance/"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "10. Enhancement Branch",
+        "line_start": 254,
+        "line_end": 280
+      }
+    },
+    {
+      "statement": "Cashless hospitalisation requires payer/TPA authorization.\n\n**Source:** Apollo Hospitals  \nhttps://www.apollohospitals.com/region/kolkata/insurance/",
+      "research_location": "OPP-001-01.md#E-001",
+      "source_urls": [
+        "https://www.apollohospitals.com/region/kolkata/insurance/"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "E-001",
+        "line_start": 283,
+        "line_end": 288
+      }
+    },
+    {
+      "statement": "Apollo operates a Corporate / Insurance Help Desk to facilitate the workflow.\n\n**Source:** Apollo Hospitals  \nhttps://www.apollohospitals.com/region/kolkata/insurance/",
+      "research_location": "OPP-001-01.md#E-002",
+      "source_urls": [
+        "https://www.apollohospitals.com/region/kolkata/insurance/"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "E-002",
+        "line_start": 289,
+        "line_end": 294
+      }
+    },
+    {
+      "statement": "The workflow requires policy/identity information and doctor-completed treatment information.\n\n**Source:** Apollo Hospitals  \nhttps://www.apollohospitals.com/region/kolkata/insurance/",
+      "research_location": "OPP-001-01.md#E-003",
+      "source_urls": [
+        "https://www.apollohospitals.com/region/kolkata/insurance/"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "E-003",
+        "line_start": 295,
+        "line_end": 300
+      }
+    },
+    {
+      "statement": "The hospital checks submitted information for completeness before sending it to the TPA.\n\n**Source:** Apollo Hospitals  \nhttps://www.apollohospitals.com/region/kolkata/insurance/",
+      "research_location": "OPP-001-01.md#E-004",
+      "source_urls": [
+        "https://www.apollohospitals.com/region/kolkata/insurance/"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "E-004",
+        "line_start": 301,
+        "line_end": 306
+      }
+    },
+    {
+      "statement": "Payer-side outcomes include approval and rejection, with insufficient information creating a possible rejection/clarification path.\n\n**Source:** Apollo Hospitals  \nhttps://www.apollohospitals.com/region/kolkata/insurance/",
+      "research_location": "OPP-001-01.md#E-005",
+      "source_urls": [
+        "https://www.apollohospitals.com/region/kolkata/insurance/"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "E-005",
+        "line_start": 307,
+        "line_end": 312
+      }
+    },
+    {
+      "statement": "Cost increases above the approved amount can create an enhancement workflow.\n\n**Source:** Apollo Hospitals  \nhttps://www.apollohospitals.com/region/kolkata/insurance/\n\n---",
+      "research_location": "OPP-001-01.md#E-006",
+      "source_urls": [
+        "https://www.apollohospitals.com/region/kolkata/insurance/"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "E-006",
+        "line_start": 313,
+        "line_end": 320
+      }
+    },
+    {
+      "statement": "The following remain **UNKNOWN**:\n\n- workflow volume;\n- exception frequency;\n- query frequency;\n- enhancement frequency;\n- human handling time;\n- employee workload;\n- rework;\n- SLA performance;\n- internal software architecture;\n- automation coverage;\n- cross-system work;\n- financial cost of exceptions;\n- customer dissatisfaction attributable to the workflow;\n- ART capability gap.\n\nThese must not be inferred from workflow complexity.\n\n---",
+      "research_location": "OPP-001-01.md#What Is Not Proven",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "12. What Is Not Proven",
+        "line_start": 321,
+        "line_end": 343
+      }
+    },
+    {
+      "statement": "The Apollo workflow is a **reference archetype** for subsequent research.\n\nThe transferable research question is:\n\n> Do mid-scale Indian hospitals perform the same or materially similar cashless pre-authorisation workflow, and if so, where does their implementation maturity differ from the reference workflow?\n\nThis is a **research hypothesis**, not a claim that mid-scale hospitals lack the capability.\n\nFuture company investigations must independently establish:\n\n```text\nSAME WORKFLOW?\n      ↓\nSAME EXCEPTIONS?\n      ↓\nDIFFERENT CAPABILITY MATURITY?\n      ↓\nREAL PAIN?\n      ↓\nMEASURABLE IMPACT?\n      ↓\nART FIT?\n```\n\n---",
+      "research_location": "OPP-001-01.md#Industry-Level Research Hypothesis",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "13. Industry-Level Research Hypothesis",
+        "line_start": 344,
+        "line_end": 371
+      }
+    },
+    {
+      "statement": "Apollo should therefore be treated as:\n\n**REFERENCE / BENCHMARK**\n\nnot:\n\n**ASSUMED CUSTOMER**\n\nThe future opportunity search can use the reconstructed workflow to identify other Indian hospitals where:\n\n- the workflow exists;\n- implementation maturity is lower;\n- the same exception/problem is materially painful;\n- an identifiable owner exists;\n- existing systems do not adequately resolve it;\n- ART can provide a differentiated capability.\n\nNo such customer is declared by OPP-001-01.\n\n---",
+      "research_location": "OPP-001-01.md#Reference vs Target Logic",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "14. Reference vs Target Logic",
+        "line_start": 372,
+        "line_end": 394
+      }
+    },
+    {
+      "statement": "**VERIFIED**",
+      "research_location": "OPP-001-01.md#Workflow",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "Workflow",
+        "line_start": 399,
+        "line_end": 402
+      }
+    },
+    {
+      "statement": "**VERIFIED**",
+      "research_location": "OPP-001-01.md#Actors",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "Actors",
+        "line_start": 403,
+        "line_end": 406
+      }
+    },
+    {
+      "statement": "**VERIFIED**",
+      "research_location": "OPP-001-01.md#Inputs",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "Inputs",
+        "line_start": 407,
+        "line_end": 410
+      }
+    },
+    {
+      "statement": "**VERIFIED**",
+      "research_location": "OPP-001-01.md#Decision surface",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "Decision surface",
+        "line_start": 411,
+        "line_end": 414
+      }
+    },
+    {
+      "statement": "**VERIFIED**",
+      "research_location": "OPP-001-01.md#Exceptions",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "Exceptions",
+        "line_start": 415,
+        "line_end": 418
+      }
+    },
+    {
+      "statement": "**REFERENCE ONLY**",
+      "research_location": "OPP-001-01.md#Existing capability maturity",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "Existing capability maturity",
+        "line_start": 419,
+        "line_end": 422
+      }
+    },
+    {
+      "statement": "**UNKNOWN**",
+      "research_location": "OPP-001-01.md#Industry-wide pain",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "Industry-wide pain",
+        "line_start": 423,
+        "line_end": 426
+      }
+    },
+    {
+      "statement": "**UNKNOWN**",
+      "research_location": "OPP-001-01.md#Mid-scale hospital pain",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "Mid-scale hospital pain",
+        "line_start": 427,
+        "line_end": 430
+      }
+    },
+    {
+      "statement": "**UNKNOWN**",
+      "research_location": "OPP-001-01.md#ART gap",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "ART gap",
+        "line_start": 431,
+        "line_end": 434
+      }
+    },
+    {
+      "statement": "**UNKNOWN**",
+      "research_location": "OPP-001-01.md#ROI",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "ROI",
+        "line_start": 435,
+        "line_end": 438
+      }
+    },
+    {
+      "statement": "**NOT ESTABLISHED**\n\n---",
+      "research_location": "OPP-001-01.md#Customer opportunity",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "Customer opportunity",
+        "line_start": 439,
+        "line_end": 444
+      }
+    },
+    {
+      "statement": "The next investigation should continue with the same legacy VRL methodology while asking:\n\n> What capabilities already exist around this workflow, and where does implementation maturity differ across hospital organizations?\n\nThe research should compare the reference workflow against other Indian hospital organizations only after their own evidence is independently established.\n\n---",
+      "research_location": "OPP-001-01.md#OPP-001-02 — Existing Capability / Automation Reconstruction",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "OPP-001-02 — Existing Capability / Automation Reconstruction",
+        "line_start": 447,
+        "line_end": 456
+      }
+    },
+    {
+      "statement": "```yaml\nartifact_type: workflow_intelligence\ndomain: healthcare\nindustry: hospital_operations\nreference_company: Apollo Hospitals Enterprise Limited\nworkflow_archetype: cashless_pre_authorisation\nworkflow_status: verified\ncommercial_status: not_established\npain_status: unknown\nroi_status: unknown\nart_gap_status: unknown\nnext_action: capability_reconstruction\nreusability: cross_company_candidate\nevidence_ids:\n  - E-001\n  - E-002\n  - E-003\n  - E-004\n  - E-005\n  - E-006\n```\n\n---",
+      "research_location": "OPP-001-01.md#AIL Compilation Metadata",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "17. AIL Compilation Metadata",
+        "line_start": 457,
+        "line_end": 482
+      }
+    },
+    {
+      "statement": "This artifact documents a **real reference workflow**, not a manufactured opportunity.\n\nApollo's workflow is useful because it makes the operational sequence visible.\n\nThe next stage is to determine whether the same workflow exists elsewhere, especially among mid-scale Indian hospitals, and whether meaningful unmet need exists there.\n\n**The workflow is proven.  \nThe industry-wide pain is not yet proven.  \nThe customer is not yet identified.  \nThe ART opportunity is not yet declared.**",
+      "research_location": "OPP-001-01.md#Integrity Statement",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-01.md",
+        "section": "18. Integrity Statement",
+        "line_start": 483,
+        "line_end": 494
+      }
+    },
+    {
+      "statement": "---\nid: OPP-001-02\nopportunity_id: OPP-001\ncheckpoint: OPP-001-02\nindustry: Healthcare / Hospital Operations\ncompany: Apollo Hospitals Enterprise Limited\ncompany_role: Reference Workflow / Capability Benchmark\ngeography: India\nworkflow: Cashless Pre-Authorisation\nworkflow_archetype: Hospital Insurance / TPA Pre-Authorisation\nresearch_type: Legacy VRL Methodology\nresearch_stage: Existing Capability / Automation Reconstruction\nstatus: PASS\ndecision: CONTINUE\nevidence_posture: Evidence-first\nsource_standard: Official company and institutional sources\nail_status: Ready for compilation\nconfidence: High\n---",
+      "research_location": "OPP-001-02.md#Front matter",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "Front matter",
+        "line_start": 1,
+        "line_end": 18
+      }
+    },
+    {
+      "statement": "**Industry:** Healthcare / Hospital Operations  \n**Company:** Apollo Hospitals Enterprise Limited  \n**Company Role:** Reference Workflow / Capability Benchmark  \n**Geography:** India  \n**Workflow:** Cashless Pre-Authorisation  \n**Checkpoint:** OPP-001-02  \n**Methodology:** Legacy VRL Methodology — unchanged  \n**Status:** PASS → CONTINUE\n\n---",
+      "research_location": "OPP-001-02.md#OPP-001-02 — Existing Capability / Automation Reconstruction",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "OPP-001-02 — Existing Capability / Automation Reconstruction",
+        "line_start": 21,
+        "line_end": 33
+      }
+    },
+    {
+      "statement": "Reconstruct what capabilities already exist around the Apollo cashless pre-authorisation workflow before treating any part of the workflow as an ART opportunity.\n\nApollo remains the **reference implementation**.\n\nThe objective is not to prove that Apollo needs ART.\n\nThe objective is to establish:\n\n- what the hospital already does;\n- what external payer/TPA capability already exists;\n- what Apollo's technology ecosystem already provides;\n- which parts of the workflow are demonstrably automated;\n- which parts remain unknown;\n- where the reference implementation leaves an evidence boundary for further industry research.\n\n---",
+      "research_location": "OPP-001-02.md#Investigation Purpose",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "1. Investigation Purpose",
+        "line_start": 34,
+        "line_end": 52
+      }
+    },
+    {
+      "statement": "> What existing hospital, payer/TPA and Apollo technology capabilities support cashless pre-authorisation, and what can actually be proven about the remaining automation gap?\n\n---",
+      "research_location": "OPP-001-02.md#Core Research Question",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "2. Core Research Question",
+        "line_start": 53,
+        "line_end": 58
+      }
+    },
+    {
+      "statement": "Apollo's official insurance documentation establishes a defined Corporate / Insurance Help Desk process.\n\nThe documented capabilities include:\n\n- collecting insurance and identity information;\n- obtaining the relevant TPA pre-authorisation form;\n- assisting with policy/general information;\n- obtaining treatment information from the treating doctor;\n- checking the completed form for completeness and discrepancies;\n- sending the completed request to the TPA;\n- communicating the approval status to the patient.\n\n**Source:** Apollo Hospitals — Insurance / Cashless Hospitalization  \nhttps://www.apollohospitals.com/region/kolkata/insurance/\n\nThis establishes an operational workflow with role ownership and control points.\n\nIt does **not** establish the internal software architecture supporting those activities.\n\n---",
+      "research_location": "OPP-001-02.md#Apollo Hospital-Side Capability",
+      "source_urls": [
+        "https://www.apollohospitals.com/region/kolkata/insurance/"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "3. Apollo Hospital-Side Capability",
+        "line_start": 59,
+        "line_end": 81
+      }
+    },
+    {
+      "statement": "| Workflow Capability | Evidence | Status |\n|---|---|---|\n| Insurance / policy information collection | Apollo published process | VERIFIED |\n| Patient identity collection | Apollo published process | VERIFIED |\n| TPA form acquisition | Apollo published process | VERIFIED |\n| Doctor treatment information | Apollo published process | VERIFIED |\n| Completeness / discrepancy check | Apollo published process | VERIFIED |\n| TPA submission | Apollo published process | VERIFIED |\n| Approval-status communication | Apollo published process | VERIFIED |\n| Enhancement request process | Apollo published process | VERIFIED |\n| Payer authorization | IRDAI / Apollo | VERIFIED |\n| Digital document extraction | Public evidence unavailable | UNKNOWN |\n| Automated eligibility checking | Public evidence unavailable | UNKNOWN |\n| Automated evidence retrieval | Public evidence unavailable | UNKNOWN |\n| Automated query classification | Public evidence unavailable | UNKNOWN |\n| Automated query response | Public evidence unavailable | UNKNOWN |\n| Automated exception investigation | Public evidence unavailable | UNKNOWN |\n| Cross-system evidence reconciliation | Public evidence unavailable | UNKNOWN |\n\n---",
+      "research_location": "OPP-001-02.md#Capability Map",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "4. Capability Map",
+        "line_start": 82,
+        "line_end": 104
+      }
+    },
+    {
+      "statement": "A critical evidence point emerged during the investigation.\n\n**Apollo HealthAxis**, an Apollo healthcare technology organization, publicly describes an **Ops Copilot** for front-desk and back-office operations.\n\nIts official IT Services page states that the capability supports administrative, quality and support teams, including the **Insurance Desk**, and describes specialized AI agents for tasks including **insurance pre-authorisation**.\n\nThe same page describes capabilities including:\n\n- AI-native applications;\n- workflow-driven applications;\n- AI assistants;\n- autonomous agents;\n- EHR integrations;\n- data engineering;\n- AI model development.\n\n**Source:** Apollo HealthAxis — IT Services  \nhttps://www.apollohealthaxis.com/capabilities/it-service\n\nThis is a major capability finding.\n\n---",
+      "research_location": "OPP-001-02.md#Apollo's Existing Technology Capability",
+      "source_urls": [
+        "https://www.apollohealthaxis.com/capabilities/it-service"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "5. Apollo's Existing Technology Capability",
+        "line_start": 105,
+        "line_end": 129
+      }
+    },
+    {
+      "statement": "The evidence supports:\n\n> Apollo's broader technology ecosystem has publicly described AI-agent capability targeting insurance pre-authorisation.\n\nIt does **not** support:\n\n> Every Apollo hospital has deployed this capability.\n\nIt also does not establish:\n\n- deployment coverage;\n- adoption rate;\n- automation percentage;\n- exact workflow tasks automated;\n- agent accuracy;\n- exception coverage;\n- actual productivity improvement;\n- actual financial ROI;\n- whether difficult cases still require manual investigation.\n\nTherefore the correct classification is:\n\n**EXISTING CAPABILITY: VERIFIED**\n\n**ACTUAL DEPLOYMENT / COVERAGE: UNKNOWN**\n\n---",
+      "research_location": "OPP-001-02.md#Interpretation of the Apollo HealthAxis Evidence",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "6. Interpretation of the Apollo HealthAxis Evidence",
+        "line_start": 130,
+        "line_end": 159
+      }
+    },
+    {
+      "statement": "IRDAI defines cashless treatment as a facility in which the insurer or TPA makes payment directly to the network provider to the extent of the approved cashless authorization.\n\nIRDAI also establishes regulatory turnaround requirements for cashless authorization.\n\nThe current evidence therefore establishes an external payer decision layer:\n\n```text\nHOSPITAL\n   ↓\nPRE-AUTH REQUEST\n   ↓\nINSURER / TPA\n   ↓\nAUTHORIZATION DECISION\n```\n\n**Source:** IRDAI — Health Department  \nhttps://irdai.gov.in/health-dept\n\nThe existence of this payer capability must be considered before proposing any ART layer around the decision itself.\n\n---",
+      "research_location": "OPP-001-02.md#External Payer / TPA Capability",
+      "source_urls": [
+        "https://irdai.gov.in/health-dept"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "7. External Payer / TPA Capability",
+        "line_start": 160,
+        "line_end": 184
+      }
+    },
+    {
+      "statement": "IRDAI states that the insurer should make a cashless pre-authorisation decision immediately and within one hour of receiving the request.\n\nIRDAI also states that final cashless authorization should be granted within three hours of receiving the hospital's discharge authorization request.\n\n**Source:** IRDAI — Health Department  \nhttps://irdai.gov.in/health-dept\n\nThis establishes a formal service-level constraint.\n\nIt does not establish Apollo's actual performance against that requirement.\n\nTherefore:\n\n```text\nREGULATORY SLA\n      ↓\nKNOWN\n      ↓\nAPOLLO PERFORMANCE\n      ↓\nUNKNOWN\n```\n\n---",
+      "research_location": "OPP-001-02.md#Regulatory Timing Capability",
+      "source_urls": [
+        "https://irdai.gov.in/health-dept"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "8. Regulatory Timing Capability",
+        "line_start": 185,
+        "line_end": 211
+      }
+    },
+    {
+      "statement": "The evidence currently supports this architecture:\n\n```text\nPATIENT\n   ↓\nAPOLLO HOSPITAL\n   ↓\nINSURANCE / CORPORATE DESK\n   ↓\nDOCUMENT + CLINICAL INFORMATION\n   ↓\nTPA / INSURER\n   ↓\nAUTHORIZATION DECISION\n   ↓\nHOSPITAL COMMUNICATION\n```\n\nAlongside this operational workflow:\n\n```text\nAPOLLO HEALTHAXIS\n       ↓\nOPS COPILOT\n       ↓\nINSURANCE DESK\n       ↓\nAI AGENTS\n       ↓\nINSURANCE PRE-AUTHORIZATION\n```\n\nThe second layer prevents a simplistic conclusion that pre-authorisation automation is necessarily an unserved problem at Apollo.\n\n---",
+      "research_location": "OPP-001-02.md#Existing Capability Stack",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "9. Existing Capability Stack",
+        "line_start": 212,
+        "line_end": 249
+      }
+    },
+    {
+      "statement": "- Apollo has an established insurance-desk process.\n- Apollo performs completeness checking.\n- Apollo submits pre-authorisation requests to TPAs.\n- The insurer/TPA owns authorization.\n- Apollo has a documented enhancement process.\n- IRDAI imposes cashless authorization timing requirements.\n- Apollo HealthAxis publicly describes AI-agent capability for insurance pre-authorisation.",
+      "research_location": "OPP-001-02.md#Proven",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "Proven",
+        "line_start": 252,
+        "line_end": 261
+      }
+    },
+    {
+      "statement": "- Every Apollo hospital uses Apollo HealthAxis' pre-authorisation capability.\n- Every pre-authorisation step is automated.\n- Exception cases are automatically investigated.\n- Payer queries are automatically resolved.\n- Documents are automatically retrieved.\n- Records are automatically reconciled.\n- Human workload has been eliminated.\n- Apollo has achieved a particular ROI.\n\n---",
+      "research_location": "OPP-001-02.md#Not Proven",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "Not Proven",
+        "line_start": 262,
+        "line_end": 274
+      }
+    },
+    {
+      "statement": "The investigation therefore reaches this boundary:\n\n```text\nREFERENCE WORKFLOW\n       ↓\nEXISTING HOSPITAL PROCESS\n       ↓\nEXTERNAL PAYER CAPABILITY\n       ↓\nAPOLLO HEALTHAXIS AI CAPABILITY\n       ↓\n?????????????????????????\n       ↓\nRESIDUAL UNRESOLVED WORK\n```\n\nThe question mark cannot be filled with assumptions.\n\nIt requires the next investigation stage.\n\n---",
+      "research_location": "OPP-001-02.md#Capability-Gap Boundary",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "11. Capability-Gap Boundary",
+        "line_start": 275,
+        "line_end": 298
+      }
+    },
+    {
+      "statement": "A generic proposal such as:\n\n> \"We can automate hospital insurance pre-authorisation with AI.\"\n\nwould currently be poorly supported as an Apollo-specific opportunity.\n\nReason:\n\nApollo already publicly describes capability in the same functional area.\n\nThe correct research direction is therefore:\n\n> **Find the residual investigation, exception, evidence, decision or coordination work that remains after existing capability is considered.**\n\nIf no material residual problem exists, Apollo should not become the customer target.\n\n---",
+      "research_location": "OPP-001-02.md#Commercial Interpretation",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "12. Commercial Interpretation",
+        "line_start": 299,
+        "line_end": 318
+      }
+    },
+    {
+      "statement": "This checkpoint creates a second important research asset.\n\nApollo can function as a **capability benchmark**.\n\nThe subsequent industry research can ask:\n\n```text\nREFERENCE CAPABILITY\n        ↓\nMID-SCALE HOSPITAL A\n        ↓\nMID-SCALE HOSPITAL B\n        ↓\nMID-SCALE HOSPITAL C\n        ↓\nCOMPARE:\nWORKFLOW\nCAPABILITY\nAUTOMATION\nEXCEPTIONS\nHUMAN WORK\n```\n\nThe objective is not to claim that smaller or mid-scale hospitals lack this capability.\n\nThe objective is to independently establish whether:\n\n> **The same workflow exists with materially lower implementation maturity and creates a measurable operational need.**\n\nThat is where a potential ART opportunity may emerge.\n\n---",
+      "research_location": "OPP-001-02.md#Industry Transfer Value",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "13. Industry Transfer Value",
+        "line_start": 319,
+        "line_end": 353
+      }
+    },
+    {
+      "statement": "Apollo operates a Corporate / Insurance Help Desk supporting cashless pre-authorisation.\n\n**Source:**  \nhttps://www.apollohospitals.com/region/kolkata/insurance/",
+      "research_location": "OPP-001-02.md#E-001",
+      "source_urls": [
+        "https://www.apollohospitals.com/region/kolkata/insurance/"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "E-001",
+        "line_start": 358,
+        "line_end": 364
+      }
+    },
+    {
+      "statement": "Apollo's process includes document collection, doctor-completed treatment information, completeness checking and TPA submission.\n\n**Source:**  \nhttps://www.apollohospitals.com/region/kolkata/insurance/",
+      "research_location": "OPP-001-02.md#E-002",
+      "source_urls": [
+        "https://www.apollohospitals.com/region/kolkata/insurance/"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "E-002",
+        "line_start": 365,
+        "line_end": 371
+      }
+    },
+    {
+      "statement": "Apollo documents enhancement handling when actual expenses exceed the pre-approved amount.\n\n**Source:**  \nhttps://www.apollohospitals.com/region/kolkata/insurance/",
+      "research_location": "OPP-001-02.md#E-003",
+      "source_urls": [
+        "https://www.apollohospitals.com/region/kolkata/insurance/"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "E-003",
+        "line_start": 372,
+        "line_end": 378
+      }
+    },
+    {
+      "statement": "IRDAI establishes the insurer/TPA authorization layer and cashless authorization timing requirements.\n\n**Source:**  \nhttps://irdai.gov.in/health-dept",
+      "research_location": "OPP-001-02.md#E-004",
+      "source_urls": [
+        "https://irdai.gov.in/health-dept"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "E-004",
+        "line_start": 379,
+        "line_end": 385
+      }
+    },
+    {
+      "statement": "Apollo HealthAxis publicly describes an Ops Copilot with specialized AI agents for insurance pre-authorisation.\n\n**Source:**  \nhttps://www.apollohealthaxis.com/capabilities/it-service\n\n---",
+      "research_location": "OPP-001-02.md#E-005",
+      "source_urls": [
+        "https://www.apollohealthaxis.com/capabilities/it-service"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "E-005",
+        "line_start": 386,
+        "line_end": 394
+      }
+    },
+    {
+      "statement": "Apollo has a defined operational capability for cashless pre-authorisation.\n\n**Basis:** E-001, E-002, E-003.",
+      "research_location": "OPP-001-02.md#C-001",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "C-001",
+        "line_start": 397,
+        "line_end": 402
+      }
+    },
+    {
+      "statement": "Cashless authorization is a multi-organization workflow in which the hospital facilitates preparation/submission while the insurer/TPA owns authorization.\n\n**Basis:** E-001, E-004.",
+      "research_location": "OPP-001-02.md#C-002",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "C-002",
+        "line_start": 403,
+        "line_end": 408
+      }
+    },
+    {
+      "statement": "Apollo's technology ecosystem has publicly described AI capability targeting insurance pre-authorisation.\n\n**Basis:** E-005.\n\n---",
+      "research_location": "OPP-001-02.md#C-003",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "C-003",
+        "line_start": 409,
+        "line_end": 416
+      }
+    },
+    {
+      "statement": "Generic pre-authorisation automation should not currently be treated as a validated Apollo-specific ART gap.\n\n**Basis:** C-001, C-003.",
+      "research_location": "OPP-001-02.md#I-001",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "I-001",
+        "line_start": 419,
+        "line_end": 424
+      }
+    },
+    {
+      "statement": "Apollo is more valuable at this stage as a reference implementation against which less mature hospital workflows can be investigated.\n\n**Basis:** C-001, C-003.\n\n---",
+      "research_location": "OPP-001-02.md#I-002",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "I-002",
+        "line_start": 425,
+        "line_end": 432
+      }
+    },
+    {
+      "statement": "Mid-scale Indian hospitals may operate materially similar cashless pre-authorisation workflows with lower automation maturity.\n\n**Status:** UNVERIFIED.",
+      "research_location": "OPP-001-02.md#H-001",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "H-001",
+        "line_start": 435,
+        "line_end": 440
+      }
+    },
+    {
+      "statement": "Some mid-scale hospitals may have unresolved exception or evidence-reconstruction work that existing systems do not adequately address.\n\n**Status:** UNVERIFIED.",
+      "research_location": "OPP-001-02.md#H-002",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "H-002",
+        "line_start": 441,
+        "line_end": 446
+      }
+    },
+    {
+      "statement": "A specific residual workflow problem, rather than generic pre-authorisation automation, may create an ART opportunity.\n\n**Status:** UNVERIFIED.\n\n---",
+      "research_location": "OPP-001-02.md#H-003",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "H-003",
+        "line_start": 447,
+        "line_end": 454
+      }
+    },
+    {
+      "statement": "- Apollo HealthAxis deployment coverage across Apollo hospitals.\n- Actual Apollo automation percentage.\n- Actual exception workload.\n- Actual human handling time.\n- Actual query frequency.\n- Actual enhancement frequency.\n- Actual SLA performance.\n- Actual financial impact.\n- Actual residual investigation work.\n- Mid-scale hospital capability maturity.\n- Mid-scale hospital pain.\n- Buyer willingness to pay.\n- ART ROI.\n\n---",
+      "research_location": "OPP-001-02.md#UNKNOWN",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "18. UNKNOWN",
+        "line_start": 455,
+        "line_end": 472
+      }
+    },
+    {
+      "statement": "The existing capability has been reconstructed sufficiently to prevent a premature ART pitch.\n\nThe Apollo-specific opportunity is **not validated**.\n\nThe workflow remains highly useful as a **reference workflow and capability benchmark** for the next stage of industry research.\n\nThe next research should move from:\n\n**Apollo capability reconstruction**\n\nto:\n\n**industry workflow transfer + mid-scale company discovery**.\n\n---",
+      "research_location": "OPP-001-02.md#Decision: CONTINUE",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "Decision: CONTINUE",
+        "line_start": 475,
+        "line_end": 492
+      }
+    },
+    {
+      "statement": "The next checkpoint should investigate:\n\n> What happens when cashless pre-authorisation does not resolve through the normal workflow, and what human investigation remains after existing hospital, payer and technology capabilities are considered?\n\nThe same checkpoint structure should remain reusable across subsequent companies.\n\n---",
+      "research_location": "OPP-001-02.md#OPP-001-03 — Exception + Human Investigation Reconstruction",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "OPP-001-03 — Exception + Human Investigation Reconstruction",
+        "line_start": 495,
+        "line_end": 504
+      }
+    },
+    {
+      "statement": "```yaml\nartifact_type: workflow_intelligence\ndomain: healthcare\nindustry: hospital_operations\nreference_company: Apollo Hospitals Enterprise Limited\ncompany_role: reference_workflow_capability_benchmark\nworkflow_archetype: cashless_pre_authorisation\nresearch_stage: existing_capability_automation_reconstruction\nworkflow_status: verified\nexisting_capability_status: verified\nautomation_gap_status: unknown\npain_status: unknown\nroi_status: unknown\nart_gap_status: unknown\ncommercial_status: not_established\nreusability: cross_company_candidate\nnext_action: exception_human_investigation\nevidence_ids:\n  - E-001\n  - E-002\n  - E-003\n  - E-004\n  - E-005\n```\n\n---",
+      "research_location": "OPP-001-02.md#AIL Compilation Metadata",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "21. AIL Compilation Metadata",
+        "line_start": 505,
+        "line_end": 533
+      }
+    },
+    {
+      "statement": "This checkpoint deliberately does not turn an existing workflow into an ART opportunity.\n\nThe evidence establishes a real hospital workflow, existing operational controls, an external payer decision layer, and an Apollo-affiliated AI capability targeting insurance pre-authorisation.\n\nThe remaining commercial question is therefore narrower:\n\n> **Where does meaningful unresolved work remain, and does that same unresolved work exist in other Indian hospitals with insufficient implementation maturity?**\n\nOnly independently verified evidence can answer that question.\n\n**OPP-001-02 = PASS → CONTINUE**\n\n**Apollo = reference benchmark.**\n\n**Industry opportunity = still unvalidated.**",
+      "research_location": "OPP-001-02.md#Integrity Statement",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-02.md",
+        "section": "22. Integrity Statement",
+        "line_start": 534,
+        "line_end": 550
+      }
+    },
+    {
+      "statement": "---\nid: OPP-001-03\nopportunity_id: OPP-001\ncheckpoint: OPP-001-03\nindustry: Healthcare / Hospital Operations\ncompany: Apollo Hospitals Enterprise Limited\ncompany_role: Reference Workflow / Capability Benchmark\ngeography: India\nworkflow: Cashless Pre-Authorisation\nworkflow_archetype: Hospital Insurance / TPA Pre-Authorisation\nresearch_type: Legacy VRL Methodology\nresearch_stage: Exception + Human Investigation Reconstruction\nstatus: PASS\ndecision: CONTINUE\nevidence_posture: Evidence-first\nsource_standard: Official company and institutional sources\nail_status: Ready for compilation\nconfidence: High\n---",
+      "research_location": "OPP-001-03.md#Front matter",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "Front matter",
+        "line_start": 1,
+        "line_end": 18
+      }
+    },
+    {
+      "statement": "**Industry:** Healthcare / Hospital Operations  \n**Company:** Apollo Hospitals Enterprise Limited  \n**Company Role:** Reference Workflow / Capability Benchmark  \n**Geography:** India  \n**Workflow:** Cashless Pre-Authorisation  \n**Checkpoint:** OPP-001-03  \n**Methodology:** Legacy VRL Methodology — unchanged  \n**Status:** PASS → CONTINUE\n\n---",
+      "research_location": "OPP-001-03.md#OPP-001-03 — Exception + Human Investigation Reconstruction",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "OPP-001-03 — Exception + Human Investigation Reconstruction",
+        "line_start": 21,
+        "line_end": 33
+      }
+    },
+    {
+      "statement": "Reconstruct what happens when the normal cashless pre-authorisation path does not resolve immediately, with specific focus on:\n\n- query / clarification;\n- insufficient information;\n- enhancement;\n- rejection;\n- emergency processing;\n- evidence collection;\n- human ownership;\n- existing AI capability.\n\nThe objective is to identify the **exception workflow**, not to assume that exceptions are automatically painful or commercially valuable.\n\nApollo remains the **reference workflow / capability benchmark**, not an assumed customer.\n\n---",
+      "research_location": "OPP-001-03.md#Investigation Purpose",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "1. Investigation Purpose",
+        "line_start": 34,
+        "line_end": 52
+      }
+    },
+    {
+      "statement": "> When cashless pre-authorisation encounters an exception, what evidence is required, who acts on it, what decision is being resolved, and what human investigation work is actually proven?\n\n---",
+      "research_location": "OPP-001-03.md#Core Research Question",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "2. Core Research Question",
+        "line_start": 53,
+        "line_end": 58
+      }
+    },
+    {
+      "statement": "Apollo's published workflow establishes:\n\n```text\nPRE-AUTHORIZATION REQUEST\n        ↓\nCORPORATE / INSURANCE DESK\n        ↓\nFORM + CLINICAL INFORMATION\n        ↓\nCOMPLETENESS CHECK\n        ↓\nTPA / INSURER\n        ↓\nDECISION\n```\n\nThe normal workflow becomes an exception workflow when:\n\n```text\nINFORMATION INSUFFICIENT\nOR\nPOLICY / COVERAGE ISSUE\nOR\nAPPROVED AMOUNT INSUFFICIENT\nOR\nEMERGENCY TIMING\n```\n\n**Source:** Apollo Hospitals — Insurance / Cashless Hospitalization  \nhttps://www.apollohospitals.com/region/kolkata/insurance/\n\n---",
+      "research_location": "OPP-001-03.md#Normal-to-Exception Boundary",
+      "source_urls": [
+        "https://www.apollohospitals.com/region/kolkata/insurance/"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "3. Normal-to-Exception Boundary",
+        "line_start": 59,
+        "line_end": 93
+      }
+    },
+    {
+      "statement": "Apollo states that a cashless request may be rejected when the information in the pre-authorisation form is insufficient for the TPA to arrive at a decision and further information is unavailable.\n\nApollo also defines a **Query** as clarification requested to dispel doubt relating to the line of treatment and the insurance contract.\n\nTherefore the evidence-supported exception is:\n\n```text\nPRE-AUTH\n   ↓\nTPA REVIEW\n   ↓\nINFORMATION / CLARIFICATION REQUIRED\n   ↓\nFURTHER INFORMATION AVAILABLE?\n   ↓\nREVIEW\n   ↓\nDECISION\n```\n\n**Evidence classification:** VERIFIED.\n\n**Source:** Apollo Hospitals  \nhttps://www.apollohospitals.com/region/kolkata/insurance/",
+      "research_location": "OPP-001-03.md#EX-01 — Insufficient Information / Query",
+      "source_urls": [
+        "https://www.apollohospitals.com/region/kolkata/insurance/"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "4. EX-01 — Insufficient Information / Query",
+        "line_start": 94,
+        "line_end": 120
+      }
+    },
+    {
+      "statement": "The source does not establish:\n\n- who retrieves the additional information in every case;\n- how many systems are searched;\n- how long retrieval takes;\n- how many query cycles occur;\n- whether query responses are automated;\n- cost of query handling.\n\nThese remain **UNKNOWN**.\n\n---",
+      "research_location": "OPP-001-03.md#What is NOT proven",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "What is NOT proven",
+        "line_start": 121,
+        "line_end": 135
+      }
+    },
+    {
+      "statement": "Apollo documents rejection where the condition requiring hospitalization is not covered under the insurance policy, including certain pre-existing conditions and exclusions.\n\nThe workflow therefore contains:\n\n```text\nPRE-AUTH\n   ↓\nPOLICY / COVERAGE REVIEW\n   ↓\nCOVERED?\n  ↙   ↘\nYES   NO\n ↓     ↓\nCONTINUE REJECT\n```\n\n**Evidence classification:** VERIFIED.\n\n**Important boundary:** the policy decision belongs to the insurer/TPA. Apollo's public workflow does not expose the insurer's internal rule engine or decision logic.\n\n**Source:** Apollo Hospitals  \nhttps://www.apollohospitals.com/region/kolkata/insurance/\n\n---",
+      "research_location": "OPP-001-03.md#EX-02 — Policy / Coverage Decision",
+      "source_urls": [
+        "https://www.apollohospitals.com/region/kolkata/insurance/"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "5. EX-02 — Policy / Coverage Decision",
+        "line_start": 136,
+        "line_end": 162
+      }
+    },
+    {
+      "statement": "Apollo documents that a cashless request may not be entertained when the eligible medical insurance cover for the year has been exhausted.\n\n```text\nPRE-AUTH\n   ↓\nELIGIBLE COVER AVAILABLE?\n   ↓\nNO\n   ↓\nREQUEST NOT APPROVED\n```\n\n**Evidence classification:** VERIFIED.\n\nThis is a payer/policy condition, not evidence of an automation gap.\n\n**Source:** Apollo Hospitals  \nhttps://www.apollohospitals.com/region/kolkata/insurance/\n\n---",
+      "research_location": "OPP-001-03.md#EX-03 — Exhausted Insurance Cover",
+      "source_urls": [
+        "https://www.apollohospitals.com/region/kolkata/insurance/"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "6. EX-03 — Exhausted Insurance Cover",
+        "line_start": 163,
+        "line_end": 185
+      }
+    },
+    {
+      "statement": "Apollo documents a second authorization path when actual medical expenses exceed the pre-approved amount.\n\n```text\nPRE-APPROVED AMOUNT\n        ↓\nACTUAL EXPENSES INCREASE\n        ↓\nENHANCEMENT REQUIRED\n        ↓\nCORPORATE HELP DESK\n        ↓\nNECESSARY DOCUMENTATION\n        ↓\nTPA\n        ↓\nAPPROVE / REJECT\n```\n\nApollo states that its Corporate Help Desk applies for the enhancement on the patient's behalf and provides the necessary documentation. If the enhancement is rejected, the amount above the approved amount must be paid directly to the hospital before discharge.\n\n**Evidence classification:** VERIFIED.\n\n**Source:** Apollo Hospitals  \nhttps://www.apollohospitals.com/region/kolkata/insurance/",
+      "research_location": "OPP-001-03.md#EX-04 — Enhancement",
+      "source_urls": [
+        "https://www.apollohospitals.com/region/kolkata/insurance/"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "7. EX-04 — Enhancement",
+        "line_start": 186,
+        "line_end": 212
+      }
+    },
+    {
+      "statement": "- enhancement frequency;\n- average enhancement amount;\n- preparation time;\n- documentation workload;\n- number of follow-ups;\n- rejection frequency;\n- financial impact on Apollo.\n\n---",
+      "research_location": "OPP-001-03.md#Unknowns",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "Unknowns",
+        "line_start": 213,
+        "line_end": 224
+      }
+    },
+    {
+      "statement": "Apollo distinguishes planned and emergency hospitalization.\n\nFor planned hospitalization, pre-authorisation is expected before admission.\n\nFor emergencies, Apollo states that its Corporate Help Desk assists with the pre-authorisation procedure when immediate hospitalization is required.\n\nApollo's Teynampet hospital documentation similarly states that emergency cases trigger immediate hospital-side initiation of the request after admission.\n\n**Sources:**\n\nhttps://www.apollohospitals.com/region/kolkata/insurance/\n\nhttps://www.apollohospitals.com/hospitals/apollo-speciality-hospitals-teynampet\n\n**Evidence classification:** VERIFIED.\n\nEmergency processing proves a different operating condition.\n\nIt does **not** prove that emergency cases create an ART opportunity.\n\n---",
+      "research_location": "OPP-001-03.md#EX-05 — Emergency Processing",
+      "source_urls": [
+        "https://www.apollohospitals.com/region/kolkata/insurance/",
+        "https://www.apollohospitals.com/hospitals/apollo-speciality-hospitals-teynampet"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "8. EX-05 — Emergency Processing",
+        "line_start": 225,
+        "line_end": 248
+      }
+    },
+    {
+      "statement": "Apollo publicly identifies the Corporate Help Desk as a facilitator.\n\nIts published process assigns the desk responsibilities including:\n\n- assisting with pre-authorisation;\n- checking completeness;\n- identifying discrepancies;\n- submitting the request;\n- communicating approval status;\n- applying for enhancement;\n- providing necessary enhancement documentation.\n\nThe treating doctor provides and signs treatment information.\n\nThe insurer/TPA owns the approval decision.\n\n**Source:** Apollo Hospitals  \nhttps://www.apollohospitals.com/region/kolkata/insurance/\n\nTherefore:\n\n```text\nDOCTOR\n  ↓\nCLINICAL INFORMATION\n  ↓\nHOSPITAL INSURANCE DESK\n  ↓\nCHECK / SUBMIT / FACILITATE\n  ↓\nTPA / INSURER\n  ↓\nDECISION\n```\n\n**Evidence classification:** VERIFIED.\n\n---",
+      "research_location": "OPP-001-03.md#Human Roles in the Exception Path",
+      "source_urls": [
+        "https://www.apollohospitals.com/region/kolkata/insurance/"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "9. Human Roles in the Exception Path",
+        "line_start": 249,
+        "line_end": 289
+      }
+    },
+    {
+      "statement": "The National Health Authority's PM-JAY documentation independently confirms that pre-authorisation can require:\n\n- details from the treating doctor;\n- a request for authorization;\n- online submission through a scheme portal;\n- medical-team interaction with the treating doctor where necessary;\n- clarification for delay;\n- communication of the pre-authorisation decision to the healthcare provider.\n\nThe NHA documentation also states that required documents are sent to the insurer/authority and that document requirements can vary by package.\n\n**Sources:**\n\nhttps://nha.gov.in/img/pmjay-files/RFE_Volume_II.pdf\n\nhttps://nha.gov.in/img/resources/HBP-2.2-manual.pdf\n\nThis is useful as **independent Indian workflow evidence**, but it must not be treated as evidence of Apollo's internal process.\n\n---",
+      "research_location": "OPP-001-03.md#Independent Indian Workflow Evidence",
+      "source_urls": [
+        "https://nha.gov.in/img/pmjay-files/RFE_Volume_II.pdf",
+        "https://nha.gov.in/img/resources/HBP-2.2-manual.pdf"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "10. Independent Indian Workflow Evidence",
+        "line_start": 290,
+        "line_end": 312
+      }
+    },
+    {
+      "statement": "The strongest evidence-supported industry abstraction is:\n\n```text\nCASE\n ↓\nPRE-AUTHORIZATION\n ↓\nEVIDENCE SUBMISSION\n ↓\nPAYER REVIEW\n ↓\n┌───────────────────────────────┐\n│ APPROVE                       │\n│ QUERY / CLARIFICATION         │\n│ REJECT                        │\n│ ENHANCEMENT / NEW REQUEST     │\n└───────────────────────────────┘\n ↓\nADDITIONAL EVIDENCE / DECISION\n ↓\nRESOLUTION\n```\n\nThis is a **workflow archetype** that can be tested across other Indian hospitals.\n\nIt is not proof that every hospital implements it identically.\n\n---",
+      "research_location": "OPP-001-03.md#Exception Workflow Abstraction",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "11. Exception Workflow Abstraction",
+        "line_start": 313,
+        "line_end": 343
+      }
+    },
+    {
+      "statement": "Apollo HealthAxis publicly describes **One Hub**, an Operations Copilot for front-desk and back-office operations.\n\nThe official page specifically lists:\n\n- Insurance Desk as an example administrative/support function;\n- specialized AI agents for insurance pre-authorisation;\n- AI-native applications;\n- workflow-driven applications;\n- EHR integrations;\n- autonomous agents.\n\n**Source:** Apollo HealthAxis — IT Services  \nhttps://www.apollohealthaxis.com/capabilities/it-service\n\nThis materially changes the Apollo benchmark.\n\nThe reference company is not simply:\n\n```text\nMANUAL PRE-AUTH\n```\n\nIt is better represented as:\n\n```text\nHOSPITAL WORKFLOW\n        +\nINSURANCE DESK\n        +\nEXTERNAL TPA / INSURER\n        +\nAPOLLO HEALTHAXIS AI CAPABILITY\n```\n\n---",
+      "research_location": "OPP-001-03.md#Existing AI Capability Must Be Included",
+      "source_urls": [
+        "https://www.apollohealthaxis.com/capabilities/it-service"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "12. Existing AI Capability Must Be Included",
+        "line_start": 344,
+        "line_end": 381
+      }
+    },
+    {
+      "statement": "Apollo HealthAxis' public evidence proves that the Apollo technology ecosystem has AI capability targeting insurance pre-authorisation.\n\nIt does **not** prove:\n\n- deployment at every Apollo hospital;\n- adoption percentage;\n- which exception paths are automated;\n- which query types are automated;\n- whether evidence retrieval is automated;\n- whether difficult cases still require human investigation;\n- actual productivity;\n- actual ROI.\n\nTherefore:\n\n**AI CAPABILITY:** VERIFIED\n\n**ACTUAL DEPLOYMENT / COVERAGE:** UNKNOWN\n\n**RESIDUAL HUMAN BURDEN:** UNKNOWN\n\n---",
+      "research_location": "OPP-001-03.md#Critical Evidence Boundary",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "13. Critical Evidence Boundary",
+        "line_start": 382,
+        "line_end": 406
+      }
+    },
+    {
+      "statement": "Apollo's documented workflow assigns human roles to:\n\n- collect/complete information;\n- check completeness;\n- identify discrepancies;\n- submit requests;\n- communicate status;\n- apply for enhancements;\n- provide enhancement documentation.",
+      "research_location": "OPP-001-03.md#PROVEN",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "PROVEN",
+        "line_start": 409,
+        "line_end": 420
+      }
+    },
+    {
+      "statement": "We cannot yet prove that Apollo staff:\n\n- manually search multiple systems;\n- manually reconcile conflicting records;\n- manually draft query responses;\n- repeatedly chase TPAs;\n- manually track every pending case;\n- spend a material amount of time on exceptions;\n- experience significant operational pain.\n\nThis distinction is critical.\n\n> **Human involvement is proven. Material human investigation burden is not.**\n\n---",
+      "research_location": "OPP-001-03.md#NOT PROVEN",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "NOT PROVEN",
+        "line_start": 421,
+        "line_end": 438
+      }
+    },
+    {
+      "statement": "IRDAI states that insurers must decide cashless pre-authorisation immediately and within one hour of receiving the request.\n\nIRDAI also states that final cashless authorization must be granted within three hours of receiving the hospital's discharge authorization request.\n\n**Source:** IRDAI — Health Department  \nhttps://irdai.gov.in/health-dept\n\nTherefore:\n\n```text\nREGULATED TAT\n      ↓\nMEASURABLE VARIABLE\n      ↓\nACTUAL HOSPITAL / INSURER PERFORMANCE\n      ↓\nUNKNOWN\n```\n\nThe regulation creates a measurable operational constraint.\n\nIt does not establish that Apollo or another hospital is failing it.\n\n---",
+      "research_location": "OPP-001-03.md#Regulatory Timing as a Measurement Variable",
+      "source_urls": [
+        "https://irdai.gov.in/health-dept"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "15. Regulatory Timing as a Measurement Variable",
+        "line_start": 439,
+        "line_end": 465
+      }
+    },
+    {
+      "statement": "| Potential pain | Current evidence |\n|---|---|\n| Queries exist | VERIFIED |\n| Additional information may be required | VERIFIED |\n| Enhancement requests exist | VERIFIED |\n| Human hospital roles exist | VERIFIED |\n| Material staff workload | UNKNOWN |\n| Repetitive investigation | UNKNOWN |\n| Excessive follow-up | UNKNOWN |\n| SLA failure | UNKNOWN |\n| Financial loss | UNKNOWN |\n| Patient dissatisfaction caused by exception handling | UNKNOWN |\n| Existing automation insufficient | UNKNOWN |\n\nTherefore:",
+      "research_location": "OPP-001-03.md#Current Pain-Point Evidence",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "16. Current Pain-Point Evidence",
+        "line_start": 466,
+        "line_end": 483
+      }
+    },
+    {
+      "statement": "---",
+      "research_location": "OPP-001-03.md#PAIN POINT NOT YET VALIDATED",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "PAIN POINT NOT YET VALIDATED",
+        "line_start": 484,
+        "line_end": 487
+      }
+    },
+    {
+      "statement": "The strongest reusable finding is not:\n\n> \"Apollo has a pre-authorisation problem.\"\n\nIt is:\n\n> **Cashless pre-authorisation is an exception-bearing evidence and decision workflow that can be investigated across Indian hospitals for differences in workflow maturity, exception handling and residual human work.**\n\nThis creates the next research path:\n\n```text\nAPOLLO REFERENCE\n      ↓\nWORKFLOW ARCHETYPE\n      ↓\nMID-SCALE HOSPITAL\n      ↓\nSAME / SIMILAR WORKFLOW?\n      ↓\nLOWER CAPABILITY MATURITY?\n      ↓\nREAL EXCEPTION BURDEN?\n      ↓\nMEASURABLE PAIN?\n      ↓\nART GAP?\n```\n\nEach target company must be independently researched.\n\n---",
+      "research_location": "OPP-001-03.md#Industry Transfer Hypothesis",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "17. Industry Transfer Hypothesis",
+        "line_start": 488,
+        "line_end": 521
+      }
+    },
+    {
+      "statement": "Apollo documents insufficient information as a possible reason for non-approval and defines a query as clarification concerning treatment and insurance terms.\n\n**Source:**  \nhttps://www.apollohospitals.com/region/kolkata/insurance/",
+      "research_location": "OPP-001-03.md#E-001",
+      "source_urls": [
+        "https://www.apollohospitals.com/region/kolkata/insurance/"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "E-001",
+        "line_start": 526,
+        "line_end": 531
+      }
+    },
+    {
+      "statement": "Apollo documents policy exclusions and exhausted insurance cover as possible reasons for non-approval.\n\n**Source:**  \nhttps://www.apollohospitals.com/region/kolkata/insurance/",
+      "research_location": "OPP-001-03.md#E-002",
+      "source_urls": [
+        "https://www.apollohospitals.com/region/kolkata/insurance/"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "E-002",
+        "line_start": 532,
+        "line_end": 537
+      }
+    },
+    {
+      "statement": "Apollo documents enhancement requests when actual expenses exceed the pre-approved amount.\n\n**Source:**  \nhttps://www.apollohospitals.com/region/kolkata/insurance/",
+      "research_location": "OPP-001-03.md#E-003",
+      "source_urls": [
+        "https://www.apollohospitals.com/region/kolkata/insurance/"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "E-003",
+        "line_start": 538,
+        "line_end": 543
+      }
+    },
+    {
+      "statement": "Apollo identifies the Corporate Help Desk, treating doctor and TPA/insurer as distinct workflow participants.\n\n**Source:**  \nhttps://www.apollohospitals.com/region/kolkata/insurance/",
+      "research_location": "OPP-001-03.md#E-004",
+      "source_urls": [
+        "https://www.apollohospitals.com/region/kolkata/insurance/"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "E-004",
+        "line_start": 544,
+        "line_end": 549
+      }
+    },
+    {
+      "statement": "Apollo HealthAxis publicly describes One Hub / Ops Copilot with specialized AI agents for insurance pre-authorisation.\n\n**Source:**  \nhttps://www.apollohealthaxis.com/capabilities/it-service",
+      "research_location": "OPP-001-03.md#E-005",
+      "source_urls": [
+        "https://www.apollohealthaxis.com/capabilities/it-service"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "E-005",
+        "line_start": 550,
+        "line_end": 555
+      }
+    },
+    {
+      "statement": "NHA documentation establishes hospital-side pre-authorisation submission, treating-doctor information, clarification and document requirements in Indian government healthcare workflows.\n\n**Sources:**  \nhttps://nha.gov.in/img/pmjay-files/RFE_Volume_II.pdf  \nhttps://nha.gov.in/img/resources/HBP-2.2-manual.pdf",
+      "research_location": "OPP-001-03.md#E-006",
+      "source_urls": [
+        "https://nha.gov.in/img/pmjay-files/RFE_Volume_II.pdf",
+        "https://nha.gov.in/img/resources/HBP-2.2-manual.pdf"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "E-006",
+        "line_start": 556,
+        "line_end": 562
+      }
+    },
+    {
+      "statement": "IRDAI establishes one-hour pre-authorisation and three-hour final cashless authorization TATs.\n\n**Source:**  \nhttps://irdai.gov.in/health-dept\n\n---",
+      "research_location": "OPP-001-03.md#E-007",
+      "source_urls": [
+        "https://irdai.gov.in/health-dept"
+      ],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "E-007",
+        "line_start": 563,
+        "line_end": 570
+      }
+    },
+    {
+      "statement": "Cashless pre-authorisation contains documented exception states involving clarification, rejection and enhancement.\n\n**Basis:** E-001, E-002, E-003.",
+      "research_location": "OPP-001-03.md#C-001",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "C-001",
+        "line_start": 573,
+        "line_end": 577
+      }
+    },
+    {
+      "statement": "Hospital-side human roles participate in exception handling and evidence preparation.\n\n**Basis:** E-003, E-004.",
+      "research_location": "OPP-001-03.md#C-002",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "C-002",
+        "line_start": 578,
+        "line_end": 582
+      }
+    },
+    {
+      "statement": "Apollo's broader technology ecosystem has publicly described AI capability for insurance pre-authorisation.\n\n**Basis:** E-005.",
+      "research_location": "OPP-001-03.md#C-003",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "C-003",
+        "line_start": 583,
+        "line_end": 587
+      }
+    },
+    {
+      "statement": "The underlying exception pattern is relevant beyond Apollo because similar pre-authorisation and clarification mechanisms are documented in Indian government healthcare workflows.\n\n**Basis:** E-006.\n\n---",
+      "research_location": "OPP-001-03.md#C-004",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "C-004",
+        "line_start": 588,
+        "line_end": 594
+      }
+    },
+    {
+      "statement": "The commercially interesting problem, if one exists, is more likely to be a specific residual exception/investigation problem than generic pre-authorisation automation.\n\n**Basis:** C-001, C-003.",
+      "research_location": "OPP-001-03.md#I-001",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "I-001",
+        "line_start": 597,
+        "line_end": 601
+      }
+    },
+    {
+      "statement": "Apollo is more useful as a capability benchmark than as the immediate customer target for generic pre-authorisation automation.\n\n**Basis:** C-003.",
+      "research_location": "OPP-001-03.md#I-002",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "I-002",
+        "line_start": 602,
+        "line_end": 606
+      }
+    },
+    {
+      "statement": "The workflow archetype can be transferred to research on mid-scale hospitals, but each company's workflow and pain must be independently established.\n\n**Basis:** C-004.\n\n---",
+      "research_location": "OPP-001-03.md#I-003",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "I-003",
+        "line_start": 607,
+        "line_end": 613
+      }
+    },
+    {
+      "statement": "Some mid-scale Indian hospitals may operate similar cashless pre-authorisation workflows with lower automation maturity.\n\n**Status:** UNVERIFIED.",
+      "research_location": "OPP-001-03.md#H-001",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "H-001",
+        "line_start": 616,
+        "line_end": 620
+      }
+    },
+    {
+      "statement": "Some hospitals may have material human investigation work in query and enhancement exceptions.\n\n**Status:** UNVERIFIED.",
+      "research_location": "OPP-001-03.md#H-002",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "H-002",
+        "line_start": 621,
+        "line_end": 625
+      }
+    },
+    {
+      "statement": "A specific evidence-reconstruction or exception-resolution problem may represent an ART opportunity.\n\n**Status:** UNVERIFIED.\n\n---",
+      "research_location": "OPP-001-03.md#H-003",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "H-003",
+        "line_start": 626,
+        "line_end": 632
+      }
+    },
+    {
+      "statement": "- Apollo exception volume.\n- Apollo query volume.\n- Apollo enhancement volume.\n- Apollo human handling time.\n- Apollo automation coverage.\n- Apollo HealthAxis deployment coverage.\n- Apollo exception-resolution accuracy.\n- Apollo SLA performance.\n- Apollo financial impact.\n- Mid-scale hospital implementation maturity.\n- Mid-scale hospital pain.\n- Buyer ownership.\n- Willingness to pay.\n- ART ROI.\n\n---",
+      "research_location": "OPP-001-03.md#UNKNOWN",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "22. UNKNOWN",
+        "line_start": 633,
+        "line_end": 651
+      }
+    },
+    {
+      "statement": "The exception workflow has been reconstructed sufficiently to establish a legitimate reusable workflow archetype.\n\nHowever:\n\n**Exception ≠ Pain**\n\n**Human involvement ≠ Material burden**\n\n**Existing AI capability ≠ Complete automation**\n\n**Workflow similarity ≠ Customer opportunity**\n\nThe Apollo reference should therefore now be transferred into **mid-scale Indian hospital discovery**, where actual implementation maturity, pain and economic impact can be independently tested.\n\n---",
+      "research_location": "OPP-001-03.md#Decision: PASS → CONTINUE",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "Decision: PASS → CONTINUE",
+        "line_start": 654,
+        "line_end": 671
+      }
+    },
+    {
+      "statement": "The next stage should no longer ask only:\n\n> \"What happens in the Apollo workflow?\"\n\nIt should ask:\n\n> **Which comparable mid-scale Indian hospitals operate this workflow, what capability do they currently have, where does the workflow break or create measurable burden, and is there a specific ART-relevant gap?**\n\nThe reference workflow remains the benchmark.\n\nThe target customer must be discovered independently.\n\n---",
+      "research_location": "OPP-001-03.md#OPP-001-04 — Capability-Gap / Opportunity Test",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "OPP-001-04 — Capability-Gap / Opportunity Test",
+        "line_start": 674,
+        "line_end": 689
+      }
+    },
+    {
+      "statement": "```yaml\nartifact_type: workflow_intelligence\ndomain: healthcare\nindustry: hospital_operations\nreference_company: Apollo Hospitals Enterprise Limited\ncompany_role: reference_workflow_capability_benchmark\nworkflow_archetype: cashless_pre_authorisation\nresearch_stage: exception_human_investigation_reconstruction\nworkflow_status: verified\nexception_status: verified\nhuman_role_status: verified\nmaterial_pain_status: unknown\nexisting_ai_capability: verified\ndeployment_coverage: unknown\nart_gap_status: unknown\nroi_status: unknown\ncommercial_status: not_established\nreusability: cross_company_candidate\ntransfer_target: mid_scale_indian_hospitals\nnext_action: capability_gap_opportunity_test\nevidence_ids:\n  - E-001\n  - E-002\n  - E-003\n  - E-004\n  - E-005\n  - E-006\n  - E-007\n```\n\n---",
+      "research_location": "OPP-001-03.md#AIL Compilation Metadata",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "25. AIL Compilation Metadata",
+        "line_start": 690,
+        "line_end": 723
+      }
+    },
+    {
+      "statement": "This checkpoint does not claim that Apollo has a pain point simply because its workflow contains exceptions.\n\nIt establishes a more defensible research asset:\n\n> **Cashless pre-authorisation is an evidence-dependent, decision-bearing, exception-bearing healthcare workflow with identifiable hospital-side human roles and an existing Apollo-affiliated AI capability.**\n\nThe unresolved commercial question is now:\n\n> **Where does the same workflow create material unmet need in hospitals that do not possess equivalent implementation maturity?**\n\nThat is the question the next stage must answer.\n\n**OPP-001-03 = PASS → CONTINUE**\n\n**Apollo = reference benchmark.**\n\n**Industry opportunity = not yet validated.**",
+      "research_location": "OPP-001-03.md#Integrity Statement",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-001-03.md",
+        "section": "26. Integrity Statement",
+        "line_start": 724,
+        "line_end": 742
+      }
+    }
+  ]
+}

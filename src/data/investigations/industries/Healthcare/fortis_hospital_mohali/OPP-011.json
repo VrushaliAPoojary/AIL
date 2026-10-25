@@ -1,0 +1,2543 @@
+{
+  "investigation_id": "AOI-SNOW-OPP-011",
+  "company": "Fortis Hospital Mohali",
+  "industry": "Healthcare / Hospital Operations",
+  "opportunity": "Medication Reconciliation Exception Resolution at Care Transitions",
+  "investigation_type": "Legacy VRL",
+  "research_status": "UNVERIFIED",
+  "presentation": {
+    "investigation_summary": "Investigation journey from source checkpoints:\n\nOPP-011-01.md: The strongest current conclusion is:\n\n> **Medication reconciliation discrepancies are directly documented at Fortis Hospital Mohali and independently documented across multiple Indian hospitals. This is a high-consequence, repeatable healthcare workflow involving clinical investigation and discrepancy resolution. The remaining unknown is whether sufficient unresolved human coordination exists beyond existing hospital systems to create an ART automation opportunity.**\n\n**OPP-011-01 = PASS → CONTINUE**\n\n**Next: OPP-011-02 — Exception + Human Investigation Reconstruction**\n\nOPP-011-02.md: The evidence supports a strong conclusion:\n\n> **Medication discrepancies create a high-consequence exception workflow requiring information recovery, authorised clinical clarification, follow-up, documentation and closure. Fortis Mohali is directly represented in Indian evidence showing substantial discrepancy burden, and similar workflows are documented across other hospitals.**\n\nThe unresolved question is no longer whether the workflow exists.\n\nIt is:\n\n> **How much residual human investigation and unresolved coordination remains after the hospital's existing systems?**\n\n**OPP-011-02 = PASS → CONTINUE**\n\n**Next: OPP-011-03 — Human Effort / Pain Quantification**\n\nOPP-011-03.md: The strongest defensible conclusion is:\n\n> **Medication reconciliation can require substantial human effort, and Fortis Mohali has directly documented a substantial discrepancy burden. External time-and-motion evidence shows that medication reconciliation, discrepancy investigation and discharge coordination can consume meaningful staff time. The strongest ART opportunity is not generic reconciliation automation; it is preventing identified, time-sensitive discrepancies from remaining unresolved through ownership, follow-up and escalation.**\n\n**OPP-011-03 = PASS → HIGH-EFFORT / HIGH-CONSEQUENCE OPPORTUNITY SIGNAL**\n\n**Next: OPP-011-04 — Direct Operational Evidence / Pain Validation**\n\nOPP-011-04.md: The strongest defensible conclusion is:\n\n> **Fortis Mohali provides unusually strong company-linked evidence of medication-discrepancy and medication-safety activity. However, public research does not reveal whether its current systems already close the discrepancy loop or whether substantial human follow-up remains.**\n\nTherefore **OPP-011 is not yet commercially validated**.\n\n**OPP-011-04 = CONDITIONAL PASS → PRIMARY VALIDATION JUSTIFIED**\n\nThe investigation should now pause here for **primary operational validation** rather than adding another desk-research checkpoint.",
+    "key_findings": [
+      {
+        "id": "KF-011-01",
+        "statement": "OPP-011-01 — Workflow Discovery: The strongest current conclusion is:\n\n> **Medication reconciliation discrepancies are directly documented at Fortis Hospital Mohali and independently documented across multiple Indian hospitals. This is a high-consequence, repeatable healthcare workflow involving clinical investigation and discrepancy resolution. The remaining unknown is whether sufficient unresolved human coordination exists beyond existing hospital systems to create an ART automation opportunity.**\n\n**OPP-011-01 = PASS → CONTINUE**\n\n**Next: OPP-011-02 — Exception + Human Investigation Reconstruction**",
+        "classification": "EVIDENCE",
+        "source_refs": [
+          "EV-011-001",
+          "EV-011-002",
+          "EV-011-003",
+          "EV-011-004",
+          "EV-011-005",
+          "EV-011-006"
+        ]
+      },
+      {
+        "id": "KF-011-02",
+        "statement": "OPP-011-02 — Exception + Human Investigation Reconstruction: The evidence supports a strong conclusion:\n\n> **Medication discrepancies create a high-consequence exception workflow requiring information recovery, authorised clinical clarification, follow-up, documentation and closure. Fortis Mohali is directly represented in Indian evidence showing substantial discrepancy burden, and similar workflows are documented across other hospitals.**\n\nThe unresolved question is no longer whether the workflow exists.\n\nIt is:\n\n> **How much residual human investigation and unresolved coordination remains after the hospital's existing systems?**\n\n**OPP-011-02 = PASS → CONTINUE**\n\n**Next: OPP-011-03 — Human Effort / Pain Quantification**",
+        "classification": "CLAIM",
+        "source_refs": [
+          "EV-011-007",
+          "EV-011-008",
+          "EV-011-009",
+          "EV-011-010",
+          "EV-011-011",
+          "EV-011-012"
+        ]
+      },
+      {
+        "id": "KF-011-03",
+        "statement": "OPP-011-03 — Human Effort / Pain Quantification: The strongest defensible conclusion is:\n\n> **Medication reconciliation can require substantial human effort, and Fortis Mohali has directly documented a substantial discrepancy burden. External time-and-motion evidence shows that medication reconciliation, discrepancy investigation and discharge coordination can consume meaningful staff time. The strongest ART opportunity is not generic reconciliation automation; it is preventing identified, time-sensitive discrepancies from remaining unresolved through ownership, follow-up and escalation.**\n\n**OPP-011-03 = PASS → HIGH-EFFORT / HIGH-CONSEQUENCE OPPORTUNITY SIGNAL**\n\n**Next: OPP-011-04 — Direct Operational Evidence / Pain Validation**",
+        "classification": "CLAIM",
+        "source_refs": [
+          "EV-011-013",
+          "EV-011-014",
+          "EV-011-015",
+          "EV-011-016",
+          "EV-011-017",
+          "EV-011-018",
+          "EV-011-019"
+        ]
+      },
+      {
+        "id": "KF-011-04",
+        "statement": "OPP-011-04 — Direct Operational Evidence / Pain Validation: The strongest defensible conclusion is:\n\n> **Fortis Mohali provides unusually strong company-linked evidence of medication-discrepancy and medication-safety activity. However, public research does not reveal whether its current systems already close the discrepancy loop or whether substantial human follow-up remains.**\n\nTherefore **OPP-011 is not yet commercially validated**.\n\n**OPP-011-04 = CONDITIONAL PASS → PRIMARY VALIDATION JUSTIFIED**\n\nThe investigation should now pause here for **primary operational validation** rather than adding another desk-research checkpoint.",
+        "classification": "DECISION",
+        "source_refs": [
+          "EV-011-020",
+          "EV-011-021",
+          "EV-011-022",
+          "EV-011-023",
+          "EV-011-024",
+          "EV-011-025"
+        ]
+      }
+    ]
+  },
+  "decision": {
+    "decision": "**CONDITIONAL PASS → Primary validation justified; company pain not yet proven**",
+    "reason": "The strongest defensible conclusion is:\n\n> **Fortis Mohali provides unusually strong company-linked evidence of medication-discrepancy and medication-safety activity. However, public research does not reveal whether its current systems already close the discrepancy loop or whether substantial human follow-up remains.**\n\nTherefore **OPP-011 is not yet commercially validated**.\n\n**OPP-011-04 = CONDITIONAL PASS → PRIMARY VALIDATION JUSTIFIED**\n\nThe investigation should now pause here for **primary operational validation** rather than adding another desk-research checkpoint.",
+    "reusable_intelligence": [
+      {
+        "id": "RI-011-001",
+        "type": "WORKFLOW_PATTERN",
+        "title": "Workflow Discovery: Medication Reconciliation Exception Resolution at Care Transitions",
+        "domain": "Healthcare / Hospital Operations",
+        "description": "The strongest current conclusion is:\n\n> **Medication reconciliation discrepancies are directly documented at Fortis Hospital Mohali and independently documented across multiple Indian hospitals. This is a high-consequence, repeatable healthcare workflow involving clinical investigation and discrepancy resolution. The remaining unknown is whether sufficient unresolved human coordination exists beyond existing hospital systems to create an ART automation opportunity.**\n\n**OPP-011-01 = PASS → CONTINUE**\n\n**Next: OPP-011-02 — Exception + Human Investigation Reconstruction**",
+        "lesson": "Preserve the source boundary: current capability, human effort, and ROI remain unknown where the source says so.",
+        "evidence_status": "VERIFIED",
+        "status": "ACTIVE",
+        "confidence": "MEDIUM",
+        "reuse_potential": "HIGH",
+        "applications": [
+          "Healthcare hospital operations"
+        ],
+        "source_checkpoint": "CP-OPP-011-01",
+        "source_refs": [
+          "EV-011-001",
+          "EV-011-002",
+          "EV-011-003",
+          "EV-011-004",
+          "EV-011-005",
+          "EV-011-006"
+        ],
+        "tags": [
+          "source-supported",
+          "legacy-vrl"
+        ],
+        "provenance": {
+          "source_file": "OPP-011-01.md",
+          "section": "Integrity Statement",
+          "line_start": 485,
+          "line_end": 494
+        }
+      },
+      {
+        "id": "RI-011-002",
+        "type": "STRATEGY_PATTERN",
+        "title": "Exception + Human Investigation Reconstruction: Medication Reconciliation Exception Resolution at Care Transitions",
+        "domain": "Healthcare / Hospital Operations",
+        "description": "The evidence supports a strong conclusion:\n\n> **Medication discrepancies create a high-consequence exception workflow requiring information recovery, authorised clinical clarification, follow-up, documentation and closure. Fortis Mohali is directly represented in Indian evidence showing substantial discrepancy burden, and similar workflows are documented across other hospitals.**\n\nThe unresolved question is no longer whether the workflow exists.\n\nIt is:\n\n> **How much residual human investigation and unresolved coordination remains after the hospital's existing systems?**\n\n**OPP-011-02 = PASS → CONTINUE**\n\n**Next: OPP-011-03 — Human Effort / Pain Quantification**",
+        "lesson": "Preserve the source boundary: current capability, human effort, and ROI remain unknown where the source says so.",
+        "evidence_status": "VERIFIED",
+        "status": "ACTIVE",
+        "confidence": "MEDIUM",
+        "reuse_potential": "HIGH",
+        "applications": [
+          "Healthcare hospital operations"
+        ],
+        "source_checkpoint": "CP-OPP-011-02",
+        "source_refs": [
+          "EV-011-007",
+          "EV-011-008",
+          "EV-011-009",
+          "EV-011-010",
+          "EV-011-011",
+          "EV-011-012"
+        ],
+        "tags": [
+          "source-supported",
+          "legacy-vrl"
+        ],
+        "provenance": {
+          "source_file": "OPP-011-02.md",
+          "section": "Integrity Statement",
+          "line_start": 701,
+          "line_end": 716
+        }
+      },
+      {
+        "id": "RI-011-003",
+        "type": "METRIC_PATTERN",
+        "title": "Human Effort / Pain Quantification: Medication Reconciliation Exception Resolution at Care Transitions",
+        "domain": "Healthcare / Hospital Operations",
+        "description": "The strongest defensible conclusion is:\n\n> **Medication reconciliation can require substantial human effort, and Fortis Mohali has directly documented a substantial discrepancy burden. External time-and-motion evidence shows that medication reconciliation, discrepancy investigation and discharge coordination can consume meaningful staff time. The strongest ART opportunity is not generic reconciliation automation; it is preventing identified, time-sensitive discrepancies from remaining unresolved through ownership, follow-up and escalation.**\n\n**OPP-011-03 = PASS → HIGH-EFFORT / HIGH-CONSEQUENCE OPPORTUNITY SIGNAL**\n\n**Next: OPP-011-04 — Direct Operational Evidence / Pain Validation**",
+        "lesson": "Preserve the source boundary: current capability, human effort, and ROI remain unknown where the source says so.",
+        "evidence_status": "VERIFIED",
+        "status": "ACTIVE",
+        "confidence": "MEDIUM",
+        "reuse_potential": "HIGH",
+        "applications": [
+          "Healthcare hospital operations"
+        ],
+        "source_checkpoint": "CP-OPP-011-03",
+        "source_refs": [
+          "EV-011-013",
+          "EV-011-014",
+          "EV-011-015",
+          "EV-011-016",
+          "EV-011-017",
+          "EV-011-018",
+          "EV-011-019"
+        ],
+        "tags": [
+          "source-supported",
+          "legacy-vrl"
+        ],
+        "provenance": {
+          "source_file": "OPP-011-03.md",
+          "section": "Integrity Statement",
+          "line_start": 664,
+          "line_end": 673
+        }
+      },
+      {
+        "id": "RI-011-004",
+        "type": "DECISION_PATTERN",
+        "title": "Direct Operational Evidence / Pain Validation: Medication Reconciliation Exception Resolution at Care Transitions",
+        "domain": "Healthcare / Hospital Operations",
+        "description": "The strongest defensible conclusion is:\n\n> **Fortis Mohali provides unusually strong company-linked evidence of medication-discrepancy and medication-safety activity. However, public research does not reveal whether its current systems already close the discrepancy loop or whether substantial human follow-up remains.**\n\nTherefore **OPP-011 is not yet commercially validated**.\n\n**OPP-011-04 = CONDITIONAL PASS → PRIMARY VALIDATION JUSTIFIED**\n\nThe investigation should now pause here for **primary operational validation** rather than adding another desk-research checkpoint.",
+        "lesson": "Preserve the source boundary: current capability, human effort, and ROI remain unknown where the source says so.",
+        "evidence_status": "PARTIAL",
+        "status": "ACTIVE",
+        "confidence": "MEDIUM",
+        "reuse_potential": "HIGH",
+        "applications": [
+          "Healthcare hospital operations"
+        ],
+        "source_checkpoint": "CP-OPP-011-04",
+        "source_refs": [
+          "EV-011-020",
+          "EV-011-021",
+          "EV-011-022",
+          "EV-011-023",
+          "EV-011-024",
+          "EV-011-025"
+        ],
+        "tags": [
+          "source-supported",
+          "legacy-vrl"
+        ],
+        "provenance": {
+          "source_file": "OPP-011-04.md",
+          "section": "Integrity Statement",
+          "line_start": 511,
+          "line_end": 522
+        }
+      }
+    ],
+    "provenance": {
+      "source_file": "OPP-011-04.md",
+      "section": "Integrity Statement",
+      "line_start": 521,
+      "line_end": 521
+    }
+  },
+  "primary_question": "WHICH MEDICATION IS CORRECT?",
+  "sources": [
+    {
+      "id": "SRC-FILE-OPP-011-OPP-011-01",
+      "title": "OPP-011-01.md",
+      "url": "opportunities/Healthcare_and_Pharmaceuticals/fortis_hospital_mohali/OPP-011-01.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": [
+        "CP-OPP-011-01"
+      ]
+    },
+    {
+      "id": "SRC-FILE-OPP-011-OPP-011-02",
+      "title": "OPP-011-02.md",
+      "url": "opportunities/Healthcare_and_Pharmaceuticals/fortis_hospital_mohali/OPP-011-02.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": [
+        "CP-OPP-011-02"
+      ]
+    },
+    {
+      "id": "SRC-FILE-OPP-011-OPP-011-03",
+      "title": "OPP-011-03.md",
+      "url": "opportunities/Healthcare_and_Pharmaceuticals/fortis_hospital_mohali/OPP-011-03.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": [
+        "CP-OPP-011-03"
+      ]
+    },
+    {
+      "id": "SRC-FILE-OPP-011-OPP-011-04",
+      "title": "OPP-011-04.md",
+      "url": "opportunities/Healthcare_and_Pharmaceuticals/fortis_hospital_mohali/OPP-011-04.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": [
+        "CP-OPP-011-04"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-011-B5251510",
+      "title": "PubMed — Medication Reconciliation and Patient Safety in India",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41419375/",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-011-01",
+        "CP-OPP-011-02",
+        "CP-OPP-011-03",
+        "CP-OPP-011-04"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-011-8E0F2222",
+      "title": "Joint Commission Journal on Quality and Patient Safety — 2026 Study",
+      "url": "https://www.jointcommissionjournal.com/article/S1553-7250%2825%2900311-3/pdf",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-011-01",
+        "CP-OPP-011-04"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-011-B0D6392D",
+      "title": "Indian Journal of Critical Care Medicine — Medication Errors in Indian Hospitals",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12683552/",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-011-01"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-011-239E6631",
+      "title": "PubMed — Shree Krishna Hospital Study",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39539902/",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-011-01"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-011-70BC384C",
+      "title": "ScienceDirect — Medication Discrepancies Across Transitions",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S2772953222000296",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-011-01"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-011-636468DA",
+      "title": "Indian Journal of Pharmacy Practice — Discharge Medication Reconciliation",
+      "url": "https://www.ijopp.org/article/18/1/53",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-011-01",
+        "CP-OPP-011-02"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-011-7425F9DC",
+      "title": "PMC — Transition of Care Team",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5922563/",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-011-02"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-011-14ADD525",
+      "title": "PMC — Real-Time Medication Change Documentation",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11214548/",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-011-02"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-011-C9029C04",
+      "title": "PMC — Who Is Responsible for Medication Reconciliation?",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5310138/",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-011-02"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-011-FAA07027",
+      "title": "PMC — Cross-Sectoral Hospital Pharmacist Intervention",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10026123/",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-011-02"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-011-B995FECC",
+      "title": "PMC — Medication Reconciliation at Hospital Admission",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8446815/",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-011-03"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-011-026BD086",
+      "title": "PMC — Pharmacist Discharge Medicine Lists",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9243950/",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-011-03"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-011-FA56AE03",
+      "title": "PMC — Pharmacist–Doctor Collaborative Discharge Reconciliation",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13369220/",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-011-03"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-011-05BE2A62",
+      "title": "PMC — Medication Reconciliation at Admission and Discharge",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3842651/",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-011-03"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-011-6BE44558",
+      "title": "PMC — Improving Medication Reconciliation Accuracy",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6683109/",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-011-03"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-011-E457D3DA",
+      "title": "PMC — Pharmacist-Led Medication Reconciliation Meta-analysis",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5873985/",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-011-03"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-011-9B84F65E",
+      "title": "Fortis Healthcare — ClinicalConnect Issue 15",
+      "url": "https://www.fortishealthcare.com/media-center/organizational-newsletter/Clinical%20Connect/Clinical%20Connect%20Issue-15",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-011-04"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-011-1317C4D3",
+      "title": "The Fortisian — Medication Nurse Programme",
+      "url": "https://www.fortishealthcare.com/drupal-data/2023-09/The%20Fortisian%20Feb-Mar%2022.pdf",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-011-04"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-011-3D3A5426",
+      "title": "The Fortisian — Safe Medication Initiative",
+      "url": "https://www.fortishealthcare.com/drupal-data/newsletters/0.53141800_1571652328_The-Fortisian-June-July-2019.pdf",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-011-04"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-011-076D1019",
+      "title": "Fortis Hospital Mohali — Official Hospital Page",
+      "url": "https://www.fortishealthcare.com/location/fortis-hospital-mohali",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-011-04"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "CP-OPP-011-01",
+      "title": "OPP-011-01 — Workflow Discovery",
+      "status": "PASS",
+      "investigation_question": "WHICH MEDICATION IS CORRECT?",
+      "tested": "OPP-011-01 — Workflow Discovery",
+      "found": "The strongest current conclusion is:\n\n> **Medication reconciliation discrepancies are directly documented at Fortis Hospital Mohali and independently documented across multiple Indian hospitals. This is a high-consequence, repeatable healthcare workflow involving clinical investigation and discrepancy resolution. The remaining unknown is whether sufficient unresolved human coordination exists beyond existing hospital systems to create an ART automation opportunity.**\n\n**OPP-011-01 = PASS → CONTINUE**\n\n**Next: OPP-011-02 — Exception + Human Investigation Reconstruction**",
+      "what_changed": "**PASS → High-consequence workflow target**",
+      "resulting_state": "**PASS → High-consequence workflow target**",
+      "evidence_refs": [
+        "EV-011-001",
+        "EV-011-002",
+        "EV-011-003",
+        "EV-011-004",
+        "EV-011-005",
+        "EV-011-006"
+      ],
+      "source_refs": [
+        "SRC-FILE-OPP-011-OPP-011-01",
+        "SRC-EXT-OPP-011-B5251510",
+        "SRC-EXT-OPP-011-8E0F2222",
+        "SRC-EXT-OPP-011-B0D6392D",
+        "SRC-EXT-OPP-011-239E6631",
+        "SRC-EXT-OPP-011-70BC384C",
+        "SRC-EXT-OPP-011-636468DA"
+      ],
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "Checkpoint",
+        "line_start": 1,
+        "line_end": 493
+      }
+    },
+    {
+      "id": "CP-OPP-011-02",
+      "title": "OPP-011-02 — Exception + Human Investigation Reconstruction",
+      "status": "PASS",
+      "investigation_question": "When a medication discrepancy is identified during admission, transfer or discharge, what human investigation and coordination is required before the discrepancy can be safely closed?",
+      "tested": "OPP-011-02 — Exception + Human Investigation Reconstruction",
+      "found": "The evidence supports a strong conclusion:\n\n> **Medication discrepancies create a high-consequence exception workflow requiring information recovery, authorised clinical clarification, follow-up, documentation and closure. Fortis Mohali is directly represented in Indian evidence showing substantial discrepancy burden, and similar workflows are documented across other hospitals.**\n\nThe unresolved question is no longer whether the workflow exists.\n\nIt is:\n\n> **How much residual human investigation and unresolved coordination remains after the hospital's existing systems?**\n\n**OPP-011-02 = PASS → CONTINUE**\n\n**Next: OPP-011-03 — Human Effort / Pain Quantification**",
+      "what_changed": "**PASS → High-consequence exception path supported; continue**",
+      "resulting_state": "**PASS → High-consequence exception path supported; continue**",
+      "evidence_refs": [
+        "EV-011-007",
+        "EV-011-008",
+        "EV-011-009",
+        "EV-011-010",
+        "EV-011-011",
+        "EV-011-012"
+      ],
+      "source_refs": [
+        "SRC-FILE-OPP-011-OPP-011-02",
+        "SRC-EXT-OPP-011-B5251510",
+        "SRC-EXT-OPP-011-7425F9DC",
+        "SRC-EXT-OPP-011-14ADD525",
+        "SRC-EXT-OPP-011-636468DA",
+        "SRC-EXT-OPP-011-C9029C04",
+        "SRC-EXT-OPP-011-FAA07027"
+      ],
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "Checkpoint",
+        "line_start": 1,
+        "line_end": 715
+      }
+    },
+    {
+      "id": "CP-OPP-011-03",
+      "title": "OPP-011-03 — Human Effort / Pain Quantification",
+      "status": "PASS",
+      "investigation_question": "How much human effort can be defensibly associated with medication reconciliation and discrepancy resolution, without falsely assigning external benchmark times to Fortis Mohali?",
+      "tested": "OPP-011-03 — Human Effort / Pain Quantification",
+      "found": "The strongest defensible conclusion is:\n\n> **Medication reconciliation can require substantial human effort, and Fortis Mohali has directly documented a substantial discrepancy burden. External time-and-motion evidence shows that medication reconciliation, discrepancy investigation and discharge coordination can consume meaningful staff time. The strongest ART opportunity is not generic reconciliation automation; it is preventing identified, time-sensitive discrepancies from remaining unresolved through ownership, follow-up and escalation.**\n\n**OPP-011-03 = PASS → HIGH-EFFORT / HIGH-CONSEQUENCE OPPORTUNITY SIGNAL**\n\n**Next: OPP-011-04 — Direct Operational Evidence / Pain Validation**",
+      "what_changed": "**PASS → High-effort / high-consequence opportunity signal**",
+      "resulting_state": "**PASS → High-effort / high-consequence opportunity signal**",
+      "evidence_refs": [
+        "EV-011-013",
+        "EV-011-014",
+        "EV-011-015",
+        "EV-011-016",
+        "EV-011-017",
+        "EV-011-018",
+        "EV-011-019"
+      ],
+      "source_refs": [
+        "SRC-FILE-OPP-011-OPP-011-03",
+        "SRC-EXT-OPP-011-B5251510",
+        "SRC-EXT-OPP-011-B995FECC",
+        "SRC-EXT-OPP-011-026BD086",
+        "SRC-EXT-OPP-011-FA56AE03",
+        "SRC-EXT-OPP-011-05BE2A62",
+        "SRC-EXT-OPP-011-6BE44558",
+        "SRC-EXT-OPP-011-E457D3DA"
+      ],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "Checkpoint",
+        "line_start": 1,
+        "line_end": 672
+      }
+    },
+    {
+      "id": "CP-OPP-011-04",
+      "title": "OPP-011-04 — Direct Operational Evidence / Pain Validation",
+      "status": "CONDITIONAL_PASS",
+      "investigation_question": "Is there enough direct evidence to establish that Fortis Hospital Mohali has a material unresolved medication-reconciliation exception burden that can be addressed by automation?",
+      "tested": "OPP-011-04 — Direct Operational Evidence / Pain Validation",
+      "found": "The strongest defensible conclusion is:\n\n> **Fortis Mohali provides unusually strong company-linked evidence of medication-discrepancy and medication-safety activity. However, public research does not reveal whether its current systems already close the discrepancy loop or whether substantial human follow-up remains.**\n\nTherefore **OPP-011 is not yet commercially validated**.\n\n**OPP-011-04 = CONDITIONAL PASS → PRIMARY VALIDATION JUSTIFIED**\n\nThe investigation should now pause here for **primary operational validation** rather than adding another desk-research checkpoint.",
+      "what_changed": "**CONDITIONAL PASS → Primary validation justified; company pain not yet proven**",
+      "resulting_state": "**CONDITIONAL PASS → Primary validation justified; company pain not yet proven**",
+      "evidence_refs": [
+        "EV-011-020",
+        "EV-011-021",
+        "EV-011-022",
+        "EV-011-023",
+        "EV-011-024",
+        "EV-011-025"
+      ],
+      "source_refs": [
+        "SRC-FILE-OPP-011-OPP-011-04",
+        "SRC-EXT-OPP-011-9B84F65E",
+        "SRC-EXT-OPP-011-B5251510",
+        "SRC-EXT-OPP-011-8E0F2222",
+        "SRC-EXT-OPP-011-1317C4D3",
+        "SRC-EXT-OPP-011-3D3A5426",
+        "SRC-EXT-OPP-011-076D1019"
+      ],
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "Checkpoint",
+        "line_start": 1,
+        "line_end": 521
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "EV-011-001",
+      "statement": "### E-001 — Company-Specific Primary Research\n\n[PubMed — Medication Reconciliation and Patient Safety in India](https://pubmed.ncbi.nlm.nih.gov/41419375/)\n\n**Evidence:** Fortis Hospital Mohali and Fortis Hospital Ludhiana; 200 inpatients; medication reconciliation at admission, transition and discharge; 170 admission discrepancies, 23 transition discrepancies and 266 discharge discrepancies.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-011-B5251510",
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "E-001 — Company-Specific Primary Research",
+        "line_start": 377,
+        "line_end": 381
+      }
+    },
+    {
+      "id": "EV-011-002",
+      "statement": "### E-002 — Full Journal Source\n\n[Joint Commission Journal on Quality and Patient Safety — 2026 Study](https://www.jointcommissionjournal.com/article/S1553-7250%2825%2900311-3/pdf)\n\n**Evidence:** detailed study abstract and Fortis affiliations.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-011-8E0F2222",
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "E-002 — Full Journal Source",
+        "line_start": 383,
+        "line_end": 387
+      }
+    },
+    {
+      "id": "EV-011-003",
+      "statement": "### E-003 — Indian Systematic Review\n\n[Indian Journal of Critical Care Medicine — Medication Errors in Indian Hospitals](https://pmc.ncbi.nlm.nih.gov/articles/PMC12683552/)\n\n**Evidence:** 40 Indian hospital studies; medication-error incidence/frequency and severity.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-011-B0D6392D",
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "E-003 — Indian Systematic Review",
+        "line_start": 389,
+        "line_end": 393
+      }
+    },
+    {
+      "id": "EV-011-004",
+      "statement": "### E-004 — Emergency / Admission Reconciliation\n\n[PubMed — Shree Krishna Hospital Study](https://pubmed.ncbi.nlm.nih.gov/39539902/)\n\n**Evidence:** 64 discrepancies among 45 patients; 25 unintentional omission discrepancies; moderate/severe discrepancies.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-011-239E6631",
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "E-004 — Emergency / Admission Reconciliation",
+        "line_start": 395,
+        "line_end": 399
+      }
+    },
+    {
+      "id": "EV-011-005",
+      "statement": "### E-005 — Care-Transition Study\n\n[ScienceDirect — Medication Discrepancies Across Transitions](https://www.sciencedirect.com/science/article/abs/pii/S2772953222000296)\n\n**Evidence:** 105 unintentional discrepancies among 165 patients with substantial discrepancy occurrence at ICU-to-ward transition and discharge.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-011-70BC384C",
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "E-005 — Care-Transition Study",
+        "line_start": 401,
+        "line_end": 405
+      }
+    },
+    {
+      "id": "EV-011-006",
+      "statement": "### E-006 — Discharge Reconciliation\n\n[Indian Journal of Pharmacy Practice — Discharge Medication Reconciliation](https://www.ijopp.org/article/18/1/53)\n\n**Evidence:** 255 patients; 412 discrepancies; 191 unintentional; omission and dose changes prominent.\n\n---",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-011-636468DA",
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "E-006 — Discharge Reconciliation",
+        "line_start": 407,
+        "line_end": 413
+      }
+    },
+    {
+      "id": "EV-011-007",
+      "statement": "### E-001 — Fortis Mohali / Ludhiana Study\n\n[PubMed — Medication Reconciliation and Patient Safety in India](https://pubmed.ncbi.nlm.nih.gov/41419375/)\n\n**Evidence:** 200 inpatients; admission, transition and discharge reconciliation; discrepancies documented at all three stages; Fortis Mohali and Ludhiana affiliations.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-011-B5251510",
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "E-001 — Fortis Mohali / Ludhiana Study",
+        "line_start": 590,
+        "line_end": 594
+      }
+    },
+    {
+      "id": "EV-011-008",
+      "statement": "### E-002 — Medication-Reconciliation Workflow\n\n[PMC — Transition of Care Team](https://pmc.ncbi.nlm.nih.gov/articles/PMC5922563/)\n\n**Evidence:** medication information gathered from multiple sources; discrepancies investigated; clinician verification; ownership/coordination problems; follow-up.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-011-7425F9DC",
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "E-002 — Medication-Reconciliation Workflow",
+        "line_start": 596,
+        "line_end": 600
+      }
+    },
+    {
+      "id": "EV-011-009",
+      "statement": "### E-003 — Documentation / Communication\n\n[PMC — Real-Time Medication Change Documentation](https://pmc.ncbi.nlm.nih.gov/articles/PMC11214548/)\n\n**Evidence:** incomplete documentation associated with discharge discrepancy errors; real-time documentation improved physician-pharmacist communication.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-011-14ADD525",
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "E-003 — Documentation / Communication",
+        "line_start": 602,
+        "line_end": 606
+      }
+    },
+    {
+      "id": "EV-011-010",
+      "statement": "### E-004 — Indian Discharge Evidence\n\n[Indian Journal of Pharmacy Practice — Discharge Medication Reconciliation](https://www.ijopp.org/article/18/1/53)\n\n**Evidence:** 255 patients; 412 discrepancies; 191 unintentional discrepancies.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-011-636468DA",
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "E-004 — Indian Discharge Evidence",
+        "line_start": 608,
+        "line_end": 612
+      }
+    },
+    {
+      "id": "EV-011-011",
+      "statement": "### E-005 — Responsibility / Ownership\n\n[PMC — Who Is Responsible for Medication Reconciliation?](https://pmc.ncbi.nlm.nih.gov/articles/PMC5310138/)\n\n**Evidence:** different perceptions among pharmacists, physicians and nurses regarding responsibility for medication-reconciliation tasks.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-011-C9029C04",
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "E-005 — Responsibility / Ownership",
+        "line_start": 614,
+        "line_end": 618
+      }
+    },
+    {
+      "id": "EV-011-012",
+      "statement": "### E-006 — Cross-Sector Exception Resolution\n\n[PMC — Cross-Sectoral Hospital Pharmacist Intervention](https://pmc.ncbi.nlm.nih.gov/articles/PMC10026123/)\n\n**Evidence:** medication-related problems during transitions required medication review, record access and follow-up; intervention identified and solved drug-related problems.\n\n---",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-011-FAA07027",
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "E-006 — Cross-Sector Exception Resolution",
+        "line_start": 620,
+        "line_end": 626
+      }
+    },
+    {
+      "id": "EV-011-013",
+      "statement": "### E-001 — Fortis Mohali / Ludhiana Direct Study\n\n[PubMed — Medication Reconciliation and Patient Safety in India](https://pubmed.ncbi.nlm.nih.gov/41419375/)\n\n**Evidence:** 200 inpatients; 170 admission discrepancies; 23 transition discrepancies; 266 discharge discrepancies; discharge highest discrepancy rate per patient.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-011-B5251510",
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "E-001 — Fortis Mohali / Ludhiana Direct Study",
+        "line_start": 510,
+        "line_end": 514
+      }
+    },
+    {
+      "id": "EV-011-014",
+      "statement": "### E-002 — Full Admission Effort Benchmark\n\n[PMC — Medication Reconciliation at Hospital Admission](https://pmc.ncbi.nlm.nih.gov/articles/PMC8446815/)\n\n**Evidence:** median 55 minutes per complete reconciliation; 40 minutes for search, analysis, validation, discrepancy evaluation and physician communication.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-011-B995FECC",
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "E-002 — Full Admission Effort Benchmark",
+        "line_start": 516,
+        "line_end": 520
+      }
+    },
+    {
+      "id": "EV-011-015",
+      "statement": "### E-003 — Discharge Time-and-Motion\n\n[PMC — Pharmacist Discharge Medicine Lists](https://pmc.ncbi.nlm.nih.gov/articles/PMC9243950/)\n\n**Evidence:** 26.2 minutes mean discharge completion; 4.0 minutes mean manual retyping/reconciliation across software systems.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-011-026BD086",
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "E-003 — Discharge Time-and-Motion",
+        "line_start": 522,
+        "line_end": 526
+      }
+    },
+    {
+      "id": "EV-011-016",
+      "statement": "### E-004 — Current Discharge Efficiency Evidence\n\n[PMC — Pharmacist–Doctor Collaborative Discharge Reconciliation](https://pmc.ncbi.nlm.nih.gov/articles/PMC13369220/)\n\n**Evidence:** reconciliation completion reduced 76→30 minutes; discharge departure reduced 78 minutes; 27% of pharmacist plans required physician adjustment.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-011-FA56AE03",
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "E-004 — Current Discharge Efficiency Evidence",
+        "line_start": 528,
+        "line_end": 532
+      }
+    },
+    {
+      "id": "EV-011-017",
+      "statement": "### E-005 — Discharge Reconciliation Workload\n\n[PMC — Medication Reconciliation at Admission and Discharge](https://pmc.ncbi.nlm.nih.gov/articles/PMC3842651/)\n\n**Evidence:** discharge reconciliation time varied by unit and could approach 29 minutes in geriatrics.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-011-05BE2A62",
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "E-005 — Discharge Reconciliation Workload",
+        "line_start": 534,
+        "line_end": 538
+      }
+    },
+    {
+      "id": "EV-011-018",
+      "statement": "### E-006 — Harm / Workload Improvement\n\n[PMC — Improving Medication Reconciliation Accuracy](https://pmc.ncbi.nlm.nih.gov/articles/PMC6683109/)\n\n**Evidence:** systematic discharge reconciliation reduced pharmacy workload and reported reductions of up to 40 minutes per patient in pharmacy time.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-011-6BE44558",
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "E-006 — Harm / Workload Improvement",
+        "line_start": 540,
+        "line_end": 544
+      }
+    },
+    {
+      "id": "EV-011-019",
+      "statement": "### E-007 — Pharmacist Intervention\n\n[PMC — Pharmacist-Led Medication Reconciliation Meta-analysis](https://pmc.ncbi.nlm.nih.gov/articles/PMC5873985/)\n\n**Evidence:** pharmacist-led interventions reduced medication discrepancies; effects on adverse drug events/healthcare utilisation were less certain.\n\n---",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-011-E457D3DA",
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "E-007 — Pharmacist Intervention",
+        "line_start": 546,
+        "line_end": 552
+      }
+    },
+    {
+      "id": "EV-011-020",
+      "statement": "### E-001 — Fortis Mohali Directly Linked Study\n\n[PubMed — Medication Reconciliation and Patient Safety in India](https://pubmed.ncbi.nlm.nih.gov/41419375/)\n\n**Evidence:** Fortis Mohali/Ludhiana affiliations; 200 inpatients; medication reconciliation at admission, transition and discharge; discrepancies documented.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-011-B5251510",
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "E-001 — Fortis Mohali Directly Linked Study",
+        "line_start": 403,
+        "line_end": 407
+      }
+    },
+    {
+      "id": "EV-011-021",
+      "statement": "### E-002 — Full Study\n\n[Joint Commission Journal on Quality and Patient Safety](https://www.jointcommissionjournal.com/article/S1553-7250%2825%2900311-3/pdf)\n\n**Evidence:** detailed Fortis affiliations and prospective medication-reconciliation study.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-011-8E0F2222",
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "E-002 — Full Study",
+        "line_start": 409,
+        "line_end": 413
+      }
+    },
+    {
+      "id": "EV-011-022",
+      "statement": "### E-003 — Fortis Medication-Error Evidence\n\n[Fortis Healthcare — ClinicalConnect Issue 15](https://www.fortishealthcare.com/media-center/organizational-newsletter/Clinical%20Connect/Clinical%20Connect%20Issue-15)\n\n**Evidence:** 6,439 medication charts; 558 medication errors; 208 antimicrobial medication errors at Fortis Mohali.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-011-9B84F65E",
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "E-003 — Fortis Medication-Error Evidence",
+        "line_start": 415,
+        "line_end": 419
+      }
+    },
+    {
+      "id": "EV-011-023",
+      "statement": "### E-004 — Fortis Medication-Safety Programme\n\n[The Fortisian — Medication Nurse Programme](https://www.fortishealthcare.com/drupal-data/2023-09/The%20Fortisian%20Feb-Mar%2022.pdf)\n\n**Evidence:** Medication Nurse Certification Programme at Fortis Mohali; 20 nurses enrolled.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-011-1317C4D3",
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "E-004 — Fortis Medication-Safety Programme",
+        "line_start": 421,
+        "line_end": 425
+      }
+    },
+    {
+      "id": "EV-011-024",
+      "statement": "### E-005 — Fortis Safe Medication Initiative\n\n[The Fortisian — Safe Medication Initiative](https://www.fortishealthcare.com/drupal-data/newsletters/0.53141800_1571652328_The-Fortisian-June-July-2019.pdf)\n\n**Evidence:** Fortis Mohali launched a Safe Medication initiative focused on preventing IV medication errors.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-011-3D3A5426",
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "E-005 — Fortis Safe Medication Initiative",
+        "line_start": 427,
+        "line_end": 431
+      }
+    },
+    {
+      "id": "EV-011-025",
+      "statement": "### E-006 — Official Hospital Capability Context\n\n[Fortis Hospital Mohali — Official Hospital Page](https://www.fortishealthcare.com/location/fortis-hospital-mohali)\n\n**Evidence:** tertiary-care hospital, 400+ beds on the general location page, JCI/NABH/NABL accreditation.\n\n---",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-011-076D1019",
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "E-006 — Official Hospital Capability Context",
+        "line_start": 433,
+        "line_end": 439
+      }
+    }
+  ],
+  "claims": [],
+  "inferences": [],
+  "hypotheses": [
+    {
+      "id": "HYP-011-001",
+      "statement": "The emerging industry-level problem is:\n\n> **Medication discrepancies are identified during care transitions, but resolution requires authorised humans to investigate, clarify, reconcile, document and close exceptions across clinical roles and systems.**\n\nPotential target population:\n\n```text\nMID-SCALE / MULTISPECIALITY HOSPITALS\n        +\nINPATIENT CARE\n        +\nPHARMACY / MEDICATION MANAGEMENT\n        +\nADMISSION / TRANSFER / DISCHARGE\n        +\nMEDICATION RECONCILIATION\n```\n\nThe opportunity is therefore potentially reusable across many Indian hospitals.\n\n---",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "EV-011-001",
+        "EV-011-002",
+        "EV-011-003",
+        "EV-011-004",
+        "EV-011-005",
+        "EV-011-006"
+      ],
+      "falsification_basis": [],
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "12. Industry Opportunity Hypothesis",
+        "line_start": 289,
+        "line_end": 311
+      }
+    },
+    {
+      "id": "HYP-011-002",
+      "statement": "Formula:\n\n```text\ndiscrepancies/month\n×\nminutes/exception\n×\n12\n÷\n60\n```\n\n### Conservative\n\n```text\n50 × 5 × 12 ÷ 60\n≈ 50 hours/year\n```\n\n### Base\n\n```text\n100 × 10 × 12 ÷ 60\n≈ 200 hours/year\n```\n\n### High\n\n```text\n200 × 15 × 12 ÷ 60\n≈ 600 hours/year\n```\n\n### Screening range\n\n> **≈50–600 hypothetical exception-hours/year**\n\nThis is **not Fortis actual workload**.\n\n---",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "EV-011-013",
+        "EV-011-014",
+        "EV-011-015",
+        "EV-011-016",
+        "EV-011-017",
+        "EV-011-018",
+        "EV-011-019"
+      ],
+      "falsification_basis": [],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "7. Hypothesis Annual Exception Hours",
+        "line_start": 142,
+        "line_end": 183
+      }
+    },
+    {
+      "id": "HYP-011-003",
+      "statement": "The labour-only model gives:\n\n> **Base: ~200 hours/year**\n\nAt ₹750/hour:\n\n> **~₹1.5 lakh/year labour-value exposure**\n\nAt a hypothetical 50% capture:\n\n> **~₹75,000/year addressable labour value**\n\nThat is still not a large standalone SaaS opportunity.\n\nTherefore the commercial case should be:\n\n```text\nLABOUR VALUE\n+\nTRANSITION DELAY REDUCTION\n+\nUNRESOLVED-CASE REDUCTION\n+\nAUDIT / QUALITY VISIBILITY\n+\nPATIENT-SAFETY RISK REDUCTION\n```\n\nBut only the first component can currently be numerically hypothesised.\n\n---",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "EV-011-013",
+        "EV-011-014",
+        "EV-011-015",
+        "EV-011-016",
+        "EV-011-017",
+        "EV-011-018",
+        "EV-011-019"
+      ],
+      "falsification_basis": [],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "12. Stronger ROI Hypothesis",
+        "line_start": 300,
+        "line_end": 333
+      }
+    },
+    {
+      "id": "HYP-011-004",
+      "statement": "The previous checkpoint used hypothetical values such as:\n\n```text\n50–200 discrepancies/month\n5–15 minutes/exception\n```\n\nThose were explicitly labelled assumptions.\n\nThey **must not be presented as Fortis operational data**.\n\nThe current evidence is strong enough to justify primary validation, but not strong enough to calculate Fortis ROI.\n\n---",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "EV-011-020",
+        "EV-011-021",
+        "EV-011-022",
+        "EV-011-023",
+        "EV-011-024",
+        "EV-011-025"
+      ],
+      "falsification_basis": [],
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "6. Critical Correction to the Previous Hypothesis",
+        "line_start": 131,
+        "line_end": 146
+      }
+    }
+  ],
+  "results": [
+    {
+      "id": "RES-011-001",
+      "statement": "**PASS → High-consequence workflow target**",
+      "status": "PASSED",
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "Decision",
+        "line_start": 338,
+        "line_end": 339
+      }
+    },
+    {
+      "id": "RES-011-002",
+      "statement": "**PASS → High-consequence exception path supported; continue**",
+      "status": "PASSED",
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "Decision",
+        "line_start": 544,
+        "line_end": 545
+      }
+    },
+    {
+      "id": "RES-011-003",
+      "statement": "**PASS → High-effort / high-consequence opportunity signal**",
+      "status": "PASSED",
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "Decision",
+        "line_start": 450,
+        "line_end": 451
+      }
+    },
+    {
+      "id": "RES-011-004",
+      "statement": "**CONDITIONAL PASS → Primary validation justified; company pain not yet proven**",
+      "status": "UNVERIFIED",
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "Decision",
+        "line_start": 359,
+        "line_end": 360
+      }
+    }
+  ],
+  "falsification": [
+    {
+      "statement": "Do not continue the company-specific opportunity if primary validation finds:\n\n```text\nVERY FEW UNRESOLVED DISCREPANCIES\n+\nAUTOMATIC OWNER ROUTING\n+\nAUTOMATIC ESCALATION\n+\nNO MEANINGFUL FOLLOW-UP\n+\nNO DISCHARGE BOTTLENECK\n+\nNEGLIGIBLE HUMAN EFFORT\n```\n\nThe broader industry opportunity can still survive.\n\n---",
+      "outcome": "15. Kill Condition",
+      "basis": [
+        "EV-011-013",
+        "EV-011-014",
+        "EV-011-015",
+        "EV-011-016",
+        "EV-011-017",
+        "EV-011-018",
+        "EV-011-019"
+      ],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "15. Kill Condition",
+        "line_start": 388,
+        "line_end": 409
+      }
+    },
+    {
+      "statement": "Kill the **Fortis-specific** opportunity if primary validation shows:\n\n```text\nLOW UNRESOLVED VOLUME\n+\nAUTOMATIC ROUTING\n+\nAUTOMATIC AGEING\n+\nAUTOMATIC ESCALATION\n+\nFAST CLINICIAN RESPONSE\n+\nNO MATERIAL DISCHARGE BOTTLENECK\n```\n\nDo not force an automation opportunity merely because medication discrepancies exist.\n\n---",
+      "outcome": "13. Kill Conditions",
+      "basis": [
+        "EV-011-020",
+        "EV-011-021",
+        "EV-011-022",
+        "EV-011-023",
+        "EV-011-024",
+        "EV-011-025"
+      ],
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "13. Kill Conditions",
+        "line_start": 298,
+        "line_end": 319
+      }
+    }
+  ],
+  "traceability": [
+    {
+      "statement": "---\nid: OPP-011-01\nopportunity_id: OPP-011\nindustry: Healthcare / Hospital Operations\ncompany: Fortis Hospital Mohali\nlocation: Mohali, Punjab, India\nworkflow: Medication Reconciliation Exception Resolution at Care Transitions\npain_type: Patient Safety / Medication Discrepancy Resolution\nresearch_stage: Workflow Discovery\nmethodology: Legacy VRL\nstatus: PASS\ndecision: VALID_HIGH_CONSEQUENCE_WORKFLOW_TARGET_CONTINUE\ncompany_pain_signal: strong_industry_signal_company_specific_pain_unproven\nindustry_generalizability: high_potential\ncurrent_pain_magnitude: unknown\ncurrent_capability_gap: unknown\ncustomer_roi: unknown\ncommercial_status: discovery_continue\n---",
+      "research_location": "OPP-011-01.md#Front matter",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "Front matter",
+        "line_start": 1,
+        "line_end": 18
+      }
+    },
+    {
+      "statement": "**Industry:** Healthcare / Hospital Operations  \n**Company:** Fortis Hospital Mohali  \n**Workflow:** Medication Reconciliation Exception Resolution at Care Transitions  \n**Pain type:** Patient Safety / Medication Discrepancy Resolution  \n**VRL checkpoint:** OPP-011-01  \n**Decision:** **PASS → High-consequence workflow target**\n\n---",
+      "research_location": "OPP-011-01.md#OPP-011-01 — Workflow Discovery",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "OPP-011-01 — Workflow Discovery",
+        "line_start": 21,
+        "line_end": 31
+      }
+    },
+    {
+      "statement": "This investigation deliberately moves away from low-value administrative automation.\n\nThe target is:\n\n> **Medication discrepancy discovered during admission, transfer or discharge → investigation → clarification → resolution → documented closure.**\n\nThis is a **patient-safety workflow**, not merely a productivity workflow.\n\nA 2026 prospective Indian study conducted at Fortis Hospital Mohali and Fortis Hospital Ludhiana found medication discrepancies at admission, transition and discharge, with the highest discrepancy rate per patient occurring at discharge.\n\n---",
+      "research_location": "OPP-011-01.md#Why This Discovery Is Different",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "1. Why This Discovery Is Different",
+        "line_start": 32,
+        "line_end": 45
+      }
+    },
+    {
+      "statement": "Fortis Hospital Mohali is directly represented in the published 2026 study.\n\nThe study evaluated **200 inpatients** and assessed medication reconciliation at:\n\n- admission;\n- intrahospital transition;\n- discharge.\n\nMedication reconciliation was performed for:\n\n- **87.0%** at admission;\n- **93.1%** at transition;\n- **83.5%** at discharge.\n\nThe study identified:\n\n- **170 discrepancies** at admission;\n- **23 discrepancies** at transition;\n- **266 discrepancies** at discharge.\n\nDischarge had the highest rate of unintentional discrepancies per patient at **1.37**, compared with **0.85** at admission and **0.23** at transition.",
+      "research_location": "OPP-011-01.md#Company Evidence",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "2. Company Evidence",
+        "line_start": 46,
+        "line_end": 69
+      }
+    },
+    {
+      "statement": "These are **study observations at Fortis Hospital Mohali/Ludhiana**, not necessarily current hospital-wide operating metrics.\n\nThe evidence is nevertheless unusually strong for VRL because the target company itself appears in the primary research population.\n\n---",
+      "research_location": "OPP-011-01.md#Important evidence distinction",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "Important evidence distinction",
+        "line_start": 70,
+        "line_end": 77
+      }
+    },
+    {
+      "statement": "The underlying workflow is:\n\n```text\nPATIENT ARRIVES / TRANSFERS / PREPARES FOR DISCHARGE\n                 ↓\nCOLLECT CURRENT MEDICATION INFORMATION\n                 ↓\nCOMPARE:\n- PATIENT-REPORTED MEDICATIONS\n- PREVIOUS RECORDS\n- CURRENT ORDERS\n- DISCHARGE MEDICATIONS\n                 ↓\nIDENTIFY DISCREPANCIES\n                 ↓\nCLASSIFY\n                 ↓\nCLINICIAN / PHARMACIST REVIEW\n                 ↓\nRESOLVE\n                 ↓\nDOCUMENT\n                 ↓\nCLOSE\n```\n\nMedication reconciliation is specifically intended to identify and prevent medication errors and discrepancies during transitions of care.\n\n---",
+      "research_location": "OPP-011-01.md#Normal Workflow",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "3. Normal Workflow",
+        "line_start": 78,
+        "line_end": 109
+      }
+    },
+    {
+      "statement": "The important workflow is not the routine reconciliation.\n\nIt is:\n\n```text\nMEDICATION LISTS DO NOT MATCH\n             ↓\nWHICH MEDICATION IS CORRECT?\n             ↓\nWHY DOES THE DIFFERENCE EXIST?\n             ↓\nIS IT INTENTIONAL?\n             ↓\nWHO MUST CONFIRM?\n             ↓\nCLINICIAN / PHARMACIST INVESTIGATION\n             ↓\nCORRECTION / CONFIRMATION\n             ↓\nDOCUMENT\n             ↓\nCLOSE\n```\n\nThis creates a genuine **human investigation loop**.\n\n---",
+      "research_location": "OPP-011-01.md#Exception Surface",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "4. Exception Surface",
+        "line_start": 110,
+        "line_end": 139
+      }
+    },
+    {
+      "statement": "At Fortis Mohali/Ludhiana, the 2026 study recorded:\n\n```text\nADMISSION\n170 discrepancies\n\nTRANSITION\n23 discrepancies\n\nDISCHARGE\n266 discrepancies\n```\n\nThe discharge phase produced the highest discrepancy burden per patient.\n\nThis is much stronger evidence than merely finding that “medication reconciliation is recommended.”\n\n---",
+      "research_location": "OPP-011-01.md#Evidence of Real Discrepancy Burden",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "5. Evidence of Real Discrepancy Burden",
+        "line_start": 140,
+        "line_end": 160
+      }
+    },
+    {
+      "statement": "Medication errors are among the most common preventable patient-safety errors.\n\nA 2025 systematic review of **40 Indian hospital studies** found a median medication-error incidence of **34.11%** across 10 studies and a medication-error frequency rate of **26.74%** across 28 studies. The review also reported that some medication errors caused temporary harm or prolonged hospitalization.\n\nThis does **not** mean Fortis has those rates.\n\nIt demonstrates that medication discrepancies/errors are a serious, recurring Indian hospital safety problem.\n\n---",
+      "research_location": "OPP-011-01.md#Why This Is High Consequence",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "6. Why This Is High Consequence",
+        "line_start": 161,
+        "line_end": 172
+      }
+    },
+    {
+      "statement": "This is particularly valuable for ART because the same workflow has been independently observed in multiple Indian hospital settings.\n\nA study at Shree Krishna Hospital in Gujarat found **64 medication discrepancies among 45 emergency/trauma patients**, including **25 unintentional omission discrepancies**, with many classified as moderate to severe.\n\nAnother Indian study of care transitions found **105 unintentional discrepancies among 165 patients with 159 total discrepancies**, with substantial discrepancy occurrence during ICU-to-ward transition and discharge.\n\nA 2024 Indian discharge study involving **255 patients** found **412 medication discrepancies**, of which **191 were unintentional**; drug omission and altered dose were major categories.\n\nTherefore:\n\n> **The same underlying exception pattern appears across multiple Indian hospital settings.**\n\nThat is the beginning of an **industry-level opportunity**, not merely a Fortis opportunity.\n\n---",
+      "research_location": "OPP-011-01.md#Cross-Company Generalizability Signal",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "7. Cross-Company Generalizability Signal",
+        "line_start": 173,
+        "line_end": 190
+      }
+    },
+    {
+      "statement": "ART should not prescribe or decide medication changes.\n\nThe potential automation layer is:\n\n```text\nDISCREPANCY DETECTED\n        ↓\nCREATE EXCEPTION\n        ↓\nCLASSIFY\n        ↓\nASSIGN RESPONSIBLE OWNER\n        ↓\nREQUEST CLARIFICATION\n        ↓\nTRACK RESPONSE\n        ↓\nAGE\n        ↓\nESCALATE\n        ↓\nCONFIRM RESOLUTION\n        ↓\nAUDIT TRAIL\n```\n\nART's role:\n\n> **Make unresolved medication discrepancies visible, owned, aged and escalated until an authorised clinical decision closes them.**\n\nClinical decision remains with the authorised clinician/pharmacist.\n\n---",
+      "research_location": "OPP-011-01.md#ART-Relevant Automation Surface",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "8. ART-Relevant Automation Surface",
+        "line_start": 191,
+        "line_end": 226
+      }
+    },
+    {
+      "statement": "Compared with OPP-010 specimen rejection:",
+      "research_location": "OPP-011-01.md#Why This Could Be a Stronger ART Opportunity",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "9. Why This Could Be a Stronger ART Opportunity",
+        "line_start": 227,
+        "line_end": 230
+      }
+    },
+    {
+      "statement": "Primarily:\n\n> rework + coordination + turnaround delay.",
+      "research_location": "OPP-011-01.md#Specimen rejection",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "Specimen rejection",
+        "line_start": 231,
+        "line_end": 236
+      }
+    },
+    {
+      "statement": "Potentially:\n\n> **patient-safety risk + clinical investigation + transition-of-care failure + unresolved exception.**\n\nThat gives this opportunity a substantially higher consequence profile.\n\nHowever, we still must prove that the **residual human coordination burden** is large enough for ART to justify itself.\n\n---",
+      "research_location": "OPP-011-01.md#Medication discrepancy",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "Medication discrepancy",
+        "line_start": 237,
+        "line_end": 248
+      }
+    },
+    {
+      "statement": "The published Fortis study confirms that medication reconciliation was being performed, but the available evidence does **not** establish:\n\n- the exact software used;\n- automated discrepancy detection;\n- automatic owner routing;\n- automated ageing;\n- escalation;\n- unresolved-discrepancy dashboards;\n- integration between pharmacy, nursing and clinician workflows.\n\nTherefore:\n\n**Existing capability = UNKNOWN**\n\nDo not assume Fortis lacks these capabilities.\n\n---",
+      "research_location": "OPP-011-01.md#Existing-System Boundary",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "10. Existing-System Boundary",
+        "line_start": 249,
+        "line_end": 268
+      }
+    },
+    {
+      "statement": "| Dimension | Status |\n|---|---|\n| Medication reconciliation occurs | VERIFIED |\n| Fortis Mohali included in Indian study | VERIFIED |\n| Discrepancies observed | VERIFIED |\n| Discharge discrepancy burden | VERIFIED |\n| Patient-safety relevance | STRONG |\n| Cross-hospital recurrence | VERIFIED |\n| Fortis current unresolved-case rate | UNKNOWN |\n| Human follow-up effort | UNKNOWN |\n| Escalation burden | UNKNOWN |\n| Existing automation | UNKNOWN |\n| Capability gap | UNKNOWN |\n| Current ROI | UNKNOWN |\n\n---",
+      "research_location": "OPP-011-01.md#Company-Specific Pain Status",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "11. Company-Specific Pain Status",
+        "line_start": 269,
+        "line_end": 287
+      }
+    },
+    {
+      "statement": "The emerging industry-level problem is:\n\n> **Medication discrepancies are identified during care transitions, but resolution requires authorised humans to investigate, clarify, reconcile, document and close exceptions across clinical roles and systems.**\n\nPotential target population:\n\n```text\nMID-SCALE / MULTISPECIALITY HOSPITALS\n        +\nINPATIENT CARE\n        +\nPHARMACY / MEDICATION MANAGEMENT\n        +\nADMISSION / TRANSFER / DISCHARGE\n        +\nMEDICATION RECONCILIATION\n```\n\nThe opportunity is therefore potentially reusable across many Indian hospitals.\n\n---",
+      "research_location": "OPP-011-01.md#Industry Opportunity Hypothesis",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "12. Industry Opportunity Hypothesis",
+        "line_start": 288,
+        "line_end": 311
+      }
+    },
+    {
+      "statement": "Do not claim:\n\n> “Fortis Mohali has a medication reconciliation automation problem.”\n\nNot yet proven.\n\nDo not claim:\n\n> “ART can prevent medication errors.”\n\nToo broad.\n\nDo not claim:\n\n> “ART can save lives.”\n\nNot scientifically defensible at this stage.\n\nThe defensible claim is:\n\n> **ART could potentially reduce the chance that an identified medication discrepancy remains unresolved by automating exception ownership, follow-up, ageing and escalation.**\n\n---",
+      "research_location": "OPP-011-01.md#What We Must NOT Claim",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "13. What We Must NOT Claim",
+        "line_start": 312,
+        "line_end": 337
+      }
+    },
+    {
+      "statement": "This is a **much stronger discovery target** than the previous low-value workflow because it passes three important filters:\n\n```text\nHIGH CONSEQUENCE\n        +\nRECURRING ACROSS HOSPITALS\n        +\nHUMAN EXCEPTION / RESOLUTION WORK\n```\n\nBut the commercial opportunity still requires reconstruction of the actual human investigation path.\n\n---",
+      "research_location": "OPP-011-01.md#PASS → CONTINUE",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "PASS → CONTINUE",
+        "line_start": 340,
+        "line_end": 355
+      }
+    },
+    {
+      "statement": "Focus only on:\n\n- what happens after a medication discrepancy is identified;\n- who investigates;\n- what information must be gathered;\n- who must be contacted;\n- how intentional vs unintentional discrepancy is determined;\n- how unresolved cases are followed up;\n- what happens at discharge if discrepancy remains;\n- how closure is documented.\n\nDo **not** quantify ROI yet.\n\n---",
+      "research_location": "OPP-011-01.md#OPP-011-02 — Exception + Human Investigation Reconstruction",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "OPP-011-02 — Exception + Human Investigation Reconstruction",
+        "line_start": 358,
+        "line_end": 374
+      }
+    },
+    {
+      "statement": "[PubMed — Medication Reconciliation and Patient Safety in India](https://pubmed.ncbi.nlm.nih.gov/41419375/)\n\n**Evidence:** Fortis Hospital Mohali and Fortis Hospital Ludhiana; 200 inpatients; medication reconciliation at admission, transition and discharge; 170 admission discrepancies, 23 transition discrepancies and 266 discharge discrepancies.",
+      "research_location": "OPP-011-01.md#E-001 — Company-Specific Primary Research",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/41419375/"
+      ],
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "E-001 — Company-Specific Primary Research",
+        "line_start": 377,
+        "line_end": 382
+      }
+    },
+    {
+      "statement": "[Joint Commission Journal on Quality and Patient Safety — 2026 Study](https://www.jointcommissionjournal.com/article/S1553-7250%2825%2900311-3/pdf)\n\n**Evidence:** detailed study abstract and Fortis affiliations.",
+      "research_location": "OPP-011-01.md#E-002 — Full Journal Source",
+      "source_urls": [
+        "https://www.jointcommissionjournal.com/article/S1553-7250%2825%2900311-3/pdf"
+      ],
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "E-002 — Full Journal Source",
+        "line_start": 383,
+        "line_end": 388
+      }
+    },
+    {
+      "statement": "[Indian Journal of Critical Care Medicine — Medication Errors in Indian Hospitals](https://pmc.ncbi.nlm.nih.gov/articles/PMC12683552/)\n\n**Evidence:** 40 Indian hospital studies; medication-error incidence/frequency and severity.",
+      "research_location": "OPP-011-01.md#E-003 — Indian Systematic Review",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12683552/"
+      ],
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "E-003 — Indian Systematic Review",
+        "line_start": 389,
+        "line_end": 394
+      }
+    },
+    {
+      "statement": "[PubMed — Shree Krishna Hospital Study](https://pubmed.ncbi.nlm.nih.gov/39539902/)\n\n**Evidence:** 64 discrepancies among 45 patients; 25 unintentional omission discrepancies; moderate/severe discrepancies.",
+      "research_location": "OPP-011-01.md#E-004 — Emergency / Admission Reconciliation",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/39539902/"
+      ],
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "E-004 — Emergency / Admission Reconciliation",
+        "line_start": 395,
+        "line_end": 400
+      }
+    },
+    {
+      "statement": "[ScienceDirect — Medication Discrepancies Across Transitions](https://www.sciencedirect.com/science/article/abs/pii/S2772953222000296)\n\n**Evidence:** 105 unintentional discrepancies among 165 patients with substantial discrepancy occurrence at ICU-to-ward transition and discharge.",
+      "research_location": "OPP-011-01.md#E-005 — Care-Transition Study",
+      "source_urls": [
+        "https://www.sciencedirect.com/science/article/abs/pii/S2772953222000296"
+      ],
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "E-005 — Care-Transition Study",
+        "line_start": 401,
+        "line_end": 406
+      }
+    },
+    {
+      "statement": "[Indian Journal of Pharmacy Practice — Discharge Medication Reconciliation](https://www.ijopp.org/article/18/1/53)\n\n**Evidence:** 255 patients; 412 discrepancies; 191 unintentional; omission and dose changes prominent.\n\n---",
+      "research_location": "OPP-011-01.md#E-006 — Discharge Reconciliation",
+      "source_urls": [
+        "https://www.ijopp.org/article/18/1/53"
+      ],
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "E-006 — Discharge Reconciliation",
+        "line_start": 407,
+        "line_end": 414
+      }
+    },
+    {
+      "statement": "- Fortis Mohali appears in the 2026 medication-reconciliation study.\n- Medication reconciliation was observed at admission, transition and discharge.\n- Discrepancies were observed.",
+      "research_location": "OPP-011-01.md#Company-specific",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "Company-specific",
+        "line_start": 417,
+        "line_end": 422
+      }
+    },
+    {
+      "statement": "- Shree Krishna Hospital.\n- Other Indian tertiary-care transition studies.\n- Indian systematic review covering 40 hospital studies.",
+      "research_location": "OPP-011-01.md#Cross-company / industry",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "Cross-company / industry",
+        "line_start": 423,
+        "line_end": 428
+      }
+    },
+    {
+      "statement": "- Current Fortis technology;\n- unresolved discrepancy volume;\n- human follow-up;\n- escalation;\n- actual time spent;\n- current capability gap;\n- current economic value.\n\n---",
+      "research_location": "OPP-011-01.md#Unknown",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "Unknown",
+        "line_start": 429,
+        "line_end": 440
+      }
+    },
+    {
+      "statement": "```yaml\nartifact_type: opportunity_intelligence\nopportunity_id: OPP-011\ncompany: Fortis Hospital Mohali\nindustry: healthcare_hospital_operations\nlocation: mohali_punjab_india\nworkflow: medication_reconciliation_exception_resolution\npain_type: patient_safety_medication_discrepancy_resolution\nresearch_stage: workflow_discovery\ndecision: pass_high_consequence_workflow_target_continue\n\ncompany_evidence:\n  medication_reconciliation: verified\n  study_population: 200_inpatients\n  admission_discrepancies: 170\n  transition_discrepancies: 23\n  discharge_discrepancies: 266\n  highest_discrepancy_rate_phase: discharge\n\ncross_company_evidence:\n  shree_krishna_hospital: verified\n  indian_transition_study: verified\n  indian_discharge_study: verified\n  systematic_review: 40_hospital_studies\n\nindustry_generalisability: high_potential\n\ncompany_unresolved_discrepancies: unknown\ncompany_human_effort: unknown\ncompany_escalation: unknown\nexisting_system: unknown\ncapability_gap: unknown\ncustomer_roi: unknown\n\ncompany_pain_signal: strong_industry_signal_company_specific_pain_unproven\nindustry_pain_signal: strong\nnext_checkpoint: OPP-011-02\ncommercial_status: discovery_continue\n```\n\n---",
+      "research_location": "OPP-011-01.md#AIL Compilation Metadata",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "AIL Compilation Metadata",
+        "line_start": 441,
+        "line_end": 484
+      }
+    },
+    {
+      "statement": "The strongest current conclusion is:\n\n> **Medication reconciliation discrepancies are directly documented at Fortis Hospital Mohali and independently documented across multiple Indian hospitals. This is a high-consequence, repeatable healthcare workflow involving clinical investigation and discrepancy resolution. The remaining unknown is whether sufficient unresolved human coordination exists beyond existing hospital systems to create an ART automation opportunity.**\n\n**OPP-011-01 = PASS → CONTINUE**\n\n**Next: OPP-011-02 — Exception + Human Investigation Reconstruction**",
+      "research_location": "OPP-011-01.md#Integrity Statement",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-01.md",
+        "section": "Integrity Statement",
+        "line_start": 485,
+        "line_end": 493
+      }
+    },
+    {
+      "statement": "---\nid: OPP-011-02\nopportunity_id: OPP-011\nindustry: Healthcare / Hospital Operations\ncompany: Fortis Hospital Mohali\nlocation: Mohali, Punjab, India\nworkflow: Medication Reconciliation Exception Resolution at Care Transitions\npain_type: Patient Safety / Medication Discrepancy Resolution\nresearch_stage: Exception + Human Investigation Reconstruction\nmethodology: Legacy VRL\nstatus: PASS\ndecision: HIGH_CONSEQUENCE_EXCEPTION_PATH_SUPPORTED_CONTINUE\ncompany_pain_signal: strong_evidence_but_residual_human_work_unknown\nindustry_generalizability: high\ncurrent_pain_magnitude: unknown\ncurrent_capability_gap: unknown\ncustomer_roi: unknown\ncommercial_status: discovery_continue\n---",
+      "research_location": "OPP-011-02.md#Front matter",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "Front matter",
+        "line_start": 1,
+        "line_end": 18
+      }
+    },
+    {
+      "statement": "**Industry:** Healthcare / Hospital Operations  \n**Company:** Fortis Hospital Mohali  \n**Workflow:** Medication Reconciliation Exception Resolution at Care Transitions  \n**VRL checkpoint:** OPP-011-02  \n**Decision:** **PASS → High-consequence exception path supported; continue**\n\n---",
+      "research_location": "OPP-011-02.md#OPP-011-02 — Exception + Human Investigation Reconstruction",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "OPP-011-02 — Exception + Human Investigation Reconstruction",
+        "line_start": 21,
+        "line_end": 30
+      }
+    },
+    {
+      "statement": "> **When a medication discrepancy is identified during admission, transfer or discharge, what human investigation and coordination is required before the discrepancy can be safely closed?**\n\nThe Fortis Mohali/Ludhiana prospective study directly documents medication discrepancies during admission, intrahospital transition and discharge. The study involved 200 inpatients and found the highest discrepancy rate per patient at discharge.\n\nThe published evidence does **not** expose Fortis's exact internal exception-management software or escalation workflow.\n\nTherefore this checkpoint reconstructs the **evidence-supported investigation path**, without inventing Fortis-specific system behaviour.\n\n---",
+      "research_location": "OPP-011-02.md#Checkpoint Question",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "1. Checkpoint Question",
+        "line_start": 31,
+        "line_end": 42
+      }
+    },
+    {
+      "statement": "The evidence-supported workflow is:\n\n```text\nPATIENT ENTERS / TRANSFERS / DISCHARGES\n              ↓\nOBTAIN BEST POSSIBLE MEDICATION HISTORY\n              ↓\nCOMPARE WITH CURRENT ORDERS / DISCHARGE PLAN\n              ↓\nIDENTIFY DIFFERENCES\n              ↓\nDETERMINE:\nINTENTIONAL OR UNINTENTIONAL?\n              ↓\nCLINICAL REVIEW\n              ↓\nRESOLVE\n              ↓\nDOCUMENT\n              ↓\nCLOSE\n```\n\nA published medication-reconciliation implementation describes comparison of medication history against current orders, identification of discrepancies, discussion with the prescribing physician and resolution.\n\n---",
+      "research_location": "OPP-011-02.md#Normal Medication-Reconciliation Workflow",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "2. Normal Medication-Reconciliation Workflow",
+        "line_start": 43,
+        "line_end": 71
+      }
+    },
+    {
+      "statement": "The first major exception is:\n\n```text\nHISTORICAL MEDICATION\n        ≠\nCURRENT ORDER\n```\n\nPossible difference categories include:\n\n- omission;\n- altered dose;\n- altered frequency;\n- duplication;\n- medication added or discontinued;\n- formulary substitution;\n- other medication changes.\n\nAn Indian discharge study involving 255 patients identified **412 discrepancies**, of which **191 were unintentional**; drug omission and altered dose were major categories.\n\nReconstructed:\n\n```text\nDIFFERENCE DETECTED\n      ↓\nIDENTIFY MEDICATION\n      ↓\nCOMPARE SOURCES\n      ↓\nCHECK CLINICAL CONTEXT\n      ↓\nASK:\n\"Was this change INTENTIONAL?\"\n      ↓\nIF UNCLEAR\n      ↓\nCONTACT AUTHORISED CLINICIAN / PHARMACIST\n      ↓\nCLARIFY\n      ↓\nCORRECT / CONFIRM\n      ↓\nDOCUMENT\n      ↓\nCLOSE\n```\n\n---",
+      "research_location": "OPP-011-02.md#Exception A — Medication Lists Do Not Match",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "3. Exception A — Medication Lists Do Not Match",
+        "line_start": 72,
+        "line_end": 122
+      }
+    },
+    {
+      "statement": "This is the most important human-investigation step.\n\nA discrepancy does **not automatically mean an error**.\n\nThe investigator must establish whether the difference was:\n\n```text\nINTENTIONAL CHANGE\n        OR\nUNINTENTIONAL DISCREPANCY\n```\n\nResearch on medication reconciliation describes pharmacists identifying clinically relevant discrepancies and resolving them through discussion with the prescribing physician.\n\nTherefore:\n\n> **The automation target is not deciding whether a medication change is clinically correct.**\n\nThe automation target is ensuring that an **unresolved discrepancy reaches the authorised decision-maker and remains visible until resolved**.\n\n---",
+      "research_location": "OPP-011-02.md#Exception B — Intent Is Not Clear",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "4. Exception B — Intent Is Not Clear",
+        "line_start": 123,
+        "line_end": 146
+      }
+    },
+    {
+      "statement": "Medication reconciliation can require information from multiple sources.\n\nA transition-of-care implementation used:\n\n- patient/family interview;\n- primary-care office;\n- preferred pharmacy;\n- previous discharge summary;\n- physician history;\n- hospital electronic record.\n\nThe process required staff to verify medication information across sources before updating the electronic record.\n\nReconstructed:\n\n```text\nDISCREPANCY\n      ↓\nINFORMATION INCOMPLETE\n      ↓\nCHECK:\nPATIENT\nFAMILY\nPRIOR RECORD\nPHARMACY\nCURRENT ORDERS\nOTHER PROVIDER\n      ↓\nRECONSTRUCT MEDICATION HISTORY\n      ↓\nCLINICAL REVIEW\n      ↓\nRESOLUTION\n```\n\nThis is a genuine **human information-recovery loop**.\n\n---",
+      "research_location": "OPP-011-02.md#Exception C — Missing Information / Multiple Sources",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "5. Exception C — Missing Information / Multiple Sources",
+        "line_start": 147,
+        "line_end": 187
+      }
+    },
+    {
+      "statement": "Evidence from medication-reconciliation programs shows that pharmacists communicate discrepancies requiring correction to physicians, who then make the clinical decision.\n\nReconstructed:\n\n```text\nDISCREPANCY\n      ↓\nPHARMACIST / NURSE IDENTIFIES ISSUE\n      ↓\nRESPONSIBLE CLINICIAN IDENTIFIED\n      ↓\nCLARIFICATION REQUEST\n      ↓\nWAIT FOR DECISION\n      ↓\nDECISION RECEIVED\n      ↓\nORDER / RECORD UPDATED\n      ↓\nVERIFY\n      ↓\nCLOSE\n```\n\nThe exact Fortis Mohali ownership structure is **not publicly established**.\n\n---",
+      "research_location": "OPP-011-02.md#Exception D — Responsible Clinician Clarification",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "6. Exception D — Responsible Clinician Clarification",
+        "line_start": 188,
+        "line_end": 217
+      }
+    },
+    {
+      "statement": "The key ART-relevant state is:\n\n```text\nDISCREPANCY IDENTIFIED\n        ↓\nCLARIFICATION REQUIRED\n        ↓\nNO DECISION YET\n        ↓\nOPEN EXCEPTION\n```\n\nAt this point the operational problem changes from:\n\n> “Find a discrepancy.”\n\nto:\n\n> **“Ensure the discrepancy is owned, followed up and resolved before the patient crosses the next care boundary.”**\n\nThis is the strongest potential ART surface.\n\nEvidence from transition-of-care research describes unclear ownership of medication reconciliation and the creation of dedicated teams to oversee the process.\n\n---",
+      "research_location": "OPP-011-02.md#Exception E — Discrepancy Remains Open",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "7. Exception E — Discrepancy Remains Open",
+        "line_start": 218,
+        "line_end": 245
+      }
+    },
+    {
+      "statement": "Discharge is particularly important because the medication list becomes the handoff to the next care setting.\n\nThe Fortis study found the highest discrepancy rate per patient at discharge.\n\nA discharge medication-reconciliation study found 191 unintentional discrepancies among 255 patients.\n\nReconstructed:\n\n```text\nDISCHARGE APPROACHING\n       ↓\nFINAL MEDICATION LIST\n       ↓\nCOMPARE WITH:\n- ADMISSION HISTORY\n- INPATIENT CHANGES\n- CURRENT ORDERS\n       ↓\nDISCREPANCY?\n       ↓\nYES\n       ↓\nCLARIFICATION\n       ↓\nRESOLUTION\n       ↓\nDOCUMENT REASON FOR CHANGE\n       ↓\nFINALISE DISCHARGE MEDICATION LIST\n       ↓\nPATIENT / NEXT PROVIDER RECEIVES\n```\n\nTherefore an unresolved discrepancy near discharge can become a **time-sensitive exception**.\n\n---",
+      "research_location": "OPP-011-02.md#Exception F — Discharge Creates a Hard Closure Point",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "8. Exception F — Discharge Creates a Hard Closure Point",
+        "line_start": 246,
+        "line_end": 284
+      }
+    },
+    {
+      "statement": "A study of real-time documentation found that incomplete documentation of medication changes was associated with significantly more medication-discrepancy errors at discharge. The study also found that better documentation improved physician-pharmacist communication.\n\nReconstructed:\n\n```text\nMEDICATION CHANGED\n      ↓\nRATIONALE NOT CLEARLY DOCUMENTED\n      ↓\nPHARMACIST / NEXT REVIEWER CANNOT DETERMINE INTENT\n      ↓\nCLARIFICATION REQUIRED\n      ↓\nDOCUMENT INTENT\n      ↓\nVERIFY FINAL LIST\n      ↓\nCLOSE\n```\n\nThis creates a second information gap:\n\n> **The medication list may be correct, but the reason for the change may not be sufficiently visible to the next reviewer.**\n\n---",
+      "research_location": "OPP-011-02.md#Exception G — Documentation Does Not Explain Medication Change",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "9. Exception G — Documentation Does Not Explain Medication Change",
+        "line_start": 285,
+        "line_end": 312
+      }
+    },
+    {
+      "statement": "The evidence indicates that medication reconciliation can involve:\n\n```text\nPATIENT / FAMILY\n       ↕\nNURSE\n       ↕\nPHARMACIST\n       ↕\nPHYSICIAN\n       ↕\nPHARMACY / PRIOR PROVIDER\n       ↕\nNEXT CARE PROVIDER\n```\n\nA survey of physicians, nurses and pharmacists found substantial differences in how each profession viewed responsibility for medication reconciliation, including reconciliation at admission, transfer and discharge.\n\nThis is important:\n\n> **The workflow crosses organisational roles, and ownership can become ambiguous.**\n\n---",
+      "research_location": "OPP-011-02.md#Cross-Role Human Investigation",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "10. Cross-Role Human Investigation",
+        "line_start": 313,
+        "line_end": 338
+      }
+    },
+    {
+      "statement": "The strongest reconstructed exception workflow is:\n\n```text\nDISCREPANCY DETECTED\n        ↓\nCLASSIFY DIFFERENCE\n        ↓\nCOLLECT MISSING INFORMATION\n        ↓\nIDENTIFY AUTHORISED DECISION-MAKER\n        ↓\nREQUEST CLARIFICATION\n        ↓\nWAIT\n        ↓\nFOLLOW UP IF UNRESOLVED\n        ↓\nCLINICAL DECISION\n        ↓\nUPDATE MEDICATION RECORD\n        ↓\nVERIFY\n        ↓\nDOCUMENT\n        ↓\nCLOSE\n```\n\nAt discharge:\n\n```text\nOPEN DISCREPANCY\n        ↓\nDISCHARGE DEADLINE APPROACHING\n        ↓\nESCALATE\n        ↓\nRESOLVE\n        ↓\nFINAL MEDICATION LIST\n        ↓\nHANDOFF\n```\n\n---",
+      "research_location": "OPP-011-02.md#Human Investigation Surface",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "11. Human Investigation Surface",
+        "line_start": 339,
+        "line_end": 386
+      }
+    },
+    {
+      "statement": "The defensible ART layer is:\n\n```text\nDISCREPANCY DETECTED\n        ↓\nCREATE EXCEPTION\n        ↓\nCLASSIFY\n        ↓\nASSIGN OWNER\n        ↓\nCLARIFICATION REQUEST\n        ↓\nTRACK RESPONSE\n        ↓\nAGE\n        ↓\nESCALATE\n        ↓\nCONFIRM AUTHORISED DECISION\n        ↓\nVERIFY RECORD UPDATED\n        ↓\nCLOSE\n        ↓\nAUDIT TRAIL\n```\n\nART could potentially automate:\n\n- exception creation;\n- owner assignment;\n- follow-up reminders;\n- ageing;\n- escalation;\n- closure verification;\n- audit visibility.\n\nART should **not** automate:\n\n- clinical interpretation;\n- medication selection;\n- prescribing;\n- discontinuation decisions;\n- overriding clinician judgement.\n\n---",
+      "research_location": "OPP-011-02.md#Potential ART Automation Surface",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "12. Potential ART Automation Surface",
+        "line_start": 387,
+        "line_end": 436
+      }
+    },
+    {
+      "statement": "Evidence shows medication reconciliation can occur inside electronic records and can involve real-time documentation.\n\nBut the available Fortis evidence does **not establish** whether its current systems provide:\n\n```text\nAUTOMATIC DISCREPANCY DETECTION\nAUTOMATIC OWNER ROUTING\nAUTOMATIC CLARIFICATION REQUEST\nAGEING\nESCALATION\nUNRESOLVED-CASE DASHBOARD\nCLOSURE VERIFICATION\nCROSS-SYSTEM AUDIT TRAIL\n```\n\nTherefore:\n\n**Existing capability = UNKNOWN**\n\nDo not claim a capability gap yet.\n\n---",
+      "research_location": "OPP-011-02.md#Existing-System Boundary",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "13. Existing-System Boundary",
+        "line_start": 437,
+        "line_end": 461
+      }
+    },
+    {
+      "statement": "| Dimension | Status |\n|---|---|\n| Fortis Mohali included in medication-reconciliation study | VERIFIED |\n| Medication discrepancies documented | VERIFIED |\n| Discrepancies at admission | VERIFIED |\n| Discrepancies at transition | VERIFIED |\n| Discrepancies at discharge | VERIFIED |\n| Discharge highest discrepancy rate/patient | VERIFIED |\n| Cross-role investigation required by workflow | INDUSTRY-SUPPORTED |\n| Clarification with authorised clinician | INDUSTRY-SUPPORTED |\n| Open discrepancy tracking at Fortis | UNKNOWN |\n| Manual follow-up at Fortis | UNKNOWN |\n| Escalation burden | UNKNOWN |\n| Existing automation | UNKNOWN |\n| Capability gap | UNKNOWN |\n| Actual human effort | UNKNOWN |\n| ROI | UNKNOWN |\n\n---",
+      "research_location": "OPP-011-02.md#Company-Specific Pain Assessment",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "14. Company-Specific Pain Assessment",
+        "line_start": 462,
+        "line_end": 483
+      }
+    },
+    {
+      "statement": "The strongest defensible finding is:\n\n> **Medication reconciliation does not end when a discrepancy is detected. The discrepancy may require information recovery, authorised clinical clarification, documentation, follow-up and verification before it can safely close—especially near discharge.**\n\nThis is supported by medication-reconciliation implementation studies and by the Fortis Mohali/Ludhiana evidence of substantial discrepancy burden.\n\nThis is a substantially stronger ART surface than simple administrative automation.\n\n---",
+      "research_location": "OPP-011-02.md#Strongest Finding",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "15. Strongest Finding",
+        "line_start": 484,
+        "line_end": 495
+      }
+    },
+    {
+      "statement": "The same investigation pattern is visible beyond Fortis:\n\n```text\nFORTIS MOHALI / LUDHIANA\n        +\nINDIAN DISCHARGE STUDIES\n        +\nINDIAN TRANSITION STUDIES\n        +\nOTHER HOSPITAL MEDICATION-RECONCILIATION RESEARCH\n        ↓\nRECURRING INDUSTRY WORKFLOW\n```\n\nIndian discharge research found 412 discrepancies among 255 patients, including 191 unintentional discrepancies.\n\nOther transition-of-care research demonstrates that discrepancies may require medication review, record access and follow-up calls to identify and solve drug-related problems.\n\nTherefore the opportunity has **strong industry-generalisation potential**.\n\n---",
+      "research_location": "OPP-011-02.md#Industry Generalisability",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "16. Industry Generalisability",
+        "line_start": 496,
+        "line_end": 519
+      }
+    },
+    {
+      "statement": "Before calling this a commercial ART opportunity, we need to know:\n\n```text\nHOW MANY DISCREPANCIES?\n        ↓\nHOW MANY REQUIRE CLARIFICATION?\n        ↓\nHOW MANY REMAIN OPEN?\n        ↓\nHOW MANY REQUIRE FOLLOW-UP?\n        ↓\nHOW MANY REACH DISCHARGE UNRESOLVED?\n        ↓\nHOW MUCH HUMAN TIME?\n        ↓\nWHAT DOES THE EXISTING SYSTEM ALREADY AUTOMATE?\n```\n\nThese are the decisive unknowns.\n\n---",
+      "research_location": "OPP-011-02.md#What We Must Still Prove",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "17. What We Must Still Prove",
+        "line_start": 520,
+        "line_end": 543
+      }
+    },
+    {
+      "statement": "This checkpoint passes because the exception path is:\n\n- **high consequence**;\n- **time-sensitive at transitions/discharge**;\n- **cross-functional**;\n- **investigation-heavy**;\n- **repeated across Indian hospitals**.\n\nBut:\n\n> **Company-specific residual human work is still unverified.**\n\nNo ROI should be manufactured yet.\n\n---",
+      "research_location": "OPP-011-02.md#PASS → CONTINUE",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "PASS → CONTINUE",
+        "line_start": 546,
+        "line_end": 563
+      }
+    },
+    {
+      "statement": "The next question:\n\n> **How much human investigation, follow-up and unresolved-exception effort can be defensibly hypothesised from the available Fortis and Indian evidence, while keeping company-specific numbers explicitly unknown?**\n\nThe next checkpoint should quantify:\n\n```text\nDISCREPANCIES\n×\n% REQUIRING HUMAN CLARIFICATION\n×\nFOLLOW-UP EFFORT\n×\nDISCHARGE / TRANSITION DEADLINE PRESSURE\n```\n\nThen determine whether this is potentially a **material ART opportunity**, not merely a patient-safety workflow.\n\n---",
+      "research_location": "OPP-011-02.md#OPP-011-03 — Human Effort / Pain Quantification",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "OPP-011-03 — Human Effort / Pain Quantification",
+        "line_start": 566,
+        "line_end": 587
+      }
+    },
+    {
+      "statement": "[PubMed — Medication Reconciliation and Patient Safety in India](https://pubmed.ncbi.nlm.nih.gov/41419375/)\n\n**Evidence:** 200 inpatients; admission, transition and discharge reconciliation; discrepancies documented at all three stages; Fortis Mohali and Ludhiana affiliations.",
+      "research_location": "OPP-011-02.md#E-001 — Fortis Mohali / Ludhiana Study",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/41419375/"
+      ],
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "E-001 — Fortis Mohali / Ludhiana Study",
+        "line_start": 590,
+        "line_end": 595
+      }
+    },
+    {
+      "statement": "[PMC — Transition of Care Team](https://pmc.ncbi.nlm.nih.gov/articles/PMC5922563/)\n\n**Evidence:** medication information gathered from multiple sources; discrepancies investigated; clinician verification; ownership/coordination problems; follow-up.",
+      "research_location": "OPP-011-02.md#E-002 — Medication-Reconciliation Workflow",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5922563/"
+      ],
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "E-002 — Medication-Reconciliation Workflow",
+        "line_start": 596,
+        "line_end": 601
+      }
+    },
+    {
+      "statement": "[PMC — Real-Time Medication Change Documentation](https://pmc.ncbi.nlm.nih.gov/articles/PMC11214548/)\n\n**Evidence:** incomplete documentation associated with discharge discrepancy errors; real-time documentation improved physician-pharmacist communication.",
+      "research_location": "OPP-011-02.md#E-003 — Documentation / Communication",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11214548/"
+      ],
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "E-003 — Documentation / Communication",
+        "line_start": 602,
+        "line_end": 607
+      }
+    },
+    {
+      "statement": "[Indian Journal of Pharmacy Practice — Discharge Medication Reconciliation](https://www.ijopp.org/article/18/1/53)\n\n**Evidence:** 255 patients; 412 discrepancies; 191 unintentional discrepancies.",
+      "research_location": "OPP-011-02.md#E-004 — Indian Discharge Evidence",
+      "source_urls": [
+        "https://www.ijopp.org/article/18/1/53"
+      ],
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "E-004 — Indian Discharge Evidence",
+        "line_start": 608,
+        "line_end": 613
+      }
+    },
+    {
+      "statement": "[PMC — Who Is Responsible for Medication Reconciliation?](https://pmc.ncbi.nlm.nih.gov/articles/PMC5310138/)\n\n**Evidence:** different perceptions among pharmacists, physicians and nurses regarding responsibility for medication-reconciliation tasks.",
+      "research_location": "OPP-011-02.md#E-005 — Responsibility / Ownership",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5310138/"
+      ],
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "E-005 — Responsibility / Ownership",
+        "line_start": 614,
+        "line_end": 619
+      }
+    },
+    {
+      "statement": "[PMC — Cross-Sectoral Hospital Pharmacist Intervention](https://pmc.ncbi.nlm.nih.gov/articles/PMC10026123/)\n\n**Evidence:** medication-related problems during transitions required medication review, record access and follow-up; intervention identified and solved drug-related problems.\n\n---",
+      "research_location": "OPP-011-02.md#E-006 — Cross-Sector Exception Resolution",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10026123/"
+      ],
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "E-006 — Cross-Sector Exception Resolution",
+        "line_start": 620,
+        "line_end": 627
+      }
+    },
+    {
+      "statement": "- Fortis Mohali is directly represented in the 2026 study.\n- Medication reconciliation was studied at admission, transition and discharge.\n- Substantial discrepancies were observed.",
+      "research_location": "OPP-011-02.md#Company-specific",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "Company-specific",
+        "line_start": 630,
+        "line_end": 635
+      }
+    },
+    {
+      "statement": "- Indian discharge studies.\n- Indian transition-of-care studies.\n- Medication-reconciliation workflow research.\n- Cross-role ownership evidence.",
+      "research_location": "OPP-011-02.md#Industry / cross-company",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "Industry / cross-company",
+        "line_start": 636,
+        "line_end": 642
+      }
+    },
+    {
+      "statement": "- Fortis current system;\n- Fortis open-discrepancy rate;\n- Fortis follow-up workload;\n- Fortis escalation;\n- Fortis actual human minutes;\n- Fortis capability gap;\n- Fortis ROI.\n\n---",
+      "research_location": "OPP-011-02.md#Unknown",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "Unknown",
+        "line_start": 643,
+        "line_end": 654
+      }
+    },
+    {
+      "statement": "```yaml\nartifact_type: opportunity_intelligence\nopportunity_id: OPP-011\ncompany: Fortis Hospital Mohali\nindustry: healthcare_hospital_operations\nlocation: mohali_punjab_india\nworkflow: medication_reconciliation_exception_resolution\npain_type: patient_safety_medication_discrepancy_resolution\nresearch_stage: exception_human_investigation_reconstruction\ndecision: pass_high_consequence_exception_path_supported\n\nexception_paths:\n  medication_list_mismatch: verified\n  intentional_vs_unintentional_clarification: supported\n  missing_information_recovery: supported\n  clinician_clarification: supported\n  follow_up: supported\n  discharge_deadline: supported\n  documentation_gap: supported\n  closure_verification: supported\n\ncompany_evidence:\n  study_population: 200\n  admission_discrepancies: 170\n  transition_discrepancies: 23\n  discharge_discrepancies: 266\n\nindustry_generalisability: high\n\ncompany_open_cases: unknown\ncompany_follow_up_effort: unknown\ncompany_escalation: unknown\nexisting_system: unknown\ncapability_gap: unknown\ncustomer_roi: unknown\n\ncompany_pain_signal: strong_evidence_but_residual_human_work_unknown\nindustry_pain_signal: strong\nnext_checkpoint: OPP-011-03\ncommercial_status: discovery_continue\n```\n\n---",
+      "research_location": "OPP-011-02.md#AIL Compilation Metadata",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "AIL Compilation Metadata",
+        "line_start": 655,
+        "line_end": 700
+      }
+    },
+    {
+      "statement": "The evidence supports a strong conclusion:\n\n> **Medication discrepancies create a high-consequence exception workflow requiring information recovery, authorised clinical clarification, follow-up, documentation and closure. Fortis Mohali is directly represented in Indian evidence showing substantial discrepancy burden, and similar workflows are documented across other hospitals.**\n\nThe unresolved question is no longer whether the workflow exists.\n\nIt is:\n\n> **How much residual human investigation and unresolved coordination remains after the hospital's existing systems?**\n\n**OPP-011-02 = PASS → CONTINUE**\n\n**Next: OPP-011-03 — Human Effort / Pain Quantification**",
+      "research_location": "OPP-011-02.md#Integrity Statement",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-02.md",
+        "section": "Integrity Statement",
+        "line_start": 701,
+        "line_end": 715
+      }
+    },
+    {
+      "statement": "---\nid: OPP-011-03\nopportunity_id: OPP-011\nindustry: Healthcare / Hospital Operations\ncompany: Fortis Hospital Mohali\nlocation: Mohali, Punjab, India\nworkflow: Medication Reconciliation Exception Resolution at Care Transitions\npain_type: Patient Safety / Medication Discrepancy Resolution\nresearch_stage: Human Effort / Pain Quantification\nmethodology: Legacy VRL\nstatus: PASS\ndecision: HIGH_EFFORT_HIGH_CONSEQUENCE_OPPORTUNITY_SIGNAL\ncompany_pain_signal: strong_discrepancy_evidence_residual_effort_unknown\nindustry_generalizability: high\ncurrent_pain_magnitude: hypothesis_only\ncurrent_capability_gap: unknown\ncustomer_roi: hypothesis_only\ncommercial_status: discovery_continue\n---",
+      "research_location": "OPP-011-03.md#Front matter",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "Front matter",
+        "line_start": 1,
+        "line_end": 18
+      }
+    },
+    {
+      "statement": "**Industry:** Healthcare / Hospital Operations  \n**Company:** Fortis Hospital Mohali  \n**Workflow:** Medication Reconciliation Exception Resolution at Care Transitions  \n**VRL checkpoint:** OPP-011-03  \n**Decision:** **PASS → High-effort / high-consequence opportunity signal**\n\n---",
+      "research_location": "OPP-011-03.md#OPP-011-03 — Human Effort / Pain Quantification",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "OPP-011-03 — Human Effort / Pain Quantification",
+        "line_start": 21,
+        "line_end": 30
+      }
+    },
+    {
+      "statement": "> **How much human effort can be defensibly associated with medication reconciliation and discrepancy resolution, without falsely assigning external benchmark times to Fortis Mohali?**\n\nThe Fortis Mohali/Ludhiana study documented **170 admission discrepancies, 23 transition discrepancies and 266 discharge discrepancies among 200 inpatients**. Discharge had the highest discrepancy rate per patient.\n\nThe study does **not report the minutes spent resolving each Fortis discrepancy**.\n\nTherefore, Fortis-specific effort remains **unknown**.\n\n---",
+      "research_location": "OPP-011-03.md#Checkpoint Question",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "1. Checkpoint Question",
+        "line_start": 31,
+        "line_end": 42
+      }
+    },
+    {
+      "statement": "The Fortis study provides a strong workload signal:\n\n```text\n200 INPATIENTS\n      ↓\nADMISSION\n170 DISCREPANCIES\n      ↓\nTRANSITION\n23 DISCREPANCIES\n      ↓\nDISCHARGE\n266 DISCREPANCIES\n```\n\nThese are discrepancies observed during the study, not necessarily all unintentional or all requiring the same level of intervention.\n\nTherefore:\n\n> **Discrepancy count ≠ human effort count.**\n\nThis distinction must remain explicit.\n\n---",
+      "research_location": "OPP-011-03.md#Strongest Direct Fortis Evidence",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "2. Strongest Direct Fortis Evidence",
+        "line_start": 43,
+        "line_end": 69
+      }
+    },
+    {
+      "statement": "A randomized clinical trial measured complete medication reconciliation at admission.\n\nMedian total effort was:\n\n**55 minutes per patient**\n\nincluding:\n\n- 15 minutes for the medication interview;\n- 40 minutes for information search, analysis, validation, discrepancy evaluation and communication with the attending physician.\n\nThis is **full reconciliation effort**, not exception-only effort.\n\nIt should therefore **not** be multiplied directly against Fortis discrepancy counts.\n\n---",
+      "research_location": "OPP-011-03.md#Indian / Hospital Benchmark — Full Reconciliation Effort",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "3. Indian / Hospital Benchmark — Full Reconciliation Effort",
+        "line_start": 70,
+        "line_end": 88
+      }
+    },
+    {
+      "statement": "A time-and-motion study found discharge medication reconciliation required substantial clinician time, varying by unit:\n\n- geriatrics: **29.0 minutes mean**;\n- internal medicine: **19.4 minutes mean**;\n- general surgery: **9.9 minutes mean**.\n\nAnother pharmacist discharge study found a mean discharge-completion time of **26.2 minutes**, with more than half spent checking documentation and preparing discharge medicine lists; manual retyping/reconciling medicine lists across software systems consumed a mean **4.0 minutes**.\n\nThese figures establish that medication-transition work can consume meaningful staff time.\n\nThey are **not Fortis measurements**.\n\n---",
+      "research_location": "OPP-011-03.md#Discharge Benchmark",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "4. Discharge Benchmark",
+        "line_start": 89,
+        "line_end": 104
+      }
+    },
+    {
+      "statement": "A medication-reconciliation randomized trial measured the complete admission process at a median **55 minutes**, with **40 minutes** devoted to search, analysis, validation, discrepancy evaluation and communication.\n\nAnother prospective trial explicitly measured the time required to **resolve identified discrepancies with the responsible physician**, showing that discrepancy resolution is a distinct workload component rather than merely record entry.\n\nThis supports the VRL distinction:\n\n```text\nMEDICATION RECONCILIATION\n        ≠\nEXCEPTION RESOLUTION\n```\n\nThe latter is the more relevant ART surface.\n\n---",
+      "research_location": "OPP-011-03.md#Stronger Exception-Specific Benchmark",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "5. Stronger Exception-Specific Benchmark",
+        "line_start": 105,
+        "line_end": 122
+      }
+    },
+    {
+      "statement": "Because Fortis's actual monthly inpatient volume and resolution time are unavailable, construct a scenario model.\n\nAssume:\n\n| Scenario | Discrepancies/month | Average human effort/exception |\n|---|---:|---:|\n| Conservative | 50 | 5 min |\n| Base | 100 | 10 min |\n| High | 200 | 15 min |\n\nThese are **explicit research assumptions**, not company facts.\n\nThey represent only the additional coordination/clarification effort around an identified discrepancy.\n\n---",
+      "research_location": "OPP-011-03.md#Screening Model — Do Not Pretend These Are Fortis Numbers",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "6. Screening Model — Do Not Pretend These Are Fortis Numbers",
+        "line_start": 123,
+        "line_end": 140
+      }
+    },
+    {
+      "statement": "Formula:\n\n```text\ndiscrepancies/month\n×\nminutes/exception\n×\n12\n÷\n60\n```",
+      "research_location": "OPP-011-03.md#Hypothesis Annual Exception Hours",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "7. Hypothesis Annual Exception Hours",
+        "line_start": 141,
+        "line_end": 154
+      }
+    },
+    {
+      "statement": "```text\n50 × 5 × 12 ÷ 60\n≈ 50 hours/year\n```",
+      "research_location": "OPP-011-03.md#Conservative",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "Conservative",
+        "line_start": 155,
+        "line_end": 161
+      }
+    },
+    {
+      "statement": "```text\n100 × 10 × 12 ÷ 60\n≈ 200 hours/year\n```",
+      "research_location": "OPP-011-03.md#Base",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "Base",
+        "line_start": 162,
+        "line_end": 168
+      }
+    },
+    {
+      "statement": "```text\n200 × 15 × 12 ÷ 60\n≈ 600 hours/year\n```",
+      "research_location": "OPP-011-03.md#High",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "High",
+        "line_start": 169,
+        "line_end": 175
+      }
+    },
+    {
+      "statement": "> **≈50–600 hypothetical exception-hours/year**\n\nThis is **not Fortis actual workload**.\n\n---",
+      "research_location": "OPP-011-03.md#Screening range",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "Screening range",
+        "line_start": 176,
+        "line_end": 183
+      }
+    },
+    {
+      "statement": "Use a broad loaded clinical/pharmacy staff-cost sensitivity because Fortis's actual internal cost is unavailable.\n\n| Loaded cost | Conservative | Base | High |\n|---|---:|---:|---:|\n| ₹500/hour | ₹0.25L | ₹1.00L | ₹3.00L |\n| ₹750/hour | ₹0.38L | ₹1.50L | ₹4.50L |\n| ₹1,000/hour | ₹0.50L | ₹2.00L | ₹6.00L |",
+      "research_location": "OPP-011-03.md#Labour-Value Sensitivity",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "8. Labour-Value Sensitivity",
+        "line_start": 184,
+        "line_end": 193
+      }
+    },
+    {
+      "statement": "```text\n200 hours × ₹750/hour\n≈ ₹1.50 lakh/year\n```\n\nThis is **hypothetical labour-value exposure**.\n\nIt is not customer ROI.\n\n---",
+      "research_location": "OPP-011-03.md#Base screening exposure",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "Base screening exposure",
+        "line_start": 194,
+        "line_end": 206
+      }
+    },
+    {
+      "statement": "OPP-010's initial economics were weak because the likely human work was primarily specimen-rejection coordination.\n\nOPP-011 has a stronger value stack:\n\n```text\nHUMAN EFFORT\n+\nREPEATED CLINICAL COORDINATION\n+\nTIME-SENSITIVE TRANSITIONS\n+\nPATIENT-SAFETY CONSEQUENCE\n+\nDOCUMENTATION / CLOSURE\n```\n\nThe potential economic value therefore should not be limited to minutes saved.\n\nHowever:\n\n> **Patient-safety value must not be monetized speculatively.**\n\nWe can state the consequence; we cannot assign a rupee value to avoided harm without evidence.\n\n---",
+      "research_location": "OPP-011-03.md#Why This Opportunity Is Different From OPP-010",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "9. Why This Opportunity Is Different From OPP-010",
+        "line_start": 207,
+        "line_end": 234
+      }
+    },
+    {
+      "statement": "The Fortis study itself frames medication reconciliation as a process intended to prevent medication errors and discrepancies during hospitalization, particularly at discharge.\n\nA systematic review/meta-analysis found pharmacist-led medication-reconciliation interventions reduced medication discrepancies, although effects on adverse drug events and healthcare utilisation were less certain.\n\nTherefore the defensible value hierarchy is:\n\n```text\nPRIMARY:\nREDUCE UNRESOLVED EXCEPTION WORK\n\nSECONDARY:\nIMPROVE CLOSURE / TIMELINESS\n\nPOTENTIAL SAFETY BENEFIT:\nREDUCE RISK OF UNRESOLVED MEDICATION DISCREPANCIES\n\nNOT YET PROVEN:\nLIVES SAVED / MONEY SAVED FROM AVOIDED HARM\n```\n\n---",
+      "research_location": "OPP-011-03.md#Patient-Safety Evidence",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "10. Patient-Safety Evidence",
+        "line_start": 235,
+        "line_end": 258
+      }
+    },
+    {
+      "statement": "The strongest automation surface remains:\n\n```text\nDISCREPANCY\n      ↓\nEXCEPTION CREATED\n      ↓\nOWNER ASSIGNED\n      ↓\nCLARIFICATION REQUEST\n      ↓\nRESPONSE TIMER\n      ↓\nREMINDER\n      ↓\nESCALATION\n      ↓\nAUTHORised DECISION\n      ↓\nRECORD UPDATED\n      ↓\nVERIFICATION\n      ↓\nCLOSE\n```\n\nPotentially addressable human effort:\n\n- tracking open discrepancies;\n- chasing responses;\n- identifying overdue cases;\n- escalating before transition deadlines;\n- checking whether the final record was updated;\n- producing an audit trail.\n\nThis is **coordination automation**, not clinical automation.\n\n---",
+      "research_location": "OPP-011-03.md#ART Addressable Work",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "11. ART Addressable Work",
+        "line_start": 259,
+        "line_end": 299
+      }
+    },
+    {
+      "statement": "The labour-only model gives:\n\n> **Base: ~200 hours/year**\n\nAt ₹750/hour:\n\n> **~₹1.5 lakh/year labour-value exposure**\n\nAt a hypothetical 50% capture:\n\n> **~₹75,000/year addressable labour value**\n\nThat is still not a large standalone SaaS opportunity.\n\nTherefore the commercial case should be:\n\n```text\nLABOUR VALUE\n+\nTRANSITION DELAY REDUCTION\n+\nUNRESOLVED-CASE REDUCTION\n+\nAUDIT / QUALITY VISIBILITY\n+\nPATIENT-SAFETY RISK REDUCTION\n```\n\nBut only the first component can currently be numerically hypothesised.\n\n---",
+      "research_location": "OPP-011-03.md#Stronger ROI Hypothesis",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "12. Stronger ROI Hypothesis",
+        "line_start": 300,
+        "line_end": 333
+      }
+    },
+    {
+      "statement": "A 2026 pharmacist–doctor collaborative study found:\n\n- reconciliation completion time fell from **76 to 30 minutes**;\n- discharge departure time fell by a median **78 minutes**;\n- discharge prescription availability improved from **80 to 40 minutes**;\n- pharmacist planning required a median **3 minutes**;\n- **14/51 (27%)** pharmacist reconciliation plans required physician adjustment.\n\nThis is not Fortis evidence.\n\nBut it demonstrates a commercially important pattern:\n\n> **The workflow can create a time-sensitive coordination bottleneck at discharge.**\n\nThis is potentially more valuable than simply saving reconciliation labour.\n\n---",
+      "research_location": "OPP-011-03.md#Important New Finding — Discharge Deadline Pressure",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "13. Important New Finding — Discharge Deadline Pressure",
+        "line_start": 334,
+        "line_end": 353
+      }
+    },
+    {
+      "statement": "The most valuable ART case is not:\n\n> “Medication list has one discrepancy.”\n\nIt is:\n\n```text\nDISCHARGE DEADLINE\n       ↓\nDISCREPANCY IDENTIFIED\n       ↓\nCLARIFICATION REQUIRED\n       ↓\nCLINICIAN UNAVAILABLE / DELAYED\n       ↓\nFOLLOW-UP\n       ↓\nESCALATION\n       ↓\nFINAL DECISION\n       ↓\nRECORD UPDATE\n       ↓\nDISCHARGE\n```\n\nThis is a **time-critical human coordination exception**.\n\nIf Fortis confirms that such cases occur repeatedly, the opportunity becomes materially stronger.\n\n---",
+      "research_location": "OPP-011-03.md#Potential High-Value Exception",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "14. Potential High-Value Exception",
+        "line_start": 354,
+        "line_end": 387
+      }
+    },
+    {
+      "statement": "Do not continue the company-specific opportunity if primary validation finds:\n\n```text\nVERY FEW UNRESOLVED DISCREPANCIES\n+\nAUTOMATIC OWNER ROUTING\n+\nAUTOMATIC ESCALATION\n+\nNO MEANINGFUL FOLLOW-UP\n+\nNO DISCHARGE BOTTLENECK\n+\nNEGLIGIBLE HUMAN EFFORT\n```\n\nThe broader industry opportunity can still survive.\n\n---",
+      "research_location": "OPP-011-03.md#Kill Condition",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "15. Kill Condition",
+        "line_start": 388,
+        "line_end": 409
+      }
+    },
+    {
+      "statement": "Continue if Fortis confirms:\n\n```text\nHIGH DISCREPANCY VOLUME\n+\nMANY REQUIRE CLARIFICATION\n+\nMANUAL FOLLOW-UP\n+\nUNRESPONDED CASES\n+\nDISCHARGE DEADLINE PRESSURE\n+\nMULTIPLE ROLES\n+\nEXISTING SYSTEM DOES NOT CLOSE THE LOOP\n```\n\nThe most valuable primary data:\n\n```text\ndiscrepancies/month\n+\n% requiring clarification\n+\naverage follow-up attempts\n+\naverage minutes/exception\n+\nunresolved cases at discharge\n+\naverage discharge delay\n+\ncurrent system capability\n```\n\n---",
+      "research_location": "OPP-011-03.md#Strengthening Condition",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "16. Strengthening Condition",
+        "line_start": 410,
+        "line_end": 449
+      }
+    },
+    {
+      "statement": "The evidence now supports:\n\n```text\nREAL WORKFLOW\n+\nREAL DISCREPANCY BURDEN\n+\nMEASURABLE INDUSTRY HUMAN EFFORT\n+\nTIME-SENSITIVE TRANSITION\n+\nPATIENT-SAFETY CONSEQUENCE\n+\nCROSS-HOSPITAL GENERALISABILITY\n```\n\nBut the **Fortis-specific economic burden remains unverified**.\n\nTherefore:\n\n> **Do not pitch ROI yet. Move to direct operational evidence.**\n\n---",
+      "research_location": "OPP-011-03.md#PASS → HIGH-EFFORT / HIGH-CONSEQUENCE OPPORTUNITY SIGNAL",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "PASS → HIGH-EFFORT / HIGH-CONSEQUENCE OPPORTUNITY SIGNAL",
+        "line_start": 452,
+        "line_end": 477
+      }
+    },
+    {
+      "statement": "Primary question:\n\n> **At Fortis Mohali, how many medication discrepancies require human clarification, follow-up or escalation, and how many remain unresolved near transition/discharge deadlines?**\n\nThe validation should replace:\n\n```text\nASSUMED DISCREPANCIES\nASSUMED MINUTES\nASSUMED STAFF COST\n```\n\nwith:\n\n```text\nACTUAL DISCREPANCIES\nACTUAL UNRESOLVED CASES\nACTUAL FOLLOW-UP\nACTUAL HUMAN TIME\nACTUAL DELAY\nACTUAL SYSTEM CAPABILITY\nACTUAL SAFETY / QUALITY CONSEQUENCE\n```\n\n---",
+      "research_location": "OPP-011-03.md#OPP-011-04 — Direct Operational Evidence / Pain Validation",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "OPP-011-04 — Direct Operational Evidence / Pain Validation",
+        "line_start": 480,
+        "line_end": 507
+      }
+    },
+    {
+      "statement": "[PubMed — Medication Reconciliation and Patient Safety in India](https://pubmed.ncbi.nlm.nih.gov/41419375/)\n\n**Evidence:** 200 inpatients; 170 admission discrepancies; 23 transition discrepancies; 266 discharge discrepancies; discharge highest discrepancy rate per patient.",
+      "research_location": "OPP-011-03.md#E-001 — Fortis Mohali / Ludhiana Direct Study",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/41419375/"
+      ],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "E-001 — Fortis Mohali / Ludhiana Direct Study",
+        "line_start": 510,
+        "line_end": 515
+      }
+    },
+    {
+      "statement": "[PMC — Medication Reconciliation at Hospital Admission](https://pmc.ncbi.nlm.nih.gov/articles/PMC8446815/)\n\n**Evidence:** median 55 minutes per complete reconciliation; 40 minutes for search, analysis, validation, discrepancy evaluation and physician communication.",
+      "research_location": "OPP-011-03.md#E-002 — Full Admission Effort Benchmark",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8446815/"
+      ],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "E-002 — Full Admission Effort Benchmark",
+        "line_start": 516,
+        "line_end": 521
+      }
+    },
+    {
+      "statement": "[PMC — Pharmacist Discharge Medicine Lists](https://pmc.ncbi.nlm.nih.gov/articles/PMC9243950/)\n\n**Evidence:** 26.2 minutes mean discharge completion; 4.0 minutes mean manual retyping/reconciliation across software systems.",
+      "research_location": "OPP-011-03.md#E-003 — Discharge Time-and-Motion",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9243950/"
+      ],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "E-003 — Discharge Time-and-Motion",
+        "line_start": 522,
+        "line_end": 527
+      }
+    },
+    {
+      "statement": "[PMC — Pharmacist–Doctor Collaborative Discharge Reconciliation](https://pmc.ncbi.nlm.nih.gov/articles/PMC13369220/)\n\n**Evidence:** reconciliation completion reduced 76→30 minutes; discharge departure reduced 78 minutes; 27% of pharmacist plans required physician adjustment.",
+      "research_location": "OPP-011-03.md#E-004 — Current Discharge Efficiency Evidence",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13369220/"
+      ],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "E-004 — Current Discharge Efficiency Evidence",
+        "line_start": 528,
+        "line_end": 533
+      }
+    },
+    {
+      "statement": "[PMC — Medication Reconciliation at Admission and Discharge](https://pmc.ncbi.nlm.nih.gov/articles/PMC3842651/)\n\n**Evidence:** discharge reconciliation time varied by unit and could approach 29 minutes in geriatrics.",
+      "research_location": "OPP-011-03.md#E-005 — Discharge Reconciliation Workload",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3842651/"
+      ],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "E-005 — Discharge Reconciliation Workload",
+        "line_start": 534,
+        "line_end": 539
+      }
+    },
+    {
+      "statement": "[PMC — Improving Medication Reconciliation Accuracy](https://pmc.ncbi.nlm.nih.gov/articles/PMC6683109/)\n\n**Evidence:** systematic discharge reconciliation reduced pharmacy workload and reported reductions of up to 40 minutes per patient in pharmacy time.",
+      "research_location": "OPP-011-03.md#E-006 — Harm / Workload Improvement",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6683109/"
+      ],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "E-006 — Harm / Workload Improvement",
+        "line_start": 540,
+        "line_end": 545
+      }
+    },
+    {
+      "statement": "[PMC — Pharmacist-Led Medication Reconciliation Meta-analysis](https://pmc.ncbi.nlm.nih.gov/articles/PMC5873985/)\n\n**Evidence:** pharmacist-led interventions reduced medication discrepancies; effects on adverse drug events/healthcare utilisation were less certain.\n\n---",
+      "research_location": "OPP-011-03.md#E-007 — Pharmacist Intervention",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5873985/"
+      ],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "E-007 — Pharmacist Intervention",
+        "line_start": 546,
+        "line_end": 553
+      }
+    },
+    {
+      "statement": "- Fortis Mohali directly represented in the 2026 study.\n- 170 admission discrepancies.\n- 23 transition discrepancies.\n- 266 discharge discrepancies.",
+      "research_location": "OPP-011-03.md#Company-specific",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "Company-specific",
+        "line_start": 556,
+        "line_end": 562
+      }
+    },
+    {
+      "statement": "- 55-minute complete reconciliation benchmark.\n- 26.2-minute discharge benchmark.\n- 4-minute manual cross-system reconciliation benchmark.\n- 76→30-minute discharge reconciliation improvement.\n- Up to 40-minute pharmacy-time reduction in another systematic discharge intervention.",
+      "research_location": "OPP-011-03.md#External benchmark evidence",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "External benchmark evidence",
+        "line_start": 563,
+        "line_end": 570
+      }
+    },
+    {
+      "statement": "- 50–200 discrepancies/month.\n- 5–15 minutes exception effort.\n- ₹500–₹1,000 loaded staff cost/hour.\n- 50% hypothetical capture.",
+      "research_location": "OPP-011-03.md#Research assumptions",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "Research assumptions",
+        "line_start": 571,
+        "line_end": 577
+      }
+    },
+    {
+      "statement": "- Fortis actual discrepancy volume today.\n- Fortis unresolved discrepancy rate.\n- Fortis follow-up effort.\n- Fortis escalation.\n- Fortis discharge delays.\n- Fortis existing automation.\n- Fortis capability gap.\n- Actual ROI.\n\n---",
+      "research_location": "OPP-011-03.md#Unknown",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "Unknown",
+        "line_start": 578,
+        "line_end": 590
+      }
+    },
+    {
+      "statement": "```yaml\nartifact_type: opportunity_intelligence\nopportunity_id: OPP-011\ncompany: Fortis Hospital Mohali\nindustry: healthcare_hospital_operations\nlocation: mohali_punjab_india\nworkflow: medication_reconciliation_exception_resolution\npain_type: patient_safety_medication_discrepancy_resolution\nresearch_stage: human_effort_pain_quantification\ndecision: pass_high_effort_high_consequence_opportunity_signal\n\ncompany_evidence:\n  study_population: 200\n  admission_discrepancies: 170\n  transition_discrepancies: 23\n  discharge_discrepancies: 266\n\nexternal_effort_benchmarks:\n  complete_reconciliation_median: 55_minutes\n  information_search_analysis_validation_discrepancy_work: 40_minutes\n  discharge_completion_mean: 26.2_minutes\n  manual_cross_software_reconciliation: 4_minutes\n  discharge_reconciliation_intervention:\n    before: 76_minutes\n    after: 30_minutes\n  discharge_departure_reduction: 78_minutes\n  pharmacist_planning_median: 3_minutes\n  physician_adjustment_rate: 27_percent\n  pharmacy_time_reduction_reported: up_to_40_minutes_per_patient\n\nhypothesis:\n  discrepancies_per_month:\n    conservative: 50\n    base: 100\n    high: 200\n  minutes_per_exception:\n    conservative: 5\n    base: 10\n    high: 15\n  annual_exception_hours:\n    conservative: 50\n    base: 200\n    high: 600\n  loaded_cost_per_hour:\n    low: 500\n    base: 750\n    high: 1000\n  base_labour_value: approximately_1_50_lakh\n  hypothetical_capture: 50_percent\n  base_addressable_labour_value: approximately_0_75_lakh\n\ncompany_unresolved_discrepancies: unknown\ncompany_follow_up_effort: unknown\ncompany_escalation: unknown\ncompany_discharge_delay: unknown\nexisting_system: unknown\ncapability_gap: unknown\ncustomer_roi: unknown\n\ninterpretation:\n  labour_savings_alone: moderate_but_not_sufficient\n  safety_and_transition_value: potentially_high_but_unmonetized\n  key_validation: unresolved_time_critical_exceptions\n\nindustry_generalisability: high\nnext_checkpoint: OPP-011-04\ncommercial_status: discovery_continue\n```\n\n---",
+      "research_location": "OPP-011-03.md#AIL Compilation Metadata",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "AIL Compilation Metadata",
+        "line_start": 591,
+        "line_end": 663
+      }
+    },
+    {
+      "statement": "The strongest defensible conclusion is:\n\n> **Medication reconciliation can require substantial human effort, and Fortis Mohali has directly documented a substantial discrepancy burden. External time-and-motion evidence shows that medication reconciliation, discrepancy investigation and discharge coordination can consume meaningful staff time. The strongest ART opportunity is not generic reconciliation automation; it is preventing identified, time-sensitive discrepancies from remaining unresolved through ownership, follow-up and escalation.**\n\n**OPP-011-03 = PASS → HIGH-EFFORT / HIGH-CONSEQUENCE OPPORTUNITY SIGNAL**\n\n**Next: OPP-011-04 — Direct Operational Evidence / Pain Validation**",
+      "research_location": "OPP-011-03.md#Integrity Statement",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-03.md",
+        "section": "Integrity Statement",
+        "line_start": 664,
+        "line_end": 672
+      }
+    },
+    {
+      "statement": "---\nid: OPP-011-04\nopportunity_id: OPP-011\nindustry: Healthcare / Hospital Operations\ncompany: Fortis Hospital Mohali\nlocation: Mohali, Punjab, India\nworkflow: Medication Reconciliation Exception Resolution at Care Transitions\npain_type: Patient Safety / Medication Discrepancy Resolution\nresearch_stage: Direct Operational Evidence / Pain Validation\nmethodology: Legacy VRL\nstatus: CONDITIONAL_PASS\ndecision: PRIMARY_VALIDATION_JUSTIFIED_COMPANY_PAIN_NOT_YET_PROVEN\ncompany_pain_signal: strong_direct_research_signal_but_current_operational_burden_unknown\nindustry_generalizability: high\ncurrent_pain_magnitude: unknown\ncurrent_capability_gap: unknown\ncustomer_roi: unknown\ncommercial_status: primary_validation_required\n---",
+      "research_location": "OPP-011-04.md#Front matter",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "Front matter",
+        "line_start": 1,
+        "line_end": 18
+      }
+    },
+    {
+      "statement": "**Industry:** Healthcare / Hospital Operations  \n**Company:** Fortis Hospital Mohali  \n**Workflow:** Medication Reconciliation Exception Resolution at Care Transitions  \n**VRL checkpoint:** OPP-011-04  \n**Decision:** **CONDITIONAL PASS → Primary validation justified; company pain not yet proven**\n\n---",
+      "research_location": "OPP-011-04.md#OPP-011-04 — Direct Operational Evidence / Pain Validation",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "OPP-011-04 — Direct Operational Evidence / Pain Validation",
+        "line_start": 21,
+        "line_end": 30
+      }
+    },
+    {
+      "statement": "> **Is there enough direct evidence to establish that Fortis Hospital Mohali has a material unresolved medication-reconciliation exception burden that can be addressed by automation?**",
+      "research_location": "OPP-011-04.md#Checkpoint Question",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "1. Checkpoint Question",
+        "line_start": 31,
+        "line_end": 34
+      }
+    },
+    {
+      "statement": "There is unusually strong **company-linked evidence** that medication discrepancies exist.\n\nA prospective study conducted at a tertiary-care hospital with authors affiliated with **Fortis Hospital Mohali and Fortis Hospital Ludhiana** evaluated 200 inpatients across admission, transition and discharge. It found substantial medication discrepancies at all three stages.\n\nHowever, the public evidence does **not** establish the current:\n\n- unresolved-discrepancy rate;\n- follow-up burden;\n- escalation burden;\n- response time;\n- human minutes per exception;\n- existing automation;\n- residual system gap.\n\nTherefore this checkpoint cannot be marked as fully validated.\n\n---",
+      "research_location": "OPP-011-04.md#Answer: Not yet.",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "Answer: Not yet.",
+        "line_start": 35,
+        "line_end": 54
+      }
+    },
+    {
+      "statement": "The 2026 prospective study directly names Fortis Hospital Mohali in its author affiliations and studied medication reconciliation in a tertiary-care hospital.\n\nThe study evaluated:\n\n```text\n200 INPATIENTS\n      ↓\nADMISSION\n      ↓\nINTRAHOSPITAL TRANSITION\n      ↓\nDISCHARGE\n```\n\nMedication reconciliation was assessed at all three phases and discrepancies were identified at each phase.\n\nThe published study therefore provides stronger company-specific evidence than an industry-only benchmark.\n\n---",
+      "research_location": "OPP-011-04.md#Strongest Direct Company Evidence",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "2. Strongest Direct Company Evidence",
+        "line_start": 55,
+        "line_end": 76
+      }
+    },
+    {
+      "statement": "Fortis Mohali's own 2024 clinical publication reports an analysis of antimicrobial medication errors at the hospital.\n\nThe publication states:\n\n- **6,439 medication charts** were assessed;\n- **558 medication errors** were identified;\n- antimicrobial errors accounted for **208 errors (37.2%)**;\n- errors were categorised across prescribing, transcription, indenting, dispensing and administration.\n\n[Fortis Healthcare — ClinicalConnect Issue 15](https://www.fortishealthcare.com/media-center/organizational-newsletter/Clinical%20Connect/Clinical%20Connect%20Issue-15)\n\nThis is significant because it independently demonstrates a **Fortis Mohali medication-safety exception environment**, beyond the medication-reconciliation study.\n\nIt still does **not** prove that ART's specific reconciliation-exception workflow is currently unresolved.\n\n---",
+      "research_location": "OPP-011-04.md#Additional Fortis-Specific Medication-Safety Signal",
+      "source_urls": [
+        "https://www.fortishealthcare.com/media-center/organizational-newsletter/Clinical%20Connect/Clinical%20Connect%20Issue-15"
+      ],
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "3. Additional Fortis-Specific Medication-Safety Signal",
+        "line_start": 77,
+        "line_end": 95
+      }
+    },
+    {
+      "statement": "Fortis Mohali also publicly documented a **Safe Medication initiative** aimed at preventing intravenous medication errors and a Medication Nurse Certification Programme involving 20 nurses.\n\nThis indicates that medication safety is an established operational concern at the hospital.\n\nImportant distinction:\n\n> **Medication-safety investment ≠ evidence of an automation gap.**\n\nThe existing safety programme may already address some of the underlying risk.\n\n---",
+      "research_location": "OPP-011-04.md#Fortis Medication-Safety Programme Signal",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "4. Fortis Medication-Safety Programme Signal",
+        "line_start": 96,
+        "line_end": 109
+      }
+    },
+    {
+      "statement": "| Question | Status |\n|---|---|\n| Medication reconciliation is a real workflow at Fortis-linked hospital research | **VERIFIED** |\n| Medication discrepancies were observed | **VERIFIED** |\n| Discrepancies occur at admission/transition/discharge | **VERIFIED** |\n| Fortis Mohali medication errors have been independently analysed | **VERIFIED** |\n| Fortis has medication-safety initiatives | **VERIFIED** |\n| Discrepancies requiring human clarification | **INDUSTRY-SUPPORTED** |\n| Current Fortis unresolved discrepancy volume | **UNKNOWN** |\n| Current Fortis follow-up burden | **UNKNOWN** |\n| Current Fortis escalation burden | **UNKNOWN** |\n| Current Fortis response time | **UNKNOWN** |\n| Current Fortis automation | **UNKNOWN** |\n| Current capability gap | **UNKNOWN** |\n| Current economic impact | **UNKNOWN** |\n\n---",
+      "research_location": "OPP-011-04.md#What Is Actually Proven",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "5. What Is Actually Proven",
+        "line_start": 110,
+        "line_end": 129
+      }
+    },
+    {
+      "statement": "The previous checkpoint used hypothetical values such as:\n\n```text\n50–200 discrepancies/month\n5–15 minutes/exception\n```\n\nThose were explicitly labelled assumptions.\n\nThey **must not be presented as Fortis operational data**.\n\nThe current evidence is strong enough to justify primary validation, but not strong enough to calculate Fortis ROI.\n\n---",
+      "research_location": "OPP-011-04.md#Critical Correction to the Previous Hypothesis",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "6. Critical Correction to the Previous Hypothesis",
+        "line_start": 130,
+        "line_end": 146
+      }
+    },
+    {
+      "statement": "Fortis Mohali is a highly digitised/accredited tertiary hospital, and its public materials demonstrate established medication-safety programmes.\n\nTherefore the most important question is not:\n\n> “Is medication management automated?”\n\nIt is:\n\n> **“After an exception is detected, what remains outside the existing system?”**\n\nSpecifically:\n\n```text\nDISCREPANCY DETECTED\n        ↓\nIS AN EXCEPTION CREATED?\n        ↓\nIS AN OWNER AUTOMATICALLY ASSIGNED?\n        ↓\nIS CLARIFICATION TRACKED?\n        ↓\nIS AGEING VISIBLE?\n        ↓\nIS ESCALATION AUTOMATIC?\n        ↓\nIS RESOLUTION VERIFIED?\n        ↓\nIS CLOSURE AUDITED?\n```\n\nThis is the actual ART capability-gap test.\n\n---",
+      "research_location": "OPP-011-04.md#Existing-System Boundary",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "7. Existing-System Boundary",
+        "line_start": 147,
+        "line_end": 182
+      }
+    },
+    {
+      "statement": "The strongest publicly identified research contact is:\n\n**Dr. Ashish Kumar Dogra, PharmD**  \n**Fortis Hospital, Mohali**\n\nHe is an author of the 2026 medication-reconciliation study and the PubMed record lists a public professional email:\n\n**dr.ashishkumardogra@gmail.com**\n\nThis is a **research-relevant route**, not proof that he owns the hospital's current operational reconciliation workflow.\n\nA second relevant route is:\n\n**Dr. Shivani Juneja**  \nFortis Hospital, Mohali  \nCo-author of the same medication-reconciliation study.\n\n---",
+      "research_location": "OPP-011-04.md#Direct Validation Route",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "8. Direct Validation Route",
+        "line_start": 183,
+        "line_end": 203
+      }
+    },
+    {
+      "statement": "Use a neutral research framing:\n\n> “I am researching medication-reconciliation workflows in Indian hospitals, particularly what happens after a discrepancy is identified. I came across the Fortis Mohali medication-reconciliation study and wanted to understand the operational workflow behind unresolved discrepancies—especially ownership, clarification, follow-up and closure. I am not trying to evaluate clinical decisions; I am studying the workflow around them.”\n\nThen ask:\n\n> **“Could you describe what happens to a discrepancy that cannot be immediately resolved?”**\n\nThis is preferable to asking whether Fortis “has a problem.”\n\n---",
+      "research_location": "OPP-011-04.md#Primary Validation Opening",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "9. Primary Validation Opening",
+        "line_start": 204,
+        "line_end": 217
+      }
+    },
+    {
+      "statement": "We need only a small number of operational facts to decide whether this survives.\n\n```text\n1. DISCREPANCIES / MONTH\n2. % REQUIRING CLARIFICATION\n3. % STILL OPEN AFTER INITIAL REVIEW\n4. AVERAGE FOLLOW-UP / EXCEPTION\n5. ESCALATION PROCESS\n6. UNRESOLVED CASES NEAR DISCHARGE\n7. CURRENT SYSTEM CAPABILITIES\n8. MANUAL STEPS REMAINING\n```\n\nIf possible:\n\n```text\n9. AVERAGE RESPONSE TIME\n10. DISCHARGE DELAY CAUSED BY OPEN DISCREPANCIES\n```\n\nNo patient-identifiable information is required.\n\n---",
+      "research_location": "OPP-011-04.md#Minimum Primary Evidence Required",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "10. Minimum Primary Evidence Required",
+        "line_start": 218,
+        "line_end": 243
+      }
+    },
+    {
+      "statement": "The single most important question is:\n\n> **“Once a medication discrepancy is identified, what system or person makes sure it is resolved before the patient's next care transition or discharge?”**\n\nIf the answer is:\n\n> “The system automatically tracks and escalates it.”\n\nThe opportunity weakens.\n\nIf the answer is:\n\n> “A pharmacist/nurse has to call, message, chase the doctor, remember pending cases and verify closure.”\n\nThe opportunity strengthens substantially.\n\n---",
+      "research_location": "OPP-011-04.md#High-Value Validation Question",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "11. High-Value Validation Question",
+        "line_start": 244,
+        "line_end": 263
+      }
+    },
+    {
+      "statement": "The strongest possible primary evidence would be:\n\n```text\nMEDICATION DISCREPANCY\n        ↓\nSYSTEM RECORDS IT\n        ↓\nNO CLOSED-LOOP ROUTING\n        ↓\nHUMAN IDENTIFIES OWNER\n        ↓\nMESSAGE / CALL\n        ↓\nWAIT\n        ↓\nFOLLOW-UP\n        ↓\nESCALATION\n        ↓\nCLINICIAN DECISION\n        ↓\nRECORD UPDATE\n        ↓\nMANUAL CLOSURE CHECK\n```\n\nThat would establish:\n\n**existing-system boundary + residual human work + patient-safety consequence.**\n\n---",
+      "research_location": "OPP-011-04.md#Strong Opportunity Signal",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "12. Strong Opportunity Signal",
+        "line_start": 264,
+        "line_end": 297
+      }
+    },
+    {
+      "statement": "Kill the **Fortis-specific** opportunity if primary validation shows:\n\n```text\nLOW UNRESOLVED VOLUME\n+\nAUTOMATIC ROUTING\n+\nAUTOMATIC AGEING\n+\nAUTOMATIC ESCALATION\n+\nFAST CLINICIAN RESPONSE\n+\nNO MATERIAL DISCHARGE BOTTLENECK\n```\n\nDo not force an automation opportunity merely because medication discrepancies exist.\n\n---",
+      "research_location": "OPP-011-04.md#Kill Conditions",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "13. Kill Conditions",
+        "line_start": 298,
+        "line_end": 319
+      }
+    },
+    {
+      "statement": "This distinction is critical.\n\nEven if Fortis has already solved the exception workflow:\n\n```text\nFORTIS\n→ SOLVED\n```\n\nthe broader evidence can still support:\n\n```text\nMID-SCALE INDIAN HOSPITALS\n        ↓\nMEDICATION DISCREPANCIES\n        ↓\nRECURRING INVESTIGATION\n        ↓\nHUMAN FOLLOW-UP\n        ↓\nVARIABLE SYSTEM MATURITY\n        ↓\nPOTENTIAL INDUSTRY OPPORTUNITY\n```\n\nThe opportunity then moves from:\n\n> **“Fortis automation opportunity”**\n\nto:\n\n> **“Medication-reconciliation exception management for hospitals with lower system maturity.”**\n\nThat is exactly the VRL industry-generalisation principle.\n\n---",
+      "research_location": "OPP-011-04.md#Industry-Level Opportunity Can Still Survive",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "14. Industry-Level Opportunity Can Still Survive",
+        "line_start": 320,
+        "line_end": 358
+      }
+    },
+    {
+      "statement": "**Company-linked evidence:** strong  \n**Industry recurrence:** strong  \n**Consequence:** high  \n**Workflow:** clear  \n**Human investigation:** supported  \n**Automation boundary:** unknown  \n**Current Fortis pain:** unproven\n\nTherefore:\n\n> **Do not manufacture ROI. Do not declare Fortis a customer opportunity yet. Conduct primary validation.**\n\n---",
+      "research_location": "OPP-011-04.md#What we now have",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "What we now have",
+        "line_start": 363,
+        "line_end": 378
+      }
+    },
+    {
+      "statement": "The opportunity becomes commercially strong only if the following equation is true:\n\n```text\nHIGH-CONSEQUENCE MEDICATION EXCEPTION\n        ×\nRECURRING VOLUME\n        ×\nRESIDUAL HUMAN COORDINATION\n        ×\nTIME-SENSITIVE CLOSURE\n        ×\nSYSTEM CAPABILITY GAP\n        =\nART OPPORTUNITY\n```\n\nIf any major component is absent, downgrade or kill.\n\n---",
+      "research_location": "OPP-011-04.md#Final Opportunity Test",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "16. Final Opportunity Test",
+        "line_start": 379,
+        "line_end": 400
+      }
+    },
+    {
+      "statement": "[PubMed — Medication Reconciliation and Patient Safety in India](https://pubmed.ncbi.nlm.nih.gov/41419375/)\n\n**Evidence:** Fortis Mohali/Ludhiana affiliations; 200 inpatients; medication reconciliation at admission, transition and discharge; discrepancies documented.",
+      "research_location": "OPP-011-04.md#E-001 — Fortis Mohali Directly Linked Study",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/41419375/"
+      ],
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "E-001 — Fortis Mohali Directly Linked Study",
+        "line_start": 403,
+        "line_end": 408
+      }
+    },
+    {
+      "statement": "[Joint Commission Journal on Quality and Patient Safety](https://www.jointcommissionjournal.com/article/S1553-7250%2825%2900311-3/pdf)\n\n**Evidence:** detailed Fortis affiliations and prospective medication-reconciliation study.",
+      "research_location": "OPP-011-04.md#E-002 — Full Study",
+      "source_urls": [
+        "https://www.jointcommissionjournal.com/article/S1553-7250%2825%2900311-3/pdf"
+      ],
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "E-002 — Full Study",
+        "line_start": 409,
+        "line_end": 414
+      }
+    },
+    {
+      "statement": "[Fortis Healthcare — ClinicalConnect Issue 15](https://www.fortishealthcare.com/media-center/organizational-newsletter/Clinical%20Connect/Clinical%20Connect%20Issue-15)\n\n**Evidence:** 6,439 medication charts; 558 medication errors; 208 antimicrobial medication errors at Fortis Mohali.",
+      "research_location": "OPP-011-04.md#E-003 — Fortis Medication-Error Evidence",
+      "source_urls": [
+        "https://www.fortishealthcare.com/media-center/organizational-newsletter/Clinical%20Connect/Clinical%20Connect%20Issue-15"
+      ],
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "E-003 — Fortis Medication-Error Evidence",
+        "line_start": 415,
+        "line_end": 420
+      }
+    },
+    {
+      "statement": "[The Fortisian — Medication Nurse Programme](https://www.fortishealthcare.com/drupal-data/2023-09/The%20Fortisian%20Feb-Mar%2022.pdf)\n\n**Evidence:** Medication Nurse Certification Programme at Fortis Mohali; 20 nurses enrolled.",
+      "research_location": "OPP-011-04.md#E-004 — Fortis Medication-Safety Programme",
+      "source_urls": [
+        "https://www.fortishealthcare.com/drupal-data/2023-09/The%20Fortisian%20Feb-Mar%2022.pdf"
+      ],
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "E-004 — Fortis Medication-Safety Programme",
+        "line_start": 421,
+        "line_end": 426
+      }
+    },
+    {
+      "statement": "[The Fortisian — Safe Medication Initiative](https://www.fortishealthcare.com/drupal-data/newsletters/0.53141800_1571652328_The-Fortisian-June-July-2019.pdf)\n\n**Evidence:** Fortis Mohali launched a Safe Medication initiative focused on preventing IV medication errors.",
+      "research_location": "OPP-011-04.md#E-005 — Fortis Safe Medication Initiative",
+      "source_urls": [
+        "https://www.fortishealthcare.com/drupal-data/newsletters/0.53141800_1571652328_The-Fortisian-June-July-2019.pdf"
+      ],
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "E-005 — Fortis Safe Medication Initiative",
+        "line_start": 427,
+        "line_end": 432
+      }
+    },
+    {
+      "statement": "[Fortis Hospital Mohali — Official Hospital Page](https://www.fortishealthcare.com/location/fortis-hospital-mohali)\n\n**Evidence:** tertiary-care hospital, 400+ beds on the general location page, JCI/NABH/NABL accreditation.\n\n---",
+      "research_location": "OPP-011-04.md#E-006 — Official Hospital Capability Context",
+      "source_urls": [
+        "https://www.fortishealthcare.com/location/fortis-hospital-mohali"
+      ],
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "E-006 — Official Hospital Capability Context",
+        "line_start": 433,
+        "line_end": 440
+      }
+    },
+    {
+      "statement": "- Fortis Mohali medication-reconciliation research.\n- Fortis Mohali medication-error analysis.\n- Fortis Mohali medication-safety initiatives.\n- Public research contact associated with the medication-reconciliation study.",
+      "research_location": "OPP-011-04.md#Direct / company-linked",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "Direct / company-linked",
+        "line_start": 443,
+        "line_end": 449
+      }
+    },
+    {
+      "statement": "- Medication reconciliation as a patient-safety workflow.\n- Human clarification/follow-up patterns.\n- Cross-hospital medication discrepancy evidence.",
+      "research_location": "OPP-011-04.md#Industry / external",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "Industry / external",
+        "line_start": 450,
+        "line_end": 455
+      }
+    },
+    {
+      "statement": "- Current Fortis unresolved-case volume.\n- Current human follow-up.\n- Current response time.\n- Current escalation.\n- Current software capability.\n- Current capability gap.\n- Current ROI.\n\n---",
+      "research_location": "OPP-011-04.md#Unknown",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "Unknown",
+        "line_start": 456,
+        "line_end": 467
+      }
+    },
+    {
+      "statement": "```yaml\nartifact_type: opportunity_intelligence\nopportunity_id: OPP-011\ncompany: Fortis Hospital Mohali\nindustry: healthcare_hospital_operations\nlocation: mohali_punjab_india\nworkflow: medication_reconciliation_exception_resolution\npain_type: patient_safety_medication_discrepancy_resolution\nresearch_stage: direct_operational_evidence_pain_validation\ndecision: conditional_pass_primary_validation_justified\n\ndirect_company_signals:\n  medication_reconciliation_study: verified\n  medication_error_analysis: verified\n  medication_safety_programme: verified\n  medication_nurse_programme: verified\n\nresearch_contact:\n  name: \"Dr. Ashish Kumar Dogra\"\n  role_context: \"Fortis Hospital Mohali; author of medication-reconciliation study\"\n  email: \"dr.ashishkumardogra@gmail.com\"\n  route_type: research_relevant_primary_route\n\ncompany_unresolved_discrepancies: unknown\ncompany_follow_up_effort: unknown\ncompany_escalation: unknown\ncompany_response_time: unknown\nexisting_system: unknown\ncapability_gap: unknown\ncustomer_roi: unknown\n\ncompany_pain_signal: strong_direct_research_signal_but_current_operational_burden_unknown\nindustry_pain_signal: strong\nindustry_generalisability: high\nprimary_validation: justified\ncommercial_status: primary_validation_required\nnext_action: direct_primary_validation\n```\n\n---",
+      "research_location": "OPP-011-04.md#AIL Compilation Metadata",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "AIL Compilation Metadata",
+        "line_start": 468,
+        "line_end": 510
+      }
+    },
+    {
+      "statement": "The strongest defensible conclusion is:\n\n> **Fortis Mohali provides unusually strong company-linked evidence of medication-discrepancy and medication-safety activity. However, public research does not reveal whether its current systems already close the discrepancy loop or whether substantial human follow-up remains.**\n\nTherefore **OPP-011 is not yet commercially validated**.\n\n**OPP-011-04 = CONDITIONAL PASS → PRIMARY VALIDATION JUSTIFIED**\n\nThe investigation should now pause here for **primary operational validation** rather than adding another desk-research checkpoint.",
+      "research_location": "OPP-011-04.md#Integrity Statement",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-011-04.md",
+        "section": "Integrity Statement",
+        "line_start": 511,
+        "line_end": 521
+      }
+    }
+  ]
+}

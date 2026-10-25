@@ -1,0 +1,2253 @@
+{
+  "investigation_id": "AOI-SNOW-OPP-013",
+  "company": "Nayati Medicity, Mathura",
+  "industry": "Healthcare / Hospital Operations",
+  "opportunity": "Urgent Blood Transfusion Ordering-to-Bedside Coordination",
+  "investigation_type": "Legacy VRL",
+  "research_status": "UNVERIFIED",
+  "presentation": {
+    "investigation_summary": "Investigation journey from source checkpoints:\n\nOPP-013-01.md: NOT PROVIDED\n\nOPP-013-02.md: > **Nayati Medicity provides direct evidence of a distributed, time-sensitive transfusion workflow in which the largest non-blood-bank delay was sample/requisition transport and the study specifically identifies courier availability as the plausible cause. The hospital also had digital timestamp capture through its HIS. The evidence supports a strong exception-coordination hypothesis, but current automation, current human investigation burden and current ROI remain unverified.**\n\n**OPP-013-02 = PASS → HIGH-CONSEQUENCE DISTRIBUTED EXCEPTION PATH VERIFIED**\n\nOPP-013-03.md: > **The Nayati study provides a strong measured time-exposure signal: approximately 1,476 urgent requests during the study year and 72 minutes of average delay outside the blood bank, including a 34-minute sample/requisition transport component. The study directly identifies courier availability as a plausible contributor. These figures quantify elapsed workflow exposure, not staff labour. The addressable automation fraction, current system capability and actual ROI remain unknown.**\n\n**OPP-013-03 = PASS → HIGH TIME-EXPOSURE SIGNAL**\n\n**Next: OPP-013-04 — Direct Operational Evidence / Pain Validation.**\n\nOPP-013-04.md: > **OPP-013 has reached the efficient desk-research boundary. The historical Nayati evidence is strong enough to validate the workflow and industry pain hypothesis, but not strong enough to claim a current Nayati automation gap. Additional desk research would mostly produce diminishing returns. The correct next evidence is primary operational validation.**\n\n**OPP-013-04 = CONDITIONAL PASS → PRIMARY VALIDATION REQUIRED**\n\n**OPP-013 should now be marked `PRIMARY_VALIDATION_PENDING`, not expanded into additional VRL desk-research checkpoints.**",
+    "key_findings": [
+      {
+        "id": "KF-013-01",
+        "statement": "OPP-013-01 — Workflow Discovery: NOT PROVIDED",
+        "classification": "EVIDENCE",
+        "source_refs": [
+          "EV-013-001",
+          "EV-013-002",
+          "EV-013-003",
+          "EV-013-004",
+          "EV-013-005"
+        ]
+      },
+      {
+        "id": "KF-013-02",
+        "statement": "OPP-013-02 — Exception + Human Investigation Reconstruction: > **Nayati Medicity provides direct evidence of a distributed, time-sensitive transfusion workflow in which the largest non-blood-bank delay was sample/requisition transport and the study specifically identifies courier availability as the plausible cause. The hospital also had digital timestamp capture through its HIS. The evidence supports a strong exception-coordination hypothesis, but current automation, current human investigation burden and current ROI remain unverified.**\n\n**OPP-013-02 = PASS → HIGH-CONSEQUENCE DISTRIBUTED EXCEPTION PATH VERIFIED**",
+        "classification": "CLAIM",
+        "source_refs": [
+          "EV-013-006",
+          "EV-013-007"
+        ]
+      },
+      {
+        "id": "KF-013-03",
+        "statement": "OPP-013-03 — Human Effort / Pain Quantification: > **The Nayati study provides a strong measured time-exposure signal: approximately 1,476 urgent requests during the study year and 72 minutes of average delay outside the blood bank, including a 34-minute sample/requisition transport component. The study directly identifies courier availability as a plausible contributor. These figures quantify elapsed workflow exposure, not staff labour. The addressable automation fraction, current system capability and actual ROI remain unknown.**\n\n**OPP-013-03 = PASS → HIGH TIME-EXPOSURE SIGNAL**\n\n**Next: OPP-013-04 — Direct Operational Evidence / Pain Validation.**",
+        "classification": "CLAIM",
+        "source_refs": [
+          "EV-013-008",
+          "EV-013-009",
+          "EV-013-010"
+        ]
+      },
+      {
+        "id": "KF-013-04",
+        "statement": "OPP-013-04 — Direct Operational Evidence / Pain Validation: > **OPP-013 has reached the efficient desk-research boundary. The historical Nayati evidence is strong enough to validate the workflow and industry pain hypothesis, but not strong enough to claim a current Nayati automation gap. Additional desk research would mostly produce diminishing returns. The correct next evidence is primary operational validation.**\n\n**OPP-013-04 = CONDITIONAL PASS → PRIMARY VALIDATION REQUIRED**\n\n**OPP-013 should now be marked `PRIMARY_VALIDATION_PENDING`, not expanded into additional VRL desk-research checkpoints.**",
+        "classification": "DECISION",
+        "source_refs": [
+          "EV-013-011",
+          "EV-013-012",
+          "EV-013-013",
+          "EV-013-014",
+          "EV-013-015"
+        ]
+      }
+    ]
+  },
+  "decision": {
+    "decision": "**CONDITIONAL PASS → Industry pain validated; current Nayati capability gap unverified**",
+    "reason": "> **OPP-013 has reached the efficient desk-research boundary. The historical Nayati evidence is strong enough to validate the workflow and industry pain hypothesis, but not strong enough to claim a current Nayati automation gap. Additional desk research would mostly produce diminishing returns. The correct next evidence is primary operational validation.**\n\n**OPP-013-04 = CONDITIONAL PASS → PRIMARY VALIDATION REQUIRED**\n\n**OPP-013 should now be marked `PRIMARY_VALIDATION_PENDING`, not expanded into additional VRL desk-research checkpoints.**",
+    "reusable_intelligence": [
+      {
+        "id": "RI-013-001",
+        "type": "WORKFLOW_PATTERN",
+        "title": "Workflow Discovery: Urgent Blood Transfusion Ordering-to-Bedside Coordination",
+        "domain": "Healthcare / Hospital Operations",
+        "description": "NOT PROVIDED",
+        "lesson": "Preserve the source boundary: current capability, human effort, and ROI remain unknown where the source says so.",
+        "evidence_status": "VERIFIED",
+        "status": "ACTIVE",
+        "confidence": "MEDIUM",
+        "reuse_potential": "HIGH",
+        "applications": [
+          "Healthcare hospital operations"
+        ],
+        "source_checkpoint": "CP-OPP-013-01",
+        "source_refs": [
+          "EV-013-001",
+          "EV-013-002",
+          "EV-013-003",
+          "EV-013-004",
+          "EV-013-005"
+        ],
+        "tags": [
+          "source-supported",
+          "legacy-vrl"
+        ],
+        "provenance": {
+          "source_file": "OPP-013-01.md",
+          "section": "Integrity Statement",
+          "line_start": 306,
+          "line_end": 306
+        }
+      },
+      {
+        "id": "RI-013-002",
+        "type": "STRATEGY_PATTERN",
+        "title": "Exception + Human Investigation Reconstruction: Urgent Blood Transfusion Ordering-to-Bedside Coordination",
+        "domain": "Healthcare / Hospital Operations",
+        "description": "> **Nayati Medicity provides direct evidence of a distributed, time-sensitive transfusion workflow in which the largest non-blood-bank delay was sample/requisition transport and the study specifically identifies courier availability as the plausible cause. The hospital also had digital timestamp capture through its HIS. The evidence supports a strong exception-coordination hypothesis, but current automation, current human investigation burden and current ROI remain unverified.**\n\n**OPP-013-02 = PASS → HIGH-CONSEQUENCE DISTRIBUTED EXCEPTION PATH VERIFIED**",
+        "lesson": "Preserve the source boundary: current capability, human effort, and ROI remain unknown where the source says so.",
+        "evidence_status": "VERIFIED",
+        "status": "ACTIVE",
+        "confidence": "MEDIUM",
+        "reuse_potential": "HIGH",
+        "applications": [
+          "Healthcare hospital operations"
+        ],
+        "source_checkpoint": "CP-OPP-013-02",
+        "source_refs": [
+          "EV-013-006",
+          "EV-013-007"
+        ],
+        "tags": [
+          "source-supported",
+          "legacy-vrl"
+        ],
+        "provenance": {
+          "source_file": "OPP-013-02.md",
+          "section": "Integrity Statement",
+          "line_start": 759,
+          "line_end": 764
+        }
+      },
+      {
+        "id": "RI-013-003",
+        "type": "METRIC_PATTERN",
+        "title": "Human Effort / Pain Quantification: Urgent Blood Transfusion Ordering-to-Bedside Coordination",
+        "domain": "Healthcare / Hospital Operations",
+        "description": "> **The Nayati study provides a strong measured time-exposure signal: approximately 1,476 urgent requests during the study year and 72 minutes of average delay outside the blood bank, including a 34-minute sample/requisition transport component. The study directly identifies courier availability as a plausible contributor. These figures quantify elapsed workflow exposure, not staff labour. The addressable automation fraction, current system capability and actual ROI remain unknown.**\n\n**OPP-013-03 = PASS → HIGH TIME-EXPOSURE SIGNAL**\n\n**Next: OPP-013-04 — Direct Operational Evidence / Pain Validation.**",
+        "lesson": "Preserve the source boundary: current capability, human effort, and ROI remain unknown where the source says so.",
+        "evidence_status": "VERIFIED",
+        "status": "ACTIVE",
+        "confidence": "MEDIUM",
+        "reuse_potential": "HIGH",
+        "applications": [
+          "Healthcare hospital operations"
+        ],
+        "source_checkpoint": "CP-OPP-013-03",
+        "source_refs": [
+          "EV-013-008",
+          "EV-013-009",
+          "EV-013-010"
+        ],
+        "tags": [
+          "source-supported",
+          "legacy-vrl"
+        ],
+        "provenance": {
+          "source_file": "OPP-013-03.md",
+          "section": "Integrity Statement",
+          "line_start": 599,
+          "line_end": 606
+        }
+      },
+      {
+        "id": "RI-013-004",
+        "type": "DECISION_PATTERN",
+        "title": "Direct Operational Evidence / Pain Validation: Urgent Blood Transfusion Ordering-to-Bedside Coordination",
+        "domain": "Healthcare / Hospital Operations",
+        "description": "> **OPP-013 has reached the efficient desk-research boundary. The historical Nayati evidence is strong enough to validate the workflow and industry pain hypothesis, but not strong enough to claim a current Nayati automation gap. Additional desk research would mostly produce diminishing returns. The correct next evidence is primary operational validation.**\n\n**OPP-013-04 = CONDITIONAL PASS → PRIMARY VALIDATION REQUIRED**\n\n**OPP-013 should now be marked `PRIMARY_VALIDATION_PENDING`, not expanded into additional VRL desk-research checkpoints.**",
+        "lesson": "Preserve the source boundary: current capability, human effort, and ROI remain unknown where the source says so.",
+        "evidence_status": "PARTIAL",
+        "status": "ACTIVE",
+        "confidence": "MEDIUM",
+        "reuse_potential": "MEDIUM",
+        "applications": [
+          "Healthcare hospital operations"
+        ],
+        "source_checkpoint": "CP-OPP-013-04",
+        "source_refs": [
+          "EV-013-011",
+          "EV-013-012",
+          "EV-013-013",
+          "EV-013-014",
+          "EV-013-015"
+        ],
+        "tags": [
+          "source-supported",
+          "legacy-vrl"
+        ],
+        "provenance": {
+          "source_file": "OPP-013-04.md",
+          "section": "Integrity Statement",
+          "line_start": 574,
+          "line_end": 581
+        }
+      }
+    ],
+    "provenance": {
+      "source_file": "OPP-013-04.md",
+      "section": "Integrity Statement",
+      "line_start": 580,
+      "line_end": 580
+    }
+  },
+  "primary_question": "PATIENT / STAFF READY?",
+  "sources": [
+    {
+      "id": "SRC-FILE-OPP-013-OPP-013-01",
+      "title": "OPP-013-01.md",
+      "url": "opportunities/Healthcare_and_Pharmaceuticals/nayati_medicity/OPP-013-01.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": [
+        "CP-OPP-013-01"
+      ]
+    },
+    {
+      "id": "SRC-FILE-OPP-013-OPP-013-02",
+      "title": "OPP-013-02.md",
+      "url": "opportunities/Healthcare_and_Pharmaceuticals/nayati_medicity/OPP-013-02.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": [
+        "CP-OPP-013-02"
+      ]
+    },
+    {
+      "id": "SRC-FILE-OPP-013-OPP-013-03",
+      "title": "OPP-013-03.md",
+      "url": "opportunities/Healthcare_and_Pharmaceuticals/nayati_medicity/OPP-013-03.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": [
+        "CP-OPP-013-03"
+      ]
+    },
+    {
+      "id": "SRC-FILE-OPP-013-OPP-013-04",
+      "title": "OPP-013-04.md",
+      "url": "opportunities/Healthcare_and_Pharmaceuticals/nayati_medicity/OPP-013-04.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": [
+        "CP-OPP-013-04"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-013-26D8F160",
+      "title": "Infomerics — Nayati Healthcare",
+      "url": "https://www.infomerics.com/admin/uploads/PR_Nayati_Healthcare_and_Research_06_08_2020.pdf",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-013-01"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-013-6953AD1F",
+      "title": "PubMed — Nayati Medicity Blood Transfusion TAT Study",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30662219/",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-013-01",
+        "CP-OPP-013-02",
+        "CP-OPP-013-03",
+        "CP-OPP-013-04"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-013-25BAA819",
+      "title": "Full study — PMC",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6311979/",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-013-01",
+        "CP-OPP-013-02",
+        "CP-OPP-013-03",
+        "CP-OPP-013-04"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-013-FAE06E5F",
+      "title": "PMC — NABH Blood-Centre KPI Study",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10064356/",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-013-01"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-013-4256F410",
+      "title": "PMC — Blood Transfusion Barriers in Bihar",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6493310/",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-013-01"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-013-ADB34F7D",
+      "title": "PMC — Intraoperative Red Blood Cell Issue TAT",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5907900/",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-013-03"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-013-324DFF96",
+      "title": "State Blood Transfusion Council Uttar Pradesh — Blood Centre Locations",
+      "url": "https://sbtcup.org/BloodCenterLocation.aspx",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-013-04"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-013-BB0990DC",
+      "title": "NABH — Nayati Blood Bank",
+      "url": "https://portal.nabh.co/Documents/AccreditedList/Blood%20Bank/BB-2017-0096.pdf",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-013-04"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-013-5DEEF5A3",
+      "title": "Public Nayati Medicity listing",
+      "url": "https://www.bharatibiz.com/en/nayati-medicity_1m-070885-65565",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-013-04"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "CP-OPP-013-01",
+      "title": "OPP-013-01 — Workflow Discovery",
+      "status": "PASS",
+      "investigation_question": "PATIENT / STAFF READY?",
+      "tested": "OPP-013-01 — Workflow Discovery",
+      "found": "NOT PROVIDED",
+      "what_changed": "**PASS → High-consequence workflow target**",
+      "resulting_state": "**PASS → High-consequence workflow target**",
+      "evidence_refs": [
+        "EV-013-001",
+        "EV-013-002",
+        "EV-013-003",
+        "EV-013-004",
+        "EV-013-005"
+      ],
+      "source_refs": [
+        "SRC-FILE-OPP-013-OPP-013-01",
+        "SRC-EXT-OPP-013-26D8F160",
+        "SRC-EXT-OPP-013-6953AD1F",
+        "SRC-EXT-OPP-013-25BAA819",
+        "SRC-EXT-OPP-013-FAE06E5F",
+        "SRC-EXT-OPP-013-4256F410"
+      ],
+      "provenance": {
+        "source_file": "OPP-013-01.md",
+        "section": "Checkpoint",
+        "line_start": 1,
+        "line_end": 306
+      }
+    },
+    {
+      "id": "CP-OPP-013-02",
+      "title": "OPP-013-02 — Exception + Human Investigation Reconstruction",
+      "status": "PASS",
+      "investigation_question": "When an urgent transfusion gets delayed outside the blood bank, what human coordination and investigation steps are required to move the case forward?",
+      "tested": "OPP-013-02 — Exception + Human Investigation Reconstruction",
+      "found": "> **Nayati Medicity provides direct evidence of a distributed, time-sensitive transfusion workflow in which the largest non-blood-bank delay was sample/requisition transport and the study specifically identifies courier availability as the plausible cause. The hospital also had digital timestamp capture through its HIS. The evidence supports a strong exception-coordination hypothesis, but current automation, current human investigation burden and current ROI remain unverified.**\n\n**OPP-013-02 = PASS → HIGH-CONSEQUENCE DISTRIBUTED EXCEPTION PATH VERIFIED**",
+      "what_changed": "**PASS → High-consequence distributed exception path verified**",
+      "resulting_state": "**PASS → High-consequence distributed exception path verified**",
+      "evidence_refs": [
+        "EV-013-006",
+        "EV-013-007"
+      ],
+      "source_refs": [
+        "SRC-FILE-OPP-013-OPP-013-02",
+        "SRC-EXT-OPP-013-25BAA819",
+        "SRC-EXT-OPP-013-6953AD1F"
+      ],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "Checkpoint",
+        "line_start": 1,
+        "line_end": 763
+      }
+    },
+    {
+      "id": "CP-OPP-013-03",
+      "title": "OPP-013-03 — Human Effort / Pain Quantification",
+      "status": "PASS",
+      "investigation_question": "How much operational time is exposed to delay in the Nayati transfusion workflow, and how much of that time could plausibly be addressable by coordination automation?",
+      "tested": "OPP-013-03 — Human Effort / Pain Quantification",
+      "found": "> **The Nayati study provides a strong measured time-exposure signal: approximately 1,476 urgent requests during the study year and 72 minutes of average delay outside the blood bank, including a 34-minute sample/requisition transport component. The study directly identifies courier availability as a plausible contributor. These figures quantify elapsed workflow exposure, not staff labour. The addressable automation fraction, current system capability and actual ROI remain unknown.**\n\n**OPP-013-03 = PASS → HIGH TIME-EXPOSURE SIGNAL**\n\n**Next: OPP-013-04 — Direct Operational Evidence / Pain Validation.**",
+      "what_changed": "**PASS → High time-exposure signal; addressable human effort remains to be validated**",
+      "resulting_state": "**PASS → High time-exposure signal; addressable human effort remains to be validated**",
+      "evidence_refs": [
+        "EV-013-008",
+        "EV-013-009",
+        "EV-013-010"
+      ],
+      "source_refs": [
+        "SRC-FILE-OPP-013-OPP-013-03",
+        "SRC-EXT-OPP-013-6953AD1F",
+        "SRC-EXT-OPP-013-25BAA819",
+        "SRC-EXT-OPP-013-ADB34F7D"
+      ],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "Checkpoint",
+        "line_start": 1,
+        "line_end": 605
+      }
+    },
+    {
+      "id": "CP-OPP-013-04",
+      "title": "OPP-013-04 — Direct Operational Evidence / Pain Validation",
+      "status": "CONDITIONAL_PASS",
+      "investigation_question": "Do we have enough direct operational evidence to claim that Nayati currently has a material automation gap in urgent transfusion coordination?",
+      "tested": "OPP-013-04 — Direct Operational Evidence / Pain Validation",
+      "found": "> **OPP-013 has reached the efficient desk-research boundary. The historical Nayati evidence is strong enough to validate the workflow and industry pain hypothesis, but not strong enough to claim a current Nayati automation gap. Additional desk research would mostly produce diminishing returns. The correct next evidence is primary operational validation.**\n\n**OPP-013-04 = CONDITIONAL PASS → PRIMARY VALIDATION REQUIRED**\n\n**OPP-013 should now be marked `PRIMARY_VALIDATION_PENDING`, not expanded into additional VRL desk-research checkpoints.**",
+      "what_changed": "**CONDITIONAL PASS → Industry pain validated; current Nayati capability gap unverified**",
+      "resulting_state": "**CONDITIONAL PASS → Industry pain validated; current Nayati capability gap unverified**",
+      "evidence_refs": [
+        "EV-013-011",
+        "EV-013-012",
+        "EV-013-013",
+        "EV-013-014",
+        "EV-013-015"
+      ],
+      "source_refs": [
+        "SRC-FILE-OPP-013-OPP-013-04",
+        "SRC-EXT-OPP-013-25BAA819",
+        "SRC-EXT-OPP-013-6953AD1F",
+        "SRC-EXT-OPP-013-324DFF96",
+        "SRC-EXT-OPP-013-BB0990DC",
+        "SRC-EXT-OPP-013-5DEEF5A3"
+      ],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "Checkpoint",
+        "line_start": 1,
+        "line_end": 580
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "EV-013-001",
+      "statement": "1. [PubMed — Nayati Medicity Blood Transfusion TAT Study](https://pubmed.ncbi.nlm.nih.gov/30662219/) — 2,022 requests; 73% urgent; 135-minute average TAT.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-013-6953AD1F",
+      "provenance": {
+        "source_file": "OPP-013-01.md",
+        "section": "E-1",
+        "line_start": 272,
+        "line_end": 272
+      }
+    },
+    {
+      "id": "EV-013-002",
+      "statement": "2. [PMC — Full Nayati Study](https://pmc.ncbi.nlm.nih.gov/articles/PMC6311979/) — ordering, sample transport, blood-bank, issue and transfusion-start delays; courier coordination.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-013-25BAA819",
+      "provenance": {
+        "source_file": "OPP-013-01.md",
+        "section": "E-2",
+        "line_start": 273,
+        "line_end": 273
+      }
+    },
+    {
+      "id": "EV-013-003",
+      "statement": "3. [PMC — NABH Blood-Centre KPI Study](https://pmc.ncbi.nlm.nih.gov/articles/PMC10064356/) — Indian transfusion delays and ward communication/root-cause evidence.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-013-FAE06E5F",
+      "provenance": {
+        "source_file": "OPP-013-01.md",
+        "section": "E-3",
+        "line_start": 274,
+        "line_end": 274
+      }
+    },
+    {
+      "id": "EV-013-004",
+      "statement": "4. [PMC — Blood Transfusion Barriers in Bihar](https://pmc.ncbi.nlm.nih.gov/articles/PMC6493310/) — coordination, responsibility and retrieval barriers.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-013-4256F410",
+      "provenance": {
+        "source_file": "OPP-013-01.md",
+        "section": "E-4",
+        "line_start": 275,
+        "line_end": 275
+      }
+    },
+    {
+      "id": "EV-013-005",
+      "statement": "5. [Infomerics — Nayati Healthcare](https://www.infomerics.com/admin/uploads/PR_Nayati_Healthcare_and_Research_06_08_2020.pdf) — approximately 351-bed Nayati Medicity.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-013-26D8F160",
+      "provenance": {
+        "source_file": "OPP-013-01.md",
+        "section": "E-5",
+        "line_start": 276,
+        "line_end": 276
+      }
+    },
+    {
+      "id": "EV-013-006",
+      "statement": "### E-001 — Direct Nayati Medicity Study\n\n[PMC — Turnaround Time for Red Blood Cell Transfusion](https://pmc.ncbi.nlm.nih.gov/articles/PMC6311979/)\n\n**Evidence:** complete one-year prospective workflow; 2,022 requests; 73% urgent; HIS timestamps; 13-minute ordering; 34-minute requisition/sample transport; 55-minute blood-bank compatibility testing; 8-minute issue; 25-minute post-issue-to-transfusion delay; courier availability explanation.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-013-25BAA819",
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "E-001 — Direct Nayati Medicity Study",
+        "line_start": 659,
+        "line_end": 663
+      }
+    },
+    {
+      "id": "EV-013-007",
+      "statement": "### E-002 — PubMed Record\n\n[PubMed — Nayati Medicity Blood Transfusion TAT Study](https://pubmed.ncbi.nlm.nih.gov/30662219/)\n\n**Evidence:** direct Nayati Medicity affiliation and study results.\n\n---",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-013-6953AD1F",
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "E-002 — PubMed Record",
+        "line_start": 665,
+        "line_end": 671
+      }
+    },
+    {
+      "id": "EV-013-008",
+      "statement": "### E-001 — Direct Nayati Study\n\n[PubMed — Turnaround Time for Red Blood Cell Transfusion](https://pubmed.ncbi.nlm.nih.gov/30662219/)\n\n**Evidence:** 2,022 requests; 73% urgent; 135-minute average TAT; 63-minute blood-bank delay; 72-minute outside-blood-bank delay.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-013-6953AD1F",
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "E-001 — Direct Nayati Study",
+        "line_start": 486,
+        "line_end": 490
+      }
+    },
+    {
+      "id": "EV-013-009",
+      "statement": "### E-002 — Full Nayati Study\n\n[PMC — Turnaround Time for Red Blood Cell Transfusion](https://pmc.ncbi.nlm.nih.gov/articles/PMC6311979/)\n\n**Evidence:** 13-minute ordering; 34-minute sample/requisition transport; 55-minute compatibility testing; 8-minute issue process; 25-minute post-issue-to-transfusion time; study limitations; HIS timestamping.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-013-25BAA819",
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "E-002 — Full Nayati Study",
+        "line_start": 492,
+        "line_end": 496
+      }
+    },
+    {
+      "id": "EV-013-010",
+      "statement": "### E-003 — Independent Courier Delay Evidence\n\n[PMC — Intraoperative Red Blood Cell Issue TAT](https://pmc.ncbi.nlm.nih.gov/articles/PMC5907900/)\n\n**Evidence:** 14.1% exceeded >30-minute threshold; prolonged compatibility testing and delayed courier arrival contributed to delay.\n\n---",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-013-ADB34F7D",
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "E-003 — Independent Courier Delay Evidence",
+        "line_start": 498,
+        "line_end": 504
+      }
+    },
+    {
+      "id": "EV-013-011",
+      "statement": "### E-001 — Direct Nayati Study\n\n[PMC — Turnaround Time for Red Blood Cell Transfusion](https://pmc.ncbi.nlm.nih.gov/articles/PMC6311979/)\n\nDirect evidence for the historical workflow, delay components, courier issue and HIS timestamps.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-013-25BAA819",
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "E-001 — Direct Nayati Study",
+        "line_start": 500,
+        "line_end": 504
+      }
+    },
+    {
+      "id": "EV-013-012",
+      "statement": "### E-002 — PubMed Record\n\n[PubMed — Nayati Medicity Blood Transfusion TAT Study](https://pubmed.ncbi.nlm.nih.gov/30662219/)\n\nDirect hospital affiliation and published study record.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-013-6953AD1F",
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "E-002 — PubMed Record",
+        "line_start": 506,
+        "line_end": 510
+      }
+    },
+    {
+      "id": "EV-013-013",
+      "statement": "### E-003 — Current Blood-Centre Listing\n\n[State Blood Transfusion Council Uttar Pradesh — Blood Centre Locations](https://sbtcup.org/BloodCenterLocation.aspx)\n\nCurrent listing of Nayati Blood Bank in Mathura.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-013-324DFF96",
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "E-003 — Current Blood-Centre Listing",
+        "line_start": 512,
+        "line_end": 516
+      }
+    },
+    {
+      "id": "EV-013-014",
+      "statement": "### E-004 — NABH Accreditation Record\n\n[NABH — Nayati Blood Bank](https://portal.nabh.co/Documents/AccreditedList/Blood%20Bank/BB-2017-0096.pdf)\n\nHistorical accreditation scope for the Nayati Blood Bank.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-013-BB0990DC",
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "E-004 — NABH Accreditation Record",
+        "line_start": 518,
+        "line_end": 522
+      }
+    },
+    {
+      "id": "EV-013-015",
+      "statement": "### E-005 — Public Hospital Contact Lead\n\n[Public Nayati Medicity listing](https://www.bharatibiz.com/en/nayati-medicity_1m-070885-65565)\n\nThird-party routing information only; not treated as verified departmental contact evidence.\n\n---",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-013-5DEEF5A3",
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "E-005 — Public Hospital Contact Lead",
+        "line_start": 524,
+        "line_end": 530
+      }
+    }
+  ],
+  "claims": [],
+  "inferences": [],
+  "hypotheses": [
+    {
+      "id": "HYP-013-001",
+      "statement": "```text\nURGENT BLOOD ORDER\n        ↓\nCREATE TRANSFUSION EXCEPTION\n        ↓\nTRACK ORDER\n        ↓\nTRACK SAMPLE\n        ↓\nTRACK BLOOD-BANK STATUS\n        ↓\nUNIT ISSUED\n        ↓\nTRACK TRANSPORT\n        ↓\nWARD RECEIPT\n        ↓\nTRANSFUSION STARTED?\n        ↓\nIF STUCK\n        ↓\nIDENTIFY OWNER\n        ↓\nREMINDER / ESCALATION\n        ↓\nCLOSE\n```\n\nART would not decide whether transfusion is clinically required, select blood products, perform compatibility testing or override clinical protocols.\n\nThe potential ART layer is **closed-loop workflow coordination**.",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "EV-013-001",
+        "EV-013-002",
+        "EV-013-003",
+        "EV-013-004",
+        "EV-013-005"
+      ],
+      "falsification_basis": [],
+      "provenance": {
+        "source_file": "OPP-013-01.md",
+        "section": "8. ART opportunity hypothesis",
+        "line_start": 155,
+        "line_end": 187
+      }
+    },
+    {
+      "id": "HYP-013-002",
+      "statement": "We cannot calculate actual Nayati ROI because we do not know:\n\n- current 2026 volume;\n- current failure/delay rate;\n- current staff involvement;\n- current software;\n- current automation;\n- actual avoidable delay.\n\nInstead use a sensitivity model.\n\nAssume only a fraction of the 34-minute sample-transport delay is realistically addressable through better coordination:\n\n| Addressable fraction | Minutes potentially reduced/request | Historical hours across ~1,476 urgent requests |\n|---|---:|---:|\n| 10% | 3.4 min | ~84 hours |\n| 25% | 8.5 min | ~209 hours |\n| 50% | 17 min | ~418 hours |\n| 75% | 25.5 min | ~627 hours |\n\nThese are **hypothetical scenario outputs**, not observed savings.\n\n---",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "EV-013-008",
+        "EV-013-009",
+        "EV-013-010"
+      ],
+      "falsification_basis": [],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "8. Hypothesis ROI Model",
+        "line_start": 182,
+        "line_end": 206
+      }
+    }
+  ],
+  "results": [
+    {
+      "id": "RES-013-001",
+      "statement": "**PASS → High-consequence workflow target**",
+      "status": "PASSED",
+      "provenance": {
+        "source_file": "OPP-013-01.md",
+        "section": "Decision",
+        "line_start": 242,
+        "line_end": 243
+      }
+    },
+    {
+      "id": "RES-013-002",
+      "statement": "**PASS → High-consequence distributed exception path verified**",
+      "status": "PASSED",
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "Decision",
+        "line_start": 600,
+        "line_end": 601
+      }
+    },
+    {
+      "id": "RES-013-003",
+      "statement": "**PASS → High time-exposure signal; addressable human effort remains to be validated**",
+      "status": "PASSED",
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "Decision",
+        "line_start": 433,
+        "line_end": 434
+      }
+    },
+    {
+      "id": "RES-013-004",
+      "statement": "**CONDITIONAL PASS → Industry pain validated; current Nayati capability gap unverified**",
+      "status": "UNVERIFIED",
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "Decision",
+        "line_start": 374,
+        "line_end": 375
+      }
+    }
+  ],
+  "falsification": [
+    {
+      "statement": "If the answer is:\n\n> “The current system automatically tracks the complete transfusion lifecycle, assigns transport, detects ageing and escalates overdue tasks.”\n\nthen:\n\n**NAYATI-SPECIFIC OPPORTUNITY → DOWNGRADE / KILL**\n\nDo not force the opportunity.\n\nInstead search another Indian hospital with the same workflow and lower automation maturity.\n\n---",
+      "outcome": "12. Strong Negative Signal",
+      "basis": [
+        "EV-013-011",
+        "EV-013-012",
+        "EV-013-013",
+        "EV-013-014",
+        "EV-013-015"
+      ],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "12. Strong Negative Signal",
+        "line_start": 247,
+        "line_end": 262
+      }
+    }
+  ],
+  "traceability": [
+    {
+      "statement": "---\nid: OPP-013-01\nopportunity_id: OPP-013\nindustry: Healthcare / Hospital Operations\ncompany: Nayati Medicity, Mathura\nlocation: Mathura, Uttar Pradesh, India\nworkflow: Urgent Blood Transfusion Ordering-to-Bedside Coordination\npain_type: Patient Safety / Time-Critical Transfusion Delay\nresearch_stage: Workflow Discovery\nmethodology: Legacy VRL\nstatus: PASS\ndecision: HIGH_CONSEQUENCE_WORKFLOW_TARGET_CONTINUE\ncompany_pain_signal: direct_company_specific_workflow_evidence_strong\nindustry_generalizability: high\ncurrent_pain_magnitude: documented_historical\ncurrent_capability_gap: unknown\ncustomer_roi: unknown\ncommercial_status: discovery_continue\n---",
+      "research_location": "OPP-013-01.md#Front matter",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-01.md",
+        "section": "Front matter",
+        "line_start": 1,
+        "line_end": 18
+      }
+    },
+    {
+      "statement": "**Company:** Nayati Medicity, Mathura  \n**Workflow:** Urgent Blood Transfusion Ordering-to-Bedside Coordination  \n**VRL checkpoint:** OPP-013-01  \n**Decision:** **PASS → High-consequence workflow target**",
+      "research_location": "OPP-013-01.md#OPP-013-01 — Workflow Discovery",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-01.md",
+        "section": "OPP-013-01 — Workflow Discovery",
+        "line_start": 21,
+        "line_end": 27
+      }
+    },
+    {
+      "statement": "Nayati Medicity is a roughly 351–377-bed tertiary/quaternary-care hospital in Mathura with critical care, trauma/emergency services and an in-house blood bank. [Infomerics — Nayati Healthcare](https://www.infomerics.com/admin/uploads/PR_Nayati_Healthcare_and_Research_06_08_2020.pdf)\n\nMost importantly, a prospective study was conducted directly in the blood-transfusion department of **Nayati Medicity, Mathura**.",
+      "research_location": "OPP-013-01.md#Why this company",
+      "source_urls": [
+        "https://www.infomerics.com/admin/uploads/PR_Nayati_Healthcare_and_Research_06_08_2020.pdf"
+      ],
+      "provenance": {
+        "source_file": "OPP-013-01.md",
+        "section": "1. Why this company",
+        "line_start": 28,
+        "line_end": 33
+      }
+    },
+    {
+      "statement": "The study analysed **2,022 blood requests** over one year:\n\n- **73%** were marked urgent.\n- Average ordering-to-transfusion initiation: **135 minutes**.\n- Blood-bank processing: approximately **63 minutes / 47%**.\n- Outside blood bank: approximately **72 minutes**.\n- Ordering: **13 minutes**.\n- Sample transport: **34 minutes**.\n- Transfusion commencement: **25 minutes**.\n\n[PubMed — Nayati Medicity Blood Transfusion TAT Study](https://pubmed.ncbi.nlm.nih.gov/30662219/)\n\n[Full study — PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC6311979/)",
+      "research_location": "OPP-013-01.md#Direct company evidence",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/30662219/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6311979/"
+      ],
+      "provenance": {
+        "source_file": "OPP-013-01.md",
+        "section": "2. Direct company evidence",
+        "line_start": 34,
+        "line_end": 49
+      }
+    },
+    {
+      "statement": "```text\nDOCTOR ORDERS BLOOD\n        ↓\nNURSE TRANSLATES ORDER\n        ↓\nSIGNED REQUISITION\n        ↓\nSAMPLE COLLECTED\n        ↓\nSAMPLE TRANSPORTED\n        ↓\nBLOOD BANK PROCESSING\n        ↓\nBLOOD ISSUED\n        ↓\nUNIT TRANSPORTED\n        ↓\nWARD / BEDSIDE CHECK\n        ↓\nTRANSFUSION STARTED\n```\n\nThe study explicitly describes multiple healthcare workers and handoffs across this process. [Full study — PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC6311979/)",
+      "research_location": "OPP-013-01.md#Workflow",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6311979/"
+      ],
+      "provenance": {
+        "source_file": "OPP-013-01.md",
+        "section": "3. Workflow",
+        "line_start": 50,
+        "line_end": 75
+      }
+    },
+    {
+      "statement": "More than half of the total delay occurred **outside the blood bank**:\n\n**135 min total → 63 min blood bank → 72 min outside blood bank.**\n\nThe largest external delay was **34 minutes for sample transport**, while another **25 minutes** occurred between blood issue and transfusion commencement. [PubMed](https://pubmed.ncbi.nlm.nih.gov/30662219/)\n\nThis means the problem is not simply blood-bank processing.\n\nIt is a **distributed coordination problem**.",
+      "research_location": "OPP-013-01.md#Critical finding",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/30662219/"
+      ],
+      "provenance": {
+        "source_file": "OPP-013-01.md",
+        "section": "4. Critical finding",
+        "line_start": 76,
+        "line_end": 87
+      }
+    },
+    {
+      "statement": "The study reports that sample transport delay was largely associated with arranging a courier. The courier was a multipurpose hospital worker also involved in patient transport, cleaning and medication-related tasks. [Full study — PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC6311979/)\n\nPotential workflow:\n\n```text\nURGENT BLOOD REQUEST\n        ↓\nSAMPLE READY\n        ↓\nWHO WILL MOVE IT?\n        ↓\nFIND AVAILABLE STAFF\n        ↓\nWAIT\n        ↓\nTRANSPORT\n        ↓\nBLOOD BANK\n```\n\nAfter blood issue:\n\n```text\nUNIT READY\n   ↓\nTRANSPORT\n   ↓\nWARD\n   ↓\nPATIENT / STAFF READY?\n   ↓\nCHECK\n   ↓\nTRANSFUSION START\n```",
+      "research_location": "OPP-013-01.md#Strongest human-coordination signal",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6311979/"
+      ],
+      "provenance": {
+        "source_file": "OPP-013-01.md",
+        "section": "5. Strongest human-coordination signal",
+        "line_start": 88,
+        "line_end": 125
+      }
+    },
+    {
+      "statement": "The study describes timely transfusion as a **lifesaving procedure** and identifies the 135-minute turnaround as unreasonably long. [Full study — PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC6311979/)\n\nThis therefore passes:\n\n```text\nHIGH CONSEQUENCE ✓\nTIME CRITICAL ✓\nMEASURABLE DELAY ✓\nMULTIPLE HANDOFFS ✓\nHUMAN COORDINATION ✓\n```",
+      "research_location": "OPP-013-01.md#Why this is high consequence",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6311979/"
+      ],
+      "provenance": {
+        "source_file": "OPP-013-01.md",
+        "section": "6. Why this is high consequence",
+        "line_start": 126,
+        "line_end": 139
+      }
+    },
+    {
+      "statement": "A separate Indian tertiary-care blood-centre study found:\n\n- emergency PRBC crossmatch TAT: **18.3 minutes**;\n- **19.14%** of sampled transfusions began >30 minutes after issue;\n- root causes included poor ward communication, delayed lifting of blood units, inadequate preparation and lack of clinical audit.\n\n[PMC — NABH Blood-Centre KPI Study](https://pmc.ncbi.nlm.nih.gov/articles/PMC10064356/)\n\nA separate Indian study also reports blood-retrieval delays, coordination-protocol gaps and the need for clearly designated responsibility. [PMC — Blood Transfusion Barriers in Bihar](https://pmc.ncbi.nlm.nih.gov/articles/PMC6493310/)\n\nThus the underlying pain is potentially **industry-recurrent**, not unique to Nayati.",
+      "research_location": "OPP-013-01.md#Industry recurrence",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10064356/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6493310/"
+      ],
+      "provenance": {
+        "source_file": "OPP-013-01.md",
+        "section": "7. Industry recurrence",
+        "line_start": 140,
+        "line_end": 153
+      }
+    },
+    {
+      "statement": "```text\nURGENT BLOOD ORDER\n        ↓\nCREATE TRANSFUSION EXCEPTION\n        ↓\nTRACK ORDER\n        ↓\nTRACK SAMPLE\n        ↓\nTRACK BLOOD-BANK STATUS\n        ↓\nUNIT ISSUED\n        ↓\nTRACK TRANSPORT\n        ↓\nWARD RECEIPT\n        ↓\nTRANSFUSION STARTED?\n        ↓\nIF STUCK\n        ↓\nIDENTIFY OWNER\n        ↓\nREMINDER / ESCALATION\n        ↓\nCLOSE\n```\n\nART would not decide whether transfusion is clinically required, select blood products, perform compatibility testing or override clinical protocols.\n\nThe potential ART layer is **closed-loop workflow coordination**.",
+      "research_location": "OPP-013-01.md#ART opportunity hypothesis",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-01.md",
+        "section": "8. ART opportunity hypothesis",
+        "line_start": 154,
+        "line_end": 187
+      }
+    },
+    {
+      "statement": "The historical study does not establish Nayati's current 2026 software or automation.\n\nTherefore:\n\n**Current capability = UNKNOWN**\n\nThe next investigation must determine whether the current system can expose:\n\n- order status;\n- sample status;\n- blood-bank status;\n- unit issue;\n- transport;\n- ward receipt;\n- transfusion start;\n- ageing;\n- escalation.\n\nIf these are already closed-loop, the opportunity weakens.",
+      "research_location": "OPP-013-01.md#Existing-system boundary",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-01.md",
+        "section": "9. Existing-system boundary",
+        "line_start": 188,
+        "line_end": 209
+      }
+    },
+    {
+      "statement": "| Dimension | Status |\n|---|---|\n| Mid-scale hospital | VERIFIED |\n| Company-specific study | VERIFIED |\n| 2,022 blood requests | VERIFIED |\n| 73% urgent | VERIFIED |\n| 135-minute average TAT | VERIFIED |\n| 72 minutes outside blood bank | VERIFIED |\n| 34-minute sample transport delay | VERIFIED |\n| 25-minute post-issue delay | VERIFIED |\n| Multi-worker coordination | VERIFIED |\n| Courier coordination problem | VERIFIED |\n| Current 2026 workflow | UNKNOWN |\n| Current automation | UNKNOWN |\n| Current unresolved cases | UNKNOWN |\n| Current capability gap | UNKNOWN |\n| Current ROI | UNKNOWN |",
+      "research_location": "OPP-013-01.md#Evidence matrix",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-01.md",
+        "section": "10. Evidence matrix",
+        "line_start": 210,
+        "line_end": 229
+      }
+    },
+    {
+      "statement": "Do not claim the 135-minute figure is Nayati's **current** performance.\n\nDo not claim ART will reduce transfusion time by a specific number.\n\nDo not claim ART will save lives.\n\nThe defensible hypothesis is:\n\n> **A closed-loop coordination layer could potentially reduce avoidable waiting between blood ordering, sample transport, blood-unit availability, ward receipt and transfusion initiation.**",
+      "research_location": "OPP-013-01.md#What we must not claim",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-01.md",
+        "section": "11. What we must not claim",
+        "line_start": 230,
+        "line_end": 241
+      }
+    },
+    {
+      "statement": "This is a strong discovery because it combines:\n\n**patient-safety consequence + time criticality + direct company evidence + measurable delay + multiple human handoffs + industry recurrence + clear automation surface.**",
+      "research_location": "OPP-013-01.md#PASS → HIGH-CONSEQUENCE WORKFLOW TARGET",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-01.md",
+        "section": "PASS → HIGH-CONSEQUENCE WORKFLOW TARGET",
+        "line_start": 244,
+        "line_end": 249
+      }
+    },
+    {
+      "statement": "Focus only on:\n\n- urgent request not progressing;\n- sample not reaching blood bank;\n- blood unit ready but not collected;\n- unit issued but not reaching ward;\n- patient/ward not ready;\n- responsible staff unavailable;\n- who detects the delay;\n- who investigates;\n- who contacts whom;\n- escalation;\n- closure.\n\n**Do not quantify ROI yet.**",
+      "research_location": "OPP-013-01.md#OPP-013-02 — Exception + Human Investigation Reconstruction",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-01.md",
+        "section": "OPP-013-02 — Exception + Human Investigation Reconstruction",
+        "line_start": 252,
+        "line_end": 269
+      }
+    },
+    {
+      "statement": "1. [PubMed — Nayati Medicity Blood Transfusion TAT Study](https://pubmed.ncbi.nlm.nih.gov/30662219/) — 2,022 requests; 73% urgent; 135-minute average TAT.\n2. [PMC — Full Nayati Study](https://pmc.ncbi.nlm.nih.gov/articles/PMC6311979/) — ordering, sample transport, blood-bank, issue and transfusion-start delays; courier coordination.\n3. [PMC — NABH Blood-Centre KPI Study](https://pmc.ncbi.nlm.nih.gov/articles/PMC10064356/) — Indian transfusion delays and ward communication/root-cause evidence.\n4. [PMC — Blood Transfusion Barriers in Bihar](https://pmc.ncbi.nlm.nih.gov/articles/PMC6493310/) — coordination, responsibility and retrieval barriers.\n5. [Infomerics — Nayati Healthcare](https://www.infomerics.com/admin/uploads/PR_Nayati_Healthcare_and_Research_06_08_2020.pdf) — approximately 351-bed Nayati Medicity.",
+      "research_location": "OPP-013-01.md#Evidence ledger",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/30662219/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6311979/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10064356/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6493310/",
+        "https://www.infomerics.com/admin/uploads/PR_Nayati_Healthcare_and_Research_06_08_2020.pdf"
+      ],
+      "provenance": {
+        "source_file": "OPP-013-01.md",
+        "section": "Evidence ledger",
+        "line_start": 270,
+        "line_end": 277
+      }
+    },
+    {
+      "statement": "```yaml\nartifact_type: opportunity_intelligence\nopportunity_id: OPP-013\ncompany: Nayati Medicity\nlocation: mathura_uttar_pradesh_india\nindustry: healthcare_hospital_operations\nworkflow: urgent_blood_transfusion_order_to_bedside_coordination\npain_type: patient_safety_time_critical_transfusion_delay\nresearch_stage: workflow_discovery\ndecision: pass_high_consequence_workflow_target\ndirect_study:\n  blood_requests: 2022\n  urgent_requests: 73_percent\n  average_tat: 135_minutes\n  outside_blood_bank_delay: 72_minutes\n  sample_transport_delay: 34_minutes\n  transfusion_start_delay: 25_minutes\ncompany_current_system: unknown\ncompany_current_pain: unknown\ncapability_gap: unknown\ncustomer_roi: unknown\nindustry_generalisability: high\nnext_checkpoint: OPP-013-02\ncommercial_status: discovery_continue\n```\n\n**Integrity:** the company-specific evidence is historical; current operational conditions must be validated directly before claiming a present-day company pain or ROI.",
+      "research_location": "OPP-013-01.md#AIL Compilation Metadata",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-01.md",
+        "section": "AIL Compilation Metadata",
+        "line_start": 278,
+        "line_end": 306
+      }
+    },
+    {
+      "statement": "---\nid: OPP-013-02\nopportunity_id: OPP-013\nindustry: Healthcare / Hospital Operations\ncompany: Nayati Medicity, Mathura\nworkflow: Urgent Blood Transfusion Ordering-to-Bedside Coordination\nresearch_stage: Exception + Human Investigation Reconstruction\nmethodology: Legacy VRL\nstatus: PASS\ndecision: HIGH_CONSEQUENCE_DISTRIBUTED_EXCEPTION_PATH_VERIFIED\ncompany_pain_signal: historical_direct_exception_evidence_strong_current_state_unknown\nindustry_generalizability: high\ncurrent_pain_magnitude: historical_measured\ncurrent_capability_gap: unknown\ncustomer_roi: unknown\ncommercial_status: discovery_continue\n---",
+      "research_location": "OPP-013-02.md#Front matter",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "Front matter",
+        "line_start": 1,
+        "line_end": 16
+      }
+    },
+    {
+      "statement": "**Company:** Nayati Medicity, Mathura  \n**Workflow:** Urgent Blood Transfusion Ordering-to-Bedside Coordination  \n**VRL checkpoint:** OPP-013-02  \n**Decision:** **PASS → High-consequence distributed exception path verified**\n\n---",
+      "research_location": "OPP-013-02.md#OPP-013-02 — Exception + Human Investigation Reconstruction",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "OPP-013-02 — Exception + Human Investigation Reconstruction",
+        "line_start": 19,
+        "line_end": 27
+      }
+    },
+    {
+      "statement": "> **When an urgent transfusion gets delayed outside the blood bank, what human coordination and investigation steps are required to move the case forward?**\n\nThe Nayati Medicity study gives unusually strong evidence because it captured the transfusion process prospectively across patient locations and timestamped multiple stages of the workflow. The hospital information system recorded the blood-order/sample-label event and blood-bank receipt, while other stages were recorded by the responsible healthcare workers.\n\nThe study therefore allows the exception path to be reconstructed without inventing an operational workflow.\n\n---",
+      "research_location": "OPP-013-02.md#Checkpoint Question",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "1. Checkpoint Question",
+        "line_start": 28,
+        "line_end": 37
+      }
+    },
+    {
+      "statement": "The published workflow is:\n\n```text\nDOCTOR PRESCRIBES TRANSFUSION\n        ↓\nNURSE TRANSLATES ORDER\n        ↓\nSIGNED BLOOD REQUISITION\n        ↓\nPATIENT SAMPLE COLLECTED / LABEL GENERATED\n        ↓\nSAMPLE + REQUEST REACH BLOOD BANK\n        ↓\nBLOOD GROUPING / SCREENING / CROSSMATCH\n        ↓\nBLOOD ISSUE\n        ↓\nUNIT TRANSPORTED TO PATIENT LOCATION\n        ↓\nPATIENT / UNIT DETAILS VERIFIED\n        ↓\nTRANSFUSION STARTED\n```\n\nThe study describes this as a complete transfusion “orbit” involving multiple healthcare workers and locations.\n\n---",
+      "research_location": "OPP-013-02.md#Evidence-Supported Normal Workflow",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "2. Evidence-Supported Normal Workflow",
+        "line_start": 38,
+        "line_end": 67
+      }
+    },
+    {
+      "statement": "The first exception can occur before the blood bank receives the request.\n\n```text\nDOCTOR ORDERS BLOOD\n        ↓\nNURSE MUST TRANSLATE ORDER\n        ↓\nSIGNED REQUISITION\n        ↓\nSAMPLE READY\n        ↓\nNOT YET AT BLOOD BANK\n```\n\nThe measured median ordering delay was **13 minutes**.\n\nThe study notes that the doctor's order was documented in the patient file and that the nurse executed the request; verbal orders were not allowed under the hospital policy.",
+      "research_location": "OPP-013-02.md#Exception A — Blood Order Exists but Requisition Is Not Progressing",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "3. Exception A — Blood Order Exists but Requisition Is Not Progressing",
+        "line_start": 68,
+        "line_end": 87
+      }
+    },
+    {
+      "statement": "Someone has to determine:\n\n- Was the order actually converted into a signed request?\n- Has the sample been collected?\n- Has the sample been labelled?\n- Is the request ready for transport?\n\nThe study does not report a separate “investigation time” for these questions. Therefore this is a **workflow reconstruction**, not a quantified human-investigation claim.\n\n---",
+      "research_location": "OPP-013-02.md#Human investigation surface",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "Human investigation surface",
+        "line_start": 88,
+        "line_end": 100
+      }
+    },
+    {
+      "statement": "This is the strongest documented exception.\n\nThe study found a **34-minute median requisitioning TAT** for the signed request and patient sample to reach blood-bank reception.\n\nThe researchers specifically identify the main reason as time lost arranging a courier.\n\nThey describe the courier as a **multipurpose hospital worker** who also performed:\n\n- patient transport;\n- patient cleaning;\n- medication arrangement from the pharmacy.\n\nThe authors state that the nonavailability of a courier at a particular time was the most plausible reason for the delay.\n\nThe exception path is therefore:\n\n```text\nSAMPLE READY\n      ↓\nTRANSPORT REQUIRED\n      ↓\nCOURIER NEEDED\n      ↓\nCOURIER AVAILABLE?\n      ↓ NO\nWAIT / FIND AVAILABLE WORKER\n      ↓\nTRANSPORT\n      ↓\nBLOOD BANK RECEIVES SAMPLE\n```\n\nThis is directly supported by the study.\n\n---",
+      "research_location": "OPP-013-02.md#Exception B — Sample Ready but Not Reaching Blood Bank",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "4. Exception B — Sample Ready but Not Reaching Blood Bank",
+        "line_start": 101,
+        "line_end": 138
+      }
+    },
+    {
+      "statement": "The critical insight is the **ownership problem**.\n\nThe sample is not technically “stuck” because the hospital lacks a blood bank.\n\nIt can be stuck because:\n\n```text\nTASK EXISTS\n      ↓\nOWNER IS A SHARED WORKER\n      ↓\nWORKER HAS OTHER PRIORITIES\n      ↓\nTASK WAITS\n```\n\nThis creates a coordination exception:\n\n> **A time-sensitive clinical task competes with unrelated operational tasks.**\n\nThe study does not report an automated queue or escalation mechanism for this state.\n\nIt also does not prove that an automation system would have prevented the delay.\n\n---",
+      "research_location": "OPP-013-02.md#Why This Is More Than a Transport Problem",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "5. Why This Is More Than a Transport Problem",
+        "line_start": 139,
+        "line_end": 166
+      }
+    },
+    {
+      "statement": "Once the blood bank receives the sample, the workflow moves into:\n\n```text\nSAMPLE RECEIVED\n      ↓\nGROUPING\n      ↓\nANTIBODY SCREENING\n      ↓\nCOMPATIBILITY TESTING\n      ↓\nDOCUMENTATION / LABEL\n      ↓\nUNIT AVAILABLE\n```\n\nThe median compatibility-testing TAT was **55 minutes**.\n\nThe study also reports an average **8-minute issue TAT** for confirming patient details, preparing compatibility documentation, arranging blood-unit transport and performing a final check.\n\nThis is an important boundary:\n\n> **Do not automatically treat the 55-minute blood-bank processing period as an automation opportunity.**\n\nMuch of it represents legitimate clinical/laboratory work.\n\n---",
+      "research_location": "OPP-013-02.md#Exception C — Sample Reaches Blood Bank but Processing Takes Time",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "6. Exception C — Sample Reaches Blood Bank but Processing Takes Time",
+        "line_start": 167,
+        "line_end": 196
+      }
+    },
+    {
+      "statement": "After blood is issued:\n\n```text\nUNIT ISSUED\n      ↓\nWHO TAKES UNIT TO PATIENT?\n      ↓\nTRANSPORT\n      ↓\nWARD / PATIENT LOCATION\n```\n\nThe study found a **25-minute median TAT from blood release to transfusion commencement**.\n\nThe article describes this final stage as involving the relative, healthcare worker or pneumatic chute carrying the blood unit to the nurse/doctor, followed by information checks before transfusion starts.\n\nTherefore another exception can be reconstructed:\n\n```text\nUNIT READY\n      ↓\nTRANSPORT REQUIRED\n      ↓\nUNIT REACHES WARD?\n      ↓ NO\nWAIT / LOCATE TRANSPORT PATH\n      ↓\nUNIT RECEIVED\n      ↓\nCHECK\n      ↓\nTRANSFUSION START\n```\n\nThe study does not isolate the exact human cause of every 25-minute delay, so the cause should not be overclaimed.\n\n---",
+      "research_location": "OPP-013-02.md#Exception D — Blood Is Ready but Transport Is Not Complete",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "7. Exception D — Blood Is Ready but Transport Is Not Complete",
+        "line_start": 197,
+        "line_end": 236
+      }
+    },
+    {
+      "statement": "The workflow still has a final dependency:\n\n```text\nBLOOD RECEIVED\n      ↓\nPATIENT / UNIT DETAILS TALLIED\n      ↓\nCHECK COMPLETED\n      ↓\nTRANSFUSION STARTED\n```\n\nThe study records the 25-minute median period after blood release until transfusion commencement.\n\nHowever:\n\n**The study does not establish that all 25 minutes represent avoidable coordination work.**\n\nSome time may be clinically or procedurally necessary.\n\nTherefore the correct VRL interpretation is:\n\n> **There is measurable post-issue delay, but its avoidable fraction is unknown.**\n\n---",
+      "research_location": "OPP-013-02.md#Exception E — Blood Reaches Patient Location but Transfusion Does Not Start",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "8. Exception E — Blood Reaches Patient Location but Transfusion Does Not Start",
+        "line_start": 237,
+        "line_end": 264
+      }
+    },
+    {
+      "statement": "The evidence supports the following operational model:\n\n```text\nURGENT BLOOD ORDER\n        ↓\nNURSE TRANSLATES ORDER\n        ↓\nSAMPLE / REQUISITION READY\n        ↓\n        ┌─────────────────────┐\n        │ SAMPLE NOT MOVING   │\n        └──────────┬──────────┘\n                   ↓\n             FIND COURIER\n                   ↓\n          COURIER AVAILABLE?\n             ↓            ↓\n            NO           YES\n             ↓            ↓\n          WAIT       TRANSPORT\n             └──────┬─────┘\n                    ↓\n             BLOOD BANK\n                    ↓\n             PROCESS SAMPLE\n                    ↓\n                ISSUE UNIT\n                    ↓\n        ┌─────────────────────┐\n        │ UNIT NOT AT WARD    │\n        └──────────┬──────────┘\n                   ↓\n          ARRANGE TRANSPORT\n                   ↓\n              WARD RECEIPT\n                   ↓\n          VERIFY PATIENT / UNIT\n                   ↓\n          TRANSFUSION START\n```\n\nThis is the central exception-reconstruction finding.\n\n---",
+      "research_location": "OPP-013-02.md#Reconstructed Full Exception Path",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "9. Reconstructed Full Exception Path",
+        "line_start": 265,
+        "line_end": 311
+      }
+    },
+    {
+      "statement": "The workflow implies several investigation questions:",
+      "research_location": "OPP-013-02.md#Human Investigation Pattern",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "10. Human Investigation Pattern",
+        "line_start": 312,
+        "line_end": 315
+      }
+    },
+    {
+      "statement": "```text\nWhere is the sample?\nWho has it?\nHas it been collected?\nWho is transporting it?\nWhen will it reach the blood bank?\n```",
+      "research_location": "OPP-013-02.md#Before blood-bank receipt",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "Before blood-bank receipt",
+        "line_start": 316,
+        "line_end": 325
+      }
+    },
+    {
+      "statement": "```text\nHas the sample been received?\nIs compatibility testing complete?\nIs the unit ready?\n```",
+      "research_location": "OPP-013-02.md#During blood-bank processing",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "During blood-bank processing",
+        "line_start": 326,
+        "line_end": 333
+      }
+    },
+    {
+      "statement": "```text\nHas the unit left the blood bank?\nWho is transporting it?\nHas the ward received it?\nHas verification occurred?\nHas transfusion started?\n```\n\nThe published study does not state that staff used a formal investigation dashboard for these questions.\n\nTherefore:\n\n> **The existence of these investigation questions is workflow-inherent; the current method of answering them is unknown.**\n\n---",
+      "research_location": "OPP-013-02.md#After issue",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "After issue",
+        "line_start": 334,
+        "line_end": 351
+      }
+    },
+    {
+      "statement": "Nayati's historical workflow was not purely manual.\n\nThe study states that:\n\n- blood ordering and sample-label generation happened through the **computerized hospital information system (HIS)**;\n- blood-bank receipt was acknowledged in the same HIS;\n- sample-label and blood-bank-receipt timestamps were captured digitally in real time.\n\nThis is extremely important.\n\nThe opportunity is **not**:\n\n> “Digitise blood ordering.”\n\nThe system already digitised parts of the workflow.\n\nThe potential gap is:\n\n```text\nDIGITAL EVENT\n      ↓\nSAMPLE RECEIVED?\n      ↓\nWHO OWNS THE NEXT STEP?\n      ↓\nAGEING?\n      ↓\nESCALATION?\n      ↓\nCLOSURE?\n```\n\n---",
+      "research_location": "OPP-013-02.md#Existing Digital Trace — Important Boundary",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "11. Existing Digital Trace — Important Boundary",
+        "line_start": 352,
+        "line_end": 387
+      }
+    },
+    {
+      "statement": "A defensible ART layer could potentially sit above existing systems:\n\n```text\nHIS / BLOOD BANK EVENTS\n        ↓\nART WORKFLOW ORCHESTRATION\n        ↓\nSTATUS\n        ↓\nOWNER\n        ↓\nAGE\n        ↓\nEXCEPTION\n        ↓\nESCALATION\n        ↓\nCLOSURE\n```\n\nPotential automation:\n\n- create an urgent transfusion task;\n- detect when expected milestones are not reached;\n- identify the responsible operational owner;\n- notify the owner;\n- track acknowledgement;\n- escalate overdue transport/coordination tasks;\n- provide a single case timeline;\n- close the workflow when transfusion starts.\n\nClinical decisions remain outside the automation boundary.\n\n---",
+      "research_location": "OPP-013-02.md#Potential ART Capability Boundary",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "12. Potential ART Capability Boundary",
+        "line_start": 388,
+        "line_end": 424
+      }
+    },
+    {
+      "statement": "The strongest direct evidence is:\n\n> **The 34-minute sample-transport delay was primarily associated with arranging a courier, and the courier was a multipurpose worker whose availability competed with other hospital duties.**\n\nThat is a concrete human-coordination bottleneck.\n\nThe researchers themselves suggested technology such as a pneumatic chute or dedicated personnel as possible ways to reduce requisitioning delay.\n\nThis is not proof that software orchestration alone would solve the problem.\n\nBut it strongly supports investigating the coordination layer.\n\n---",
+      "research_location": "OPP-013-02.md#Strongest Exception Signal",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "13. Strongest Exception Signal",
+        "line_start": 425,
+        "line_end": 440
+      }
+    },
+    {
+      "statement": "Do not automatically convert these into automation:",
+      "research_location": "OPP-013-02.md#What Is Not an ART Opportunity Yet",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "14. What Is Not an ART Opportunity Yet",
+        "line_start": 441,
+        "line_end": 444
+      }
+    },
+    {
+      "statement": "This is primarily laboratory/clinical processing.",
+      "research_location": "OPP-013-02.md#55-minute compatibility testing",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "55-minute compatibility testing",
+        "line_start": 445,
+        "line_end": 448
+      }
+    },
+    {
+      "statement": "This includes verification and documentation.",
+      "research_location": "OPP-013-02.md#8-minute blood issue process",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "8-minute blood issue process",
+        "line_start": 449,
+        "line_end": 452
+      }
+    },
+    {
+      "statement": "The avoidable portion is not established.",
+      "research_location": "OPP-013-02.md#25-minute transfusion-start delay",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "25-minute transfusion-start delay",
+        "line_start": 453,
+        "line_end": 456
+      }
+    },
+    {
+      "statement": "ART cannot move blood or samples.\n\nThe opportunity is the **coordination surrounding physical movement**, not physical movement itself.\n\n---",
+      "research_location": "OPP-013-02.md#Physical transport itself",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "Physical transport itself",
+        "line_start": 457,
+        "line_end": 464
+      }
+    },
+    {
+      "statement": "The same distributed structure appears in other hospital transfusion environments.\n\nIndian evidence has identified delays involving:\n\n- blood retrieval;\n- ward communication;\n- lifting blood units;\n- transfusion preparation;\n- designated responsibility.\n\nThis supports the possibility that the coordination problem is broader than Nayati, although the exact workflow and severity vary by hospital. \n\nThe generalisable opportunity primitive is:\n\n```text\nTIME-CRITICAL CLINICAL TASK\n        ↓\nMULTIPLE OWNERS\n        ↓\nPHYSICAL / DIGITAL HANDOFF\n        ↓\nSTATUS BECOMES UNCLEAR\n        ↓\nHUMAN CHASES TASK\n        ↓\nDELAY\n        ↓\nESCALATION\n```\n\n---",
+      "research_location": "OPP-013-02.md#Industry Generalisation",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "15. Industry Generalisation",
+        "line_start": 465,
+        "line_end": 498
+      }
+    },
+    {
+      "statement": "| Exception / question | Evidence status |\n|---|---|\n| Doctor → nurse order translation | **DIRECT NAYATI EVIDENCE** |\n| Sample ready → courier needed | **DIRECT NAYATI EVIDENCE** |\n| Courier availability problem | **DIRECT NAYATI EVIDENCE / AUTHOR INTERPRETATION** |\n| 34-minute sample/requisition delay | **DIRECT NAYATI EVIDENCE** |\n| Sample received → blood-bank processing | **DIRECT NAYATI EVIDENCE** |\n| 55-minute compatibility TAT | **DIRECT NAYATI EVIDENCE** |\n| Unit issue → transport | **DIRECT NAYATI WORKFLOW EVIDENCE** |\n| 25-minute issue-to-transfusion delay | **DIRECT NAYATI EVIDENCE** |\n| Exact cause of every post-issue delay | **UNKNOWN** |\n| Automated exception detection | **UNKNOWN** |\n| Automated escalation | **UNKNOWN** |\n| Current 2026 workflow | **UNKNOWN** |\n| Current human investigation method | **UNKNOWN** |\n| Current capability gap | **UNKNOWN** |\n\n---",
+      "research_location": "OPP-013-02.md#Evidence Matrix",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "16. Evidence Matrix",
+        "line_start": 499,
+        "line_end": 519
+      }
+    },
+    {
+      "statement": "The opportunity is becoming more precise.\n\nIt is **not**:\n\n> “Automate blood transfusion.”\n\nIt is:\n\n> **“Detect and coordinate stuck time-critical transfusion workflows across hospital departments before delay compounds.”**\n\nPotential workflow object:\n\n```text\nTRANSFUSION CASE\n├── clinical order\n├── sample\n├── blood-bank processing\n├── unit\n├── transport\n├── ward receipt\n├── verification\n└── transfusion start\n```\n\nART's potential value is visibility and intervention when one of those states stops progressing.\n\n---",
+      "research_location": "OPP-013-02.md#Key VRL Finding",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "17. Key VRL Finding",
+        "line_start": 520,
+        "line_end": 549
+      }
+    },
+    {
+      "statement": "The opportunity has four important properties:",
+      "research_location": "OPP-013-02.md#Why This Is Potentially Strong",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "18. Why This Is Potentially Strong",
+        "line_start": 550,
+        "line_end": 553
+      }
+    },
+    {
+      "statement": "135 minutes overall.",
+      "research_location": "OPP-013-02.md#The delay is measurable",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "1. The delay is measurable",
+        "line_start": 554,
+        "line_end": 557
+      }
+    },
+    {
+      "statement": "72 minutes.",
+      "research_location": "OPP-013-02.md#A large portion is outside the blood bank",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "2. A large portion is outside the blood bank",
+        "line_start": 558,
+        "line_end": 561
+      }
+    },
+    {
+      "statement": "34-minute sample transport delay linked to courier availability.",
+      "research_location": "OPP-013-02.md#At least one concrete coordination bottleneck is identified",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "3. At least one concrete coordination bottleneck is identified",
+        "line_start": 562,
+        "line_end": 565
+      }
+    },
+    {
+      "statement": "The HIS already records important timestamps.\n\nThat combination is much stronger than a workflow where there is no measurable event trail.\n\n---",
+      "research_location": "OPP-013-02.md#The workflow is digitally traceable",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "4. The workflow is digitally traceable",
+        "line_start": 566,
+        "line_end": 573
+      }
+    },
+    {
+      "statement": "Before claiming a real automation gap, we need to know:\n\n```text\nCURRENT SYSTEM\n      ↓\nDOES IT KNOW THE TRANSFUSION CASE?\n      ↓\nDOES IT KNOW CURRENT STATUS?\n      ↓\nDOES IT KNOW OWNER?\n      ↓\nDOES IT DETECT AGEING?\n      ↓\nDOES IT ESCALATE?\n      ↓\nDOES IT SHOW UNRESOLVED CASES?\n```\n\nIf yes, ART may not be necessary.\n\nIf no, the opportunity becomes significantly stronger.\n\n---",
+      "research_location": "OPP-013-02.md#What We Still Need",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "19. What We Still Need",
+        "line_start": 574,
+        "line_end": 599
+      }
+    },
+    {
+      "statement": "The evidence now supports:\n\n```text\nTIME-CRITICAL TASK          ✓\nMULTIPLE HANDOFFS           ✓\nMEASURABLE DELAY            ✓\nHUMAN COORDINATION          ✓\nCOURIER AVAILABILITY ISSUE  ✓\nDIGITAL EVENT TRACE         ✓\nEXCEPTION INVESTIGATION     ✓\nINDUSTRY GENERALISABILITY   ✓\n```\n\nBut:\n\n```text\nCURRENT AUTOMATION GAP      ?\nCURRENT HUMAN EFFORT        ?\nCURRENT ROI                 ?\n```\n\nremain unknown.\n\n---",
+      "research_location": "OPP-013-02.md#PASS → HIGH-CONSEQUENCE DISTRIBUTED EXCEPTION PATH VERIFIED",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "PASS → HIGH-CONSEQUENCE DISTRIBUTED EXCEPTION PATH VERIFIED",
+        "line_start": 602,
+        "line_end": 628
+      }
+    },
+    {
+      "statement": "The next checkpoint should **not** invent a precise labour number.\n\nIt should quantify the opportunity using:\n\n```text\nDOCUMENTED 135-MINUTE TAT\n+\nDOCUMENTED 72-MINUTE OUTSIDE-BLOOD-BANK DELAY\n+\nDOCUMENTED 34-MINUTE SAMPLE-TRANSPORT DELAY\n+\nNUMBER OF URGENT REQUESTS\n+\nEXTERNAL HUMAN-EFFORT BENCHMARKS\n```\n\nThen construct a **hypothesis ROI / addressable-effort range**, clearly separating:\n\n- direct Nayati measurements;\n- industry benchmarks;\n- assumptions.\n\n---",
+      "research_location": "OPP-013-02.md#OPP-013-03 — Human Effort / Pain Quantification",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "OPP-013-03 — Human Effort / Pain Quantification",
+        "line_start": 631,
+        "line_end": 656
+      }
+    },
+    {
+      "statement": "[PMC — Turnaround Time for Red Blood Cell Transfusion](https://pmc.ncbi.nlm.nih.gov/articles/PMC6311979/)\n\n**Evidence:** complete one-year prospective workflow; 2,022 requests; 73% urgent; HIS timestamps; 13-minute ordering; 34-minute requisition/sample transport; 55-minute blood-bank compatibility testing; 8-minute issue; 25-minute post-issue-to-transfusion delay; courier availability explanation.",
+      "research_location": "OPP-013-02.md#E-001 — Direct Nayati Medicity Study",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6311979/"
+      ],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "E-001 — Direct Nayati Medicity Study",
+        "line_start": 659,
+        "line_end": 664
+      }
+    },
+    {
+      "statement": "[PubMed — Nayati Medicity Blood Transfusion TAT Study](https://pubmed.ncbi.nlm.nih.gov/30662219/)\n\n**Evidence:** direct Nayati Medicity affiliation and study results.\n\n---",
+      "research_location": "OPP-013-02.md#E-002 — PubMed Record",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/30662219/"
+      ],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "E-002 — PubMed Record",
+        "line_start": 665,
+        "line_end": 672
+      }
+    },
+    {
+      "statement": "- Nayati Medicity.\n- Prospective one-year study.\n- 2,022 blood requests.\n- 73% urgent.\n- HIS-based ordering/sample tracking.\n- 34-minute requisition delay.\n- Courier availability problem.\n- 55-minute compatibility-testing median.\n- 8-minute issue process.\n- 25-minute post-issue-to-transfusion median.\n- Multiple healthcare-worker handoffs.",
+      "research_location": "OPP-013-02.md#Direct company evidence",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "Direct company evidence",
+        "line_start": 675,
+        "line_end": 688
+      }
+    },
+    {
+      "statement": "- The exact investigation questions staff must ask when a case is stuck.\n- Potential owner/ageing/escalation model.\n- Potential ART orchestration layer.\n\nThese are workflow reconstructions, not claims that Nayati currently operates them this way.",
+      "research_location": "OPP-013-02.md#Inference / reconstruction",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "Inference / reconstruction",
+        "line_start": 689,
+        "line_end": 696
+      }
+    },
+    {
+      "statement": "- Current 2026 workflow.\n- Current HIS/blood-bank integration.\n- Current exception dashboard.\n- Current automatic escalation.\n- Current unresolved-case volume.\n- Current human investigation time.\n- Current ROI.\n\n---",
+      "research_location": "OPP-013-02.md#Unknown",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "Unknown",
+        "line_start": 697,
+        "line_end": 708
+      }
+    },
+    {
+      "statement": "```yaml\nartifact_type: opportunity_intelligence\nopportunity_id: OPP-013\ncompany: Nayati Medicity\nlocation: mathura_uttar_pradesh_india\nindustry: healthcare_hospital_operations\nworkflow: urgent_blood_transfusion_order_to_bedside_coordination\npain_type: patient_safety_time_critical_transfusion_delay\nresearch_stage: exception_human_investigation_reconstruction\ndecision: pass_high_consequence_distributed_exception_path_verified\n\ndirect_evidence:\n  blood_requests: 2022\n  urgent_requests: 73_percent\n  total_order_to_transfusion: 135_minutes\n  ordering_delay: 13_minutes\n  requisition_sample_transport: 34_minutes\n  blood_bank_compatibility: 55_minutes\n  issue_process: 8_minutes\n  post_issue_to_transfusion: 25_minutes\n  his_tracking: true\n  courier_availability_problem: verified\n\nexception_surfaces:\n  order_translation: verified\n  sample_transport: verified\n  courier_availability: verified\n  blood_bank_processing: verified\n  unit_transport: workflow_verified\n  post_issue_start_delay: verified\n  exact_post_issue_root_cause: unknown\n\ncurrent_automation: unknown\ncurrent_escalation: unknown\ncurrent_unresolved_cases: unknown\ncurrent_human_investigation_effort: unknown\ncapability_gap: unknown\ncustomer_roi: unknown\n\ncompany_pain_signal: historical_direct_exception_evidence_strong_current_state_unknown\nindustry_pain_signal: strong\nindustry_generalisability: high\nnext_checkpoint: OPP-013-03\ncommercial_status: discovery_continue\n```\n\n---",
+      "research_location": "OPP-013-02.md#AIL Compilation Metadata",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "AIL Compilation Metadata",
+        "line_start": 709,
+        "line_end": 758
+      }
+    },
+    {
+      "statement": "> **Nayati Medicity provides direct evidence of a distributed, time-sensitive transfusion workflow in which the largest non-blood-bank delay was sample/requisition transport and the study specifically identifies courier availability as the plausible cause. The hospital also had digital timestamp capture through its HIS. The evidence supports a strong exception-coordination hypothesis, but current automation, current human investigation burden and current ROI remain unverified.**\n\n**OPP-013-02 = PASS → HIGH-CONSEQUENCE DISTRIBUTED EXCEPTION PATH VERIFIED**",
+      "research_location": "OPP-013-02.md#Integrity Statement",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-02.md",
+        "section": "Integrity Statement",
+        "line_start": 759,
+        "line_end": 763
+      }
+    },
+    {
+      "statement": "---\nid: OPP-013-03\nopportunity_id: OPP-013\nindustry: Healthcare / Hospital Operations\ncompany: Nayati Medicity, Mathura\nworkflow: Urgent Blood Transfusion Ordering-to-Bedside Coordination\npain_type: Patient Safety / Time-Critical Transfusion Delay\nresearch_stage: Human Effort / Pain Quantification\nmethodology: Legacy VRL\nstatus: PASS\ndecision: HIGH_TIME_EXPOSURE_WITH_UNCERTAIN_ADDRESSABLE_HUMAN_EFFORT\ncompany_pain_signal: strong_historical_measured_delay\nindustry_generalizability: high\ncurrent_pain_magnitude: historical_measured\ncurrent_capability_gap: unknown\ncustomer_roi: hypothesis_only\ncommercial_status: discovery_continue\n---",
+      "research_location": "OPP-013-03.md#Front matter",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "Front matter",
+        "line_start": 1,
+        "line_end": 17
+      }
+    },
+    {
+      "statement": "**Company:** Nayati Medicity, Mathura  \n**Workflow:** Urgent Blood Transfusion Ordering-to-Bedside Coordination  \n**VRL checkpoint:** OPP-013-03  \n**Decision:** **PASS → High time-exposure signal; addressable human effort remains to be validated**\n\n---",
+      "research_location": "OPP-013-03.md#OPP-013-03 — Human Effort / Pain Quantification",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "OPP-013-03 — Human Effort / Pain Quantification",
+        "line_start": 20,
+        "line_end": 28
+      }
+    },
+    {
+      "statement": "> **How much operational time is exposed to delay in the Nayati transfusion workflow, and how much of that time could plausibly be addressable by coordination automation?**\n\nThe key distinction is critical:\n\n> **Delay time is not the same as human labour time.**\n\nThe Nayati study measures elapsed workflow time, not the number of staff minutes spent actively chasing each case. Therefore this checkpoint quantifies **time exposure**, not invented labour savings.\n\n---",
+      "research_location": "OPP-013-03.md#Checkpoint Question",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "1. Checkpoint Question",
+        "line_start": 29,
+        "line_end": 40
+      }
+    },
+    {
+      "statement": "The one-year prospective study analysed **2,022 blood requests** at Nayati Medicity, Mathura.\n\nOf these:\n\n- **73% were marked urgent**;\n- average order-to-transfusion initiation time was **135 minutes**;\n- blood-bank processing/issue accounted for approximately **63 minutes**;\n- processes outside the blood bank accounted for approximately **72 minutes**.\n\nThe external components were:\n\n| Workflow stage | Time |\n|---|---:|\n| Ordering | 13 min |\n| Sample/requisition transport | 34 min |\n| Blood-bank processing + issue | 63 min |\n| Post-issue to transfusion start | 25 min |\n| **Total** | **135 min** |\n\nThe paper states that more than half of the total delay occurred outside the blood bank.\n\n---",
+      "research_location": "OPP-013-03.md#Direct Nayati Measurements",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "2. Direct Nayati Measurements",
+        "line_start": 41,
+        "line_end": 65
+      }
+    },
+    {
+      "statement": "Historical study-period urgent requests:\n\n```text\n2,022 total requests × 73%\n≈ 1,476 urgent requests\n```\n\nThis is a calculated figure from the study's reported 73% proportion.\n\nIt should be treated as:\n\n> **~1,476 urgent requests during the one-year study period**\n\nnot as a current 2026 Nayati volume.\n\n---",
+      "research_location": "OPP-013-03.md#Urgent-Case Volume",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "3. Urgent-Case Volume",
+        "line_start": 66,
+        "line_end": 84
+      }
+    },
+    {
+      "statement": "For the ~1,476 urgent requests, applying the study's average external delay of 72 minutes gives:\n\n```text\n1,476 × 72 minutes\n≈ 106,272 minutes\n≈ 1,771 hours\n```",
+      "research_location": "OPP-013-03.md#Time Exposure",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "4. Time Exposure",
+        "line_start": 85,
+        "line_end": 94
+      }
+    },
+    {
+      "statement": "> **~1,771 hours of aggregate elapsed time across urgent cases**\n\nThis is **not 1,771 hours of staff labour**.\n\nIt represents the cumulative time during which urgent transfusion workflows were progressing through the non-blood-bank portions of the process.\n\n---",
+      "research_location": "OPP-013-03.md#Historical time-exposure proxy:",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "Historical time-exposure proxy:",
+        "line_start": 95,
+        "line_end": 104
+      }
+    },
+    {
+      "statement": "The largest single non-blood-bank component was:\n\n**34 minutes**\n\nApplying that to the ~1,476 urgent requests:\n\n```text\n1,476 × 34\n≈ 50,184 minutes\n≈ 836 hours\n```",
+      "research_location": "OPP-013-03.md#Sample-Transport Exposure",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "5. Sample-Transport Exposure",
+        "line_start": 105,
+        "line_end": 118
+      }
+    },
+    {
+      "statement": "> **~836 hours**\n\nAgain, this is elapsed workflow time, not courier labour.\n\nThe study specifically identifies courier availability as the plausible contributor to the requisitioning delay and describes the courier as a multipurpose hospital worker.\n\n---",
+      "research_location": "OPP-013-03.md#Historical transport-stage time exposure:",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "Historical transport-stage time exposure:",
+        "line_start": 119,
+        "line_end": 128
+      }
+    },
+    {
+      "statement": "The median time from blood release to transfusion commencement was:\n\n**25 minutes**\n\nUsing the same historical urgent-request proxy:\n\n```text\n1,476 × 25\n≈ 36,900 minutes\n≈ 615 hours\n```",
+      "research_location": "OPP-013-03.md#Post-Issue Exposure",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "6. Post-Issue Exposure",
+        "line_start": 129,
+        "line_end": 142
+      }
+    },
+    {
+      "statement": "> **~615 hours**\n\nBut the study does **not** establish that this entire period is avoidable.\n\nIt includes legitimate bedside preparation and verification.\n\nTherefore it should not be treated as addressable automation time without primary evidence.\n\n---",
+      "research_location": "OPP-013-03.md#Historical post-issue time exposure:",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "Historical post-issue time exposure:",
+        "line_start": 143,
+        "line_end": 154
+      }
+    },
+    {
+      "statement": "The strongest addressable component is not the entire 72 minutes.\n\nIt is the portion where:\n\n```text\nTASK IS READY\n      ↓\nOWNER / TRANSPORT NOT AVAILABLE\n      ↓\nTASK WAITS\n      ↓\nSOMEONE MUST COORDINATE\n```\n\nThe clearest direct example is sample transport.\n\nThe study identifies courier availability as the plausible reason for the 34-minute requisitioning delay.\n\nTherefore:\n\n> **Transport coordination is the first candidate for addressable automation.**\n\n---",
+      "research_location": "OPP-013-03.md#Where the Automation Case Is Strongest",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "7. Where the Automation Case Is Strongest",
+        "line_start": 155,
+        "line_end": 180
+      }
+    },
+    {
+      "statement": "We cannot calculate actual Nayati ROI because we do not know:\n\n- current 2026 volume;\n- current failure/delay rate;\n- current staff involvement;\n- current software;\n- current automation;\n- actual avoidable delay.\n\nInstead use a sensitivity model.\n\nAssume only a fraction of the 34-minute sample-transport delay is realistically addressable through better coordination:\n\n| Addressable fraction | Minutes potentially reduced/request | Historical hours across ~1,476 urgent requests |\n|---|---:|---:|\n| 10% | 3.4 min | ~84 hours |\n| 25% | 8.5 min | ~209 hours |\n| 50% | 17 min | ~418 hours |\n| 75% | 25.5 min | ~627 hours |\n\nThese are **hypothetical scenario outputs**, not observed savings.\n\n---",
+      "research_location": "OPP-013-03.md#Hypothesis ROI Model",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "8. Hypothesis ROI Model",
+        "line_start": 181,
+        "line_end": 206
+      }
+    },
+    {
+      "statement": "Suppose we assumed:\n\n```text\n10 minutes of staff labour saved\n×\n1,476 urgent requests\n```\n\nThat would produce a large number, but it would be fabricated unless the hospital confirms that staff actively spend 10 minutes per case.\n\nThe evidence only supports:\n\n> **There is a measurable delay and at least one documented coordination bottleneck.**\n\nTherefore the correct current economic model is:\n\n```text\nTIME EXPOSURE\n        ↓\nPOTENTIALLY ADDRESSABLE DELAY\n        ↓\nPRIMARY VALIDATION\n        ↓\nACTUAL HUMAN MINUTES\n        ↓\nACTUAL ROI\n```\n\nThis is much more defensible.\n\n---",
+      "research_location": "OPP-013-03.md#Why This Is Better Than Inventing Labour ROI",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "9. Why This Is Better Than Inventing Labour ROI",
+        "line_start": 207,
+        "line_end": 240
+      }
+    },
+    {
+      "statement": "The study describes blood transfusion as a lifesaving procedure and concludes that reducing delay has potential value.\n\nTherefore the value proposition has three possible layers:",
+      "research_location": "OPP-013-03.md#Clinical / Operational Value",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "10. Clinical / Operational Value",
+        "line_start": 241,
+        "line_end": 246
+      }
+    },
+    {
+      "statement": "Reduce avoidable waiting.",
+      "research_location": "OPP-013-03.md#Layer 1 — Time",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "Layer 1 — Time",
+        "line_start": 247,
+        "line_end": 250
+      }
+    },
+    {
+      "statement": "Reduce manual chasing across:\n\n- nurse;\n- courier;\n- blood bank;\n- ward;\n- bedside staff.",
+      "research_location": "OPP-013-03.md#Layer 2 — Coordination",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "Layer 2 — Coordination",
+        "line_start": 251,
+        "line_end": 260
+      }
+    },
+    {
+      "statement": "Reduce the chance that a time-critical transfusion remains unnecessarily delayed.\n\nOnly Layer 1 can currently be partially modelled.\n\nLayer 2 requires operational validation.\n\nLayer 3 should not be monetized or claimed as an ART outcome without evidence.\n\n---",
+      "research_location": "OPP-013-03.md#Layer 3 — Safety",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "Layer 3 — Safety",
+        "line_start": 261,
+        "line_end": 272
+      }
+    },
+    {
+      "statement": "A separate study of intraoperative RBC requests found:\n\n- **387 RBC-product requests**;\n- mean TAT **19.4 minutes**;\n- **31 cases (14.1%)** exceeded the institution's >30-minute threshold;\n- delayed courier arrival contributed to delay alongside prolonged compatibility testing.\n\nThis independently supports the idea that:\n\n> **Courier/transport coordination can be a measurable contributor to blood-product delay.**\n\nBut this is not Nayati data.\n\n---",
+      "research_location": "OPP-013-03.md#Industry Benchmark Signal",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "11. Industry Benchmark Signal",
+        "line_start": 273,
+        "line_end": 289
+      }
+    },
+    {
+      "statement": "This opportunity is not necessarily a generic:\n\n> **“Blood transfusion automation platform.”**\n\nThat would be too broad.\n\nThe stronger initial wedge is:\n\n> **Urgent clinical logistics orchestration around blood/sample movement and transfusion milestones.**\n\nPotential first workflow:\n\n```text\nURGENT BLOOD REQUEST\n        ↓\nSAMPLE READY\n        ↓\nASSIGN / FIND TRANSPORT\n        ↓\nTRACK PICKUP\n        ↓\nTRACK BLOOD BANK RECEIPT\n        ↓\nTRACK UNIT READY\n        ↓\nTRACK DELIVERY\n        ↓\nTRACK TRANSFUSION START\n        ↓\nESCALATE STUCK CASES\n```\n\nThis is operationally narrower and easier to validate.\n\n---",
+      "research_location": "OPP-013-03.md#Important Commercial Insight",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "12. Important Commercial Insight",
+        "line_start": 290,
+        "line_end": 327
+      }
+    },
+    {
+      "statement": "The historical Nayati study confirms that the HIS recorded important timestamps, including ordering/sample-label events and blood-bank receipt.\n\nTherefore:\n\n```text\nDIGITAL EVENT DATA\n        +\nPHYSICAL HANDOFFS\n        ↓\nCOORDINATION GAP\n```\n\nmay be the key opportunity.\n\nART would potentially sit above existing systems to answer:\n\n> **“Which urgent transfusion is currently stuck, where is it stuck, who owns the next action, and how long has it been waiting?”**\n\n---",
+      "research_location": "OPP-013-03.md#Existing-System Boundary",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "13. Existing-System Boundary",
+        "line_start": 328,
+        "line_end": 349
+      }
+    },
+    {
+      "statement": "| ROI component | Status |\n|---|---|\n| Historical urgent-case volume | **Measured / derived** |\n| Historical total TAT | **Measured** |\n| Historical external delay | **Measured** |\n| Historical sample-transport delay | **Measured** |\n| Addressable fraction | **Hypothesis** |\n| Staff labour per exception | **Unknown** |\n| Current automation | **Unknown** |\n| Current avoidable delay | **Unknown** |\n| Current financial value | **Unknown** |\n| Patient-safety benefit | **Plausible but unquantified** |\n\n---",
+      "research_location": "OPP-013-03.md#Current ROI Status",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "14. Current ROI Status",
+        "line_start": 350,
+        "line_end": 366
+      }
+    },
+    {
+      "statement": "Downgrade the opportunity if current validation shows:\n\n```text\nCURRENT TRANSPORT IS ALREADY FAST\n+\nAUTOMATED TASK ASSIGNMENT EXISTS\n+\nREAL-TIME STATUS EXISTS\n+\nAUTOMATIC ESCALATION EXISTS\n+\nLOW CURRENT DELAY\n```\n\nAlso downgrade if:\n\n> the 34-minute historical delay was caused primarily by physical constraints that software cannot materially change.\n\nThis is important.\n\nART cannot create additional couriers or physically transport blood.\n\n---",
+      "research_location": "OPP-013-03.md#Kill / Downgrade Conditions",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "15. Kill / Downgrade Conditions",
+        "line_start": 367,
+        "line_end": 392
+      }
+    },
+    {
+      "statement": "The opportunity strengthens if primary validation finds:\n\n```text\nURGENT REQUEST\n      ↓\nSAMPLE READY\n      ↓\nNO ASSIGNED TRANSPORT OWNER\n      ↓\nWAIT\n      ↓\nNURSE / STAFF MANUALLY CHASE\n      ↓\nCOURIER FOUND\n      ↓\nTRANSPORT\n```\n\nand/or:\n\n```text\nUNIT READY\n      ↓\nNO COLLECTION / DELIVERY OWNER\n      ↓\nWAIT\n      ↓\nSTAFF CALL / MESSAGE\n      ↓\nESCALATE\n      ↓\nUNIT REACHES WARD\n```\n\nThose are direct automation surfaces.\n\n---",
+      "research_location": "OPP-013-03.md#Strong Opportunity Conditions",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "16. Strong Opportunity Conditions",
+        "line_start": 393,
+        "line_end": 432
+      }
+    },
+    {
+      "statement": "The evidence supports:\n\n```text\n~1,476 historical urgent requests\n        +\n135-minute average total TAT\n        +\n72-minute external delay\n        +\n34-minute sample transport delay\n        +\ndocumented courier-availability issue\n        +\nindustry evidence of courier-related delay\n```\n\nBut:\n\n> **Do not convert elapsed delay into labour savings without primary evidence.**\n\nThe opportunity remains attractive because the workflow has high consequence and a concrete coordination bottleneck.\n\n---",
+      "research_location": "OPP-013-03.md#PASS → HIGH TIME-EXPOSURE SIGNAL",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "PASS → HIGH TIME-EXPOSURE SIGNAL",
+        "line_start": 435,
+        "line_end": 460
+      }
+    },
+    {
+      "statement": "Primary validation should determine only:\n\n1. Current urgent transfusion requests/month.\n2. Current sample-transport delay.\n3. Whether a courier/transport task is manually assigned.\n4. Who detects an overdue sample.\n5. Whether staff call/chase transport.\n6. Whether unit delivery is manually tracked.\n7. Whether the HIS exposes live milestone status.\n8. Whether automatic escalation exists.\n9. Current avoidable delay.\n10. Whether management considers the delay material.\n\nThe decisive question:\n\n> **“When an urgent blood sample or issued unit is not moving within the expected time, does the hospital system automatically identify and escalate the stuck task, or does a staff member have to find and chase the responsible person?”**\n\n---",
+      "research_location": "OPP-013-03.md#OPP-013-04 — Direct Operational Evidence / Pain Validation",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "OPP-013-04 — Direct Operational Evidence / Pain Validation",
+        "line_start": 463,
+        "line_end": 483
+      }
+    },
+    {
+      "statement": "[PubMed — Turnaround Time for Red Blood Cell Transfusion](https://pubmed.ncbi.nlm.nih.gov/30662219/)\n\n**Evidence:** 2,022 requests; 73% urgent; 135-minute average TAT; 63-minute blood-bank delay; 72-minute outside-blood-bank delay.",
+      "research_location": "OPP-013-03.md#E-001 — Direct Nayati Study",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/30662219/"
+      ],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "E-001 — Direct Nayati Study",
+        "line_start": 486,
+        "line_end": 491
+      }
+    },
+    {
+      "statement": "[PMC — Turnaround Time for Red Blood Cell Transfusion](https://pmc.ncbi.nlm.nih.gov/articles/PMC6311979/)\n\n**Evidence:** 13-minute ordering; 34-minute sample/requisition transport; 55-minute compatibility testing; 8-minute issue process; 25-minute post-issue-to-transfusion time; study limitations; HIS timestamping.",
+      "research_location": "OPP-013-03.md#E-002 — Full Nayati Study",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6311979/"
+      ],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "E-002 — Full Nayati Study",
+        "line_start": 492,
+        "line_end": 497
+      }
+    },
+    {
+      "statement": "[PMC — Intraoperative Red Blood Cell Issue TAT](https://pmc.ncbi.nlm.nih.gov/articles/PMC5907900/)\n\n**Evidence:** 14.1% exceeded >30-minute threshold; prolonged compatibility testing and delayed courier arrival contributed to delay.\n\n---",
+      "research_location": "OPP-013-03.md#E-003 — Independent Courier Delay Evidence",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5907900/"
+      ],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "E-003 — Independent Courier Delay Evidence",
+        "line_start": 498,
+        "line_end": 505
+      }
+    },
+    {
+      "statement": "- 2,022 requests.\n- 73% urgent.\n- 135-minute average TAT.\n- 72-minute external delay.\n- 34-minute sample/requisition transport.\n- 25-minute post-issue-to-transfusion period.\n- HIS timestamping.\n- courier availability identified as a plausible transport-delay factor.",
+      "research_location": "OPP-013-03.md#Direct Nayati measurements",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "Direct Nayati measurements",
+        "line_start": 508,
+        "line_end": 518
+      }
+    },
+    {
+      "statement": "- ~1,476 urgent requests.\n- ~1,771 hours of external elapsed-time exposure.\n- ~836 hours of sample-transport exposure.\n- ~615 hours of post-issue exposure.",
+      "research_location": "OPP-013-03.md#Derived calculations",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "Derived calculations",
+        "line_start": 519,
+        "line_end": 525
+      }
+    },
+    {
+      "statement": "- 10–75% addressable share of sample-transport delay.\n- ~84–627 potentially addressable elapsed hours.",
+      "research_location": "OPP-013-03.md#Hypothetical scenario modelling",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "Hypothetical scenario modelling",
+        "line_start": 526,
+        "line_end": 530
+      }
+    },
+    {
+      "statement": "- Current 2026 volume.\n- Current delay.\n- Current staff labour.\n- Current system capability.\n- Current automation.\n- Current avoidable fraction.\n- Actual financial ROI.\n- Actual patient-safety impact.\n\n---",
+      "research_location": "OPP-013-03.md#Unknown",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "Unknown",
+        "line_start": 531,
+        "line_end": 543
+      }
+    },
+    {
+      "statement": "```yaml\nartifact_type: opportunity_intelligence\nopportunity_id: OPP-013\ncompany: Nayati Medicity\nlocation: mathura_uttar_pradesh_india\nindustry: healthcare_hospital_operations\nworkflow: urgent_blood_transfusion_order_to_bedside_coordination\npain_type: patient_safety_time_critical_transfusion_delay\nresearch_stage: human_effort_pain_quantification\ndecision: pass_high_time_exposure_signal\n\ndirect_measurements:\n  requests: 2022\n  urgent_share: 73_percent\n  urgent_requests_derived: approximately_1476\n  average_total_tat: 135_minutes\n  outside_blood_bank_delay: 72_minutes\n  ordering_delay: 13_minutes\n  sample_transport_delay: 34_minutes\n  post_issue_to_transfusion: 25_minutes\n\nderived_time_exposure:\n  external_delay: approximately_1771_hours\n  sample_transport: approximately_836_hours\n  post_issue: approximately_615_hours\n\nhypothesis_addressable_sample_transport:\n  low_10_percent: approximately_84_hours\n  base_25_percent: approximately_209_hours\n  high_50_percent: approximately_418_hours\n  aggressive_75_percent: approximately_627_hours\n\ninterpretation:\n  delay_is_not_labour: true\n  labour_savings: unknown\n  safety_value: potentially_high_unquantified\n  strongest_wedge: urgent_transfusion_logistics_orchestration\n\ncurrent_automation: unknown\ncurrent_avoidable_delay: unknown\ncurrent_human_effort: unknown\ncapability_gap: unknown\ncustomer_roi: unknown\n\ncompany_pain_signal: strong_historical_measured_delay\nindustry_pain_signal: strong\nindustry_generalisability: high\nnext_checkpoint: OPP-013-04\ncommercial_status: discovery_continue\n```\n\n---",
+      "research_location": "OPP-013-03.md#AIL Compilation Metadata",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "AIL Compilation Metadata",
+        "line_start": 544,
+        "line_end": 598
+      }
+    },
+    {
+      "statement": "> **The Nayati study provides a strong measured time-exposure signal: approximately 1,476 urgent requests during the study year and 72 minutes of average delay outside the blood bank, including a 34-minute sample/requisition transport component. The study directly identifies courier availability as a plausible contributor. These figures quantify elapsed workflow exposure, not staff labour. The addressable automation fraction, current system capability and actual ROI remain unknown.**\n\n**OPP-013-03 = PASS → HIGH TIME-EXPOSURE SIGNAL**\n\n**Next: OPP-013-04 — Direct Operational Evidence / Pain Validation.**",
+      "research_location": "OPP-013-03.md#Integrity Statement",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-03.md",
+        "section": "Integrity Statement",
+        "line_start": 599,
+        "line_end": 605
+      }
+    },
+    {
+      "statement": "---\nid: OPP-013-04\nopportunity_id: OPP-013\nindustry: Healthcare / Hospital Operations\ncompany: Nayati Medicity, Mathura\nworkflow: Urgent Blood Transfusion Ordering-to-Bedside Coordination\nresearch_stage: Direct Operational Evidence / Pain Validation\nmethodology: Legacy VRL\nstatus: CONDITIONAL_PASS\ndecision: INDUSTRY_PAIN_VALIDATED_COMPANY_CURRENT_GAP_UNVERIFIED\ncompany_pain_signal: strong_historical_direct_evidence_current_state_unknown\nindustry_generalisability: high\ncurrent_pain_magnitude: unknown\ncurrent_capability_gap: unknown\ncustomer_roi: hypothesis_only\ncommercial_status: primary_validation_required\n---",
+      "research_location": "OPP-013-04.md#Front matter",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "Front matter",
+        "line_start": 1,
+        "line_end": 16
+      }
+    },
+    {
+      "statement": "**Company:** Nayati Medicity, Mathura  \n**Workflow:** Urgent Blood Transfusion Ordering-to-Bedside Coordination  \n**VRL checkpoint:** OPP-013-04  \n**Decision:** **CONDITIONAL PASS → Industry pain validated; current Nayati capability gap unverified**\n\n---",
+      "research_location": "OPP-013-04.md#OPP-013-04 — Direct Operational Evidence / Pain Validation",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "OPP-013-04 — Direct Operational Evidence / Pain Validation",
+        "line_start": 19,
+        "line_end": 27
+      }
+    },
+    {
+      "statement": "> **Do we have enough direct operational evidence to claim that Nayati currently has a material automation gap in urgent transfusion coordination?**",
+      "research_location": "OPP-013-04.md#Checkpoint Question",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "1. Checkpoint Question",
+        "line_start": 28,
+        "line_end": 31
+      }
+    },
+    {
+      "statement": "We have strong historical, company-specific evidence that the workflow contained material delay and human coordination problems.\n\nWe do **not** have current direct evidence proving that the same problem still exists at Nayati in 2026.\n\nTherefore:\n\n> **Do not mark the company-specific opportunity fully validated.**\n\nThe correct VRL outcome is **conditional pass → primary validation required**.\n\n---",
+      "research_location": "OPP-013-04.md#Answer: No.",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "Answer: No.",
+        "line_start": 32,
+        "line_end": 45
+      }
+    },
+    {
+      "statement": "The peer-reviewed Nayati Medicity study was conducted in the hospital's Department of Blood Transfusion Medicine and analysed **2,022 blood requests** over one year.\n\nThe study reported:\n\n- **73%** of requests marked urgent;\n- **135 minutes** average order-to-transfusion initiation;\n- approximately **63 minutes** inside blood-bank processing;\n- approximately **72 minutes** outside the blood bank;\n- **13 minutes** ordering;\n- **34 minutes** requisition/sample transport;\n- **55 minutes** compatibility testing;\n- **8 minutes** blood issue;\n- **25 minutes** from blood release to transfusion commencement.\n\nThis is strong direct historical evidence.\n\n---",
+      "research_location": "OPP-013-04.md#What Is Directly Proven",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "2. What Is Directly Proven",
+        "line_start": 46,
+        "line_end": 65
+      }
+    },
+    {
+      "statement": "The most actionable finding is the **34-minute requisition/sample transport delay**.\n\nThe study identifies arranging a courier as the most plausible reason for this delay and describes the courier as a multipurpose hospital worker whose duties also included patient transport, cleaning and medication-related tasks.\n\nThe direct workflow problem was therefore:\n\n```text\nTIME-SENSITIVE SAMPLE\n        ↓\nTRANSPORT REQUIRED\n        ↓\nSHARED COURIER\n        ↓\nCOURIER UNAVAILABLE\n        ↓\nWAIT\n        ↓\nTRANSPORT\n        ↓\nBLOOD BANK\n```\n\nThis is much stronger evidence than a generic statement that “hospital logistics are difficult.”\n\n---",
+      "research_location": "OPP-013-04.md#The Strongest Direct Pain Evidence",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "3. The Strongest Direct Pain Evidence",
+        "line_start": 66,
+        "line_end": 93
+      }
+    },
+    {
+      "statement": "The historical study also reports computerized hospital information-system involvement in the workflow, including timestamp capture for blood ordering/sample labelling and blood-bank receipt.\n\nTherefore the historical problem was not simply:\n\n> “There is no software.”\n\nThe potential boundary is:\n\n```text\nHIS / BLOOD BANK\n      ↓\nDIGITAL EVENT\n      ↓\nPHYSICAL HANDOFF\n      ↓\nOWNER / TRANSPORT\n      ↓\nWAIT\n      ↓\nESCALATION?\n```\n\nThis is the correct ART hypothesis.\n\n---",
+      "research_location": "OPP-013-04.md#Existing Digital Infrastructure",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "4. Existing Digital Infrastructure",
+        "line_start": 94,
+        "line_end": 121
+      }
+    },
+    {
+      "statement": "The study is historical.\n\nIt does **not** establish:\n\n- Nayati's current 2026 HIS;\n- current blood-bank software;\n- current courier allocation;\n- current transport workflow;\n- current TAT;\n- current exception monitoring;\n- current automatic escalation;\n- current human follow-up;\n- current unresolved urgent cases.\n\nThese must remain:\n\n**UNKNOWN**\n\nuntil primary validation.\n\n---",
+      "research_location": "OPP-013-04.md#Current-State Verification Problem",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "5. Current-State Verification Problem",
+        "line_start": 122,
+        "line_end": 145
+      }
+    },
+    {
+      "statement": "Current public sources still identify a Nayati blood bank in Mathura.\n\nThe Uttar Pradesh State Blood Transfusion Council lists **Nayati Blood Bank** among blood centres in Mathura.\n\nNABH's historical accreditation record also identifies Nayati Blood Bank at Nayati Multi Super Specialty Hospital, Mathura, with component-blood-bank scope including RBCs, platelets, cryoprecipitate and FFP.\n\nThese sources establish that the relevant blood-bank function exists, but they **do not validate the current coordination pain**.\n\n---",
+      "research_location": "OPP-013-04.md#Current Public Evidence",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "6. Current Public Evidence",
+        "line_start": 146,
+        "line_end": 157
+      }
+    },
+    {
+      "statement": "Independent Indian evidence identifies similar transfusion delays involving:\n\n- delayed blood-unit retrieval;\n- ward communication;\n- lifting blood units;\n- transfusion preparation;\n- unclear responsibility;\n- transport/courier delays.\n\nThis means the underlying workflow problem is not dependent on Nayati alone.\n\nThe industry opportunity can therefore survive even if Nayati has already improved its process.\n\n---",
+      "research_location": "OPP-013-04.md#Industry Pain Is Strongly Supported",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "7. Industry Pain Is Strongly Supported",
+        "line_start": 158,
+        "line_end": 174
+      }
+    },
+    {
+      "statement": "Do **not** define the opportunity as:\n\n> “Nayati has a blood-transfusion problem.”\n\nDefine it as:\n\n> **“Indian hospitals can have time-critical transfusion workflows where physical and digital handoffs create invisible waiting states, requiring humans to identify the stuck task, locate the responsible person and coordinate the next action.”**\n\nNayati is the **evidence entry point**.\n\nThe market opportunity is the repeatable workflow pattern across hospitals.\n\n---",
+      "research_location": "OPP-013-04.md#The Opportunity Should Now Be Reframed",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "8. The Opportunity Should Now Be Reframed",
+        "line_start": 175,
+        "line_end": 190
+      }
+    },
+    {
+      "statement": "The decisive question is:\n\n> **“When an urgent blood sample or issued blood unit does not move within the expected time, does the hospital system automatically identify the stuck workflow and escalate it to the responsible person, or does staff have to manually find and chase the person responsible?”**\n\nThis question directly tests the proposed ART boundary.\n\n---",
+      "research_location": "OPP-013-04.md#Primary Validation Test",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "9. Primary Validation Test",
+        "line_start": 191,
+        "line_end": 200
+      }
+    },
+    {
+      "statement": "Do not conduct a long generic interview.\n\nAsk these **8 questions**:",
+      "research_location": "OPP-013-04.md#Minimum Questions for Nayati",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "10. Minimum Questions for Nayati",
+        "line_start": 201,
+        "line_end": 206
+      }
+    },
+    {
+      "statement": "How many urgent blood requests does the hospital handle approximately per month?",
+      "research_location": "OPP-013-04.md#Q1",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "Q1",
+        "line_start": 207,
+        "line_end": 209
+      }
+    },
+    {
+      "statement": "After an urgent blood sample is ready, how is transport assigned?",
+      "research_location": "OPP-013-04.md#Q2",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "Q2",
+        "line_start": 210,
+        "line_end": 212
+      }
+    },
+    {
+      "statement": "Can the current system show whether the sample has actually reached the blood bank?",
+      "research_location": "OPP-013-04.md#Q3",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "Q3",
+        "line_start": 213,
+        "line_end": 215
+      }
+    },
+    {
+      "statement": "If the sample is not collected within the expected time, who notices it?",
+      "research_location": "OPP-013-04.md#Q4",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "Q4",
+        "line_start": 216,
+        "line_end": 218
+      }
+    },
+    {
+      "statement": "Does the system automatically notify/escalate the delay?",
+      "research_location": "OPP-013-04.md#Q5",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "Q5",
+        "line_start": 219,
+        "line_end": 221
+      }
+    },
+    {
+      "statement": "After blood is issued, can the system show whether the unit has reached the ward/patient location?",
+      "research_location": "OPP-013-04.md#Q6",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "Q6",
+        "line_start": 222,
+        "line_end": 224
+      }
+    },
+    {
+      "statement": "If an urgent transfusion is delayed, does someone maintain or monitor a pending exception list?",
+      "research_location": "OPP-013-04.md#Q7",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "Q7",
+        "line_start": 225,
+        "line_end": 227
+      }
+    },
+    {
+      "statement": "What part of this process still requires staff to call, message, locate or chase another person?\n\nThese questions are sufficient to establish the capability boundary.\n\n---",
+      "research_location": "OPP-013-04.md#Q8",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "Q8",
+        "line_start": 228,
+        "line_end": 234
+      }
+    },
+    {
+      "statement": "The strongest possible answer is:\n\n> **“The HIS records the order and blood-bank events, but when something gets stuck, staff still have to call the ward/courier/blood bank and manually follow it until completion.”**\n\nIf this is confirmed:\n\n**STRONG ART OPPORTUNITY**\n\n---",
+      "research_location": "OPP-013-04.md#Hard Validation Signal",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "11. Hard Validation Signal",
+        "line_start": 235,
+        "line_end": 246
+      }
+    },
+    {
+      "statement": "If the answer is:\n\n> “The current system automatically tracks the complete transfusion lifecycle, assigns transport, detects ageing and escalates overdue tasks.”\n\nthen:\n\n**NAYATI-SPECIFIC OPPORTUNITY → DOWNGRADE / KILL**\n\nDo not force the opportunity.\n\nInstead search another Indian hospital with the same workflow and lower automation maturity.\n\n---",
+      "research_location": "OPP-013-04.md#Strong Negative Signal",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "12. Strong Negative Signal",
+        "line_start": 247,
+        "line_end": 262
+      }
+    },
+    {
+      "statement": "If validated, the product should not attempt to replace:\n\n- blood-bank management;\n- compatibility testing;\n- transfusion medicine decisions;\n- clinical judgement;\n- patient identification protocols.\n\nThe automation layer should be:\n\n```text\nURGENT TRANSFUSION CASE\n        ↓\nEVENT INGESTION\n        ↓\nCURRENT STATE\n        ↓\nEXPECTED NEXT STATE\n        ↓\nAGEING\n        ↓\nSTUCK?\n   ↓ YES\nOWNER IDENTIFICATION\n        ↓\nNOTIFICATION\n        ↓\nACKNOWLEDGEMENT\n        ↓\nESCALATION\n        ↓\nRESOLUTION\n```\n\nThat is a defensible automation scope.\n\n---",
+      "research_location": "OPP-013-04.md#Potential Automation Boundary",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "13. Potential Automation Boundary",
+        "line_start": 263,
+        "line_end": 302
+      }
+    },
+    {
+      "statement": "This opportunity must be treated differently from ordinary hospital workflow automation.\n\nThe system should be designed as:\n\n> **coordination support**\n\nnot:\n\n> **clinical decision support**\n\nART should never infer:\n\n- whether transfusion should occur;\n- which blood product should be selected;\n- whether a patient is clinically stable;\n- whether a clinician's decision is correct.\n\nIt may only ensure that an already-authorised workflow does not silently stall.\n\n---",
+      "research_location": "OPP-013-04.md#Patient-Safety Boundary",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "14. Patient-Safety Boundary",
+        "line_start": 303,
+        "line_end": 325
+      }
+    },
+    {
+      "statement": "Current ROI remains:\n\n**UNKNOWN**\n\nDo not use the historical 135-minute TAT as a claimed savings opportunity.\n\nThe proper calculation after primary validation is:\n\n```text\nCURRENT URGENT CASES\n×\nCURRENT AVOIDABLE DELAY\n×\nCURRENT HUMAN COORDINATION COST\n+\nRISK / QUALITY VALUE\n=\nADDRESSABLE ECONOMIC VALUE\n```\n\nThe 2018/2019 historical study is evidence for **discovery**, not a current ROI baseline.\n\n---",
+      "research_location": "OPP-013-04.md#ROI Status",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "15. ROI Status",
+        "line_start": 326,
+        "line_end": 351
+      }
+    },
+    {
+      "statement": "| Question | Status |\n|---|---|\n| High-consequence workflow | **VERIFIED** |\n| Time-critical | **VERIFIED** |\n| Direct Nayati study | **VERIFIED** |\n| Historical delay | **VERIFIED** |\n| 34-minute transport delay | **VERIFIED** |\n| Courier availability issue | **VERIFIED** |\n| Existing digital event tracking | **VERIFIED** |\n| Industry recurrence | **VERIFIED** |\n| Current Nayati workflow | **UNKNOWN** |\n| Current Nayati automation | **UNKNOWN** |\n| Current stuck-case volume | **UNKNOWN** |\n| Current manual chasing | **UNKNOWN** |\n| Current escalation | **UNKNOWN** |\n| Current avoidable delay | **UNKNOWN** |\n| Current ROI | **UNKNOWN** |\n\n---",
+      "research_location": "OPP-013-04.md#Current VRL Evidence Matrix",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "16. Current VRL Evidence Matrix",
+        "line_start": 352,
+        "line_end": 373
+      }
+    },
+    {
+      "statement": "This is the correct endpoint for desk research.",
+      "research_location": "OPP-013-04.md#CONDITIONAL PASS → PRIMARY VALIDATION REQUIRED",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "CONDITIONAL PASS → PRIMARY VALIDATION REQUIRED",
+        "line_start": 376,
+        "line_end": 379
+      }
+    },
+    {
+      "statement": "**The workflow exists.**\n\n**The workflow is high consequence.**\n\n**The workflow is time sensitive.**\n\n**Historical Nayati evidence shows material distributed delay.**\n\n**A concrete human coordination bottleneck existed.**\n\n**The same workflow problem appears elsewhere in India.**",
+      "research_location": "OPP-013-04.md#We have proven:",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "We have proven:",
+        "line_start": 380,
+        "line_end": 393
+      }
+    },
+    {
+      "statement": "**Nayati currently has the same pain.**\n\n**Nayati currently lacks automation.**\n\n**Nayati currently has material manual effort.**\n\n**ART would produce a positive ROI.**\n\n---",
+      "research_location": "OPP-013-04.md#We have NOT proven:",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "We have NOT proven:",
+        "line_start": 394,
+        "line_end": 405
+      }
+    },
+    {
+      "statement": "This is important for VRL efficiency.\n\nDo **not** create:\n\n- OPP-013-05 capability triangulation;\n- OPP-013-06 residual work;\n- OPP-013-07 pain magnitude;\n- OPP-013-08 more evidence;\n- etc.\n\nThe discovery evidence is already sufficient.\n\nThe next evidence required is **primary operational evidence**.\n\nIf primary validation is postponed, OPP-013 should simply remain:\n\n> **PRIMARY VALIDATION PENDING**\n\nand the research pipeline should move to the next opportunity.\n\n---",
+      "research_location": "OPP-013-04.md#No More Desk-Research Checkpoints for OPP-013",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "18. No More Desk-Research Checkpoints for OPP-013",
+        "line_start": 406,
+        "line_end": 429
+      }
+    },
+    {
+      "statement": "The relevant function is:\n\n**Nayati Medicity → Department of Blood Transfusion Medicine / Hospital Operations / Quality**\n\nThe original study identifies:\n\n**Dr. Naveen Agnihotri — Department of Blood Transfusion Medicine, Nayati Medicity, Mathura**\n\nas the corresponding author.\n\nThe publication provides the institutional affiliation, but does not provide a current direct business phone number.\n\nA public directory currently lists Nayati Medicity telephone numbers, including **0565 667 5500**, but this is a third-party directory and should be treated as a routing lead rather than verified department contact information.\n\nDo **not** treat the public directory's named individuals or emails as verified operational owners.\n\n---",
+      "research_location": "OPP-013-04.md#Hard route",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "Hard route",
+        "line_start": 432,
+        "line_end": 451
+      }
+    },
+    {
+      "statement": "```text\nNAYATI MEDICITY\n      ↓\nHOSPITAL OPERATIONS / QUALITY\n      ↓\nBLOOD TRANSFUSION MEDICINE\n      ↓\nBLOOD BANK / TRANSFUSION WORKFLOW OWNER\n```\n\nThe research objective is not to sell software.\n\nIt is to verify:\n\n> **Where does an urgent transfusion get stuck today, and who has to manually resolve it?**\n\n---",
+      "research_location": "OPP-013-04.md#Recommended Reachout Routing",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "20. Recommended Reachout Routing",
+        "line_start": 452,
+        "line_end": 471
+      }
+    },
+    {
+      "statement": "**Opportunity primitive:**\n\n> **Time-critical clinical logistics orchestration**\n\n**Initial workflow:**\n\n> **Urgent blood transfusion ordering → sample movement → blood-bank processing → unit movement → bedside start**\n\n**Primary evidence entry point:**\n\n> **Nayati Medicity, Mathura**\n\n**Current status:**\n\n> **Industry pain validated; company current-state validation pending.**\n\n**Commercial confidence:**\n\n> **Medium — strong workflow evidence, weak current-state evidence.**\n\n---",
+      "research_location": "OPP-013-04.md#OPP-013",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "OPP-013",
+        "line_start": 474,
+        "line_end": 497
+      }
+    },
+    {
+      "statement": "[PMC — Turnaround Time for Red Blood Cell Transfusion](https://pmc.ncbi.nlm.nih.gov/articles/PMC6311979/)\n\nDirect evidence for the historical workflow, delay components, courier issue and HIS timestamps.",
+      "research_location": "OPP-013-04.md#E-001 — Direct Nayati Study",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6311979/"
+      ],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "E-001 — Direct Nayati Study",
+        "line_start": 500,
+        "line_end": 505
+      }
+    },
+    {
+      "statement": "[PubMed — Nayati Medicity Blood Transfusion TAT Study](https://pubmed.ncbi.nlm.nih.gov/30662219/)\n\nDirect hospital affiliation and published study record.",
+      "research_location": "OPP-013-04.md#E-002 — PubMed Record",
+      "source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/30662219/"
+      ],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "E-002 — PubMed Record",
+        "line_start": 506,
+        "line_end": 511
+      }
+    },
+    {
+      "statement": "[State Blood Transfusion Council Uttar Pradesh — Blood Centre Locations](https://sbtcup.org/BloodCenterLocation.aspx)\n\nCurrent listing of Nayati Blood Bank in Mathura.",
+      "research_location": "OPP-013-04.md#E-003 — Current Blood-Centre Listing",
+      "source_urls": [
+        "https://sbtcup.org/BloodCenterLocation.aspx"
+      ],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "E-003 — Current Blood-Centre Listing",
+        "line_start": 512,
+        "line_end": 517
+      }
+    },
+    {
+      "statement": "[NABH — Nayati Blood Bank](https://portal.nabh.co/Documents/AccreditedList/Blood%20Bank/BB-2017-0096.pdf)\n\nHistorical accreditation scope for the Nayati Blood Bank.",
+      "research_location": "OPP-013-04.md#E-004 — NABH Accreditation Record",
+      "source_urls": [
+        "https://portal.nabh.co/Documents/AccreditedList/Blood%20Bank/BB-2017-0096.pdf"
+      ],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "E-004 — NABH Accreditation Record",
+        "line_start": 518,
+        "line_end": 523
+      }
+    },
+    {
+      "statement": "[Public Nayati Medicity listing](https://www.bharatibiz.com/en/nayati-medicity_1m-070885-65565)\n\nThird-party routing information only; not treated as verified departmental contact evidence.\n\n---",
+      "research_location": "OPP-013-04.md#E-005 — Public Hospital Contact Lead",
+      "source_urls": [
+        "https://www.bharatibiz.com/en/nayati-medicity_1m-070885-65565"
+      ],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "E-005 — Public Hospital Contact Lead",
+        "line_start": 524,
+        "line_end": 531
+      }
+    },
+    {
+      "statement": "```yaml\nartifact_type: opportunity_intelligence\nopportunity_id: OPP-013\ncompany: Nayati Medicity\nlocation: mathura_uttar_pradesh_india\nindustry: healthcare_hospital_operations\nworkflow: urgent_blood_transfusion_order_to_bedside_coordination\npain_type: patient_safety_time_critical_transfusion_delay\nresearch_stage: direct_operational_evidence_pain_validation\ndecision: conditional_pass_primary_validation_required\n\nhistorical_company_evidence:\n  requests: 2022\n  urgent_share: 73_percent\n  average_tat: 135_minutes\n  outside_blood_bank_delay: 72_minutes\n  sample_transport_delay: 34_minutes\n  courier_availability_issue: true\n  his_event_tracking: true\n\nindustry_pain: validated\ncurrent_company_pain: unverified\ncurrent_company_automation: unknown\ncurrent_manual_followup: unknown\ncurrent_escalation: unknown\ncurrent_avoidable_delay: unknown\ncustomer_roi: unknown\n\nprimary_validation_required: true\nprimary_validation_owner:\n  department: blood_transfusion_medicine_or_hospital_operations_or_quality\n  corresponding_researcher: dr_naveen_agnihotri\n\ncommercial_confidence: medium\ncommercial_status: primary_validation_pending\nnext_action: direct_primary_validation_or_move_to_next_discovery\n```\n\n---",
+      "research_location": "OPP-013-04.md#AIL Compilation Metadata",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "AIL Compilation Metadata",
+        "line_start": 532,
+        "line_end": 573
+      }
+    },
+    {
+      "statement": "> **OPP-013 has reached the efficient desk-research boundary. The historical Nayati evidence is strong enough to validate the workflow and industry pain hypothesis, but not strong enough to claim a current Nayati automation gap. Additional desk research would mostly produce diminishing returns. The correct next evidence is primary operational validation.**\n\n**OPP-013-04 = CONDITIONAL PASS → PRIMARY VALIDATION REQUIRED**\n\n**OPP-013 should now be marked `PRIMARY_VALIDATION_PENDING`, not expanded into additional VRL desk-research checkpoints.**",
+      "research_location": "OPP-013-04.md#Integrity Statement",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-013-04.md",
+        "section": "Integrity Statement",
+        "line_start": 574,
+        "line_end": 580
+      }
+    }
+  ]
+}

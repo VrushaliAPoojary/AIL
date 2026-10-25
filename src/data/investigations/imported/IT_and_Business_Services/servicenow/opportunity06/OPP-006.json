@@ -1,0 +1,329 @@
+{
+  "investigation_id": "AOI-SNOW-OPP-006",
+  "company": "ServiceNow",
+  "industry": "UNKNOWN",
+  "opportunity": "Field-Service Policy-Arbitration Decision",
+  "investigation_type": "Discovery; conflict reconstruction; dispatcher judgment; policy selection; complexity test; residual arbitration test",
+  "research_status": "KILLED",
+  "primary_question": "UNKNOWN",
+  "presentation": {
+    "investigation_summary": "Auto-generated summary from compiler.",
+    "key_findings": []
+  },
+  "decision": {
+    "decision": "KILL",
+    "reason": "KILLED — residual ServiceNow gap not established",
+    "reusable_intelligence": [],
+    "provenance": {
+      "source_file": "UNKNOWN",
+      "section": "UNKNOWN",
+      "line_start": null,
+      "line_end": null
+    }
+  },
+  "sources": [
+    {
+      "id": "inv-default-src-1",
+      "title": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/create-policies-schedule-optimization.html",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/create-policies-schedule-optimization.html",
+      "source_type": "URL",
+      "used_by": []
+    },
+    {
+      "id": "inv-default-src-2",
+      "title": "https://www.servicenow.com/docs/r/field-service-management/hard-soft-constraints.html",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/hard-soft-constraints.html",
+      "source_type": "URL",
+      "used_by": []
+    },
+    {
+      "id": "inv-default-src-3",
+      "title": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-on-demand-optimization.html",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-on-demand-optimization.html",
+      "source_type": "URL",
+      "used_by": []
+    },
+    {
+      "id": "inv-default-src-4",
+      "title": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-intraday-optimization.html",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-intraday-optimization.html",
+      "source_type": "URL",
+      "used_by": []
+    },
+    {
+      "id": "inv-default-src-5",
+      "title": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/Configure-dynamic-scheduling.html",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/Configure-dynamic-scheduling.html",
+      "source_type": "URL",
+      "used_by": []
+    },
+    {
+      "id": "inv-default-src-6",
+      "title": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/prevent-excluded-agents.html",
+      "url": "https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/prevent-excluded-agents.html",
+      "source_type": "URL",
+      "used_by": []
+    },
+    {
+      "id": "inv-default-src-7",
+      "title": "https://doi.org/10.1016/j.cor.2020.104908",
+      "url": "https://doi.org/10.1016/j.cor.2020.104908",
+      "source_type": "URL",
+      "used_by": []
+    },
+    {
+      "id": "inv-default-src-8",
+      "title": "https://doi.org/10.1016/j.cor.2021.105472",
+      "url": "https://doi.org/10.1016/j.cor.2021.105472",
+      "source_type": "URL",
+      "used_by": []
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "inv-default-chk-1",
+      "title": "OPP-006 — Field-Service Policy-Arbitration Decision",
+      "status": "UNKNOWN",
+      "investigation_question": "UNKNOWN",
+      "tested": "UNKNOWN",
+      "found": "UNKNOWN",
+      "what_changed": "UNKNOWN",
+      "resulting_state": "UNKNOWN",
+      "evidence_refs": [],
+      "source_refs": [],
+      "provenance": {
+        "source_file": "/home/chiranjeevi/Documents/art-investigation-lab(AIL)/research/imported/IT_and_Business_Services/servicenow/opportunity06/opportunity.md",
+        "section": "UNKNOWN",
+        "line_start": 1,
+        "line_end": 1
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "inv-default-sec-2-evd-1",
+      "statement": "| Field | Value |\n|---|---|\n| Object ID | `AOI-SNOW-OPP-006` |\n| Company | ServiceNow |\n| Original opportunity | Field Service Exception Decision Intelligence |\n| Refined opportunity | Residual policy-arbitration intelligence |\n| Scope | Whether complex field-service context creates recurring human policy-selection burden beyond finite policies, objectives, constraints, overrides, and optimization |\n| Checkpoints | [`OPP-006-01`](./OPP-006-01.md) → [`OPP-006-02`](./OPP-006-02.md) → [`OPP-006-03`](./OPP-006-03.md) → [`OPP-006-04`](./OPP-006-04.md) → [`OPP-006-05`](./OPP-006-05.md) → [`OPP-006-06`](./OPP-006-06.md) |\n| Investigation types | Discovery; conflict reconstruction; dispatcher judgment; policy selection; complexity test; residual arbitration test |\n| Research status | KILLED — residual ServiceNow gap not established |\n| AOI decision | KILL |\n| AIL status | NOT READY FOR AIL |\n| Evidence classification | VERIFIED EXTERNAL EVIDENCE; DIRECT EVIDENCE; INFERENCE; HYPOTHESIS; UNKNOWN |\n| Generation metadata | AOI Representation Compiler v0.2; generated 2026-08-20; canonical Markdown only |",
+      "classification": "OBSERVED",
+      "source": "UNKNOWN",
+      "provenance": {
+        "source_file": "/home/chiranjeevi/Documents/art-investigation-lab(AIL)/research/imported/IT_and_Business_Services/servicenow/opportunity06/opportunity.md",
+        "section": "UNKNOWN",
+        "line_start": 5,
+        "line_end": 18
+      }
+    },
+    {
+      "id": "inv-default-sec-3-evd-1",
+      "statement": "Field-service scheduling complexity, competing objectives, changing conditions, policy variation, and human exceptions are real. Current ServiceNow evidence shows policies, weighted objectives, hard/soft constraints, dynamic and intraday optimization, policy switching, contextual overrides, preferred technicians, appointment overrides, and manual exceptions. The proposed recurring material policy-arbitration burden was not established.",
+      "classification": "OBSERVED",
+      "source": "UNKNOWN",
+      "provenance": {
+        "source_file": "/home/chiranjeevi/Documents/art-investigation-lab(AIL)/research/imported/IT_and_Business_Services/servicenow/opportunity06/opportunity.md",
+        "section": "UNKNOWN",
+        "line_start": 22,
+        "line_end": 22
+      }
+    },
+    {
+      "id": "inv-default-sec-4-evd-1",
+      "statement": "1. Field-service exceptions may expose a new decision domain.\n2. Real conflicts and multi-objective dispatcher judgment were verified.\n3. The hypothesis narrowed to context-dependent policy selection and then policy explosion/arbitration.\n4. Native capability testing showed the platform can encode objectives, constraints, policies, dynamic reoptimization, context variation, and human override.\n5. **Final:** recurring material customer burden and ServiceNow-specific gap remain NOT ESTABLISHED. **KILL.**",
+      "classification": "OBSERVED",
+      "source": "UNKNOWN",
+      "provenance": {
+        "source_file": "/home/chiranjeevi/Documents/art-investigation-lab(AIL)/research/imported/IT_and_Business_Services/servicenow/opportunity06/opportunity.md",
+        "section": "UNKNOWN",
+        "line_start": 26,
+        "line_end": 30
+      }
+    },
+    {
+      "id": "inv-default-sec-5-evd-1",
+      "statement": "| Finding | Classification | Effect |\n|---|---|---|\n| Multi-skill, multi-objective field-service scheduling | VERIFIED EXTERNAL EVIDENCE | Underlying complexity is real. |\n| Policies, objectives, weights, and constraints | DIRECT EVIDENCE | Core decision representation is native. |\n| Dynamic and intraday optimization | DIRECT EVIDENCE | Changing conditions are supported. |\n| Dispatcher-selected policy and contextual overrides | DIRECT EVIDENCE | Policy adaptation is supported. |\n| Manual exception and preference mechanisms | DIRECT EVIDENCE | Human involvement is designed into the workflow. |\n| Policy explosion, recurring error, material loss | UNKNOWN / NOT ESTABLISHED | Residual opportunity fails. |",
+      "classification": "OBSERVED",
+      "source": "UNKNOWN",
+      "provenance": {
+        "source_file": "/home/chiranjeevi/Documents/art-investigation-lab(AIL)/research/imported/IT_and_Business_Services/servicenow/opportunity06/opportunity.md",
+        "section": "UNKNOWN",
+        "line_start": 34,
+        "line_end": 41
+      }
+    },
+    {
+      "id": "inv-default-sec-6-evd-1",
+      "statement": "| Pattern | Intelligence | Classification |\n|---|---|---|\n| Policy + objective + constraint stack | `POLICY → OBJECTIVES + WEIGHTS + CONSTRAINTS → OPTIMIZATION` | DIRECT EVIDENCE |\n| Automatic reoptimization + human exception | Normal conditions automate; material exceptions permit dispatcher policy change or override; reoptimize. | DIRECT EVIDENCE |\n| Contextual configuration overrides | Group, territory, time, and attribute context can change behavior. | DIRECT EVIDENCE |\n| Configuration-first falsification | Test policy, objective, constraint, override, automation, and human-exception surfaces before claiming an AI gap. | REUSABLE RESEARCH METHODOLOGY |",
+      "classification": "OBSERVED",
+      "source": "UNKNOWN",
+      "provenance": {
+        "source_file": "/home/chiranjeevi/Documents/art-investigation-lab(AIL)/research/imported/IT_and_Business_Services/servicenow/opportunity06/opportunity.md",
+        "section": "UNKNOWN",
+        "line_start": 45,
+        "line_end": 50
+      }
+    },
+    {
+      "id": "inv-default-sec-7-evd-1",
+      "statement": "**KILL OPP-006.** Do not create another field-service checkpoint or convert it to AIL. Start a new decision domain.",
+      "classification": "OBSERVED",
+      "source": "UNKNOWN",
+      "provenance": {
+        "source_file": "/home/chiranjeevi/Documents/art-investigation-lab(AIL)/research/imported/IT_and_Business_Services/servicenow/opportunity06/opportunity.md",
+        "section": "UNKNOWN",
+        "line_start": 54,
+        "line_end": 54
+      }
+    },
+    {
+      "id": "inv-default-sec-8-evd-1",
+      "statement": "- [Create policies for Schedule Optimization](https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/create-policies-schedule-optimization.html)\n- [Objectives and constraints](https://www.servicenow.com/docs/r/field-service-management/hard-soft-constraints.html)\n- [On-demand optimization](https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-on-demand-optimization.html)\n- [Intraday optimization](https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/configure-intraday-optimization.html)\n- [Dynamic Scheduling](https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/Configure-dynamic-scheduling.html)\n- [Prevent excluded technicians](https://www.servicenow.com/docs/r/field-service-management/field-service-scheduling/prevent-excluded-agents.html)\n- [Multi-objective field-service research](https://doi.org/10.1016/j.cor.2020.104908)\n- [Field-service routing and scheduling research](https://doi.org/10.1016/j.cor.2021.105472)",
+      "classification": "OBSERVED",
+      "source": "UNKNOWN",
+      "provenance": {
+        "source_file": "/home/chiranjeevi/Documents/art-investigation-lab(AIL)/research/imported/IT_and_Business_Services/servicenow/opportunity06/opportunity.md",
+        "section": "UNKNOWN",
+        "line_start": 58,
+        "line_end": 65
+      }
+    },
+    {
+      "id": "inv-default-sec-9-evd-1",
+      "statement": "KILL reflects an evidence failure at the residual opportunity boundary, not a claim that field-service complexity or human judgment is unreal.",
+      "classification": "OBSERVED",
+      "source": "UNKNOWN",
+      "provenance": {
+        "source_file": "/home/chiranjeevi/Documents/art-investigation-lab(AIL)/research/imported/IT_and_Business_Services/servicenow/opportunity06/opportunity.md",
+        "section": "UNKNOWN",
+        "line_start": 69,
+        "line_end": 69
+      }
+    }
+  ],
+  "claims": [],
+  "inferences": [],
+  "hypotheses": [],
+  "results": [],
+  "traceability": [],
+  "workflows": [],
+  "sections": [
+    {
+      "id": "inv-default-sec-2",
+      "title": "Opportunity identity",
+      "summary": "UNKNOWN",
+      "evidence_refs": [
+        "inv-default-sec-2-evd-1"
+      ],
+      "source_refs": [],
+      "provenance": {
+        "source_file": "/home/chiranjeevi/Documents/art-investigation-lab(AIL)/research/imported/IT_and_Business_Services/servicenow/opportunity06/opportunity.md",
+        "section": "UNKNOWN",
+        "line_start": 3,
+        "line_end": 3
+      }
+    },
+    {
+      "id": "inv-default-sec-3",
+      "title": "Consolidated intelligence state",
+      "summary": "UNKNOWN",
+      "evidence_refs": [
+        "inv-default-sec-3-evd-1"
+      ],
+      "source_refs": [],
+      "provenance": {
+        "source_file": "/home/chiranjeevi/Documents/art-investigation-lab(AIL)/research/imported/IT_and_Business_Services/servicenow/opportunity06/opportunity.md",
+        "section": "UNKNOWN",
+        "line_start": 20,
+        "line_end": 20
+      }
+    },
+    {
+      "id": "inv-default-sec-4",
+      "title": "Hypothesis lifecycle",
+      "summary": "UNKNOWN",
+      "evidence_refs": [
+        "inv-default-sec-4-evd-1"
+      ],
+      "source_refs": [],
+      "provenance": {
+        "source_file": "/home/chiranjeevi/Documents/art-investigation-lab(AIL)/research/imported/IT_and_Business_Services/servicenow/opportunity06/opportunity.md",
+        "section": "UNKNOWN",
+        "line_start": 24,
+        "line_end": 24
+      }
+    },
+    {
+      "id": "inv-default-sec-5",
+      "title": "Evidence and counter-evidence",
+      "summary": "UNKNOWN",
+      "evidence_refs": [
+        "inv-default-sec-5-evd-1"
+      ],
+      "source_refs": [],
+      "provenance": {
+        "source_file": "/home/chiranjeevi/Documents/art-investigation-lab(AIL)/research/imported/IT_and_Business_Services/servicenow/opportunity06/opportunity.md",
+        "section": "UNKNOWN",
+        "line_start": 32,
+        "line_end": 32
+      }
+    },
+    {
+      "id": "inv-default-sec-6",
+      "title": "Reusable intelligence",
+      "summary": "UNKNOWN",
+      "evidence_refs": [
+        "inv-default-sec-6-evd-1"
+      ],
+      "source_refs": [],
+      "provenance": {
+        "source_file": "/home/chiranjeevi/Documents/art-investigation-lab(AIL)/research/imported/IT_and_Business_Services/servicenow/opportunity06/opportunity.md",
+        "section": "UNKNOWN",
+        "line_start": 43,
+        "line_end": 43
+      }
+    },
+    {
+      "id": "inv-default-sec-7",
+      "title": "Final decision",
+      "summary": "UNKNOWN",
+      "evidence_refs": [
+        "inv-default-sec-7-evd-1"
+      ],
+      "source_refs": [],
+      "provenance": {
+        "source_file": "/home/chiranjeevi/Documents/art-investigation-lab(AIL)/research/imported/IT_and_Business_Services/servicenow/opportunity06/opportunity.md",
+        "section": "UNKNOWN",
+        "line_start": 52,
+        "line_end": 52
+      }
+    },
+    {
+      "id": "inv-default-sec-8",
+      "title": "Source register",
+      "summary": "UNKNOWN",
+      "evidence_refs": [
+        "inv-default-sec-8-evd-1"
+      ],
+      "source_refs": [],
+      "provenance": {
+        "source_file": "/home/chiranjeevi/Documents/art-investigation-lab(AIL)/research/imported/IT_and_Business_Services/servicenow/opportunity06/opportunity.md",
+        "section": "UNKNOWN",
+        "line_start": 56,
+        "line_end": 56
+      }
+    },
+    {
+      "id": "inv-default-sec-9",
+      "title": "Research integrity",
+      "summary": "UNKNOWN",
+      "evidence_refs": [
+        "inv-default-sec-9-evd-1"
+      ],
+      "source_refs": [],
+      "provenance": {
+        "source_file": "/home/chiranjeevi/Documents/art-investigation-lab(AIL)/research/imported/IT_and_Business_Services/servicenow/opportunity06/opportunity.md",
+        "section": "UNKNOWN",
+        "line_start": 67,
+        "line_end": 67
+      }
+    }
+  ],
+  "relationships": []
+}

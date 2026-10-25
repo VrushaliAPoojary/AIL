@@ -1,0 +1,329 @@
+{
+  "investigation_id": "AOI-SNOW-OPP-008",
+  "company": "ServiceNow",
+  "industry": "UNKNOWN",
+  "opportunity": "Hospital Patient-Flow Cross-System Decision Synthesis",
+  "investigation_type": "Discovery; real patient-flow decision; native reconstruction; multi-constraint test; criteria reconstruction; cross-system synthesis; real reconciliation test",
+  "research_status": "KILLED",
+  "primary_question": "UNKNOWN",
+  "presentation": {
+    "investigation_summary": "Auto-generated summary from compiler.",
+    "key_findings": []
+  },
+  "decision": {
+    "decision": "KILL",
+    "reason": "KILLED — required event-level residual hypothesis not demonstrated",
+    "reusable_intelligence": [],
+    "provenance": {
+      "source_file": "UNKNOWN",
+      "section": "UNKNOWN",
+      "line_start": null,
+      "line_end": null
+    }
+  },
+  "sources": [
+    {
+      "id": "inv-default-src-1",
+      "title": "https://doi.org/10.1016/j.jcjq.2018.11.006",
+      "url": "https://doi.org/10.1016/j.jcjq.2018.11.006",
+      "source_type": "URL",
+      "used_by": []
+    },
+    {
+      "id": "inv-default-src-2",
+      "title": "https://www.gehccommandcenter.com/hubfs/CC2020/docs/JCJQPS-Johns-Hopkins-Use-of-Systems-Engineering-to-Design-A-Hospital-Command-Center.pdf",
+      "url": "https://www.gehccommandcenter.com/hubfs/CC2020/docs/JCJQPS-Johns-Hopkins-Use-of-Systems-Engineering-to-Design-A-Hospital-Command-Center.pdf",
+      "source_type": "URL",
+      "used_by": []
+    },
+    {
+      "id": "inv-default-src-3",
+      "title": "https://doi.org/10.1080/09537287.2026.2655748",
+      "url": "https://doi.org/10.1080/09537287.2026.2655748",
+      "source_type": "URL",
+      "used_by": []
+    },
+    {
+      "id": "inv-default-src-4",
+      "title": "https://www.ncbi.nlm.nih.gov/books/NBK608696/",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK608696/",
+      "source_type": "URL",
+      "used_by": []
+    },
+    {
+      "id": "inv-default-src-5",
+      "title": "https://www.ncbi.nlm.nih.gov/books/NBK608708/",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK608708/",
+      "source_type": "URL",
+      "used_by": []
+    },
+    {
+      "id": "inv-default-src-6",
+      "title": "https://doi.org/10.1007/s10916-024-02071-1",
+      "url": "https://doi.org/10.1007/s10916-024-02071-1",
+      "source_type": "URL",
+      "used_by": []
+    },
+    {
+      "id": "inv-default-src-7",
+      "title": "https://doi.org/10.1093/intqhc/mzad072",
+      "url": "https://doi.org/10.1093/intqhc/mzad072",
+      "source_type": "URL",
+      "used_by": []
+    },
+    {
+      "id": "inv-default-src-8",
+      "title": "https://www.dedalus.com/global/wp-content/uploads/sites/9/2026/06/Why-hospitals-must-rethink-operations-in-the-age-of-AI-compress.pdf",
+      "url": "https://www.dedalus.com/global/wp-content/uploads/sites/9/2026/06/Why-hospitals-must-rethink-operations-in-the-age-of-AI-compress.pdf",
+      "source_type": "URL",
+      "used_by": []
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "inv-default-chk-1",
+      "title": "OPP-008 — Hospital Patient-Flow Cross-System Decision Synthesis",
+      "status": "UNKNOWN",
+      "investigation_question": "UNKNOWN",
+      "tested": "UNKNOWN",
+      "found": "UNKNOWN",
+      "what_changed": "UNKNOWN",
+      "resulting_state": "UNKNOWN",
+      "evidence_refs": [],
+      "source_refs": [],
+      "provenance": {
+        "source_file": "/home/chiranjeevi/Documents/art-investigation-lab(AIL)/research/imported/IT_and_Business_Services/servicenow/opportunity08/opportunity.md",
+        "section": "UNKNOWN",
+        "line_start": 1,
+        "line_end": 1
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "inv-default-sec-2-evd-1",
+      "statement": "| Field | Value |\n|---|---|\n| Object ID | `AOI-SNOW-OPP-008` |\n| Company | ServiceNow |\n| Original opportunity | Hospital-Wide Patient-Flow Decision Coordination |\n| Refined opportunity | Cross-System Decision-Synthesis / Reconciliation |\n| Scope | Whether hospital command centres retain a material, repeatable decision burden when specialized systems are incomplete, conflicting, or context-dependent |\n| Checkpoints | [`OPP-008-01`](./OPP-008-01.md) → [`OPP-008-02`](./OPP-008-02.md) → [`OPP-008-03`](./OPP-008-03.md) → [`OPP-008-04`](./OPP-008-04.md) → [`OPP-008-05`](./OPP-008-05.md) → [`OPP-008-06`](./OPP-008-06.md) → [`OPP-008-07`](./OPP-008-07.md) |\n| Investigation types | Discovery; real patient-flow decision; native reconstruction; multi-constraint test; criteria reconstruction; cross-system synthesis; real reconciliation test |\n| Research status | KILLED — required event-level residual hypothesis not demonstrated |\n| AOI decision | KILL |\n| AIL status | NOT READY FOR AIL |\n| Evidence classification | VERIFIED EXTERNAL EVIDENCE; DIRECT EVIDENCE; INFERENCE; HYPOTHESIS; UNKNOWN; NOT DEMONSTRATED |\n| Generation metadata | AOI Representation Compiler v0.2; generated 2026-08-20; canonical Markdown only |",
+      "classification": "OBSERVED",
+      "source": "UNKNOWN",
+      "provenance": {
+        "source_file": "/home/chiranjeevi/Documents/art-investigation-lab(AIL)/research/imported/IT_and_Business_Services/servicenow/opportunity08/opportunity.md",
+        "section": "UNKNOWN",
+        "line_start": 5,
+        "line_end": 18
+      }
+    },
+    {
+      "id": "inv-default-sec-3-evd-1",
+      "statement": "Hospital patient-flow complexity, multi-system architecture, data-quality problems, human verification, central coordination, prescriptive support, and bottleneck intervention are verified. The final checkpoint could not reconstruct one real event containing multiple systems, conflict or stale data, human reconciliation, explicit trade-off, action, and measured outcome. A ServiceNow-specific gap is therefore not established.",
+      "classification": "OBSERVED",
+      "source": "UNKNOWN",
+      "provenance": {
+        "source_file": "/home/chiranjeevi/Documents/art-investigation-lab(AIL)/research/imported/IT_and_Business_Services/servicenow/opportunity08/opportunity.md",
+        "section": "UNKNOWN",
+        "line_start": 22,
+        "line_end": 22
+      }
+    },
+    {
+      "id": "inv-default-sec-4-evd-1",
+      "statement": "1. Hospital-wide patient flow was identified as a new consequential decision domain.\n2. Real patient-flow and bottleneck decisions were reconstructed.\n3. Broad coordination, generic resource allocation, and workflow gaps were killed by existing capability evidence.\n4. The hypothesis narrowed to cross-system decision synthesis and human reconciliation.\n5. Seven-system fragmentation and general data verification were found, but not in one complete event. Prescriptive analytics and human adjudication were counter-evidence to a generic “dashboard only” gap.\n6. **Final:** specific cross-system reconciliation opportunity NOT DEMONSTRATED. **KILL.**",
+      "classification": "OBSERVED",
+      "source": "UNKNOWN",
+      "provenance": {
+        "source_file": "/home/chiranjeevi/Documents/art-investigation-lab(AIL)/research/imported/IT_and_Business_Services/servicenow/opportunity08/opportunity.md",
+        "section": "UNKNOWN",
+        "line_start": 26,
+        "line_end": 31
+      }
+    },
+    {
+      "id": "inv-default-sec-5-evd-1",
+      "statement": "| Finding | Classification | Effect |\n|---|---|---|\n| Seven disconnected systems at Johns Hopkins | DIRECT VERIFIED EXTERNAL EVIDENCE | Integration problem established generally. |\n| Predictive and prescriptive analytics with recommended bed placement | DIRECT VERIFIED EXTERNAL EVIDENCE | Weakens assumption that humans manually synthesize everything. |\n| Human adjudication of disputed beds and complex transfers | DIRECT VERIFIED EXTERNAL EVIDENCE | Human role established, exact burden not. |\n| NHS triangulation and data verification | DIRECT VERIFIED EXTERNAL EVIDENCE | Workflow-level discrepancy established, not event-level reconciliation. |\n| Hospital U discharge-bottleneck intervention | DIRECT VERIFIED EXTERNAL EVIDENCE | Real action established, but not multi-system conflict/trade-off/outcome chain. |\n| Required real cross-system reconciliation event | NOT DEMONSTRATED | Final hypothesis killed. |",
+      "classification": "OBSERVED",
+      "source": "UNKNOWN",
+      "provenance": {
+        "source_file": "/home/chiranjeevi/Documents/art-investigation-lab(AIL)/research/imported/IT_and_Business_Services/servicenow/opportunity08/opportunity.md",
+        "section": "UNKNOWN",
+        "line_start": 35,
+        "line_end": 42
+      }
+    },
+    {
+      "id": "inv-default-sec-6-evd-1",
+      "statement": "| Pattern | Intelligence | Limitation |\n|---|---|---|\n| Seven-system integration | Disconnected systems → integration layer → real-time command centre. | Do not assume integration problem equals decision-synthesis problem. |\n| Progressive analytics maturity | Descriptive → predictive → prescriptive → recommended placement → human decision. | Test the exact residual layer. |\n| Human adjudication | Central human role may be clinical judgment, governance, exception handling, conflict resolution, or data verification. | Human involvement alone is not an automation gap. |\n| Data verification despite integration | Integrated systems can still require triangulation because records are stale, incomplete, or inaccurate. | Each data-trust opportunity requires independent evidence. |\n| Bottleneck intervention | Expected state → actual state → variance → barrier → targeted intervention. | The source did not provide a measured event-level outcome. |\n| Centralization with local autonomy | Recommend does not equal command; authority and professional autonomy remain relevant. | General pattern, not a ServiceNow opportunity. |",
+      "classification": "OBSERVED",
+      "source": "UNKNOWN",
+      "provenance": {
+        "source_file": "/home/chiranjeevi/Documents/art-investigation-lab(AIL)/research/imported/IT_and_Business_Services/servicenow/opportunity08/opportunity.md",
+        "section": "UNKNOWN",
+        "line_start": 46,
+        "line_end": 53
+      }
+    },
+    {
+      "id": "inv-default-sec-7-evd-1",
+      "statement": "**KILL OPP-008.** Preserve the workflow and implementation patterns, but do not create AIL intake or rescue the unsupported residual hypothesis.",
+      "classification": "OBSERVED",
+      "source": "UNKNOWN",
+      "provenance": {
+        "source_file": "/home/chiranjeevi/Documents/art-investigation-lab(AIL)/research/imported/IT_and_Business_Services/servicenow/opportunity08/opportunity.md",
+        "section": "UNKNOWN",
+        "line_start": 57,
+        "line_end": 57
+      }
+    },
+    {
+      "id": "inv-default-sec-8-evd-1",
+      "statement": "- [Johns Hopkins command-centre design](https://doi.org/10.1016/j.jcjq.2018.11.006)\n- [Johns Hopkins implementation PDF](https://www.gehccommandcenter.com/hubfs/CC2020/docs/JCJQPS-Johns-Hopkins-Use-of-Systems-Engineering-to-Design-A-Hospital-Command-Center.pdf)\n- [2026 hospital patient-flow study](https://doi.org/10.1080/09537287.2026.2655748)\n- [NHS AI command-centre scientific summary](https://www.ncbi.nlm.nih.gov/books/NBK608696/)\n- [NHS ethnographic findings](https://www.ncbi.nlm.nih.gov/books/NBK608708/)\n- [Hospital control-centre human-factors review](https://doi.org/10.1007/s10916-024-02071-1)\n- [NHS command-centre outcome evaluation](https://doi.org/10.1093/intqhc/mzad072)\n- [Dedalus AI command-centre architecture](https://www.dedalus.com/global/wp-content/uploads/sites/9/2026/06/Why-hospitals-must-rethink-operations-in-the-age-of-AI-compress.pdf)",
+      "classification": "OBSERVED",
+      "source": "UNKNOWN",
+      "provenance": {
+        "source_file": "/home/chiranjeevi/Documents/art-investigation-lab(AIL)/research/imported/IT_and_Business_Services/servicenow/opportunity08/opportunity.md",
+        "section": "UNKNOWN",
+        "line_start": 61,
+        "line_end": 68
+      }
+    },
+    {
+      "id": "inv-default-sec-9-evd-1",
+      "statement": "The final state distinguishes verified workflow patterns from the missing event-level proof. It does not claim that cross-system reconciliation never occurs.",
+      "classification": "OBSERVED",
+      "source": "UNKNOWN",
+      "provenance": {
+        "source_file": "/home/chiranjeevi/Documents/art-investigation-lab(AIL)/research/imported/IT_and_Business_Services/servicenow/opportunity08/opportunity.md",
+        "section": "UNKNOWN",
+        "line_start": 72,
+        "line_end": 72
+      }
+    }
+  ],
+  "claims": [],
+  "inferences": [],
+  "hypotheses": [],
+  "results": [],
+  "traceability": [],
+  "workflows": [],
+  "sections": [
+    {
+      "id": "inv-default-sec-2",
+      "title": "Opportunity identity",
+      "summary": "UNKNOWN",
+      "evidence_refs": [
+        "inv-default-sec-2-evd-1"
+      ],
+      "source_refs": [],
+      "provenance": {
+        "source_file": "/home/chiranjeevi/Documents/art-investigation-lab(AIL)/research/imported/IT_and_Business_Services/servicenow/opportunity08/opportunity.md",
+        "section": "UNKNOWN",
+        "line_start": 3,
+        "line_end": 3
+      }
+    },
+    {
+      "id": "inv-default-sec-3",
+      "title": "Consolidated intelligence state",
+      "summary": "UNKNOWN",
+      "evidence_refs": [
+        "inv-default-sec-3-evd-1"
+      ],
+      "source_refs": [],
+      "provenance": {
+        "source_file": "/home/chiranjeevi/Documents/art-investigation-lab(AIL)/research/imported/IT_and_Business_Services/servicenow/opportunity08/opportunity.md",
+        "section": "UNKNOWN",
+        "line_start": 20,
+        "line_end": 20
+      }
+    },
+    {
+      "id": "inv-default-sec-4",
+      "title": "Hypothesis lifecycle",
+      "summary": "UNKNOWN",
+      "evidence_refs": [
+        "inv-default-sec-4-evd-1"
+      ],
+      "source_refs": [],
+      "provenance": {
+        "source_file": "/home/chiranjeevi/Documents/art-investigation-lab(AIL)/research/imported/IT_and_Business_Services/servicenow/opportunity08/opportunity.md",
+        "section": "UNKNOWN",
+        "line_start": 24,
+        "line_end": 24
+      }
+    },
+    {
+      "id": "inv-default-sec-5",
+      "title": "Evidence and counter-evidence",
+      "summary": "UNKNOWN",
+      "evidence_refs": [
+        "inv-default-sec-5-evd-1"
+      ],
+      "source_refs": [],
+      "provenance": {
+        "source_file": "/home/chiranjeevi/Documents/art-investigation-lab(AIL)/research/imported/IT_and_Business_Services/servicenow/opportunity08/opportunity.md",
+        "section": "UNKNOWN",
+        "line_start": 33,
+        "line_end": 33
+      }
+    },
+    {
+      "id": "inv-default-sec-6",
+      "title": "Reusable intelligence",
+      "summary": "UNKNOWN",
+      "evidence_refs": [
+        "inv-default-sec-6-evd-1"
+      ],
+      "source_refs": [],
+      "provenance": {
+        "source_file": "/home/chiranjeevi/Documents/art-investigation-lab(AIL)/research/imported/IT_and_Business_Services/servicenow/opportunity08/opportunity.md",
+        "section": "UNKNOWN",
+        "line_start": 44,
+        "line_end": 44
+      }
+    },
+    {
+      "id": "inv-default-sec-7",
+      "title": "Final decision",
+      "summary": "UNKNOWN",
+      "evidence_refs": [
+        "inv-default-sec-7-evd-1"
+      ],
+      "source_refs": [],
+      "provenance": {
+        "source_file": "/home/chiranjeevi/Documents/art-investigation-lab(AIL)/research/imported/IT_and_Business_Services/servicenow/opportunity08/opportunity.md",
+        "section": "UNKNOWN",
+        "line_start": 55,
+        "line_end": 55
+      }
+    },
+    {
+      "id": "inv-default-sec-8",
+      "title": "Source register",
+      "summary": "UNKNOWN",
+      "evidence_refs": [
+        "inv-default-sec-8-evd-1"
+      ],
+      "source_refs": [],
+      "provenance": {
+        "source_file": "/home/chiranjeevi/Documents/art-investigation-lab(AIL)/research/imported/IT_and_Business_Services/servicenow/opportunity08/opportunity.md",
+        "section": "UNKNOWN",
+        "line_start": 59,
+        "line_end": 59
+      }
+    },
+    {
+      "id": "inv-default-sec-9",
+      "title": "Research integrity",
+      "summary": "UNKNOWN",
+      "evidence_refs": [
+        "inv-default-sec-9-evd-1"
+      ],
+      "source_refs": [],
+      "provenance": {
+        "source_file": "/home/chiranjeevi/Documents/art-investigation-lab(AIL)/research/imported/IT_and_Business_Services/servicenow/opportunity08/opportunity.md",
+        "section": "UNKNOWN",
+        "line_start": 70,
+        "line_end": 70
+      }
+    }
+  ],
+  "relationships": []
+}

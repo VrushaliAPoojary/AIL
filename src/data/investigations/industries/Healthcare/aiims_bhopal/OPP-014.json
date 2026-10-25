@@ -1,0 +1,2110 @@
+{
+  "investigation_id": "AOI-SNOW-OPP-014",
+  "company": "AIIMS Bhopal",
+  "industry": "Healthcare / Hospital Operations",
+  "opportunity": "Emergency Department to Speciality Unit / ICU-HDU Transfer Coordination",
+  "investigation_type": "Legacy VRL",
+  "research_status": "UNVERIFIED",
+  "presentation": {
+    "investigation_summary": "Investigation journey from source checkpoints:\n\nOPP-014-01.md: > **OPP-014 is supported by unusually current direct evidence: a six-month 2026 prospective study at AIIMS Bhopal found 510 patients with >24-hour ED boarding, with 70% of delays attributed to system causes. ICU/HDU bed waits and interdepartmental disputes accounted for 33.1% and 32.5% respectively. The evidence strongly supports a high-consequence transfer-coordination workflow, while current automation and human effort remain to be reconstructed.**\n\n**OPP-014-01 = PASS → HIGH-CONSEQUENCE WORKFLOW TARGET**\n\nOPP-014-02.md: > **The AIIMS Bhopal study directly establishes two dominant pre-transfer exception classes: ICU/HDU bed waits and interdepartmental disputes/denials. The latter explicitly requires coordination until a lead department accepts the patient. The evidence therefore supports a strong ownership/capacity exception workflow. Exact current communication mechanics, staff effort and automation capability remain unknown and must not be invented.**\n\n**OPP-014-02 = PASS → HIGH-CONSEQUENCE PRE-TRANSFER EXCEPTION PATH VERIFIED**\n\nOPP-014-03.md: > **OPP-014 has a strong quantified time-exposure signal: 510 delayed ED-transfer cases in six months, with 335 cases involving the two dominant operational exception classes—ICU/HDU bed waits and interdepartmental disputes. Among patients who eventually transferred, median ED stay before transfer was 51 hours and 30 cases remained ≥96 hours. The evidence does not measure staff labour or current automation, so those remain validation questions rather than fabricated ROI inputs.**\n\n**OPP-014-03 = PASS → HIGH TIME-EXPOSURE + COORDINATION-BURDEN SIGNAL**\n\n**Next: OPP-014-04 — Direct Operational Evidence / Pain Validation.**\n\nOPP-014-04.md: > **OPP-014 has reached the efficient desk-research boundary. The 2026 AIIMS Bhopal study directly validates a significant, high-consequence transfer-flow problem, but it does not audit current automation capability or quantify human coordination effort. Therefore the company-specific automation gap cannot honestly be marked proven. The appropriate result is conditional pass and primary-validation pending.**\n\n**OPP-014-04 = CONDITIONAL PASS → PRIMARY VALIDATION REQUIRED**\n\n**No further desk-research checkpoints should be added to OPP-014.**",
+    "key_findings": [
+      {
+        "id": "KF-014-01",
+        "statement": "OPP-014-01 — Workflow Discovery: > **OPP-014 is supported by unusually current direct evidence: a six-month 2026 prospective study at AIIMS Bhopal found 510 patients with >24-hour ED boarding, with 70% of delays attributed to system causes. ICU/HDU bed waits and interdepartmental disputes accounted for 33.1% and 32.5% respectively. The evidence strongly supports a high-consequence transfer-coordination workflow, while current automation and human effort remain to be reconstructed.**\n\n**OPP-014-01 = PASS → HIGH-CONSEQUENCE WORKFLOW TARGET**",
+        "classification": "EVIDENCE",
+        "source_refs": [
+          "EV-014-001",
+          "EV-014-002",
+          "EV-014-003"
+        ]
+      },
+      {
+        "id": "KF-014-02",
+        "statement": "OPP-014-02 — Exception + Human Investigation Reconstruction: > **The AIIMS Bhopal study directly establishes two dominant pre-transfer exception classes: ICU/HDU bed waits and interdepartmental disputes/denials. The latter explicitly requires coordination until a lead department accepts the patient. The evidence therefore supports a strong ownership/capacity exception workflow. Exact current communication mechanics, staff effort and automation capability remain unknown and must not be invented.**\n\n**OPP-014-02 = PASS → HIGH-CONSEQUENCE PRE-TRANSFER EXCEPTION PATH VERIFIED**",
+        "classification": "CLAIM",
+        "source_refs": [
+          "EV-014-004",
+          "EV-014-005",
+          "EV-014-006",
+          "EV-014-007",
+          "EV-014-008"
+        ]
+      },
+      {
+        "id": "KF-014-03",
+        "statement": "OPP-014-03 — Human Effort / Pain Quantification: > **OPP-014 has a strong quantified time-exposure signal: 510 delayed ED-transfer cases in six months, with 335 cases involving the two dominant operational exception classes—ICU/HDU bed waits and interdepartmental disputes. Among patients who eventually transferred, median ED stay before transfer was 51 hours and 30 cases remained ≥96 hours. The evidence does not measure staff labour or current automation, so those remain validation questions rather than fabricated ROI inputs.**\n\n**OPP-014-03 = PASS → HIGH TIME-EXPOSURE + COORDINATION-BURDEN SIGNAL**\n\n**Next: OPP-014-04 — Direct Operational Evidence / Pain Validation.**",
+        "classification": "CLAIM",
+        "source_refs": [
+          "EV-014-009",
+          "EV-014-010",
+          "EV-014-011"
+        ]
+      },
+      {
+        "id": "KF-014-04",
+        "statement": "OPP-014-04 — Direct Operational Evidence / Pain Validation: > **OPP-014 has reached the efficient desk-research boundary. The 2026 AIIMS Bhopal study directly validates a significant, high-consequence transfer-flow problem, but it does not audit current automation capability or quantify human coordination effort. Therefore the company-specific automation gap cannot honestly be marked proven. The appropriate result is conditional pass and primary-validation pending.**\n\n**OPP-014-04 = CONDITIONAL PASS → PRIMARY VALIDATION REQUIRED**\n\n**No further desk-research checkpoints should be added to OPP-014.**",
+        "classification": "DECISION",
+        "source_refs": [
+          "EV-014-012",
+          "EV-014-013",
+          "EV-014-014"
+        ]
+      }
+    ]
+  },
+  "decision": {
+    "decision": "**CONDITIONAL PASS → Industry pain validated; current company automation gap not proven**",
+    "reason": "> **OPP-014 has reached the efficient desk-research boundary. The 2026 AIIMS Bhopal study directly validates a significant, high-consequence transfer-flow problem, but it does not audit current automation capability or quantify human coordination effort. Therefore the company-specific automation gap cannot honestly be marked proven. The appropriate result is conditional pass and primary-validation pending.**\n\n**OPP-014-04 = CONDITIONAL PASS → PRIMARY VALIDATION REQUIRED**\n\n**No further desk-research checkpoints should be added to OPP-014.**",
+    "reusable_intelligence": [
+      {
+        "id": "RI-014-001",
+        "type": "WORKFLOW_PATTERN",
+        "title": "Workflow Discovery: Emergency Department to Speciality Unit / ICU-HDU Transfer Coordination",
+        "domain": "Healthcare / Hospital Operations",
+        "description": "> **OPP-014 is supported by unusually current direct evidence: a six-month 2026 prospective study at AIIMS Bhopal found 510 patients with >24-hour ED boarding, with 70% of delays attributed to system causes. ICU/HDU bed waits and interdepartmental disputes accounted for 33.1% and 32.5% respectively. The evidence strongly supports a high-consequence transfer-coordination workflow, while current automation and human effort remain to be reconstructed.**\n\n**OPP-014-01 = PASS → HIGH-CONSEQUENCE WORKFLOW TARGET**",
+        "lesson": "Preserve the source boundary: current capability, human effort, and ROI remain unknown where the source says so.",
+        "evidence_status": "VERIFIED",
+        "status": "ACTIVE",
+        "confidence": "MEDIUM",
+        "reuse_potential": "HIGH",
+        "applications": [
+          "Healthcare hospital operations"
+        ],
+        "source_checkpoint": "CP-OPP-014-01",
+        "source_refs": [
+          "EV-014-001",
+          "EV-014-002",
+          "EV-014-003"
+        ],
+        "tags": [
+          "source-supported",
+          "legacy-vrl"
+        ],
+        "provenance": {
+          "source_file": "OPP-014-01.md",
+          "section": "Integrity Statement",
+          "line_start": 373,
+          "line_end": 378
+        }
+      },
+      {
+        "id": "RI-014-002",
+        "type": "STRATEGY_PATTERN",
+        "title": "Exception + Human Investigation Reconstruction: Emergency Department to Speciality Unit / ICU-HDU Transfer Coordination",
+        "domain": "Healthcare / Hospital Operations",
+        "description": "> **The AIIMS Bhopal study directly establishes two dominant pre-transfer exception classes: ICU/HDU bed waits and interdepartmental disputes/denials. The latter explicitly requires coordination until a lead department accepts the patient. The evidence therefore supports a strong ownership/capacity exception workflow. Exact current communication mechanics, staff effort and automation capability remain unknown and must not be invented.**\n\n**OPP-014-02 = PASS → HIGH-CONSEQUENCE PRE-TRANSFER EXCEPTION PATH VERIFIED**",
+        "lesson": "Preserve the source boundary: current capability, human effort, and ROI remain unknown where the source says so.",
+        "evidence_status": "VERIFIED",
+        "status": "ACTIVE",
+        "confidence": "MEDIUM",
+        "reuse_potential": "HIGH",
+        "applications": [
+          "Healthcare hospital operations"
+        ],
+        "source_checkpoint": "CP-OPP-014-02",
+        "source_refs": [
+          "EV-014-004",
+          "EV-014-005",
+          "EV-014-006",
+          "EV-014-007",
+          "EV-014-008"
+        ],
+        "tags": [
+          "source-supported",
+          "legacy-vrl"
+        ],
+        "provenance": {
+          "source_file": "OPP-014-02.md",
+          "section": "Integrity Statement",
+          "line_start": 567,
+          "line_end": 572
+        }
+      },
+      {
+        "id": "RI-014-003",
+        "type": "METRIC_PATTERN",
+        "title": "Human Effort / Pain Quantification: Emergency Department to Speciality Unit / ICU-HDU Transfer Coordination",
+        "domain": "Healthcare / Hospital Operations",
+        "description": "> **OPP-014 has a strong quantified time-exposure signal: 510 delayed ED-transfer cases in six months, with 335 cases involving the two dominant operational exception classes—ICU/HDU bed waits and interdepartmental disputes. Among patients who eventually transferred, median ED stay before transfer was 51 hours and 30 cases remained ≥96 hours. The evidence does not measure staff labour or current automation, so those remain validation questions rather than fabricated ROI inputs.**\n\n**OPP-014-03 = PASS → HIGH TIME-EXPOSURE + COORDINATION-BURDEN SIGNAL**\n\n**Next: OPP-014-04 — Direct Operational Evidence / Pain Validation.**",
+        "lesson": "Preserve the source boundary: current capability, human effort, and ROI remain unknown where the source says so.",
+        "evidence_status": "VERIFIED",
+        "status": "ACTIVE",
+        "confidence": "MEDIUM",
+        "reuse_potential": "HIGH",
+        "applications": [
+          "Healthcare hospital operations"
+        ],
+        "source_checkpoint": "CP-OPP-014-03",
+        "source_refs": [
+          "EV-014-009",
+          "EV-014-010",
+          "EV-014-011"
+        ],
+        "tags": [
+          "source-supported",
+          "legacy-vrl"
+        ],
+        "provenance": {
+          "source_file": "OPP-014-03.md",
+          "section": "Integrity Statement",
+          "line_start": 680,
+          "line_end": 687
+        }
+      },
+      {
+        "id": "RI-014-004",
+        "type": "DECISION_PATTERN",
+        "title": "Direct Operational Evidence / Pain Validation: Emergency Department to Speciality Unit / ICU-HDU Transfer Coordination",
+        "domain": "Healthcare / Hospital Operations",
+        "description": "> **OPP-014 has reached the efficient desk-research boundary. The 2026 AIIMS Bhopal study directly validates a significant, high-consequence transfer-flow problem, but it does not audit current automation capability or quantify human coordination effort. Therefore the company-specific automation gap cannot honestly be marked proven. The appropriate result is conditional pass and primary-validation pending.**\n\n**OPP-014-04 = CONDITIONAL PASS → PRIMARY VALIDATION REQUIRED**\n\n**No further desk-research checkpoints should be added to OPP-014.**",
+        "lesson": "Preserve the source boundary: current capability, human effort, and ROI remain unknown where the source says so.",
+        "evidence_status": "PARTIAL",
+        "status": "ACTIVE",
+        "confidence": "MEDIUM",
+        "reuse_potential": "MEDIUM",
+        "applications": [
+          "Healthcare hospital operations"
+        ],
+        "source_checkpoint": "CP-OPP-014-04",
+        "source_refs": [
+          "EV-014-012",
+          "EV-014-013",
+          "EV-014-014"
+        ],
+        "tags": [
+          "source-supported",
+          "legacy-vrl"
+        ],
+        "provenance": {
+          "source_file": "OPP-014-04.md",
+          "section": "Integrity Statement",
+          "line_start": 551,
+          "line_end": 558
+        }
+      }
+    ],
+    "provenance": {
+      "source_file": "OPP-014-04.md",
+      "section": "Integrity Statement",
+      "line_start": 557,
+      "line_end": 557
+    }
+  },
+  "primary_question": "WHO HAS ACCEPTED THE PATIENT?",
+  "sources": [
+    {
+      "id": "SRC-FILE-OPP-014-OPP-014-01",
+      "title": "OPP-014-01.md",
+      "url": "opportunities/Healthcare_and_Pharmaceuticals/aiims_bhopal/OPP-014-01.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": [
+        "CP-OPP-014-01"
+      ]
+    },
+    {
+      "id": "SRC-FILE-OPP-014-OPP-014-02",
+      "title": "OPP-014-02.md",
+      "url": "opportunities/Healthcare_and_Pharmaceuticals/aiims_bhopal/OPP-014-02.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": [
+        "CP-OPP-014-02"
+      ]
+    },
+    {
+      "id": "SRC-FILE-OPP-014-OPP-014-03",
+      "title": "OPP-014-03.md",
+      "url": "opportunities/Healthcare_and_Pharmaceuticals/aiims_bhopal/OPP-014-03.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": [
+        "CP-OPP-014-03"
+      ]
+    },
+    {
+      "id": "SRC-FILE-OPP-014-OPP-014-04",
+      "title": "OPP-014-04.md",
+      "url": "opportunities/Healthcare_and_Pharmaceuticals/aiims_bhopal/OPP-014-04.md",
+      "source_type": "INTERNAL_RESEARCH",
+      "used_by": [
+        "CP-OPP-014-04"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-014-F8957FF7",
+      "title": "PubMed — Causes of Delayed Transfers",
+      "url": "SRC-EXT-OPP-014-F8957FF7",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-014-01",
+        "CP-OPP-014-02",
+        "CP-OPP-014-03",
+        "CP-OPP-014-04"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-014-D83B68B2",
+      "title": "PMC — Full study",
+      "url": "SRC-EXT-OPP-014-D83B68B2",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-014-01",
+        "CP-OPP-014-02",
+        "CP-OPP-014-03",
+        "CP-OPP-014-04"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-014-894D8E0C",
+      "title": "PMC — Delayed Transfer of Critically Ill Patients",
+      "url": "SRC-EXT-OPP-014-894D8E0C",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-014-01",
+        "CP-OPP-014-02",
+        "CP-OPP-014-03",
+        "CP-OPP-014-04"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-014-62DA221D",
+      "title": "PMC — Friction at Patient Handover",
+      "url": "SRC-EXT-OPP-014-62DA221D",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-014-02"
+      ]
+    },
+    {
+      "id": "SRC-EXT-OPP-014-0690D5C0",
+      "title": "PMC — Cooperation and Conflict in Intra-Hospital Transfers",
+      "url": "SRC-EXT-OPP-014-0690D5C0",
+      "source_type": "EXTERNAL",
+      "used_by": [
+        "CP-OPP-014-02"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "CP-OPP-014-01",
+      "title": "OPP-014-01 — Workflow Discovery",
+      "status": "PASS",
+      "investigation_question": "WHO HAS ACCEPTED THE PATIENT?",
+      "tested": "OPP-014-01 — Workflow Discovery",
+      "found": "> **OPP-014 is supported by unusually current direct evidence: a six-month 2026 prospective study at AIIMS Bhopal found 510 patients with >24-hour ED boarding, with 70% of delays attributed to system causes. ICU/HDU bed waits and interdepartmental disputes accounted for 33.1% and 32.5% respectively. The evidence strongly supports a high-consequence transfer-coordination workflow, while current automation and human effort remain to be reconstructed.**\n\n**OPP-014-01 = PASS → HIGH-CONSEQUENCE WORKFLOW TARGET**",
+      "what_changed": "**PASS → High-consequence workflow target**",
+      "resulting_state": "**PASS → High-consequence workflow target**",
+      "evidence_refs": [
+        "EV-014-001",
+        "EV-014-002",
+        "EV-014-003"
+      ],
+      "source_refs": [
+        "SRC-FILE-OPP-014-OPP-014-01",
+        "SRC-EXT-OPP-014-F8957FF7",
+        "SRC-EXT-OPP-014-D83B68B2",
+        "SRC-EXT-OPP-014-894D8E0C"
+      ],
+      "provenance": {
+        "source_file": "OPP-014-01.md",
+        "section": "Checkpoint",
+        "line_start": 1,
+        "line_end": 377
+      }
+    },
+    {
+      "id": "CP-OPP-014-02",
+      "title": "OPP-014-02 — Exception + Human Investigation Reconstruction",
+      "status": "PASS",
+      "investigation_question": "When an ED patient cannot progress to speciality care, what is actually blocking the transfer, who owns the unresolved decision/capacity state, and what coordination is required to resolve it?",
+      "tested": "OPP-014-02 — Exception + Human Investigation Reconstruction",
+      "found": "> **The AIIMS Bhopal study directly establishes two dominant pre-transfer exception classes: ICU/HDU bed waits and interdepartmental disputes/denials. The latter explicitly requires coordination until a lead department accepts the patient. The evidence therefore supports a strong ownership/capacity exception workflow. Exact current communication mechanics, staff effort and automation capability remain unknown and must not be invented.**\n\n**OPP-014-02 = PASS → HIGH-CONSEQUENCE PRE-TRANSFER EXCEPTION PATH VERIFIED**",
+      "what_changed": "**PASS → High-consequence pre-transfer exception path verified**",
+      "resulting_state": "**PASS → High-consequence pre-transfer exception path verified**",
+      "evidence_refs": [
+        "EV-014-004",
+        "EV-014-005",
+        "EV-014-006",
+        "EV-014-007",
+        "EV-014-008"
+      ],
+      "source_refs": [
+        "SRC-FILE-OPP-014-OPP-014-02",
+        "SRC-EXT-OPP-014-D83B68B2",
+        "SRC-EXT-OPP-014-F8957FF7",
+        "SRC-EXT-OPP-014-894D8E0C",
+        "SRC-EXT-OPP-014-62DA221D",
+        "SRC-EXT-OPP-014-0690D5C0"
+      ],
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "Checkpoint",
+        "line_start": 1,
+        "line_end": 571
+      }
+    },
+    {
+      "id": "CP-OPP-014-03",
+      "title": "OPP-014-03 — Human Effort / Pain Quantification",
+      "status": "PASS",
+      "investigation_question": "How large is the operational exposure created by delayed ED-to-speciality transfer, and what portion could plausibly be addressable through coordination automation?",
+      "tested": "OPP-014-03 — Human Effort / Pain Quantification",
+      "found": "> **OPP-014 has a strong quantified time-exposure signal: 510 delayed ED-transfer cases in six months, with 335 cases involving the two dominant operational exception classes—ICU/HDU bed waits and interdepartmental disputes. Among patients who eventually transferred, median ED stay before transfer was 51 hours and 30 cases remained ≥96 hours. The evidence does not measure staff labour or current automation, so those remain validation questions rather than fabricated ROI inputs.**\n\n**OPP-014-03 = PASS → HIGH TIME-EXPOSURE + COORDINATION-BURDEN SIGNAL**\n\n**Next: OPP-014-04 — Direct Operational Evidence / Pain Validation.**",
+      "what_changed": "**PASS → High time-exposure and coordination-burden signal**",
+      "resulting_state": "**PASS → High time-exposure and coordination-burden signal**",
+      "evidence_refs": [
+        "EV-014-009",
+        "EV-014-010",
+        "EV-014-011"
+      ],
+      "source_refs": [
+        "SRC-FILE-OPP-014-OPP-014-03",
+        "SRC-EXT-OPP-014-F8957FF7",
+        "SRC-EXT-OPP-014-D83B68B2",
+        "SRC-EXT-OPP-014-894D8E0C"
+      ],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "Checkpoint",
+        "line_start": 1,
+        "line_end": 686
+      }
+    },
+    {
+      "id": "CP-OPP-014-04",
+      "title": "OPP-014-04 — Direct Operational Evidence / Pain Validation",
+      "status": "CONDITIONAL_PASS",
+      "investigation_question": "Do we have enough direct operational evidence to claim that AIIMS Bhopal currently has a material automation gap in ED-to-speciality transfer coordination?",
+      "tested": "OPP-014-04 — Direct Operational Evidence / Pain Validation",
+      "found": "> **OPP-014 has reached the efficient desk-research boundary. The 2026 AIIMS Bhopal study directly validates a significant, high-consequence transfer-flow problem, but it does not audit current automation capability or quantify human coordination effort. Therefore the company-specific automation gap cannot honestly be marked proven. The appropriate result is conditional pass and primary-validation pending.**\n\n**OPP-014-04 = CONDITIONAL PASS → PRIMARY VALIDATION REQUIRED**\n\n**No further desk-research checkpoints should be added to OPP-014.**",
+      "what_changed": "**CONDITIONAL PASS → Industry pain validated; current company automation gap not proven**",
+      "resulting_state": "**CONDITIONAL PASS → Industry pain validated; current company automation gap not proven**",
+      "evidence_refs": [
+        "EV-014-012",
+        "EV-014-013",
+        "EV-014-014"
+      ],
+      "source_refs": [
+        "SRC-FILE-OPP-014-OPP-014-04",
+        "SRC-EXT-OPP-014-D83B68B2",
+        "SRC-EXT-OPP-014-F8957FF7",
+        "SRC-EXT-OPP-014-894D8E0C"
+      ],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "Checkpoint",
+        "line_start": 1,
+        "line_end": 557
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "EV-014-001",
+      "statement": "### E-001 — Current 2026 AIIMS Bhopal Study\n\n[PubMed — Causes of Delayed Transfers](SRC-EXT-OPP-014-F8957FF7)\n\nDirect evidence: 5,922 ED admissions; 510 delayed boarders; 70% system causes; 169 ICU/HDU bed waits; 166 interdepartmental disputes; median 51-hour ED stay before eventual transfer.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-014-F8957FF7",
+      "provenance": {
+        "source_file": "OPP-014-01.md",
+        "section": "E-001 — Current 2026 AIIMS Bhopal Study",
+        "line_start": 323,
+        "line_end": 327
+      }
+    },
+    {
+      "id": "EV-014-002",
+      "statement": "### E-002 — Full Study\n\n[PMC — Causes of Delayed Transfers](SRC-EXT-OPP-014-D83B68B2)\n\nDirect workflow detail, cause definitions, ED scale and proposed hospital-wide interventions.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-014-D83B68B2",
+      "provenance": {
+        "source_file": "OPP-014-01.md",
+        "section": "E-002 — Full Study",
+        "line_start": 329,
+        "line_end": 333
+      }
+    },
+    {
+      "id": "EV-014-003",
+      "statement": "### E-003 — Indian ICU Transfer Evidence\n\n[PMC — Delayed Transfer of Critically Ill Patients](SRC-EXT-OPP-014-894D8E0C)\n\nIndependent Indian evidence: 67.3% delayed >30 minutes; 69.9-minute average transfer time; ED-related factors 54%; transfer time reduced 42.6% after feedback.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-014-894D8E0C",
+      "provenance": {
+        "source_file": "OPP-014-01.md",
+        "section": "E-003 — Indian ICU Transfer Evidence",
+        "line_start": 335,
+        "line_end": 339
+      }
+    },
+    {
+      "id": "EV-014-004",
+      "statement": "### E-001 — Direct AIIMS Bhopal 2026 Study\n\n[PMC — Causes of Delayed Transfers From the Emergency Department to Speciality Units](SRC-EXT-OPP-014-D83B68B2)\n\nDirect evidence for the 510 delayed patients, 169 ICU/HDU-bed waits, 166 interdepartmental disputes, 51-hour median pre-transfer ED stay, and proposed bed-dashboard / transfer-authority interventions.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-014-D83B68B2",
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "E-001 — Direct AIIMS Bhopal 2026 Study",
+        "line_start": 489,
+        "line_end": 493
+      }
+    },
+    {
+      "id": "EV-014-005",
+      "statement": "### E-002 — PubMed Record\n\n[PubMed — Causes of Delayed Transfers](SRC-EXT-OPP-014-F8957FF7)\n\nIndependent bibliographic record for the AIIMS Bhopal study.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-014-F8957FF7",
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "E-002 — PubMed Record",
+        "line_start": 495,
+        "line_end": 499
+      }
+    },
+    {
+      "id": "EV-014-006",
+      "statement": "### E-003 — Indian ED-to-ICU Transfer Study\n\n[PMC — Delayed Transfer of Critically Ill Patients](SRC-EXT-OPP-014-894D8E0C)\n\nIndependent Indian evidence of ED-to-ICU transfer delays and reduction after regular feedback.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-014-894D8E0C",
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "E-003 — Indian ED-to-ICU Transfer Study",
+        "line_start": 501,
+        "line_end": 505
+      }
+    },
+    {
+      "id": "EV-014-007",
+      "statement": "### E-004 — Transfer Conflict Research\n\n[PMC — Friction at Patient Handover](SRC-EXT-OPP-014-62DA221D)\n\nQualitative evidence of interdepartmental friction during ED/internal-medicine handover.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-014-62DA221D",
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "E-004 — Transfer Conflict Research",
+        "line_start": 507,
+        "line_end": 511
+      }
+    },
+    {
+      "id": "EV-014-008",
+      "statement": "### E-005 — Intra-Hospital Transfer Cooperation\n\n[PMC — Cooperation and Conflict in Intra-Hospital Transfers](SRC-EXT-OPP-014-0690D5C0)\n\nEvidence that acceptance policies, receiving-provider involvement and responsibility boundaries can affect patient disposition and transfer.\n\n---",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-014-0690D5C0",
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "E-005 — Intra-Hospital Transfer Cooperation",
+        "line_start": 513,
+        "line_end": 519
+      }
+    },
+    {
+      "id": "EV-014-009",
+      "statement": "### E-001 — AIIMS Bhopal 2026 Study\n\n[PubMed — Causes of Delayed Transfers](SRC-EXT-OPP-014-F8957FF7)\n\nDirect evidence: 5,922 ED admissions; 510 delayed cases; 438 eventually transferred; median 51-hour pre-transfer ED stay; 169 ICU/HDU bed waits; 166 interdepartmental disputes.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-014-F8957FF7",
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "E-001 — AIIMS Bhopal 2026 Study",
+        "line_start": 570,
+        "line_end": 574
+      }
+    },
+    {
+      "id": "EV-014-010",
+      "statement": "### E-002 — Full AIIMS Bhopal Study\n\n[PMC — Causes of Delayed Transfers](SRC-EXT-OPP-014-D83B68B2)\n\nDirect cause classification and delay-duration distribution.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-014-D83B68B2",
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "E-002 — Full AIIMS Bhopal Study",
+        "line_start": 576,
+        "line_end": 580
+      }
+    },
+    {
+      "id": "EV-014-011",
+      "statement": "### E-003 — Indian ED-to-ICU Study\n\n[PMC — Delayed Transfer of Critically Ill Patients](SRC-EXT-OPP-014-894D8E0C)\n\nIndependent evidence of transfer delay and reduction after monthly feedback.\n\n---",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-014-894D8E0C",
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "E-003 — Indian ED-to-ICU Study",
+        "line_start": 582,
+        "line_end": 588
+      }
+    },
+    {
+      "id": "EV-014-012",
+      "statement": "### E-001 — Direct AIIMS Bhopal 2026 Study\n\n[PMC — Causes of Delayed Transfers From the Emergency Department to Speciality Units](SRC-EXT-OPP-014-D83B68B2)\n\nDirect evidence for the 5,922 admissions, 510 delayed cases, 169 ICU/HDU waits, 166 interdepartmental disputes, 51-hour median pre-transfer ED stay and proposed operational interventions.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-014-D83B68B2",
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "E-001 — Direct AIIMS Bhopal 2026 Study",
+        "line_start": 451,
+        "line_end": 455
+      }
+    },
+    {
+      "id": "EV-014-013",
+      "statement": "### E-002 — PubMed Record\n\n[PubMed — Causes of Delayed Transfers](SRC-EXT-OPP-014-F8957FF7)\n\nIndependent bibliographic source for the same 2026 study.",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-014-F8957FF7",
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "E-002 — PubMed Record",
+        "line_start": 457,
+        "line_end": 461
+      }
+    },
+    {
+      "id": "EV-014-014",
+      "statement": "### E-003 — Indian Transfer Evidence\n\n[PMC — Delayed Transfer of Critically Ill Patients](SRC-EXT-OPP-014-894D8E0C)\n\nIndependent Indian evidence of ED-to-ICU transfer delay and improvement following operational feedback.\n\n---",
+      "classification": "DIRECT OR EXTERNAL EVIDENCE",
+      "source": "SRC-EXT-OPP-014-894D8E0C",
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "E-003 — Indian Transfer Evidence",
+        "line_start": 463,
+        "line_end": 469
+      }
+    }
+  ],
+  "claims": [],
+  "inferences": [],
+  "hypotheses": [
+    {
+      "id": "HYP-014-001",
+      "statement": "The opportunity is **not** to create ICU beds.\n\nThe potential automation layer is:\n\n```text\nTRANSFER CASE\n      ↓\nREQUIRED SPECIALITY / LEVEL\n      ↓\nACCEPTANCE STATUS\n      ↓\nBED STATUS\n      ↓\nOWNER\n      ↓\nWAIT AGE\n      ↓\nBLOCKER\n      ↓\nESCALATION\n      ↓\nTRANSFER\n      ↓\nCLOSE\n```\n\nPotential automation:\n\n- create a transfer case;\n- track acceptance;\n- track bed state;\n- identify the current owner;\n- detect ageing;\n- classify the blocker;\n- notify responsible staff;\n- escalate overdue cases;\n- close when transfer completes.\n\nClinical admission and treatment decisions remain human responsibilities.",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "EV-014-001",
+        "EV-014-002",
+        "EV-014-003"
+      ],
+      "falsification_basis": [],
+      "provenance": {
+        "source_file": "OPP-014-01.md",
+        "section": "9. ART Opportunity Hypothesis",
+        "line_start": 168,
+        "line_end": 208
+      }
+    },
+    {
+      "id": "HYP-014-002",
+      "statement": "Because the study provides no measured avoidable-delay fraction, use sensitivity scenarios rather than pretending a specific savings rate.\n\nFor the **438 delayed-transfer cases**, suppose a coordination layer could reduce only a fraction of the prolonged waiting time:\n\n| Hypothetical reduction | Equivalent time per case | Aggregate across 438 cases |\n|---|---:|---:|\n| 5% of 51h | 2.55 h | ~1,117 h |\n| 10% of 51h | 5.1 h | ~2,234 h |\n| 20% of 51h | 10.2 h | ~4,468 h |\n| 25% of 51h | 12.75 h | ~5,585 h |\n\nThese are **scenario calculations only**.\n\nThey do not mean ART could actually remove these hours.\n\nWhy the scenarios are useful:\n\n> They show the economic sensitivity of even a small reduction in very long boarding periods.\n\n---",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "EV-014-009",
+        "EV-014-010",
+        "EV-014-011"
+      ],
+      "falsification_basis": [],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "8. Addressable Delay Hypothesis",
+        "line_start": 217,
+        "line_end": 238
+      }
+    },
+    {
+      "id": "HYP-014-003",
+      "statement": "- 5–25% reduction sensitivity scenarios applied to the 51-hour median.\n- Potential aggregate time exposure calculated only as scenario analysis.",
+      "status": "UNVERIFIED",
+      "supporting_basis": [
+        "EV-014-009",
+        "EV-014-010",
+        "EV-014-011"
+      ],
+      "falsification_basis": [],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "Hypothesis modelling",
+        "line_start": 608,
+        "line_end": 612
+      }
+    }
+  ],
+  "results": [
+    {
+      "id": "RES-014-001",
+      "statement": "**PASS → High-consequence workflow target**",
+      "status": "PASSED",
+      "provenance": {
+        "source_file": "OPP-014-01.md",
+        "section": "Decision",
+        "line_start": 279,
+        "line_end": 280
+      }
+    },
+    {
+      "id": "RES-014-002",
+      "statement": "**PASS → High-consequence pre-transfer exception path verified**",
+      "status": "PASSED",
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "Decision",
+        "line_start": 40,
+        "line_end": 69
+      }
+    },
+    {
+      "id": "RES-014-003",
+      "statement": "**PASS → High time-exposure and coordination-burden signal**",
+      "status": "PASSED",
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "Decision",
+        "line_start": 509,
+        "line_end": 510
+      }
+    },
+    {
+      "id": "RES-014-004",
+      "statement": "**CONDITIONAL PASS → Industry pain validated; current company automation gap not proven**",
+      "status": "UNVERIFIED",
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "Decision",
+        "line_start": 346,
+        "line_end": 347
+      }
+    }
+  ],
+  "falsification": [],
+  "traceability": [
+    {
+      "statement": "---\nid: OPP-014-01\nopportunity_id: OPP-014\nindustry: Healthcare / Hospital Operations\ncompany: AIIMS Bhopal\nlocation: Bhopal, Madhya Pradesh, India\nworkflow: Emergency Department to Speciality Unit / ICU-HDU Transfer Coordination\npain_type: Patient Safety / Time-Critical Patient Flow / Transfer Delay\nresearch_stage: Workflow Discovery\nmethodology: Legacy VRL\nstatus: PASS\ndecision: HIGH_CONSEQUENCE_WORKFLOW_TARGET_CONTINUE\ncompany_pain_signal: strong_current_2026_direct_evidence\nindustry_generalizability: high\ncurrent_pain_magnitude: directly_measured\ncurrent_capability_gap: partially_known\ncustomer_roi: unknown\ncommercial_status: discovery_continue\n---",
+      "research_location": "OPP-014-01.md#Front matter",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-01.md",
+        "section": "Front matter",
+        "line_start": 1,
+        "line_end": 18
+      }
+    },
+    {
+      "statement": "**Company/Hospital:** AIIMS Bhopal  \n**Workflow:** Emergency Department → Speciality Unit / ICU-HDU Transfer Coordination  \n**VRL checkpoint:** OPP-014-01  \n**Decision:** **PASS → High-consequence workflow target**",
+      "research_location": "OPP-014-01.md#OPP-014-01 — Workflow Discovery",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-01.md",
+        "section": "OPP-014-01 — Workflow Discovery",
+        "line_start": 21,
+        "line_end": 27
+      }
+    },
+    {
+      "statement": "A prospective study published in May 2026 at AIIMS Bhopal provides direct, current evidence of prolonged emergency-department boarding caused predominantly by system bottlenecks.\n\nThe ED has **31 beds**, including 10 paediatric beds, and handles approximately **193 visits/day**. The study enrolled **510 adults** who remained in the ED for more than 24 hours without speciality transfer.\n\n[PubMed — Causes of Delayed Transfers](SRC-EXT-OPP-014-F8957FF7)\n\n[PMC — Full study](SRC-EXT-OPP-014-D83B68B2)",
+      "research_location": "OPP-014-01.md#Discovery",
+      "source_urls": [
+        "SRC-EXT-OPP-014-F8957FF7",
+        "SRC-EXT-OPP-014-D83B68B2"
+      ],
+      "provenance": {
+        "source_file": "OPP-014-01.md",
+        "section": "1. Discovery",
+        "line_start": 28,
+        "line_end": 37
+      }
+    },
+    {
+      "statement": "During six months:\n\n- **5,922 ED admissions**\n- **510 patients (8.6%)** had delayed transfer/boarding >24 hours\n- **438 (85.9%)** eventually transferred\n- **72 (14.1%)** did not transfer during the observed pathway\n- median ED stay before eventual transfer: **51 hours**\n\n[PMC](SRC-EXT-OPP-014-D83B68B2)",
+      "research_location": "OPP-014-01.md#Direct Evidence",
+      "source_urls": [
+        "SRC-EXT-OPP-014-D83B68B2"
+      ],
+      "provenance": {
+        "source_file": "OPP-014-01.md",
+        "section": "2. Direct Evidence",
+        "line_start": 38,
+        "line_end": 49
+      }
+    },
+    {
+      "statement": "System causes accounted for **70%** of delayed cases.\n\n| Cause | Cases | Share |\n|---|---:|---:|\n| Waiting for speciality ICU/HDU bed | 169 | 33.1% |\n| Interdepartmental dispute/denial | 166 | 32.5% |\n| Poor prognosis | 135 | 26.5% |\n\nThe first two are especially relevant because they represent operational coordination and ownership problems rather than a purely clinical treatment decision.",
+      "research_location": "OPP-014-01.md#Root Causes",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-01.md",
+        "section": "3. Root Causes",
+        "line_start": 50,
+        "line_end": 61
+      }
+    },
+    {
+      "statement": "```text\nPATIENT ARRIVES ED\n        ↓\nASSESSMENT / STABILISATION\n        ↓\nSPECIALITY NEED IDENTIFIED\n        ↓\nSPECIALITY / ICU / HDU DISCUSSION\n        ↓\nACCEPTANCE\n        ↓\nBED AVAILABILITY\n        ↓\nTRANSFER DECISION\n        ↓\nTRANSFER PREPARATION\n        ↓\nPATIENT MOVED\n```",
+      "research_location": "OPP-014-01.md#Workflow",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-01.md",
+        "section": "4. Workflow",
+        "line_start": 62,
+        "line_end": 83
+      }
+    },
+    {
+      "statement": "The largest system cause was waiting for an ICU/HDU bed under the designated speciality: **169 cases (33.1%)**.\n\nThe potential exception state is:\n\n```text\nSPECIALITY NEED\n      ↓\nICU / HDU REQUIRED\n      ↓\nBED AVAILABLE?\n      ↓ NO\nWAIT\n      ↓\nWHEN WILL BED OPEN?\n      ↓\nWHO IS TRACKING?\n      ↓\nESCALATION?\n```\n\nThe study itself recommends hospital-wide bed dashboards and dedicated surge ICU beds. [PMC](SRC-EXT-OPP-014-D83B68B2)",
+      "research_location": "OPP-014-01.md#Exception A — ICU/HDU Bed Wait",
+      "source_urls": [
+        "SRC-EXT-OPP-014-D83B68B2"
+      ],
+      "provenance": {
+        "source_file": "OPP-014-01.md",
+        "section": "5. Exception A — ICU/HDU Bed Wait",
+        "line_start": 84,
+        "line_end": 107
+      }
+    },
+    {
+      "statement": "**166 cases (32.5%)** involved interdepartmental or multi-departmental dispute/denial.\n\nThe study defines these as cases where departments disputed primary responsibility and coordination was required until a lead department accepted the patient.\n\nPotential state:\n\n```text\nPATIENT NEEDS SPECIALITY CARE\n        ↓\nDEPARTMENT A\n        ↓\n\"NOT OUR PRIMARY CASE\"\n        ↓\nDEPARTMENT B\n        ↓\n\"NEEDS OTHER SPECIALITY\"\n        ↓\nMULTI-DEPARTMENT DISCUSSION\n        ↓\nNO OWNER\n        ↓\nPATIENT REMAINS IN ED\n```\n\nThis is a strong workflow-orchestration candidate because ownership itself becomes the blocker.",
+      "research_location": "OPP-014-01.md#Exception B — Interdepartmental Ownership Failure",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-01.md",
+        "section": "6. Exception B — Interdepartmental Ownership Failure",
+        "line_start": 108,
+        "line_end": 135
+      }
+    },
+    {
+      "statement": "A stuck transfer creates questions such as:\n\n```text\nWHO HAS ACCEPTED THE PATIENT?\nWHICH SPECIALITY OWNS THE CASE?\nIS A BED ACTUALLY AVAILABLE?\nWHAT IS BLOCKING TRANSFER?\nWHO MUST ACT NEXT?\nHOW LONG HAS THE CASE BEEN WAITING?\nWHEN SHOULD IT ESCALATE?\n```\n\nThe study does **not** quantify staff minutes spent answering these questions. Therefore human effort remains unquantified.",
+      "research_location": "OPP-014-01.md#Human Investigation Surface",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-01.md",
+        "section": "7. Human Investigation Surface",
+        "line_start": 136,
+        "line_end": 151
+      }
+    },
+    {
+      "statement": "Among the 438 delayed patients who eventually transferred:\n\n- median ED stay before transfer: **51 hours**\n- mean hospital LOS: **10.5 days**\n- 71 deaths (16.2%)\n- 66 left against medical advice (15.1%)\n\nThe study reports longer median ED boarding among patients who died or left against medical advice (**72 vs 48 hours**), but did not perform a formal statistical comparison for this relationship.\n\nTherefore **do not claim that transfer delay caused these deaths**.\n\n[PubMed](SRC-EXT-OPP-014-F8957FF7)",
+      "research_location": "OPP-014-01.md#Consequence",
+      "source_urls": [
+        "SRC-EXT-OPP-014-F8957FF7"
+      ],
+      "provenance": {
+        "source_file": "OPP-014-01.md",
+        "section": "8. Consequence",
+        "line_start": 152,
+        "line_end": 166
+      }
+    },
+    {
+      "statement": "The opportunity is **not** to create ICU beds.\n\nThe potential automation layer is:\n\n```text\nTRANSFER CASE\n      ↓\nREQUIRED SPECIALITY / LEVEL\n      ↓\nACCEPTANCE STATUS\n      ↓\nBED STATUS\n      ↓\nOWNER\n      ↓\nWAIT AGE\n      ↓\nBLOCKER\n      ↓\nESCALATION\n      ↓\nTRANSFER\n      ↓\nCLOSE\n```\n\nPotential automation:\n\n- create a transfer case;\n- track acceptance;\n- track bed state;\n- identify the current owner;\n- detect ageing;\n- classify the blocker;\n- notify responsible staff;\n- escalate overdue cases;\n- close when transfer completes.\n\nClinical admission and treatment decisions remain human responsibilities.",
+      "research_location": "OPP-014-01.md#ART Opportunity Hypothesis",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-01.md",
+        "section": "9. ART Opportunity Hypothesis",
+        "line_start": 167,
+        "line_end": 208
+      }
+    },
+    {
+      "statement": "The study recommends a hospital-wide bed dashboard, clear routing protocols and ED authority for prolonged boarders, but it does not establish whether AIIMS Bhopal currently has a fully integrated real-time coordination system.\n\nTherefore:\n\n**Current capability = partially known / not fully verified.**\n\nThe opportunity should not be reduced to a simple dashboard.\n\nThe potential layer is:\n\n```text\nBED STATUS\n+\nPATIENT STATUS\n+\nSPECIALITY ACCEPTANCE\n+\nOWNER\n+\nAGEING\n+\nBLOCKER\n+\nESCALATION\n+\nTRANSFER COMPLETION\n```",
+      "research_location": "OPP-014-01.md#Existing-System Boundary",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-01.md",
+        "section": "10. Existing-System Boundary",
+        "line_start": 209,
+        "line_end": 238
+      }
+    },
+    {
+      "statement": "A 2023 Indian prospective study of ED-to-ICU transfers found **35 of 52 patients (67.3%)** were not transferred within 30 minutes; average ED-to-ICU transfer time was **69.9 ± 62.5 minutes**, with ED-related factors accounting for 54% of delays. Monthly feedback reduced transfer time by 42.6%.\n\n[PMC — Delayed Transfer of Critically Ill Patients](SRC-EXT-OPP-014-894D8E0C)\n\nThis independently supports recurrence of the transfer-delay problem in Indian emergency care.",
+      "research_location": "OPP-014-01.md#Industry Recurrence",
+      "source_urls": [
+        "SRC-EXT-OPP-014-894D8E0C"
+      ],
+      "provenance": {
+        "source_file": "OPP-014-01.md",
+        "section": "11. Industry Recurrence",
+        "line_start": 239,
+        "line_end": 246
+      }
+    },
+    {
+      "statement": "**OPP-013:** physical logistics around blood/sample movement.\n\n**OPP-014:** hospital-wide patient ownership, bed capacity and transfer coordination.\n\nPotentially affected workflows include:\n\n- ED → ICU\n- ED → HDU\n- ED → speciality ward\n- speciality → ICU\n- interdepartmental transfers",
+      "research_location": "OPP-014-01.md#Why OPP-014 Is Different",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-01.md",
+        "section": "12. Why OPP-014 Is Different",
+        "line_start": 247,
+        "line_end": 260
+      }
+    },
+    {
+      "statement": "| Dimension | Status |\n|---|---|\n| High-consequence workflow | VERIFIED |\n| Time-sensitive | VERIFIED |\n| Current 2026 study | VERIFIED |\n| 5,922 ED admissions | VERIFIED |\n| 510 >24h delayed boarders | VERIFIED |\n| Median 51h before eventual transfer | VERIFIED |\n| ICU/HDU bed wait | VERIFIED |\n| Interdepartmental dispute | VERIFIED |\n| System causes = 70% | VERIFIED |\n| Current automation capability | UNKNOWN / PARTIAL |\n| Current manual investigation effort | UNKNOWN |\n| Current escalation process | UNKNOWN |\n| Current financial ROI | UNKNOWN |",
+      "research_location": "OPP-014-01.md#Evidence Matrix",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-01.md",
+        "section": "13. Evidence Matrix",
+        "line_start": 261,
+        "line_end": 278
+      }
+    },
+    {
+      "statement": "The discovery passes:\n\n```text\nCURRENT 2026 EVIDENCE       ✓\nHIGH CONSEQUENCE            ✓\nTIME SENSITIVE              ✓\nMEASURABLE DELAY            ✓\nSYSTEM BOTTLENECK           ✓\nMULTI-DEPARTMENT            ✓\nOWNERSHIP EXCEPTION         ✓\nBED CAPACITY EXCEPTION      ✓\nLONG-AGING CASES            ✓\nAUTOMATION SURFACE          ✓\nINDUSTRY RECURRENCE         ✓\n```\n\nThe precise opportunity hypothesis is:\n\n> **Coordinate unresolved ED-to-speciality transfer cases by making the blocker, owner, ageing state and escalation path visible until transfer is completed.**",
+      "research_location": "OPP-014-01.md#PASS → HIGH-CONSEQUENCE WORKFLOW TARGET",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-01.md",
+        "section": "PASS → HIGH-CONSEQUENCE WORKFLOW TARGET",
+        "line_start": 281,
+        "line_end": 302
+      }
+    },
+    {
+      "statement": "Focus only on:\n\n1. How speciality acceptance is requested.\n2. How acceptance is communicated.\n3. How bed availability is checked.\n4. What happens when no bed exists.\n5. What happens when departments disagree.\n6. Who investigates the blocker.\n7. How many calls/messages/approvals are required.\n8. Who escalates.\n9. How the case finally becomes transferable.\n\n**Do not quantify ROI yet.**",
+      "research_location": "OPP-014-01.md#OPP-014-02 — Exception + Human Investigation Reconstruction",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-01.md",
+        "section": "OPP-014-02 — Exception + Human Investigation Reconstruction",
+        "line_start": 305,
+        "line_end": 320
+      }
+    },
+    {
+      "statement": "[PubMed — Causes of Delayed Transfers](SRC-EXT-OPP-014-F8957FF7)\n\nDirect evidence: 5,922 ED admissions; 510 delayed boarders; 70% system causes; 169 ICU/HDU bed waits; 166 interdepartmental disputes; median 51-hour ED stay before eventual transfer.",
+      "research_location": "OPP-014-01.md#E-001 — Current 2026 AIIMS Bhopal Study",
+      "source_urls": [
+        "SRC-EXT-OPP-014-F8957FF7"
+      ],
+      "provenance": {
+        "source_file": "OPP-014-01.md",
+        "section": "E-001 — Current 2026 AIIMS Bhopal Study",
+        "line_start": 323,
+        "line_end": 328
+      }
+    },
+    {
+      "statement": "[PMC — Causes of Delayed Transfers](SRC-EXT-OPP-014-D83B68B2)\n\nDirect workflow detail, cause definitions, ED scale and proposed hospital-wide interventions.",
+      "research_location": "OPP-014-01.md#E-002 — Full Study",
+      "source_urls": [
+        "SRC-EXT-OPP-014-D83B68B2"
+      ],
+      "provenance": {
+        "source_file": "OPP-014-01.md",
+        "section": "E-002 — Full Study",
+        "line_start": 329,
+        "line_end": 334
+      }
+    },
+    {
+      "statement": "[PMC — Delayed Transfer of Critically Ill Patients](SRC-EXT-OPP-014-894D8E0C)\n\nIndependent Indian evidence: 67.3% delayed >30 minutes; 69.9-minute average transfer time; ED-related factors 54%; transfer time reduced 42.6% after feedback.",
+      "research_location": "OPP-014-01.md#E-003 — Indian ICU Transfer Evidence",
+      "source_urls": [
+        "SRC-EXT-OPP-014-894D8E0C"
+      ],
+      "provenance": {
+        "source_file": "OPP-014-01.md",
+        "section": "E-003 — Indian ICU Transfer Evidence",
+        "line_start": 335,
+        "line_end": 340
+      }
+    },
+    {
+      "statement": "```yaml\nartifact_type: opportunity_intelligence\nopportunity_id: OPP-014\ncompany: AIIMS Bhopal\nlocation: bhopal_madhya_pradesh_india\nindustry: healthcare_hospital_operations\nworkflow: emergency_department_to_speciality_unit_icu_hdu_transfer_coordination\npain_type: patient_safety_time_critical_patient_flow_transfer_delay\nresearch_stage: workflow_discovery\ndecision: pass_high_consequence_workflow_target\nstudy_date: 2026\ned_beds: 31\ndaily_ed_visits: approximately_193\ned_admissions_studied: 5922\ndelayed_boarders: 510\ndelayed_boarder_rate: 8.6_percent\nmedian_ed_stay_before_transfer: 51_hours\nsystem_causes: 70_percent\nicu_hdu_bed_wait: 33.1_percent\ninterdepartmental_dispute_denial: 32.5_percent\ncurrent_automation: unknown_partial\ncurrent_manual_investigation: unknown\ncurrent_escalation: unknown\ncurrent_capability_gap: partially_known\ncustomer_roi: unknown\nindustry_generalisability: high\nnext_checkpoint: OPP-014-02\ncommercial_status: discovery_continue\n```",
+      "research_location": "OPP-014-01.md#AIL Compilation Metadata",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-01.md",
+        "section": "AIL Compilation Metadata",
+        "line_start": 341,
+        "line_end": 372
+      }
+    },
+    {
+      "statement": "> **OPP-014 is supported by unusually current direct evidence: a six-month 2026 prospective study at AIIMS Bhopal found 510 patients with >24-hour ED boarding, with 70% of delays attributed to system causes. ICU/HDU bed waits and interdepartmental disputes accounted for 33.1% and 32.5% respectively. The evidence strongly supports a high-consequence transfer-coordination workflow, while current automation and human effort remain to be reconstructed.**\n\n**OPP-014-01 = PASS → HIGH-CONSEQUENCE WORKFLOW TARGET**",
+      "research_location": "OPP-014-01.md#Integrity Statement",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-01.md",
+        "section": "Integrity Statement",
+        "line_start": 373,
+        "line_end": 377
+      }
+    },
+    {
+      "statement": "---\nid: OPP-014-02\nopportunity_id: OPP-014\nindustry: Healthcare / Hospital Operations\ncompany: AIIMS Bhopal\nworkflow: Emergency Department to Speciality Unit / ICU-HDU Transfer Coordination\nresearch_stage: Exception + Human Investigation Reconstruction\nmethodology: Legacy VRL\nstatus: PASS\ndecision: HIGH_CONSEQUENCE_PRE_TRANSFER_EXCEPTION_PATH_VERIFIED\ncompany_pain_signal: strong_current_2026_direct_evidence\nindustry_generalizability: high\ncurrent_capability_gap: unknown\ncustomer_roi: unknown\ncommercial_status: discovery_continue\n---",
+      "research_location": "OPP-014-02.md#Front matter",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "Front matter",
+        "line_start": 1,
+        "line_end": 15
+      }
+    },
+    {
+      "statement": "**Company/Hospital:** AIIMS Bhopal  \n**Workflow:** Emergency Department → Speciality Unit / ICU-HDU Transfer Coordination  \n**VRL checkpoint:** OPP-014-02  \n**Decision:** **PASS → High-consequence pre-transfer exception path verified**",
+      "research_location": "OPP-014-02.md#OPP-014-02 — Exception + Human Investigation Reconstruction",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "OPP-014-02 — Exception + Human Investigation Reconstruction",
+        "line_start": 18,
+        "line_end": 24
+      }
+    },
+    {
+      "statement": "> **When an ED patient cannot progress to speciality care, what is actually blocking the transfer, who owns the unresolved decision/capacity state, and what coordination is required to resolve it?**\n\nThe 2026 AIIMS Bhopal study directly identifies two dominant system-related causes:\n\n- awaiting ICU/HDU bed under the designated speciality: **169/510 (33.1%)**;\n- interdepartmental/multi-departmental dispute or denial: **166/510 (32.5%)**.\n\nThe study defines the second category as cases where two or more departments disputed primary responsibility and coordination was required until the lead department accepted the patient.\n\nThis is enough to reconstruct the **exception classes**, but not enough to claim the exact current communication sequence, number of calls, staff minutes or software used.\n\n---",
+      "research_location": "OPP-014-02.md#Checkpoint Question",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "1. Checkpoint Question",
+        "line_start": 25,
+        "line_end": 39
+      }
+    },
+    {
+      "statement": "The study explicitly measured delayed transfer from **ED registration to the speciality unit's documented transfer decision exceeding 24 hours**.\n\nThis matters.\n\nThe strongest opportunity is therefore not simply:\n\n```text\nTRANSFER DECIDED\n      ↓\nPATIENT PHYSICALLY MOVED\n```\n\nIt is:\n\n```text\nPATIENT STABILIZED / NEEDS SPECIALITY CARE\n      ↓\nSPECIALITY ACCEPTANCE / TRANSFER DECISION\n      ↓\nBED / OWNERSHIP / RESPONSIBILITY\n      ↓\nTRANSFER\n```\n\nThe study concludes that **pre-transfer system bottlenecks** were the major contributors despite dedicated 24-hour speciality unit rotations.\n\n---",
+      "research_location": "OPP-014-02.md#Important Boundary: Pre-Decision vs Post-Decision",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "2. Important Boundary: Pre-Decision vs Post-Decision",
+        "line_start": 40,
+        "line_end": 69
+      }
+    },
+    {
+      "statement": "Direct evidence:\n\n**169 cases (33.1%)**\n\nThe patient is assigned to a speciality but remains in the ED while waiting for an ICU/HDU bed.\n\nReconstructed state:\n\n```text\nED PATIENT\n   ↓\nSPECIALITY IDENTIFIED\n   ↓\nICU / HDU REQUIRED\n   ↓\nSPECIALITY ACCEPTS / ASSIGNS\n   ↓\nBED AVAILABLE?\n   ↓ NO\nPATIENT REMAINS IN ED\n```\n\nThe investigation problem becomes:\n\n```text\nCURRENT BED STATE?\n      ↓\nEXPECTED BED RELEASE?\n      ↓\nIS ANOTHER PATIENT BLOCKING IT?\n      ↓\nCAN A SURGE / ALTERNATIVE BED BE USED?\n      ↓\nWHO CAN AUTHORISE THE NEXT ACTION?\n```\n\nThe paper recommends a hospital-wide bed dashboard and dedicated surge ICU beds, indicating that bed visibility/capacity is a recognized operational intervention.",
+      "research_location": "OPP-014-02.md#Exception A — ICU/HDU Bed Not Available",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "3. Exception A — ICU/HDU Bed Not Available",
+        "line_start": 70,
+        "line_end": 109
+      }
+    },
+    {
+      "statement": "- bed availability was a major delay category;\n- it occurred in 33.1% of the delayed cohort.",
+      "research_location": "OPP-014-02.md#What is proven",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "What is proven",
+        "line_start": 110,
+        "line_end": 114
+      }
+    },
+    {
+      "statement": "- that staff currently search manually for beds;\n- that the bed state is not digitally visible;\n- that automated escalation is absent.\n\n---",
+      "research_location": "OPP-014-02.md#What is not proven",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "What is not proven",
+        "line_start": 115,
+        "line_end": 122
+      }
+    },
+    {
+      "statement": "Direct evidence:\n\n**166 cases (32.5%)**\n\nThe study's definition is unusually important:\n\n> two or more departments disputed primary responsibility and coordination was needed until a lead department accepted the patient.\n\nReconstructed path:\n\n```text\nPATIENT NEEDS SPECIALITY CARE\n        ↓\nDEPARTMENT A REVIEW\n        ↓\nACCEPT?\n   ↓ NO / DISPUTED\nDEPARTMENT B REVIEW\n        ↓\nACCEPT?\n   ↓ NO / DISPUTED\nMULTI-DEPARTMENT COORDINATION\n        ↓\nPRIMARY OWNER IDENTIFIED\n        ↓\nACCEPTANCE\n        ↓\nTRANSFER PATH OPENS\n```\n\nThis is the most important exception for ART because the blocker is not simply a missing physical resource.\n\nIt is an **unresolved ownership state**.\n\n---",
+      "research_location": "OPP-014-02.md#Exception B — Interdepartmental Dispute / Denial",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "4. Exception B — Interdepartmental Dispute / Denial",
+        "line_start": 123,
+        "line_end": 160
+      }
+    },
+    {
+      "statement": "When the dispute exists, someone must effectively determine:\n\n```text\nWHAT DOES THE PATIENT NEED?\n        ↓\nWHICH SPECIALITY IS BEST PLACED TO OWN IT?\n        ↓\nHAS ANY DEPARTMENT ACCEPTED?\n        ↓\nIF NOT, WHICH DEPARTMENTS ARE INVOLVED?\n        ↓\nWHO HAS AUTHORITY TO RESOLVE THE DISPUTE?\n        ↓\nWHAT IS THE NEXT ACTION?\n        ↓\nWHEN SHOULD THE CASE ESCALATE?\n```\n\nThe AIIMS study confirms the existence of the dispute/denial category and need for coordination.\n\nIt does **not** document the exact current call/message/escalation sequence.\n\nTherefore the sequence above is a **workflow reconstruction**, not a claim about current AIIMS procedure.\n\n---",
+      "research_location": "OPP-014-02.md#Human Investigation Questions",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "5. Human Investigation Questions",
+        "line_start": 161,
+        "line_end": 188
+      }
+    },
+    {
+      "statement": "The strongest abstraction from the dispute category is:\n\n```text\nPATIENT\n   ↓\nMULTIPLE POSSIBLE SPECIALITIES\n   ↓\nNO AGREED PRIMARY OWNER\n   ↓\nCASE AGES IN ED\n```\n\nThis creates a particularly important operational state:\n\n> **The patient has a clinical need, but the organisational next owner is unresolved.**\n\nThat is fundamentally different from:\n\n> “No ICU bed exists.”\n\nOne is **capacity**.\n\nThe other is **ownership**.\n\nA single automation workflow may need to handle both.\n\n---",
+      "research_location": "OPP-014-02.md#Exception C — No Clear Owner",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "6. Exception C — No Clear Owner",
+        "line_start": 189,
+        "line_end": 218
+      }
+    },
+    {
+      "statement": "The AIIMS paper does not directly report a separate category for:\n\n> “bed exists but patient remains in ED because the transfer handoff is unresolved.”\n\nTherefore this should **not** be counted as an AIIMS-specific finding.\n\nHowever, independent transfer research shows that even when beds appear available, patients can remain waiting because acceptance, notification and physical relocation are separate steps. A qualitative study describes “empty beds” that were visible but patients still waited in the ED because the receiving unit had not completed the transfer pathway.\n\nThis supports an **industry-level exception hypothesis**, not a current AIIMS claim.\n\n---",
+      "research_location": "OPP-014-02.md#Exception D — Bed Exists but Transfer Still Does Not Progress",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "7. Exception D — Bed Exists but Transfer Still Does Not Progress",
+        "line_start": 219,
+        "line_end": 232
+      }
+    },
+    {
+      "statement": "The AIIMS authors recommend giving ED physicians authority to transfer patients who have boarded for >24 hours to the most appropriate speciality after consultation.\n\nThis is important because it reveals a potential escalation boundary:\n\n```text\nTRANSFER BLOCKER\n      ↓\nNORMAL ROUTING\n      ↓\nNO RESOLUTION\n      ↓\nAGEING THRESHOLD\n      ↓\nAUTHORIZED ESCALATION\n      ↓\nTRANSFER DECISION\n```\n\nThe study proposes the policy intervention.\n\nIt does not establish that such an automated or formal ageing/escalation mechanism currently exists.\n\n---",
+      "research_location": "OPP-014-02.md#Exception E — Transfer Authority / Escalation",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "8. Exception E — Transfer Authority / Escalation",
+        "line_start": 233,
+        "line_end": 258
+      }
+    },
+    {
+      "statement": "Combining only the evidence-supported categories:\n\n```text\nED PATIENT\n      ↓\nSPECIALITY NEED\n      ↓\nTRANSFER / ACCEPTANCE PATH\n      ↓\n      ┌───────────────────────┐\n      │ WHAT IS BLOCKING IT?  │\n      └───────────┬───────────┘\n                  │\n        ┌─────────┴──────────┐\n        ↓                    ↓\n   BED CAPACITY         OWNERSHIP\n        ↓                    ↓\n ICU/HDU BED WAIT       DEPARTMENT DISPUTE\n        ↓                    ↓\n   WAIT / AGEING        COORDINATION\n        ↓                    ↓\n  BED AVAILABLE?       LEAD OWNER?\n        ↓                    ↓\n        └─────────┬──────────┘\n                  ↓\n           TRANSFER DECISION\n                  ↓\n               TRANSFER\n                  ↓\n                CLOSE\n```\n\nThis is the central OPP-014 exception architecture.\n\n---",
+      "research_location": "OPP-014-02.md#The Full Reconstructed Exception Model",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "9. The Full Reconstructed Exception Model",
+        "line_start": 259,
+        "line_end": 296
+      }
+    },
+    {
+      "statement": "The likely coordination work falls into two different classes.",
+      "research_location": "OPP-014-02.md#Human Coordination Surface",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "10. Human Coordination Surface",
+        "line_start": 297,
+        "line_end": 300
+      }
+    },
+    {
+      "statement": "```text\nCHECK BED\n→ CHECK EXPECTED RELEASE\n→ CHECK ALTERNATIVE\n→ CONTACT RESPONSIBLE UNIT\n→ UPDATE ED\n→ RECHECK\n→ ESCALATE\n```",
+      "research_location": "OPP-014-02.md#A. Capacity investigation",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "A. Capacity investigation",
+        "line_start": 301,
+        "line_end": 312
+      }
+    },
+    {
+      "statement": "```text\nIDENTIFY SPECIALITIES\n→ CONTACT DEPARTMENTS\n→ EXCHANGE CLINICAL INFORMATION\n→ DETERMINE RESPONSIBILITY\n→ OBTAIN ACCEPTANCE\n→ CONFIRM TRANSFER\n```\n\nThe AIIMS paper directly supports the existence of these two **problem classes**, but not every step above.\n\n---",
+      "research_location": "OPP-014-02.md#B. Ownership investigation",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "B. Ownership investigation",
+        "line_start": 313,
+        "line_end": 327
+      }
+    },
+    {
+      "statement": "The two dominant blockers create a common abstraction:\n\n> **An ED transfer case remains open because a required state has not been achieved.**\n\nThat state can be represented as:\n\n```text\nTRANSFER CASE\n├── Patient\n├── Required speciality\n├── Required care level\n├── Acceptance status\n├── Bed status\n├── Current owner\n├── Blocker\n├── Age\n├── Escalation level\n└── Completion\n```\n\nThe automation opportunity is therefore not a clinical decision engine.\n\nIt is a **state-and-escalation engine**.\n\n---",
+      "research_location": "OPP-014-02.md#Why This Is a Strong Automation Surface",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "11. Why This Is a Strong Automation Surface",
+        "line_start": 328,
+        "line_end": 355
+      }
+    },
+    {
+      "statement": "The AIIMS study recommends a hospital-wide bed dashboard and clear routing protocols.\n\nTherefore the opportunity should not assume:\n\n> “AIIMS has no bed-management software.”\n\nThat is unknown.\n\nThe actual capability questions are:\n\n```text\nCAN CURRENT SYSTEM SEE BED STATE?\nCAN IT SEE ACCEPTANCE STATE?\nCAN IT ASSIGN AN OWNER?\nCAN IT TRACK AGE?\nCAN IT IDENTIFY BLOCKER?\nCAN IT ESCALATE?\nCAN IT CLOSE THE LOOP?\n```\n\nThese must be validated later.\n\n---",
+      "research_location": "OPP-014-02.md#Existing-System Boundary",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "12. Existing-System Boundary",
+        "line_start": 356,
+        "line_end": 381
+      }
+    },
+    {
+      "statement": "An Indian ED-to-ICU prospective study found **35/52 (67.3%)** critically ill patients were not transferred within 30 minutes, with ED-related factors accounting for **54%** of delays. Regular feedback reduced transfer time by **42.6%** over the study period.\n\nQualitative research also documents conflict and negotiation between emergency and receiving teams during transfer, with workload and competing departmental priorities contributing to friction.\n\nThis supports the broader hypothesis that transfer delay can involve **coordination and ownership**, not just bed scarcity.\n\n---",
+      "research_location": "OPP-014-02.md#Industry Triangulation",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "13. Industry Triangulation",
+        "line_start": 382,
+        "line_end": 391
+      }
+    },
+    {
+      "statement": "This opportunity must not become:\n\n> “AI decides which speciality should take the patient.”\n\nThat is unsafe and outside the evidence.\n\nThe automation boundary is:\n\n```text\nHUMAN CLINICAL DECISION\n        ↓\nTRANSFER CASE CREATED\n        ↓\nWORKFLOW COORDINATION\n        ↓\nOWNER / BED / BLOCKER\n        ↓\nREMINDER\n        ↓\nESCALATION\n        ↓\nHUMAN DECISION\n```\n\nThe system facilitates the operational pathway; humans retain clinical authority.\n\n---",
+      "research_location": "OPP-014-02.md#Critical Safety Boundary",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "14. Critical Safety Boundary",
+        "line_start": 392,
+        "line_end": 421
+      }
+    },
+    {
+      "statement": "| Element | Classification |\n|---|---|\n| >24h ED boarding | **DIRECT AIIMS EVIDENCE** |\n| ICU/HDU bed wait | **DIRECT AIIMS EVIDENCE** |\n| Interdepartmental dispute/denial | **DIRECT AIIMS EVIDENCE** |\n| Coordination until lead department accepts | **DIRECT AIIMS DEFINITION** |\n| 51h median ED stay before eventual transfer | **DIRECT AIIMS EVIDENCE** |\n| Bed dashboard as proposed intervention | **DIRECT AIIMS RECOMMENDATION** |\n| Exact current call/message sequence | **UNKNOWN** |\n| Exact number of staff involved | **UNKNOWN** |\n| Current escalation mechanism | **UNKNOWN** |\n| Current software capability | **UNKNOWN** |\n| “Bed exists but transfer is stuck” at AIIMS | **NOT ESTABLISHED** |\n| Owner/age/blocker state model | **ANALYTICAL RECONSTRUCTION** |\n| Automated orchestration opportunity | **HYPOTHESIS** |\n\n---",
+      "research_location": "OPP-014-02.md#What Is Proven vs Reconstructed",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "15. What Is Proven vs Reconstructed",
+        "line_start": 422,
+        "line_end": 441
+      }
+    },
+    {
+      "statement": "The evidence now supports:\n\n```text\nCURRENT DIRECT STUDY       ✓\nHIGH-CONSEQUENCE PATIENT   ✓\n>24H BOARDING              ✓\nBED CAPACITY EXCEPTION     ✓\nOWNERSHIP EXCEPTION        ✓\nMULTI-DEPARTMENT           ✓\nCOORDINATION REQUIRED      ✓\nLONG-AGING CASES           ✓\nINDUSTRY RECURRENCE        ✓\nAUTOMATION SURFACE         ✓\n```\n\nThe strongest opportunity primitive is:\n\n> **Resolve and escalate unresolved patient-transfer states before prolonged ED boarding becomes the default.**\n\n---",
+      "research_location": "OPP-014-02.md#PASS → HIGH-CONSEQUENCE PRE-TRANSFER EXCEPTION PATH VERIFIED",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "PASS → HIGH-CONSEQUENCE PRE-TRANSFER EXCEPTION PATH VERIFIED",
+        "line_start": 444,
+        "line_end": 466
+      }
+    },
+    {
+      "statement": "The next checkpoint should quantify:\n\n- 510 delayed cases;\n- 169 ICU/HDU-bed exceptions;\n- 166 interdepartmental-dispute exceptions;\n- 51-hour median pre-transfer ED stay among eventual transfers;\n- plausible human coordination effort using external benchmarks where necessary.\n\nAs with previous opportunities:\n\n> **Do not pretend elapsed patient time equals staff labour.**\n\nUse hypothesis ranges and clearly separate direct AIIMS measurements from external benchmarks.\n\n---",
+      "research_location": "OPP-014-02.md#OPP-014-03 — Human Effort / Pain Quantification",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "OPP-014-03 — Human Effort / Pain Quantification",
+        "line_start": 469,
+        "line_end": 486
+      }
+    },
+    {
+      "statement": "[PMC — Causes of Delayed Transfers From the Emergency Department to Speciality Units](SRC-EXT-OPP-014-D83B68B2)\n\nDirect evidence for the 510 delayed patients, 169 ICU/HDU-bed waits, 166 interdepartmental disputes, 51-hour median pre-transfer ED stay, and proposed bed-dashboard / transfer-authority interventions.",
+      "research_location": "OPP-014-02.md#E-001 — Direct AIIMS Bhopal 2026 Study",
+      "source_urls": [
+        "SRC-EXT-OPP-014-D83B68B2"
+      ],
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "E-001 — Direct AIIMS Bhopal 2026 Study",
+        "line_start": 489,
+        "line_end": 494
+      }
+    },
+    {
+      "statement": "[PubMed — Causes of Delayed Transfers](SRC-EXT-OPP-014-F8957FF7)\n\nIndependent bibliographic record for the AIIMS Bhopal study.",
+      "research_location": "OPP-014-02.md#E-002 — PubMed Record",
+      "source_urls": [
+        "SRC-EXT-OPP-014-F8957FF7"
+      ],
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "E-002 — PubMed Record",
+        "line_start": 495,
+        "line_end": 500
+      }
+    },
+    {
+      "statement": "[PMC — Delayed Transfer of Critically Ill Patients](SRC-EXT-OPP-014-894D8E0C)\n\nIndependent Indian evidence of ED-to-ICU transfer delays and reduction after regular feedback.",
+      "research_location": "OPP-014-02.md#E-003 — Indian ED-to-ICU Transfer Study",
+      "source_urls": [
+        "SRC-EXT-OPP-014-894D8E0C"
+      ],
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "E-003 — Indian ED-to-ICU Transfer Study",
+        "line_start": 501,
+        "line_end": 506
+      }
+    },
+    {
+      "statement": "[PMC — Friction at Patient Handover](SRC-EXT-OPP-014-62DA221D)\n\nQualitative evidence of interdepartmental friction during ED/internal-medicine handover.",
+      "research_location": "OPP-014-02.md#E-004 — Transfer Conflict Research",
+      "source_urls": [
+        "SRC-EXT-OPP-014-62DA221D"
+      ],
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "E-004 — Transfer Conflict Research",
+        "line_start": 507,
+        "line_end": 512
+      }
+    },
+    {
+      "statement": "[PMC — Cooperation and Conflict in Intra-Hospital Transfers](SRC-EXT-OPP-014-0690D5C0)\n\nEvidence that acceptance policies, receiving-provider involvement and responsibility boundaries can affect patient disposition and transfer.\n\n---",
+      "research_location": "OPP-014-02.md#E-005 — Intra-Hospital Transfer Cooperation",
+      "source_urls": [
+        "SRC-EXT-OPP-014-0690D5C0"
+      ],
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "E-005 — Intra-Hospital Transfer Cooperation",
+        "line_start": 513,
+        "line_end": 520
+      }
+    },
+    {
+      "statement": "```yaml\nartifact_type: opportunity_intelligence\nopportunity_id: OPP-014\ncompany: AIIMS Bhopal\nlocation: bhopal_madhya_pradesh_india\nindustry: healthcare_hospital_operations\nworkflow: emergency_department_to_speciality_unit_icu_hdu_transfer_coordination\npain_type: patient_safety_time_critical_patient_flow_transfer_delay\nresearch_stage: exception_human_investigation_reconstruction\ndecision: pass_high_consequence_pre_transfer_exception_path_verified\n\ndirect_aiims_evidence:\n  delayed_boarders: 510\n  icu_hdu_bed_wait: 169\n  interdepartmental_dispute_denial: 166\n  median_ed_stay_before_transfer: 51_hours\n  system_causes: 70_percent\n  transfer_authority_recommendation: true\n  hospital_wide_bed_dashboard_recommendation: true\n\nexception_classes:\n  bed_capacity: direct\n  ownership_dispute: direct\n  exact_current_investigation_sequence: unknown\n  current_escalation: unknown\n  current_software: unknown\n\nautomation_hypothesis:\n  transfer_case_state_tracking: candidate\n  blocker_tracking: candidate\n  owner_tracking: candidate\n  ageing: candidate\n  escalation: candidate\n  clinical_decision: excluded\n\ncurrent_capability_gap: unknown\ncustomer_roi: unknown\nindustry_generalisability: high\nnext_checkpoint: OPP-014-03\ncommercial_status: discovery_continue\n```\n\n---",
+      "research_location": "OPP-014-02.md#AIL Compilation Metadata",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "AIL Compilation Metadata",
+        "line_start": 521,
+        "line_end": 566
+      }
+    },
+    {
+      "statement": "> **The AIIMS Bhopal study directly establishes two dominant pre-transfer exception classes: ICU/HDU bed waits and interdepartmental disputes/denials. The latter explicitly requires coordination until a lead department accepts the patient. The evidence therefore supports a strong ownership/capacity exception workflow. Exact current communication mechanics, staff effort and automation capability remain unknown and must not be invented.**\n\n**OPP-014-02 = PASS → HIGH-CONSEQUENCE PRE-TRANSFER EXCEPTION PATH VERIFIED**",
+      "research_location": "OPP-014-02.md#Integrity Statement",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-02.md",
+        "section": "Integrity Statement",
+        "line_start": 567,
+        "line_end": 571
+      }
+    },
+    {
+      "statement": "---\nid: OPP-014-03\nopportunity_id: OPP-014\nindustry: Healthcare / Hospital Operations\ncompany: AIIMS Bhopal\nworkflow: Emergency Department to Speciality Unit / ICU-HDU Transfer Coordination\nresearch_stage: Human Effort / Pain Quantification\nmethodology: Legacy VRL\nstatus: PASS\ndecision: HIGH_TIME_EXPOSURE_AND_COORDINATION_BURDEN\ncompany_pain_signal: strong_current_2026_measured_delay\nindustry_generalizability: high\ncurrent_human_effort: not_directly_measured\ncurrent_capability_gap: unknown\ncustomer_roi: hypothesis_only\ncommercial_status: discovery_continue\n---",
+      "research_location": "OPP-014-03.md#Front matter",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "Front matter",
+        "line_start": 1,
+        "line_end": 16
+      }
+    },
+    {
+      "statement": "**Company/Hospital:** AIIMS Bhopal  \n**Workflow:** Emergency Department → Speciality Unit / ICU-HDU Transfer Coordination  \n**VRL checkpoint:** OPP-014-03  \n**Decision:** **PASS → High time-exposure and coordination-burden signal**\n\n---",
+      "research_location": "OPP-014-03.md#OPP-014-03 — Human Effort / Pain Quantification",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "OPP-014-03 — Human Effort / Pain Quantification",
+        "line_start": 19,
+        "line_end": 27
+      }
+    },
+    {
+      "statement": "> **How large is the operational exposure created by delayed ED-to-speciality transfer, and what portion could plausibly be addressable through coordination automation?**\n\nThe critical methodological rule is:\n\n> **Patient waiting time is not staff labour time.**\n\nThe AIIMS Bhopal study measures patient-flow delay and classifies causes, but it does not measure staff minutes spent calling, messaging, checking beds, negotiating ownership or escalating cases.\n\nTherefore this checkpoint quantifies:\n\n1. direct patient-flow exposure;\n2. exception volume;\n3. potential addressable delay using scenario modelling;\n\nbut **does not invent labour savings**.\n\n---",
+      "research_location": "OPP-014-03.md#Checkpoint Question",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "1. Checkpoint Question",
+        "line_start": 28,
+        "line_end": 47
+      }
+    },
+    {
+      "statement": "The six-month prospective study included:\n\n- **5,922 ED admissions**\n- **510 patients (8.6%)** with >24-hour delayed transfer/boarding\n- **438 (85.9%)** eventually transferred\n- **72 (14.1%)** remained without transfer during the observed pathway.\n\nAmong the 438 eventually transferred patients:\n\n- median ED stay before transfer: **51 hours**\n- IQR: **48–72 hours**\n- **310 (70.7%)** transferred within 72 hours\n- **30 (6.8%)** remained ≥96 hours.\n\nThese figures are directly reported by the study.\n\n---",
+      "research_location": "OPP-014-03.md#Direct AIIMS Bhopal Measurements",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "2. Direct AIIMS Bhopal Measurements",
+        "line_start": 48,
+        "line_end": 67
+      }
+    },
+    {
+      "statement": "The two dominant system causes were:\n\n| Exception | Cases | Share of delayed cohort |\n|---|---:|---:|\n| Awaiting ICU/HDU bed | 169 | 33.1% |\n| Interdepartmental dispute/denial | 166 | 32.5% |\n| **Combined** | **335** | **65.7%** |\n\nThe study states that system-related causes predominated at **70%**.\n\nTherefore approximately **two-thirds of all delayed cases** were associated with these two major operational exception classes.\n\nThis is a much stronger signal than a generic claim that “EDs are busy.”\n\n---",
+      "research_location": "OPP-014-03.md#Exception Volume",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "3. Exception Volume",
+        "line_start": 68,
+        "line_end": 85
+      }
+    },
+    {
+      "statement": "For the 438 patients who eventually transferred:\n\n> **Median pre-transfer ED stay = 51 hours.**\n\nThis is not an average and should not be multiplied across the cohort as though every patient waited exactly 51 hours.\n\nThe defensible statement is:\n\n> **438 delayed-transfer cases experienced a median 51-hour ED stay before speciality transfer.**\n\nThe study also reports:\n\n- 171 cases: 24–<48 hours;\n- 139 cases: 48–<72 hours;\n- 98 cases: 72–<96 hours;\n- 30 cases: ≥96 hours.\n\nThis gives a direct distribution of prolonged waiting.\n\n---",
+      "research_location": "OPP-014-03.md#Patient-Time Exposure",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "4. Patient-Time Exposure",
+        "line_start": 86,
+        "line_end": 108
+      }
+    },
+    {
+      "statement": "The most severe operational tail is:\n\n**30 of 438 transferred patients (6.8%) stayed ≥96 hours in the ED before transfer.**\n\nThat means:\n\n```text\nTRANSFER CASE\n      ↓\n>24 HOURS\n      ↓\n48 HOURS\n      ↓\n72 HOURS\n      ↓\n96+ HOURS\n      ↓\nSTILL NOT TRANSFERRED\n```\n\nThis creates a strong candidate for **age-based exception escalation**.\n\nThe study itself recommends ED transfer authority for long boarders, which reinforces that prolonged ageing is operationally material.\n\n---",
+      "research_location": "OPP-014-03.md#Long-Aging Cases",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "5. Long-Aging Cases",
+        "line_start": 109,
+        "line_end": 136
+      }
+    },
+    {
+      "statement": "The direct evidence identifies two system causes:",
+      "research_location": "OPP-014-03.md#Where Human Coordination Is Most Likely Concentrated",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "6. Where Human Coordination Is Most Likely Concentrated",
+        "line_start": 137,
+        "line_end": 140
+      }
+    },
+    {
+      "statement": "**169 cases**\n\nPotential coordination pattern:\n\n```text\nNEED ICU/HDU\n    ↓\nBED REQUEST\n    ↓\nBED NOT AVAILABLE\n    ↓\nCHECK CURRENT CAPACITY\n    ↓\nWAIT FOR RELEASE\n    ↓\nRECHECK\n    ↓\nESCALATE / ALTERNATIVE\n```",
+      "research_location": "OPP-014-03.md#A. ICU/HDU capacity",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "A. ICU/HDU capacity",
+        "line_start": 141,
+        "line_end": 162
+      }
+    },
+    {
+      "statement": "**166 cases**\n\nPotential coordination pattern:\n\n```text\nSPECIALITY A\n    ↓\nDOES NOT ACCEPT\n    ↓\nSPECIALITY B\n    ↓\nDOES NOT ACCEPT\n    ↓\nDISCUSSION / NEGOTIATION\n    ↓\nLEAD OWNER\n    ↓\nACCEPTANCE\n```\n\nThese sequences are workflow reconstructions. The study does not provide staff-time measurements for them.\n\n---",
+      "research_location": "OPP-014-03.md#B. Interdepartmental dispute",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "B. Interdepartmental dispute",
+        "line_start": 163,
+        "line_end": 188
+      }
+    },
+    {
+      "statement": "- number of delayed cases;\n- reason category;\n- time spent in ED;\n- eventual transfer/non-transfer.",
+      "research_location": "OPP-014-03.md#Directly measured",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "Directly measured",
+        "line_start": 191,
+        "line_end": 197
+      }
+    },
+    {
+      "statement": "- number of calls per case;\n- number of messages;\n- number of people involved;\n- staff minutes;\n- escalation frequency;\n- time spent searching for beds;\n- time spent resolving departmental disputes.\n\nTherefore:\n\n> **Human labour burden = unknown.**\n\nThis is not a weakness in the discovery; it is exactly where primary validation should begin if the opportunity survives.\n\n---",
+      "research_location": "OPP-014-03.md#Not measured",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "Not measured",
+        "line_start": 198,
+        "line_end": 215
+      }
+    },
+    {
+      "statement": "Because the study provides no measured avoidable-delay fraction, use sensitivity scenarios rather than pretending a specific savings rate.\n\nFor the **438 delayed-transfer cases**, suppose a coordination layer could reduce only a fraction of the prolonged waiting time:\n\n| Hypothetical reduction | Equivalent time per case | Aggregate across 438 cases |\n|---|---:|---:|\n| 5% of 51h | 2.55 h | ~1,117 h |\n| 10% of 51h | 5.1 h | ~2,234 h |\n| 20% of 51h | 10.2 h | ~4,468 h |\n| 25% of 51h | 12.75 h | ~5,585 h |\n\nThese are **scenario calculations only**.\n\nThey do not mean ART could actually remove these hours.\n\nWhy the scenarios are useful:\n\n> They show the economic sensitivity of even a small reduction in very long boarding periods.\n\n---",
+      "research_location": "OPP-014-03.md#Addressable Delay Hypothesis",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "8. Addressable Delay Hypothesis",
+        "line_start": 216,
+        "line_end": 238
+      }
+    },
+    {
+      "statement": "The previous calculation is intentionally broad.\n\nA stricter model should focus only on the **coordination-addressable fraction**, not the whole 51-hour stay.\n\nFor example:\n\n```text\nTOTAL BOARDING TIME\n        ↓\nCLINICALLY NECESSARY TIME\n        +\nRESOURCE CONSTRAINT\n        +\nCOORDINATION DELAY\n        ↓\nONLY COORDINATION DELAY IS POTENTIALLY ADDRESSABLE\n```\n\nThe study does not provide that decomposition.\n\nTherefore:\n\n**Addressable delay = UNKNOWN**\n\nThis should be established through primary operational evidence.\n\n---",
+      "research_location": "OPP-014-03.md#More Conservative Automation Model",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "9. More Conservative Automation Model",
+        "line_start": 239,
+        "line_end": 268
+      }
+    },
+    {
+      "statement": "The future ROI calculation should be:\n\n```text\nCURRENT DELAYED TRANSFER CASES\n×\nCURRENT COORDINATION-ADDRESSABLE HOURS\n×\nLOADED COST OF STAFF TIME\n=\nDIRECT LABOUR VALUE\n```\n\nThen separately:\n\n```text\n+\nED CAPACITY RELEASE VALUE\n+\nREDUCED ESCALATION / OVERTIME\n+\nQUALITY / SAFETY VALUE\n```\n\nDo not combine these prematurely.\n\nIn particular:\n\n> **Do not assign a monetary value to saved patient time without a validated hospital economic model.**\n\n---",
+      "research_location": "OPP-014-03.md#Potential Economic Model",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "10. Potential Economic Model",
+        "line_start": 269,
+        "line_end": 301
+      }
+    },
+    {
+      "statement": "This opportunity may be stronger economically because ED beds are a constrained resource.\n\nA delayed patient occupying an ED bed can create:\n\n```text\nPATIENT WAITING\n      ↓\nED BED OCCUPIED\n      ↓\nNEW PATIENT ARRIVES\n      ↓\nLESS CAPACITY\n      ↓\nCROWDING\n```\n\nThe AIIMS study explicitly frames prolonged boarding as a contributor to ED overcrowding and recommends hospital-wide bed dashboards and surge capacity.\n\nHowever, the study does not quantify the marginal economic value of releasing an ED bed.\n\nSo:\n\n**Capacity value = plausible, not yet quantified.**\n\n---",
+      "research_location": "OPP-014-03.md#Capacity Value May Be More Important Than Labour Value",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "11. Capacity Value May Be More Important Than Labour Value",
+        "line_start": 302,
+        "line_end": 329
+      }
+    },
+    {
+      "statement": "An independent Indian prospective study of ED-to-ICU transfers examined **52 ICU admissions from the ED**.\n\nIt found:\n\n- **35/52 (67.3%)** were not transferred within 30 minutes;\n- mean ED-to-ICU transfer time: **69.9 ± 62.5 minutes**;\n- ED-related factors accounted for **54.2%** of delays;\n- transfer time decreased by **42.6%** over the study period after monthly feedback to the ED team.\n\nThis is useful because it demonstrates that operational intervention can materially reduce transfer time.\n\nBut:\n\n> **Feedback ≠ automation.**\n\nWe should not attribute the 42.6% reduction to software.\n\n---",
+      "research_location": "OPP-014-03.md#Industry Benchmark for Transfer Delay",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "12. Industry Benchmark for Transfer Delay",
+        "line_start": 330,
+        "line_end": 350
+      }
+    },
+    {
+      "statement": "The strongest potential automation target is not:\n\n> “Reduce all 51 hours.”\n\nIt is:\n\n> **Prevent a transfer case from becoming invisible while it ages.**\n\nPotential workflow:\n\n```text\nTRANSFER CASE\n      ↓\nEXPECTED NEXT STATE\n      ↓\nCURRENT STATE\n      ↓\nAGE\n      ↓\nBLOCKER\n      ↓\nOWNER\n      ↓\nACTION\n      ↓\nESCALATION\n      ↓\nRESOLUTION\n```\n\nThis is a classic workflow-orchestration primitive.\n\n---",
+      "research_location": "OPP-014-03.md#What This Means for ART",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "13. What This Means for ART",
+        "line_start": 351,
+        "line_end": 386
+      }
+    },
+    {
+      "statement": "Based on the direct evidence, the first automation rules should probably focus on:",
+      "research_location": "OPP-014-03.md#High-Value Exception Classes",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "14. High-Value Exception Classes",
+        "line_start": 387,
+        "line_end": 390
+      }
+    },
+    {
+      "statement": "```text\nICU/HDU REQUIRED\n+\nNO BED\n+\nCASE AGING\n→\nTRACK + ESCALATE\n```",
+      "research_location": "OPP-014-03.md#Rule 1 — ICU/HDU bed wait",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "Rule 1 — ICU/HDU bed wait",
+        "line_start": 391,
+        "line_end": 402
+      }
+    },
+    {
+      "statement": "```text\nSPECIALITY REQUEST\n+\nNO ACCEPTANCE\n+\nMULTIPLE DEPARTMENTS INVOLVED\n→\nTRACK OWNER + ESCALATE\n```",
+      "research_location": "OPP-014-03.md#Rule 2 — Interdepartmental ownership",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "Rule 2 — Interdepartmental ownership",
+        "line_start": 403,
+        "line_end": 414
+      }
+    },
+    {
+      "statement": "```text\nED BOARDING\n>\nDEFINED THRESHOLD\n→\nHIGH-PRIORITY EXCEPTION\n```\n\nThe exact thresholds must be decided by the hospital.\n\n---",
+      "research_location": "OPP-014-03.md#Rule 3 — Long boarder",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "Rule 3 — Long boarder",
+        "line_start": 415,
+        "line_end": 428
+      }
+    },
+    {
+      "statement": "Primary validation should reveal:\n\n```text\nCURRENT MONTHLY DELAYED CASES\n        ×\nCURRENT COORDINATION TIME / CASE\n        ×\nSTAFF COST\n```\n\nand ideally:\n\n```text\n+\nED BED HOURS RELEASED\n```\n\nThe opportunity becomes materially stronger if staff report:\n\n> “We repeatedly call multiple departments to find out who will accept the patient.”\n\nor:\n\n> “We have to keep checking whether a bed has opened.”\n\nor:\n\n> “There is no single queue showing which transfer cases are stuck and why.”\n\n---",
+      "research_location": "OPP-014-03.md#What Would Make the Opportunity Economically Strong",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "15. What Would Make the Opportunity Economically Strong",
+        "line_start": 429,
+        "line_end": 461
+      }
+    },
+    {
+      "statement": "Downgrade if:\n\n```text\nREAL-TIME BED MANAGEMENT\n+\nAUTOMATIC ACCEPTANCE TRACKING\n+\nOWNER ASSIGNMENT\n+\nAGEING ALERTS\n+\nESCALATION\n+\nCENTRAL TRANSFER QUEUE\n```\n\nalready exist and staff report little manual coordination.\n\nAlso downgrade if primary validation shows that:\n\n> almost all delay is genuine physical bed scarcity that cannot be materially improved by workflow automation.\n\nThis distinction is critical.\n\n**Software cannot manufacture ICU capacity.**\n\n---",
+      "research_location": "OPP-014-03.md#What Would Kill or Downgrade It",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "16. What Would Kill or Downgrade It",
+        "line_start": 462,
+        "line_end": 491
+      }
+    },
+    {
+      "statement": "| Component | Evidence |\n|---|---|\n| Delayed-case volume | **Strong / direct** |\n| Major exception volume | **Strong / direct** |\n| Patient waiting exposure | **Strong / direct** |\n| Human coordination burden | **Strong hypothesis, not measured** |\n| Addressable delay | **Unknown** |\n| Staff labour savings | **Unknown** |\n| ED capacity value | **Plausible, unquantified** |\n| Patient-safety value | **Potentially high, not causal/monetized** |\n| Current automation gap | **Unknown** |\n| ROI | **Hypothesis only** |\n\n---",
+      "research_location": "OPP-014-03.md#Current Economic Confidence",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "17. Current Economic Confidence",
+        "line_start": 492,
+        "line_end": 508
+      }
+    },
+    {
+      "statement": "The evidence is strong enough to continue.\n\n```text\n510 DELAYED CASES                  ✓\n335 MAJOR SYSTEM EXCEPTION CASES   ✓\n51h MEDIAN PRE-TRANSFER STAY       ✓\n30 CASES ≥96h                      ✓\n70% SYSTEM-CAUSE SHARE             ✓\nMULTI-DEPARTMENT COORDINATION      ✓\nHIGH-CONSEQUENCE PATIENT FLOW      ✓\nINDUSTRY RECURRENCE                ✓\n```\n\nBut:\n\n```text\nSTAFF MINUTES / CASE                ?\nADDRESSABLE HOURS                  ?\nCURRENT AUTOMATION                  ?\nCURRENT ROI                         ?\n```\n\nremain unknown.\n\n---",
+      "research_location": "OPP-014-03.md#PASS → HIGH TIME-EXPOSURE + COORDINATION-BURDEN SIGNAL",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "PASS → HIGH TIME-EXPOSURE + COORDINATION-BURDEN SIGNAL",
+        "line_start": 511,
+        "line_end": 538
+      }
+    },
+    {
+      "statement": "Do not create additional desk-research checkpoints after this.\n\nPrimary validation should establish only:\n\n1. Current delayed ED-to-speciality transfers/month.\n2. Current ICU/HDU bed-wait volume.\n3. Current interdepartmental-dispute volume.\n4. Who monitors ageing transfer cases.\n5. How bed availability is checked.\n6. How speciality acceptance is chased.\n7. Number of calls/messages/coordination actions per stuck case.\n8. Current escalation threshold.\n9. Whether a central live transfer queue exists.\n10. Whether current systems automatically identify stuck cases.\n\nThe decisive question:\n\n> **“When an ED patient has been waiting for speciality transfer because of a bed or ownership problem, can the hospital system automatically show who owns the unresolved transfer, what is blocking it, how long it has been blocked, and who needs to act next?”**\n\nIf **no**, this becomes a strong automation candidate.\n\nIf **yes**, investigate what remains outside the system.\n\n---",
+      "research_location": "OPP-014-03.md#OPP-014-04 — Direct Operational Evidence / Pain Validation",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "OPP-014-04 — Direct Operational Evidence / Pain Validation",
+        "line_start": 541,
+        "line_end": 567
+      }
+    },
+    {
+      "statement": "[PubMed — Causes of Delayed Transfers](SRC-EXT-OPP-014-F8957FF7)\n\nDirect evidence: 5,922 ED admissions; 510 delayed cases; 438 eventually transferred; median 51-hour pre-transfer ED stay; 169 ICU/HDU bed waits; 166 interdepartmental disputes.",
+      "research_location": "OPP-014-03.md#E-001 — AIIMS Bhopal 2026 Study",
+      "source_urls": [
+        "SRC-EXT-OPP-014-F8957FF7"
+      ],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "E-001 — AIIMS Bhopal 2026 Study",
+        "line_start": 570,
+        "line_end": 575
+      }
+    },
+    {
+      "statement": "[PMC — Causes of Delayed Transfers](SRC-EXT-OPP-014-D83B68B2)\n\nDirect cause classification and delay-duration distribution.",
+      "research_location": "OPP-014-03.md#E-002 — Full AIIMS Bhopal Study",
+      "source_urls": [
+        "SRC-EXT-OPP-014-D83B68B2"
+      ],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "E-002 — Full AIIMS Bhopal Study",
+        "line_start": 576,
+        "line_end": 581
+      }
+    },
+    {
+      "statement": "[PMC — Delayed Transfer of Critically Ill Patients](SRC-EXT-OPP-014-894D8E0C)\n\nIndependent evidence of transfer delay and reduction after monthly feedback.\n\n---",
+      "research_location": "OPP-014-03.md#E-003 — Indian ED-to-ICU Study",
+      "source_urls": [
+        "SRC-EXT-OPP-014-894D8E0C"
+      ],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "E-003 — Indian ED-to-ICU Study",
+        "line_start": 582,
+        "line_end": 589
+      }
+    },
+    {
+      "statement": "- 5,922 ED admissions.\n- 510 delayed cases.\n- 438 eventual transfers.\n- 72 non-transfers.\n- 169 ICU/HDU bed waits.\n- 166 interdepartmental disputes/denials.\n- 51-hour median ED stay before eventual transfer.\n- 30 cases ≥96 hours.",
+      "research_location": "OPP-014-03.md#Direct AIIMS measurements",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "Direct AIIMS measurements",
+        "line_start": 592,
+        "line_end": 602
+      }
+    },
+    {
+      "statement": "- 335 cases across the two dominant system exception categories.\n- 65.7% of the delayed cohort represented by those two categories.",
+      "research_location": "OPP-014-03.md#Derived calculations",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "Derived calculations",
+        "line_start": 603,
+        "line_end": 607
+      }
+    },
+    {
+      "statement": "- 5–25% reduction sensitivity scenarios applied to the 51-hour median.\n- Potential aggregate time exposure calculated only as scenario analysis.",
+      "research_location": "OPP-014-03.md#Hypothesis modelling",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "Hypothesis modelling",
+        "line_start": 608,
+        "line_end": 612
+      }
+    },
+    {
+      "statement": "- Staff labour minutes.\n- Calls/messages per case.\n- Current avoidable delay.\n- Current automation.\n- Current escalation.\n- Current economic value.\n\n---",
+      "research_location": "OPP-014-03.md#Unknown",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "Unknown",
+        "line_start": 613,
+        "line_end": 623
+      }
+    },
+    {
+      "statement": "```yaml\nartifact_type: opportunity_intelligence\nopportunity_id: OPP-014\ncompany: AIIMS Bhopal\nlocation: bhopal_madhya_pradesh_india\nindustry: healthcare_hospital_operations\nworkflow: emergency_department_to_speciality_unit_icu_hdu_transfer_coordination\npain_type: patient_safety_time_critical_patient_flow_transfer_delay\nresearch_stage: human_effort_pain_quantification\ndecision: pass_high_time_exposure_coordination_burden\n\ndirect_measurements:\n  ed_admissions: 5922\n  delayed_boarders: 510\n  delayed_boarder_rate: 8.6_percent\n  eventual_transfers: 438\n  non_transfers: 72\n  median_pre_transfer_ed_stay: 51_hours\n  cases_72_to_96_plus: 128\n  cases_96_plus: 30\n  icu_hdu_bed_wait_cases: 169\n  interdepartmental_dispute_cases: 166\n  major_system_exception_cases: 335\n  major_system_exception_share: 65.7_percent\n\nhuman_effort:\n  directly_measured: false\n  staff_minutes_per_case: unknown\n  calls_per_case: unknown\n  messages_per_case: unknown\n  escalation_frequency: unknown\n\neconomic_model:\n  labour_savings: hypothesis_only\n  capacity_value: plausible_unquantified\n  patient_safety_value: potentially_high_unquantified\n  roi: unknown\n\nautomation_hypothesis:\n  ageing_detection: candidate\n  blocker_classification: candidate\n  owner_tracking: candidate\n  bed_state_tracking: candidate\n  escalation: candidate\n  clinical_decision: excluded\n\ncurrent_capability_gap: unknown\nindustry_generalisability: high\nnext_checkpoint: OPP-014-04\ncommercial_status: discovery_continue\n```\n\n---",
+      "research_location": "OPP-014-03.md#AIL Compilation Metadata",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "AIL Compilation Metadata",
+        "line_start": 624,
+        "line_end": 679
+      }
+    },
+    {
+      "statement": "> **OPP-014 has a strong quantified time-exposure signal: 510 delayed ED-transfer cases in six months, with 335 cases involving the two dominant operational exception classes—ICU/HDU bed waits and interdepartmental disputes. Among patients who eventually transferred, median ED stay before transfer was 51 hours and 30 cases remained ≥96 hours. The evidence does not measure staff labour or current automation, so those remain validation questions rather than fabricated ROI inputs.**\n\n**OPP-014-03 = PASS → HIGH TIME-EXPOSURE + COORDINATION-BURDEN SIGNAL**\n\n**Next: OPP-014-04 — Direct Operational Evidence / Pain Validation.**",
+      "research_location": "OPP-014-03.md#Integrity Statement",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-03.md",
+        "section": "Integrity Statement",
+        "line_start": 680,
+        "line_end": 686
+      }
+    },
+    {
+      "statement": "---\nid: OPP-014-04\nopportunity_id: OPP-014\nindustry: Healthcare / Hospital Operations\ncompany: AIIMS Bhopal\nworkflow: Emergency Department to Speciality Unit / ICU-HDU Transfer Coordination\nresearch_stage: Direct Operational Evidence / Pain Validation\nmethodology: Legacy VRL\nstatus: CONDITIONAL_PASS\ndecision: INDUSTRY_PAIN_VALIDATED_CURRENT_COMPANY_GAP_NOT_PROVEN\ncompany_pain_signal: strong_current_2026_direct_study_evidence\ncurrent_capability_gap: unverified\ncurrent_human_effort: unverified\ncustomer_roi: hypothesis_only\ncommercial_status: primary_validation_pending\n---",
+      "research_location": "OPP-014-04.md#Front matter",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "Front matter",
+        "line_start": 1,
+        "line_end": 15
+      }
+    },
+    {
+      "statement": "**Company/Hospital:** AIIMS Bhopal  \n**Workflow:** Emergency Department → Speciality Unit / ICU-HDU Transfer Coordination  \n**VRL checkpoint:** OPP-014-04  \n**Decision:** **CONDITIONAL PASS → Industry pain validated; current company automation gap not proven**\n\n---",
+      "research_location": "OPP-014-04.md#OPP-014-04 — Direct Operational Evidence / Pain Validation",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "OPP-014-04 — Direct Operational Evidence / Pain Validation",
+        "line_start": 18,
+        "line_end": 26
+      }
+    },
+    {
+      "statement": "> **Do we have enough direct operational evidence to claim that AIIMS Bhopal currently has a material automation gap in ED-to-speciality transfer coordination?**",
+      "research_location": "OPP-014-04.md#Checkpoint Question",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "1. Checkpoint Question",
+        "line_start": 27,
+        "line_end": 30
+      }
+    },
+    {
+      "statement": "We have exceptionally strong **current 2026 hospital-specific evidence** that prolonged ED boarding exists and that system-level causes dominate the delayed-transfer cohort.\n\nWe do **not** have direct evidence that AIIMS Bhopal currently lacks:\n\n- real-time bed visibility;\n- transfer-case tracking;\n- speciality acceptance tracking;\n- owner assignment;\n- ageing alerts;\n- escalation;\n- closed-loop transfer monitoring.\n\nTherefore this checkpoint should **not** be marked as fully validated.\n\n---",
+      "research_location": "OPP-014-04.md#Answer: Not yet.",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "Answer: Not yet.",
+        "line_start": 31,
+        "line_end": 48
+      }
+    },
+    {
+      "statement": "The May 2026 prospective AIIMS Bhopal study examined **5,922 ED admissions** over six months.\n\nIt identified **510 patients (8.6%)** who remained in the ED for ≥24 hours without documented speciality transfer. Of these:\n\n- **438 (85.9%)** eventually transferred;\n- **72 (14.1%)** did not transfer during the observed pathway.\n\nAmong the 438 transferred patients, median ED stay before transfer was **51 hours (IQR 48–72)**.\n\n---",
+      "research_location": "OPP-014-04.md#What Is Directly Proven",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "2. What Is Directly Proven",
+        "line_start": 49,
+        "line_end": 61
+      }
+    },
+    {
+      "statement": "The study reports the following dominant causes:\n\n| Cause | Cases | Share |\n|---|---:|---:|\n| Awaiting speciality ICU/HDU bed | 169 | 33.1% |\n| Interdepartmental dispute/denial | 166 | 32.5% |\n| Poor prognosis | 135 | 26.5% |\n\nThe authors state that system-related causes predominated and describe the two leading causes as ICU/HDU bed waits and interdepartmental disputes.\n\nThe paper defines interdepartmental/multi-departmental dispute/denial cases as situations where two or more departments disputed primary responsibility and coordination was required until the lead department accepted the patient.\n\nThis is direct evidence of an operational coordination problem.\n\n---",
+      "research_location": "OPP-014-04.md#Direct System-Pain Evidence",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "3. Direct System-Pain Evidence",
+        "line_start": 62,
+        "line_end": 79
+      }
+    },
+    {
+      "statement": "Of the 438 patients who eventually transferred:\n\n- 171 stayed 24–<48 hours;\n- 139 stayed 48–<72 hours;\n- 98 stayed 72–<96 hours;\n- **30 stayed ≥96 hours**.\n\nThus prolonged transfer is not merely a short handoff delay. There is a significant long-aging tail.\n\nThe study recommends:\n\n- hospital-wide bed dashboards;\n- dedicated surge ICU beds;\n- clear routing protocols;\n- ED physician authority to transfer >24-hour boarders after consultation.\n\nThese recommendations are evidence that the authors see system-level flow coordination as an intervention surface.\n\n---",
+      "research_location": "OPP-014-04.md#Strong Current Evidence of Long-Aging Cases",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "4. Strong Current Evidence of Long-Aging Cases",
+        "line_start": 80,
+        "line_end": 101
+      }
+    },
+    {
+      "statement": "The study does **not** say:\n\n> “AIIMS Bhopal currently has no transfer-management software.”\n\nIt does not establish:\n\n- whether a live bed dashboard exists in 2026;\n- whether bed data are integrated across units;\n- whether speciality acceptance is digitally tracked;\n- whether an overdue transfer automatically escalates;\n- whether a central transfer queue exists;\n- how many calls/messages staff make per case;\n- how much staff time is spent resolving each exception.\n\nThese remain **UNKNOWN**.\n\nThis distinction is essential.\n\n---",
+      "research_location": "OPP-014-04.md#What the Study Does NOT Prove",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "5. What the Study Does NOT Prove",
+        "line_start": 102,
+        "line_end": 123
+      }
+    },
+    {
+      "statement": "The paper is a prospective observational study using patient records and a structured proforma.\n\nIts objective was to identify causes of delayed transfer, not to audit:\n\n```text\nCURRENT SOFTWARE\n+\nCURRENT DIGITAL WORKFLOW\n+\nCURRENT HUMAN COORDINATION TIME\n+\nCURRENT ESCALATION\n```\n\nTherefore even though the study is recent and company-specific, it is still **pain evidence**, not a full **capability-gap audit**.\n\n---",
+      "research_location": "OPP-014-04.md#Why Public Evidence Cannot Fully Validate the Automation Gap",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "6. Why Public Evidence Cannot Fully Validate the Automation Gap",
+        "line_start": 124,
+        "line_end": 143
+      }
+    },
+    {
+      "statement": "The same broad transfer problem is independently supported by Indian evidence.\n\nA prospective ED-to-ICU study reported:\n\n- **52** critically ill ED-to-ICU admissions;\n- **35 (67.3%)** not transferred within 30 minutes;\n- mean transfer time **69.9 ± 62.5 minutes**;\n- ED-related factors accounted for **54.2%** of delays;\n- regular feedback reduced transfer time by **42.6%** during the study period.\n\nThis supports the broader industry problem.\n\nHowever:\n\n> **Feedback-based improvement is not evidence that automation is currently missing.**\n\nIt only strengthens the recurrence of transfer-delay pain.\n\n---",
+      "research_location": "OPP-014-04.md#Industry-Level Validation",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "7. Industry-Level Validation",
+        "line_start": 144,
+        "line_end": 165
+      }
+    },
+    {
+      "statement": "Do not lock the opportunity as:\n\n> “AIIMS Bhopal needs an ED transfer automation system.”\n\nThat claim is not proven.\n\nInstead:\n\n> **Indian hospitals can have prolonged ED boarding caused by unresolved bed-capacity and interdepartmental ownership states; a workflow-orchestration layer could potentially make these states visible, assign responsibility, monitor ageing and escalate unresolved cases.**\n\nAIIMS Bhopal is the **evidence entry point**.\n\nThe industry workflow is the actual opportunity.\n\n---",
+      "research_location": "OPP-014-04.md#The Opportunity Should Be Defined at Industry Level",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "8. The Opportunity Should Be Defined at Industry Level",
+        "line_start": 166,
+        "line_end": 183
+      }
+    },
+    {
+      "statement": "No further desk-research checkpoints are needed.\n\nPrimary validation should ask only:",
+      "research_location": "OPP-014-04.md#Minimum Primary Validation Questions",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "9. Minimum Primary Validation Questions",
+        "line_start": 184,
+        "line_end": 189
+      }
+    },
+    {
+      "statement": "Approximately how many ED patients currently wait >24 hours for speciality transfer each month?",
+      "research_location": "OPP-014-04.md#Q1 — Current volume",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "Q1 — Current volume",
+        "line_start": 190,
+        "line_end": 192
+      }
+    },
+    {
+      "statement": "When an ICU/HDU bed is required, how is availability currently checked?",
+      "research_location": "OPP-014-04.md#Q2 — Bed state",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "Q2 — Bed state",
+        "line_start": 193,
+        "line_end": 195
+      }
+    },
+    {
+      "statement": "How is speciality acceptance recorded and communicated?",
+      "research_location": "OPP-014-04.md#Q3 — Acceptance",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "Q3 — Acceptance",
+        "line_start": 196,
+        "line_end": 198
+      }
+    },
+    {
+      "statement": "If two departments disagree about responsibility, who owns resolution?",
+      "research_location": "OPP-014-04.md#Q4 — Ownership",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "Q4 — Ownership",
+        "line_start": 199,
+        "line_end": 201
+      }
+    },
+    {
+      "statement": "Who monitors how long each transfer case has been waiting?",
+      "research_location": "OPP-014-04.md#Q5 — Ageing",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "Q5 — Ageing",
+        "line_start": 202,
+        "line_end": 204
+      }
+    },
+    {
+      "statement": "What happens when a transfer exceeds the hospital's expected threshold?",
+      "research_location": "OPP-014-04.md#Q6 — Escalation",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "Q6 — Escalation",
+        "line_start": 205,
+        "line_end": 207
+      }
+    },
+    {
+      "statement": "How often do staff call, message or personally chase another department to move a stuck case?",
+      "research_location": "OPP-014-04.md#Q7 — Manual coordination",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "Q7 — Manual coordination",
+        "line_start": 208,
+        "line_end": 210
+      }
+    },
+    {
+      "statement": "Can the current system answer all four questions in one place:\n\n```text\nWHO?\nWHY BLOCKED?\nHOW LONG?\nWHO ACTS NEXT?\n```",
+      "research_location": "OPP-014-04.md#Q8 — Existing system",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "Q8 — Existing system",
+        "line_start": 211,
+        "line_end": 220
+      }
+    },
+    {
+      "statement": "Which transfer exception consumes the most operational attention today?",
+      "research_location": "OPP-014-04.md#Q9 — Current pain",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "Q9 — Current pain",
+        "line_start": 221,
+        "line_end": 223
+      }
+    },
+    {
+      "statement": "If a system automatically identified and escalated these cases, would the responsible team consider that operationally valuable?\n\n---",
+      "research_location": "OPP-014-04.md#Q10 — Willingness",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "Q10 — Willingness",
+        "line_start": 224,
+        "line_end": 228
+      }
+    },
+    {
+      "statement": "The opportunity becomes **strong** if the operational owner says something equivalent to:\n\n> “We can see parts of the patient information, but when the transfer gets stuck, staff still have to call different departments, check beds and chase acceptance.”\n\nThat confirms:\n\n```text\nDIGITAL PATIENT RECORD\n        +\nNO CLOSED-LOOP TRANSFER STATE\n        ↓\nHUMAN INVESTIGATION\n        ↓\nMANUAL ESCALATION\n```\n\nThis is the exact automation gap ART is looking for.\n\n---",
+      "research_location": "OPP-014-04.md#Decisive Validation Signal",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "10. Decisive Validation Signal",
+        "line_start": 229,
+        "line_end": 250
+      }
+    },
+    {
+      "statement": "Downgrade or kill the opportunity if the hospital confirms:\n\n```text\nREAL-TIME BED VISIBILITY\n+\nDIGITAL ACCEPTANCE TRACKING\n+\nCLEAR OWNER\n+\nAGEING MONITOR\n+\nAUTOMATIC ESCALATION\n+\nCENTRAL TRANSFER QUEUE\n```\n\nand staff report minimal manual chasing.\n\nThen the pain may still exist, but **ART would not necessarily be the solution**.\n\nSearch another hospital with the same industry pain but weaker coordination capability.\n\n---",
+      "research_location": "OPP-014-04.md#Decisive Negative Signal",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "11. Decisive Negative Signal",
+        "line_start": 251,
+        "line_end": 276
+      }
+    },
+    {
+      "statement": "The proposed automation must not:\n\n- decide which speciality should accept a patient;\n- decide ICU/HDU eligibility;\n- override a clinician;\n- recommend treatment;\n- automatically transfer a patient.\n\nThe safe boundary is:\n\n```text\nCLINICAL DECISION\n      ↓\nTRANSFER CASE\n      ↓\nSTATUS TRACKING\n      ↓\nOWNER\n      ↓\nBLOCKER\n      ↓\nAGEING\n      ↓\nNOTIFICATION\n      ↓\nESCALATION\n      ↓\nHUMAN RESOLUTION\n```\n\nThis is workflow coordination, not autonomous clinical decision-making.\n\n---",
+      "research_location": "OPP-014-04.md#Safety Boundary",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "12. Safety Boundary",
+        "line_start": 277,
+        "line_end": 312
+      }
+    },
+    {
+      "statement": "Do not use the 51-hour median as claimed savings.\n\nThe correct future model is:\n\n```text\nCURRENT DELAYED TRANSFER CASES\n×\nCURRENT AVOIDABLE COORDINATION TIME\n×\nSTAFF COST\n=\nDIRECT OPERATIONAL VALUE\n```\n\nThen separately assess:\n\n```text\n+\nED CAPACITY RELEASE\n+\nREDUCED ESCALATION / OVERTIME\n+\nQUALITY / SAFETY VALUE\n```\n\nThe 2026 study gives strong evidence for the first input but does not provide the second.\n\n---",
+      "research_location": "OPP-014-04.md#Current ROI: **UNKNOWN**",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "Current ROI: **UNKNOWN**",
+        "line_start": 315,
+        "line_end": 345
+      }
+    },
+    {
+      "statement": "- High-consequence patient-flow workflow.\n- Current 2026 direct hospital evidence.\n- 510 delayed-transfer cases.\n- 169 ICU/HDU bed-wait cases.\n- 166 interdepartmental dispute/denial cases.\n- Median 51-hour ED stay before eventual transfer.\n- Long-aging cases ≥96 hours.\n- System bottlenecks dominate.",
+      "research_location": "OPP-014-04.md#Proven",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "Proven",
+        "line_start": 350,
+        "line_end": 360
+      }
+    },
+    {
+      "statement": "- Current automation gap.\n- Current manual investigation burden.\n- Current escalation mechanism.\n- Current avoidable delay.\n- Current ROI.\n\n---",
+      "research_location": "OPP-014-04.md#Not proven",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "Not proven",
+        "line_start": 361,
+        "line_end": 370
+      }
+    },
+    {
+      "statement": "This opportunity has reached the same efficient VRL boundary established for previous discoveries.\n\n**Do not create OPP-014-05, -06, -07, etc.**\n\nThe next evidence must come from **primary operational validation**.\n\nIf primary validation is postponed:\n\n> `OPP-014 = PRIMARY_VALIDATION_PENDING`\n\nThen move to the next discovery.\n\n---",
+      "research_location": "OPP-014-04.md#Stop Desk Research Here",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "15. Stop Desk Research Here",
+        "line_start": 371,
+        "line_end": 386
+      }
+    },
+    {
+      "statement": "The study identifies **Anshu P. Lakra**, Trauma and Emergency Medicine, AIIMS Bhopal, as the corresponding author and publishes the institutional email:\n\n**anshu.tem@aiimsbhopal.edu.in**\n\nThis is a publication-provided professional email, not an inferred address.\n\nThe most relevant functional routing is:\n\n```text\nTrauma & Emergency Medicine\n        ↓\nEmergency Department\n        ↓\nHospital Operations / Bed Management\n        ↓\nQuality / Administration\n```\n\nThe research contact should be used to validate the workflow, not to assume that the corresponding author personally owns hospital-wide transfer operations.\n\n---",
+      "research_location": "OPP-014-04.md#Primary Reachout Lead",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "16. Primary Reachout Lead",
+        "line_start": 387,
+        "line_end": 410
+      }
+    },
+    {
+      "statement": "**Opportunity primitive:**\n\n> **Time-critical patient-transfer exception orchestration**\n\n**Evidence entry point:**\n\n> **AIIMS Bhopal**\n\n**Primary workflow:**\n\n> **ED → speciality / ICU-HDU transfer**\n\n**Dominant exceptions:**\n\n> **Bed-capacity wait + interdepartmental ownership dispute**\n\n**Current status:**\n\n> **Industry pain validated; company capability gap pending primary validation.**\n\n**Commercial confidence:**\n\n> **Medium**\n\n**Research status:**\n\n> **Desk research complete.**\n\n**Next evidence required:**\n\n> **Direct operational validation.**\n\n---",
+      "research_location": "OPP-014-04.md#OPP-014",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "OPP-014",
+        "line_start": 413,
+        "line_end": 448
+      }
+    },
+    {
+      "statement": "[PMC — Causes of Delayed Transfers From the Emergency Department to Speciality Units](SRC-EXT-OPP-014-D83B68B2)\n\nDirect evidence for the 5,922 admissions, 510 delayed cases, 169 ICU/HDU waits, 166 interdepartmental disputes, 51-hour median pre-transfer ED stay and proposed operational interventions.",
+      "research_location": "OPP-014-04.md#E-001 — Direct AIIMS Bhopal 2026 Study",
+      "source_urls": [
+        "SRC-EXT-OPP-014-D83B68B2"
+      ],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "E-001 — Direct AIIMS Bhopal 2026 Study",
+        "line_start": 451,
+        "line_end": 456
+      }
+    },
+    {
+      "statement": "[PubMed — Causes of Delayed Transfers](SRC-EXT-OPP-014-F8957FF7)\n\nIndependent bibliographic source for the same 2026 study.",
+      "research_location": "OPP-014-04.md#E-002 — PubMed Record",
+      "source_urls": [
+        "SRC-EXT-OPP-014-F8957FF7"
+      ],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "E-002 — PubMed Record",
+        "line_start": 457,
+        "line_end": 462
+      }
+    },
+    {
+      "statement": "[PMC — Delayed Transfer of Critically Ill Patients](SRC-EXT-OPP-014-894D8E0C)\n\nIndependent Indian evidence of ED-to-ICU transfer delay and improvement following operational feedback.\n\n---",
+      "research_location": "OPP-014-04.md#E-003 — Indian Transfer Evidence",
+      "source_urls": [
+        "SRC-EXT-OPP-014-894D8E0C"
+      ],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "E-003 — Indian Transfer Evidence",
+        "line_start": 463,
+        "line_end": 470
+      }
+    },
+    {
+      "statement": "- AIIMS Bhopal.\n- 2026 prospective study.\n- 5,922 ED admissions.\n- 510 delayed cases.\n- 169 ICU/HDU bed waits.\n- 166 interdepartmental disputes.\n- 51-hour median pre-transfer ED stay.\n- ≥96-hour cases.",
+      "research_location": "OPP-014-04.md#Direct company/hospital evidence",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "Direct company/hospital evidence",
+        "line_start": 473,
+        "line_end": 483
+      }
+    },
+    {
+      "statement": "- Indian ED-to-ICU transfer delay.\n- Operational intervention can reduce delay.\n- Transfer coordination is a recurring hospital-flow issue.",
+      "research_location": "OPP-014-04.md#Industry evidence",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "Industry evidence",
+        "line_start": 484,
+        "line_end": 489
+      }
+    },
+    {
+      "statement": "- Current AIIMS software.\n- Current bed dashboard.\n- Current acceptance tracking.\n- Current owner tracking.\n- Current escalation.\n- Current staff effort.\n- Current avoidable delay.\n- Current ROI.\n\n---",
+      "research_location": "OPP-014-04.md#Unknown",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "Unknown",
+        "line_start": 490,
+        "line_end": 502
+      }
+    },
+    {
+      "statement": "```yaml\nartifact_type: opportunity_intelligence\nopportunity_id: OPP-014\ncompany: AIIMS Bhopal\nlocation: bhopal_madhya_pradesh_india\nindustry: healthcare_hospital_operations\nworkflow: emergency_department_to_speciality_unit_icu_hdu_transfer_coordination\npain_type: patient_safety_time_critical_patient_flow_transfer_delay\nresearch_stage: direct_operational_evidence_pain_validation\ndecision: conditional_pass_primary_validation_required\n\ndirect_current_evidence:\n  study_year: 2026\n  ed_admissions: 5922\n  delayed_cases: 510\n  delayed_case_rate: 8.6_percent\n  eventual_transfers: 438\n  non_transfers: 72\n  median_pre_transfer_ed_stay: 51_hours\n  icu_hdu_bed_wait_cases: 169\n  interdepartmental_dispute_cases: 166\n  long_boarders_96_plus_hours: 30\n\nindustry_validation: strong\ncurrent_company_pain: strong_but_capability_gap_unverified\ncurrent_automation: unknown\ncurrent_manual_investigation: unknown\ncurrent_escalation: unknown\ncurrent_avoidable_delay: unknown\ncustomer_roi: unknown\n\nprimary_contact:\n  name: Anshu P. Lakra\n  function: trauma_and_emergency_medicine\n  professional_email: anshu.tem@aiimsbhopal.edu.in\n  source: published_2026_study\n\ndesk_research_complete: true\nprimary_validation_required: true\ncommercial_confidence: medium\ncommercial_status: primary_validation_pending\nnext_action: direct_primary_validation_or_next_discovery\n```\n\n---",
+      "research_location": "OPP-014-04.md#AIL Compilation Metadata",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "AIL Compilation Metadata",
+        "line_start": 503,
+        "line_end": 550
+      }
+    },
+    {
+      "statement": "> **OPP-014 has reached the efficient desk-research boundary. The 2026 AIIMS Bhopal study directly validates a significant, high-consequence transfer-flow problem, but it does not audit current automation capability or quantify human coordination effort. Therefore the company-specific automation gap cannot honestly be marked proven. The appropriate result is conditional pass and primary-validation pending.**\n\n**OPP-014-04 = CONDITIONAL PASS → PRIMARY VALIDATION REQUIRED**\n\n**No further desk-research checkpoints should be added to OPP-014.**",
+      "research_location": "OPP-014-04.md#Integrity Statement",
+      "source_urls": [],
+      "provenance": {
+        "source_file": "OPP-014-04.md",
+        "section": "Integrity Statement",
+        "line_start": 551,
+        "line_end": 557
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://art.product.resolution/schemas/original_input.json",
+  "title": "OriginalInput",
+  "description": "Immutable original capture containing exact tester input and evidence references",
+  "type": "object",
+  "required": [
+    "id",
+    "investigationId",
+    "testerDescription",
+    "reporter",
+    "capturedAt",
+    "initialEvidenceIds",
+    "provenance"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "investigationId": {
+      "type": "string"
+    },
+    "testerDescription": {
+      "type": "string",
+      "description": "Raw unedited text entered by the tester. Can be empty string if only screenshots provided."
+    },
+    "reporter": {
+      "type": "string"
+    },
+    "capturedAt": {
+      "$ref": "common.json#/definitions/IsoTimestamp"
+    },
+    "initialEvidenceIds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "provenance": {
+      "$ref": "common.json#/definitions/ProvenanceType",
+      "const": "HUMAN_SUPPLIED"
+    }
+  },
+  "additionalProperties": false
+}

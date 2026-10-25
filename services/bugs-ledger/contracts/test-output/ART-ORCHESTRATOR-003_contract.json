@@ -1,0 +1,160 @@
+{
+  "Investigation": {
+    "id": "ART-ORCHESTRATOR-003",
+    "canonicalBugId": "ART-ORCHESTRATOR-003",
+    "slug": "orchestrator-test-renders-schema-definition-instead-of-runtime-inputs",
+    "lifecyclePhase": "CONFIRMED",
+    "status": "OPEN",
+    "classification": "BUG",
+    "module": "ORCHESTRATOR",
+    "severity": "HIGH",
+    "priority": "Not provided",
+    "assignee": null,
+    "originalInputId": "INP-ART-ORCHESTRATOR-003",
+    "evidenceIds": [
+      "EVD-ART-ORCHESTRATOR-003-01",
+      "EVD-ART-ORCHESTRATOR-003-02",
+      "EVD-ART-ORCHESTRATOR-003-03",
+      "EVD-ART-ORCHESTRATOR-003-04"
+    ],
+    "aiAnalysisIds": [],
+    "researchIds": [],
+    "ticketRevisionIds": [
+      "TCK-ART-ORCHESTRATOR-003-01"
+    ],
+    "activeTicketRevisionId": "TCK-ART-ORCHESTRATOR-003-01",
+    "developerUpdateIds": [],
+    "retestIds": [],
+    "auditEventIds": [
+      "AUD-ART-ORCHESTRATOR-003-01"
+    ],
+    "createdAt": "2026-09-24T00:00:00Z",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "OriginalInput": {
+    "id": "INP-ART-ORCHESTRATOR-003",
+    "investigationId": "ART-ORCHESTRATOR-003",
+    "testerDescription": "The Orchestrator Test panel exposes the JSON Schema definition structure itself as form fields instead of generating runtime input controls for the configured schema properties. In the Daily Work Coordinator Orchestrator with a Start node configured to require a `message` string, the Test Input panel renders raw schema keywords (`additionalProperties`, `properties`, `message`, `type`, `required`, `required[0]`, root `type`) as inputs, preventing users from supplying the runtime input payload expected by the workflow.",
+    "reporter": "HUMAN_LEGACY_IMPORT",
+    "capturedAt": "2026-09-24T00:00:00Z",
+    "initialEvidenceIds": [
+      "EVD-ART-ORCHESTRATOR-003-01",
+      "EVD-ART-ORCHESTRATOR-003-02",
+      "EVD-ART-ORCHESTRATOR-003-03",
+      "EVD-ART-ORCHESTRATOR-003-04"
+    ],
+    "provenance": "HUMAN_SUPPLIED"
+  },
+  "EvidenceList": [
+    {
+      "id": "EVD-ART-ORCHESTRATOR-003-01",
+      "investigationId": "ART-ORCHESTRATOR-003",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-ORCHESTRATOR-003__orchestrator-test-schema-definition-fields-bottom__2026-09-29__03.png",
+      "canonicalFilename": "ART-ORCHESTRATOR-003__orchestrator-test-schema-definition-fields-bottom__2026-09-29__03.png",
+      "storagePath": "ART-Product-Validation/bugs/Orchestrator/ART-ORCHESTRATOR-003__orchestrator-test-renders-schema-definition-instead-of-runtime-inputs/ART-ORCHESTRATOR-003__orchestrator-test-schema-definition-fields-bottom__2026-09-29__03.png",
+      "sha256": "3267ce39f3df98e34974eff3f619c3f42e3cf19c531f7a833d36adfc13a0d5c5",
+      "mimeType": "image/png",
+      "byteSize": 261798,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    },
+    {
+      "id": "EVD-ART-ORCHESTRATOR-003-02",
+      "investigationId": "ART-ORCHESTRATOR-003",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-ORCHESTRATOR-003__orchestrator-test-schema-definition-fields-top__2026-09-29__02.png",
+      "canonicalFilename": "ART-ORCHESTRATOR-003__orchestrator-test-schema-definition-fields-top__2026-09-29__02.png",
+      "storagePath": "ART-Product-Validation/bugs/Orchestrator/ART-ORCHESTRATOR-003__orchestrator-test-renders-schema-definition-instead-of-runtime-inputs/ART-ORCHESTRATOR-003__orchestrator-test-schema-definition-fields-top__2026-09-29__02.png",
+      "sha256": "11e66195e2dd11a529fc838a6cc76dd7343d6d253cca5e3ff5e914bab261d6ad",
+      "mimeType": "image/png",
+      "byteSize": 265643,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    },
+    {
+      "id": "EVD-ART-ORCHESTRATOR-003-03",
+      "investigationId": "ART-ORCHESTRATOR-003",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-ORCHESTRATOR-003__start-node-input-schema-configured__2026-09-29__01.png",
+      "canonicalFilename": "ART-ORCHESTRATOR-003__start-node-input-schema-configured__2026-09-29__01.png",
+      "storagePath": "ART-Product-Validation/bugs/Orchestrator/ART-ORCHESTRATOR-003__orchestrator-test-renders-schema-definition-instead-of-runtime-inputs/ART-ORCHESTRATOR-003__start-node-input-schema-configured__2026-09-29__01.png",
+      "sha256": "5a7bc80dc558b2c3c70754f4d5e8b9682a34ec49c63cc602411e1575654a53ff",
+      "mimeType": "image/png",
+      "byteSize": 149936,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    },
+    {
+      "id": "EVD-ART-ORCHESTRATOR-003-04",
+      "investigationId": "ART-ORCHESTRATOR-003",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-ORCHESTRATOR-003__agent-result-comparison-schema-representation__2026-09-29__04.png",
+      "canonicalFilename": "ART-ORCHESTRATOR-003__agent-result-comparison-schema-representation__2026-09-29__04.png",
+      "storagePath": "ART-Product-Validation/bugs/Orchestrator/ART-ORCHESTRATOR-003__orchestrator-test-renders-schema-definition-instead-of-runtime-inputs/ART-ORCHESTRATOR-003__agent-result-comparison-schema-representation__2026-09-29__04.png",
+      "sha256": "16fb42d6461db9e8d1b4af1d9c8e578895c443e36fd211ffd6089728febb48f5",
+      "mimeType": "image/png",
+      "byteSize": 215273,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    }
+  ],
+  "TicketArtifact": {
+    "ticketId": "TCK-ART-ORCHESTRATOR-003-01",
+    "investigationId": "ART-ORCHESTRATOR-003",
+    "revision": 1,
+    "title": "Orchestrator Test Exposes Schema Definition Structure Instead of Runtime Input Fields",
+    "reproSteps": "Not provided",
+    "expectedResult": "Orchestrator Test should interpret the configured Start input schema and generate runtime input controls from it. For this schema, it should show a user-editable `message` field. When Run is clicked, the workflow should receive the entered value as `start.message`.",
+    "actualResult": "Orchestrator Test exposes the schema-definition structure itself instead of a runtime message input. This makes it difficult or impossible to provide the Start node's expected test payload through the Test UI.",
+    "businessImpact": "Not provided",
+    "recommendedSolution": "Implement schema-aware runtime form generation for Orchestrator Test:\n1. Pass the Start node's input schema to a dedicated schema form compiler that extracts defined properties (`properties.*`) and their types.\n2. Render appropriate input widgets based on property definitions (e.g. text inputs for `string`, number inputs for `number`, toggles for `boolean`, item lists for `array`).\n3. Enforce validation rules defined in the schema (required properties, enums, format constraints) on the client side before triggering workflow runs.\n4. Construct the runtime execution payload from the user-entered property values under the root object structure (e.g., `{ \"message\": \"<entered_value>\" }`) and pass it as the Start node execution payload.\n5. Provide a raw JSON input toggle for developers who prefer directly pasting a JSON payload.",
+    "module": "ORCHESTRATOR",
+    "environment": "Not provided",
+    "severity": "HIGH",
+    "priority": "Not provided",
+    "tags": [
+      "orchestrator"
+    ],
+    "discussion": [],
+    "provenance": "HUMAN_APPROVED",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "AuditEvent": {
+    "id": "AUD-ART-ORCHESTRATOR-003-01",
+    "investigationId": "ART-ORCHESTRATOR-003",
+    "timestamp": "2026-09-24T00:00:00Z",
+    "actor": "LEGACY_IMPORT_ADAPTER",
+    "eventType": "INVESTIGATION_CAPTURED",
+    "summary": "Imported legacy bug record ART-ORCHESTRATOR-003 from ART-Product-Validation/bugs",
+    "details": {
+      "sourceMarkdownPath": "ART-Product-Validation/bugs/Orchestrator/ART-ORCHESTRATOR-003__orchestrator-test-renders-schema-definition-instead-of-runtime-inputs/ART-ORCHESTRATOR-003.md",
+      "rawContentSha256": "5049685ae5453a381e7161b87b2b7e6c2a59e4a0b9743d123d918453a190647b"
+    }
+  },
+  "sourceMetadata": {
+    "sourceMarkdownPath": "ART-Product-Validation/bugs/Orchestrator/ART-ORCHESTRATOR-003__orchestrator-test-renders-schema-definition-instead-of-runtime-inputs/ART-ORCHESTRATOR-003.md",
+    "rawMarkdownContent": "# ART-ORCHESTRATOR-003 \u2014 Orchestrator Test Exposes Schema Definition Structure Instead of Runtime Input Fields\n\n- **Canonical Bug ID:** ART-ORCHESTRATOR-003\n- **Title:** Orchestrator Test Exposes Schema Definition Structure Instead of Runtime Input Fields\n- **Module:** ORCHESTRATOR\n- **Status:** OPEN\n- **Severity:** HIGH\n- **Priority:** P1\n- **Assignee:** Unassigned\n- **Environment:** Testing / InvestigationLab\n- **Tags:** Orchestrator, Start-Node, JSON-Schema, Test-Input, Workflow-Execution, Form-Generation\n\n## Problem\n\nIn the Daily Work Coordinator Orchestrator, the Start node input schema is configured with one required runtime field named `message` of type `string`.\nThe saved Start schema is:\n```json\n{\n  \"additionalProperties\": false,\n  \"properties\": {\n    \"message\": {\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"message\"\n  ],\n  \"type\": \"object\"\n}\n```\n\nWhen opening Orchestrator Test, ART does not provide an input field where the user can enter the runtime value for `message`.\nInstead, the Test Input UI displays the JSON Schema definition itself as editable/form fields, including:\n- `additionalProperties`\n- `properties`\n- `message`\n- `type`\n- `required`\n- `required[0]`\n- root `type`\n\nBecause of this, users cannot provide the actual runtime payload expected by the Start node, such as:\n```json\n{\n  \"message\": \"Today I need to finish the Agent Lab storyboard, review the provider sheet, and prepare the blog calendar.\"\n}\n```\n\n## Bug\n\nThe Orchestrator Test panel exposes the JSON Schema definition structure itself as form fields instead of generating runtime input controls for the configured schema properties. In the Daily Work Coordinator Orchestrator with a Start node configured to require a `message` string, the Test Input panel renders raw schema keywords (`additionalProperties`, `properties`, `message`, `type`, `required`, `required[0]`, root `type`) as inputs, preventing users from supplying the runtime input payload expected by the workflow.\n\n## Observed Behavior\n\nWhen opening the Orchestrator Test side panel for a workflow configured with a Start node input schema, the Test Input section exposes input controls corresponding to the internal JSON Schema meta-schema keys rather than the target data fields. Specifically, the form displays:\n- An `additionalProperties` checkbox\n- A `properties` container with a nested `message` -> `type: string` input\n- A `required` list control with `required[0]: message`\n- A root `type: object` field\n\nUsers cannot enter a direct runtime string value for `message`, making it difficult or impossible to pass the expected runtime payload (`start.message`) to the workflow through the Test panel.\n\n## Reproduction\n\n1. Open the Daily Work Coordinator Orchestrator in the workflow canvas.\n2. Open Configure Start -> Basic Config and define the Start input schema as:\n   ```json\n   {\n     \"additionalProperties\": false,\n     \"properties\": {\n       \"message\": {\n         \"type\": \"string\"\n       }\n     },\n     \"required\": [\n       \"message\"\n     ],\n     \"type\": \"object\"\n   }\n   ```\n3. Save the Start node configuration.\n4. Click Orchestrator Test to open the test execution side panel.\n5. Inspect the generated fields under TEST INPUT.\n\n## Expected\n\nOrchestrator Test should interpret the configured Start input schema and generate runtime input controls from it. For this schema, it should show a user-editable `message` field. When Run is clicked, the workflow should receive the entered value as `start.message`.\n\n## Expected Behavior\n\nOrchestrator Test should interpret the configured Start input schema and generate runtime input controls from it. For this schema, it should show a user-editable `message` field. When Run is clicked, the workflow should receive the entered value as `start.message`.\n\n## Actual\n\nOrchestrator Test exposes the schema-definition structure itself instead of a runtime message input. This makes it difficult or impossible to provide the Start node's expected test payload through the Test UI.\n\n## Actual Result\n\nOrchestrator Test exposes the schema-definition structure itself instead of a runtime message input. This makes it difficult or impossible to provide the Start node's expected test payload through the Test UI.\n\n## Business Impact\n\nWorkflow developers and QA engineers cannot execute, test, or validate reactive orchestrations through the Orchestrator Test interface when Start nodes have structured input schemas. This blocks rapid iteration, testing of multi-step automations, and end-to-end verification of workflows that depend on initial message payloads.\n\n## User Experience\n\nWhen a user opens Orchestrator Test expecting to test-run their workflow with sample input text, they are confronted with a confusing form exposing raw JSON Schema keywords (`additionalProperties`, `properties`, `type`, `required[0]`). Attempting to fill in these fields fails to produce the expected runtime object, creating confusion and blocking test execution.\n\n## Investigation Guidance\n\nInspect the Orchestrator Test panel component and form generation pipeline where the Start node's input schema is loaded to construct the Test Input UI:\n- Trace where the Start node's `input_schema` is received and parsed by the Orchestrator Test runner.\n- Investigate why the form renderer binds to the schema definition object itself rather than compiling its `properties` dictionary into input field definitions.\n- Contrast with form generation in other ART test runners (such as the Agent test runner or result inspector) to align on the standard schema-to-form contract.\n- Do not assume an unverified root cause or invent speculative repository paths; trace execution from the Orchestrator Test drawer component toward the schema form resolver.\n\n## Fix Requirement\n\nOrchestrator Test must interpret the Start node's configured input JSON Schema and render form input controls for the defined runtime properties (e.g., an editable `message` string input) instead of displaying the JSON Schema specification keywords as form inputs. The submitted form data must produce a runtime payload matching the configured schema structure.\n\n## Recommended Solution\n\nImplement schema-aware runtime form generation for Orchestrator Test:\n1. Pass the Start node's input schema to a dedicated schema form compiler that extracts defined properties (`properties.*`) and their types.\n2. Render appropriate input widgets based on property definitions (e.g. text inputs for `string`, number inputs for `number`, toggles for `boolean`, item lists for `array`).\n3. Enforce validation rules defined in the schema (required properties, enums, format constraints) on the client side before triggering workflow runs.\n4. Construct the runtime execution payload from the user-entered property values under the root object structure (e.g., `{ \"message\": \"<entered_value>\" }`) and pass it as the Start node execution payload.\n5. Provide a raw JSON input toggle for developers who prefer directly pasting a JSON payload.\n\n## Production-Grade Fix Proposal\n\nImplement schema-aware runtime form generation for Orchestrator Test:\n\n### Required implementation\n\n1. Pass the Start node's input schema to a dedicated schema form compiler that extracts defined properties (`properties.*`) and their types.\n2. Render appropriate input widgets based on property definitions (e.g. text inputs for `string`, number inputs for `number`, toggles for `boolean`, item lists for `array`).\n3. Enforce validation rules defined in the schema (required properties, enums, format constraints) on the client side before triggering workflow runs.\n4. Construct the runtime execution payload from the user-entered property values under the root object structure (e.g., `{ \"message\": \"<entered_value>\" }`) and pass it as the Start node execution payload.\n5. Provide a raw JSON input toggle for developers who prefer directly pasting a JSON payload.\n\n### Acceptance criteria\n\n- Orchestrator Test renders an editable input control for `message` when the Start node schema defines `properties.message`.\n- JSON Schema meta-keywords (`additionalProperties`, `properties`, `required`, root `type`) are not displayed as editable form fields in the Test Input UI.\n- Required fields defined in the schema's `required` array are marked as mandatory in the Test UI.\n- Submitting the test form sends the user-entered value as the runtime payload (`{ \"message\": \"<value>\" }`) to the Start node.\n- Workflow execution successfully receives and processes `start.message`.\n\n## Minimum Working Fix\n\nUpdate the Orchestrator Test panel to parse the `properties` map of the Start node's input schema and render runtime input controls for each declared property (e.g., `message`) instead of binding form controls directly to the top-level schema definition object.\n\n## Acceptance Criteria\n\n- Orchestrator Test renders an editable input control for `message` when the Start node schema defines `properties.message`.\n- JSON Schema meta-keywords (`additionalProperties`, `properties`, `required`, root `type`) are not displayed as editable form fields in the Test Input UI.\n- Required fields defined in the schema's `required` array are marked as mandatory in the Test UI.\n- Submitting the test form sends the user-entered value as the runtime payload (`{ \"message\": \"<value>\" }`) to the Start node.\n- Workflow execution successfully receives and processes `start.message`.\n\n## Environment\n\nTesting / InvestigationLab\n\n## Severity\n\nHIGH\n\n## Priority\n\nP1\n\n## Tags\n\n- Orchestrator\n- Start-Node\n- JSON-Schema\n- Test-Input\n- Workflow-Execution\n- Form-Generation\n\n## Assignee\n\nUnassigned\n\n## Evidence\n\n- [ART-ORCHESTRATOR-003__start-node-input-schema-configured__2026-09-29__01.png](ART-ORCHESTRATOR-003__start-node-input-schema-configured__2026-09-29__01.png)\n- [ART-ORCHESTRATOR-003__orchestrator-test-schema-definition-fields-top__2026-09-29__02.png](ART-ORCHESTRATOR-003__orchestrator-test-schema-definition-fields-top__2026-09-29__02.png)\n- [ART-ORCHESTRATOR-003__orchestrator-test-schema-definition-fields-bottom__2026-09-29__03.png](ART-ORCHESTRATOR-003__orchestrator-test-schema-definition-fields-bottom__2026-09-29__03.png)\n- [ART-ORCHESTRATOR-003__agent-result-comparison-schema-representation__2026-09-29__04.png](ART-ORCHESTRATOR-003__agent-result-comparison-schema-representation__2026-09-29__04.png)\n\n## Discussion\n\nNot provided\n\n## Developer Update\n\nPending.\n\n## Retest\n\nPending.\n\n## Azure DevOps\n\n- **Work Item ID:** 68849\n- **URL:** https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68849\n- **Parent Feature:** Orchestrator\n- **Parent Feature ID:** 68806\n- **Assigned To:** Unassigned\n- **Sync Status:** SYNCED\n",
+    "ledgerRow": {
+      "bug_id": "ART-ORCHESTRATOR-003",
+      "rel_path": "bugs/Orchestrator/ART-ORCHESTRATOR-003__orchestrator-test-renders-schema-definition-instead-of-runtime-inputs/ART-ORCHESTRATOR-003.md",
+      "name": "Orchestrator Test Exposes Schema Definition Structure Instead of Runtime Input Fields",
+      "severity": "HIGH",
+      "status": "OPEN",
+      "dev_update": "Pending.",
+      "retest": "Pending."
+    }
+  }
+}

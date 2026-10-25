@@ -1,0 +1,142 @@
+{
+  "Investigation": {
+    "id": "ART-ORCHESTRATOR-005",
+    "canonicalBugId": "ART-ORCHESTRATOR-005",
+    "slug": "observability-missing-agent-runtime-input-output-details",
+    "lifecyclePhase": "CONFIRMED",
+    "status": "OPEN",
+    "classification": "BUG",
+    "module": "ORCHESTRATOR",
+    "severity": "MEDIUM",
+    "priority": "Not provided",
+    "assignee": null,
+    "originalInputId": "INP-ART-ORCHESTRATOR-005",
+    "evidenceIds": [
+      "EVD-ART-ORCHESTRATOR-005-01",
+      "EVD-ART-ORCHESTRATOR-005-02",
+      "EVD-ART-ORCHESTRATOR-005-03"
+    ],
+    "aiAnalysisIds": [],
+    "researchIds": [],
+    "ticketRevisionIds": [
+      "TCK-ART-ORCHESTRATOR-005-01"
+    ],
+    "activeTicketRevisionId": "TCK-ART-ORCHESTRATOR-005-01",
+    "developerUpdateIds": [],
+    "retestIds": [],
+    "auditEventIds": [
+      "AUD-ART-ORCHESTRATOR-005-01"
+    ],
+    "createdAt": "2026-09-24T00:00:00Z",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "OriginalInput": {
+    "id": "INP-ART-ORCHESTRATOR-005",
+    "investigationId": "ART-ORCHESTRATOR-005",
+    "testerDescription": "",
+    "reporter": "HUMAN_LEGACY_IMPORT",
+    "capturedAt": "2026-09-24T00:00:00Z",
+    "initialEvidenceIds": [
+      "EVD-ART-ORCHESTRATOR-005-01",
+      "EVD-ART-ORCHESTRATOR-005-02",
+      "EVD-ART-ORCHESTRATOR-005-03"
+    ],
+    "provenance": "HUMAN_SUPPLIED"
+  },
+  "EvidenceList": [
+    {
+      "id": "EVD-ART-ORCHESTRATOR-005-01",
+      "investigationId": "ART-ORCHESTRATOR-005",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-ORCHESTRATOR-005__trace-tree-subsequent-request-received-blank-details__2026-09-30__03.png",
+      "canonicalFilename": "ART-ORCHESTRATOR-005__trace-tree-subsequent-request-received-blank-details__2026-09-30__03.png",
+      "storagePath": "ART-Product-Validation/bugs/Orchestrator/ART-ORCHESTRATOR-005__observability-missing-agent-runtime-input-output-details/ART-ORCHESTRATOR-005__trace-tree-subsequent-request-received-blank-details__2026-09-30__03.png",
+      "sha256": "cb3870abfabcc6f0dfb71c0a0857235c288a5dbbcc95145a6bbc940f53194bea",
+      "mimeType": "image/png",
+      "byteSize": 191922,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    },
+    {
+      "id": "EVD-ART-ORCHESTRATOR-005-02",
+      "investigationId": "ART-ORCHESTRATOR-005",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-ORCHESTRATOR-005__trace-tree-agent-request-received-blank-details__2026-09-30__02.png",
+      "canonicalFilename": "ART-ORCHESTRATOR-005__trace-tree-agent-request-received-blank-details__2026-09-30__02.png",
+      "storagePath": "ART-Product-Validation/bugs/Orchestrator/ART-ORCHESTRATOR-005__observability-missing-agent-runtime-input-output-details/ART-ORCHESTRATOR-005__trace-tree-agent-request-received-blank-details__2026-09-30__02.png",
+      "sha256": "9388dce56732b9cbab3ab6632307dd6da5f970e4486946e6208350b5fd30389a",
+      "mimeType": "image/png",
+      "byteSize": 191461,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    },
+    {
+      "id": "EVD-ART-ORCHESTRATOR-005-03",
+      "investigationId": "ART-ORCHESTRATOR-005",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-ORCHESTRATOR-005__trace-tree-completed-agent-node-generic-details__2026-09-30__01.png",
+      "canonicalFilename": "ART-ORCHESTRATOR-005__trace-tree-completed-agent-node-generic-details__2026-09-30__01.png",
+      "storagePath": "ART-Product-Validation/bugs/Orchestrator/ART-ORCHESTRATOR-005__observability-missing-agent-runtime-input-output-details/ART-ORCHESTRATOR-005__trace-tree-completed-agent-node-generic-details__2026-09-30__01.png",
+      "sha256": "a939888347da9d0624a82c5516b7b7cd0a2b59d3f499384ba7e1d52560aa78bf",
+      "mimeType": "image/png",
+      "byteSize": 199917,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    }
+  ],
+  "TicketArtifact": {
+    "ticketId": "TCK-ART-ORCHESTRATOR-005-01",
+    "investigationId": "ART-ORCHESTRATOR-005",
+    "revision": 1,
+    "title": "Observability Does Not Display Runtime Input and Output Details for Orchestrator Agent Execution",
+    "reproSteps": "Not provided",
+    "expectedResult": "Not provided",
+    "actualResult": "Not provided",
+    "businessImpact": "Not provided",
+    "recommendedSolution": "Not provided",
+    "module": "ORCHESTRATOR",
+    "environment": "Not provided",
+    "severity": "MEDIUM",
+    "priority": "Not provided",
+    "tags": [
+      "orchestrator"
+    ],
+    "discussion": [],
+    "provenance": "HUMAN_APPROVED",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "AuditEvent": {
+    "id": "AUD-ART-ORCHESTRATOR-005-01",
+    "investigationId": "ART-ORCHESTRATOR-005",
+    "timestamp": "2026-09-24T00:00:00Z",
+    "actor": "LEGACY_IMPORT_ADAPTER",
+    "eventType": "INVESTIGATION_CAPTURED",
+    "summary": "Imported legacy bug record ART-ORCHESTRATOR-005 from ART-Product-Validation/bugs",
+    "details": {
+      "sourceMarkdownPath": "ART-Product-Validation/bugs/Orchestrator/ART-ORCHESTRATOR-005__observability-missing-agent-runtime-input-output-details/ART-ORCHESTRATOR-005.md",
+      "rawContentSha256": "40fabc125ce7b9c1593183463b2491912be4be4fa00e82b90ce6ee60e53cb32e"
+    }
+  },
+  "sourceMetadata": {
+    "sourceMarkdownPath": "ART-Product-Validation/bugs/Orchestrator/ART-ORCHESTRATOR-005__observability-missing-agent-runtime-input-output-details/ART-ORCHESTRATOR-005.md",
+    "rawMarkdownContent": "# ART-ORCHESTRATOR-005 \u2014 Observability Does Not Display Runtime Input and Output Details for Orchestrator Agent Execution\n\n- **Canonical Bug ID:** ART-ORCHESTRATOR-005\n- **Module:** ORCHESTRATOR\n- **Severity:** MEDIUM\n- **Priority:** P2\n- **Environment:** Testing (Daily Work Coordinator Orchestrator V2 / Observability Conversation Explorer)\n- **Assignee:** Unassigned\n- **Tags:** Orchestrator, Observability, Trace-Tree, Conversation-Explorer, Agent-Execution, Details-Panel, Runtime-Diagnostics, UX-Clarity\n- **Status:** OPEN\n- **Evidence Count:** 3\n- **Azure DevOps:** SYNCED ([#68888](https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68888))\n\n---\n\n## 1. Problem\nIn Orchestrator Observability (Conversation Explorer), the Trace Tree records individual workflow execution steps for Agent nodes\u2014such as `Completed agentOrchestrator_1`, `Request received`, `Preparing the response`, `Output finalized`, and `Response ready`. However, when these activities are selected, the **Details panel is completely blank and fails to display runtime payloads**.\n\nSpecifically, selecting `Request received` does not reveal the input payload passed from the Orchestrator Start node to the Agent. Similarly, selecting output-related trace events (`Output finalized`, `Response ready`) provides no output inspection. The parent activity `Completed agentOrchestrator_1` only outputs a generic placeholder string (`agentOrchestrator_1 completed in ms`). Consequently, builders and testers cannot determine what data actually entered or exited the Agent, disabling workflow diagnostics.\n\n---\n\n## 2. Observed Behavior\n- **Parent Activity Placeholder:**\n  - Selecting `Completed agentOrchestrator_1` in the Trace Tree displays a Details panel containing only:\n    ```\n    agentOrchestrator_1 completed in ms\n    ```\n    No input mapping data, runtime arguments, or return values are provided.\n- **Blank Child Activity Details:**\n  - Selecting `INPUT agent Request received` (timestamp `6:05:29 PM`) results in a completely blank Details panel below the activity header.\n  - Selecting subsequent `Request received` activities (timestamp `6:06:08 PM`) similarly renders an empty Details pane with no request payload.\n  - Output stages (`Output finalized`, `Response ready`) fail to expose the structured task output or agent response text.\n- **Omission of Runtime Diagnostics:**\n  - The Trace Tree visualizes step durations (e.g. `2.20s`, `2.18s`, `3.69s`), but payload inspection is unavailable across all sub-steps.\n\n---\n\n## 3. Reproduction\n1. Open an Orchestrator workflow containing an Agent node (e.g. **Daily Work Coordinator Orchestrator V2**).\n2. Execute a test run in **Orchestrator Test**.\n3. Open **Observability** and select the execution run from **Conversation Explorer** (e.g. execution thread `bf0644a4...82f2`).\n4. Ensure the **Trace Tree** tab is active.\n5. In the **Spans & Steps** tree, select the parent Agent activity `Completed agentOrchestrator_1`.\n6. Inspect the **Details** panel: observe that it only shows generic text `agentOrchestrator_1 completed in ms` with zero payload details.\n7. Select the child activity `INPUT agent Request received` (or subsequent `Request received` steps).\n8. Inspect the **Details** panel: observe that the panel is completely empty.\n\n---\n\n## 4. Expected Behavior\n- When an execution activity is selected in the Trace Tree, the **Details** panel must render meaningful structured runtime data:\n  - `Request received`: Must display the resolved input payload passed from the Orchestrator to the Agent (e.g., mapped `${start.message}` parameter and values).\n  - `Output finalized` / `Response ready`: Must display the finalized structured Agent output payload (e.g., intent, extracted tasks, clarification response).\n  - Parent Agent node activity: Should display execution summary metrics, input/output summary, and execution status.\n  - Error/failure states: Must expose the specific failure reason, error codes, and the execution stage where failure occurred.\n- Sensitive fields should be masked or redacted according to platform privacy rules, without omitting the entire diagnostic payload.\n\n---\n\n## 5. Business Impact\n- **Severely Degraded Debuggability:** Builders, developers, and QA engineers cannot verify whether an Orchestrator workflow provided correct input to an Agent or if the Agent produced an invalid response.\n- **Prolonged Investigation Cycles:** Issues like empty task arrays or failed mappings require manual external logging or trial-and-error speculation because the platform's native Observability tool hides runtime payloads.\n- **Undermined Observability Value:** The core value proposition of an enterprise Observability dashboard is defeated when trace events omit the actual runtime data payloads.\n\n---\n\n## 6. User Experience\n- Users click into individual trace activities expecting to inspect payloads, only to be presented with an empty white pane.\n- The UI indicates that steps were executed and recorded, but provides no visibility into why an Agent produced a specific output or failed to parse an input.\n\n---\n\n## 7. Investigation Guidance\nInvestigate the Orchestrator execution event emission and Observability trace storage pipeline:\n- **Span Event Payload Capture:** Inspect where the Orchestrator agent runner emits trace events (`Request received`, `Preparing the response`, `Output finalized`). Check whether runtime input/output arguments are serialized into the event span attributes or dropped prior to emission.\n- **Trace Ingestion & Persistence:** Verify whether the Observability ingestion service stores event attributes in the backend trace database or if attributes are stripped for size/performance.\n- **Conversation Explorer Frontend Details Component:** Inspect the React/Vue component rendering the `DETAILS` tab in Conversation Explorer. Check whether it handles event attribute payloads or if it expects a specific schema/format that the backend is currently not supplying.\n- **Timing String Placeholder Bug:** In `Completed agentOrchestrator_1`, the string `agentOrchestrator_1 completed in ms` is missing the numeric duration value (e.g. `completed in <duration> ms`), indicating a template formatting bug in the span result serializer.\n\n---\n\n## 8. Fix Requirement\nObservability must capture, persist, and render structured runtime input payloads for `Request received` events and structured output payloads for `Output finalized` / `Response ready` events within the Conversation Explorer Details panel, while formatting execution duration correctly in parent completion summaries.\n\n---\n\n## 9. Recommended Solution\n1. **Payload Attachment at Bridge:** Ensure the Orchestrator-to-Agent execution bridge attaches the resolved request object to the `Request received` span event.\n2. **Output Attachment:** Attach the model's finalized response and structured JSON payload to the `Output finalized` span event.\n3. **Frontend Details Renderer:** Update the Conversation Explorer Details pane to render formatted JSON code blocks for events containing payload attributes.\n4. **Fix Duration Placeholder:** Correct the template string in the agent completion handler so that numeric duration is properly interpolated (e.g. `completed in 3690 ms`).\n5. **Sensitive Data Masking:** Integrate existing redaction helpers to mask sensitive properties (passwords, tokens, PII) while preserving payload keys and structure.\n\n---\n\n## 10. Minimum Working Fix\nSerialize and attach the raw input dictionary to the `Request received` span event and the output dictionary to the `Output finalized` span event, and update the Details panel component to render `JSON.stringify(event.payload, null, 2)` when a payload exists.\n\n---\n\n## 11. Acceptance Criteria\n- [ ] Selecting `Request received` in the Trace Tree displays the resolved input payload supplied to the Agent in the Details panel.\n- [ ] Selecting `Output finalized` or `Response ready` displays the actual structured Agent output in the Details panel.\n- [ ] Parent completion activity displays properly formatted duration (e.g., `completed in <X> ms`).\n- [ ] Execution error events display the error code, reason, and failing step.\n- [ ] Sensitive field values are masked without hiding the surrounding diagnostic structure.\n- [ ] The displayed trace data matches the selected execution run.\n\n---\n\n## 12. Environment\n- **Platform:** ART Observability / Conversation Explorer\n- **Workflow:** Daily Work Coordinator Orchestrator V2\n- **Agent:** Daily Work Coordinator V2\n- **Trace Thread ID:** `bf0644a4...82f2` (`bf064...782f2`)\n- **Module:** Orchestrator (Conversation Explorer / Trace Tree)\n- **Environment:** Testing (InvestigationLab, Professional Plan)\n\n---\n\n## 13. Severity\n**MEDIUM** \u2014 Observability functional defect; hides runtime data payloads necessary for workflow debugging.\n\n---\n\n## 14. Priority\n**P2** \u2014 Important defect impacting developer troubleshooting and platform diagnostic capability.\n\n---\n\n## 15. Tags\n- `Orchestrator`\n- `Observability`\n- `Trace-Tree`\n- `Conversation-Explorer`\n- `Agent-Execution`\n- `Details-Panel`\n- `Runtime-Diagnostics`\n- `UX-Clarity`\n\n---\n\n## 16. Assignee\n**Unassigned**\n\n---\n\n## 17. Evidence\n\n| File | Type | Description | SHA256 Hash | Byte Size |\n| :--- | :--- | :--- | :--- | :--- |\n| [ART-ORCHESTRATOR-005__trace-tree-completed-agent-node-generic-details__2026-09-30__01.png](file:///home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-ORCHESTRATOR-005__observability-missing-agent-runtime-input-output-details/ART-ORCHESTRATOR-005__trace-tree-completed-agent-node-generic-details__2026-09-30__01.png) | Screenshot | Conversation Explorer Trace Tree selecting parent activity 'Completed agentOrchestrator_1' showing generic Details result 'agentOrchestrator_1 completed in ms' without payload details. | `a939888347da9d0624a82c5516b7b7cd0a2b59d3f499384ba7e1d52560aa78bf` | 199917 bytes |\n| [ART-ORCHESTRATOR-005__trace-tree-agent-request-received-blank-details__2026-09-30__02.png](file:///home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-ORCHESTRATOR-005__observability-missing-agent-runtime-input-output-details/ART-ORCHESTRATOR-005__trace-tree-agent-request-received-blank-details__2026-09-30__02.png) | Screenshot | Conversation Explorer Trace Tree selecting child activity 'INPUT agent Request received' (6:05:29 PM) showing completely blank Details panel with no input payload. | `9388dce56732b9cbab3ab6632307dd6da5f970e4486946e6208350b5fd30389a` | 191461 bytes |\n| [ART-ORCHESTRATOR-005__trace-tree-subsequent-request-received-blank-details__2026-09-30__03.png](file:///home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-ORCHESTRATOR-005__observability-missing-agent-runtime-input-output-details/ART-ORCHESTRATOR-005__trace-tree-subsequent-request-received-blank-details__2026-09-30__03.png) | Screenshot | Conversation Explorer Trace Tree selecting subsequent activity 'Request received' (6:06:08 PM) showing completely blank Details panel with no payload details. | `cb3870abfabcc6f0dfb71c0a0857235c288a5dbbcc95145a6bbc940f53194bea` | 191922 bytes |\n\n### Evidence Visual Gallery\n\n````carousel\n![ART-ORCHESTRATOR-005__trace-tree-completed-agent-node-generic-details__2026-09-30__01.png](/home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-ORCHESTRATOR-005__observability-missing-agent-runtime-input-output-details/ART-ORCHESTRATOR-005__trace-tree-completed-agent-node-generic-details__2026-09-30__01.png)\n*Conversation Explorer Trace Tree selecting parent activity 'Completed agentOrchestrator_1' showing generic Details result 'agentOrchestrator_1 completed in ms' without payload details.*\n<!-- slide -->\n![ART-ORCHESTRATOR-005__trace-tree-agent-request-received-blank-details__2026-09-30__02.png](/home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-ORCHESTRATOR-005__observability-missing-agent-runtime-input-output-details/ART-ORCHESTRATOR-005__trace-tree-agent-request-received-blank-details__2026-09-30__02.png)\n*Conversation Explorer Trace Tree selecting child activity 'INPUT agent Request received' (6:05:29 PM) showing completely blank Details panel with no input payload.*\n<!-- slide -->\n![ART-ORCHESTRATOR-005__trace-tree-subsequent-request-received-blank-details__2026-09-30__03.png](/home/chiranjeevi/Documents/bugs-ledger/ART-Product-Validation/bugs/ART-ORCHESTRATOR-005__observability-missing-agent-runtime-input-output-details/ART-ORCHESTRATOR-005__trace-tree-subsequent-request-received-blank-details__2026-09-30__03.png)\n*Conversation Explorer Trace Tree selecting subsequent activity 'Request received' (6:06:08 PM) showing completely blank Details panel with no payload details.*\n````\n\n---\n\n## 18. Discussion\n- **Reporter Note:** In Orchestrator Observability (Daily Work Coordinator Orchestrator V2, execution thread bf0644a4...82f2), clicking into Agent execution activities in the Trace Tree reveals that the Details panel is completely blank for 'Request received' and other child steps, and only shows generic text ('agentOrchestrator_1 completed in ms') for parent completion. This makes it impossible to inspect what data actually entered or exited the Agent, severely hindering diagnostic capability.\n- **Intake Validation:** All 3 screenshots preserved with cryptographic SHA256 checksums and verified byte sizes. Zero Azure DevOps mutations performed during intake.\n\n---\n\n## 19. Azure DevOps\n- **Work Item ID:** 68888\n- **URL:** [https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68888](https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_workitems/edit/68888)\n- **Parent Feature:** Orchestrator\n- **Parent Feature ID:** 68806\n- **Assigned To:** Unassigned\n- **Sync Status:** SYNCED\n- **Note:** Synchronized via Harness 02 V1 to Azure DevOps.\n",
+    "ledgerRow": {
+      "bug_id": "ART-ORCHESTRATOR-005",
+      "rel_path": "bugs/Orchestrator/ART-ORCHESTRATOR-005__observability-missing-agent-runtime-input-output-details/ART-ORCHESTRATOR-005.md",
+      "name": "Observability Does Not Display Runtime Input and Output Details for Orchestrator Agent Execution",
+      "severity": "MEDIUM",
+      "status": "OPEN",
+      "dev_update": "Pending.",
+      "retest": "Pending."
+    }
+  }
+}

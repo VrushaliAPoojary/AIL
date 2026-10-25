@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://art.product.resolution/schemas/evidence.json",
+  "title": "Evidence",
+  "description": "Immutable evidence object stored in the system",
+  "type": "object",
+  "required": [
+    "id",
+    "investigationId",
+    "stage",
+    "evidenceType",
+    "originalFilename",
+    "canonicalFilename",
+    "storagePath",
+    "sha256",
+    "mimeType",
+    "byteSize",
+    "uploadedBy",
+    "capturedAt",
+    "provenance"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "investigationId": {
+      "type": "string"
+    },
+    "stage": {
+      "$ref": "common.json#/definitions/EvidenceStage"
+    },
+    "evidenceType": {
+      "$ref": "common.json#/definitions/EvidenceType"
+    },
+    "originalFilename": {
+      "type": "string"
+    },
+    "canonicalFilename": {
+      "type": "string"
+    },
+    "storagePath": {
+      "type": "string"
+    },
+    "sha256": {
+      "type": "string"
+    },
+    "mimeType": {
+      "type": "string"
+    },
+    "byteSize": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "uploadedBy": {
+      "type": "string"
+    },
+    "capturedAt": {
+      "$ref": "common.json#/definitions/IsoTimestamp"
+    },
+    "notes": {
+      "type": ["string", "null"]
+    },
+    "provenance": {
+      "$ref": "common.json#/definitions/ProvenanceType"
+    }
+  },
+  "additionalProperties": false
+}

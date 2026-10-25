@@ -1,0 +1,124 @@
+{
+  "Investigation": {
+    "id": "ART-AGENT-001",
+    "canonicalBugId": "ART-AGENT-001",
+    "slug": "structured-output-contract-not-strictly-enforced",
+    "lifecyclePhase": "CONFIRMED",
+    "status": "OPEN",
+    "classification": "BUG",
+    "module": "AGENT",
+    "severity": "HIGH",
+    "priority": "Not provided",
+    "assignee": null,
+    "originalInputId": "INP-ART-AGENT-001",
+    "evidenceIds": [
+      "EVD-ART-AGENT-001-01",
+      "EVD-ART-AGENT-001-02"
+    ],
+    "aiAnalysisIds": [],
+    "researchIds": [],
+    "ticketRevisionIds": [
+      "TCK-ART-AGENT-001-01"
+    ],
+    "activeTicketRevisionId": "TCK-ART-AGENT-001-01",
+    "developerUpdateIds": [],
+    "retestIds": [],
+    "auditEventIds": [
+      "AUD-ART-AGENT-001-01"
+    ],
+    "createdAt": "2026-09-24T00:00:00Z",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "OriginalInput": {
+    "id": "INP-ART-AGENT-001",
+    "investigationId": "ART-AGENT-001",
+    "testerDescription": "The Agent Output Parser does not consistently enforce configured field names, nested structures, data types, or required collection defaults.",
+    "reporter": "HUMAN_LEGACY_IMPORT",
+    "capturedAt": "2026-09-24T00:00:00Z",
+    "initialEvidenceIds": [
+      "EVD-ART-AGENT-001-01",
+      "EVD-ART-AGENT-001-02"
+    ],
+    "provenance": "HUMAN_SUPPLIED"
+  },
+  "EvidenceList": [
+    {
+      "id": "EVD-ART-AGENT-001-01",
+      "investigationId": "ART-AGENT-001",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-AGENT-001__schema-builder-contract__2026-09-24__02.png",
+      "canonicalFilename": "ART-AGENT-001__schema-builder-contract__2026-09-24__02.png",
+      "storagePath": "ART-Product-Validation/bugs/Agent Lab/ART-AGENT-001__structured-output-contract-not-strictly-enforced/ART-AGENT-001__schema-builder-contract__2026-09-24__02.png",
+      "sha256": "2ab74e1652243bd9f52907c77f094025c2d0a51cf2a6c7535e38c93394dae285",
+      "mimeType": "image/png",
+      "byteSize": 154813,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    },
+    {
+      "id": "EVD-ART-AGENT-001-02",
+      "investigationId": "ART-AGENT-001",
+      "stage": "ORIGINAL",
+      "evidenceType": "SCREENSHOT",
+      "originalFilename": "ART-AGENT-001__agent-result-contract-violation__2026-09-24__01.png",
+      "canonicalFilename": "ART-AGENT-001__agent-result-contract-violation__2026-09-24__01.png",
+      "storagePath": "ART-Product-Validation/bugs/Agent Lab/ART-AGENT-001__structured-output-contract-not-strictly-enforced/ART-AGENT-001__agent-result-contract-violation__2026-09-24__01.png",
+      "sha256": "4434d0da5ebb090adfb6e77f613726a5b4fe11f05f0b3666b4112ad1644f1550",
+      "mimeType": "image/png",
+      "byteSize": 272254,
+      "uploadedBy": "HUMAN_LEGACY_IMPORT",
+      "capturedAt": "2026-09-24T00:00:00Z",
+      "notes": null,
+      "provenance": "EVIDENCE_BACKED_FACT"
+    }
+  ],
+  "TicketArtifact": {
+    "ticketId": "TCK-ART-AGENT-001-01",
+    "investigationId": "ART-AGENT-001",
+    "revision": 1,
+    "title": "Structured output contract is not strictly enforced",
+    "reproSteps": "Not provided",
+    "expectedResult": "ART must validate every agent result against the configured output contract before displaying or sending it to governance.\n\nInvalid output must be rejected or automatically repaired. The UI must clearly identify the affected field, expected type, and received type.\n\nEmpty collection fields such as `mismatches` must return `[]`, never `null`.",
+    "actualResult": "The same workflow has produced:\n\n- `compared_fields` as arrays instead of objects\n- `field_name` instead of the configured `field`\n- numeric values as strings\n- `mismatches: null` instead of `mismatches: []`\n\nThese results are displayed as successful Agent Results without contract-validation errors.",
+    "businessImpact": "Not provided",
+    "recommendedSolution": "ART must enforce structured output as a platform contract instead of depending only on prompt instructions.\n\n### Required implementation\n\n1. Generate and store one canonical JSON Schema from the Output Parser configuration.\n2. The schema must define:\n   - Required properties\n   - Exact property names\n   - Data types\n   - Enum values\n   - Nested object structures\n   - Array item structures\n   - Nullable rules\n   - Default values\n   - `additionalProperties: false`\n3. Use provider-native strict structured output whenever the selected model supports it.\n4. Use schema-bound tool calling when native structured output is unavailable.\n5. Validate the final model response server-side before displaying it or sending it to governance.\n6. Automatically apply only safe normalization:\n   - Missing optional arrays to `[]`\n   - Missing optional objects to `{}`\n   - Whitespace trimming\n   - Known enum casing normalization\n7. Do not automatically modify business decisions, evidence, mismatch findings, ownership, or approval requirements.\n8. If validation fails, return the exact validation errors to the model and perform one repair attempt.\n9. The repair attempt must not repeat tool calls, actions, notifications, or governance execution.\n10. If validation still fails, stop execution with `OUTPUT_VALIDATION_FAILED`.\n11. Invalid output must never be displayed as a successful Agent Result or passed to governance.\n12. Provide a visual schema builder for non-technical users with:\n    - Display label\n    - Property key\n    - Type\n    - Required or optional\n    - Allow null\n    - Default value\n    - Allowed values\n    - Array item structure\n13. Before publishing, automatically test exact match, single mismatch, multiple mismatches, missing evidence, null values, invalid types, and unexpected properties.\n\n### Acceptance criteria\n\n- Property names remain unchanged between executions.\n- `compared_fields` is always an array of objects.\n- `mismatches` is always an array and never `null`.\n- Numeric values remain numeric.\n- Invalid enum values are rejected.\n- Additional properties are rejected.\n- Invalid results never reach governance.\n- Repair attempts do not repeat business actions.\n- Validation errors are readable by non-technical users.\n- Build and Publish is blocked when contract tests fail.",
+    "module": "AGENT",
+    "environment": "Not provided",
+    "severity": "HIGH",
+    "priority": "Not provided",
+    "tags": [
+      "agent"
+    ],
+    "discussion": [],
+    "provenance": "HUMAN_APPROVED",
+    "updatedAt": "2026-09-24T00:00:00Z"
+  },
+  "AuditEvent": {
+    "id": "AUD-ART-AGENT-001-01",
+    "investigationId": "ART-AGENT-001",
+    "timestamp": "2026-09-24T00:00:00Z",
+    "actor": "LEGACY_IMPORT_ADAPTER",
+    "eventType": "INVESTIGATION_CAPTURED",
+    "summary": "Imported legacy bug record ART-AGENT-001 from ART-Product-Validation/bugs",
+    "details": {
+      "sourceMarkdownPath": "ART-Product-Validation/bugs/Agent Lab/ART-AGENT-001__structured-output-contract-not-strictly-enforced/ART-AGENT-001.md",
+      "rawContentSha256": "35a171b29562ad9d39deec37d64054f3646d6c303dc1c86bbdfad8ea84c9d92d"
+    }
+  },
+  "sourceMetadata": {
+    "sourceMarkdownPath": "ART-Product-Validation/bugs/Agent Lab/ART-AGENT-001__structured-output-contract-not-strictly-enforced/ART-AGENT-001.md",
+    "rawMarkdownContent": "# ART-AGENT-001 \u2014 Structured output contract is not strictly enforced\n\n- **Severity:** HIGH\n- **Status:** OPEN\n\n## Bug\n\nThe Agent Output Parser does not consistently enforce configured field names, nested structures, data types, or required collection defaults.\n\n## Expected\n\nART must validate every agent result against the configured output contract before displaying or sending it to governance.\n\nInvalid output must be rejected or automatically repaired. The UI must clearly identify the affected field, expected type, and received type.\n\nEmpty collection fields such as `mismatches` must return `[]`, never `null`.\n\n## Actual\n\nThe same workflow has produced:\n\n- `compared_fields` as arrays instead of objects\n- `field_name` instead of the configured `field`\n- numeric values as strings\n- `mismatches: null` instead of `mismatches: []`\n\nThese results are displayed as successful Agent Results without contract-validation errors.\n\n## Evidence\n\n- [ART-AGENT-001__agent-result-contract-violation__2026-09-24__01.png](ART-AGENT-001__agent-result-contract-violation__2026-09-24__01.png)\n- [ART-AGENT-001__schema-builder-contract__2026-09-24__02.png](ART-AGENT-001__schema-builder-contract__2026-09-24__02.png)\n\n## Production-Grade Fix Proposal\n\nART must enforce structured output as a platform contract instead of depending only on prompt instructions.\n\n### Required implementation\n\n1. Generate and store one canonical JSON Schema from the Output Parser configuration.\n2. The schema must define:\n   - Required properties\n   - Exact property names\n   - Data types\n   - Enum values\n   - Nested object structures\n   - Array item structures\n   - Nullable rules\n   - Default values\n   - `additionalProperties: false`\n3. Use provider-native strict structured output whenever the selected model supports it.\n4. Use schema-bound tool calling when native structured output is unavailable.\n5. Validate the final model response server-side before displaying it or sending it to governance.\n6. Automatically apply only safe normalization:\n   - Missing optional arrays to `[]`\n   - Missing optional objects to `{}`\n   - Whitespace trimming\n   - Known enum casing normalization\n7. Do not automatically modify business decisions, evidence, mismatch findings, ownership, or approval requirements.\n8. If validation fails, return the exact validation errors to the model and perform one repair attempt.\n9. The repair attempt must not repeat tool calls, actions, notifications, or governance execution.\n10. If validation still fails, stop execution with `OUTPUT_VALIDATION_FAILED`.\n11. Invalid output must never be displayed as a successful Agent Result or passed to governance.\n12. Provide a visual schema builder for non-technical users with:\n    - Display label\n    - Property key\n    - Type\n    - Required or optional\n    - Allow null\n    - Default value\n    - Allowed values\n    - Array item structure\n13. Before publishing, automatically test exact match, single mismatch, multiple mismatches, missing evidence, null values, invalid types, and unexpected properties.\n\n### Acceptance criteria\n\n- Property names remain unchanged between executions.\n- `compared_fields` is always an array of objects.\n- `mismatches` is always an array and never `null`.\n- Numeric values remain numeric.\n- Invalid enum values are rejected.\n- Additional properties are rejected.\n- Invalid results never reach governance.\n- Repair attempts do not repeat business actions.\n- Validation errors are readable by non-technical users.\n- Build and Publish is blocked when contract tests fail.\n\n## Developer Update\n\nPending.\n\n## Retest\n\nPending.\n\n## Azure DevOps\n\n- **Work Item ID:** 68831\n- **URL:** https://dev.azure.com/BixBytesSolutions/f3253417-808e-457f-a7f2-5699b2f38aa6/_apis/wit/workItems/68831\n- **Parent Feature:** Agent Lab\n- **Parent Feature ID:** 68783\n- **Assigned To:** Unassigned\n- **Sync Status:** SYNCED\n",
+    "ledgerRow": {
+      "bug_id": "ART-AGENT-001",
+      "rel_path": "bugs/Agent Lab/ART-AGENT-001__structured-output-contract-not-strictly-enforced/ART-AGENT-001.md",
+      "name": "Structured output contract is not strictly enforced",
+      "severity": "HIGH",
+      "status": "OPEN",
+      "dev_update": "Pending.",
+      "retest": "Pending."
+    }
+  }
+}
