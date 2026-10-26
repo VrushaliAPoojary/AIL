@@ -14,8 +14,9 @@ export function Header() {
     <header className="header">
       <div className="header-identity">
         <div className="header-subject">
-          <Link href="/">
-            <img src="/brand-assets/ail-header.png" alt="A Realtime Tech" className="brand-logo" />
+          <Link href="/" className="brand-header-link">
+            <span className="brand-header-badge">ART</span>
+            <span className="brand-header-title">Investigation Lab</span>
           </Link>
         </div>
       </div>

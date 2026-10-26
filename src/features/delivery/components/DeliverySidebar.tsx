@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  IconLogo,
   IconDashboard,
   IconOrders,
   IconExceptions,
@@ -90,7 +89,6 @@ export function DeliverySidebar({
         {/* Brand identity */}
         <div className="sidebar-brand-wrapper">
           <div className="sidebar-brand">
-            <IconLogo size={36} className="brand-logo-icon" />
             <div className="brand-text">
               <div className="brand-title-row">
                 <span className="brand-code-badge">P02</span>

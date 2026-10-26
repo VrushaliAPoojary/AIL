@@ -599,7 +599,7 @@ class TestTransactionalLifecycle(unittest.TestCase):
 
         cursor = self.conn.cursor()
         # 45. Both DeveloperUpdates preserved
-        cursor.execute("SELECT summary_of_changes FROM developer_updates WHERE investigation_key = ? ORDER BY submitted_at ASC;", (record_key,))
+        cursor.execute("SELECT summary_of_changes FROM developer_updates WHERE investigation_key = ? ORDER BY submitted_at ASC, id ASC;", (record_key,))
         dev_summaries = [r[0] for r in cursor.fetchall()]
         self.assertEqual(dev_summaries, ["Fix 1", "Fix 2 after review"])
 

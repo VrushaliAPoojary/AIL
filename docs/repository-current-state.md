@@ -1,80 +1,131 @@
 # Repository Current State
 
-Last updated: 2026-10-25
+Last updated: 2026-10-26
 
-## What this repository does
+## 1. What This Repository Does
 
-ART Investigation Lab is a Next.js application for presenting and exploring structured investigation briefs.
-It renders investigation data from repository JSON files into five main product surfaces:
+The ART Investigation Lab repository houses several related but strictly isolated engineering and research workspaces:
 
-- Homepage (`/`)
-- Onboarding (`/onboarding`)
-- Contribute (`/contribute`)
-- Walkthrough (`/walkthrough`)
-- Workflow (`/workflow`)
+1. **Core Web Application (`src/`):** A Next.js (App Router) application that renders validated investigation briefs across five main product surfaces:
+   - Homepage (`/`)
+   - Onboarding (`/onboarding`)
+   - Contribute (`/contribute`)
+   - Walkthrough (`/walkthrough`)
+   - Workflow (`/workflow`)
+2. **P02 Delivery Control Center (`/delivery`):** An operations center for monitoring supplier purchase orders, receipt evidence, and delivery delays. Includes deterministic delivery classification, read-only ART ADK agent execution, local run auditing, and strictly labeled synthetic demo data.
+3. **Investigation Brief Compiler (`compiler/`):** A standalone Python CLI tool that parses Markdown investigation packages, extracts structured epistemic entities, and validates candidate JSON against the InvestigationBrief schema.
+4. **Procurement Research Workspace (`research/procurement/`):** A structured research workspace defining ownership, evidence standards, and specifications for 4 procurement processes (P01–P04), governed by `validate-procurement-workspace.py`.
+5. **Bugs Ledger Service (`services/bugs-ledger/`):** An independent Python FastAPI service with SQLite persistence for defect tracking, life-cycle transitions, evidence hashing, and optional guarded Azure DevOps synchronization.
 
-The P02 Supplier Delivery Confirmation & Delay Escalation control center is available at `/delivery`. It is an isolated Next.js route with read-only ART ADK execution, deterministic delivery classification, explicitly labeled synthetic demo data, and protected live-run/configuration endpoints.
+---
 
-## Major architecture
+## 2. Component Boundaries & Runtime Topography
 
-- `src/app/` defines the Next.js App Router routes (`layout.tsx`, `page.tsx`, `onboarding/page.tsx`, `contribute/page.tsx`, `walkthrough/page.tsx`, `workflow/page.tsx`, and API route handlers under `src/app/api/`).
-- `src/components/Header/` contains the global header shell.
-- `src/features/home/` contains the landing page.
-- `src/features/onboarding/` contains the onboarding flow.
-- `src/features/contribute/` contains the contribution flow.
-- `src/features/core/walkthrough/` contains the walkthrough experience, including Markdown rendering and presentation helpers.
-- `src/features/core/workflow/` contains the workflow canvas.
-- `src/features/aoi/` contains the AOI explorer surface.
-- `src/features/delivery/` contains the P02 Delivery Control Center interface.
-- `src/server/delivery/` contains P02 classification, administrator auth, local run/audit persistence, ADK execution, and evidence normalization.
-- `src/data/` contains the InvestigationBrief loader, validator, and repository data.
-- `src/server/` contains server-only persistence, validation, and API helpers.
-- `src/types/` contains the TypeScript types for the app data models.
-- `contracts/` contains the locked schema and contract documents.
-- `deployment/` contains legacy static deployment assets and packaging material.
+```mermaid
+graph TD
+    subgraph Client_Browser ["Client Browser"]
+        UI_Surfaces["Next.js Web Surfaces\n(/, /walkthrough, /workflow, /delivery)"]
+    end
 
-## Important data flows
+    subgraph NextJS_Runtime ["Next.js Server Runtime (Node.js)"]
+        AppRouter["src/app/ (App Router & API Routes)"]
+        BriefLoader["src/data/investigationBriefLoader.ts"]
+        BriefValidator["src/data/investigationBriefValidator.ts"]
+        P02Classifier["src/server/delivery/classifier.ts"]
+        P02Controller["src/server/delivery/runController.ts"]
+        P02Storage["Local History (.data/p02-delivery/)"]
+        AuthService["src/server/delivery/auth.ts"]
+        StoreAbstraction["InvestigationStore (Memory / GitHub API)"]
+    end
 
-1. InvestigationBrief JSON files are stored under `src/data/investigations/industries/...`.
-2. `src/data/investigationBriefLoader.ts` loads the JSON files.
-3. `src/data/investigationBriefValidator.ts` validates the loaded JSON against the InvestigationBrief shape.
-4. Next.js routes render the validated briefs in the homepage, onboarding, contribute, walkthrough, and workflow views.
-5. The production build now targets the normal Next.js server runtime, while `out/` and `standalone.html` remain legacy static deployment artifacts.
-6. Contributor and contribution persistence now flows through server API routes and a storage abstraction that can target a private GitHub repository.
+    subgraph Static_Brief_Data ["Checked-in Repository Data"]
+        JSON_Briefs["src/data/investigations/**/*.json"]
+    end
 
-## Source-of-truth boundaries
+    subgraph Independent_CLI_Compiler ["Investigation Brief Compiler (Python - Offline)"]
+        CompilerCLI["compiler/main.py (--dry-run, --validate-only)"]
+        ExtractionEngine["compiler/extraction/"]
+        CompilerValidation["compiler/validation/"]
+        RawMarkdown["External/Raw Research Markdown"]
+    end
 
-- InvestigationBrief JSON files in `src/data/investigations/` are the working source of truth for the UI.
-- `contracts/AIL-INVESTIGATION-BRIEF-JSON-SCHEMA-V1.json` is the schema contract.
-- `contracts/AIL-INVESTIGATION-BRIEF-CONTRACT-V1.md` and `contracts/INVESTIGATION-BRIEF-COMPILER-CONTRACT-V1.md` describe the locked contract expectations.
-- Presentation code must not invent missing research meaning, provenance, or decision states.
-- Legacy static packaging files are no longer authoritative for production runtime decisions.
-- GitHub persistence is an MVP storage layer behind `InvestigationStore`, not a replacement for the locked research data model.
-- P02 live monitoring uses `@arealtimetech/adk-js` with a configured existing ART agent. ART/ERPNext credentials and agent configuration are not stored in the repository; without server configuration, only clearly labeled synthetic demonstration data is available.
+    subgraph Procurement_Research ["Procurement Research Workspace"]
+        P01["P01-RFP (Planned Spec)"]
+        P02_Spec["P02-SUPPLIER-DELIVERY (Implemented)"]
+        P03["P03-REPLENISHMENT (Planned Spec)"]
+        P04["P04-INVOICE-EXCEPTIONS (Planned Spec)"]
+        ProcValidator["scripts/procurement/validate-procurement-workspace.py"]
+    end
 
-## Important directories
+    subgraph Independent_Bug_Service ["Bugs Ledger Service (FastAPI + SQLite - Port 8000)"]
+        FastAPI_App["services/bugs-ledger/api/"]
+        LifecycleEngine["services/bugs-ledger/core/lifecycle/"]
+        SQLite_DB["services/bugs-ledger/storage/*.sqlite"]
+        BugRecords["services/bugs-ledger/ART-Product-Validation/bugs/"]
+        AzureSync["scripts/art_harness.py sync-azure (Guarded)"]
+    end
 
-- `src/` — application code, App Router, data loading, validation, server storage, and UI features
-- `src/data/investigations/` — investigation JSON inputs used by the UI
-- `contracts/` — schema and contract documentation
-- `deployment/` — deployable static assets and packaging files, retained as legacy material
-- `public/` — browser-served static files
-- `tests/` — repository tests, where present
-- `scripts/` — build and validation helpers, including legacy static packaging scripts and persistence verification helpers
+    subgraph External_Integrations ["External Execution Boundaries"]
+        ADK_Agent["@arealtimetech/adk-js\n(Configured ART Agent)"]
+        ERPNext["ERPNext ERP (Read-Only Target)"]
+        AzureDevOps["Azure DevOps Board (Guarded REST)"]
+        GitHubAPI["GitHub API (Optional Private Store)"]
+    end
 
-## Build and test state
+    %% Connections
+    UI_Surfaces <--> AppRouter
+    AppRouter --> BriefLoader
+    BriefLoader --> JSON_Briefs
+    BriefLoader --> BriefValidator
+    AppRouter --> P02Controller
+    P02Controller --> P02Classifier
+    P02Controller --> P02Storage
+    P02Controller -.->|Optional Live Run| ADK_Agent
+    ADK_Agent -.->|Read-Only Queries| ERPNext
+    AppRouter --> StoreAbstraction
+    StoreAbstraction -.->|Optional Token| GitHubAPI
 
-- The repository is a Next.js (App Router) + TypeScript app with a server-capable production runtime.
-- `npm run build` runs `next build`.
-- `npm run start` runs the standard Next.js production server.
-- `npm run build:standalone` remains available as a legacy static packaging helper.
-- `npm run aoi:validate` validates AOI integrity.
-- `npm run test` runs the repository's focused persistence tests.
+    RawMarkdown --> CompilerCLI
+    CompilerCLI --> ExtractionEngine
+    ExtractionEngine --> CompilerValidation
+    CompilerValidation -.->|Manual Commit| JSON_Briefs
 
-## Known limitations
+    ProcValidator --> P01
+    ProcValidator --> P02_Spec
+    ProcValidator --> P03
+    ProcValidator --> P04
 
-- The repository keeps product data and presentation code separate, but the UI still depends on the local JSON data being valid.
-- The app is intentionally data-driven, so missing or malformed InvestigationBrief JSON will fail validation rather than being silently repaired.
-- GitHub-backed persistence is an MVP durability layer and is not a substitute for relational storage or realtime collaboration.
-- P02 local JSON run history is intended for one server instance. Live execution, scheduler behavior, and the DELIVERY-001 benchmark have not been validated against ART or ERPNext.
-- Legacy static export artifacts may still exist in the repository, but they are not the authoritative production runtime for the server-capable deployment.
+    FastAPI_App --> LifecycleEngine
+    LifecycleEngine --> SQLite_DB
+    LifecycleEngine --> BugRecords
+    AzureSync -.->|Authorized PAT Only| AzureDevOps
+```
+
+### Key Architectural Boundaries:
+1. **Compiler vs. Web Application:** The investigation compiler is an offline CLI utility. It does NOT run inside the Next.js process, does not watch files, and does not automatically re-bundle briefs. Compiled JSON briefs must be validated and committed into `src/data/investigations/`.
+2. **Bugs Ledger vs. Delivery Control Center:** The bugs-ledger FastAPI service is completely independent of the Next.js server runtime. Defect ingestion, verification retests, and SQLite persistence operate on port 8000 and do not share runtime state with `/delivery`.
+3. **P02 Delivery Control Center vs. ERPNext:** The control center does not execute SQL or direct write operations on ERPNext. Live execution communicates via `@arealtimetech/adk-js` to a read-only ART agent. If ART is unconfigured or credentials are missing, the system operates in demo mode using strictly labeled synthetic records.
+4. **Procurement Research Workspace:** `research/procurement/` is an evidentiary research workspace. P02 is the only procurement process implemented in the application UI; P01, P03, and P04 are planned research specifications.
+
+---
+
+## 3. Verified Build and Test State
+
+| Test Suite | Command | Executed Scope | Result | Passing Test Count |
+|---|---|---|---|---|
+| **Core Web App (Node.js)** | `npm test` (`node scripts/run-tests.mjs`) | Persistence, WebAuthn session, P02 delivery classifier, ADK boundaries, audit trails | **PASS** | **68 passed**, 0 failed |
+| **Investigation Compiler (Python)** | `python -m pytest compiler/tests` | Compiler package loader, extraction spec, Pydantic validation | **PASS** | **14 passed**, 0 failed |
+| **Bugs Ledger Service (Python)** | `python -m pytest tests` (in `services/bugs-ledger/`) | Bug intake, read-only query service, lifecycle transitions, SQLite storage, feature paths | **PASS** | **354 passed**, 0 failed |
+| **Procurement Workspace Validation** | `python scripts/procurement/validate-procurement-workspace.py` | Scope boundaries, all 4 process packages (P01–P04), link resolution, secret scan, ID integrity | **PASS** | **5/5 categories passed** |
+| **Bugs Ledger Link & Schema Check** | `python scripts/validation/validate-art-bugs.py --bugs-root services/bugs-ledger/ART-Product-Validation/bugs` | Bug file structure, status tags, evidence link existence | **PASS** | **39 bugs, 145 evidence links valid** |
+| **Unified Validation Harness** | `python scripts/art_harness.py validate` | Runs procurement validation, bug link validation, and bugs-ledger pytest suite | **PASS** | **Clean pass across all 3 steps** |
+| **Next.js Production Build** | `npm run build` | Next.js compilation, TypeScript typecheck (`tsc`), page generation | **PASS** | **6 static / dynamic routes built cleanly** |
+
+---
+
+## 4. Operational & Security Safeguards
+
+- **Strict Epistemic Safeguards in P02:** Missing receipt pagination, partial line-item links, unexhausted page counts, and conflicting supplier dates always result in `NEEDS_VERIFICATION`. Received quantities are never inferred or assumed.
+- **Zero-Fabrication Demarcation:** Synthetic demo data is explicitly labeled as `DEMO` across headers, table rows, and metrics cards. It cannot be mistaken for live ERPNext data.
+- **Credential Safety:** No credentials, API tokens, or session secrets are checked into Git. `.env` files and SQLite databases (`*.db`, `*.sqlite`) are gitignored.
+- **Least-Privilege Delivery Monitoring:** Live agent runs only query read-only ERPNext DocTypes (`Purchase Order`, `Purchase Receipt`).

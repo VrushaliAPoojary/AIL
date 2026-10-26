@@ -12,31 +12,38 @@ This repository houses three interconnected engineering and research workspaces:
 art-investigation-lab/
 ├── START_HERE.md                     # You are here: Team entry guide
 ├── AGENTS.md                         # Protocol for AI agents in Antigravity
+├── compiler/                         # 🧠 Python Investigation Compiler (14 pytest tests)
+│   ├── main.py                       # CLI entry point (--dry-run, --validate-only)
+│   ├── extraction/ & validation/     # Pydantic schemas, normalization & validation
+│   └── tests/                        # 14 compiler tests
 ├── research/
 │   └── procurement/                  # 🔍 Procurement Research Workspace
 │       ├── OWNERSHIP.md              # Ownership matrix & process rules
 │       ├── RESEARCH_STANDARD.md      # Grounding & evidence standards
 │       ├── processes/                # Contributor process directories
-│       │   ├── P01-RFP/              # Chiranjeevi (Coordinator)
-│       │   ├── P02-SUPPLIER-DELIVERY/# Vrushali
-│       │   ├── P03-REPLENISHMENT/    # Bhushan
-│       │   └── P04-INVOICE-EXCEPTIONS/# Ashwin
-│       └── validation/               # ART test execution logs
+│       │   ├── P01-RFP/              # Chiranjeevi (Coordinator) [PLANNED SPECIFICATION]
+│       │   ├── P02-SUPPLIER-DELIVERY/# Vrushali [IMPLEMENTED IN CONTROL CENTER]
+│       │   ├── P03-REPLENISHMENT/    # Bhushan [PLANNED SPECIFICATION]
+│       │   └── P04-INVOICE-EXCEPTIONS/# Ashwin [PLANNED SPECIFICATION]
+│       └── validation/               # ART test execution logs (e.g. RFP-001)
 ├── services/
-│   └── bugs-ledger/                  # 🐛 ART Bugs-Ledger Service
-│       ├── ART-Product-Validation/   # 37 historical bug records & 98 evidence PNGs
+│   └── bugs-ledger/                  # 🐛 ART Bugs-Ledger Service (FastAPI + SQLite)
+│       ├── ART-Product-Validation/   # 39 canonical bug records & 145 evidence links
 │       ├── core/ & api/              # Ingestion, identity, lifecycle, FastAPI
 │       ├── contracts/                # Schemas & contract fixtures
-│       └── tests/                    # 264 pytest unit tests
+│       └── tests/                    # 354 pytest unit tests
 ├── scripts/
 │   ├── art_harness.py                # 🚀 UNIFIED HARNESS ENTRY POINT
 │   ├── validation/                   # Promotion, intake, link validators
 │   └── procurement/                  # Workspace boundaries validator
-└── src/ & tests/                     # ⚙️ Core AIL Web Application (Next.js/React)
+└── src/ & tests/                     # ⚙️ Core AIL Web Application (Next.js/React, 68 tests)
 ```
 
 > [!IMPORTANT]
-> **Strict Scope Isolation:** As a research contributor, you work inside `research/procurement/` and with `scripts/art_harness.py`. You do **not** modify files in `src/`, root `package.json`, or root application configurations.
+> **Implementation Boundaries:**
+> - **P02 (Supplier Delivery Confirmation & Delay Escalation)** is the active procurement process currently implemented end-to-end with the `/delivery` Next.js control center and read-only ART ADK execution path.
+> - **P01, P03, and P04** are documented as **planned specifications** with full structural evidence governance in `research/procurement/processes/` awaiting future implementation phases.
+> - **Strict Scope Isolation:** As a research contributor, you work inside `research/procurement/` and with `scripts/art_harness.py`. You do **not** modify files in `src/`, root `package.json`, or root application configurations.
 
 ---
 
@@ -44,12 +51,12 @@ art-investigation-lab/
 
 Each team member has sole ownership of exactly one procurement process:
 
-| Contributor | GitHub Account | Process ID & Scope | Git Branch | Working Directory | Primary Role |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **Chiranjeevi** | `Chiranjeevi005` | `P01-RFP` — RFP Requirement Review & Response Coordination | `research/chiranjeevi` | `research/procurement/processes/P01-RFP/` | Project Coordinator & P01 Owner |
-| **Vrushali** | `VrushaliAPoojary` | `P02-SUPPLIER-DELIVERY` — Supplier Delivery Confirmation & Delay Escalation | `research/vrushali` | `research/procurement/processes/P02-SUPPLIER-DELIVERY/` | Process Owner |
-| **Bhushan** | `BhushanShenoy07` | `P03-REPLENISHMENT` — Inventory Replenishment & Reorder Exceptions | `research/bhushan` | `research/procurement/processes/P03-REPLENISHMENT/` | Process Owner |
-| **Ashwin** | `ashwinash19` | `P04-INVOICE-EXCEPTIONS` — Invoice Discrepancy Resolution | `research/ashwin` | `research/procurement/processes/P04-INVOICE-EXCEPTIONS/` | Process Owner |
+| Contributor | GitHub Account | Process ID & Scope | Status | Git Branch | Working Directory | Primary Role |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Chiranjeevi** | `Chiranjeevi005` | `P01-RFP` — RFP Requirement Review & Response Coordination | Planned Spec | `research/chiranjeevi` | `research/procurement/processes/P01-RFP/` | Project Coordinator & P01 Owner |
+| **Vrushali** | `VrushaliAPoojary` | `P02-SUPPLIER-DELIVERY` — Supplier Delivery Confirmation & Delay Escalation | Implemented | `research/vrushali` | `research/procurement/processes/P02-SUPPLIER-DELIVERY/` | Process Owner |
+| **Bhushan** | `BhushanShenoy07` | `P03-REPLENISHMENT` — Inventory Replenishment & Reorder Exceptions | Planned Spec | `research/bhushan` | `research/procurement/processes/P03-REPLENISHMENT/` | Process Owner |
+| **Ashwin** | `ashwinash19` | `P04-INVOICE-EXCEPTIONS` — Invoice Discrepancy Resolution | Planned Spec | `research/ashwin` | `research/procurement/processes/P04-INVOICE-EXCEPTIONS/` | Process Owner |
 
 ---
 
@@ -151,12 +158,24 @@ python3 scripts/art_harness.py retest \
 #### D. Validate Everything Locally Before Committing
 Always run the validation suite before pushing:
 ```bash
-python3 scripts/art_harness.py validate
+python scripts/art_harness.py validate
 ```
 This automatically runs:
-1. Procurement workspace boundary checks
-2. Bug ledger schema and link validations
-3. All 264 pytest unit tests
+1. Procurement workspace boundary checks (all 4 process packages present and valid)
+2. Bug ledger schema and link validations (39 bug records, 145 evidence links)
+3. All 354 pytest unit tests in `services/bugs-ledger/tests/`
+
+To validate other workspace components:
+```bash
+# Investigation brief compiler tests (14 passed)
+python -m pytest compiler/tests
+
+# Core Web Application tests (68 passed)
+npm test
+
+# Production build validation
+npm run build
+```
 
 ---
 

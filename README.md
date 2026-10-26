@@ -65,12 +65,24 @@ Run history and configuration are saved as JSON under `.data/p02-delivery/` by d
 ## Validation
 
 ```bash
+# Core Next.js Web App build & unit tests (68 tests)
 npm run build
 npm test
+
+# Procurement Research Workspace validation (all 4 process packages)
 python scripts/procurement/validate-procurement-workspace.py
+
+# Investigation Brief Compiler unit tests (14 tests)
+python -m pytest compiler/tests
+
+# ART Bugs Ledger service tests (354 tests)
+python -m pytest services/bugs-ledger/tests
+
+# Unified Validation Harness
+python scripts/art_harness.py validate
 ```
 
-`npm test` runs persistence tests and P02 delivery classification tests. A unit-test pass does not verify ART connectivity, live ERPNext data, the configured agent’s result schema, or the synthetic DELIVERY-001 benchmark. See [`docs/P02-DELIVERY-CONTROL-CENTER.md`](docs/P02-DELIVERY-CONTROL-CENTER.md) for the implementation boundary and current verification status.
+`npm test` runs persistence tests and P02 delivery classification tests (68 tests total). A unit-test pass does not verify ART connectivity, live ERPNext data, the configured agent’s result schema, or the synthetic DELIVERY-001 benchmark. See [`docs/P02-DELIVERY-CONTROL-CENTER.md`](docs/P02-DELIVERY-CONTROL-CENTER.md) for the implementation boundary and current verification status.
 
 ## ART ADK references
 

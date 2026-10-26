@@ -151,7 +151,7 @@ class Relationship(BaseModel):
 
 class Falsification(BaseModel):
     statement: str
-    outcome: Literal['KILLED', 'WEAKENED', 'UNRESOLVED', 'SURVIVED']
+    outcome: Optional[str] = None
     basis: List[str]
     provenance: Provenance
     targetRef: Optional[str] = None

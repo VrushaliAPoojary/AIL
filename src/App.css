@@ -26,10 +26,37 @@
   flex: 1;
 }
 
-.brand-logo {
-  height: 56px;
-  display: block;
-  object-fit: contain;
+.brand-header-link {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.brand-header-link:hover {
+  opacity: 0.88;
+}
+
+.brand-header-badge {
+  background: var(--art-teal);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.25);
+}
+
+.brand-header-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: var(--art-black);
 }
 
 .header-subject {
