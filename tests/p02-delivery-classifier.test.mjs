@@ -11,7 +11,8 @@ function order(overrides = {}) {
   return {
     id, supplier: 'Test supplier', transactionDate: '2026-10-01', docstatus: 1, status: 'To Receive and Bill',
     items: [{ id: itemId, itemCode: 'TEST-ITEM', orderedQuantity: 10, scheduleDate: '2026-10-25', expectedDeliveryDate: null,
-      receiptEvidenceComplete: true, receipts: [], ...overrides.item }],
+      receiptRetrieval: { scope: { purchaseOrderId: id, purchaseOrderItemId: itemId }, complete: true, pagesRetrieved: 1, hasMore: false },
+      receipts: [], ...overrides.item }],
     ...overrides.order,
   };
 }
@@ -48,8 +49,33 @@ test('ignores cancelled and draft receipts when receipt enumeration is complete'
   assert.equal(result.outstandingQuantity, 10);
 });
 
-test('requires complete receipt evidence before claiming open or fully received quantities', () => {
-  const result = assess(order({ item: { receiptEvidenceComplete: false, receipts: [] } }));
+test('requires exact scope and exhausted pagination before claiming receipt quantities', () => {
+  const cases = [
+    { complete: false, pagesRetrieved: 1, hasMore: false },
+    { complete: true, pagesRetrieved: null, hasMore: null },
+    { complete: true, pagesRetrieved: 1, hasMore: true },
+    { complete: true, pagesRetrieved: 1, hasMore: false, scope: { purchaseOrderId: 'OTHER', purchaseOrderItemId: 'PO-TEST-1-ITEM-1' } },
+    null,
+  ];
+  for (const receiptRetrieval of cases) {
+    const result = assess(order({ item: { receiptRetrieval, receipts: [] } }));
+    assert.equal(result.deliveryStatus, 'NEEDS_VERIFICATION');
+    assert.equal(result.receivedQuantity, null);
+    assert.equal(result.outstandingQuantity, null);
+  }
+});
+
+test('accepts only a completely scoped exhausted receipt retrieval', () => {
+  const result = assess();
+  assert.equal(result.receivedQuantity, 0);
+  assert.equal(result.outstandingQuantity, 10);
+  assert.equal(result.deliveryStatus, 'DUE_TODAY');
+});
+
+test('marks item retrieval scope mismatch for verification even with exact receipt rows', () => {
+  const result = assess(order({ item: { receiptRetrieval: {
+    scope: { purchaseOrderId: 'OTHER', purchaseOrderItemId: 'PO-TEST-1-ITEM-1' }, complete: true, pagesRetrieved: 1, hasMore: false,
+  } } }));
   assert.equal(result.deliveryStatus, 'NEEDS_VERIFICATION');
   assert.equal(result.receivedQuantity, null);
   assert.equal(result.outstandingQuantity, null);

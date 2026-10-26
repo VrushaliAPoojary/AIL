@@ -87,3 +87,10 @@ export type RunRecord = {
   result: unknown | null;
   error: string | null;
 };
+
+export function publicRunRecord(run: RunRecord): RunRecord {
+  return {
+    ...run,
+    error: run.status === 'FAILED' ? 'Run failed. Check server-side logs for details.' : null,
+  };
+}

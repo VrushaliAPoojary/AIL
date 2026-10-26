@@ -24,3 +24,12 @@ Build a functional, read-only P02 supplier delivery application in the existing 
 ## Verification and unresolved work
 
 See [`P02-DELIVERY-CONTROL-CENTER.md`](../P02-DELIVERY-CONTROL-CENTER.md) for the test and build results. The ADK integration has mocked-boundary tests only; actual ART authentication, configured agent response shape, ERPNext response coverage, and DELIVERY-001 remain unverified until the relevant project configuration and authorized test environment are available.
+
+## Readiness remediation follow-up
+
+- Inspected the installed `@arealtimetech/adk-js` 0.0.25 README and bundled source map. The documented call is `await thread.run(input)` followed by `await run.done()`; the bundled `AgentThread.run` implementation is `async`. The package root declaration re-exports `AgentThread` from `js-adk-common`, but that declaration dependency is not installed in this checkout.
+- Fixed the invocation to await `thread.run()` and added tests through `executeAgentRun` for promise resolution order and rejection propagation.
+- Replaced `receiptEvidenceComplete` with scoped receipt retrieval evidence. Exact PO and PO-item scope, positive page count, explicit completion, and `hasMore: false` are required to calculate quantities. Source tool/response IDs are retained only if returned. Missing evidence becomes `NEEDS VERIFICATION`.
+- Replaced the `live` configuration mode with `configured`; readiness is exposed separately as `DEMO`, `CONFIGURED`, `CONNECTING`, `CONNECTED`, `VALIDATED`, or `FAILED`. `VALIDATED` means the report passed the application normalizer; it does not establish independent ERPNext provenance.
+- Sanitized failed-run details returned to clients. Raw credentials and SDK error text are not placed in readiness status or public run records.
+- No ART credentials, P02 agent ID, ART tool schemas, or source pagination guarantees are present in this environment. No live run was attempted. The P02 catalog describes lookup tool names only; it does not contain machine-readable input/output schemas and notes receipt lists can be limited.

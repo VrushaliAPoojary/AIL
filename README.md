@@ -42,7 +42,9 @@ Set the ART values in `.env.local` after confirming them with the actual ART pro
 - `ART_PROJECT_KEY`
 - `ART_AGENT_ID` — ID of the existing P02 monitoring agent
 
-The repository does not contain these project-specific values. ERPNext data is expected to come from the configured agent’s existing read-only tools; the app does not have a direct ERPNext credential or API integration. The agent must return a JSON object with a `purchaseOrders` array. Each purchase order item must include its ERPNext row identifier, date and quantity fields, a `receiptEvidenceComplete` value, and linked receipt rows containing exact PO and PO-item references. Missing or malformed evidence is reported as needing verification. An unexpected output is a failed run.
+The repository does not contain these project-specific values. ERPNext data is expected to come from the configured agent’s existing read-only tools; the app does not have a direct ERPNext credential or API integration. The agent must return a JSON object with a `purchaseOrders` array. Each purchase order item must include its ERPNext row identifier, date and quantity fields, scoped receipt-retrieval evidence with pagination completeness, and linked receipt rows containing exact PO and PO-item references. If the actual tools cannot establish retrieval scope or exhausted pagination, quantity classification remains `NEEDS VERIFICATION`. An unexpected top-level report shape is a failed run.
+
+Configuration presence is labeled `CONFIGURED`, not connected or operational. Runtime readiness progresses through `CONNECTING`, `CONNECTED`, and `VALIDATED` only during an attempted run; safe failure categories are shown as `FAILED`. `VALIDATED` means the final report passed the application contract, not that the configured agent or tools have been independently audited against ERPNext.
 
 Use an ART test environment with read-only ERPNext permissions. No P02 feature sends supplier email, changes purchase orders, creates receipts, or initiates alternate orders.
 

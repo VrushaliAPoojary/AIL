@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { requireAdminResponse, sameOrigin } from '../../../../server/delivery/http';
 import { getDeliverySettings } from '../../../../server/delivery/config';
 import { getRunHistory, startMonitoringRun } from '../../../../server/delivery/runService';
+import { publicRunRecord } from '../../../../server/delivery/types';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -10,7 +11,7 @@ export async function GET() {
   const denied = await requireAdminResponse();
   if (denied) return denied;
   const runs = await getRunHistory();
-  return NextResponse.json({ runs: runs.map(({ result: _result, ...run }) => run) }, { headers: { 'Cache-Control': 'private, no-store' } });
+  return NextResponse.json({ runs: runs.map(({ result: _result, ...run }) => publicRunRecord({ ...run, result: null })) }, { headers: { 'Cache-Control': 'private, no-store' } });
 }
 
 export async function POST(request: Request) {

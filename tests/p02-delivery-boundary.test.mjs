@@ -1,11 +1,13 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { createAdminSessionToken, verifyAdminCredentials, verifyAdminSessionToken } from '../src/server/delivery/authCore.ts';
-import { waitForAdkConnection, awaitAdkRun } from '../src/server/delivery/adkExecution.ts';
+import { waitForAdkConnection, awaitAdkRun, executeAgentRun } from '../src/server/delivery/adkExecution.ts';
 import { normalizeAgentReport } from '../src/server/delivery/artContract.ts';
 import { localBusinessDate } from '../src/server/delivery/date.ts';
 import { createRunController } from '../src/server/delivery/runController.ts';
 import { validateSettings } from '../src/server/delivery/settingsValidation.ts';
+import { getIntegrationReadiness, setIntegrationReadiness } from '../src/server/delivery/readiness.ts';
+import { publicRunRecord } from '../src/server/delivery/types.ts';
 
 test('admin credentials require exact configured username and password and reject oversized values', () => {
   assert.equal(verifyAdminCredentials('buyer', 'correct-horse', 'buyer', 'correct-horse'), true);
@@ -20,6 +22,25 @@ test('administrator session tokens are signed, expire, and reject tampering', ()
   assert.equal(verifyAdminSessionToken(token, 'a-secret-for-tests', 61_000), null);
   assert.equal(verifyAdminSessionToken(`${token}x`, 'a-secret-for-tests', 2_000), null);
   assert.equal(verifyAdminSessionToken(token, 'another-secret', 2_000), null);
+});
+
+test('integration readiness distinguishes demo, configured, connected, validated, and failed states', () => {
+  assert.deepEqual(getIntegrationReadiness(false), { status: 'DEMO', failure: null });
+  assert.deepEqual(getIntegrationReadiness(true), { status: 'CONFIGURED', failure: null });
+  setIntegrationReadiness('CONNECTING');
+  assert.equal(getIntegrationReadiness(true).status, 'CONNECTING');
+  setIntegrationReadiness('CONNECTED');
+  assert.equal(getIntegrationReadiness(true).status, 'CONNECTED');
+  setIntegrationReadiness('VALIDATED');
+  assert.equal(getIntegrationReadiness(true).status, 'VALIDATED');
+  setIntegrationReadiness('FAILED', 'CONNECTION_FAILED');
+  assert.deepEqual(getIntegrationReadiness(true), { status: 'FAILED', failure: 'CONNECTION_FAILED' });
+});
+
+test('public run records never expose raw failed-run errors', () => {
+  const publicRun = publicRunRecord({ id: 'run-1', idempotencyKey: 'key-1', status: 'FAILED', startedAt: 'now', finishedAt: 'now', source: 'art', result: null, error: 'secret=must-not-leak' });
+  assert.equal(publicRun.error, 'Run failed. Check server-side logs for details.');
+  assert.equal(JSON.stringify(publicRun).includes('must-not-leak'), false);
 });
 
 test('ADK connection wait tolerates stopped and retrying states until connected', async () => {
@@ -37,19 +58,45 @@ test('ADK run resolves only its final result and enforces a timeout', async () =
   await assert.rejects(() => awaitAdkRun({ done: () => new Promise(() => {}) }, 2), /timed out/);
 });
 
+test('ADK invocation awaits the promise returned by thread.run before calling done', async () => {
+  const calls = [];
+  const expectedRun = { done: async () => { calls.push('done'); return { result: 'final' }; } };
+  const adk = {
+    getState: () => 'connected',
+    agent: (id) => ({ connect: () => ({ thread: () => ({ run: async (prompt) => {
+      calls.push(`run:${id}:${prompt}`);
+      await Promise.resolve();
+      return expectedRun;
+    } }) }) }),
+  };
+  assert.deepEqual(await executeAgentRun(adk, 'agent-1', 'read only', 100), { result: 'final' });
+  assert.deepEqual(calls, ['run:agent-1:read only', 'done']);
+});
+
+test('ADK invocation propagates a rejected thread.run promise', async () => {
+  const adk = {
+    getState: () => 'connected',
+    agent: () => ({ connect: () => ({ thread: () => ({ run: async () => { throw new Error('agent run rejected'); } }) }) }),
+  };
+  await assert.rejects(() => executeAgentRun(adk, 'agent-1', 'read only', 100), /agent run rejected/);
+});
+
 test('P02 report normalizer accepts only the expected report and preserves source linkage', () => {
   const report = normalizeAgentReport({ purchaseOrders: [{ id: 'PO-1', supplier: 'Vendor', docstatus: 1, items: [{
     id: 'POI-1', itemCode: 'SKU-1', orderedQuantity: 4, scheduleDate: '2026-10-25', expectedDeliveryDate: null,
-    receiptEvidenceComplete: true, receipts: [{ receiptId: 'PR-1', receiptItemId: 'PRI-1', purchaseOrderId: 'PO-1', purchaseOrderItemId: 'POI-1', quantity: 2, docstatus: 1 }],
+    receiptRetrieval: { scope: { purchaseOrderId: 'PO-1', purchaseOrderItemId: 'POI-1' }, complete: true, pagesRetrieved: 2, hasMore: false, sourceToolId: 'tool-source-1', sourceResponseId: 'response-1' },
+    receipts: [{ receiptId: 'PR-1', receiptItemId: 'PRI-1', purchaseOrderId: 'PO-1', purchaseOrderItemId: 'POI-1', quantity: 2, docstatus: 1 }],
   }] }] });
   assert.equal(report.purchaseOrders[0].items[0].receipts[0].purchaseOrderItemId, 'POI-1');
-  assert.equal(report.purchaseOrders[0].items[0].receiptEvidenceComplete, true);
+  assert.equal(report.purchaseOrders[0].items[0].receiptRetrieval.pagesRetrieved, 2);
+  assert.equal(report.purchaseOrders[0].items[0].receiptRetrieval.sourceResponseId, 'response-1');
 });
 
 test('P02 report normalizer rejects malformed or missing evidence contracts', () => {
   assert.throws(() => normalizeAgentReport({ text: 'finished' }), /did not match/);
   assert.throws(() => normalizeAgentReport({ purchaseOrders: [{ supplier: 'Vendor', items: [] }] }), /source id/);
-  assert.throws(() => normalizeAgentReport({ purchaseOrders: [{ id: 'PO-1', supplier: 'Vendor', items: [{ id: 'POI-1', receipts: [] }] }] }), /receipt completeness/);
+  const report = normalizeAgentReport({ purchaseOrders: [{ id: 'PO-1', supplier: 'Vendor', items: [{ id: 'POI-1', receipts: [] }] }] });
+  assert.equal(report.purchaseOrders[0].items[0].receiptRetrieval, null);
 });
 
 test('configuration validation constrains the upcoming window, due-date basis, and timezone', () => {

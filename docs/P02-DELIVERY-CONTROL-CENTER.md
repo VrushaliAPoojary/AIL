@@ -13,18 +13,21 @@
 - Added deterministic delivery classification using exact purchase-order-item receipt links. Cancelled and draft receipts are excluded, receipt rows are not double-counted, returns reduce received quantity, and incomplete/conflicting evidence becomes `NEEDS_VERIFICATION`.
 - Added a configurable due-date basis: contractual item schedule date or supplier expected delivery date. Both fields remain distinct and are never written back.
 - Added clearly labeled synthetic demonstration records. They are generated relative to the configured local business date and are not displayed as live results.
+- Runtime readiness now distinguishes `DEMO`, `CONFIGURED`, `CONNECTING`, `CONNECTED`, `VALIDATED`, and `FAILED`. `VALIDATED` means the response passed the app contract, not that ART tools or ERPNext were independently verified.
+- Receipt quantities require evidence scoped to exact PO and PO-item IDs, explicit completeness, at least one retrieved page, and `hasMore: false`. Missing scope or pagination evidence leaves quantities at `NEEDS VERIFICATION`; optional source tool/response identifiers are preserved when supplied.
+- Failed run details exposed to clients are reduced to a generic message; readiness exposes only safe failure categories.
 
 ## Important boundaries
 
-- The repository did not contain ART project credentials, agent ID, tool JSON schemas, or a machine-readable response contract. The actual ART project and ERPNext tools could not be inspected from this checkout.
-- ART/ERPNext live execution is therefore **not verified**. Configure server environment values from the actual ART project, then confirm the configured agent returns the strict P02 response shape. Unexpected responses fail closed.
+- The repository does not contain ART project credentials, the actual P02 agent ID, ART tool JSON schemas, or source guarantees for receipt pagination/completeness. The actual ART project and ERPNext tools could not be inspected from this checkout.
+- ART/ERPNext live execution is therefore **not verified**. Tool outputs must establish retrieval scope and exhausted pagination; agent-asserted completeness without that evidence does not verify quantities.
 - Existing P02 tools are described as lookup tools; supplier email/PDF ingestion, autonomous communication, ERPNext writes, ASN processing, alternate sourcing, and recurring scheduling are not implemented.
 - `DELIVERY-001` remains a synthetic specification and has not been executed.
 - `.data/p02-delivery/history.json` is local single-instance persistence. It is not suitable for multiple application instances without shared storage.
 
 ## Verification record
 
-- `npm test`: passed, 51 tests (27 existing persistence tests and 24 P02 delivery tests).
+- `npm test`: passed, 57 tests (27 existing persistence tests and 30 P02 delivery tests).
 - `node node_modules/typescript/bin/tsc --noEmit`: passed.
 - `git diff --check`: passed after README whitespace cleanup.
 - `npm run build`: passed after running the Next.js worker outside the restricted sandbox.

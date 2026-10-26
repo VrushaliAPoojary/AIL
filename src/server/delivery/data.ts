@@ -3,7 +3,7 @@ import { classifyPurchaseOrders } from './classifier';
 import { getDeliverySettings, getIntegrationStatus, getLocalBusinessDate } from './config';
 import { listAuditEvents } from './store';
 import { getRunHistory } from './runService';
-import type { PurchaseOrder } from './types';
+import { publicRunRecord, type PurchaseOrder } from './types';
 
 function shiftDate(date: string, days: number) {
   const value = new Date(`${date}T00:00:00Z`);
@@ -12,7 +12,7 @@ function shiftDate(date: string, days: number) {
 }
 
 function demoOrders(today: string): PurchaseOrder[] {
-  const createOrder = (id: string, itemId: string, scheduleOffset: number, receivedQty: number, receiptEvidenceComplete = true, expectedOffset: number | null = null): PurchaseOrder => {
+  const createOrder = (id: string, itemId: string, scheduleOffset: number, receivedQty: number, retrievalComplete = true, expectedOffset: number | null = null): PurchaseOrder => {
     const receipts = receivedQty > 0 ? [{
       receiptId: `${id}-PR-01`, receiptItemId: `${id}-PRI-01`, purchaseOrderId: id,
       purchaseOrderItemId: itemId, quantity: receivedQty, docstatus: 1,
@@ -30,7 +30,12 @@ function demoOrders(today: string): PurchaseOrder[] {
         orderedQuantity: 100,
         scheduleDate: id.endsWith('06') ? null : shiftDate(today, scheduleOffset),
         expectedDeliveryDate: expectedOffset === null ? null : shiftDate(today, expectedOffset),
-        receiptEvidenceComplete,
+        receiptRetrieval: {
+          scope: { purchaseOrderId: id, purchaseOrderItemId: itemId },
+          complete: retrievalComplete,
+          pagesRetrieved: 1,
+          hasMore: false,
+        },
         receipts,
       }],
     };
@@ -46,7 +51,8 @@ function demoOrders(today: string): PurchaseOrder[] {
     {
       id: 'SYN-PO-2607', supplier: 'Synthetic Supplier 07', transactionDate: shiftDate(today, -3), docstatus: 2, status: 'Cancelled',
       items: [{ id: 'SYN-PO-2607-ITEM-01', itemCode: 'SYN-ITEM-07', description: 'Cancelled demonstration commitment', orderedQuantity: 100,
-        scheduleDate: shiftDate(today, -1), expectedDeliveryDate: null, receiptEvidenceComplete: true, receipts: [] }],
+        scheduleDate: shiftDate(today, -1), expectedDeliveryDate: null,
+        receiptRetrieval: { scope: { purchaseOrderId: 'SYN-PO-2607', purchaseOrderItemId: 'SYN-PO-2607-ITEM-01' }, complete: true, pagesRetrieved: 1, hasMore: false }, receipts: [] }],
     },
   ];
 }
@@ -123,8 +129,8 @@ export async function getControlCenterData() {
     })),
     assessments: assessments.filter((item) => !item.excluded),
     exceptions: buildExceptions(assessments),
-    latestRun,
-    runs: runs.map(({ result: _result, ...run }) => run),
+    latestRun: latestRun ? publicRunRecord(latestRun) : null,
+    runs: runs.map(({ result: _result, ...run }) => publicRunRecord({ ...run, result: null })),
     auditEvents: settings.mode === 'configured' ? await listAuditEvents() : [],
     workflowStages: [
       { id: 'ack', name: 'PO acknowledgment monitoring', state: 'SPECIFIED', detail: 'P02 workflow WF-P02-001; no verified scheduler or acknowledgment event source is configured.' },
