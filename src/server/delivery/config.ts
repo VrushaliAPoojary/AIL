@@ -53,5 +53,9 @@ export function getLocalBusinessDate(timezone = process.env.P02_TIMEZONE || 'Asi
 }
 
 export function isAdminConfigured() {
-  return Boolean(process.env.P02_ADMIN_USERNAME && process.env.P02_ADMIN_PASSWORD && process.env.P02_SESSION_SECRET);
+  return Boolean(
+    (process.env.P02_ADMIN_USERNAME || process.env.ADMIN_USERNAME) &&
+    (process.env.P02_ADMIN_PASSWORD || process.env.ADMIN_PASSWORD) &&
+    (process.env.P02_SESSION_SECRET || process.env.SESSION_SECRET)
+  );
 }

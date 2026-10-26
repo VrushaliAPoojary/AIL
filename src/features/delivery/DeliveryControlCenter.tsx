@@ -308,6 +308,7 @@ export function DeliveryControlCenter() {
               setView={(v) => setView(v as ViewId)}
               setFilter={setFilter}
               setSelectedOrder={setSelectedOrder}
+              selectedOrder={selectedOrder}
               onRun={startRun}
               isRunBusy={busy}
             />

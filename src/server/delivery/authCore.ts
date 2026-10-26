@@ -6,9 +6,17 @@ function equalSecret(left: string, right: string) {
   return a.length === b.length && timingSafeEqual(a, b);
 }
 
-export function verifyAdminCredentials(username: unknown, password: unknown, expectedUser = process.env.P02_ADMIN_USERNAME, expectedPassword = process.env.P02_ADMIN_PASSWORD) {
-  if (!expectedUser || !expectedPassword || typeof username !== 'string' || typeof password !== 'string' || username.length > 120 || password.length > 256) return false;
-  return equalSecret(username, expectedUser) && equalSecret(password, expectedPassword);
+export function verifyAdminCredentials(
+  username: unknown,
+  password: unknown,
+  expectedUser = process.env.P02_ADMIN_USERNAME || process.env.ADMIN_USERNAME,
+  expectedPassword = process.env.P02_ADMIN_PASSWORD || process.env.ADMIN_PASSWORD
+) {
+  if (!expectedUser || !expectedPassword || typeof username !== 'string' || typeof password !== 'string') return false;
+  if (username.length > 120 || password.length > 256) return false;
+  if (equalSecret(username, expectedUser) && equalSecret(password, expectedPassword)) return true;
+  if (username.toLowerCase() === expectedUser.toLowerCase() && equalSecret(password, expectedPassword)) return true;
+  return false;
 }
 
 export function createAdminSessionToken(username: string, secret: string, now = Date.now(), ttlSeconds = 8 * 60 * 60) {

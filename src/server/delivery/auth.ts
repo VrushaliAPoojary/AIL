@@ -7,6 +7,10 @@ const SESSION_SECONDS = 8 * 60 * 60;
 const loginAttempts = new Map<string, { count: number; windowStartedAt: number; blockedUntil: number }>();
 
 export function isLoginRateLimited(key: string) {
+  // Never lock out local development connections
+  if (process.env.NODE_ENV !== 'production' || key === 'local' || key === '127.0.0.1' || key === '::1') {
+    return false;
+  }
   const entry = loginAttempts.get(key);
   if (!entry) return false;
   if (Date.now() - entry.windowStartedAt >= 15 * 60_000) {
@@ -30,17 +34,23 @@ export function clearLoginFailures(key: string) {
 }
 
 export function adminCookieOptions() {
-  return { httpOnly: true, secure: process.env.NODE_ENV === 'production', sameSite: 'strict' as const, path: '/', maxAge: SESSION_SECONDS };
+  return {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'lax' as const,
+    path: '/',
+    maxAge: SESSION_SECONDS,
+  };
 }
 
 export function createAdminToken(username: string) {
-  const secret = process.env.P02_SESSION_SECRET;
+  const secret = process.env.P02_SESSION_SECRET || process.env.SESSION_SECRET;
   if (!secret) throw new Error('P02 admin sessions are not configured.');
   return createAdminSessionToken(username, secret, Date.now(), SESSION_SECONDS);
 }
 
 export async function requireP02Admin() {
-  const secret = process.env.P02_SESSION_SECRET;
+  const secret = process.env.P02_SESSION_SECRET || process.env.SESSION_SECRET;
   if (!secret) return false;
   const cookieStore = await cookies();
   const token = cookieStore.get(COOKIE)?.value || '';

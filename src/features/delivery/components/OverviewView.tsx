@@ -13,12 +13,14 @@ import {
 } from './Icons';
 import { DeliveryStatusBadge, SeverityBadge, RunStatusBadge } from './StatusBadges';
 import { OnboardingBanner } from './OnboardingBanner';
+import { PoDelayAnalyzer } from './PoDelayAnalyzer';
 
 interface OverviewViewProps {
   data: any;
   setView: (view: string) => void;
   setFilter: (filter: string) => void;
   setSelectedOrder: (orderId: string) => void;
+  selectedOrder?: string | null;
   onRun?: () => void;
   isRunBusy?: boolean;
 }
@@ -44,6 +46,7 @@ export function OverviewView({
   setView,
   setFilter,
   setSelectedOrder,
+  selectedOrder,
   onRun,
   isRunBusy = false,
 }: OverviewViewProps) {
@@ -140,6 +143,20 @@ export function OverviewView({
         mode={data.settings?.mode}
         source={data.source}
         dueDateBasis={data.settings?.dueDateBasis}
+      />
+
+      {/* Primary PO Delay Analyzer & Solution Finder */}
+      <PoDelayAnalyzer
+        orders={data.purchaseOrders || []}
+        monitoringDate={data.monitoringDate || ''}
+        timezone={data.settings?.timezone}
+        dueDateBasis={data.settings?.dueDateBasis}
+        selectedOrderId={selectedOrder || null}
+        onSelectOrder={(id) => {
+          setSelectedOrder(id || '');
+        }}
+        onRunMonitoring={onRun}
+        isRunBusy={isRunBusy}
       />
 
       {/* Integration Readiness Bar */}

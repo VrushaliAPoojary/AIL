@@ -1,4 +1,4 @@
-import React, { FormEvent, useEffect } from 'react';
+import React, { FormEvent, useEffect, useState } from 'react';
 import { IconLock, IconClose, IconAlertTriangle, IconShieldCheck } from './Icons';
 
 interface AuthModalProps {
@@ -24,6 +24,8 @@ export function AuthModal({
   error,
   configured,
 }: AuthModalProps) {
+  const [showPassword, setShowPassword] = useState(false);
+
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
       if (e.key === 'Escape') onClose();
@@ -100,17 +102,37 @@ export function AuthModal({
               <label htmlFor="auth-password-field" className="auth-label">
                 Password
               </label>
-              <input
-                id="auth-password-field"
-                type="password"
-                autoComplete="current-password"
-                className="auth-input"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Enter admin password"
-                required
-                maxLength={256}
-              />
+              <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
+                <input
+                  id="auth-password-field"
+                  type={showPassword ? 'text' : 'password'}
+                  autoComplete="current-password"
+                  className="auth-input"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Enter admin password"
+                  required
+                  maxLength={256}
+                  style={{ paddingRight: '48px', width: '100%' }}
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  style={{
+                    position: 'absolute',
+                    right: '10px',
+                    background: 'none',
+                    border: 'none',
+                    color: '#64748b',
+                    fontSize: '12px',
+                    cursor: 'pointer',
+                    fontWeight: 600,
+                  }}
+                  tabIndex={-1}
+                >
+                  {showPassword ? 'Hide' : 'Show'}
+                </button>
+              </div>
             </div>
 
             {error && (

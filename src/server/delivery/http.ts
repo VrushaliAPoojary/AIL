@@ -4,7 +4,19 @@ import { requireP02Admin } from './auth';
 export function sameOrigin(request: Request) {
   const origin = request.headers.get('origin');
   if (!origin) return true;
-  try { return new URL(origin).origin === new URL(request.url).origin; } catch { return false; }
+  try {
+    const originUrl = new URL(origin);
+    const requestUrl = new URL(request.url);
+    if (originUrl.origin === requestUrl.origin) return true;
+    const host = request.headers.get('host');
+    if (host && (originUrl.host === host || originUrl.host === host.split(':')[0])) return true;
+    const isLocalOrigin = originUrl.hostname === 'localhost' || originUrl.hostname === '127.0.0.1';
+    const isLocalReq = requestUrl.hostname === 'localhost' || requestUrl.hostname === '127.0.0.1';
+    if (isLocalOrigin && isLocalReq) return true;
+    return false;
+  } catch {
+    return false;
+  }
 }
 
 export async function requireAdminResponse() {
