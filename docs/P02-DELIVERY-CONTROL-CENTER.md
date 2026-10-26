@@ -26,14 +26,16 @@
 - Read-only supplier-delivery monitoring does not perform write operations against ERPNext.
 - Incomplete receipt evidence, partial scope retrieval, unexhausted pagination, or conflicting delivery dates deterministically resolve to `NEEDS_VERIFICATION`. Delivery is never classified as `RECEIVED` without exact item-level receipt proof matching total ordered quantity.
 
+- Prominent "Run Monitoring" button available across dashboard views with single-action execution.
+- Dual-mode execution pipeline: live mode invokes configured ART agent with read-only ERPNext tools; demo mode simulates synthetic monitoring execution with persistent audit history and strict `source: 'demo'` attribution.
+- Resilient public dashboard navigation: unauthenticated users can explore synthetic demo data without 401 lockouts or dead buttons, with clear authentication prompts when accessing live features.
+
 ## Verification Record
 
-- `npm test` (`node scripts/run-tests.mjs`): **PASSED, 68 tests** (27 persistence tests, 35 P02 classifier & boundary tests, 6 ADK/runtime tests).
+- `npm test` (`node scripts/run-tests.mjs`): **PASSED, 70 tests** (27 persistence tests, 37 P02 classifier & boundary tests including demo execution & readiness, 6 ADK/runtime tests).
 - `python -m pytest compiler/tests`: **PASSED, 14 tests**.
-- `python -m pytest tests` (in `services/bugs-ledger/`): **PASSED, 354 tests**.
 - `python scripts/procurement/validate-procurement-workspace.py`: **PASSED, 0 errors** across all 4 process packages (P01, P02, P03, P04) and 100% relative Markdown link resolution.
-- `python scripts/validation/validate-art-bugs.py`: **PASSED, 0 errors** across 39 bug records and 145 evidence links.
-- `npm run build`: **PASSED**.
+- `npm run build`: **PASSED, 0 errors** (Next.js Turbopack compilation and TypeScript verification).
 - Live ART agent run & real ERPNext verification status: **BLOCKED / NOT VERIFIED** in this local test environment due to lack of external credentials (`ART_API_KEY`, `ART_AGENT_ID`, live ERPNext instance). Safe fallback and error handling are verified by automated tests.
 
 ## Configuration

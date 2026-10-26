@@ -120,13 +120,24 @@ export function AuthModal({
               </div>
             )}
 
-            <button
-              type="submit"
-              className="auth-submit-btn"
-              disabled={busy}
-            >
-              {busy ? 'Authenticating…' : 'Sign In Securely'}
-            </button>
+            <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+              <button
+                type="submit"
+                className="auth-submit-btn"
+                disabled={busy}
+                style={{ flex: 1 }}
+              >
+                {busy ? 'Authenticating…' : 'Sign In Securely'}
+              </button>
+              <button
+                type="button"
+                className="admin-login-btn"
+                onClick={onClose}
+                style={{ padding: '12px 16px', fontSize: '13px' }}
+              >
+                Explore Demo
+              </button>
+            </div>
           </form>
         )}
 

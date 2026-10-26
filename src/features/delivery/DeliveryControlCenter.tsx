@@ -155,12 +155,16 @@ export function DeliveryControlCenter() {
         typeof crypto !== 'undefined' && 'randomUUID' in crypto
           ? crypto.randomUUID()
           : `${Date.now()}-${Math.random()}`;
+      const isLiveMode = data?.settings?.mode === 'configured' && authenticated;
       const response = await fetch('/api/delivery/runs', {
         method: 'POST',
-        headers: { 'Idempotency-Key': idempotencyKey },
+        headers: {
+          'Idempotency-Key': idempotencyKey,
+          'x-delivery-mode': isLiveMode ? 'art' : 'demo',
+        },
       });
       const result = await response.json();
-      if (!response.ok) throw new Error(result.error || 'Unable to initiate the ART monitoring run.');
+      if (!response.ok) throw new Error(result.error || 'Unable to initiate the monitoring run.');
       setView('runs');
       await load(true);
     } catch (cause) {
@@ -224,6 +228,8 @@ export function DeliveryControlCenter() {
           onSignOut={signOut}
           onSignInClick={() => setShowAuth(true)}
           onToggleSidebar={() => setSidebarOpenMobile(!sidebarOpenMobile)}
+          onRunMonitoring={startRun}
+          isRunBusy={busy}
         />
 
         <main className="delivery-view-viewport">
@@ -266,7 +272,10 @@ export function DeliveryControlCenter() {
                   setUsername={setUsername}
                   setPassword={setPassword}
                   onSubmit={signIn}
-                  onClose={() => undefined}
+                  onClose={() => {
+                    setAuthNeeded(false);
+                    setShowAuth(false);
+                  }}
                   busy={busy}
                   error={authError}
                   configured={authConfigured}
@@ -299,6 +308,8 @@ export function DeliveryControlCenter() {
               setView={(v) => setView(v as ViewId)}
               setFilter={setFilter}
               setSelectedOrder={setSelectedOrder}
+              onRun={startRun}
+              isRunBusy={busy}
             />
           )}
 

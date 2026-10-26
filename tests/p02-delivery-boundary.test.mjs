@@ -196,3 +196,35 @@ test('executeAgentRun rejects invalid adk instance, empty agent ID, or invalid r
   };
   await assert.rejects(() => executeAgentRun(adkWithBadRun, 'agent-1', 'prompt', 100), /did not return an active run instance/i);
 });
+
+test('run controller executes simulated demo run with source: demo and distinct demo audit actions', async () => {
+  const runs = [];
+  const events = [];
+  const controller = createRunController({
+    findByIdempotencyKey: async (key) => runs.find((r) => r.idempotencyKey === key) || null,
+    list: async () => [...runs],
+    save: async (record, actor, action) => {
+      const idx = runs.findIndex((r) => r.id === record.id);
+      if (idx < 0) runs.unshift(record); else runs[idx] = record;
+      events.push({ actor, action, source: record.source });
+    },
+    execute: async (r) => ({ purchaseOrders: [], simulated: true }),
+    createId: () => 'demo-run-001',
+    now: () => '2026-10-26T00:00:00.000Z',
+  });
+
+  const started = await controller.start('demo-key-1', 'demo');
+  assert.equal(started.reused, false);
+  assert.equal(started.run.source, 'demo');
+  for (let i = 0; i < 20 && runs[0]?.status !== 'SUCCEEDED'; i += 1) await new Promise((resolve) => setTimeout(resolve, 0));
+  assert.equal(runs[0].status, 'SUCCEEDED');
+  assert.equal(runs[0].source, 'demo');
+  assert.deepEqual(events.map((e) => e.action), ['run.demo_queued', 'run.demo_started', 'run.demo_succeeded']);
+  assert.equal(events.every((e) => e.actor === 'demo-user'), true);
+});
+
+test('delivery classification in demo mode preserves explicit demo and synthetic labeling', () => {
+  const readiness = getIntegrationReadiness(false);
+  assert.equal(readiness.status, 'DEMO');
+  assert.equal(readiness.failure, null);
+});

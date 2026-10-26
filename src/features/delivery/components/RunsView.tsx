@@ -82,14 +82,25 @@ export function RunsView({
                 </button>
               </div>
             ) : (
-              <div className="launch-demo-notice">
-                <IconInfo size={18} className="notice-icon" />
-                <div>
-                  <strong>Demonstration Environment Active</strong>
-                  <p>
-                    Live monitoring requires <code>P02_ART_AGENT_ID</code>, <code>P02_ART_URI</code>, and <code>P02_ART_CLIENT_SECRET</code> to be configured in the server environment. Currently viewing synthetic demonstration data.
-                  </p>
+              <div className="launch-demo-action">
+                <div className="demo-action-intro">
+                  <IconInfo size={18} className="notice-icon" />
+                  <div>
+                    <strong>Demonstration Environment Active</strong>
+                    <p>
+                      Execute a simulated monitoring run using synthetic purchase orders and receipt evidence contracts. Results are clearly recorded as synthetic demo data.
+                    </p>
+                  </div>
                 </div>
+                <button
+                  type="button"
+                  className="primary-run-btn"
+                  disabled={busy}
+                  onClick={onRun}
+                >
+                  <IconRuns size={20} />
+                  <span>{busy ? 'Simulating Run…' : 'Run Simulated Monitoring'}</span>
+                </button>
               </div>
             )}
           </div>

@@ -19,6 +19,8 @@ interface OverviewViewProps {
   setView: (view: string) => void;
   setFilter: (filter: string) => void;
   setSelectedOrder: (orderId: string) => void;
+  onRun?: () => void;
+  isRunBusy?: boolean;
 }
 
 const fmtTime = (value?: string | null) =>
@@ -42,6 +44,8 @@ export function OverviewView({
   setView,
   setFilter,
   setSelectedOrder,
+  onRun,
+  isRunBusy = false,
 }: OverviewViewProps) {
   const metric = data.metrics || {
     totalOrders: 0,
@@ -342,6 +346,19 @@ export function OverviewView({
                 A queued request is not marked successful until the complete ART agent response satisfies the schema and evidence validation contract.
               </p>
             </div>
+
+            {onRun && (
+              <button
+                type="button"
+                className="primary-run-btn overview-primary-run-btn"
+                disabled={isRunBusy}
+                onClick={onRun}
+                title="Execute supplier delivery monitoring run"
+              >
+                <IconRuns size={18} />
+                <span>{isRunBusy ? 'Monitoring In Progress…' : 'Execute Monitoring Scan Now'}</span>
+              </button>
+            )}
 
             <button
               type="button"

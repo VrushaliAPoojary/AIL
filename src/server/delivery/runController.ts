@@ -26,7 +26,7 @@ export function createRunController(deps: Dependencies) {
     return stale.length ? deps.list() : current;
   }
 
-  async function start(idempotencyKey: string) {
+  async function start(idempotencyKey: string, source: 'art' | 'demo' = 'art') {
     let release!: () => void;
     const previous = startLock;
     startLock = new Promise((resolve) => { release = resolve; });
@@ -40,9 +40,11 @@ export function createRunController(deps: Dependencies) {
       if (allRuns.some((item) => item.status === 'QUEUED' || item.status === 'RUNNING')) {
         throw Object.assign(new Error('A monitoring run is already queued or running.'), { status: 409 });
       }
-      run = { id: createId(), idempotencyKey, status: 'QUEUED', startedAt: now(), finishedAt: null, source: 'art', result: null, error: null };
+      run = { id: createId(), idempotencyKey, status: 'QUEUED', startedAt: now(), finishedAt: null, source, result: null, error: null };
       activeRunId = run.id;
-      try { await deps.save(run, 'admin', 'run.queued'); }
+      const actor = source === 'demo' ? 'demo-user' : 'admin';
+      const action = source === 'demo' ? 'run.demo_queued' : 'run.queued';
+      try { await deps.save(run, actor, action); }
       catch (error) { activeRunId = null; throw error; }
     } finally {
       release();
@@ -53,14 +55,15 @@ export function createRunController(deps: Dependencies) {
 
   async function executeAndPersist(initial: RunRecord) {
     let run: RunRecord = { ...initial, status: 'RUNNING' };
+    const actor = run.source === 'demo' ? 'demo-user' : 'admin';
     try {
-      await deps.save(run, 'admin', 'run.started');
+      await deps.save(run, actor, run.source === 'demo' ? 'run.demo_started' : 'run.started');
       const result = await deps.execute(run);
       run = { ...run, status: 'SUCCEEDED', finishedAt: now(), result };
-      await deps.save(run, 'admin', 'run.succeeded');
+      await deps.save(run, actor, run.source === 'demo' ? 'run.demo_succeeded' : 'run.succeeded');
     } catch (error) {
       run = { ...run, status: 'FAILED', finishedAt: now(), error: error instanceof Error ? error.message : 'ART execution failed.' };
-      try { await deps.save(run, 'admin', 'run.failed'); } catch { /* A failed local store cannot safely turn this into success. */ }
+      try { await deps.save(run, actor, run.source === 'demo' ? 'run.demo_failed' : 'run.failed'); } catch { /* A failed local store cannot safely turn this into success. */ }
     } finally {
       activeRunId = null;
     }

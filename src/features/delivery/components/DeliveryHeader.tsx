@@ -1,6 +1,6 @@
 import React from 'react';
 import { ModeBadge } from './StatusBadges';
-import { IconRefresh, IconUser, IconLock } from './Icons';
+import { IconRefresh, IconUser, IconLock, IconRuns } from './Icons';
 
 interface DeliveryHeaderProps {
   currentViewLabel: string;
@@ -16,6 +16,8 @@ interface DeliveryHeaderProps {
   onSignOut: () => void;
   onSignInClick: () => void;
   onToggleSidebar?: () => void;
+  onRunMonitoring?: () => void;
+  isRunBusy?: boolean;
 }
 
 export function DeliveryHeader({
@@ -32,6 +34,8 @@ export function DeliveryHeader({
   onSignOut,
   onSignInClick,
   onToggleSidebar,
+  onRunMonitoring,
+  isRunBusy = false,
 }: DeliveryHeaderProps) {
   const formattedDate = monitoringDate
     ? new Date(`${monitoringDate.slice(0, 10)}T00:00:00`).toLocaleDateString('en-IN', {
@@ -76,6 +80,20 @@ export function DeliveryHeader({
 
         {/* Mode pill (Demo vs Live) */}
         <ModeBadge mode={mode} source={source} readiness={readiness} />
+
+        {/* Prominent Run Monitoring Action */}
+        {onRunMonitoring && (
+          <button
+            type="button"
+            className={`header-run-btn ${isRunBusy ? 'is-running' : ''}`}
+            onClick={onRunMonitoring}
+            disabled={isRunBusy || loading}
+            title={mode === 'configured' ? 'Run live ART supplier delivery monitoring' : 'Run simulated demonstration monitoring'}
+          >
+            <IconRuns size={15} />
+            <span>{isRunBusy ? 'Monitoring…' : 'Run Monitoring'}</span>
+          </button>
+        )}
 
         {/* Admin session button */}
         {authenticated ? (

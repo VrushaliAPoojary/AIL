@@ -6,12 +6,22 @@ import { getControlCenterData } from '../../../../server/delivery/data';
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
-export async function GET() {
+export async function GET(request: Request) {
   const settings = await getDeliverySettings();
-  if (settings.mode === 'configured' && !(await requireP02Admin())) {
-    return NextResponse.json({ error: 'Administrator authentication is required to view live procurement data.' }, { status: 401 });
+  const url = new URL(request.url);
+  const requestedDemo = url.searchParams.get('mode') === 'demo';
+  const isAuthed = await requireP02Admin();
+  const forceDemo = requestedDemo || (settings.mode === 'configured' && !isAuthed);
+
+  try {
+    const data = await getControlCenterData(forceDemo);
+    return NextResponse.json({
+      ...data,
+      authNeeded: settings.mode === 'configured' && !isAuthed,
+      authenticated: isAuthed,
+    }, { headers: { 'Cache-Control': 'private, no-store' } });
+  } catch {
+    return NextResponse.json({ error: 'Delivery data is unavailable because its source report could not be validated.' }, { status: 503 });
   }
-  try { return NextResponse.json(await getControlCenterData(), { headers: { 'Cache-Control': 'private, no-store' } }); }
-  catch { return NextResponse.json({ error: 'Delivery data is unavailable because its source report could not be validated.' }, { status: 503 }); }
 }
 

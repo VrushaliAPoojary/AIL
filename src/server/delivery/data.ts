@@ -11,7 +11,7 @@ function shiftDate(date: string, days: number) {
   return value.toISOString().slice(0, 10);
 }
 
-function demoOrders(today: string): PurchaseOrder[] {
+export function demoOrders(today: string): PurchaseOrder[] {
   const createOrder = (id: string, itemId: string, scheduleOffset: number, receivedQty: number, retrievalComplete = true, expectedOffset: number | null = null): PurchaseOrder => {
     const receipts = receivedQty > 0 ? [{
       receiptId: `${id}-PR-01`, receiptItemId: `${id}-PRI-01`, purchaseOrderId: id,
@@ -131,15 +131,16 @@ function buildExceptions(assessments: ReturnType<typeof classifyPurchaseOrders>)
   });
 }
 
-export async function getControlCenterData() {
+export async function getControlCenterData(forceDemo = false) {
   const settings = await getDeliverySettings();
+  const effectiveMode = forceDemo ? 'demo' : settings.mode;
   const today = getLocalBusinessDate(settings.timezone);
-  const runs = settings.mode === 'configured' ? await getRunHistory() : [];
+  const runs = await getRunHistory();
   const latestRun = runs[0] || null;
   let orders: PurchaseOrder[] = [];
   let source: 'synthetic demonstration data' | 'validated ART result' | 'no validated data' = 'no validated data';
 
-  if (settings.mode === 'demo') {
+  if (effectiveMode === 'demo') {
     orders = demoOrders(today);
     source = 'synthetic demonstration data';
   } else if (latestRun?.status === 'SUCCEEDED' && latestRun.result && typeof latestRun.result === 'object') {
@@ -148,14 +149,14 @@ export async function getControlCenterData() {
     source = orders.length ? 'validated ART result' : 'no validated data';
   }
 
-  const assessments = classifyPurchaseOrders(orders, settings, today);
+  const assessments = classifyPurchaseOrders(orders, { ...settings, mode: effectiveMode }, today);
   const integrations = await getIntegrationStatus();
   return {
     generatedAt: new Date().toISOString(),
     monitoringDate: today,
     source,
-    settings,
-    integrations,
+    settings: { ...settings, mode: effectiveMode },
+    integrations: { ...integrations, mode: effectiveMode },
     metrics: summarize(orders, assessments),
     purchaseOrders: orders.filter((order) => order.docstatus === 1).map((order) => ({
       ...order,

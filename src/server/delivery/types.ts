@@ -85,7 +85,7 @@ export type RunRecord = {
   status: 'QUEUED' | 'RUNNING' | 'SUCCEEDED' | 'FAILED';
   startedAt: string;
   finishedAt: string | null;
-  source: 'art';
+  source: 'art' | 'demo';
   result: unknown | null;
   error: string | null;
 };
