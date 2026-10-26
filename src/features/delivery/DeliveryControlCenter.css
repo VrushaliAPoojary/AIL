@@ -125,6 +125,7 @@ body:has(.delivery-shell) .app-container { display: block; background: #f5f7fa; 
 .status-due_today { border-color: #f2dfb6; background: #fff9ea; color: #9a7023; }
 .status-upcoming,.status-future_open_delivery { border-color: #d4e4f4; background: #f0f6fc; color: #527ca8; }
 .status-received { border-color: #cce7da; background: #eff8f3; color: #398264; }
+.status-partially_received { border-color: #e5daf3; background: #f6f0fc; color: #74519f; }
 .status-needs_verification { border-color: #dce1e8; background: #f3f5f7; color: #68778a; }
 .empty-inline { padding: 24px 18px; color: #8995a5; font-size: 11px; text-align: center; }
 .run-summary { padding-bottom: 15px; }
@@ -177,6 +178,10 @@ td small { display: block; overflow: hidden; max-width: 220px; margin-top: 4px; 
 .exception-body > p { color: #5d6f84; font-size: 10px; line-height: 1.5; }
 .next-step { display: flex; gap: 7px; margin-top: 8px; color: #77869a; font-size: 9px; line-height: 1.45; }
 .next-step b { flex: 0 0 auto; color: #516780; }
+.exception-audit-block { margin-top: 6px; font-size: 9px; line-height: 1.45; color: #586c82; }
+.exception-audit-block b { color: #374d66; font-size: 9px; }
+.exception-audit-block ul { margin: 3px 0 0; padding-left: 14px; color: #6a7c91; }
+.exception-audit-block li { margin-bottom: 2px; }
 .exception-open { align-self: center; }
 .run-layout { display: grid; grid-template-columns: minmax(0,1fr) minmax(270px,.8fr); gap: 14px; }
 .run-launch { grid-row: span 2; display: flex; flex-direction: column; align-items: flex-start; padding: 22px; }
@@ -270,6 +275,20 @@ td small { display: block; overflow: hidden; max-width: 220px; margin-top: 4px; 
 .receipt-row b { color: #49627b; }
 .verification-block { background: #fff9ed; color: #806b43; }
 .verification-block ul { display: grid; gap: 4px; padding-left: 15px; color: #8c7956; line-height: 1.45; }
+.item-row-id { display: block; margin-top: 2px; color: #8795a5; font-size: 9px; font-family: ui-monospace, monospace; }
+.item-desc { margin: 6px 0 4px; color: #6b7c90; font-size: 10px; }
+.receipt-row-card { display: grid; gap: 4px; border: 1px solid #e1e7ed; border-radius: 6px; padding: 8px 10px; background: #fff; }
+.receipt-row-header { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.receipt-id { color: #2d455e; font-size: 10px; font-family: ui-monospace, monospace; }
+.receipt-match-tag { display: inline-flex; border: 1px solid #c7e5d8; border-radius: 4px; padding: 2px 5px; background: #eef8f3; color: #287a5a; font-size: 8px; font-weight: 700; }
+.receipt-row-details { display: grid; gap: 2px; color: #6b7c90; font-size: 9px; }
+.receipt-row-details b { color: #3d536b; font-weight: 600; }
+.no-receipt-note { color: #8c98a7; font-style: italic; font-size: 9px; }
+.retrieval-audit-block { display: grid; gap: 6px; margin-top: 10px; border-radius: 6px; padding: 9px 10px; background: #f3f6f9; border: 1px solid #e5ebf1; color: #4e647c; font-size: 9px; }
+.retrieval-audit-block > b { color: #2d455e; font-size: 9px; }
+.audit-detail-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 10px; }
+.audit-detail-grid div small { display: block; color: #8a97a7; font-size: 8px; }
+.audit-detail-grid div b { display: block; margin-top: 2px; color: #374e67; font-size: 9px; font-weight: 600; overflow-wrap: anywhere; }
 .drawer-foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; border-top: 1px solid var(--dc-line); padding: 12px 22px; color: #8c98a7; font-size: 9px; }
 .auth-backdrop { position: fixed; z-index: 120; inset: 0; display: grid; place-items: center; padding: 18px; background: #11223866; }
 .auth-dialog { position: relative; width: min(100%,470px); }

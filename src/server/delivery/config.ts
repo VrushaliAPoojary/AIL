@@ -15,9 +15,9 @@ export async function getDeliverySettings(): Promise<DeliverySettings> {
   const configuredDays = Number(process.env.P02_UPCOMING_DAYS);
   const configuredBasis = process.env.P02_DUE_DATE_BASIS;
   const liveConfigured = Boolean(
-    process.env.ART_URI && process.env.ART_CLIENT_ID && process.env.ART_CLIENT_SECRET &&
-    process.env.ART_ORG_TITLE && process.env.ART_ENVIRONMENT && process.env.ART_PROJECT_KEY &&
-    process.env.ART_AGENT_ID,
+    process.env.ART_URI?.trim() && process.env.ART_CLIENT_ID?.trim() && process.env.ART_CLIENT_SECRET?.trim() &&
+    process.env.ART_ORG_TITLE?.trim() && process.env.ART_ENVIRONMENT?.trim() && process.env.ART_PROJECT_KEY?.trim() &&
+    process.env.ART_AGENT_ID?.trim(),
   );
 
   const saved = await getSavedSettings();

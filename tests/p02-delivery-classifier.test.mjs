@@ -133,3 +133,56 @@ test('requires a date for open items and validates the monitoring business date'
   assert.equal(assess(order({ item: { scheduleDate: '2026-02-30' } })).deliveryStatus, 'NEEDS_VERIFICATION');
   assert.throws(() => classifyPurchaseOrders([order()], settings, 'not-a-date'));
 });
+
+test('classifies fully received delivery when verified receipts match ordered quantity', () => {
+  const po = order({ item: {
+    orderedQuantity: 10,
+    receipts: [
+      { receiptId: 'PR-FULL-1', receiptItemId: 'PRI-1', purchaseOrderId: 'PO-TEST-1', purchaseOrderItemId: 'PO-TEST-1-ITEM-1', itemCode: 'TEST-ITEM', quantity: 6, docstatus: 1 },
+      { receiptId: 'PR-FULL-2', receiptItemId: 'PRI-2', purchaseOrderId: 'PO-TEST-1', purchaseOrderItemId: 'PO-TEST-1-ITEM-1', itemCode: 'TEST-ITEM', quantity: 4, docstatus: 1 },
+    ],
+  } });
+  const result = assess(po);
+  assert.equal(result.receivedQuantity, 10);
+  assert.equal(result.outstandingQuantity, 0);
+  assert.equal(result.partialReceipt, false);
+  assert.equal(result.deliveryStatus, 'RECEIVED');
+});
+
+test('classifies partially received overdue delivery when quantity remains outstanding past due date', () => {
+  const po = order({ item: {
+    orderedQuantity: 10,
+    scheduleDate: '2026-10-20',
+    receipts: [
+      { receiptId: 'PR-PARTIAL-1', receiptItemId: 'PRI-1', purchaseOrderId: 'PO-TEST-1', purchaseOrderItemId: 'PO-TEST-1-ITEM-1', itemCode: 'TEST-ITEM', quantity: 4, docstatus: 1 },
+    ],
+  } });
+  const result = assess(po);
+  assert.equal(result.receivedQuantity, 4);
+  assert.equal(result.outstandingQuantity, 6);
+  assert.equal(result.partialReceipt, true);
+  assert.equal(result.deliveryStatus, 'OVERDUE');
+});
+
+test('requires exact purchase order ID and purchase order item ID for classification', () => {
+  const missingItemId = assess(order({ item: { id: '' } }));
+  assert.equal(missingItemId.deliveryStatus, 'NEEDS_VERIFICATION');
+  assert.match(missingItemId.verificationReasons.join(' '), /item identifier is missing/i);
+
+  const missingOrderId = assess(order({ order: { id: '' } }));
+  assert.equal(missingOrderId.deliveryStatus, 'NEEDS_VERIFICATION');
+  assert.match(missingOrderId.verificationReasons.join(' '), /purchase order identifier or supplier is missing/i);
+});
+
+test('marks receipt item code mismatch for verification', () => {
+  const po = order({ item: {
+    itemCode: 'TEST-ITEM',
+    receipts: [
+      { receiptId: 'PR-MISMATCH', receiptItemId: 'PRI-1', purchaseOrderId: 'PO-TEST-1', purchaseOrderItemId: 'PO-TEST-1-ITEM-1', itemCode: 'OTHER-CODE', quantity: 5, docstatus: 1 },
+    ],
+  } });
+  const result = assess(po);
+  assert.equal(result.deliveryStatus, 'NEEDS_VERIFICATION');
+  assert.equal(result.receivedQuantity, null);
+  assert.match(result.verificationReasons.join(' '), /does not match purchase order item code/i);
+});

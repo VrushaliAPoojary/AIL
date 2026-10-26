@@ -17,9 +17,9 @@ function assessItem(order: PurchaseOrder, item: PurchaseOrder['items'][number], 
   const ordered = item.orderedQuantity;
   const excluded = order.docstatus !== 1;
   if (excluded) reasons.push(order.docstatus === 2 ? 'Purchase order is cancelled and excluded.' : 'Purchase order is not submitted and excluded.');
-  if (!order.id || !order.supplier.trim()) reasons.push('Purchase order identifier or supplier is missing.');
-  if (!item.id) reasons.push('Purchase order item identifier is missing.');
-  if (!item.itemCode.trim()) reasons.push('Purchase order item code is missing.');
+  if (!order.id || !order.id.trim() || !order.supplier.trim()) reasons.push('Purchase order identifier or supplier is missing.');
+  if (!item.id || !item.id.trim()) reasons.push('Purchase order item identifier is missing.');
+  if (!item.itemCode || !item.itemCode.trim()) reasons.push('Purchase order item code is missing.');
   if (ordered === null || !Number.isFinite(ordered) || ordered < 0) reasons.push('Ordered quantity is missing or invalid.');
 
   const seenReceiptItems = new Set<string>();
@@ -35,6 +35,10 @@ function assessItem(order: PurchaseOrder, item: PurchaseOrder['items'][number], 
     if (receipt.docstatus === 2 || receipt.docstatus === 0) return false;
     if (receipt.docstatus !== 1) {
       reasons.push('Receipt evidence has an invalid document status.');
+      return false;
+    }
+    if (receipt.itemCode && item.itemCode && receipt.itemCode.trim() !== item.itemCode.trim()) {
+      reasons.push('Receipt item code does not match purchase order item code.');
       return false;
     }
     if (!valid) reasons.push('A submitted receipt lacks exact purchase-order item linkage or valid quantity.');

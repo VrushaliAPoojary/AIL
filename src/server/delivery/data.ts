@@ -71,7 +71,7 @@ function summarize(orders: PurchaseOrder[], assessments: ReturnType<typeof class
       const items = active.filter((item) => item.orderId === order.id);
       return items.length > 0 && items.every((item) => item.deliveryStatus === 'RECEIVED');
     }).length,
-    partialReceipts: new Set(active.filter((item) => item.partialReceipt).map((item) => item.orderId)).size,
+    partialReceipts: new Set(active.filter((item) => item.partialReceipt || item.deliveryStatus === 'PARTIALLY_RECEIVED').map((item) => item.orderId)).size,
     needsVerification: byOrder('NEEDS_VERIFICATION'),
   };
 }
@@ -79,18 +79,52 @@ function summarize(orders: PurchaseOrder[], assessments: ReturnType<typeof class
 function buildExceptions(assessments: ReturnType<typeof classifyPurchaseOrders>) {
   return assessments.filter((item) => !item.excluded && (
     item.deliveryStatus === 'OVERDUE' || item.deliveryStatus === 'DUE_TODAY' ||
-    item.deliveryStatus === 'NEEDS_VERIFICATION' || item.partialReceipt
-  )).map((item) => ({
-    id: `${item.orderId}:${item.orderItemId}`,
-    orderId: item.orderId,
-    supplier: item.supplier,
-    itemCode: item.itemCode,
-    status: item.deliveryStatus,
-    severity: item.deliveryStatus === 'OVERDUE' ? 'High' : item.deliveryStatus === 'NEEDS_VERIFICATION' ? 'Review' : item.partialReceipt ? 'Medium' : 'Low',
-    reason: item.verificationReasons[0] || (item.partialReceipt ? 'Submitted receipt evidence confirms only a partial quantity.' : item.deliveryStatus === 'OVERDUE' ? 'Verified open quantity remains after the applicable due date.' : `${item.deliveryStatus.replaceAll('_', ' ').toLowerCase()} delivery needs buyer attention.`),
-    suggestedNextStep: item.deliveryStatus === 'NEEDS_VERIFICATION' ? 'Review ERPNext PO and receipt item references before classifying.' : item.deliveryStatus === 'OVERDUE' ? 'Review the supplier status and decide whether a staged follow-up is needed.' : item.partialReceipt ? 'Review remaining quantity and the next confirmed delivery date.' : 'Review the delivery schedule with the buyer.',
-    dueDate: item.applicableDueDate,
-  })).sort((left, right) => {
+    item.deliveryStatus === 'NEEDS_VERIFICATION' || item.partialReceipt || item.deliveryStatus === 'PARTIALLY_RECEIVED'
+  )).map((item) => {
+    const detected = item.deliveryStatus === 'OVERDUE'
+      ? `Overdue commitment: ${item.outstandingQuantity ?? 'unverified'} units outstanding past ${item.applicableDueDate || 'scheduled date'}${item.partialReceipt ? ' (partially received)' : ''}.`
+      : item.deliveryStatus === 'DUE_TODAY'
+        ? `Due today: ${item.outstandingQuantity ?? 'unverified'} units scheduled for arrival today (${item.applicableDueDate}).`
+        : item.deliveryStatus === 'NEEDS_VERIFICATION'
+          ? `Evidence uncertainty: ${item.verificationReasons[0] || 'Required evidence is incomplete or unverified'}.`
+          : `Partial delivery: ${item.receivedQuantity ?? 0}/${item.orderedQuantity ?? '?'} units confirmed received, ${item.outstandingQuantity ?? '?'} units outstanding.`;
+
+    const supportingRecords = [
+      `Purchase Order: ${item.orderId} (Row: ${item.orderItemId || 'missing'})`,
+      ...item.receiptEvidence.map((r) => `Purchase Receipt: ${r.receiptId} (Row: ${r.receiptItemId}, Qty: ${r.quantity}${r.isReturn ? ', Return' : ''})`),
+    ];
+
+    const missingEvidence = item.verificationReasons.length > 0
+      ? item.verificationReasons
+      : item.partialReceipt
+        ? ['Subsequent receipt evidence for the remaining quantity is not yet recorded in ERPNext.']
+        : ['No missing evidence; verified against retrieved source records.'];
+
+    const manualVerificationNeeded = item.deliveryStatus === 'NEEDS_VERIFICATION'
+      ? 'Inspect ERPNext Purchase Order and Purchase Receipt items directly to verify row links, docstatus, and pagination completeness before classifying.'
+      : item.deliveryStatus === 'OVERDUE'
+        ? `Review open commitment with procurement buyer and determine whether to stage a draft supplier follow-up for ${item.supplier}.`
+        : item.partialReceipt
+          ? `Confirm supplier dispatch status and estimated arrival date for the remaining ${item.outstandingQuantity ?? 'open'} units.`
+          : 'Confirm delivery arrival and receiving inspection with warehouse dock team.';
+
+    return {
+      id: `${item.orderId}:${item.orderItemId}`,
+      orderId: item.orderId,
+      orderItemId: item.orderItemId,
+      supplier: item.supplier,
+      itemCode: item.itemCode,
+      status: item.deliveryStatus,
+      severity: item.deliveryStatus === 'OVERDUE' ? 'High' : item.deliveryStatus === 'NEEDS_VERIFICATION' ? 'Review' : item.partialReceipt ? 'Medium' : 'Low',
+      reason: item.verificationReasons[0] || (item.partialReceipt ? 'Submitted receipt evidence confirms only a partial quantity.' : item.deliveryStatus === 'OVERDUE' ? 'Verified open quantity remains after the applicable due date.' : `${item.deliveryStatus.replaceAll('_', ' ').toLowerCase()} delivery needs buyer attention.`),
+      suggestedNextStep: item.deliveryStatus === 'NEEDS_VERIFICATION' ? 'Review ERPNext PO and receipt item references before classifying.' : item.deliveryStatus === 'OVERDUE' ? 'Review the supplier status and decide whether a staged follow-up is needed.' : item.partialReceipt ? 'Review remaining quantity and the next confirmed delivery date.' : 'Review the delivery schedule with the buyer.',
+      dueDate: item.applicableDueDate,
+      detected,
+      supportingRecords,
+      missingEvidence,
+      manualVerificationNeeded,
+    };
+  }).sort((left, right) => {
     const severity = { High: 0, Review: 1, Medium: 2, Low: 3 };
     return severity[left.severity as keyof typeof severity] - severity[right.severity as keyof typeof severity] ||
       String(left.dueDate || '9999-12-31').localeCompare(String(right.dueDate || '9999-12-31'));

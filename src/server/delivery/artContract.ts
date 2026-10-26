@@ -61,6 +61,7 @@ export function normalizeAgentReport(value: unknown): { purchaseOrders: Purchase
           receiptItemId: typeof receipt?.receiptItemId === 'string' ? receipt.receiptItemId : '',
           purchaseOrderId: typeof receipt?.purchaseOrderId === 'string' ? receipt.purchaseOrderId : '',
           purchaseOrderItemId: typeof receipt?.purchaseOrderItemId === 'string' ? receipt.purchaseOrderItemId : '',
+          itemCode: typeof receipt?.itemCode === 'string' ? receipt.itemCode : undefined,
           quantity: typeof receipt?.quantity === 'number' && Number.isFinite(receipt.quantity) ? receipt.quantity : Number.NaN,
           docstatus: Number.isInteger(receipt?.docstatus) ? receipt.docstatus : -1,
           isReturn: receipt?.isReturn === true,

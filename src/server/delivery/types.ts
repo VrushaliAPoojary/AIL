@@ -1,5 +1,6 @@
 export type DeliveryStatus =
   | 'RECEIVED'
+  | 'PARTIALLY_RECEIVED'
   | 'OVERDUE'
   | 'DUE_TODAY'
   | 'UPCOMING'
@@ -13,6 +14,7 @@ export type ReceiptEvidence = {
   receiptItemId: string;
   purchaseOrderId: string;
   purchaseOrderItemId: string;
+  itemCode?: string;
   quantity: number;
   docstatus: number;
   isReturn?: boolean;

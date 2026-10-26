@@ -175,3 +175,24 @@ test('run controller records ART failures and never marks them successful', asyn
   assert.equal(runs[0].error, 'ART unavailable');
   assert.equal(runs[0].result, null);
 });
+
+test('sanitizeArtUri strips scheme prefixes and trailing slashes', async () => {
+  const { sanitizeArtUri } = await import('../src/server/delivery/adkExecution.ts');
+  assert.equal(sanitizeArtUri('https://api.art.ai/'), 'api.art.ai');
+  assert.equal(sanitizeArtUri('wss://gateway.art.ai///'), 'gateway.art.ai');
+  assert.equal(sanitizeArtUri('http://localhost:8080'), 'localhost:8080');
+  assert.equal(sanitizeArtUri('ws://127.0.0.1:9000/'), '127.0.0.1:9000');
+  assert.equal(sanitizeArtUri('  art.example.com  '), 'art.example.com');
+});
+
+test('executeAgentRun rejects invalid adk instance, empty agent ID, or invalid run', async () => {
+  await assert.rejects(() => executeAgentRun(null, 'agent-1', 'prompt', 100), /invalid adk instance/i);
+  await assert.rejects(() => executeAgentRun({ getState: () => 'connected' }, '', 'prompt', 100), /agent id is missing/i);
+  await assert.rejects(() => executeAgentRun({ getState: () => 'connected' }, '   ', 'prompt', 100), /agent id is missing/i);
+
+  const adkWithBadRun = {
+    getState: () => 'connected',
+    agent: () => ({ connect: () => ({ thread: () => ({ run: async () => ({}) }) }) }),
+  };
+  await assert.rejects(() => executeAgentRun(adkWithBadRun, 'agent-1', 'prompt', 100), /did not return an active run instance/i);
+});

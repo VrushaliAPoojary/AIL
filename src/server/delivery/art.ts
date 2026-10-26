@@ -1,6 +1,6 @@
 import 'server-only';
 import type { RunRecord } from './types';
-import { executeAgentRun } from './adkExecution';
+import { executeAgentRun, sanitizeArtUri } from './adkExecution';
 import { normalizeAgentReport } from './artContract';
 import { setIntegrationReadiness, type IntegrationFailureCode } from './readiness';
 
@@ -16,9 +16,19 @@ function integrationConfig() {
     ProjectKey: process.env.ART_PROJECT_KEY,
     agentId: process.env.ART_AGENT_ID,
   };
-  if (Object.values(values).some((value) => !value)) return null;
-  return values as Required<typeof values>;
+  if (Object.values(values).some((value) => !value || !value.trim())) return null;
+  return {
+    Uri: values.Uri!.trim(),
+    ClientID: values.ClientID!.trim(),
+    ClientSecret: values.ClientSecret!.trim(),
+    OrgTitle: values.OrgTitle!.trim(),
+    Environment: values.Environment!.trim(),
+    ProjectKey: values.ProjectKey!.trim(),
+    agentId: values.agentId!.trim(),
+  };
 }
+
+export { sanitizeArtUri };
 
 export async function executeArtMonitoring(run: RunRecord): Promise<unknown> {
   const config = integrationConfig();
@@ -28,7 +38,7 @@ export async function executeArtMonitoring(run: RunRecord): Promise<unknown> {
   setIntegrationReadiness('CONNECTING');
   try {
     const { default: Adk } = await import('@arealtimetech/adk-js');
-    adk = new (Adk as any)({ Uri: config.Uri });
+    adk = new (Adk as any)({ Uri: sanitizeArtUri(config.Uri) });
     adk.setCredentials({
       ClientID: config.ClientID,
       ClientSecret: config.ClientSecret,
