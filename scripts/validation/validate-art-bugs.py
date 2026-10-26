@@ -102,7 +102,8 @@ def validate_ledger(bugs_root: str) -> bool:
                 if clean_target.startswith('./'):
                     clean_target = clean_target[2:]
                 target_path = os.path.join(folder_path, clean_target)
-                if not os.path.exists(target_path):
+                check_path = ("\\\\?\\" + os.path.abspath(target_path)) if (os.name == "nt" and not target_path.startswith("\\\\?\\")) else target_path
+                if not os.path.exists(check_path):
                     errors.append(f'{bug_id}: Broken evidence link to {target} (resolved to {target_path})')
 
     print(f'Total Bug Records Validated: {total_bugs}')

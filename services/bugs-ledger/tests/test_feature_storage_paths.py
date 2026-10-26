@@ -122,7 +122,8 @@ class TestFeatureStoragePaths(unittest.TestCase):
                 if f.endswith(".png") or f.endswith(".mp4"):
                     total_evidence_files += 1
                     file_path = os.path.join(root, f)
-                    self.assertGreater(os.path.getsize(file_path), 0)
+                    check_path = ("\\\\?\\" + os.path.abspath(file_path)) if (os.name == "nt" and not file_path.startswith("\\\\?\\")) else file_path
+                    self.assertGreater(os.path.getsize(check_path), 0)
 
         # We had 68 screenshot/evidence files across all bugs
         self.assertGreaterEqual(total_evidence_files, 60)

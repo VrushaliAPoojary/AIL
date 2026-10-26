@@ -186,3 +186,73 @@ test('marks receipt item code mismatch for verification', () => {
   assert.equal(result.receivedQuantity, null);
   assert.match(result.verificationReasons.join(' '), /does not match purchase order item code/i);
 });
+
+test('marks receipt linked to wrong purchase order item on same PO for verification', () => {
+  const po = order({ item: {
+    receipts: [
+      { receiptId: 'PR-WRONG-ITEM', receiptItemId: 'PRI-WRONG', purchaseOrderId: 'PO-TEST-1', purchaseOrderItemId: 'PO-TEST-1-ITEM-DIFFERENT', quantity: 10, docstatus: 1 },
+    ],
+  } });
+  const result = assess(po);
+  assert.equal(result.deliveryStatus, 'NEEDS_VERIFICATION');
+  assert.equal(result.receivedQuantity, null);
+  assert.match(result.verificationReasons.join(' '), /exact purchase-order item linkage/i);
+});
+
+test('marks receipt with missing receiptId or receiptItemId for verification', () => {
+  const po = order({ item: {
+    receipts: [
+      { receiptId: '', receiptItemId: 'PRI-1', purchaseOrderId: 'PO-TEST-1', purchaseOrderItemId: 'PO-TEST-1-ITEM-1', quantity: 10, docstatus: 1 },
+    ],
+  } });
+  const result = assess(po);
+  assert.equal(result.deliveryStatus, 'NEEDS_VERIFICATION');
+  assert.equal(result.receivedQuantity, null);
+  assert.match(result.verificationReasons.join(' '), /exact purchase-order item linkage/i);
+});
+
+test('marks unexhausted pagination (hasMore: true or pagesRetrieved: 0) for verification', () => {
+  const poHasMore = order({ item: {
+    receiptRetrieval: { scope: { purchaseOrderId: 'PO-TEST-1', purchaseOrderItemId: 'PO-TEST-1-ITEM-1' }, complete: true, pagesRetrieved: 1, hasMore: true },
+    receipts: [{ receiptId: 'PR-1', receiptItemId: 'PRI-1', purchaseOrderId: 'PO-TEST-1', purchaseOrderItemId: 'PO-TEST-1-ITEM-1', quantity: 10, docstatus: 1 }],
+  } });
+  const resHasMore = assess(poHasMore);
+  assert.equal(resHasMore.deliveryStatus, 'NEEDS_VERIFICATION');
+  assert.equal(resHasMore.receivedQuantity, null);
+
+  const poZeroPages = order({ item: {
+    receiptRetrieval: { scope: { purchaseOrderId: 'PO-TEST-1', purchaseOrderItemId: 'PO-TEST-1-ITEM-1' }, complete: true, pagesRetrieved: 0, hasMore: false },
+    receipts: [],
+  } });
+  const resZeroPages = assess(poZeroPages);
+  assert.equal(resZeroPages.deliveryStatus, 'NEEDS_VERIFICATION');
+  assert.equal(resZeroPages.receivedQuantity, null);
+});
+
+test('preserves NEEDS_VERIFICATION when dateConflict is true under supplier_promise mode', () => {
+  const po = order({ item: {
+    dateConflict: true,
+    expectedDeliveryDate: '2026-10-30',
+    scheduleDate: '2026-10-25',
+  } });
+  const result = assess(po, { ...settings, dueDateBasis: 'supplier_promise' });
+  assert.equal(result.deliveryStatus, 'NEEDS_VERIFICATION');
+  assert.match(result.verificationReasons.join(' '), /dates conflict/i);
+});
+
+test('does not classify partial delivery as confirmed or received', () => {
+  const po = order({ item: {
+    orderedQuantity: 10,
+    scheduleDate: '2026-10-28',
+    receipts: [
+      { receiptId: 'PR-PART-1', receiptItemId: 'PRI-1', purchaseOrderId: 'PO-TEST-1', purchaseOrderItemId: 'PO-TEST-1-ITEM-1', quantity: 7, docstatus: 1 },
+    ],
+  } });
+  const result = assess(po);
+  assert.notEqual(result.deliveryStatus, 'RECEIVED');
+  assert.equal(result.partialReceipt, true);
+  assert.equal(result.receivedQuantity, 7);
+  assert.equal(result.outstandingQuantity, 3);
+  assert.equal(result.deliveryStatus, 'UPCOMING');
+});
+

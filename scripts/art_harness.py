@@ -192,7 +192,7 @@ def cmd_validate(args):
             print("❌ Unit test suite FAILED")
             all_passed = False
         else:
-            print("✅ All 264 unit tests PASSED")
+            print("✅ Bugs ledger unit tests PASSED")
             
     print("\n" + "=" * 60)
     if all_passed:

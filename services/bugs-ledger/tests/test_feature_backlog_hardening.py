@@ -250,14 +250,14 @@ class TestFeatureBacklogHardening(unittest.TestCase):
             self.assertEqual(feat.azure_work_item_id, 69198)
             folder_dir = storage.get_feature_dir(feat.module, feat.feature_id, feat.slug)
             self.assertTrue(os.path.isdir(folder_dir))
-            self.assertIn("features/Agent Lab", folder_dir)
+            self.assertIn("features/Agent Lab", folder_dir.replace("\\", "/"))
         else:
             # In fresh/isolated CI workspaces where local feature records are not yet tracked,
             # verify that identity generator and storage paths deterministically resolve.
             new_id = generate_feature_id("Agent Lab", existing_ids=[])
             self.assertEqual(new_id, "ART-FEAT-AGENT-001")
             folder_dir = storage.get_feature_dir("Agent Lab", new_id, "test-slug")
-            self.assertTrue(folder_dir.endswith("features/Agent Lab/ART-FEAT-AGENT-001__test-slug"))
+            self.assertTrue(folder_dir.replace("\\", "/").endswith("features/Agent Lab/ART-FEAT-AGENT-001__test-slug"))
 
     # =========================================================================
     # TEST J — Bug isolation

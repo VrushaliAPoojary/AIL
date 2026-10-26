@@ -3,13 +3,13 @@
    ========================================================================== */
 
 :root {
-  /* Brand Foundations */
-  --p02-brand-navy: #0f2438;
-  --p02-brand-navy-light: #18334e;
-  --p02-brand-navy-dark: #0a1826;
-  --p02-brand-blue: #2563eb;
-  --p02-brand-blue-hover: #1d4ed8;
-  --p02-brand-accent: #38bdf8;
+  /* Brand Foundations — Indigo / Slate Enterprise */
+  --p02-brand-navy: #0f172a;
+  --p02-brand-navy-light: #1e293b;
+  --p02-brand-navy-dark: #020617;
+  --p02-brand-blue: #4f46e5;
+  --p02-brand-blue-hover: #4338ca;
+  --p02-brand-accent: #818cf8;
 
   /* Neutral Surface Palette */
   --p02-bg-app: #f8fafc;
