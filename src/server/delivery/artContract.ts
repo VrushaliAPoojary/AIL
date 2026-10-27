@@ -100,6 +100,8 @@ export function normalizeAgentReport(value: unknown): { purchaseOrders: Purchase
       transactionDate: typeof rawOrder.transactionDate === 'string' ? rawOrder.transactionDate : null,
       docstatus: Number.isInteger(rawOrder.docstatus) ? rawOrder.docstatus : -1,
       status: typeof rawOrder.status === 'string' ? rawOrder.status : 'Unknown',
+      orderConfirmationNo: typeof rawOrder.orderConfirmationNo === 'string' ? rawOrder.orderConfirmationNo : null,
+      orderConfirmationDate: typeof rawOrder.orderConfirmationDate === 'string' ? rawOrder.orderConfirmationDate : null,
       items,
     };
   });

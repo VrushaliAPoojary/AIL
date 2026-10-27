@@ -15,12 +15,49 @@ function addDays(date: string, count: number) {
 function assessItem(order: PurchaseOrder, item: PurchaseOrder['items'][number], settings: DeliverySettings, today: string): ItemAssessment {
   const reasons: string[] = [];
   const ordered = item.orderedQuantity;
-  const excluded = order.docstatus !== 1;
-  if (excluded) reasons.push(order.docstatus === 2 ? 'Purchase order is cancelled and excluded.' : 'Purchase order is not submitted and excluded.');
+
+  const normalizedStatus = (order.status || '').trim().toLowerCase();
+  const isClosed = normalizedStatus === 'closed';
+  const isCompleted = normalizedStatus === 'completed' || normalizedStatus === 'delivered';
+  const isClosedOrCompleted = isClosed || isCompleted;
+
+  let excluded = order.docstatus !== 1;
+  let exclusionReason: string | null = null;
+  if (order.docstatus === 2) {
+    exclusionReason = 'Purchase order is cancelled and excluded.';
+    reasons.push(exclusionReason);
+  } else if (order.docstatus === 0) {
+    exclusionReason = 'Purchase order is not submitted and excluded.';
+    reasons.push(exclusionReason);
+  } else if (order.docstatus !== 1) {
+    exclusionReason = `Purchase order has invalid document status (${order.docstatus}) and is excluded.`;
+    reasons.push(exclusionReason);
+  } else if (isClosed) {
+    excluded = true;
+    exclusionReason = 'Purchase order status is Closed and excluded from open delivery obligations.';
+    reasons.push(exclusionReason);
+  }
+
   if (!order.id || !order.id.trim() || !order.supplier.trim()) reasons.push('Purchase order identifier or supplier is missing.');
   if (!item.id || !item.id.trim()) reasons.push('Purchase order item identifier is missing.');
   if (!item.itemCode || !item.itemCode.trim()) reasons.push('Purchase order item code is missing.');
   if (ordered === null || !Number.isFinite(ordered) || ordered < 0) reasons.push('Ordered quantity is missing or invalid.');
+
+  // Acknowledgment 48h SLA Tracking
+  const hasConfNo = Boolean(order.orderConfirmationNo && order.orderConfirmationNo.trim());
+  const hasConfDate = validDate(order.orderConfirmationDate);
+  const isAcknowledged = hasConfNo || hasConfDate;
+  let acknowledgmentOverdue = false;
+  let acknowledgmentDueHours: number | null = null;
+  if (!isAcknowledged && validDate(order.transactionDate)) {
+    const txMs = new Date(`${order.transactionDate}T00:00:00Z`).getTime();
+    const todayMs = new Date(`${today}T00:00:00Z`).getTime();
+    const elapsedHours = Math.round((todayMs - txMs) / (1000 * 60 * 60));
+    acknowledgmentDueHours = elapsedHours;
+    if (elapsedHours > 48) {
+      acknowledgmentOverdue = true;
+    }
+  }
 
   const seenReceiptItems = new Set<string>();
   const validReceipts = item.receipts.filter((receipt) => {
@@ -76,6 +113,11 @@ function assessItem(order: PurchaseOrder, item: PurchaseOrder['items'][number], 
     else status = 'FUTURE_OPEN_DELIVERY';
   }
 
+  // Buffer and runway risk analysis
+  const bufferRisk: ItemAssessment['bufferRisk'] = 'UNAVAILABLE';
+  const bufferMarginDays: number | null = null;
+  const bufferDetails = 'Stock on-hand and production work-order demand evidence are not present in current query scope.';
+
   return {
     orderId: order.id,
     orderItemId: item.id,
@@ -91,6 +133,15 @@ function assessItem(order: PurchaseOrder, item: PurchaseOrder['items'][number], 
     deliveryStatus: status,
     partialReceipt: received !== null && received > 0 && outstanding !== null && outstanding > 0,
     excluded,
+    exclusionReason,
+    isAcknowledged,
+    acknowledgmentOverdue,
+    acknowledgmentDueHours,
+    orderStatus: order.status,
+    isClosedOrCompleted,
+    bufferRisk,
+    bufferMarginDays,
+    bufferDetails,
     verificationReasons: [...new Set(reasons)],
     receiptEvidence: validReceipts,
   };

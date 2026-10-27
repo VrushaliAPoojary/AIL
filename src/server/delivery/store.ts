@@ -4,8 +4,14 @@ import path from 'node:path';
 import { randomUUID } from 'node:crypto';
 import type { DeliverySettings, RunRecord } from './types';
 
-type StoreData = { runs: RunRecord[]; audit: Array<{ id: string; action: string; actor: string; at: string; runId?: string }>; settings: Partial<DeliverySettings> | null };
-const EMPTY: StoreData = { runs: [], audit: [], settings: null };
+type StoreData = {
+  runs: RunRecord[];
+  audit: Array<{ id: string; action: string; actor: string; at: string; runId?: string }>;
+  settings: Partial<DeliverySettings> | null;
+  chasers: import('./types').StagedChaserDraft[];
+  promises: import('./types').SupplierPromise[];
+};
+const EMPTY: StoreData = { runs: [], audit: [], settings: null, chasers: [], promises: [] };
 let writeChain = Promise.resolve();
 
 function storePath() {
@@ -19,6 +25,8 @@ async function readDisk(): Promise<StoreData> {
       runs: Array.isArray(parsed.runs) ? parsed.runs : [],
       audit: Array.isArray(parsed.audit) ? parsed.audit : [],
       settings: parsed.settings && typeof parsed.settings === 'object' ? parsed.settings : null,
+      chasers: Array.isArray(parsed.chasers) ? parsed.chasers : [],
+      promises: Array.isArray(parsed.promises) ? parsed.promises : [],
     };
   } catch (error) {
     if ((error as NodeJS.ErrnoException).code === 'ENOENT') return structuredClone(EMPTY);
@@ -90,3 +98,67 @@ export async function saveSettings(settings: Partial<DeliverySettings>, actor = 
     return data.settings;
   });
 }
+
+export async function listStagedChasers() {
+  return (await readStore()).chasers;
+}
+
+export async function saveStagedChaser(chaser: import('./types').StagedChaserDraft, actor = 'buyer') {
+  await transact((data) => {
+    const index = data.chasers.findIndex((c) => c.id === chaser.id);
+    if (index >= 0) data.chasers[index] = chaser;
+    else data.chasers.unshift(chaser);
+    data.chasers = data.chasers.slice(0, 200);
+    data.audit.unshift({
+      id: randomUUID(),
+      action: 'chaser.staged',
+      actor,
+      at: new Date().toISOString(),
+      runId: chaser.orderId,
+    });
+    data.audit = data.audit.slice(0, 500);
+  });
+}
+
+export async function updateChaserStatus(id: string, status: 'APPROVED' | 'DISMISSED', actor = 'buyer') {
+  return transact((data) => {
+    const chaser = data.chasers.find((c) => c.id === id);
+    if (!chaser) return null;
+    chaser.status = status;
+    if (status === 'APPROVED') {
+      chaser.approvedAt = new Date().toISOString();
+      chaser.approvedBy = actor;
+    }
+    data.audit.unshift({
+      id: randomUUID(),
+      action: status === 'APPROVED' ? 'chaser.approved' : 'chaser.dismissed',
+      actor,
+      at: new Date().toISOString(),
+      runId: chaser.orderId,
+    });
+    data.audit = data.audit.slice(0, 500);
+    return chaser;
+  });
+}
+
+export async function listSupplierPromises() {
+  return (await readStore()).promises;
+}
+
+export async function saveSupplierPromise(promise: import('./types').SupplierPromise, actor = 'buyer') {
+  await transact((data) => {
+    const index = data.promises.findIndex((p) => p.id === promise.id);
+    if (index >= 0) data.promises[index] = promise;
+    else data.promises.unshift(promise);
+    data.promises = data.promises.slice(0, 200);
+    data.audit.unshift({
+      id: randomUUID(),
+      action: 'promise.recorded',
+      actor,
+      at: new Date().toISOString(),
+      runId: promise.orderId,
+    });
+    data.audit = data.audit.slice(0, 500);
+  });
+}
+

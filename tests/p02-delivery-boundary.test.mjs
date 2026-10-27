@@ -8,6 +8,7 @@ import { createRunController } from '../src/server/delivery/runController.ts';
 import { validateSettings } from '../src/server/delivery/settingsValidation.ts';
 import { getIntegrationReadiness, setIntegrationReadiness } from '../src/server/delivery/readiness.ts';
 import { publicRunRecord } from '../src/server/delivery/types.ts';
+import { generateChaserDraft } from '../src/server/delivery/chaserService.ts';
 
 test('admin credentials require exact configured username and password and reject oversized values', () => {
   assert.equal(verifyAdminCredentials('buyer', 'correct-horse', 'buyer', 'correct-horse'), true);
@@ -227,4 +228,152 @@ test('delivery classification in demo mode preserves explicit demo and synthetic
   const readiness = getIntegrationReadiness(false);
   assert.equal(readiness.status, 'DEMO');
   assert.equal(readiness.failure, null);
+});
+
+test('generateChaserDraft enforces autoSend: false and contextual urgency', () => {
+  const mockOrder = {
+    id: 'PUR-ORD-2026-9999',
+    supplier: 'Apex Precision Metals',
+    transactionDate: '2026-10-15',
+    items: [
+      {
+        id: 'POI-9999-1',
+        itemCode: 'ST-BRG-6205',
+        orderedQuantity: 50,
+        scheduleDate: '2026-10-24',
+      },
+    ],
+  };
+
+  // Test 1: Overdue delivery chaser -> Critical urgency
+  const overdueAssessment = {
+    itemId: 'POI-9999-1',
+    deliveryStatus: 'OVERDUE',
+    outstandingQuantity: 50,
+    isAcknowledged: true,
+    acknowledgmentOverdue: false,
+  };
+  const chaserOverdue = generateChaserDraft(mockOrder, mockOrder.items[0], overdueAssessment);
+  assert.equal(chaserOverdue.autoSend, false);
+  assert.equal(chaserOverdue.urgency, 'Critical');
+  assert.equal(chaserOverdue.status, 'DRAFT');
+  assert.match(chaserOverdue.subject, /Overdue Delivery/i);
+  assert.match(chaserOverdue.body, /PUR-ORD-2026-9999/);
+  assert.match(chaserOverdue.body, /ST-BRG-6205/);
+
+  // Test 2: Acknowledgment overdue chaser -> Urgent urgency
+  const ackOverdueAssessment = {
+    itemId: 'POI-9999-1',
+    deliveryStatus: 'FUTURE_OPEN_DELIVERY',
+    outstandingQuantity: 50,
+    isAcknowledged: false,
+    acknowledgmentOverdue: true,
+    acknowledgmentDueHours: 72,
+  };
+  const chaserAck = generateChaserDraft(mockOrder, mockOrder.items[0], ackOverdueAssessment);
+  assert.equal(chaserAck.autoSend, false);
+  assert.equal(chaserAck.urgency, 'Urgent');
+  assert.match(chaserAck.subject, /Acknowledgment Overdue/i);
+  assert.match(chaserAck.body, /48-hour/i);
+});
+
+test('P02 report normalizer preserves supplier order confirmation fields when present', () => {
+  const report = normalizeAgentReport({
+    purchaseOrders: [
+      {
+        id: 'PO-CONF-001',
+        supplier: 'Apex Precision Metals',
+        docstatus: 1,
+        status: 'To Receive and Bill',
+        transactionDate: '2026-10-18',
+        orderConfirmationNo: 'APEX-CONF-4491',
+        orderConfirmationDate: '2026-10-19',
+        items: [
+          {
+            id: 'POI-CONF-1',
+            itemCode: 'ST-BRG-6205',
+            orderedQuantity: 25,
+            scheduleDate: '2026-10-28',
+            expectedDeliveryDate: null,
+            receiptRetrieval: {
+              scope: { purchaseOrderId: 'PO-CONF-001', purchaseOrderItemId: 'POI-CONF-1' },
+              complete: true,
+              pagesRetrieved: 1,
+              hasMore: false,
+            },
+            receipts: [],
+          },
+        ],
+      },
+    ],
+  });
+
+  const order = report.purchaseOrders[0];
+  assert.equal(order.orderConfirmationNo, 'APEX-CONF-4491');
+  assert.equal(order.orderConfirmationDate, '2026-10-19');
+});
+
+test('generateChaserDraft handles due today, partial receipt, and buyer notes', () => {
+  const mockOrder = {
+    id: 'PUR-ORD-2026-1001',
+    supplier: 'Apex Precision Metals',
+    transactionDate: '2026-10-10',
+    items: [
+      {
+        id: 'POI-1001-1',
+        itemCode: 'ST-BRG-6205',
+        orderedQuantity: 100,
+        scheduleDate: '2026-10-25',
+      },
+    ],
+  };
+
+  // Scenario 1: Delivery Due Today
+  const dueTodayAssessment = {
+    itemId: 'POI-1001-1',
+    deliveryStatus: 'DUE_TODAY',
+    outstandingQuantity: 100,
+    applicableDueDate: '2026-10-25',
+    isAcknowledged: true,
+    acknowledgmentOverdue: false,
+  };
+  const chaserToday = generateChaserDraft(mockOrder, mockOrder.items[0], dueTodayAssessment, 'Urgent line stop risk');
+  assert.equal(chaserToday.autoSend, false);
+  assert.equal(chaserToday.urgency, 'Urgent');
+  assert.match(chaserToday.subject, /Delivery Due Today/);
+  assert.match(chaserToday.body, /Urgent line stop risk/);
+
+  // Scenario 2: Partial receipt reconciliation
+  const partialAssessment = {
+    itemId: 'POI-1001-1',
+    deliveryStatus: 'UPCOMING',
+    receivedQuantity: 40,
+    outstandingQuantity: 60,
+    partialReceipt: true,
+    applicableDueDate: '2026-10-28',
+    isAcknowledged: true,
+    acknowledgmentOverdue: false,
+  };
+  const chaserPartial = generateChaserDraft(mockOrder, mockOrder.items[0], partialAssessment);
+  assert.equal(chaserPartial.autoSend, false);
+  assert.equal(chaserPartial.urgency, 'Urgent');
+  assert.match(chaserPartial.subject, /Balance Delivery Schedule/);
+  assert.match(chaserPartial.body, /40 units/);
+  assert.match(chaserPartial.body, /60 units/);
+
+  // Scenario 3: Routine schedule check
+  const routineAssessment = {
+    itemId: 'POI-1001-1',
+    deliveryStatus: 'FUTURE_OPEN_DELIVERY',
+    orderedQuantity: 100,
+    receivedQuantity: 0,
+    outstandingQuantity: 100,
+    applicableDueDate: '2026-11-15',
+    isAcknowledged: true,
+    acknowledgmentOverdue: false,
+  };
+  const chaserRoutine = generateChaserDraft(mockOrder, mockOrder.items[0], routineAssessment);
+  assert.equal(chaserRoutine.autoSend, false);
+  assert.equal(chaserRoutine.urgency, 'Routine');
+  assert.match(chaserRoutine.subject, /DELIVERY SCHEDULE CHECK/);
 });

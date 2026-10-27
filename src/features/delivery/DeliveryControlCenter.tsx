@@ -195,6 +195,23 @@ export function DeliveryControlCenter() {
     }
   }
 
+  async function approveChaser(chaserId: string) {
+    try {
+      const response = await fetch('/api/delivery/actions', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ action: 'approve-chaser', chaserId }),
+      });
+      if (!response.ok) {
+        const result = await response.json();
+        throw new Error(result.error || 'Failed to approve chaser.');
+      }
+      await load(true);
+    } catch (err) {
+      alert(err instanceof Error ? err.message : 'Error approving chaser');
+    }
+  }
+
   return (
     <div className="delivery-app-shell">
       {/* Sidebar Navigation */}
@@ -389,6 +406,8 @@ export function DeliveryControlCenter() {
         <OrderDrawer
           order={currentOrder}
           onClose={() => setSelectedOrder(null)}
+          stagedChasers={data?.stagedChasers}
+          onApproveChaser={approveChaser}
         />
       )}
 

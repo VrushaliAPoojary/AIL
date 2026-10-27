@@ -256,3 +256,60 @@ test('does not classify partial delivery as confirmed or received', () => {
   assert.equal(result.deliveryStatus, 'UPCOMING');
 });
 
+test('excludes Closed purchase orders from active delivery obligations', () => {
+  const po = order({
+    order: { status: 'Closed' },
+    item: { scheduleDate: '2026-10-20' }, // date in the past
+  });
+  const result = assess(po);
+  assert.equal(result.excluded, true);
+  assert.match(result.exclusionReason || '', /Closed/i);
+});
+
+test('correctly evaluates 48-hour supplier acknowledgment SLA', () => {
+  // 1. Order confirmed with confirmation reference and date
+  const poConfirmed = order({
+    order: {
+      transactionDate: '2026-10-20',
+      orderConfirmationNo: 'ACK-999',
+      orderConfirmationDate: '2026-10-21',
+    },
+  });
+  const resConfirmed = assess(poConfirmed);
+  assert.equal(resConfirmed.isAcknowledged, true);
+  assert.equal(resConfirmed.acknowledgmentOverdue, false);
+
+  // 2. Order unconfirmed, placed 5 days ago (> 48h)
+  const poOverdue = order({
+    order: {
+      transactionDate: '2026-10-20',
+      orderConfirmationNo: null,
+      orderConfirmationDate: null,
+    },
+  });
+  const resOverdue = assess(poOverdue, settings, '2026-10-25');
+  assert.equal(resOverdue.isAcknowledged, false);
+  assert.equal(resOverdue.acknowledgmentOverdue, true);
+  assert.ok(resOverdue.acknowledgmentDueHours && resOverdue.acknowledgmentDueHours > 48);
+
+  // 3. Order unconfirmed, placed today (< 48h)
+  const poRecent = order({
+    order: {
+      transactionDate: '2026-10-25',
+      orderConfirmationNo: null,
+      orderConfirmationDate: null,
+    },
+  });
+  const resRecent = assess(poRecent, settings, '2026-10-25');
+  assert.equal(resRecent.isAcknowledged, false);
+  assert.equal(resRecent.acknowledgmentOverdue, false);
+});
+
+test('provides transparent UNAVAILABLE fallback for inventory buffer risk without hallucinating scores', () => {
+  const po = order();
+  const result = assess(po);
+  assert.equal(result.bufferRisk, 'UNAVAILABLE');
+  assert.equal(result.bufferMarginDays, null);
+  assert.match(result.bufferDetails || '', /not present in current query scope/i);
+});
+

@@ -12,6 +12,8 @@ import { DeliveryStatusBadge } from './StatusBadges';
 interface OrderDrawerProps {
   order: any;
   onClose: () => void;
+  stagedChasers?: any[];
+  onApproveChaser?: (id: string) => void;
 }
 
 const fmtDate = (value?: string | null) =>
@@ -31,7 +33,7 @@ const pretty = (val?: string) =>
         .replace(/\b\w/g, (c) => c.toUpperCase())
     : 'Unknown';
 
-export function OrderDrawer({ order, onClose }: OrderDrawerProps) {
+export function OrderDrawer({ order, onClose, stagedChasers = [], onApproveChaser }: OrderDrawerProps) {
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
       if (e.key === 'Escape') onClose();
@@ -247,6 +249,43 @@ export function OrderDrawer({ order, onClose }: OrderDrawerProps) {
                   )}
                 </div>
 
+                {/* Supplier Order Acknowledgment (48h SLA) */}
+                <div className="retrieval-audit-section">
+                  <div className="section-mini-heading">Supplier Order Acknowledgment (48h SLA)</div>
+                  <div className="audit-specs-grid">
+                    <div className="spec-item">
+                      <span className="spec-label">Confirmation Reference</span>
+                      <strong className="spec-value monospace">
+                        {order.orderConfirmationNo || 'None recorded'}
+                      </strong>
+                    </div>
+                    <div className="spec-item">
+                      <span className="spec-label">Confirmation Date</span>
+                      <strong className="spec-value">
+                        {fmtDate(order.orderConfirmationDate)}
+                      </strong>
+                    </div>
+                    <div className="spec-item">
+                      <span className="spec-label">Acknowledgment SLA</span>
+                      <strong
+                        className={`spec-value ${
+                          assessment?.isAcknowledged
+                            ? 'text-green'
+                            : assessment?.acknowledgmentOverdue
+                            ? 'text-red font-bold'
+                            : 'text-amber'
+                        }`}
+                      >
+                        {assessment?.isAcknowledged
+                          ? '✓ Acknowledged'
+                          : assessment?.acknowledgmentOverdue
+                          ? '⚠️ Overdue (>48h SLA Breached)'
+                          : '⏳ Pending (<48h)'}
+                      </strong>
+                    </div>
+                  </div>
+                </div>
+
                 {/* Receipt Retrieval Audit Trail */}
                 <div className="retrieval-audit-section">
                   <div className="section-mini-heading">Receipt Retrieval Audit Trail</div>
@@ -305,6 +344,53 @@ export function OrderDrawer({ order, onClose }: OrderDrawerProps) {
               </div>
             );
           })}
+
+          {/* Staged Chasers Dossier Section */}
+          {stagedChasers && stagedChasers.length > 0 && (
+            <div className="receipt-evidence-section" style={{ marginTop: '24px' }}>
+              <div className="section-mini-heading">
+                Staged Supplier Chaser Follow-ups ({stagedChasers.length}) · auto_send: false
+              </div>
+              <div className="receipt-records-stack">
+                {stagedChasers.map((chaser: any) => (
+                  <div key={chaser.id} className="receipt-evidence-card">
+                    <div className="receipt-card-top">
+                      <div className="receipt-id-group">
+                        <strong className="receipt-number monospace">{chaser.id}</strong>
+                        <span className="receipt-item-row monospace">
+                          Status: {chaser.status}
+                        </span>
+                      </div>
+                      <span className="exact-match-tag">Urgency: {chaser.urgency}</span>
+                    </div>
+                    <div style={{ marginTop: '8px', fontSize: '13px' }}>
+                      <p><strong>Subject:</strong> {chaser.subject}</p>
+                      <pre style={{ whiteSpace: 'pre-wrap', background: '#f8fafc', padding: '10px', borderRadius: '6px', fontSize: '12px', marginTop: '6px', border: '1px solid #e2e8f0', color: '#1e293b' }}>
+                        {chaser.body}
+                      </pre>
+                    </div>
+                    {chaser.status === 'DRAFT' && onApproveChaser && (
+                      <div style={{ marginTop: '10px' }}>
+                        <button
+                          type="button"
+                          className="drawer-action-close"
+                          style={{ background: '#059669', borderColor: '#059669', color: '#ffffff', padding: '6px 14px', fontSize: '12px', borderRadius: '4px' }}
+                          onClick={() => onApproveChaser(chaser.id)}
+                        >
+                          ✓ Approve Chaser &amp; Authorize Dispatch
+                        </button>
+                      </div>
+                    )}
+                    {chaser.status === 'APPROVED' && (
+                      <div style={{ marginTop: '8px', fontSize: '12px', color: '#059669', fontWeight: 600 }}>
+                        ✓ Approved by {chaser.approvedBy || 'Buyer'} on {new Date(chaser.approvedAt).toLocaleDateString()}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Drawer Footer */}

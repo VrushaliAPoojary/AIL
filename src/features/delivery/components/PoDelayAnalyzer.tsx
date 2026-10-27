@@ -107,75 +107,87 @@ export function PoDelayAnalyzer({
     const percentFulfilled =
       orderedQty > 0 ? Math.min(100, Math.round((receivedQty / orderedQty) * 100)) : 0;
 
+    const isAcknowledged = primaryAssessment.isAcknowledged ?? Boolean(activePo.orderConfirmationNo || activePo.orderConfirmationDate);
+    const acknowledgmentOverdue = primaryAssessment.acknowledgmentOverdue ?? (!isAcknowledged && (primaryAssessment.acknowledgmentDueHours ?? 0) > 48);
+
     // Build specific procurement solutions based on status & evidence
     const solutions: Array<{ step: string; title: string; action: string; urgency: 'Critical' | 'High' | 'Normal' }> = [];
 
-    if (status === 'OVERDUE') {
+    if (acknowledgmentOverdue && !isAcknowledged) {
       solutions.push({
         step: '1',
+        title: 'Stage 48-Hour Acknowledgment Chaser',
+        action: `Contact ${activePo.supplier}. The 48-hour acknowledgment SLA has lapsed without an order confirmation reference for PO ${activePo.id}. Request written acceptance and confirmed dispatch date.`,
+        urgency: 'Critical',
+      });
+    }
+
+    if (status === 'OVERDUE') {
+      solutions.push({
+        step: solutions.length + 1 + '',
         title: 'Immediate Supplier Follow-up & Dispatch Tracking',
         action: `Contact ${activePo.supplier} immediately. Request the consignment dispatch note (e.g. AWB/tracking code) for the remaining ${outstandingQty} outstanding units of ${primaryItem.itemCode || 'item'}.`,
         urgency: 'Critical',
       });
       solutions.push({
-        step: '2',
+        step: solutions.length + 1 + '',
         title: 'Warehouse Inward Staging Inspection',
         action: `Check goods-receiving staging at the dock. Confirm whether a partial physical shipment arrived without an approved ERPNext Purchase Receipt docstatus.`,
         urgency: 'High',
       });
       solutions.push({
-        step: '3',
+        step: solutions.length + 1 + '',
         title: 'Production Line Impact Mitigation',
         action: `Verify stock buffer in ERPNext for ${primaryItem.itemCode}. If work order schedule is jeopardized, request emergency expedited freight at supplier expense.`,
         urgency: 'High',
       });
       solutions.push({
-        step: '4',
-        title: 'Update Supplier Promise Date in ERPNext',
-        action: `Obtain a formal revised delivery commitment from ${activePo.supplier} and record it under expected_delivery_date to maintain procurement auditability.`,
+        step: solutions.length + 1 + '',
+        title: 'Update Supplier Promise Date in Exception Workflow',
+        action: `Obtain a formal revised delivery commitment from ${activePo.supplier} and record it in the exception workflow to maintain procurement auditability without overwriting contractual baseline.`,
         urgency: 'Normal',
       });
     } else if (status === 'PARTIALLY_RECEIVED' || primaryAssessment.partialReceipt) {
       solutions.push({
-        step: '1',
+        step: solutions.length + 1 + '',
         title: 'Reconcile Balance Delivery Schedule',
         action: `A partial receipt of ${receivedQty} units is verified. Contact ${activePo.supplier} to confirm the ship date and carrier details for the remaining ${outstandingQty} units.`,
         urgency: 'High',
       });
       solutions.push({
-        step: '2',
+        step: solutions.length + 1 + '',
         title: 'Inspect Quality of Received Batch',
         action: `Confirm with Quality Assurance that the ${receivedQty} received units passed incoming inspection before clearing billing release in ERPNext.`,
         urgency: 'Normal',
       });
       solutions.push({
-        step: '3',
+        step: solutions.length + 1 + '',
         title: 'Monitor Due Date for Balance',
         action: `Ensure the remaining balance is scheduled to arrive before ${dueDate || 'target date'} to prevent partial shipment escalation.`,
         urgency: 'Normal',
       });
     } else if (status === 'DUE_TODAY') {
       solutions.push({
-        step: '1',
+        step: solutions.length + 1 + '',
         title: 'Dock Intake Alert',
         action: `Alert warehouse receiving team that ${orderedQty} units from ${activePo.supplier} are scheduled for delivery today. Prepare unloading bay and goods receipt paperwork.`,
         urgency: 'High',
       });
       solutions.push({
-        step: '2',
+        step: solutions.length + 1 + '',
         title: 'Carrier Gate Verification',
         action: `Confirm truck arrival with carrier logistics coordinator before the daily receiving cut-off window.`,
         urgency: 'Normal',
       });
     } else if (status === 'NEEDS_VERIFICATION') {
       solutions.push({
-        step: '1',
+        step: solutions.length + 1 + '',
         title: 'Audit Source Receipt Row References',
         action: `Evidence discrepancy detected: ${primaryAssessment.verificationReasons?.[0] || 'Unverified row link or incomplete pagination'}. Open ERPNext and verify item code and row IDs match exact PO line.`,
         urgency: 'High',
       });
       solutions.push({
-        step: '2',
+        step: solutions.length + 1 + '',
         title: 'Verify Draft or Cancelled Receipts',
         action: `Check if any Purchase Receipt against ${activePo.id} is currently in draft (docstatus 0) or cancelled (docstatus 2). Submit draft receipts once goods are inspected.`,
         urgency: 'Normal',
@@ -209,10 +221,40 @@ export function PoDelayAnalyzer({
       isDueToday,
       isUpcoming,
       percentFulfilled,
+      isAcknowledged,
+      acknowledgmentOverdue,
+      confirmationNo: activePo.orderConfirmationNo,
+      confirmationDate: activePo.orderConfirmationDate,
       solutions,
       receipts: primaryItem.receipts || [],
     };
   }, [activePo, monitoringDate, dueDateBasis]);
+
+  const [chaserBusy, setChaserBusy] = useState(false);
+  const [chaserResult, setChaserResult] = useState<string | null>(null);
+
+  const handleStageChaser = async () => {
+    if (!activePo) return;
+    setChaserBusy(true);
+    setChaserResult(null);
+    try {
+      const res = await fetch('/api/delivery/actions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          action: 'stage-chaser',
+          payload: { orderId: activePo.id },
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Failed to stage chaser.');
+      setChaserResult(`Chaser draft staged (${data.chaser.id}) with auto_send: false. Staged for human review.`);
+    } catch (err: any) {
+      setChaserResult(`Error: ${err.message}`);
+    } finally {
+      setChaserBusy(false);
+    }
+  };
 
   return (
     <section className="po-delay-analyzer-card" aria-label="Purchase Order Delay and Solution Finder">
@@ -321,6 +363,21 @@ export function PoDelayAnalyzer({
               <span className="banner-po-id">{activePo.id}</span>
               <DeliveryStatusBadge status={analysis.status} size="lg" />
               <span className="banner-supplier-text">Supplier: <strong>{activePo.supplier}</strong></span>
+              <div className="banner-ack-status-row">
+                {analysis.isAcknowledged ? (
+                  <span className="ack-badge ack-confirmed">
+                    ✓ Acknowledged: {analysis.confirmationNo || 'Confirmed'} {analysis.confirmationDate ? `(${analysis.confirmationDate})` : ''}
+                  </span>
+                ) : analysis.acknowledgmentOverdue ? (
+                  <span className="ack-badge ack-overdue">
+                    ⚠️ Acknowledgment Overdue (&gt;48h SLA)
+                  </span>
+                ) : (
+                  <span className="ack-badge ack-pending">
+                    ⏳ Acknowledgment Pending (&lt;48h)
+                  </span>
+                )}
+              </div>
             </div>
 
             <div className="banner-calc-col">
@@ -382,7 +439,24 @@ export function PoDelayAnalyzer({
                   AI & rule-based operational steps to resolve this delivery status and mitigate production risk.
                 </p>
               </div>
+              <div className="solutions-action-group">
+                <button
+                  type="button"
+                  className="analyzer-stage-chaser-btn"
+                  onClick={handleStageChaser}
+                  disabled={chaserBusy}
+                  title="Stage a human-reviewed supplier follow-up draft (auto_send: false)"
+                >
+                  {chaserBusy ? 'Staging…' : '✉️ Stage Supplier Chaser Draft'}
+                </button>
+              </div>
             </div>
+
+            {chaserResult && (
+              <div className={`chaser-feedback-banner ${chaserResult.startsWith('Error') ? 'feedback-error' : 'feedback-success'}`}>
+                {chaserResult}
+              </div>
+            )}
 
             <div className="solutions-list">
               {analysis.solutions.map((item) => (

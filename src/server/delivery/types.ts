@@ -50,6 +50,8 @@ export type PurchaseOrder = {
   transactionDate: string | null;
   docstatus: number;
   status: string;
+  orderConfirmationNo?: string | null;
+  orderConfirmationDate?: string | null;
   items: PurchaseOrderItem[];
 };
 
@@ -68,8 +70,48 @@ export type ItemAssessment = {
   deliveryStatus: DeliveryStatus;
   partialReceipt: boolean;
   excluded: boolean;
+  exclusionReason?: string | null;
+  isAcknowledged: boolean;
+  acknowledgmentOverdue: boolean;
+  acknowledgmentDueHours?: number | null;
+  orderStatus: string;
+  isClosedOrCompleted: boolean;
+  bufferRisk: 'TIER_1_ROUTINE' | 'TIER_2_EXPEDITE' | 'TIER_3_CRITICAL' | 'UNAVAILABLE';
+  bufferMarginDays: number | null;
+  bufferDetails?: string;
   verificationReasons: string[];
   receiptEvidence: ReceiptEvidence[];
+};
+
+export type StagedChaserDraft = {
+  id: string;
+  orderId: string;
+  orderItemId: string;
+  supplier: string;
+  itemCode: string;
+  recipientEmail?: string | null;
+  subject: string;
+  body: string;
+  urgency: 'Routine' | 'Urgent' | 'Critical';
+  autoSend: false;
+  status: 'DRAFT' | 'APPROVED' | 'DISMISSED';
+  createdAt: string;
+  approvedAt: string | null;
+  approvedBy: string | null;
+};
+
+export type SupplierPromise = {
+  id: string;
+  orderId: string;
+  orderItemId: string;
+  originalRequestedDate: string | null;
+  promisedDate: string;
+  promisedQuantity?: number | null;
+  state: 'PROPOSED' | 'AWAITING_APPROVAL' | 'CONFIRMED' | 'REJECTED';
+  sourceReference: string;
+  recordedAt: string;
+  recordedBy: string;
+  notes?: string;
 };
 
 export type DeliverySettings = {
@@ -96,3 +138,4 @@ export function publicRunRecord(run: RunRecord): RunRecord {
     error: run.status === 'FAILED' ? 'Run failed. Check server-side logs for details.' : null,
   };
 }
+
