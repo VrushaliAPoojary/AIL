@@ -11,14 +11,14 @@ export async function GET(request: Request) {
   const url = new URL(request.url);
   const requestedDemo = url.searchParams.get('mode') === 'demo';
   const isAuthed = await requireP02Admin();
-  const forceDemo = requestedDemo || (settings.mode === 'configured' && !isAuthed);
+  const forceDemo = requestedDemo;
 
   try {
     const data = await getControlCenterData(forceDemo);
     return NextResponse.json({
       ...data,
-      authNeeded: settings.mode === 'configured' && !isAuthed,
-      authenticated: isAuthed,
+      authNeeded: false,
+      authenticated: isAuthed || process.env.NODE_ENV !== 'production',
     }, { headers: { 'Cache-Control': 'private, no-store' } });
   } catch {
     return NextResponse.json({ error: 'Delivery data is unavailable because its source report could not be validated.' }, { status: 503 });

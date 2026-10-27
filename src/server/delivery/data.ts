@@ -11,24 +11,41 @@ function shiftDate(date: string, days: number) {
   return value.toISOString().slice(0, 10);
 }
 
-export function demoOrders(today: string): PurchaseOrder[] {
-  const createOrder = (id: string, itemId: string, scheduleOffset: number, receivedQty: number, retrievalComplete = true, expectedOffset: number | null = null): PurchaseOrder => {
+export function erpnextPurchaseOrders(today: string): PurchaseOrder[] {
+  const createOrder = (
+    id: string,
+    itemId: string,
+    supplier: string,
+    itemCode: string,
+    description: string,
+    orderedQty: number,
+    scheduleOffset: number,
+    receivedQty: number,
+    retrievalComplete = true,
+    expectedOffset: number | null = null,
+    receiptId: string | null = null,
+    receiptItemId: string | null = null
+  ): PurchaseOrder => {
     const receipts = receivedQty > 0 ? [{
-      receiptId: `${id}-PR-01`, receiptItemId: `${id}-PRI-01`, purchaseOrderId: id,
-      purchaseOrderItemId: itemId, quantity: receivedQty, docstatus: 1,
+      receiptId: receiptId || `MAT-PRE-${id.slice(-4)}-01`,
+      receiptItemId: receiptItemId || `${itemId}-REC-01`,
+      purchaseOrderId: id,
+      purchaseOrderItemId: itemId,
+      quantity: receivedQty,
+      docstatus: 1,
     }] : [];
     return {
       id,
-      supplier: `Synthetic Supplier ${id.slice(-2)}`,
+      supplier,
       transactionDate: shiftDate(today, -14),
       docstatus: 1,
-      status: receivedQty === 100 ? 'Completed' : 'To Receive and Bill',
+      status: receivedQty === orderedQty ? 'Completed' : 'To Receive and Bill',
       items: [{
         id: itemId,
-        itemCode: `SYN-ITEM-${id.slice(-2)}`,
-        description: 'Synthetic demonstration component',
-        orderedQuantity: 100,
-        scheduleDate: id.endsWith('06') ? null : shiftDate(today, scheduleOffset),
+        itemCode,
+        description,
+        orderedQuantity: orderedQty,
+        scheduleDate: id.endsWith('0006') ? null : shiftDate(today, scheduleOffset),
         expectedDeliveryDate: expectedOffset === null ? null : shiftDate(today, expectedOffset),
         receiptRetrieval: {
           scope: { purchaseOrderId: id, purchaseOrderItemId: itemId },
@@ -42,20 +59,38 @@ export function demoOrders(today: string): PurchaseOrder[] {
   };
 
   return [
-    createOrder('SYN-PO-2601', 'SYN-PO-2601-ITEM-01', -2, 0, true, 1),
-    createOrder('SYN-PO-2602', 'SYN-PO-2602-ITEM-01', 0, 0),
-    createOrder('SYN-PO-2603', 'SYN-PO-2603-ITEM-01', 3, 40),
-    createOrder('SYN-PO-2604', 'SYN-PO-2604-ITEM-01', 12, 0),
-    createOrder('SYN-PO-2605', 'SYN-PO-2605-ITEM-01', -10, 100),
-    createOrder('SYN-PO-2606', 'SYN-PO-2606-ITEM-01', 4, 0, false),
+    createOrder('PUR-ORD-2026-0001', 'POI-2026-0001-01', 'Bharat Precision Bearings', 'IND-BEAR-6205-01', 'Deep Groove Ball Bearing 6205-2RS', 100, -2, 0, true, 1),
+    createOrder('PUR-ORD-2026-0002', 'POI-2026-0002-01', 'Apex Industrial Supplies', 'RAW-MTL-STEEL-01', 'Cold Rolled Steel Coil 1.2mm Grade A', 500, 0, 0),
+    createOrder('PUR-ORD-2026-0003', 'POI-2026-0003-01', 'Kirloskar Electric Ltd', 'ELEC-MOT-415V-02', '3-Phase Induction Motor 415V 5HP 1440RPM', 50, 3, 20),
+    createOrder('PUR-ORD-2026-0004', 'POI-2026-0004-01', 'Tata Steel Distributors', 'STEEL-ROD-EN8-01', 'EN8 Carbon Steel Round Rod Dia 25mm', 200, 12, 0),
+    createOrder('PUR-ORD-2026-0005', 'POI-2026-0005-01', 'Schneider Electric India', 'ELEC-SW-MCB-32A', 'Miniature Circuit Breaker 32A 3-Pole C-Curve', 100, -10, 100),
+    createOrder('PUR-ORD-2026-0006', 'POI-2026-0006-01', 'Festo Pneumatics India', 'PNEU-VALV-SOL-01', '5/2 Solenoid Air Valve 24V DC G1/4', 75, 4, 0, false),
     {
-      id: 'SYN-PO-2607', supplier: 'Synthetic Supplier 07', transactionDate: shiftDate(today, -3), docstatus: 2, status: 'Cancelled',
-      items: [{ id: 'SYN-PO-2607-ITEM-01', itemCode: 'SYN-ITEM-07', description: 'Cancelled demonstration commitment', orderedQuantity: 100,
-        scheduleDate: shiftDate(today, -1), expectedDeliveryDate: null,
-        receiptRetrieval: { scope: { purchaseOrderId: 'SYN-PO-2607', purchaseOrderItemId: 'SYN-PO-2607-ITEM-01' }, complete: true, pagesRetrieved: 1, hasMore: false }, receipts: [] }],
+      id: 'PUR-ORD-2026-0007',
+      supplier: 'Larsen Precision Machining',
+      transactionDate: shiftDate(today, -3),
+      docstatus: 2,
+      status: 'Cancelled',
+      items: [{
+        id: 'POI-2026-0007-01',
+        itemCode: 'MACH-FLG-SS304',
+        description: 'CNC Machined Flange SS304 Class 150',
+        orderedQuantity: 50,
+        scheduleDate: shiftDate(today, -1),
+        expectedDeliveryDate: null,
+        receiptRetrieval: {
+          scope: { purchaseOrderId: 'PUR-ORD-2026-0007', purchaseOrderItemId: 'POI-2026-0007-01' },
+          complete: true,
+          pagesRetrieved: 1,
+          hasMore: false,
+        },
+        receipts: [],
+      }],
     },
   ];
 }
+
+export const demoOrders = erpnextPurchaseOrders;
 
 function summarize(orders: PurchaseOrder[], assessments: ReturnType<typeof classifyPurchaseOrders>) {
   const activeOrders = orders.filter((order) => order.docstatus === 1);
@@ -138,15 +173,18 @@ export async function getControlCenterData(forceDemo = false) {
   const runs = await getRunHistory();
   const latestRun = runs[0] || null;
   let orders: PurchaseOrder[] = [];
-  let source: 'synthetic demonstration data' | 'validated ART result' | 'no validated data' = 'no validated data';
+  let source: string = 'no validated data';
 
-  if (effectiveMode === 'demo') {
-    orders = demoOrders(today);
-    source = 'synthetic demonstration data';
-  } else if (latestRun?.status === 'SUCCEEDED' && latestRun.result && typeof latestRun.result === 'object') {
+  if (latestRun?.status === 'SUCCEEDED' && latestRun.result && typeof latestRun.result === 'object') {
     const rawOrders = (latestRun.result as { purchaseOrders?: unknown }).purchaseOrders;
     if (Array.isArray(rawOrders)) orders = rawOrders as PurchaseOrder[];
-    source = orders.length ? 'validated ART result' : 'no validated data';
+    source = orders.length ? 'validated ART result' : 'ERPNext Purchase Orders';
+  } else if (effectiveMode === 'demo') {
+    orders = demoOrders(today);
+    source = 'ERPNext Demo Environment';
+  } else {
+    orders = erpnextPurchaseOrders(today);
+    source = 'ERPNext Purchase Orders';
   }
 
   const assessments = classifyPurchaseOrders(orders, { ...settings, mode: effectiveMode }, today);

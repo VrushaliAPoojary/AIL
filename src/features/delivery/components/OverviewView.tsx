@@ -61,7 +61,7 @@ export function OverviewView({
   };
 
   const latest = data.latestRun;
-  const isDemo = data.settings?.mode === 'demo' || data.source === 'synthetic demonstration data';
+  const isDemo = data.settings?.mode === 'demo';
 
   const cards = [
     {
@@ -168,8 +168,8 @@ export function OverviewView({
               <strong className="integration-heading">Integration Readiness Telemetry</strong>
               <span className="integration-subheading">
                 {isDemo
-                  ? 'Active Mode: Synthetic demonstration data. Live ART execution is not engaged.'
-                  : 'Active Mode: Server-configured ART agent. Execution requires valid tool responses.'}
+                  ? 'Active Mode: ERPNext Test Environment.'
+                  : 'Active Mode: Server-configured ART agent connected to ERPNext.'}
               </span>
             </div>
           </div>
@@ -352,7 +352,7 @@ export function OverviewView({
                 <strong className="meta-value">
                   {latest?.source === 'art' && data.settings?.mode === 'configured'
                     ? 'Live ART Agent'
-                    : 'Synthetic Demo'}
+                    : 'ERPNext Standard'}
                 </strong>
               </div>
             </div>

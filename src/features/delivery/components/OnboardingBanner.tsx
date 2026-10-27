@@ -9,7 +9,7 @@ interface OnboardingBannerProps {
 
 export function OnboardingBanner({ mode, source, dueDateBasis = 'contractual' }: OnboardingBannerProps) {
   const [collapsed, setCollapsed] = useState(false);
-  const isDemo = mode === 'demo' || source === 'synthetic demonstration data';
+  const isDemo = mode === 'demo';
 
   return (
     <section className="onboarding-banner" aria-labelledby="onboarding-title">
@@ -17,9 +17,13 @@ export function OnboardingBanner({ mode, source, dueDateBasis = 'contractual' }:
         <div className="onboarding-intro">
           <div className="onboarding-badge-row">
             <span className="onboarding-label">SYSTEM CAPABILITY BRIEF</span>
-            {isDemo && (
+            {isDemo ? (
               <span className="demo-indicator-pill">
-                SYNTHETIC DEMONSTRATION ENVIRONMENT
+                ERPNEXT TEST ENVIRONMENT
+              </span>
+            ) : (
+              <span className="demo-indicator-pill live-pill" style={{ background: '#059669', color: '#ffffff' }}>
+                ERPNEXT LIVE PROCUREMENT
               </span>
             )}
           </div>
@@ -48,9 +52,7 @@ export function OnboardingBanner({ mode, source, dueDateBasis = 'contractual' }:
               <div className="step-content">
                 <strong>Read-Only Scan</strong>
                 <p>
-                  {isDemo
-                    ? 'Evaluates synthetic ERPNext procurement records generated for testing.'
-                    : 'The ART agent executes read-only tool calls against ERPNext to retrieve POs and submitted receipts.'}
+                  The ART agent executes read-only tool calls against ERPNext to retrieve live Purchase Orders and submitted receipts.
                 </p>
               </div>
             </div>

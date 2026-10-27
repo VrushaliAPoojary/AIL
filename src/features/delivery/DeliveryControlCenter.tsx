@@ -155,7 +155,7 @@ export function DeliveryControlCenter() {
         typeof crypto !== 'undefined' && 'randomUUID' in crypto
           ? crypto.randomUUID()
           : `${Date.now()}-${Math.random()}`;
-      const isLiveMode = data?.settings?.mode === 'configured' && authenticated;
+      const isLiveMode = data?.settings?.mode === 'configured';
       const response = await fetch('/api/delivery/runs', {
         method: 'POST',
         headers: {
@@ -368,9 +368,9 @@ export function DeliveryControlCenter() {
         {/* Global Footer */}
         <footer className="delivery-global-footer">
           <div className="footer-left">
-            <strong>P02 Supplier Delivery Control Center</strong>
+            <strong>ERPNext Supplier Delivery Control Center</strong>
             <span className="footer-sep">·</span>
-            <span>ART Investigation Lab</span>
+            <span>ERPNext Delivery & Delay Management</span>
             <span className="footer-sep">·</span>
             <span>Read-Only Integration Architecture</span>
           </div>

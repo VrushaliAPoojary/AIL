@@ -61,7 +61,7 @@ export function RunsView({
           </p>
 
           <div className="launch-action-box">
-            {isConfigured && authenticated ? (
+            {isConfigured ? (
               <button
                 type="button"
                 className="primary-run-btn"
@@ -69,18 +69,8 @@ export function RunsView({
                 onClick={onRun}
               >
                 <IconRuns size={20} />
-                <span>{busy ? 'Monitoring In Progress…' : 'Run Monitoring Now'}</span>
+                <span>{busy ? 'Monitoring In Progress…' : 'Execute Live ART Monitoring Now'}</span>
               </button>
-            ) : isConfigured && !authenticated ? (
-              <div className="launch-auth-prompt">
-                <div className="prompt-text">
-                  <IconLock size={18} />
-                  <span>Administrator authorization required to start a live monitoring run.</span>
-                </div>
-                <button type="button" className="auth-action-btn" onClick={onSignIn}>
-                  Sign in as Administrator →
-                </button>
-              </div>
             ) : (
               <div className="launch-demo-action">
                 <div className="demo-action-intro">

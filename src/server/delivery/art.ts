@@ -57,15 +57,17 @@ export async function executeArtMonitoring(run: RunRecord): Promise<unknown> {
     const report = normalizeAgentReport(result);
     setIntegrationReadiness('VALIDATED');
     return report;
-  } catch {
+  } catch (error) {
     const failure: IntegrationFailureCode = phase === 'connection' ? 'CONNECTION_FAILED' : phase === 'report' ? 'REPORT_INVALID' : 'RUN_FAILED';
     setIntegrationReadiness('FAILED', failure);
-    const message = failure === 'CONNECTION_FAILED'
+    const detail = error instanceof Error ? error.message : String(error);
+    const baseMessage = failure === 'CONNECTION_FAILED'
       ? 'ART connection failed. Check server-side configuration and ART availability.'
       : failure === 'REPORT_INVALID'
         ? 'ART returned a report that did not pass P02 validation.'
         : 'ART monitoring run failed. Check the server-side integration logs.';
-    throw new Error(message);
+    console.error(`[ART Execution Error - ${failure}]:`, detail);
+    throw new Error(detail ? `${baseMessage} (${detail})` : baseMessage);
   } finally {
     if (adk) {
       try { await adk.disconnect(); } catch { /* Do not expose SDK disconnect details to clients. */ }

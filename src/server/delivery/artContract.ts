@@ -26,14 +26,40 @@ function normalizeReceiptRetrieval(value: unknown, purchaseOrderId: string, purc
   };
 }
 
+function extractJsonString(str: string): string {
+  const trimmed = str.trim();
+  const fenceMatch = trimmed.match(/```(?:json)?\s*([\s\S]*?)\s*```/);
+  if (fenceMatch) return fenceMatch[1].trim();
+  const firstBrace = trimmed.indexOf('{');
+  const lastBrace = trimmed.lastIndexOf('}');
+  if (firstBrace !== -1 && lastBrace !== -1 && lastBrace > firstBrace) {
+    return trimmed.slice(firstBrace, lastBrace + 1);
+  }
+  return trimmed;
+}
+
 function getReportPayload(value: unknown): Record<string, unknown> | null {
   if (typeof value === 'string') {
-    try { return getReportPayload(JSON.parse(value)); } catch { return null; }
+    try {
+      return getReportPayload(JSON.parse(value));
+    } catch {
+      try {
+        const cleaned = extractJsonString(value);
+        return getReportPayload(JSON.parse(cleaned));
+      } catch {
+        return null;
+      }
+    }
   }
   if (!value || typeof value !== 'object' || Array.isArray(value)) return null;
   const candidate = value as Record<string, unknown>;
   if (Array.isArray(candidate.purchaseOrders)) return candidate;
-  if (candidate.report && typeof candidate.report === 'object') return getReportPayload(candidate.report);
+  for (const key of ['report', 'output', 'text', 'content', 'result', 'data', 'response', 'message']) {
+    if (candidate[key] !== undefined && candidate[key] !== null) {
+      const nested = getReportPayload(candidate[key]);
+      if (nested) return nested;
+    }
+  }
   return null;
 }
 

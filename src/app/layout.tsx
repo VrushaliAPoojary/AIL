@@ -1,11 +1,10 @@
 import type { Metadata } from 'next';
 import '../index.css';
 import '../App.css';
-import { Header } from '../components/Header/Header';
 
 export const metadata: Metadata = {
-  title: 'ART Investigation Lab',
-  description: 'Turn discoveries into shared intelligence.',
+  title: 'ERPNext Supplier Delivery & Delay Control Center',
+  description: 'Supplier Delivery Confirmation & Delay Escalation for ERPNext',
 };
 
 export default function RootLayout({
@@ -15,12 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <div className="app-container">
-          <Header />
-          <main className="main-content">{children}</main>
-        </div>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

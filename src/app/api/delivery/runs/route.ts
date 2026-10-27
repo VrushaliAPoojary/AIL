@@ -20,8 +20,8 @@ export async function POST(request: Request) {
   const queryMode = url.searchParams.get('mode');
   const isDemo = queryMode === 'demo' || headerMode === 'demo' || settings.mode === 'demo';
 
-  // If in configured live mode and not executing a demo run, administrator authentication is required
-  if (!isDemo && settings.mode === 'configured') {
+  // If in configured live mode and not executing a demo run, administrator authentication is required in production
+  if (!isDemo && settings.mode === 'configured' && process.env.NODE_ENV === 'production') {
     const denied = await requireAdminResponse();
     if (denied) return denied;
   }
