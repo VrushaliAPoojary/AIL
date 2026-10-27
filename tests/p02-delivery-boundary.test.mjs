@@ -9,6 +9,7 @@ import { validateSettings } from '../src/server/delivery/settingsValidation.ts';
 import { getIntegrationReadiness, setIntegrationReadiness } from '../src/server/delivery/readiness.ts';
 import { publicRunRecord } from '../src/server/delivery/types.ts';
 import { generateChaserDraft } from '../src/server/delivery/chaserService.ts';
+import { validateStockLedgerOrderBy, STOCK_LEDGER_ORDER_BY_PATTERN, sanitizeStockLedgerOrderBy } from '../src/server/delivery/erpnextParams.ts';
 
 test('admin credentials require exact configured username and password and reject oversized values', () => {
   assert.equal(verifyAdminCredentials('buyer', 'correct-horse', 'buyer', 'correct-horse'), true);
@@ -377,3 +378,130 @@ test('generateChaserDraft handles due today, partial receipt, and buyer notes', 
   assert.equal(chaserRoutine.urgency, 'Routine');
   assert.match(chaserRoutine.subject, /DELIVERY SCHEDULE CHECK/);
 });
+
+test('reliably extracts raw ERPNext nested PO items and envelopes (Defect 1)', () => {
+  // Frappe Get Purchase Order envelope with snake_case child table fields
+  const erpResponse = {
+    data: {
+      name: 'PUR-ORD-2026-00042',
+      supplier: 'Kalyani Forge Ltd',
+      transaction_date: '2026-10-15',
+      status: 'To Receive and Bill',
+      docstatus: 1,
+      order_confirmation_no: 'KF-CONF-881',
+      order_confirmation_date: '2026-10-16',
+      items: [
+        {
+          name: 'poi-kalyani-01',
+          item_code: 'STL-ROD-40MM',
+          item_name: 'Alloy Steel Rod 40mm',
+          qty: 150,
+          received_qty: 50,
+          schedule_date: '2026-10-28',
+          expected_delivery_date: '2026-10-27',
+          uom: 'Kg',
+          warehouse: 'Raw Materials - AIL',
+        },
+      ],
+    },
+  };
+
+  const report = normalizeAgentReport(erpResponse);
+  assert.equal(report.purchaseOrders.length, 1);
+  const po = report.purchaseOrders[0];
+  assert.equal(po.id, 'PUR-ORD-2026-00042');
+  assert.equal(po.supplier, 'Kalyani Forge Ltd');
+  assert.equal(po.transactionDate, '2026-10-15');
+  assert.equal(po.orderConfirmationNo, 'KF-CONF-881');
+  assert.equal(po.orderConfirmationDate, '2026-10-16');
+  assert.equal(po.items.length, 1);
+
+  const item = po.items[0];
+  assert.equal(item.id, 'poi-kalyani-01');
+  assert.equal(item.itemCode, 'STL-ROD-40MM');
+  assert.equal(item.description, 'Alloy Steel Rod 40mm');
+  assert.equal(item.orderedQuantity, 150);
+  assert.equal(item.receivedQuantity, 50);
+  assert.equal(item.pendingQuantity, 100);
+  assert.equal(item.scheduleDate, '2026-10-28');
+  assert.equal(item.expectedDeliveryDate, '2026-10-27');
+  assert.equal(item.uom, 'Kg');
+  assert.equal(item.warehouse, 'Raw Materials - AIL');
+});
+
+test('reliably extracts Purchase Receipt items and links exact PO item references (Defect 2)', () => {
+  const payload = {
+    purchaseOrders: [
+      {
+        id: 'PUR-ORD-2026-00050',
+        supplier: 'Bosch Chassis Systems',
+        docstatus: 1,
+        status: 'To Receive and Bill',
+        items: [
+          {
+            id: 'poi-50-1',
+            itemCode: 'BRK-PAD-CERAMIC',
+            orderedQuantity: 200,
+            scheduleDate: '2026-10-25',
+          },
+        ],
+      },
+    ],
+    purchaseReceipts: [
+      {
+        name: 'MAT-PRE-2026-00120',
+        docstatus: 1,
+        items: [
+          {
+            name: 'pri-120-1',
+            parent: 'MAT-PRE-2026-00120',
+            purchase_order: 'PUR-ORD-2026-00050',
+            purchase_order_item: 'poi-50-1',
+            item_code: 'BRK-PAD-CERAMIC',
+            qty: 80,
+            docstatus: 1,
+            uom: 'Sets',
+            warehouse: 'Stores - AIL',
+          },
+        ],
+      },
+    ],
+  };
+
+  const report = normalizeAgentReport(payload);
+  const item = report.purchaseOrders[0].items[0];
+  assert.equal(item.receipts.length, 1);
+  const receipt = item.receipts[0];
+  assert.equal(receipt.receiptId, 'MAT-PRE-2026-00120');
+  assert.equal(receipt.receiptItemId, 'pri-120-1');
+  assert.equal(receipt.purchaseOrderId, 'PUR-ORD-2026-00050');
+  assert.equal(receipt.purchaseOrderItemId, 'poi-50-1');
+  assert.equal(receipt.quantity, 80);
+  assert.equal(receipt.itemCode, 'BRK-PAD-CERAMIC');
+  assert.equal(receipt.docstatus, 1);
+  assert.equal(receipt.uom, 'Sets');
+  assert.equal(receipt.warehouse, 'Stores - AIL');
+});
+
+test('validates Stock Ledger Entry order_by parameter against registered schema pattern (Defect 3)', () => {
+  // Valid patterns according to ^[a-zA-Z0-9_]+ (asc|desc)$
+  assert.equal(validateStockLedgerOrderBy('posting_date desc'), true);
+  assert.equal(validateStockLedgerOrderBy('creation desc'), true);
+  assert.equal(validateStockLedgerOrderBy('posting_date asc'), true);
+  assert.equal(validateStockLedgerOrderBy('modified desc'), true);
+
+  // Invalid patterns that trigger INVALID_PARAMETER in ERPNext / Frappe tools
+  assert.equal(validateStockLedgerOrderBy('posting_date desc, posting_time desc'), false);
+  assert.equal(validateStockLedgerOrderBy('posting_date DESC'), false); // Uppercase rejected by lowercase pattern
+  assert.equal(validateStockLedgerOrderBy('tabStock Ledger Entry.posting_date desc'), false); // Qualified table name
+  assert.equal(validateStockLedgerOrderBy('posting_date; drop table'), false); // SQL injection attempt
+  assert.equal(validateStockLedgerOrderBy(''), false);
+  assert.equal(validateStockLedgerOrderBy(null), false);
+  assert.equal(validateStockLedgerOrderBy(undefined), false);
+
+  // Safe fallback sanitizer
+  assert.equal(sanitizeStockLedgerOrderBy('posting_date asc'), 'posting_date asc');
+  assert.equal(sanitizeStockLedgerOrderBy('invalid, parameter'), 'posting_date desc');
+  assert.equal(sanitizeStockLedgerOrderBy(null), 'posting_date desc');
+});
+

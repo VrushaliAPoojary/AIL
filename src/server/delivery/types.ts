@@ -18,6 +18,8 @@ export type ReceiptEvidence = {
   quantity: number;
   docstatus: number;
   isReturn?: boolean;
+  uom?: string | null;
+  warehouse?: string | null;
 };
 
 export type ReceiptRetrievalEvidence = {
@@ -37,8 +39,12 @@ export type PurchaseOrderItem = {
   itemCode: string;
   description?: string;
   orderedQuantity: number | null;
+  receivedQuantity?: number | null;
+  pendingQuantity?: number | null;
   scheduleDate: string | null;
   expectedDeliveryDate: string | null;
+  uom?: string | null;
+  warehouse?: string | null;
   receiptRetrieval: ReceiptRetrievalEvidence | null;
   dateConflict?: boolean;
   receipts: ReceiptEvidence[];
@@ -61,6 +67,8 @@ export type ItemAssessment = {
   supplier: string;
   itemCode: string;
   description?: string;
+  uom?: string | null;
+  warehouse?: string | null;
   orderedQuantity: number | null;
   receivedQuantity: number | null;
   outstandingQuantity: number | null;

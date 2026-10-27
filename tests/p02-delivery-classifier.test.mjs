@@ -313,3 +313,69 @@ test('provides transparent UNAVAILABLE fallback for inventory buffer risk withou
   assert.match(result.bufferDetails || '', /not present in current query scope/i);
 });
 
+test('flags discrepancy between PO line received quantity and receipt evidence (Defect 6)', () => {
+  // PO line claims 15 received, but receipt evidence only accounts for 10
+  const po = order({
+    item: {
+      orderedQuantity: 20,
+      receivedQuantity: 15, // Claimed on PO row
+      receipts: [
+        {
+          receiptId: 'PR-1',
+          receiptItemId: 'PRI-1',
+          purchaseOrderId: 'PO-TEST-1',
+          purchaseOrderItemId: 'PO-TEST-1-ITEM-1',
+          quantity: 10,
+          docstatus: 1,
+        },
+      ],
+    },
+  });
+
+  const result = assess(po);
+  assert.equal(result.deliveryStatus, 'NEEDS_VERIFICATION');
+  assert.equal(result.receivedQuantity, null);
+  assert.equal(result.outstandingQuantity, null);
+  assert.ok(result.verificationReasons.some((r) => r.includes('does not match verified receipt evidence')));
+});
+
+test('does not infer receipt match from supplier, item code, or total quantity alone (Defect 2 & 3)', () => {
+  // Receipt has same supplier and item code, but purchaseOrderId or purchaseOrderItemId are missing/wrong
+  const po = order({
+    item: {
+      orderedQuantity: 10,
+      receipts: [
+        {
+          receiptId: 'PR-UNLINKED',
+          receiptItemId: 'PRI-UNLINKED',
+          purchaseOrderId: 'OTHER-PO-999', // Mismatched PO link
+          purchaseOrderItemId: 'OTHER-ITEM-999',
+          itemCode: 'TEST-ITEM', // Same item code!
+          quantity: 10,
+          docstatus: 1,
+        },
+      ],
+    },
+  });
+
+  const result = assess(po);
+  // Must NOT infer match, must mark NEEDS_VERIFICATION
+  assert.equal(result.deliveryStatus, 'NEEDS_VERIFICATION');
+  assert.equal(result.receivedQuantity, null);
+  assert.ok(result.verificationReasons.some((r) => r.includes('lacks exact purchase-order item linkage')));
+});
+
+test('preserves uom and warehouse on item assessment', () => {
+  const po = order({
+    item: {
+      uom: 'Nos',
+      warehouse: 'Stores - Main Plant',
+    },
+  });
+
+  const result = assess(po);
+  assert.equal(result.uom, 'Nos');
+  assert.equal(result.warehouse, 'Stores - Main Plant');
+});
+
+

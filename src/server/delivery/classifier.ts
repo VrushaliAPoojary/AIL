@@ -97,6 +97,13 @@ function assessItem(order: PurchaseOrder, item: PurchaseOrder['items'][number], 
   if (outstanding !== null && (outstanding < 0 || received! < 0)) reasons.push('Receipt quantity exceeds ordered quantity or is contradictory.');
   if (item.dateConflict) reasons.push('Supplier delivery dates conflict across available source evidence.');
 
+  // Flag discrepancy between PO line received_qty and underlying receipt evidence
+  if (reasons.length === 0 && received !== null && item.receivedQuantity !== null && item.receivedQuantity !== undefined && Number.isFinite(item.receivedQuantity)) {
+    if (Math.abs(received - item.receivedQuantity) > 0.0001) {
+      reasons.push(`Purchase order line received quantity (${item.receivedQuantity}) does not match verified receipt evidence (${received}).`);
+    }
+  }
+
   const baselineDate = validDate(item.scheduleDate) ? item.scheduleDate : null;
   const promisedDate = validDate(item.expectedDeliveryDate) ? item.expectedDeliveryDate : null;
   const dueDate = settings.dueDateBasis === 'contractual' ? baselineDate : promisedDate;
@@ -113,6 +120,9 @@ function assessItem(order: PurchaseOrder, item: PurchaseOrder['items'][number], 
     else status = 'FUTURE_OPEN_DELIVERY';
   }
 
+  const finalReceived = reasons.length === 0 ? received : null;
+  const finalOutstanding = reasons.length === 0 ? outstanding : null;
+
   // Buffer and runway risk analysis
   const bufferRisk: ItemAssessment['bufferRisk'] = 'UNAVAILABLE';
   const bufferMarginDays: number | null = null;
@@ -124,14 +134,16 @@ function assessItem(order: PurchaseOrder, item: PurchaseOrder['items'][number], 
     supplier: order.supplier,
     itemCode: item.itemCode,
     description: item.description,
+    uom: item.uom ?? null,
+    warehouse: item.warehouse ?? null,
     orderedQuantity: ordered,
-    receivedQuantity: received,
-    outstandingQuantity: outstanding,
+    receivedQuantity: finalReceived,
+    outstandingQuantity: finalOutstanding,
     baselineDate,
     promisedDate,
     applicableDueDate: dueDate,
     deliveryStatus: status,
-    partialReceipt: received !== null && received > 0 && outstanding !== null && outstanding > 0,
+    partialReceipt: finalReceived !== null && finalReceived > 0 && finalOutstanding !== null && finalOutstanding > 0,
     excluded,
     exclusionReason,
     isAcknowledged,
