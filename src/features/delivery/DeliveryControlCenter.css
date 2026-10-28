@@ -512,6 +512,12 @@ body:has(.delivery-app-shell) .app-container {
   color: var(--p02-blue-text);
 }
 
+.env-failed {
+  background: var(--p02-red-bg);
+  border-color: var(--p02-red-border);
+  color: var(--p02-red-text);
+}
+
 .env-pulse {
   width: 7px;
   height: 7px;
@@ -526,6 +532,16 @@ body:has(.delivery-app-shell) .app-container {
 .live-pulse {
   background: var(--p02-green-base);
   box-shadow: 0 0 0 2px rgba(5, 150, 105, 0.25);
+}
+
+.failed-pulse {
+  background: var(--p02-red-base);
+  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.25);
+}
+
+.unverified-pulse {
+  background: var(--p02-blue-base);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
 }
 
 /* Admin Auth Buttons */
@@ -1197,6 +1213,11 @@ body:has(.delivery-app-shell) .app-container {
 .indicator-dot.is-warning {
   background: var(--p02-amber-base);
   box-shadow: 0 0 0 3px var(--p02-amber-bg);
+}
+
+.indicator-dot.is-danger {
+  background: var(--p02-red-base);
+  box-shadow: 0 0 0 3px var(--p02-red-bg);
 }
 
 .indicator-dot.is-neutral {
@@ -3531,6 +3552,13 @@ body:has(.delivery-app-shell) .app-container {
   height: 7px;
   border-radius: 50%;
   background: var(--p02-amber-base);
+}
+
+.dot-red {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--p02-red-base);
 }
 
 .dot-neutral {

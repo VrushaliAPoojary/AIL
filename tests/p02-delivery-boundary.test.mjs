@@ -37,6 +37,9 @@ test('integration readiness distinguishes demo, configured, connected, validated
   assert.equal(getIntegrationReadiness(true).status, 'VALIDATED');
   setIntegrationReadiness('FAILED', 'CONNECTION_FAILED');
   assert.deepEqual(getIntegrationReadiness(true), { status: 'FAILED', failure: 'CONNECTION_FAILED' });
+  setIntegrationReadiness('FAILED', 'AUTHENTICATION_FAILED');
+  assert.deepEqual(getIntegrationReadiness(true), { status: 'FAILED', failure: 'AUTHENTICATION_FAILED' });
+  setIntegrationReadiness('CONFIGURED');
 });
 
 test('public run records never expose raw failed-run errors', () => {

@@ -38,7 +38,7 @@ function assessItem(order: PurchaseOrder, item: PurchaseOrder['items'][number], 
     reasons.push(exclusionReason);
   }
 
-  if (!order.id || !order.id.trim() || !order.supplier.trim()) reasons.push('Purchase order identifier or supplier is missing.');
+  if (!order.id || !order.id.trim() || !order.supplier || !order.supplier.trim()) reasons.push('Purchase order identifier or supplier is missing.');
   if (!item.id || !item.id.trim()) reasons.push('Purchase order item identifier is missing.');
   if (!item.itemCode || !item.itemCode.trim()) reasons.push('Purchase order item code is missing.');
   if (ordered === null || !Number.isFinite(ordered) || ordered < 0) reasons.push('Ordered quantity is missing or invalid.');
@@ -60,7 +60,7 @@ function assessItem(order: PurchaseOrder, item: PurchaseOrder['items'][number], 
   }
 
   const seenReceiptItems = new Set<string>();
-  const validReceipts = item.receipts.filter((receipt) => {
+  const validReceipts = (item.receipts || []).filter((receipt) => {
     if (receipt.receiptItemId && seenReceiptItems.has(receipt.receiptItemId)) {
       reasons.push('A receipt item appears more than once in the evidence set.');
       return false;
@@ -161,5 +161,5 @@ function assessItem(order: PurchaseOrder, item: PurchaseOrder['items'][number], 
 
 export function classifyPurchaseOrders(orders: PurchaseOrder[], settings: DeliverySettings, today: string): ItemAssessment[] {
   if (!validDate(today)) throw new Error('Monitoring date must be an ISO local business date.');
-  return orders.flatMap((order) => order.items.map((item) => assessItem(order, item, settings, today)));
+  return orders.flatMap((order) => (order.items || []).map((item) => assessItem(order, item, settings, today)));
 }

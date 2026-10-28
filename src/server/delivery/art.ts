@@ -39,6 +39,14 @@ export async function executeArtMonitoring(run: RunRecord): Promise<unknown> {
   try {
     const { default: Adk } = await import('@arealtimetech/adk-js');
     adk = new (Adk as any)({ Uri: sanitizeArtUri(config.Uri) });
+    let authError: string | null = null;
+    if (typeof adk.on === 'function') {
+      adk.on('close', (evt: any) => {
+        if (evt?.type === 'error' && !authError) {
+          authError = 'ART authentication failed (HTTP 401 Unauthorized). Check ART_PROJECT_KEY and credentials.';
+        }
+      });
+    }
     adk.setCredentials({
       ClientID: config.ClientID,
       ClientSecret: config.ClientSecret,
@@ -47,28 +55,44 @@ export async function executeArtMonitoring(run: RunRecord): Promise<unknown> {
       ProjectKey: config.ProjectKey,
     });
     adk.connect();
-    const result = await executeAgentRun(adk, config.agentId, [
-      'Run the configured P02 supplier delivery monitoring workflow using only its existing read-only ERPNext tools.',
-      'Do not send supplier messages, modify ERPNext, create documents, or infer missing values.',
-      `Run reference: ${run.id}.`,
-      'When querying List Stock Ledger Entry - Erp, if using order_by, format it strictly as a single field with lowercase direction matching ^[a-zA-Z0-9_]+ (asc|desc)$ (e.g. "posting_date desc" or "creation desc"). Do not use multiple comma-separated fields, table prefixes, or uppercase DESC.',
-      'From Get Purchase Order - Erp, extract PO name/id, supplier, transaction_date, docstatus, status, and nested item rows with item_code, qty (orderedQuantity), received_qty, item-level schedule_date, expected_delivery_date, uom, and warehouse.',
-      'From Get Purchase Receipt - Erp / List Purchase Receipts, extract receipt item name, parent (receiptId), purchase_order, purchase_order_item, item_code, qty, and docstatus. Only link receipts with exact purchase_order and purchase_order_item matching the PO item. Do not infer matches from supplier or item code alone.',
-      'Return one JSON object with a purchaseOrders array. Each PO has id, supplier, transactionDate, docstatus, status, and items. Each item has id (ERPNext PO item row id), itemCode, description, orderedQuantity, receivedQuantity, scheduleDate, expectedDeliveryDate, uom, warehouse, receiptRetrieval, and receipts. Each receipt includes receiptId, receiptItemId, purchaseOrderId, purchaseOrderItemId (ERPNext PO item row id from the receipt link field), quantity, docstatus, and isReturn. Include only receipts with exact source linkage. For receiptRetrieval, report the exact purchase-order and PO-item retrieval scope, source tool/response identifiers if the tool output provides them, whether retrieval is complete, pages retrieved, and whether another page exists. Do not invent pagination or source metadata. Use null for any completeness or pagination fact not established by tool output; incomplete or unavailable retrieval evidence must not be represented as complete. Use null for missing dates or quantities. Do not calculate status or claim full receipt or overdue status.',
-    ].join('\n'), RUN_TIMEOUT_MS, () => { phase = 'run'; setIntegrationReadiness('CONNECTED'); });
+    const result = await executeAgentRun(
+      adk,
+      config.agentId,
+      [
+        'Run the configured P02 supplier delivery monitoring workflow using only its existing read-only ERPNext tools.',
+        'Do not send supplier messages, modify ERPNext, create documents, or infer missing values.',
+        `Run reference: ${run.id}.`,
+        'When querying List Stock Ledger Entry - Erp, if using order_by, format it strictly as a single field with lowercase direction matching ^[a-zA-Z0-9_]+ (asc|desc)$ (e.g. "posting_date desc" or "creation desc"). Do not use multiple comma-separated fields, table prefixes, or uppercase DESC.',
+        'From Get Purchase Order - Erp, extract PO name/id, supplier, transaction_date, docstatus, status, and nested item rows with item_code, qty (orderedQuantity), received_qty, item-level schedule_date, expected_delivery_date, uom, and warehouse.',
+        'From Get Purchase Receipt - Erp / List Purchase Receipts, extract receipt item name, parent (receiptId), purchase_order, purchase_order_item, item_code, qty, and docstatus. Only link receipts with exact purchase_order and purchase_order_item matching the PO item. Do not infer matches from supplier or item code alone.',
+        'Return one JSON object with a purchaseOrders array. Each PO has id, supplier, transactionDate, docstatus, status, and items. Each item has id (ERPNext PO item row id), itemCode, description, orderedQuantity, receivedQuantity, scheduleDate, expectedDeliveryDate, uom, warehouse, receiptRetrieval, and receipts. Each receipt includes receiptId, receiptItemId, purchaseOrderId, purchaseOrderItemId (ERPNext PO item row id from the receipt link field), quantity, docstatus, and isReturn. Include only receipts with exact source linkage. For receiptRetrieval, report the exact purchase-order and PO-item retrieval scope, source tool/response identifiers if the tool output provides them, whether retrieval is complete, pages retrieved, and whether another page exists. Do not invent pagination or source metadata. Use null for any completeness or pagination fact not established by tool output; incomplete or unavailable retrieval evidence must not be represented as complete. Use null for missing dates or quantities. Do not calculate status or claim full receipt or overdue status.',
+      ].join('\n'),
+      RUN_TIMEOUT_MS,
+      () => { phase = 'run'; setIntegrationReadiness('CONNECTED'); },
+      () => authError
+    );
     phase = 'report';
     const report = normalizeAgentReport(result);
     setIntegrationReadiness('VALIDATED');
     return report;
   } catch (error) {
-    const failure: IntegrationFailureCode = phase === 'connection' ? 'CONNECTION_FAILED' : phase === 'report' ? 'REPORT_INVALID' : 'RUN_FAILED';
-    setIntegrationReadiness('FAILED', failure);
     const detail = error instanceof Error ? error.message : String(error);
-    const baseMessage = failure === 'CONNECTION_FAILED'
-      ? 'ART connection failed. Check server-side configuration and ART availability.'
-      : failure === 'REPORT_INVALID'
-        ? 'ART returned a report that did not pass P02 validation.'
-        : 'ART monitoring run failed. Check the server-side integration logs.';
+    const isAuth = detail.includes('401') || detail.includes('Unauthorized') || detail.toLowerCase().includes('authentication') || detail.toLowerCase().includes('project not found') || detail.toLowerCase().includes('failed to get project');
+    const failure: IntegrationFailureCode = isAuth
+      ? 'AUTHENTICATION_FAILED'
+      : phase === 'connection'
+        ? 'CONNECTION_FAILED'
+        : phase === 'report'
+          ? 'REPORT_INVALID'
+          : 'RUN_FAILED';
+    setIntegrationReadiness('FAILED', failure);
+    const baseMessage = failure === 'AUTHENTICATION_FAILED'
+      ? 'ART authentication failed. Check credentials, tenant, and project key.'
+      : failure === 'CONNECTION_FAILED'
+        ? 'ART connection failed. Check server-side configuration and ART availability.'
+        : failure === 'REPORT_INVALID'
+          ? 'ART returned a report that did not pass P02 validation.'
+          : 'ART monitoring run failed. Check the server-side integration logs.';
     console.error(`[ART Execution Error - ${failure}]:`, detail);
     throw new Error(detail ? `${baseMessage} (${detail})` : baseMessage);
   } finally {

@@ -15,7 +15,7 @@ export function verifyAdminCredentials(
   if (!expectedUser || !expectedPassword || typeof username !== 'string' || typeof password !== 'string') return false;
   if (username.length > 120 || password.length > 256) return false;
   if (equalSecret(username, expectedUser) && equalSecret(password, expectedPassword)) return true;
-  if (username.toLowerCase() === expectedUser.toLowerCase() && equalSecret(password, expectedPassword)) return true;
+  if (username.trim().toLowerCase() === expectedUser.trim().toLowerCase() && equalSecret(password, expectedPassword)) return true;
   return false;
 }
 

@@ -115,30 +115,91 @@ export function ModeBadge({
   source?: string;
   readiness?: string;
 }) {
-  const isDemo = mode === 'demo' || source === 'synthetic demonstration data';
+  const readyNorm = (readiness || '').toUpperCase();
+  const isAuthFailed = readyNorm === 'AUTHENTICATION_FAILED';
+  const isConnFailed = readyNorm === 'CONNECTION_FAILED' || readyNorm === 'FAILED';
+  const isValidated = readyNorm === 'VALIDATED';
+  const isConnecting = readyNorm === 'CONNECTING';
+  const isConnected = readyNorm === 'CONNECTED';
+  const isUnverified = readyNorm === 'CONFIGURED_UNVERIFIED' || readyNorm === 'CONFIGURED';
+  const isDemo = mode === 'demo' || mode === 'NOT_CONFIGURED' || source === 'synthetic demonstration data';
 
-  if (isDemo) {
+  if (isAuthFailed) {
     return (
-      <span className="env-badge env-demo" title="Synthetic demonstration data. No ERPNext changes or live ART connection.">
-        <span className="env-pulse demo-pulse" aria-hidden="true" />
-        <span className="env-label">SYNTHETIC DEMO</span>
+      <span
+        className="env-badge env-failed"
+        title="ART Authentication Failed (HTTP 401). Check credentials in ART dashboard and local environment. Displaying synthetic baseline data."
+      >
+        <span className="env-pulse failed-pulse" aria-hidden="true" />
+        <span className="env-label">ART · AUTH FAILED</span>
       </span>
     );
   }
 
-  const isConfigured = mode === 'configured';
-  const readyNorm = (readiness || '').toUpperCase();
-  const isValidated = readyNorm === 'VALIDATED';
+  if (isConnFailed) {
+    return (
+      <span
+        className="env-badge env-failed"
+        title="ART Connection Failed. Check server configuration. Displaying synthetic baseline data."
+      >
+        <span className="env-pulse failed-pulse" aria-hidden="true" />
+        <span className="env-label">ART · CONNECTION FAILED</span>
+      </span>
+    );
+  }
+
+  if (isValidated) {
+    return (
+      <span
+        className="env-badge env-live"
+        title="Live ART Agent report verified from ERPNext"
+      >
+        <span className="env-pulse live-pulse" aria-hidden="true" />
+        <span className="env-label">LIVE · VALIDATED</span>
+      </span>
+    );
+  }
+
+  if (isConnecting) {
+    return (
+      <span
+        className="env-badge env-configured"
+        title="Connecting to ART WebSocket…"
+      >
+        <span className="env-pulse unverified-pulse" aria-hidden="true" />
+        <span className="env-label">ART · CONNECTING…</span>
+      </span>
+    );
+  }
+
+  if (isConnected) {
+    return (
+      <span
+        className="env-badge env-live"
+        title="Connected to ART Agent. Awaiting run completion."
+      >
+        <span className="env-pulse live-pulse" aria-hidden="true" />
+        <span className="env-label">ART · CONNECTED</span>
+      </span>
+    );
+  }
+
+  if (isUnverified && mode === 'configured') {
+    return (
+      <span
+        className="env-badge env-configured"
+        title="ART configured on server, but live agent connection has not been verified. Displaying synthetic baseline."
+      >
+        <span className="env-pulse unverified-pulse" aria-hidden="true" />
+        <span className="env-label">ART · UNVERIFIED</span>
+      </span>
+    );
+  }
 
   return (
-    <span
-      className={`env-badge ${isValidated ? 'env-live' : 'env-configured'}`}
-      title={isValidated ? 'Live ART Agent report verified' : 'ART configured on server'}
-    >
-      <span className="env-pulse live-pulse" aria-hidden="true" />
-      <span className="env-label">
-        {isValidated ? 'LIVE · VALIDATED' : `ART · ${readiness || 'CONFIGURED'}`}
-      </span>
+    <span className="env-badge env-demo" title="Synthetic demonstration data. No ERPNext changes or live ART connection.">
+      <span className="env-pulse demo-pulse" aria-hidden="true" />
+      <span className="env-label">SYNTHETIC DEMO</span>
     </span>
   );
 }

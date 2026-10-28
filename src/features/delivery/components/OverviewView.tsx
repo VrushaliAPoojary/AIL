@@ -193,6 +193,8 @@ export function OverviewView({
                   ? 'is-good'
                   : data.integrations?.readiness === 'CONFIGURED'
                   ? 'is-info'
+                  : data.integrations?.readiness === 'AUTHENTICATION_FAILED' || data.integrations?.readiness === 'CONNECTION_FAILED' || data.integrations?.readiness === 'FAILED'
+                  ? 'is-danger'
                   : 'is-neutral'
               }`}
             />

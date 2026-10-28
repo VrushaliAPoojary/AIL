@@ -202,7 +202,11 @@ export function ConfigurationView({
               <strong className="status-value">
                 <span
                   className={
-                    integrations.readiness === 'VALIDATED' ? 'dot-green' : 'dot-amber'
+                    integrations.readiness === 'VALIDATED'
+                      ? 'dot-green'
+                      : integrations.readiness === 'AUTHENTICATION_FAILED' || integrations.readiness === 'CONNECTION_FAILED' || integrations.readiness === 'FAILED'
+                      ? 'dot-red'
+                      : 'dot-amber'
                   }
                 />
                 {pretty(integrations.readiness)}
